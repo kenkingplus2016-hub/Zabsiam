@@ -1691,7 +1691,7 @@
             "th": "สยามพฤกษา: เมี่ยงคำซีบาส",
             "en": "Siam Pruksa Box Set: Sea Bass Miang Kham"
         },
-        "price": 19.95,
+        "price": "14.95",
         "unit": {
             "th": "1 ท่าน",
             "en": "1 Person"
@@ -1737,7 +1737,7 @@
             "th": "สยามพฤกษา: ยำส้มโอกุ้ง",
             "en": "Siam Pruksa Box Set: Pomelo Salad with Prawns"
         },
-        "price": 19.95,
+        "price": "14.95",
         "unit": {
             "th": "1 ท่าน",
             "en": "1 Person"
@@ -1797,7 +1797,7 @@
             "th": "สยามพฤกษา: แซลมอนลุยสวน",
             "en": "Siam Pruksa Box Set: Salmon Lui Suan"
         },
-        "price": 19.95,
+        "price": "14.95",
         "unit": {
             "th": "1 ท่าน",
             "en": "1 Person"
@@ -1857,7 +1857,7 @@
             "th": "สยามพฤกษา: พล่ากุ้ง",
             "en": "Siam Pruksa Box Set: Spicy Prawn Salad"
         },
-        "price": 19.95,
+        "price": "14.95",
         "unit": {
             "th": "1 ท่าน",
             "en": "1 Person"
@@ -1917,7 +1917,7 @@
             "th": "สยามพฤกษา: ยำมะม่วง",
             "en": "Siam Pruksa Box Set: Mango Salad"
         },
-        "price": 19.95,
+        "price": "14.95",
         "unit": {
             "th": "1 ท่าน",
             "en": "1 Person"
@@ -1977,7 +1977,7 @@
             "th": "สยามพฤกษา: ยำวุ้นเส้น",
             "en": "Siam Pruksa Box Set: Glass Noodle Salad"
         },
-        "price": 19.95,
+        "price": "14.95",
         "unit": {
             "th": "1 ท่าน",
             "en": "1 Person"
@@ -2037,7 +2037,7 @@
             "th": "สยามพฤกษา: ยำหมูยอ",
             "en": "Siam Pruksa Box Set: Pork Sausage Salad"
         },
-        "price": 19.95,
+        "price": "14.95",
         "unit": {
             "th": "1 ท่าน",
             "en": "1 Person"
@@ -2097,7 +2097,7 @@
             "th": "สยามพฤกษา: ยำถั่วพลู",
             "en": "Siam Pruksa Box Set: Winged Bean Salad"
         },
-        "price": 19.95,
+        "price": "14.95",
         "unit": {
             "th": "1 ท่าน",
             "en": "1 Person"
@@ -2157,7 +2157,7 @@
             "th": "สยามพฤกษา: แสร้งว่ากุ้ง",
             "en": "Siam Pruksa Box Set: Saeng Wa Prawn Salad"
         },
-        "price": 19.95,
+        "price": "14.95",
         "unit": {
             "th": "1 ท่าน",
             "en": "1 Person"
@@ -2217,7 +2217,7 @@
             "th": "สยามพฤกษา: ยำแซ่บปลาหมึกยัดไส้",
             "en": "Siam Pruksa Box Set: Spicy Stuffed Squid Salad"
         },
-        "price": "19.95",
+        "price": "14.95",
         "unit": {
             "th": "1 ท่าน",
             "en": "1 Person"
@@ -2277,7 +2277,7 @@
             "th": "สยามพฤกษา: ส้มตำไทย",
             "en": "Siam Pruksa Box Set: Som Tum Thai"
         },
-        "price": "12.95",
+        "price": "14.95",
         "unit": {
             "th": "1 ท่าน",
             "en": "1 Person"
@@ -2337,7 +2337,7 @@
             "th": "สยามพฤกษา: ส้มตำปูปลาร้า",
             "en": "Siam Pruksa Box Set: Som Tum Pu Pla Ra"
         },
-        "price": "13.5",
+        "price": "14.95",
         "unit": {
             "th": "1 ท่าน",
             "en": "1 Person"
@@ -2397,7 +2397,7 @@
             "th": "สยามพฤกษา: เมี่ยงรวมมิตร",
             "en": "Siam Pruksa Box Set: Mixed Miang"
         },
-        "price": "22.95",
+        "price": "16.95",
         "unit": {
             "th": "1 ท่าน",
             "en": "1 Person"
@@ -2439,7 +2439,7 @@
             "th": "สยามพฤกษา: ต้มยำทะเล",
             "en": "Siam Pruksa Box Set: Tom Yum Seafood"
         },
-        "price": "24.95",
+        "price": "18.95",
         "unit": {
             "th": "1 ท่าน",
             "en": "1 Person"
