@@ -22,7 +22,7 @@
                 "ingredients": {
                     "th": [
                         "สัมผัสรสชาติต้นตำรับไทยแท้กับเซตมาตรฐาน",
-                        "--- เมนูไฮไลท์ ---",
+                        "เมนูไฮไลท์",
                         "เมี่ยงคำปลาซีบาส",
                         "ส้มตำไทย",
                         "แกง (เลือกประเภทแกงได้ และเลือกเนื้อสัตว์: หมู/ไก่/เนื้อ/ปลา/เต้าหู้)",
@@ -32,12 +32,11 @@
                         "ข้าวหอมมะลิ",
                         "ข้าวเหนียวมะม่วง",
                         "ผลไม้รวม",
-                        "-----------------",
                         "ความอร่อยมาตรฐานที่ถูกปากทุกคน"
                     ],
                     "en": [
                         "Experience authentic Thai flavors with our standard signature set.",
-                        "--- Menu Highlights ---",
+                        "Menu Highlights",
                         "Miang Kham Sea Bass",
                         "Som Tum Thai",
                         "Curry (Selectable Curry Type & Meat: Pork/Chicken/Beef/Fish/Tofu)",
@@ -47,7 +46,6 @@
                         "Jasmine Rice",
                         "Mango Sticky Rice",
                         "Mixed Fruits",
-                        "-----------------------",
                         "A classic standard of deliciousness."
                     ]
                 }
@@ -63,14 +61,14 @@
                 "ingredients": {
                     "th": [
                         "เนื้อปลาซีบาสทอด (หั่นเต๋า)",
-                        "--- เครื่องเคียงเมี่ยงคำ ---",
+                        "เครื่องเคียงเมี่ยงคำ",
                         "ใบชะพลู",
                         "มะพร้าวคั่ว",
                         "ถั่วลิสงคั่ว",
                         "กุ้งแห้งคั่ว",
                         "ขิง, มะนาว, หอมแดง",
                         "พริกขี้หนูหั่น",
-                        "--- ส่วนผสมน้ำจิ้มเมี่ยงคำ ---",
+                        "ส่วนผสมน้ำจิ้มเมี่ยงคำ",
                         "น้ำตาลมะพร้าว",
                         "กะปิย่าง",
                         "มะพร้าวคั่ว",
@@ -83,14 +81,14 @@
                     ],
                     "en": [
                         "Fried Diced Sea Bass",
-                        "--- Miang Kham Accompaniments ---",
+                        "Miang Kham Accompaniments",
                         "Wild Betel Leaves (Chaplu)",
                         "Roasted Coconut",
                         "Roasted Peanuts",
                         "Roasted Dried Shrimp",
                         "Ginger, Lime, Shallots",
                         "Sliced Bird's Eye Chili",
-                        "--- Miang Kham Sauce Ingredients ---",
+                        "Miang Kham Sauce Ingredients",
                         "Coconut Sugar",
                         "Grilled Shrimp Paste",
                         "Roasted Coconut",
@@ -113,7 +111,7 @@
                 "img": "16e55889-df22-4b4b-8d4b-493784a03d23.jpg",
                 "ingredients": {
                     "th": [
-                        "มะละกอดิบสับ 100g",
+                        "มะละกอดิบสับ",
                         "ถั่วฝักยาว",
                         "มะเขือเทศ",
                         "พริกขี้หนู",
@@ -124,7 +122,7 @@
                         "กุ้งแห้ง"
                     ],
                     "en": [
-                        "Chopped green papaya 100g",
+                        "Chopped green papaya",
                         "Long beans",
                         "Tomatoes",
                         "Bird's eye chili",
@@ -146,13 +144,13 @@
                 "img": "a763fe7b-c7e7-4b7c-8a93-5da8057971ad.jpg",
                 "ingredients": {
                     "th": [
-                        "เนื้ออก/สะโพกไก่ 100g",
+                        "เนื้ออก/สะโพกไก่",
                         "มะเขือเปราะ",
                         "กะทิ",
                         "ใบโหระพา",
                         "พริกชี้ฟ้า",
                         "ใบมะกรูด",
-                        "--- เครื่องแกงเขียวหวาน ---",
+                        "เครื่องแกงเขียวหวาน",
                         "พริกชี้ฟ้าเขียว",
                         "พริกขี้หนูเขียว",
                         "ตะไคร้ซอย",
@@ -166,13 +164,13 @@
                         "เกลือสมุทร"
                     ],
                     "en": [
-                        "Chicken breast/thigh 100g",
+                        "Chicken breast/thigh",
                         "Thai eggplant",
                         "Coconut milk",
                         "Sweet basil",
                         "Thai chili",
                         "Kaffir lime leaves",
-                        "--- Green Curry Paste ---",
+                        "Green Curry Paste",
                         "Green spur chili",
                         "Green bird's eye chili",
                         "Sliced lemongrass",
@@ -302,10 +300,10 @@
                 "img": "4b00ee9d-26c8-45f9-9f0d-e4014da7e1b2.jpg",
                 "ingredients": {
                     "th": [
-                        "ข้าวหอมมะลิคัดพิเศษ 100%"
+                        "ข้าวหอมมะลิคัดพิเศษ %"
                     ],
                     "en": [
-                        "100% Premium Jasmine Rice"
+                        "% Premium Jasmine Rice"
                     ]
                 }
             },
@@ -438,7 +436,7 @@
                 "ingredients": {
                     "th": [
                         "สุนทรียภาพแห่งรสสัมผัสและความสดชื่น",
-                        "--- เมนูไฮไลท์ ---",
+                        "เมนูไฮไลท์",
                         "ข้าวเกรียบปากหม้อ",
                         "ยำส้มโอกุ้งสดพอดีคำ",
                         "แกง (เลือกประเภทแกงได้ และเลือกเนื้อสัตว์: หมู/ไก่/เนื้อ/ปลา/เต้าหู้)",
@@ -447,12 +445,11 @@
                         "ข้าวหอมมะลิ",
                         "ลอดช่องสิงคโปร์",
                         "ผลไม้รวม",
-                        "-----------------",
                         "เอกลักษณ์แห่งรสชาติที่ผสมผสานอย่างลงตัว"
                     ],
                     "en": [
                         "The aesthetics of taste and freshness.",
-                        "--- Menu Highlights ---",
+                        "Menu Highlights",
                         "Rice Skin Dumplings",
                         "Pomelo Salad with Shrimp",
                         "Curry (Selectable Curry Type & Meat: Pork/Chicken/Beef/Fish/Tofu)",
@@ -461,7 +458,6 @@
                         "Jasmine Rice",
                         "Lod Chong Singapore",
                         "Mixed Fruits",
-                        "-----------------------",
                         "Experience the perfect harmony of authentic flavors."
                     ]
                 }
@@ -486,10 +482,10 @@
                         "ส่วนผสมไส้",
                         "ส่วนผสมไส้",
                         "ส่วนผสมไส้",
-                        "ส่วนผสมตัวแป้ง (ต่อ 1 สี)",
-                        "ส่วนผสมตัวแป้ง (ต่อ 1 สี)",
-                        "ส่วนผสมตัวแป้ง (ต่อ 1 สี)",
-                        "ส่วนผสมตัวแป้ง (ต่อ 1 สี)",
+                        "ส่วนผสมตัวแป้ง (ต่อ สี)",
+                        "ส่วนผสมตัวแป้ง (ต่อ สี)",
+                        "ส่วนผสมตัวแป้ง (ต่อ สี)",
+                        "ส่วนผสมตัวแป้ง (ต่อ สี)",
                         "ส่วนผสมกะทิราด",
                         "ส่วนผสมกะทิราด",
                         "ส่วนผสมกะทิราด",
@@ -544,7 +540,7 @@
                         "น้ำตาลมะพร้าว",
                         "น้ำปลา",
                         "น้ำมะขามเปียก",
-                        "--- เครื่องแกงมัสมัน ---",
+                        "เครื่องแกงมัสมัน",
                         "พริกแห้งเม็ดใหญ่",
                         "หอมแดงเผา, กระเทียมเผา",
                         "ข่าซอยคั่ว, ตะไคร้ซอยคั่ว",
@@ -560,7 +556,7 @@
                         "Coconut sugar",
                         "Fish sauce",
                         "Tamarind paste",
-                        "--- Massaman Curry Paste ---",
+                        "Massaman Curry Paste",
                         "Large dried chili",
                         "Roasted shallots, Roasted garlic",
                         "Roasted galangal, Roasted lemongrass",
@@ -754,7 +750,7 @@
                 "ingredients": {
                     "th": [
                         "หลอมรสชาติวิจิตร ในหนึ่งคำสัมผัส",
-                        "--- เมนูไฮไลท์ ---",
+                        "เมนูไฮไลท์",
                         "เมี่ยงคำส้มโอกุ้ง",
                         "หมูย่างหมักนมสด",
                         "แกง (เลือกประเภทแกงได้ และเลือกเนื้อสัตว์: หมู/ไก่/เนื้อ/ปลา/เต้าหู้)",
@@ -763,12 +759,11 @@
                         "ข้าวหอมมะลิ",
                         "ทับทิมกรอบ",
                         "ผลไม้รวม",
-                        "-----------------",
                         "สัมผัสความประณีตแห่งรสชาติที่สืบทอดมาอย่างยาวนาน"
                     ],
                     "en": [
                         "Exquisite flavors in a single touch.",
-                        "--- Menu Highlights ---",
+                        "Menu Highlights",
                         "Pomelo Miang Kham with Shrimp",
                         "Pork Skewer with Milk",
                         "Red Curry with Chicken",
@@ -777,7 +772,6 @@
                         "Jasmine Rice",
                         "Tub Tim Krop",
                         "Mixed Fruits",
-                        "-----------------------",
                         "Experience the refined taste of culinary heritage."
                     ]
                 }
@@ -793,14 +787,14 @@
                 "ingredients": {
                     "th": [
                         "กุ้งทอด",
-                        "--- เครื่องเคียงเมี่ยงคำ ---",
+                        "เครื่องเคียงเมี่ยงคำ",
                         "ใบชะพลู และผักสลัดกรอบๆ",
                         "ส้มโอ (Pomelo)",
                         "มะพร้าวคั่ว",
                         "ถั่วลิสงคั่ว",
                         "ขิง, มะนาว, หอมแดง",
                         "พริกขี้หนู",
-                        "--- ส่วนผสมน้ำจิ้มเมี่ยงคำ ---",
+                        "ส่วนผสมน้ำจิ้มเมี่ยงคำ",
                         "น้ำตาลมะพร้าว",
                         "กะปิย่าง",
                         "มะพร้าวคั่ว",
@@ -812,14 +806,14 @@
                     ],
                     "en": [
                         "Fried Shrimp",
-                        "--- Miang Kham Accompaniments ---",
+                        "Miang Kham Accompaniments",
                         "Wild Betel Leaves & Crispy Salad",
                         "Pomelo",
                         "Roasted Coconut",
                         "Roasted Peanuts",
                         "Ginger, Lime, Shallots",
                         "Bird's Eye Chili",
-                        "--- Miang Kham Sauce Ingredients ---",
+                        "Miang Kham Sauce Ingredients",
                         "Coconut Sugar",
                         "Grilled Shrimp Paste",
                         "Roasted Coconut",
@@ -1005,7 +999,7 @@
                 "ingredients": {
                     "th": [
                         "รสสัมผัสแห่งราชสำรับไทยที่ประณีตและงดงาม",
-                        "--- เมนูไฮไลท์ ---",
+                        "เมนูไฮไลท์",
                         "ยำส้มโอ",
                         "ม้าฮ่อ",
                         "แกง (เลือกประเภทแกงได้ และเลือกเนื้อสัตว์: หมู/ไก่/เนื้อ/ปลา/เต้าหู้)",
@@ -1013,13 +1007,12 @@
                         "ผัดผักรวมกุ้งน้ำมันหอย",
                         "บวชชีกล้วย",
                         "ผลไม้รวม",
-                        "-----------------",
                         "สัมผัสความวิจิตรบรรจงในทุกคำที่ลิ้มลอง",
                         "ยกระดับมื้อพิเศษของคุณด้วยเสน่ห์แห่งอาหารไทยต้นตำรับ"
                     ],
                     "en": [
                         "Experience the exquisite taste of Royal Thai cuisine.",
-                        "--- Menu Highlights ---",
+                        "Menu Highlights",
                         "Pomelo Salad",
                         "Ma Hor",
                         "Panang Curry with Pork",
@@ -1027,7 +1020,6 @@
                         "Stir-fried Veg with Shrimp",
                         "Banana in Coconut Milk",
                         "Mixed Fruits",
-                        "-----------------------",
                         "Meticulously crafted for perfection.",
                         "Elevate your special occasion with authentic Thai charm."
                     ]
@@ -1190,7 +1182,7 @@
                 "ingredients": {
                     "th": [
                         "สุนทรีย์ร่วมสมัย การนำเสนอสุดหรูหราพร้อมรสชาติไทยแท้ที่จัดจ้าน",
-                        "--- เมนูไฮไลท์ ---",
+                        "เมนูไฮไลท์",
                         "ปูผัดผงกะหรี่",
                         "คอหมูย่าง",
                         "หมูสะเต๊ะ",
@@ -1198,13 +1190,12 @@
                         "แกง (เลือกประเภทแกงได้ และเลือกเนื้อสัตว์: หมู/ไก่/เนื้อ/ปลา/เต้าหู้)",
                         "ข้าวเหนียวมะม่วง",
                         "ผลไม้รวมตามฤดูกาล",
-                        "-----------------",
                         "ประสบการณ์แห่งรสชาติไทยร่วมสมัย คัดสรรวัตถุดิบพรีเมียม",
                         "เหมาะสำหรับงานจัดเลี้ยงองค์กร งานแต่งงาน และงานสังสรรค์ส่วนตัว"
                     ],
                     "en": [
                         "A sophisticated catering set designed to elevate your event with luxurious presentation and the bold, authentic flavors of Thailand.",
-                        "--- Menu Highlights ---",
+                        "Menu Highlights",
                         "Crab Curry Powder Stir-Fry (Pu Pad Pong Karee)",
                         "Grilled Pork Neck",
                         "Pork Satay",
@@ -1212,7 +1203,6 @@
                         "Tae Po Wonton Pork Curry",
                         "Mango Sticky Rice",
                         "Seasonal Mixed Fruits",
-                        "-----------------------",
                         "Experience Modern Thai Luxury",
                         "Thoughtfully curated with premium ingredients and elegant presentation.",
                         "Perfect for corporate gatherings, weddings, private celebrations, and exclusive events."
@@ -1229,40 +1219,40 @@
                 "img": "e0ecdb4e-2584-48ef-ab8e-7292ae447711.jpg",
                 "ingredients": {
                     "th": [
-                        "เนื้อปลาแซลมอน 150-200 กรัม",
-                        "แป้งทอดกรอบ (สำหรับคลุกบางๆ) 2 ช้อนโต๊ะ",
+                        "เนื้อปลาแซลมอน",
+                        "แป้งทอดกรอบ (สำหรับคลุกบางๆ)",
                         "เกลือและพริกไทยป่นเล็กน้อย",
-                        "--- เครื่องสมุนไพรลุยสวน ---",
-                        "ตะไคร้ซอยบาง 2 ช้อนโต๊ะ",
-                        "หอมแดงหรือหอมแขกหั่นเต๋า 2-3 ช้อนโต๊ะ",
-                        "ขิงแก่หั่นเต๋าเล็ก 1 ช้อนโต๊ะ",
+                        "เครื่องสมุนไพรลุยสวน",
+                        "ตะไคร้ซอยบาง",
+                        "หอมแดงหรือหอมแขกหั่นเต๋า",
+                        "ขิงแก่หั่นเต๋าเล็ก",
                         "พริกขี้หนูสวนซอย (ตามชอบ)",
-                        "ใบมะกรูดซอยฝอย 1 ช้อนโต๊ะ",
+                        "ใบมะกรูดซอยฝอย",
                         "สะระแหน่และผักชีฝรั่งซอย",
-                        "ถั่วลิสงคั่ว หรือเม็ดมะม่วงหิมพานต์ 2 ช้อนโต๊ะ",
-                        "--- น้ำยำลุยสวนรสเด็ด ---",
-                        "น้ำปลา 1 ช้อนโต๊ะ",
-                        "น้ำมะนาวสด 1.5 ช้อนโต๊ะ",
-                        "น้ำตาลปี๊บ 1 ช้อนโต๊ะ",
-                        "น้ำพริกเผา 1/2 ช้อนโต๊ะ"
+                        "ถั่วลิสงคั่ว หรือเม็ดมะม่วงหิมพานต์",
+                        "น้ำยำลุยสวนรสเด็ด",
+                        "น้ำปลา",
+                        "น้ำมะนาวสด",
+                        "น้ำตาลปี๊บ",
+                        "น้ำพริกเผา"
                     ],
                     "en": [
-                        "150-200g Fresh salmon",
-                        "2 Tbsp Crispy flour (for light coating)",
+                        "Fresh salmon",
+                        "Crispy flour (for light coating)",
                         "Pinch of salt and pepper",
-                        "--- Herb Mix ---",
-                        "2 Tbsp Thinly sliced lemongrass",
-                        "2-3 Tbsp Diced shallots",
-                        "1 Tbsp Diced old ginger",
+                        "Herb Mix",
+                        "Thinly sliced lemongrass",
+                        "Diced shallots",
+                        "Diced old ginger",
                         "Sliced bird's eye chili (to taste)",
-                        "1 Tbsp Finely sliced kaffir lime leaves",
+                        "Finely sliced kaffir lime leaves",
                         "Sliced mint and cilantro",
-                        "2 Tbsp Roasted peanuts or cashew nuts",
-                        "--- Spicy Salad Dressing ---",
-                        "1 Tbsp Fish sauce",
-                        "1.5 Tbsp Fresh lime juice",
-                        "1 Tbsp Palm sugar",
-                        "1/2 Tbsp Roasted chili paste"
+                        "Roasted peanuts or cashew nuts",
+                        "Spicy Salad Dressing",
+                        "Fish sauce",
+                        "Fresh lime juice",
+                        "Palm sugar",
+                        "Roasted chili paste"
                     ]
                 }
             },
@@ -1303,33 +1293,33 @@
                 "img": "de8fafb8-521d-4420-9913-62aafbe3f5e4.jpg",
                 "ingredients": {
                     "th": [
-                        "ปูสด 1 ตัว (ปูม้า ปูเนื้อ หรือปูไข่ตามชอบ)",
-                        "หอมหัวใหญ่ 1/2 หัว หั่นตามยาว",
-                        "พริกชี้ฟ้าแดง 2 เม็ด หั่นแฉลบ",
-                        "ต้นหอม 3 ต้น หั่นท่อน",
-                        "คึ่นฉ่าย 2 ต้น หั่นท่อน",
-                        "ไข่ไก่ 2 ฟอง",
-                        "นมข้นจืด 1 ถ้วยตวง",
-                        "น้ำมันพืช 3 ช้อนโต๊ะ",
-                        "ซีอิ๊วขาว 1 ช้อนโต๊ะ",
-                        "น้ำตาลทราย 1 ช้อนชา",
-                        "ผงกะหรี่ 4 ช้อนโต๊ะ",
-                        "น้ำพริกเผาและน้ำมันพริกเผา 3 ช้อนโต๊ะ",
+                        "ปูสด (ปูม้า ปูเนื้อ หรือปูไข่ตามชอบ)",
+                        "หอมหัวใหญ่ หัว หั่นตามยาว",
+                        "พริกชี้ฟ้าแดง หั่นแฉลบ",
+                        "ต้นหอม ต้น หั่นท่อน",
+                        "คึ่นฉ่าย ต้น หั่นท่อน",
+                        "ไข่ไก่ ฟอง",
+                        "นมข้นจืด",
+                        "น้ำมันพืช",
+                        "ซีอิ๊วขาว",
+                        "น้ำตาลทราย",
+                        "ผงกะหรี่",
+                        "น้ำพริกเผาและน้ำมันพริกเผา",
                         "พริกไทยป่น"
                     ],
                     "en": [
-                        "1 Fresh Crab (Blue crab, mud crab, or egg crab as preferred)",
-                        "1/2 Onion, sliced lengthwise",
-                        "2 Red chilies, diagonally sliced",
-                        "3 Green onions, cut into pieces",
-                        "2 Chinese celery, cut into pieces",
-                        "2 Eggs",
-                        "1 Cup evaporated milk",
-                        "3 Tbsp vegetable oil",
-                        "1 Tbsp light soy sauce",
-                        "1 tsp sugar",
-                        "4 Tbsp curry powder",
-                        "3 Tbsp roasted chili paste and chili oil",
+                        "Fresh Crab (Blue crab, mud crab, or egg crab as preferred)",
+                        "Onion, sliced lengthwise",
+                        "Red chilies, diagonally sliced",
+                        "reen onions, cut into pieces",
+                        "Chinese celery, cut into pieces",
+                        "Eggs",
+                        "evaporated milk",
+                        "vegetable oil",
+                        "light soy sauce",
+                        "sugar",
+                        "curry powder",
+                        "roasted chili paste and chili oil",
                         "Ground pepper"
                     ]
                 }
