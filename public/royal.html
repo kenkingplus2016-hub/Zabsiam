@@ -120,8 +120,8 @@
     <!-- ================= CANAPÉS TAB SECTION ================= -->
     <div id="tab-canapes-content" class="space-y-12">
         <div class="text-center max-w-[800px] mx-auto mb-10">
-            <h2 class="text-3xl font-bold text-dark-green mb-3" id="canape-title">ค็อกเทลและคานาเป้<br>(เซต 32 ชิ้น)</h2>
-            <p class="text-gray-600" id="canape-desc">เลือกสรรเมนูอาหารว่างสยามวิจิตรคำพอดีคำของคุณเองตามความเหมาะสมของงาน ทุกเมนูกลุ่มนี้จำหน่ายเป็นชุดละ 32 ชิ้น</p>
+            <h2 class="text-3xl font-bold text-dark-green mb-3" id="canape-title">ค็อกเทลและคานาเป้<br>(เซต 12 ชิ้น)</h2>
+            <p class="text-gray-600" id="canape-desc">เลือกสรรเมนูอาหารว่างสยามวิจิตรคำพอดีคำของคุณเองตามความเหมาะสมของงาน ทุกเมนูกลุ่มนี้จำหน่ายเป็นชุดละ 12 ชิ้น</p>
         </div>
 
         <!-- Dynamic Canapes Container -->
@@ -251,13 +251,13 @@
                                         ${item.img ? (item.img === 'logo.png' ? `<img src="logo.png" alt="${item.name.en}" class="w-full h-48 object-cover rounded-[12px] mb-4 shadow-sm" style="object-fit:contain; padding:20px;">` : `<img src="images/${item.img}" alt="${item.name.en}" class="w-full h-48 object-cover rounded-[12px] mb-4 shadow-sm">`) : ''}
                                         <div class="flex justify-between items-start gap-2 mb-2">
                                             <h4 class="font-bold text-lg text-dark-green leading-snug">${item.name[currentLang].replace(': ', ':<br>').replace(' — ', '<br>').replace(' - ', '<br>')}</h4>
-                                            <span class="bg-gold-light/50 text-dark-green text-xs font-bold px-2.5 py-1 rounded-full whitespace-nowrap">£${item.price} / ${currentLang === 'th' ? '32 ชิ้น' : '32 Pcs'}</span>
+                                            <span class="bg-gold-light/50 text-dark-green text-xs font-bold px-2.5 py-1 rounded-full whitespace-nowrap">£${item.price} / ${currentLang === 'th' ? '12 ชิ้น' : '12 Pcs'}</span>
                                         </div>
                                         <p class="text-gray-500 text-xs leading-relaxed mb-2">${item.desc[currentLang]}</p>
                                         ${item.main_ingredients ? `<p class="text-[11px] text-dark-green font-semibold mb-4 bg-gold-light/20 p-2 rounded"><i class="fas fa-leaf text-gold mr-1"></i> ${currentLang === 'th' ? 'วัตถุดิบหลัก:' : 'Main Ingredients:'} ${item.main_ingredients[currentLang].join(', ')}</p>` : '<div class="mb-4"></div>'}
                                     </div>
                                     <div class="flex justify-between items-center border-t border-gray-100 pt-4 mt-2">
-                                        <span class="text-xs text-gray-400 font-medium">${currentLang === 'th' ? 'จำนวนสั่งซื้อ (ชุด 32 ชิ้น)' : 'Quantity (32-Pcs Set)'}</span>
+                                        <span class="text-xs text-gray-400 font-medium">${currentLang === 'th' ? 'จำนวนสั่งซื้อ (ชุด 12 ชิ้น)' : 'Quantity (32-Pcs Set)'}</span>
                                         <div class="flex items-center gap-3">
                                             <button onclick="updateCart('${item.id}', -1)" class="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full text-dark-green font-bold text-lg transition hover:bg-gold hover:text-dark-green active:scale-90">-</button>
                                             <span class="font-bold text-base w-6 text-center" id="qty-${item.id}">${qty}</span>
@@ -314,8 +314,8 @@
                 hero_title: "The Royal Siam Gathering",
                 hero_subtitle: "ที่สุดของสำรับไทยระดับหรูหรา แกงไทยราชสำนัก และค็อกเทลแบบชาววัง เลือกรังสรรค์อาหารตามความชอบสำหรับโอกาสพิเศษของคุณ",
                 lbl_tab_canapes: "สยามวิจิตร / Siam Vijit",
-                                canape_title: "ค็อกเทลและคานาเป้<br>(เซต 32 ชิ้น)",
-                canape_desc: "เลือกสรรเมนูอาหารว่างสยามวิจิตรคำพอดีคำของคุณเองตามความเหมาะสมของงาน ทุกเมนูกลุ่มนี้จำหน่ายเป็นชุดละ 32 ชิ้น",
+                                canape_title: "ค็อกเทลและคานาเป้<br>(เซต 12 ชิ้น)",
+                canape_desc: "เลือกสรรเมนูอาหารว่างสยามวิจิตรคำพอดีคำของคุณเองตามความเหมาะสมของงาน ทุกเมนูกลุ่มนี้จำหน่ายเป็นชุดละ 12 ชิ้น",
                                                 c1_tag: "คอร์สที่ 1 - ของว่างต้อนรับ",
                 c1_title: "ของว่างต้อนรับ / Amuse Bouche",
                 c1_dish: "ช่อม่วงกุ้งเสวย (Chor Muang Goong)",
@@ -354,8 +354,8 @@
                 hero_title: "The Royal Siam Gathering",
                 hero_subtitle: "The ultimate luxury Thai banquets, premium curry sets, and elegant royal canapés, meticulously crafted to elevate your prestigious celebrations.",
                 lbl_tab_canapes: "Siam Vijit / Premium Canapés",
-                                canape_title: "Royal Cocktails & Canapés<br>(32-Piece Sets)",
-                canape_desc: "Curate your own bite-sized Siam Vijit appetizers tailored for your event. Each menu in this selection is sold in sets of 32 pieces.",
+                                canape_title: "Royal Cocktails & Canapés<br>(12-Piece Sets)",
+                canape_desc: "Curate your own bite-sized Siam Vijit appetizers tailored for your event. Each menu in this selection is sold in sets of 12 pieces.",
                                                 c1_tag: "Course 1 - Welcoming Bite",
                 c1_title: "Amuse Bouche",
                 c1_dish: "Chor Muang Goong",

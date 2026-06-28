@@ -9,8 +9,8 @@
                     "th": "เมี่ยงคำซีบาสกระทงทอง",
                     "en": "Sea Bass Miang Kham Kratong Tong"
                 },
-                "price": 29.99,
-                "unit": "32 ชิ้น / 32 Pcs",
+                "price": 12,
+                "unit": "12 ชิ้น / 12 Pcs",
                 "desc": {
                     "th": "เนื้อปลาซีบาสหั่นเต๋าคัดเกรดทอดกรอบ ผสมเครื่องเคียงเมี่ยงคำรสเด็ด เสิร์ฟในกระทงทองกรุบกรอบสูตรโบราณ",
                     "en": "Crispy diced sea bass combined with authentic Miang Kham ingredients, served in traditional crispy golden cups."
@@ -41,8 +41,8 @@
                     "th": "ยำส้มโอกุ้งสดพอดีคำ",
                     "en": "Pomelo Salad with Prawns"
                 },
-                "price": 29.99,
-                "unit": "32 ชิ้น / 32 Pcs",
+                "price": 12,
+                "unit": "12 ชิ้น / 12 Pcs",
                 "desc": {
                     "th": "ยำส้มโอคัดเนื้อหวานฉ่ำ เคล้าน้ำยำสูตรพริกเผาโบราณรสกลมกล่อม ท็อปด้วยกุ้งแม่น้ำลวกตัวโตพอดีคำ",
                     "en": "Sweet pomelo flesh tossed in a mild traditional chili jam dressing, topped with poached premium prawn."
@@ -89,8 +89,8 @@
                     "th": "แซลมอนลุยสวนเกี๊ยวกรอบ",
                     "en": "Salmon with Herbs salad Crispy Wontons"
                 },
-                "price": 29.99,
-                "unit": "32 ชิ้น / 32 Pcs",
+                "price": 12,
+                "unit": "12 ชิ้น / 12 Pcs",
                 "desc": {
                     "th": "ลาบปลาแซลมอนสดรสจัดจ้านหอมข้าวคั่วและสมุนไพรไทย เสิร์ฟบนเกี๊ยวกรอบสีเหลืองทองกรุบกรอบทานง่าย",
                     "en": "Zesty salmon larb salad tossed with fresh mint, toasted rice, and lime juice served on crispy golden wonton skin."
@@ -123,8 +123,8 @@
                     "th": "คอหมูย่าง",
                     "en": "Grilled Pork Neck"
                 },
-                "price": 29.99,
-                "unit": "32 ชิ้น / 32 Pcs",
+                "price": 12,
+                "unit": "12 ชิ้น / 12 Pcs",
                 "desc": {
                     "th": "คอหมูหมักสูตรพิเศษเนื้อนุ่มติดมันเล็กน้อย ย่างจนหอมกรุ่น เสิร์ฟคู่กับน้ำจิ้มแจ่วมะขามเปียกสุดแซ่บพอดีคำ",
                     "en": "Tender, marinated premium pork neck grilled to perfection, served with sweet-tangy tamarind Jaew dipping sauce."
@@ -149,8 +149,8 @@
                     "th": "ลาบไก่กระทงเกียวกรอบ",
                     "en": "Larb Chicken Kratong Crispy Wonton"
                 },
-                "price": 29.99,
-                "unit": "32 ชิ้น / 32 Pcs",
+                "price": 12,
+                "unit": "12 ชิ้น / 12 Pcs",
                 "desc": {
                     "th": "ลาบไก่สับปรุงรสจัดจ้านเปรี้ยวเค็มเผ็ดหอมข้าวคั่วและผักชีฝรั่ง บรรจุในกระทงทองแป้งบางกรอบสูตรตำรับไทย",
                     "en": "Zesty minced chicken larb infused with fresh lime, mint, and roasted rice, served inside crisp golden cups."
@@ -179,8 +179,8 @@
                     "th": "ม้าฮ่อ",
                     "en": "Ma Hor"
                 },
-                "price": 29.99,
-                "unit": "32 ชิ้น / 32 Pcs",
+                "price": 12,
+                "unit": "12 ชิ้น / 12 Pcs",
                 "desc": {
                     "th": "อาหารว่างไทยโบราณ หมูผัดกับสามเกลอ น้ำตาลมะพร้าว และถั่วลิสงจนเหนียวหนึบกลมกล่อม จัดวางบนชิ้นสับปะรดพอดีคำ",
                     "en": "A classic Thai appetizer featuring sweet savory caramelized minced pork and peanut paste, atop fresh juicy pineapple slices."
@@ -211,8 +211,8 @@
                     "th": "หมูปิ้งนมสด",
                     "en": "Pork Skewers"
                 },
-                "price": 29.99,
-                "unit": "32 ชิ้น / 32 Pcs",
+                "price": 12,
+                "unit": "12 ชิ้น / 12 Pcs",
                 "desc": {
                     "th": "หมูปิ้งเนื้อนุ่มหมักนมสดและรากผักชีกระเทียมพริกไทย ย่างด้วยไฟปานกลางจนเหลืองทองหอมกรุ่นชุ่มฉ่ำรสหวานเค็ม",
                     "en": "Sweet and savory marinated pork skewers tenderized with sweet milk and garlic-coriander base, grilled fresh."
@@ -250,8 +250,8 @@
                     "th": "หมูสะเต๊ะ",
                     "en": "Pork Satay"
                 },
-                "price": 29.99,
-                "unit": "32 ชิ้น / 32 Pcs",
+                "price": 12,
+                "unit": "12 ชิ้น / 12 Pcs",
                 "desc": {
                     "th": "เนื้อหมูสะเต๊ะหมักขมิ้นและกะทิย่างเหลืองหอมพอดีคำ เสิร์ฟพร้อมน้ำจิ้มถั่วลิสงรสเข้มข้นหวานมันและอาจาดรสเปรี้ยวอมหวาน",
                     "en": "Turmeric-infused pork satay skewers grilled tender, served with sweet aromatic peanut dip and fresh cucumber relish."
@@ -324,8 +324,8 @@
                     "th": "ขนมช่อม่วงไส้หมู",
                     "en": "Chor Muang (Royal Pork Dumplings)"
                 },
-                "price": 29.99,
-                "unit": "32 ชิ้น / 32 Pcs",
+                "price": 12,
+                "unit": "12 ชิ้น / 12 Pcs",
                 "desc": {
                     "th": "สาคูไส้หมูแป้งเหนียวนุ่มหนึบ ไส้หมูสับผัดเครื่องสามเกลอและถั่วลิสงรสกลมกล่อม โรยหน้าด้วยกระเทียมเจียวทองหอมกรุ่น",
                     "en": "Steamed tapioca balls filled with caramelized minced pork, roasted peanuts, and sweet turnip, topped with crispy golden garlic."
@@ -436,8 +436,8 @@
                     "th": "ข้าวเกรียบปากหม้อ",
                     "en": "Khao Kriap Pak Mor"
                 },
-                "price": 29.99,
-                "unit": "32 ชิ้น / 32 Pcs",
+                "price": 12,
+                "unit": "12 ชิ้น / 12 Pcs",
                 "desc": {
                     "th": "แป้งปากหม้อเหนียวนุ่มอบไอน้ำสดใหม่ ไส้ผักรวมผัดสามเกลอหอมมัน โรยหน้าด้วยกระเทียมเจียวทองหอมกรุ่น",
                     "en": "Steamed delicate rice wrappers filled with seasoned sweet turnip, mushrooms, and herbs, topped with crispy garlic."
@@ -534,8 +534,8 @@
                     "th": "ส้มตำไทยกระทงทอง",
                     "en": "Som Tum Thai Kratong Tong"
                 },
-                "price": 29.99,
-                "unit": "32 ชิ้น / 32 Pcs",
+                "price": 12,
+                "unit": "12 ชิ้น / 12 Pcs",
                 "desc": {
                     "th": "ส้มตำไทยครบรสเปรี้ยวหวานเค็มจัดจ้าน โรยถั่วลิสงและกุ้งแห้งป่น ตักเสิร์ฟในกระทงแป้งทอดสีทองกรุบกรอบน่ารับประทาน",
                     "en": "Zesty Som Tum papaya salad complete with sweet, sour, and savory notes, presented in crunchy golden pastry cups."
@@ -604,8 +604,8 @@
                     "th": "ส้มตำข้าวโพดกระทงทอง",
                     "en": "Sweet Corn Som Tum Kratong Tong"
                 },
-                "price": 29.99,
-                "unit": "32 ชิ้น / 32 Pcs",
+                "price": 12,
+                "unit": "12 ชิ้น / 12 Pcs",
                 "desc": {
                     "th": "ส้มตำข้าวโพดหวานคัดพิเศษ รสเปรี้ยวอมหวานทานง่ายกลมกล่อม เสิร์ฟในกระทงทองแป้งกรอบโบราณพอดีคำ",
                     "en": "Sweet kernel corn tossed in a sweet-tangy Thai lime-chili dressing, served in crispy golden pastry cups."
@@ -680,8 +680,8 @@
                     "th": "ขนมครองแครงอัญชันมะพร้าวอ่อน",
                     "en": "Butterfly Pea Tapioca Shells with Young Coconut"
                 },
-                "price": 29.99,
-                "unit": "32 ชิ้น / 32 Pcs",
+                "price": 12,
+                "unit": "12 ชิ้น / 12 Pcs",
                 "desc": {
                     "th": "ครองแครงอัญชันแป้งเหนียวนุ่มหนึบในน้ำกะทิอบควันเทียนหอมหวานมันเค็มกำลังดี พร้อมเนื้อมะพร้าวอ่อน โรยงาคั่วหอม",
                     "en": "Chewy butterfly pea tapioca shells in sweet, warm candle-smoked coconut milk with tender young coconut meat, garnished with toasted sesame seeds."
@@ -708,8 +708,8 @@
                     "th": "บัวลอยสาคู",
                     "en": "Sago Balls with Coconut Milk"
                 },
-                "price": 29.99,
-                "unit": "32 ชิ้น / 32 Pcs",
+                "price": 12,
+                "unit": "12 ชิ้น / 12 Pcs",
                 "desc": {
                     "th": "สาคูเม็ดจิ๋วสีสันสวยงามเหนียวนุ่มในกะทิสดหอมอบควันเทียนโบราณรสหวานมันกลมกล่อม",
                     "en": "Chewy mini sago pearls served in aromatic candle-smoked sweet coconut milk."
@@ -734,8 +734,8 @@
                     "th": "บัวลอย 5 สี",
                     "en": "Five-Color Bua Loy"
                 },
-                "price": 29.99,
-                "unit": "32 ชิ้น / 32 Pcs",
+                "price": 12,
+                "unit": "12 ชิ้น / 12 Pcs",
                 "desc": {
                     "th": "บัวลอย 5 สีจากธรรมชาติ (อัญชัน ใบเตย ฟักทอง เผือกหอม) นุ่มหนึบในน้ำกะทิสดหอมใบเตยและน้ำมะพร้าวอ่อน",
                     "en": "Hand-rolled five-color Bua Loy (colored by butterfly pea, pandan, pumpkin, and taro) in aromatic coconut milk and fresh coconut water."
@@ -841,8 +841,8 @@
                     "th": "ลอดช่องอัญชันใบเตย",
                     "en": "Butterfly Pea Lod Chong"
                 },
-                "price": 29.99,
-                "unit": "32 ชิ้น / 32 Pcs",
+                "price": 12,
+                "unit": "12 ชิ้น / 12 Pcs",
                 "desc": {
                     "th": "ลอดช่องไทยสองสีสูตรโบราณ สีฟ้าครามจากดอกอัญชันและสีเขียวหอมจากใบเตย กวนด้วยน้ำปูนใสจนเส้นเหนียวนุ่ม ทานคู่กับน้ำกะทิสดหอมหวานน้ำตาลมะพร้าว",
                     "en": "Authentic dual-color Thai Lod Chong (Butterfly Pea & Pandan) made with traditional limewater dough, served in sweet palm sugar coconut milk."
@@ -923,8 +923,8 @@
                     "th": "ทับทิมกรอบ",
                     "en": "Thapthim krop With Chestnuts milk"
                 },
-                "price": 29.99,
-                "unit": "32 ชิ้น / 32 Pcs",
+                "price": 12,
+                "unit": "12 ชิ้น / 12 Pcs",
                 "desc": {
                     "th": "แห้วหั่นเต๋าชุบสีน้ำแดงธรรมชาติ คลุกแป้งมันลวกจนเหนียวนุ่มกรุบกรอบ เสิร์ฟในน้ำกะทิอบควันเทียนหอมเย็นชื่นใจ",
                     "en": "Crispy water chestnuts coated in red syrup and tapioca flour, served in ice-cold candle-smoked sweet coconut milk."
@@ -988,8 +988,8 @@
                     "th": "ขนมต้มไทยโบราณ",
                     "en": "Thai Khanom Tom"
                 },
-                "price": 29.99,
-                "unit": "32 ชิ้น / 32 Pcs",
+                "price": 12,
+                "unit": "12 ชิ้น / 12 Pcs",
                 "desc": {
                     "th": "ขนมต้มแป้งเหนียวนุ่มสูตรโบราณ สอดไส้มะพร้าวผัดกระฉีกรสหวานมันหอมน้ำตาลมะพร้าว คลุกมะพร้าวขูดฝอยอบไอน้ำ",
                     "en": "Traditional Thai coconut balls filled with sweet caramelized grated coconut, coated in fresh shredded coconut."
@@ -1063,8 +1063,8 @@
                     "th": "ขนมชั้นอัญชัน",
                     "en": "Butterfly Pea Layer Sweet Cake"
                 },
-                "price": 29.99,
-                "unit": "32 ชิ้น / 32 Pcs",
+                "price": 12,
+                "unit": "12 ชิ้น / 12 Pcs",
                 "desc": {
                     "th": "ขนมชั้นสูตรโบราณสีฟ้าอัญชัน แป้งเหนียวนุ่มละมุน ลอกได้ทีละชั้น หอมกลิ่นมะลิอบควันเทียนหวานกำลังดี",
                     "en": "Traditional Thai layered sweet cake with blue butterfly pea infusion, soft, chewy, and aromatic."
@@ -1131,8 +1131,8 @@
                     "th": "ขนมชั้นใบเตย",
                     "en": "Pandan Layer Sweet Cake"
                 },
-                "price": 29.99,
-                "unit": "32 ชิ้น / 32 Pcs",
+                "price": 12,
+                "unit": "12 ชิ้น / 12 Pcs",
                 "desc": {
                     "th": "ขนมชั้นแป้งเหนียวนุ่มสีเขียวจากใบเตยคั้นสด กลิ่นหอมฟุ้ง รสหวานกลมกล่อม ลอกทานทีละชั้นได้ง่าย",
                     "en": "Chewy traditional layered sweet cake infused with fresh aromatic pandan juice."
@@ -1199,8 +1199,8 @@
                     "th": "วุ้นกะทิใบเตย",
                     "en": "Pandan Coconut Jelly"
                 },
-                "price": 29.99,
-                "unit": "32 ชิ้น / 32 Pcs",
+                "price": 12,
+                "unit": "12 ชิ้น / 12 Pcs",
                 "desc": {
                     "th": "วุ้นสองชั้น ชั้นล่างวุ้นใบเตยหอมใสหวานเย็น ชั้นบนกะทิสดรสหวานเค็มมันตัดกันกลมกล่อมลงตัว",
                     "en": "Double-layered agar jelly with aromatic sweet pandan at the base and rich savory coconut milk on top."
@@ -1272,8 +1272,8 @@
                     "th": "วุ้นกะทิอัญชันมะพร้าวอ่อน",
                     "en": "Butterfly Pea Coconut Jelly with Young Coconut"
                 },
-                "price": 29.99,
-                "unit": "32 ชิ้น / 32 Pcs",
+                "price": 12,
+                "unit": "12 ชิ้น / 12 Pcs",
                 "desc": {
                     "th": "วุ้นอัญชันสีฟ้าสดใสผสมเนื้อมะพร้าวอ่อนเคี้ยวเพลิน ท็อปปิ้งด้วยกะทิสดเข้มข้นรสชาติเค็มหวานมันกลมกล่อม",
                     "en": "Vibrant blue butterfly pea jelly with tender young coconut meat layers, topped with rich coconut cream."
