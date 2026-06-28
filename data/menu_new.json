@@ -627,7 +627,17 @@
                 },
                 "th": "ข้าวหอมมะลิ",
                 "en": "Jasmine Rice",
-                "img": "4b00ee9d-26c8-45f9-9f0d-e4014da7e1b2.jpg"
+                "img": "4b00ee9d-26c8-45f9-9f0d-e4014da7e1b2.jpg",
+                "ingredients": {
+                    "th": [
+                        "ข้าวหอมมะลิแท้คัดพิเศษ 100%",
+                        "ใบเตยหอมเพิ่มความหอมกรุ่น"
+                    ],
+                    "en": [
+                        "Premium 100% Jasmine Rice",
+                        "Pandan Leaves for aroma"
+                    ]
+                }
             },
             {
                 "type": {
@@ -663,7 +673,23 @@
                 },
                 "th": "ผลไม้รวม",
                 "en": "Mixed Fruits",
-                "img": "31069432-168d-44ec-b0e9-80f828aa322e.jpg"
+                "img": "31069432-168d-44ec-b0e9-80f828aa322e.jpg",
+                "ingredients": {
+                    "th": [
+                        "ผลไม้ตามฤดูกาลคัดเกรดพรีเมียม",
+                        "เมล่อน",
+                        "แก้วมังกร",
+                        "แตงโม",
+                        "สับปะรด"
+                    ],
+                    "en": [
+                        "Premium Seasonal Fruits",
+                        "Melon",
+                        "Dragon Fruit",
+                        "Watermelon",
+                        "Pineapple"
+                    ]
+                }
             }
         ],
         "options": [
@@ -868,7 +894,17 @@
                 },
                 "th": "ข้าวหอมมะลิ",
                 "en": "Jasmine Rice",
-                "img": "4b00ee9d-26c8-45f9-9f0d-e4014da7e1b2.jpg"
+                "img": "4b00ee9d-26c8-45f9-9f0d-e4014da7e1b2.jpg",
+                "ingredients": {
+                    "th": [
+                        "ข้าวหอมมะลิแท้คัดพิเศษ 100%",
+                        "ใบเตยหอมเพิ่มความหอมกรุ่น"
+                    ],
+                    "en": [
+                        "Premium 100% Jasmine Rice",
+                        "Pandan Leaves for aroma"
+                    ]
+                }
             },
             {
                 "type": {
@@ -912,7 +948,23 @@
                 },
                 "th": "ผลไม้รวม",
                 "en": "Mixed Fruits",
-                "img": "31069432-168d-44ec-b0e9-80f828aa322e.jpg"
+                "img": "31069432-168d-44ec-b0e9-80f828aa322e.jpg",
+                "ingredients": {
+                    "th": [
+                        "ผลไม้ตามฤดูกาลคัดเกรดพรีเมียม",
+                        "เมล่อน",
+                        "แก้วมังกร",
+                        "แตงโม",
+                        "สับปะรด"
+                    ],
+                    "en": [
+                        "Premium Seasonal Fruits",
+                        "Melon",
+                        "Dragon Fruit",
+                        "Watermelon",
+                        "Pineapple"
+                    ]
+                }
             }
         ],
         "options": [
@@ -1077,7 +1129,17 @@
                 },
                 "th": "ข้าวหอมมะลิ",
                 "en": "Jasmine Rice",
-                "img": "4b00ee9d-26c8-45f9-9f0d-e4014da7e1b2.jpg"
+                "img": "4b00ee9d-26c8-45f9-9f0d-e4014da7e1b2.jpg",
+                "ingredients": {
+                    "th": [
+                        "ข้าวหอมมะลิแท้คัดพิเศษ 100%",
+                        "ใบเตยหอมเพิ่มความหอมกรุ่น"
+                    ],
+                    "en": [
+                        "Premium 100% Jasmine Rice",
+                        "Pandan Leaves for aroma"
+                    ]
+                }
             },
             {
                 "type": {
@@ -1095,7 +1157,23 @@
                 },
                 "th": "ผลไม้รวม",
                 "en": "Mixed Fruits",
-                "img": "31069432-168d-44ec-b0e9-80f828aa322e.jpg"
+                "img": "31069432-168d-44ec-b0e9-80f828aa322e.jpg",
+                "ingredients": {
+                    "th": [
+                        "ผลไม้ตามฤดูกาลคัดเกรดพรีเมียม",
+                        "เมล่อน",
+                        "แก้วมังกร",
+                        "แตงโม",
+                        "สับปะรด"
+                    ],
+                    "en": [
+                        "Premium Seasonal Fruits",
+                        "Melon",
+                        "Dragon Fruit",
+                        "Watermelon",
+                        "Pineapple"
+                    ]
+                }
             }
         ],
         "options": [
@@ -1272,7 +1350,29 @@
                 },
                 "th": "แกงหมูเทโพ",
                 "en": "Tae Po Pork Curry",
-                "img": "Gaeng Moo Tae Po.jpg"
+                "img": "Gaeng Moo Tae Po.jpg",
+                "ingredients": {
+                    "th": [
+                        "เนื้อหมูสามชั้น หรือเนื้อหมูสันคอ",
+                        "ผักบุ้งไทย",
+                        "พริกแกงคั่ว",
+                        "กะทิ",
+                        "น้ำมะกรูดสด",
+                        "ใบมะกรูดและลูกมะกรูดฝาน",
+                        "น้ำตาลปี๊บ",
+                        "น้ำมะขามเปียก"
+                    ],
+                    "en": [
+                        "Pork Belly or Pork Shoulder",
+                        "Thai Morning Glory",
+                        "Red Curry Paste",
+                        "Coconut Milk",
+                        "Fresh Kaffir Lime Juice",
+                        "Kaffir Lime Leaves",
+                        "Palm Sugar",
+                        "Tamarind Paste"
+                    ]
+                }
             },
             {
                 "type": {
@@ -1281,7 +1381,23 @@
                 },
                 "th": "คอหมูย่าง",
                 "en": "Grilled Pork Neck",
-                "img": "Grilled Pork Neck.jpg"
+                "img": "Grilled Pork Neck.jpg",
+                "ingredients": {
+                    "th": [
+                        "คอหมูย่างแท้พรีเมียม (สันคอแท้แทรกมัน)",
+                        "เครื่องหมัก (รากผักชี กระเทียม พริกไทย)",
+                        "ซอสหอยนางรม",
+                        "น้ำตาลปี๊บ",
+                        "น้ำจิ้มแจ่วอีสาน (ข้าวคั่ว พริกป่น มะนาว)"
+                    ],
+                    "en": [
+                        "Premium Grilled Pork Neck (Marbled Cut)",
+                        "Thai Marinade (Coriander Root, Garlic, Pepper)",
+                        "Oyster Sauce",
+                        "Palm Sugar",
+                        "Authentic Jaew Sauce (Roasted Rice, Chili Flakes, Lime)"
+                    ]
+                }
             },
             {
                 "type": {
@@ -1331,7 +1447,17 @@
                 },
                 "th": "ข้าวหอมมะลิ",
                 "en": "Jasmine Rice",
-                "img": "4b00ee9d-26c8-45f9-9f0d-e4014da7e1b2.jpg"
+                "img": "4b00ee9d-26c8-45f9-9f0d-e4014da7e1b2.jpg",
+                "ingredients": {
+                    "th": [
+                        "ข้าวหอมมะลิแท้คัดพิเศษ 100%",
+                        "ใบเตยหอมเพิ่มความหอมกรุ่น"
+                    ],
+                    "en": [
+                        "Premium 100% Jasmine Rice",
+                        "Pandan Leaves for aroma"
+                    ]
+                }
             },
             {
                 "type": {
@@ -1340,7 +1466,25 @@
                 },
                 "th": "ข้าวเหนียวมะม่วง",
                 "en": "Mango Sticky Rice",
-                "img": "mango sticky rice.jpeg"
+                "img": "mango sticky rice.jpeg",
+                "ingredients": {
+                    "th": [
+                        "มะม่วงน้ำดอกไม้สุก",
+                        "ข้าวเหนียวเขี้ยวงู",
+                        "หัวกะทิ",
+                        "น้ำตาลทราย",
+                        "เกลือป่น",
+                        "ถั่วทองคั่ว (สำหรับโรยหน้า)"
+                    ],
+                    "en": [
+                        "Ripe Nam Dok Mai Mango",
+                        "Premium Sticky Rice",
+                        "Coconut Cream",
+                        "Sugar",
+                        "Salt",
+                        "Roasted Mung Beans (for garnish)"
+                    ]
+                }
             },
             {
                 "type": {
@@ -1349,7 +1493,23 @@
                 },
                 "th": "ผลไม้รวม",
                 "en": "Mixed Fruits",
-                "img": "31069432-168d-44ec-b0e9-80f828aa322e.jpg"
+                "img": "31069432-168d-44ec-b0e9-80f828aa322e.jpg",
+                "ingredients": {
+                    "th": [
+                        "ผลไม้ตามฤดูกาลคัดเกรดพรีเมียม",
+                        "เมล่อน",
+                        "แก้วมังกร",
+                        "แตงโม",
+                        "สับปะรด"
+                    ],
+                    "en": [
+                        "Premium Seasonal Fruits",
+                        "Melon",
+                        "Dragon Fruit",
+                        "Watermelon",
+                        "Pineapple"
+                    ]
+                }
             }
         ],
         "options": [
