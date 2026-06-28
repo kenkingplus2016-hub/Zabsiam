@@ -181,8 +181,8 @@
     {
         "id": 10,
         "name": {
-            "th": "Lunch Box (Set A) — วันพุธ",
-            "en": "Lunch Box (Set A) — Wednesday"
+            "th": "Lunch Box (Set A)",
+            "en": "Lunch Box (Set A)"
         },
         "price": "17.95",
         "unit": {
@@ -208,7 +208,7 @@
                     "ส้มตำไทย / ส้มตำปูปลาร้า"
                 ],
                 "desserts": [
-                    "📅 จัดส่งทุกวันพุธ (เวลาส่ง 12.00 - 13.00 น.) | ปิดรับออเดอร์ 15.00 น. ของวันก่อนหน้า (Pre-order) | จัดส่งเฉพาะรัศมีไม่เกิน 5 ไมล์"
+                    "📅 จัดส่งวันพุธ - ศุกร์ (เวลาส่ง 12.00 - 13.00 น. / 18.00 - 20.00 น.) | ปิดรับออเดอร์ 15.00 น. ของวันก่อนหน้า (Pre-order) | จัดส่งเฉพาะรัศมีไม่เกิน 5 ไมล์"
                 ]
             },
             "en": {
@@ -224,7 +224,7 @@
                     "Som Tum Thai / Pu Pla Ra"
                 ],
                 "desserts": [
-                    "📅 Delivered every Wednesday (Delivery: 12:00 PM - 1:00 PM) | Cut-off: 3:00 PM day before (Pre-order) | Delivery Radius: Within 5 miles"
+                    "📅 Delivered Wednesday - Friday (Delivery: 12:00 PM - 1:00 PM / 6:00 PM - 8:00 PM) | Cut-off: 3:00 PM day before (Pre-order) | Delivery Radius: Within 5 miles"
                 ]
             }
         },
@@ -379,8 +379,8 @@
     {
         "id": 11,
         "name": {
-            "th": "Lunch Box (Set B) — วันพฤหัสบดี",
-            "en": "Lunch Box (Set B) — Thursday"
+            "th": "Lunch Box (Set B)",
+            "en": "Lunch Box (Set B)"
         },
         "price": "17.95",
         "unit": {
@@ -406,7 +406,7 @@
                     "ส้มตำไทย / ส้มตำปูปลาร้า"
                 ],
                 "desserts": [
-                    "📅 จัดส่งทุกวันพฤหัสบดี (เวลาส่ง 12.00 - 13.00 น.) | ปิดรับออเดอร์ 15.00 น. ของวันก่อนหน้า (Pre-order) | จัดส่งเฉพาะรัศมีไม่เกิน 5 ไมล์"
+                    "📅 จัดส่งวันพุธ - ศุกร์ (เวลาส่ง 12.00 - 13.00 น. / 18.00 - 20.00 น.) | ปิดรับออเดอร์ 15.00 น. ของวันก่อนหน้า (Pre-order) | จัดส่งเฉพาะรัศมีไม่เกิน 5 ไมล์"
                 ]
             },
             "en": {
@@ -422,7 +422,7 @@
                     "Som Tum Thai / Pu Pla Ra"
                 ],
                 "desserts": [
-                    "📅 Delivered every Thursday (Delivery: 12:00 PM - 1:00 PM) | Cut-off: 3:00 PM day before (Pre-order) | Delivery Radius: Within 5 miles"
+                    "📅 Delivered Wednesday - Friday (Delivery: 12:00 PM - 1:00 PM / 6:00 PM - 8:00 PM) | Cut-off: 3:00 PM day before (Pre-order) | Delivery Radius: Within 5 miles"
                 ]
             }
         },
@@ -556,8 +556,8 @@
     {
         "id": 12,
         "name": {
-            "th": "Lunch Box (Set C) — วันศุกร์",
-            "en": "Lunch Box (Set C) — Friday"
+            "th": "Lunch Box (Set C)",
+            "en": "Lunch Box (Set C)"
         },
         "price": "17.95",
         "unit": {
@@ -583,7 +583,7 @@
                     "ส้มตำไทย / ส้มตำปูปลาร้า"
                 ],
                 "desserts": [
-                    "📅 จัดส่งทุกวันศุกร์ (เวลาส่ง 12.00 - 13.00 น.) | ปิดรับออเดอร์ 15.00 น. ของวันก่อนหน้า (Pre-order) | จัดส่งเฉพาะรัศมีไม่เกิน 5 ไมล์"
+                    "📅 จัดส่งวันพุธ - ศุกร์ (เวลาส่ง 12.00 - 13.00 น. / 18.00 - 20.00 น.) | ปิดรับออเดอร์ 15.00 น. ของวันก่อนหน้า (Pre-order) | จัดส่งเฉพาะรัศมีไม่เกิน 5 ไมล์"
                 ]
             },
             "en": {
@@ -599,7 +599,7 @@
                     "Som Tum Thai / Pu Pla Ra"
                 ],
                 "desserts": [
-                    "📅 Delivered Friday (Delivery: 12:00 PM - 1:00 PM) | Cut-off: 3:00 PM day before (Pre-order) | Delivery Radius: Within 5 miles"
+                    "📅 Delivered Wednesday - Friday (Delivery: 12:00 PM - 1:00 PM / 6:00 PM - 8:00 PM) | Cut-off: 3:00 PM day before (Pre-order) | Delivery Radius: Within 5 miles"
                 ]
             }
         },
@@ -754,8 +754,8 @@
     {
         "id": 13,
         "name": {
-            "th": "Lunch Box (Set D) — วันเสาร์ - อาทิตย์",
-            "en": "Lunch Box (Set D) — Saturday - Sunday"
+            "th": "Lunch Box (Set D)",
+            "en": "Lunch Box (Set D)"
         },
         "price": "17.95",
         "unit": {
@@ -781,7 +781,7 @@
                     "ส้มตำไทย / ส้มตำปูปลาร้า"
                 ],
                 "desserts": [
-                    "📅 จัดส่งทุกวันเสาร์ - อาทิตย์ (เวลาส่ง 12.00 - 13.00 น.) | ปิดรับออเดอร์ 15.00 น. ของวันก่อนหน้า (Pre-order) | จัดส่งเฉพาะรัศมีไม่เกิน 5 ไมล์"
+                    "📅 จัดส่งวันพุธ - ศุกร์ (เวลาส่ง 12.00 - 13.00 น. / 18.00 - 20.00 น.) | ปิดรับออเดอร์ 15.00 น. ของวันก่อนหน้า (Pre-order) | จัดส่งเฉพาะรัศมีไม่เกิน 5 ไมล์"
                 ]
             },
             "en": {
@@ -797,7 +797,7 @@
                     "Som Tum Thai / Pu Pla Ra"
                 ],
                 "desserts": [
-                    "📅 Delivered Saturday - Sunday (Delivery: 12:00 PM - 1:00 PM) | Cut-off: 3:00 PM day before (Pre-order) | Delivery Radius: Within 5 miles"
+                    "📅 Delivered Wednesday - Friday (Delivery: 12:00 PM - 1:00 PM / 6:00 PM - 8:00 PM) | Cut-off: 3:00 PM day before (Pre-order) | Delivery Radius: Within 5 miles"
                 ]
             }
         },
