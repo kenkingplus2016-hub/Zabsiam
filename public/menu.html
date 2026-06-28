@@ -92,7 +92,7 @@
 <section class="bg-white bg-cover bg-center py-[60px] px-5 text-center border-b-2 border-gold">
     <h1 id="hero-title" class="font-manorah text-gold text-4xl md:text-6xl mb-2.5 tracking-[2px]">Thai Set Menus</h1>
     <p id="hero-subtitle" class="text-black text-lg md:text-xl max-w-[700px] mx-auto leading-relaxed">Elevate your event with authentic, premium Thai flavors.</p>
-    <p id="hero-desc" class="mt-4 text-sm md:text-base opacity-90 text-black">Premium Standard for 10 Persons (Excluding Tax, Equipment, and Service)</p>
+    <p id="hero-desc" class="mt-4 text-sm md:text-base opacity-90 text-black">Premium Standard for 5 Persons (Excluding Tax, Equipment, and Service)</p>
 </section>
 
 <section class="bg-white py-10 px-5 text-center border-b border-gray-200">
@@ -305,17 +305,14 @@
             en: {
                 hero_title: "Thai Set Menus", 
                 hero_subtitle: "Elevate your event with authentic, premium Thai flavors.",
+                hero_desc: "Premium Standard for 5 Persons (Excluding Tax, Equipment, and Service)",
                 hero_desc: "Premium Standard for 10 Persons (Excluding Tax, Equipment, and Service)",
                 services_title: "✨ Our Services",
                 services_desc: "Whether it's a private party, corporate event, or a special celebration, Khrua Thai London is ready to create exquisite and authentic Thai sets, delivered directly to your venue in London and surrounding areas."
             }
         }[lang];
 
-        document.getElementById('nav-home').innerText = t.nav_home;
-        document.getElementById('nav-menu').innerText = t.nav_menu;
-        if (document.getElementById('nav-delivery')) document.getElementById('nav-delivery').innerText = t.nav_delivery;
-        document.getElementById('nav-booking').innerText = t.nav_booking;
-        document.getElementById('hero-title').innerText = t.hero_title;
+                document.getElementById('hero-title').innerText = t.hero_title;
         document.getElementById('hero-subtitle').innerText = t.hero_subtitle;
         document.getElementById('hero-desc').innerText = t.hero_desc;
         document.getElementById('services-title').innerText = t.services_title;
