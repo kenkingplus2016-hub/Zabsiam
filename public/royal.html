@@ -206,23 +206,19 @@
 <script>
     let currentLang = 'th';
     let royalCategories = [];
-    let curryItems = [];
-    let cart = {}; // key: itemId, value: quantity
+        let cart = {}; // key: itemId, value: quantity
     let activeTab = 'canapes';
 
     async function loadAllMenuData() {
         try {
-            const [royalRes, curryRes] = await Promise.all([
-                fetch('/api/royal-menu'),
-                fetch('/api/curry-menu')
+            const [royalRes] = await Promise.all([
+                fetch('/api/royal-menu')
             ]);
             
             if (royalRes.ok) royalCategories = await royalRes.json();
-            if (curryRes.ok) curryItems = await curryRes.json();
-
+            
             renderCanapesMenu();
-            renderCurryMenu();
-        } catch (err) {
+                    } catch (err) {
             console.error("Error loading menu datasets", err);
         }
     }
@@ -279,164 +275,6 @@
         container.innerHTML = html;
     }
 
-    function renderCurryMenu() {
-        const container = document.getElementById('curry-menu-list');
-        if (curryItems.length === 0) {
-            container.innerHTML = `<div class="text-center text-gray-500 py-10 col-span-full">No items available</div>`;
-            return;
-        }
-
-        container.innerHTML = curryItems.map(item => {
-            const qty = cart[item.id] || 0;
-            const allergenLabels = item.allergens ? item.allergens.join(', ') : 'None';
-            return `
-                <div class="bg-white rounded-[20px] p-6 border-2 border-gold/15 flex flex-col justify-between gold-border-glow">
-                    <div>
-                        <div class="flex justify-between items-start gap-2 mb-2">
-                            <h4 class="font-bold text-lg text-dark-green leading-snug">${item.name[currentLang].replace(': ', ':<br>').replace(' — ', '<br>').replace(' - ', '<br>')}</h4>
-                            <span class="bg-gold-light/50 text-dark-green text-xs font-bold px-2.5 py-1 rounded-full whitespace-nowrap">£${item.price.toFixed(0)} / ${currentLang === 'th' ? '6 ถ้วย' : '6 Meals'}</span>
-                        </div>
-                        <p class="text-gray-500 text-xs leading-relaxed mb-2">${item.desc[currentLang]}</p>
-                        ${item.main_ingredients ? `<p class="text-[11px] text-dark-green font-semibold mb-2 bg-gold-light/20 p-2 rounded"><i class="fas fa-leaf text-gold mr-1"></i> ${currentLang === 'th' ? 'วัตถุดิบหลัก:' : 'Main Ingredients:'} ${item.main_ingredients[currentLang].join(', ')}</p>` : ''}
-                        <div class="mb-4">
-                            <span class="text-[11px] font-bold text-red-700 bg-red-50 border border-red-200 px-2 py-0.5 rounded">
-                                <i class="fas fa-exclamation-triangle mr-1"></i> Allergens: ${allergenLabels}
-                            </span>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-center border-t border-gray-100 pt-4 mt-2">
-                        <span class="text-xs text-gray-400 font-medium">${currentLang === 'th' ? 'จำนวนสั่งซื้อ (ชุด 6 ถ้วย)' : 'Quantity (Set of 6)'}</span>
-                        <div class="flex items-center gap-3">
-                            <button onclick="updateCart('${item.id}', -1)" class="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full text-dark-green font-bold text-lg transition hover:bg-gold hover:text-dark-green active:scale-90">-</button>
-                            <span class="font-bold text-base w-6 text-center" id="qty-${item.id}">${qty}</span>
-                            <button onclick="updateCart('${item.id}', 1)" class="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full text-dark-green font-bold text-lg transition hover:bg-gold hover:text-dark-green active:scale-90">+</button>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }).join('');
-    }
-
-    function updateCart(itemId, change) {
-        let item = null;
-        // Search in canapes
-        for (const cat of royalCategories) {
-            const found = cat.items.find(i => i.id === itemId);
-            if (found) { item = found; break; }
-        }
-        // Search in curries
-        if (!item) {
-            item = curryItems.find(i => i.id === itemId);
-        }
-        if (!item) return;
-
-        let currentQty = cart[itemId] || 0;
-        currentQty += change;
-        if (currentQty < 0) currentQty = 0;
-        
-        if (currentQty === 0) {
-            delete cart[itemId];
-        } else {
-            cart[itemId] = currentQty;
-        }
-
-        document.getElementById(`qty-${itemId}`).innerText = currentQty;
-        updateCartBar();
-    }
-
-    function updateCartBar() {
-        const bar = document.getElementById('sticky-cart-bar');
-        let totalSets = 0;
-        let totalPrice = 0;
-
-        for (const itemId in cart) {
-            const qty = cart[itemId];
-            totalSets += qty;
-
-            // Find item price
-            let itemPrice = 0;
-            // Search in canapes
-            for (const cat of royalCategories) {
-                const found = cat.items.find(i => i.id === itemId);
-                if (found) { itemPrice = found.price; break; }
-            }
-            // Search in curries
-            if (itemPrice === 0) {
-                const found = curryItems.find(i => i.id === itemId);
-                if (found) itemPrice = found.price;
-            }
-            totalPrice += itemPrice * qty;
-        }
-
-        if (totalSets > 0 ) {
-            bar.classList.remove('translate-y-full');
-            document.getElementById('cart-item-count').innerText = totalSets;
-            document.getElementById('cart-total-price').innerText = totalPrice;
-        } else {
-            bar.classList.add('translate-y-full');
-        }
-    }
-
-    function clearCart() {
-        cart = {};
-        
-        // Reset Canapes inputs
-        for (const cat of royalCategories) {
-            cat.items.forEach(item => {
-                const el = document.getElementById(`qty-${item.id}`);
-                if (el) el.innerText = '0';
-            });
-        }
-        // Reset Curry inputs
-        curryItems.forEach(item => {
-            const el = document.getElementById(`qty-${item.id}`);
-            if (el) el.innerText = '0';
-        });
-
-        updateCartBar();
-    }
-
-    function bookCustomCanapes() {
-        const itemPairs = [];
-        for (const itemId in cart) {
-            itemPairs.push(`${itemId}:${cart[itemId]}`);
-        }
-        if (itemPairs.length === 0) return;
-        
-        const url = `booking.html?set=royal-canapes&items=${itemPairs.join(',')}`;
-        window.location.href = url;
-    }
-
-    function switchTab(tab) {
-        activeTab = tab;
-        const canapesBtn = document.getElementById('tab-canapes-btn');
-        const curryBtn = document.getElementById('tab-curry-btn');
-        
-
-        const canapesContent = document.getElementById('tab-canapes-content');
-        const curryContent = document.getElementById('tab-curry-content');
-        
-
-        // Reset classes
-        canapesBtn.classList.remove('active');
-        curryBtn.classList.remove('active');
-        
-
-        canapesContent.classList.add('hidden');
-        curryContent.classList.add('hidden');
-        
-
-        if (tab === 'canapes') {
-            canapesBtn.classList.add('active');
-            canapesContent.classList.remove('hidden');
-            updateCartBar();
-        } else if (tab === 'curry') {
-            curryBtn.classList.add('active');
-            curryContent.classList.remove('hidden');
-            updateCartBar();
-        }
-    }
-
     function changeLang(lang, btn) {
         currentLang = lang;
         document.documentElement.lang = lang;
@@ -476,12 +314,9 @@
                 hero_title: "The Royal Siam Gathering",
                 hero_subtitle: "ที่สุดของสำรับไทยระดับหรูหรา แกงไทยราชสำนัก และค็อกเทลแบบชาววัง เลือกรังสรรค์อาหารตามความชอบสำหรับโอกาสพิเศษของคุณ",
                 lbl_tab_canapes: "สยามวิจิตร / Siam Vijit",
-                lbl_tab_curry: "สยามสุนทรีย์ / Siam Suntaree",
-                canape_title: "ค็อกเทลและคานาเป้<br>(เซต 32 ชิ้น)",
+                                canape_title: "ค็อกเทลและคานาเป้<br>(เซต 32 ชิ้น)",
                 canape_desc: "เลือกสรรเมนูอาหารว่างสยามวิจิตรคำพอดีคำของคุณเองตามความเหมาะสมของงาน ทุกเมนูกลุ่มนี้จำหน่ายเป็นชุดละ 32 ชิ้น",
-                curry_title: "แกงไทยชาววังระดับพรีเมียมสำหรับงานเลี้ยง (เซตอาหาร 6 ถ้วยพร้อมข้าวหอมมะลิ)",
-                curry_desc: "เซตแกงไทยรสชาติเข้มข้นจัดส่งในรูปแบบถ้วยเดี่ยว 6 ถ้วยพร้อมข้าวหอมมะลิแยกสัดส่วนชัดเจน ถูกสุขอนามัยระดับสากล",
-                c1_tag: "คอร์สที่ 1 - ของว่างต้อนรับ",
+                                                c1_tag: "คอร์สที่ 1 - ของว่างต้อนรับ",
                 c1_title: "ของว่างต้อนรับ / Amuse Bouche",
                 c1_dish: "ช่อม่วงกุ้งเสวย (Chor Muang Goong)",
                 c1_desc: "อาหารว่างไทยโบราณที่ต้องใช้ฝีมือประณีตในการจับจีบแป้งเป็นรูปดอกไม้สีม่วง ไส้ทำจากกุ้งแม่น้ำผัดสามเกลอ ผสมผสานถั่วลิสงคั่วบด รสชาติกลมกล่อมหอมละมุนต้อนรับมื้ออาหารหลักอย่างสมเกียรติ",
@@ -519,12 +354,9 @@
                 hero_title: "The Royal Siam Gathering",
                 hero_subtitle: "The ultimate luxury Thai banquets, premium curry sets, and elegant royal canapés, meticulously crafted to elevate your prestigious celebrations.",
                 lbl_tab_canapes: "Siam Vijit / Premium Canapés",
-                lbl_tab_curry: "Siam Suntaree",
-                canape_title: "Royal Cocktails & Canapés<br>(32-Piece Sets)",
+                                canape_title: "Royal Cocktails & Canapés<br>(32-Piece Sets)",
                 canape_desc: "Curate your own bite-sized Siam Vijit appetizers tailored for your event. Each menu in this selection is sold in sets of 32 pieces.",
-                curry_title: "Premium Thai Curry Gathering Sets (Set of 6 Meals)",
-                curry_desc: "Thick, premium, and aromatic curries served in separate individual single-serving meal containers accompanied by individual Jasmine rice portions.",
-                c1_tag: "Course 1 - Welcoming Bite",
+                                                c1_tag: "Course 1 - Welcoming Bite",
                 c1_title: "Amuse Bouche",
                 c1_dish: "Chor Muang Goong",
                 c1_desc: "Traditional royal flower dumplings intricately hand-carved, filled with sweet savory minced prawns and crushed peanuts, presenting a delicious aroma to welcome the main event.",
