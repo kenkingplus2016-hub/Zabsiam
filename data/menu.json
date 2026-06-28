@@ -424,7 +424,7 @@
     {
         "id": 2,
         "name": {
-            "th": "เซท เอกลักษณ์",
+            "th": "เอกลักษณ์",
             "en": "The Signature"
         },
         "price": "99",
@@ -438,7 +438,7 @@
                     "th": "ไฮไลท์",
                     "en": "Highlight"
                 },
-                "th": "เซทเอกลักษณ์",
+                "th": "เอกลักษณ์",
                 "en": "The Signature Set",
                 "img": "the-signature.jpg",
                 "ingredients": {
