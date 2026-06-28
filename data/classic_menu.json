@@ -184,7 +184,7 @@
             "th": "Lunch Box (Set A) — วันพุธ",
             "en": "Lunch Box (Set A) — Wednesday"
         },
-        "price": 45,
+        "price": "17.95",
         "unit": {
             "th": "1 ท่าน",
             "en": "1 Person"
@@ -382,7 +382,7 @@
             "th": "Lunch Box (Set B) — วันพฤหัสบดี",
             "en": "Lunch Box (Set B) — Thursday"
         },
-        "price": 45,
+        "price": "17.95",
         "unit": {
             "th": "1 ท่าน",
             "en": "1 Person"
@@ -559,7 +559,7 @@
             "th": "Lunch Box (Set C) — วันศุกร์",
             "en": "Lunch Box (Set C) — Friday"
         },
-        "price": 45,
+        "price": "17.95",
         "unit": {
             "th": "1 ท่าน",
             "en": "1 Person"
@@ -757,7 +757,7 @@
             "th": "Lunch Box (Set D) — วันเสาร์ - อาทิตย์",
             "en": "Lunch Box (Set D) — Saturday - Sunday"
         },
-        "price": 45,
+        "price": "17.95",
         "unit": {
             "th": "1 ท่าน",
             "en": "1 Person"
@@ -939,7 +939,7 @@
             "th": "Special Box Set A — วันพุธ - ศุกร์",
             "en": "Special Box Set A — Wednesday - Friday"
         },
-        "price": 45,
+        "price": "17.95",
         "unit": {
             "th": "1 ท่าน",
             "en": "1 Person"
@@ -1052,7 +1052,7 @@
             "th": "Special Box Set B — วันพุธ - ศุกร์",
             "en": "Special Box Set B — Wednesday - Friday"
         },
-        "price": 45,
+        "price": "17.95",
         "unit": {
             "th": "1 ท่าน",
             "en": "1 Person"
