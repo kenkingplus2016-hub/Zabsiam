@@ -25,7 +25,7 @@
                         "--- เมนูไฮไลท์ ---",
                         "เมี่ยงคำปลาซีบาส",
                         "ส้มตำไทย",
-                        "แกงเขียวหวานไก่",
+                        "แกง (เลือกประเภทแกงได้ และเลือกเนื้อสัตว์: หมู/ไก่/เนื้อ/ปลา/เต้าหู้)",
                         "ลาบไก่",
                         "พล่าแซลมอน",
                         "ผัดผักรวม",
@@ -40,7 +40,7 @@
                         "--- Menu Highlights ---",
                         "Miang Kham Sea Bass",
                         "Som Tum Thai",
-                        "Green Curry Chicken",
+                        "Curry (Selectable Curry Type & Meat: Pork/Chicken/Beef/Fish/Tofu)",
                         "Larb Gai",
                         "Salmon 'Pla' Salad",
                         "Stir-fried Mixed Veg",
@@ -359,6 +359,66 @@
                     ]
                 }
             }
+        ],
+        "options": [
+            {
+                "id": "curry_type",
+                "label": {
+                    "th": "เลือกประเภทแกง",
+                    "en": "Select Curry Type"
+                },
+                "choices": [
+                    {
+                        "th": "แกงเขียวหวาน",
+                        "en": "Green Curry"
+                    },
+                    {
+                        "th": "แกงพะแนง",
+                        "en": "Panang Curry"
+                    },
+                    {
+                        "th": "แกงเผ็ด",
+                        "en": "Red Curry"
+                    },
+                    {
+                        "th": "แกงมัสมั่น",
+                        "en": "Massaman Curry"
+                    },
+                    {
+                        "th": "แกงเทโพ",
+                        "en": "Te Po Curry"
+                    }
+                ]
+            },
+            {
+                "id": "curry_meat",
+                "label": {
+                    "th": "เลือกเนื้อสัตว์ในแกง",
+                    "en": "Select Meat for Curry"
+                },
+                "choices": [
+                    {
+                        "th": "หมู",
+                        "en": "Pork"
+                    },
+                    {
+                        "th": "ไก่",
+                        "en": "Chicken"
+                    },
+                    {
+                        "th": "เนื้อ",
+                        "en": "Beef"
+                    },
+                    {
+                        "th": "ปลา",
+                        "en": "Fish"
+                    },
+                    {
+                        "th": "เต้าหู้",
+                        "en": "Tofu"
+                    }
+                ]
+            }
         ]
     },
     {
@@ -387,7 +447,7 @@
                         "--- เมนูไฮไลท์ ---",
                         "ข้าวเกรียบปากหม้อ",
                         "ยำส้มโอกุ้งสดพอดีคำ",
-                        "แกงมัสมั่นไก่",
+                        "แกง (เลือกประเภทแกงได้ และเลือกเนื้อสัตว์: หมู/ไก่/เนื้อ/ปลา/เต้าหู้)",
                         "ยำวุ้นเส้นกุ้งสด",
                         "ผัดผักรวมเนื้อสับ",
                         "ข้าวหอมมะลิ",
@@ -401,7 +461,7 @@
                         "--- Menu Highlights ---",
                         "Rice Skin Dumplings",
                         "Pomelo Salad with Shrimp",
-                        "Massaman Chicken",
+                        "Curry (Selectable Curry Type & Meat: Pork/Chicken/Beef/Fish/Tofu)",
                         "Glass Noodle Salad with Shrimp",
                         "Stir-fried Beef with Veg",
                         "Jasmine Rice",
@@ -661,6 +721,66 @@
                 "en": "Mixed Fruits",
                 "img": "31069432-168d-44ec-b0e9-80f828aa322e.jpg"
             }
+        ],
+        "options": [
+            {
+                "id": "curry_type",
+                "label": {
+                    "th": "เลือกประเภทแกง",
+                    "en": "Select Curry Type"
+                },
+                "choices": [
+                    {
+                        "th": "แกงเขียวหวาน",
+                        "en": "Green Curry"
+                    },
+                    {
+                        "th": "แกงพะแนง",
+                        "en": "Panang Curry"
+                    },
+                    {
+                        "th": "แกงเผ็ด",
+                        "en": "Red Curry"
+                    },
+                    {
+                        "th": "แกงมัสมั่น",
+                        "en": "Massaman Curry"
+                    },
+                    {
+                        "th": "แกงเทโพ",
+                        "en": "Te Po Curry"
+                    }
+                ]
+            },
+            {
+                "id": "curry_meat",
+                "label": {
+                    "th": "เลือกเนื้อสัตว์ในแกง",
+                    "en": "Select Meat for Curry"
+                },
+                "choices": [
+                    {
+                        "th": "หมู",
+                        "en": "Pork"
+                    },
+                    {
+                        "th": "ไก่",
+                        "en": "Chicken"
+                    },
+                    {
+                        "th": "เนื้อ",
+                        "en": "Beef"
+                    },
+                    {
+                        "th": "ปลา",
+                        "en": "Fish"
+                    },
+                    {
+                        "th": "เต้าหู้",
+                        "en": "Tofu"
+                    }
+                ]
+            }
         ]
     },
     {
@@ -689,7 +809,7 @@
                         "--- เมนูไฮไลท์ ---",
                         "เมี่ยงคำส้มโอกุ้ง",
                         "หมูย่างหมักนมสด",
-                        "แกงเผ็ดไก่",
+                        "แกง (เลือกประเภทแกงได้ และเลือกเนื้อสัตว์: หมู/ไก่/เนื้อ/ปลา/เต้าหู้)",
                         "ยำปลาหมึกยัดไส้",
                         "ผัดผักรวม",
                         "ข้าวหอมมะลิ",
@@ -979,6 +1099,66 @@
                 "en": "Mixed Fruits",
                 "img": "31069432-168d-44ec-b0e9-80f828aa322e.jpg"
             }
+        ],
+        "options": [
+            {
+                "id": "curry_type",
+                "label": {
+                    "th": "เลือกประเภทแกง",
+                    "en": "Select Curry Type"
+                },
+                "choices": [
+                    {
+                        "th": "แกงเขียวหวาน",
+                        "en": "Green Curry"
+                    },
+                    {
+                        "th": "แกงพะแนง",
+                        "en": "Panang Curry"
+                    },
+                    {
+                        "th": "แกงเผ็ด",
+                        "en": "Red Curry"
+                    },
+                    {
+                        "th": "แกงมัสมั่น",
+                        "en": "Massaman Curry"
+                    },
+                    {
+                        "th": "แกงเทโพ",
+                        "en": "Te Po Curry"
+                    }
+                ]
+            },
+            {
+                "id": "curry_meat",
+                "label": {
+                    "th": "เลือกเนื้อสัตว์ในแกง",
+                    "en": "Select Meat for Curry"
+                },
+                "choices": [
+                    {
+                        "th": "หมู",
+                        "en": "Pork"
+                    },
+                    {
+                        "th": "ไก่",
+                        "en": "Chicken"
+                    },
+                    {
+                        "th": "เนื้อ",
+                        "en": "Beef"
+                    },
+                    {
+                        "th": "ปลา",
+                        "en": "Fish"
+                    },
+                    {
+                        "th": "เต้าหู้",
+                        "en": "Tofu"
+                    }
+                ]
+            }
         ]
     },
     {
@@ -1007,7 +1187,7 @@
                         "--- เมนูไฮไลท์ ---",
                         "ยำส้มโอ",
                         "ม้าฮ่อ",
-                        "แกงพะแนงหมู",
+                        "แกง (เลือกประเภทแกงได้ และเลือกเนื้อสัตว์: หมู/ไก่/เนื้อ/ปลา/เต้าหู้)",
                         "ปลาซีบาสลุยสวน",
                         "ผัดผักรวมกุ้งน้ำมันหอย",
                         "บวชชีกล้วย",
@@ -1260,6 +1440,66 @@
                 "en": "Mixed Fruits",
                 "img": "31069432-168d-44ec-b0e9-80f828aa322e.jpg"
             }
+        ],
+        "options": [
+            {
+                "id": "curry_type",
+                "label": {
+                    "th": "เลือกประเภทแกง",
+                    "en": "Select Curry Type"
+                },
+                "choices": [
+                    {
+                        "th": "แกงเขียวหวาน",
+                        "en": "Green Curry"
+                    },
+                    {
+                        "th": "แกงพะแนง",
+                        "en": "Panang Curry"
+                    },
+                    {
+                        "th": "แกงเผ็ด",
+                        "en": "Red Curry"
+                    },
+                    {
+                        "th": "แกงมัสมั่น",
+                        "en": "Massaman Curry"
+                    },
+                    {
+                        "th": "แกงเทโพ",
+                        "en": "Te Po Curry"
+                    }
+                ]
+            },
+            {
+                "id": "curry_meat",
+                "label": {
+                    "th": "เลือกเนื้อสัตว์ในแกง",
+                    "en": "Select Meat for Curry"
+                },
+                "choices": [
+                    {
+                        "th": "หมู",
+                        "en": "Pork"
+                    },
+                    {
+                        "th": "ไก่",
+                        "en": "Chicken"
+                    },
+                    {
+                        "th": "เนื้อ",
+                        "en": "Beef"
+                    },
+                    {
+                        "th": "ปลา",
+                        "en": "Fish"
+                    },
+                    {
+                        "th": "เต้าหู้",
+                        "en": "Tofu"
+                    }
+                ]
+            }
         ]
     },
     {
@@ -1290,7 +1530,7 @@
                         "คอหมูย่าง",
                         "หมูสะเต๊ะ",
                         "แซลมอนลุยสวนเกี๊ยวกรอบ",
-                        "แกงหมูเทโพ",
+                        "แกง (เลือกประเภทแกงได้ และเลือกเนื้อสัตว์: หมู/ไก่/เนื้อ/ปลา/เต้าหู้)",
                         "ข้าวเหนียวมะม่วง",
                         "ผลไม้รวมตามฤดูกาล",
                         "-----------------",
@@ -1515,6 +1755,66 @@
                 "th": "ผลไม้รวม",
                 "en": "Mixed Fruits",
                 "img": "31069432-168d-44ec-b0e9-80f828aa322e.jpg"
+            }
+        ],
+        "options": [
+            {
+                "id": "curry_type",
+                "label": {
+                    "th": "เลือกประเภทแกง",
+                    "en": "Select Curry Type"
+                },
+                "choices": [
+                    {
+                        "th": "แกงเขียวหวาน",
+                        "en": "Green Curry"
+                    },
+                    {
+                        "th": "แกงพะแนง",
+                        "en": "Panang Curry"
+                    },
+                    {
+                        "th": "แกงเผ็ด",
+                        "en": "Red Curry"
+                    },
+                    {
+                        "th": "แกงมัสมั่น",
+                        "en": "Massaman Curry"
+                    },
+                    {
+                        "th": "แกงเทโพ",
+                        "en": "Te Po Curry"
+                    }
+                ]
+            },
+            {
+                "id": "curry_meat",
+                "label": {
+                    "th": "เลือกเนื้อสัตว์ในแกง",
+                    "en": "Select Meat for Curry"
+                },
+                "choices": [
+                    {
+                        "th": "หมู",
+                        "en": "Pork"
+                    },
+                    {
+                        "th": "ไก่",
+                        "en": "Chicken"
+                    },
+                    {
+                        "th": "เนื้อ",
+                        "en": "Beef"
+                    },
+                    {
+                        "th": "ปลา",
+                        "en": "Fish"
+                    },
+                    {
+                        "th": "เต้าหู้",
+                        "en": "Tofu"
+                    }
+                ]
             }
         ]
     }
