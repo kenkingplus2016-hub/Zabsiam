@@ -436,7 +436,7 @@
                     opt.value = key;
                     opt.textContent = `SET ${s.id} — ${s.name.th} (${s.name.en}) — £${s.price}`;
                     grp1.appendChild(opt);
-                    allMenuSets.push({ key, name_th: s.name.th, name_en: s.name.en, price: parseFloat(s.price), unit_th: '10 ท่าน', unit_en: '10 Persons', category: 'Authentic', options: s.options || null });
+                    allMenuSets.push({ key, name_th: s.name.th, name_en: s.name.en, price: parseFloat(s.price), unit_th: '5 ท่าน', unit_en: '5 Persons', category: 'Authentic', options: s.options || null });
                 });
                 select.appendChild(grp1);
             }

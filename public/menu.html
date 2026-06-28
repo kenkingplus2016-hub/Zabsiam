@@ -155,7 +155,7 @@
                 </div>
                 <div class="flex items-start gap-2">
                     <i class="fas fa-check-circle text-gold mt-0.5"></i>
-                    <span>มาตรฐานสำหรับ 10 ท่านขึ้นไป / Standard for 10+ persons</span>
+                    <span>เซตมาตรฐานสำหรับ 5 ท่านขึ้นไป / Standard for 5+ persons</span>
                 </div>
                 <div class="flex items-start gap-2">
                     <i class="fas fa-check-circle text-gold mt-0.5"></i>
@@ -187,7 +187,7 @@
             if (res.ok) {
                 menuSets = await res.json();
                 // Add unit to all party sets
-                menuSets.forEach(s => s.unit = { th: "10 ท่าน", en: "10 Persons" });
+                menuSets.forEach(s => s.unit = { th: "5 ท่าน", en: "5 Persons" });
                 renderMenu();
             } else {
                 console.error("Failed to load menu data");
@@ -298,7 +298,7 @@
             th: {
                 hero_title: "รายการสำรับอาหาร", 
                 hero_subtitle: "ยกระดับงานเลี้ยงของคุณด้วยรสชาติไทยแท้ระดับพรีเมียม",
-                hero_desc: "สูตรพรีเมียมมาตรฐานสำหรับ 10 ท่าน (ราคายังไม่รวมภาษี อุปกรณ์ และบริการ)",
+                hero_desc: "สูตรพรีเมียมมาตรฐานสำหรับ 5 ท่าน (ราคายังไม่รวมภาษี อุปกรณ์ และบริการ)",
                 services_title: "✨ บริการของเรา",
                 services_desc: "ไม่ว่าจะเป็นงานปาร์ตี้ส่วนตัว งานเลี้ยงบริษัท หรืองานอีเว้นท์สำคัญ ครัวไทย พร้อมเนรมิตสำรับไทยที่จัดจ้านและประณีต ส่งตรงถึงสถานที่ของคุณในลอนดอนและพื้นที่ใกล้เคียง"
             },
