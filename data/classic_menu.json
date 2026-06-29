@@ -1317,7 +1317,7 @@
             "th": "Special Box Set C — วันพุธ - ศุกร์",
             "en": "Special Box Set C — Wednesday - Friday"
         },
-        "price": 45,
+        "price": "22.95",
         "unit": {
             "th": "1 ท่าน",
             "en": "1 Person"
@@ -1430,7 +1430,7 @@
             "th": "Special Box Set D — วันพุธ - ศุกร์",
             "en": "Special Box Set D — Wednesday - Friday"
         },
-        "price": 45,
+        "price": "22.95",
         "unit": {
             "th": "1 ท่าน",
             "en": "1 Person"
@@ -1553,7 +1553,7 @@
             "th": "Special Box Set E — วันพุธ - ศุกร์",
             "en": "Special Box Set E — Wednesday - Friday"
         },
-        "price": 45,
+        "price": "22.95",
         "unit": {
             "th": "1 ท่าน",
             "en": "1 Person"
@@ -1698,7 +1698,7 @@
             "th": "Special Box Set F — วันพุธ - ศุกร์",
             "en": "Special Box Set F — Wednesday - Friday"
         },
-        "price": 45,
+        "price": "22.95",
         "unit": {
             "th": "1 ท่าน",
             "en": "1 Person"
