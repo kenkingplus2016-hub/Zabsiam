@@ -252,7 +252,7 @@
 
     async function loadClassicMenu() {
         try {
-            const res = await fetch('/api/classic-menu');
+            const res = await fetch('/api/classic-menu?v=' + new Date().getTime());
             if (res.ok) {
                 const allSets = await res.json();
                 // Only show Family Box Sets on Delivery page (exclude Thai Style Tray Sets)
