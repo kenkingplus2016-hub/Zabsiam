@@ -934,6 +934,74 @@
         }
     },
     {
+        "id": 102,
+        "name": {
+            "th": "Lunch Box (Set E)",
+            "en": "Lunch Box (Set E)"
+        },
+        "price": "22.95",
+        "unit": {
+            "th": "1 ท่าน",
+            "en": "1 Person"
+        },
+        "desc": {
+            "th": "ไก่ทอดหาดใหญ่สูตรต้นตำรับ (2 ชิ้นใหญ่) เสิร์ฟพร้อมข้าวเหนียวนึ่ง หอมเจียวกรอบๆ น้ำจิ้มไก่/แจ่ว และเลือกรับส้มตำไทยหรือส้มตำปูปลาร้า",
+            "en": "Authentic Hat Yai Fried Chicken (2 large pcs) served with Sticky Rice, Crispy Shallots, Dipping Sauces, and a choice of Som Tum Thai or Som Tum Pu Pla Ra"
+        },
+        "img": "Lunch Box (Set A) 1.jpg",
+        "items": {
+            "th": {
+                "starters": [
+                    "หอมเจียวทอดกรอบ",
+                    "น้ำจิ้มไก่ และ น้ำจิ้มแจ่ว",
+                    "ผักเคียง"
+                ],
+                "mains": [
+                    "ไก่ทอดหาดใหญ่ (2 ชิ้นใหญ่ สะโพก/น่อง)",
+                    "ข้าวเหนียวนึ่ง",
+                    "ส้มตำไทย / ส้มตำปูปลาร้า"
+                ],
+                "desserts": [
+                    "📅 จัดส่งวันพุธ - ศุกร์ (เวลาส่ง 12.00 - 13.00 น. / 18.00 - 20.00 น.) | ปิดรับออเดอร์ 15.00 น. ของวันก่อนหน้า (Pre-order) | จัดส่งเฉพาะรัศมีไม่เกิน 5 ไมล์"
+                ]
+            },
+            "en": {
+                "starters": [
+                    "Crispy Fried Shallots",
+                    "Sweet Chili Sauce & Jaew Sauce",
+                    "Side Vegetables"
+                ],
+                "mains": [
+                    "Hat Yai Fried Chicken (2 large pcs - thigh & drumstick)",
+                    "Steamed Sticky Rice",
+                    "Som Tum Thai / Pu Pla Ra"
+                ],
+                "desserts": [
+                    "📅 Delivered Wednesday - Friday (Delivery: 12:00 PM - 1:00 PM / 6:00 PM - 8:00 PM) | Cut-off: 3:00 PM day before (Pre-order) | Delivery Radius: Within 5 miles"
+                ]
+            }
+        },
+        "options": [
+            {
+                "id": "papaya_salad",
+                "label": {
+                    "th": "เลือกส้มตำ",
+                    "en": "Select Papaya Salad"
+                },
+                "choices": [
+                    {
+                        "th": "ส้มตำไทย (มะละกอดิบ ถั่วฝักยาว มะเขือเทศ พริกขี้หนู กระเทียม น้ำปลา น้ำมะนาว น้ำตาลปี๊บ กุ้งแห้ง ถั่วลิสง)",
+                        "en": "Som Tum Thai (Green Papaya, Long Beans, Tomatoes, Chili, Garlic, Fish Sauce, Lime, Palm Sugar, Dried Shrimp, Peanuts)"
+                    },
+                    {
+                        "th": "ส้มตำปูปลาร้า (มะละกอดิบ ถั่วฝักยาว มะเขือเทศ แครอท พริกขี้หนู กระเทียม น้ำปลา น้ำมะนาว น้ำตาลปี๊บ ปูนาดอง ปลาร้าต้มสุก)",
+                        "en": "Som Tum Pu Pla Ra (Green Papaya, Long Beans, Tomatoes, Carrots, Chili, Garlic, Fish Sauce, Lime, Palm Sugar, Pickled Crab, Boiled Fermented Fish)"
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "id": 14,
         "name": {
             "th": "Special Box Set A — วันพุธ - ศุกร์",
