@@ -1020,6 +1020,94 @@
         }
     },
     {
+        "id": 104,
+        "name": {
+            "th": "Lunch Box (Set F)",
+            "en": "Lunch Box (Set F)"
+        },
+        "price": "16.95",
+        "unit": {
+            "th": "1 ท่าน",
+            "en": "1 Person"
+        },
+        "desc": {
+            "th": "ข้าวผัดเผ็ด (เลือกเนื้อสัตว์ หมูสับ/ไก่สับ/เนื้อสับ/หมูกรอบ) ถึงเครื่องพริกแกงและสมุนไพร เสิร์ฟพร้อมข้าวสวยร้อนๆ ผักเคียง และพริกน้ำปลา",
+            "en": "Pad Phed (Spicy Red Curry Stir-Fry with choice of Minced Pork/Chicken/Beef or Crispy Pork) served with Steamed Rice, Side Vegetables, and Nam Pla Prik"
+        },
+        "img": "Lunch Box (Set A) 1.jpg",
+        "items": {
+            "th": {
+                "starters": [
+                    "ผักเคียง",
+                    "พริกน้ำปลา"
+                ],
+                "mains": [
+                    "ข้าวผัดเผ็ด (หมูสับ/ไก่สับ/เนื้อสับ/หมูกรอบ)",
+                    "วัตถุดิบและเครื่องปรุง: พริกแกงเผ็ด, พริก, กระเทียม, พริกไทย, กระชาย, มะเขือพวง, ใบมะกรูด, พริกชี้ฟ้า, ใบโหระพา, น้ำมันหอย, ซีอิ๊วดำ, น้ำปลา, น้ำตาล, ผงปรุงรส",
+                    "ข้าวสวย"
+                ],
+                "desserts": [
+                    "📅 จัดส่งวันพุธ - ศุกร์ (เวลาส่ง 12.00 - 13.00 น. / 18.00 - 20.00 น.) | ปิดรับออเดอร์ 15.00 น. ของวันก่อนหน้า (Pre-order) | จัดส่งเฉพาะรัศมีไม่เกิน 5 ไมล์"
+                ]
+            },
+            "en": {
+                "starters": [
+                    "Side Vegetables",
+                    "Nam Pla Prik (Chili Fish Sauce)"
+                ],
+                "mains": [
+                    "Pad Phed Stir-Fry (Minced Pork/Chicken/Beef or Crispy Pork)",
+                    "Ingredients: Red curry paste, Chili, Garlic, Pepper, Fingerroot, Pea eggplant, Kaffir lime leaves, Spur chili, Sweet basil, Oyster sauce, Dark soy sauce, Fish sauce, Sugar, Seasoning powder",
+                    "Steamed Rice"
+                ],
+                "desserts": [
+                    "📅 Delivered Wednesday - Friday (Delivery: 12:00 PM - 1:00 PM / 6:00 PM - 8:00 PM) | Cut-off: 3:00 PM day before (Pre-order) | Delivery Radius: Within 5 miles"
+                ]
+            }
+        },
+        "options": [
+            {
+                "id": "meat_type",
+                "label": {
+                    "th": "เลือกเนื้อสัตว์ (ผัดเผ็ด)",
+                    "en": "Select Meat"
+                },
+                "choices": [
+                    {
+                        "th": "หมูสับ",
+                        "en": "Minced Pork"
+                    },
+                    {
+                        "th": "ไก่สับ",
+                        "en": "Minced Chicken"
+                    },
+                    {
+                        "th": "เนื้อสับ",
+                        "en": "Minced Beef"
+                    },
+                    {
+                        "th": "หมูกรอบ",
+                        "en": "Crispy Pork Belly"
+                    }
+                ]
+            }
+        ],
+        "recipe": {
+            "th": [
+                "",
+                "--- วัตถุดิบผัดเผ็ด ---",
+                "พริกแกงเผ็ด, พริก, กระเทียม, พริกไทย, กระชาย, มะเขือพวง, ใบมะกรูด, พริกชี้ฟ้า, ใบโหระพา",
+                "น้ำปลา, ผงปรุงรส, น้ำตาล, ซอสหอยนางรม, ซีอิ๊วดำ"
+            ],
+            "en": [
+                "",
+                "--- Pad Phed Ingredients ---",
+                "Red curry paste, Chili, Garlic, Pepper, Fingerroot, Pea eggplant, Kaffir lime leaves, Spur chili, Sweet basil",
+                "Fish sauce, Seasoning powder, Sugar, Oyster sauce, Dark soy sauce"
+            ]
+        }
+    },
+    {
         "id": 102,
         "name": {
             "th": "สยามต้นตำรับ: ไก่ทอดหาดใหญ่",
