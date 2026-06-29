@@ -256,7 +256,7 @@
             if (res.ok) {
                 const allSets = await res.json();
                 // Only show Family Box Sets on Delivery page (exclude Thai Style Tray Sets)
-                classicSets = allSets.filter(s => s.name.en.includes('Family') || s.name.en.includes('Lunch Box') || s.name.en.includes('Special Box') || s.name.en.includes('Siam Pruksa') || s.name.en.includes('Delivery Box'));
+                classicSets = allSets.filter(s => s.name.en.includes('Family') || s.name.en.includes('Lunch Box') || s.name.en.includes('Special Box') || s.name.en.includes('Siam Pruksa') || s.name.en.includes('Siam Authentic'));
                 renderMenu();
             } else {
                 console.error("Failed to load classic menu");
@@ -319,7 +319,7 @@
                 </div>
             `;
             
-            if (set.name.en.includes('Siam Pruksa') || set.name.en.includes('Delivery Box')) {
+            if (set.name.en.includes('Siam Pruksa') || set.name.en.includes('Siam Authentic')) {
                 pruksaHtml += cardHtml;
             } else {
                 menuHtml += cardHtml;
