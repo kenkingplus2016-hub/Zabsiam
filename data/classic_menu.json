@@ -934,6 +934,90 @@
         }
     },
     {
+        "id": 103,
+        "name": {
+            "th": "Lunch Box (Set E)",
+            "en": "Lunch Box (Set E)"
+        },
+        "price": "16.95",
+        "unit": {
+            "th": "1 ท่าน",
+            "en": "1 Person"
+        },
+        "desc": {
+            "th": "ข้าวผัดพริกแกง (เลือกเนื้อสัตว์ หมู/ไก่/เนื้อ/ปลาหมึก) รสชาติจัดจ้านถึงเครื่องแกงแดง เสิร์ฟพร้อมข้าวสวยร้อนๆ และผักเคียง",
+            "en": "Pad Prik Gaeng (Red Curry Stir-Fry with choice of Pork/Chicken/Beef/Squid) served with Steamed Rice and Side Vegetables"
+        },
+        "img": "Lunch Box (Set A) 1.jpg",
+        "items": {
+            "th": {
+                "starters": [
+                    "ผักเคียง"
+                ],
+                "mains": [
+                    "ข้าวผัดพริกแกง (หมู/ไก่/เนื้อ/ปลาหมึก)",
+                    "ข้าวสวย"
+                ],
+                "desserts": [
+                    "📅 จัดส่งวันพุธ - ศุกร์ (เวลาส่ง 12.00 - 13.00 น. / 18.00 - 20.00 น.) | ปิดรับออเดอร์ 15.00 น. ของวันก่อนหน้า (Pre-order) | จัดส่งเฉพาะรัศมีไม่เกิน 5 ไมล์"
+                ]
+            },
+            "en": {
+                "starters": [
+                    "Side Vegetables"
+                ],
+                "mains": [
+                    "Pad Prik Gaeng Stir-Fry (Pork/Chicken/Beef/Squid)",
+                    "Steamed Rice"
+                ],
+                "desserts": [
+                    "📅 Delivered Wednesday - Friday (Delivery: 12:00 PM - 1:00 PM / 6:00 PM - 8:00 PM) | Cut-off: 3:00 PM day before (Pre-order) | Delivery Radius: Within 5 miles"
+                ]
+            }
+        },
+        "options": [
+            {
+                "id": "meat_type",
+                "label": {
+                    "th": "เลือกเนื้อสัตว์ (ผัดพริกแกง)",
+                    "en": "Select Meat"
+                },
+                "choices": [
+                    {
+                        "th": "หมู",
+                        "en": "Pork"
+                    },
+                    {
+                        "th": "ไก่",
+                        "en": "Chicken"
+                    },
+                    {
+                        "th": "เนื้อ",
+                        "en": "Beef"
+                    },
+                    {
+                        "th": "ปลาหมึก",
+                        "en": "Squid"
+                    }
+                ]
+            }
+        ],
+        "recipe": {
+            "th": [
+                "",
+                "--- วัตถุดิบผัดพริกแกง ---",
+                "พริกแกงแดง, มะเขือเปราะ, มะเขือพวง, พริกชี้ฟ้า, ใบโหระพา",
+                "น้ำมันพืช, น้ำมันหอย, ซีอิ๊วฝาเขียว, น้ำตาลทราย, น้ำปลา, ผงปรุงรส"
+            ],
+            "en": [
+                "",
+                "--- Pad Prik Gaeng Ingredients ---",
+                "Red curry paste, Thai eggplant, Pea eggplant, Spur chili, Sweet basil",
+                "Vegetable oil, Oyster sauce, Green cap soy sauce, Sugar, Fish sauce, Seasoning powder"
+            ]
+        }
+    },
+    {
         "id": 102,
         "name": {
             "th": "สยามต้นตำรับ: ไก่ทอดหาดใหญ่",
