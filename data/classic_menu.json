@@ -1089,7 +1089,10 @@
                     "ผักเคียง",
                     "น้ำจิ้มซีฟู้ด",
                     "ส้มตำไทย / ส้มตำปูปลาร้า",
-                    "น้ำพริก (หนุ่ม/อ่องหมูสับ/แจ่วบอง)"
+                    "ตัวเลือกน้ำพริก (เลือก 1 อย่าง):",
+                    "  - น้ำพริกหนุ่ม (พริกหนุ่มย่าง หอมแดงย่าง กระเทียมย่าง น้ำปลา เกลือ)",
+                    "  - น้ำพริกอ่องหมูสับ (หมูสับ มะเขือเทศ พริกแห้ง หอมแดง กระเทียม กะปิ น้ำปลา น้ำตาลทราย)",
+                    "  - น้ำพริกแจ่วบอง (ปลาร้าสับ พริกแห้ง ข่า ตะไคร้ ใบมะกรูด หอมแดง กระเทียม น้ำมะขามเปียก)"
                 ],
                 "mains": [
                     "หมูกรอบ",
@@ -1102,7 +1105,10 @@
                     "Side Vegetables",
                     "Seafood Dipping Sauce",
                     "Papaya Salad",
-                    "Nam Prik (Num / Ong / Jaew Bong)"
+                    "Chili Dip Options (Choose 1):",
+                    "  - Nam Prik Num (Grilled green chili, grilled shallots, grilled garlic, fish sauce, salt)",
+                    "  - Nam Prik Ong (Minced pork, tomatoes, dried chili, shallots, garlic, shrimp paste, fish sauce, sugar)",
+                    "  - Jaew Bong (Minced fermented fish, dried chili, galangal, lemongrass, kaffir lime leaves, shallots, garlic, tamarind juice)"
                 ],
                 "mains": [
                     "Crispy Pork Belly",
@@ -1202,7 +1208,10 @@
                     "ผักเคียง",
                     "น้ำจิ้มแจ่ว",
                     "ส้มตำไทย / ส้มตำปูปลาร้า",
-                    "น้ำพริก (หนุ่ม/อ่องหมูสับ/แจ่วบอง)"
+                    "ตัวเลือกน้ำพริก (เลือก 1 อย่าง):",
+                    "  - น้ำพริกหนุ่ม (พริกหนุ่มย่าง หอมแดงย่าง กระเทียมย่าง น้ำปลา เกลือ)",
+                    "  - น้ำพริกอ่องหมูสับ (หมูสับ มะเขือเทศ พริกแห้ง หอมแดง กระเทียม กะปิ น้ำปลา น้ำตาลทราย)",
+                    "  - น้ำพริกแจ่วบอง (ปลาร้าสับ พริกแห้ง ข่า ตะไคร้ ใบมะกรูด หอมแดง กระเทียม น้ำมะขามเปียก)"
                 ],
                 "mains": [
                     "คอหมูย่าง",
@@ -1215,7 +1224,10 @@
                     "Side Vegetables",
                     "Jaew Dipping Sauce",
                     "Papaya Salad",
-                    "Nam Prik (Num / Ong / Jaew Bong)"
+                    "Chili Dip Options (Choose 1):",
+                    "  - Nam Prik Num (Grilled green chili, grilled shallots, grilled garlic, fish sauce, salt)",
+                    "  - Nam Prik Ong (Minced pork, tomatoes, dried chili, shallots, garlic, shrimp paste, fish sauce, sugar)",
+                    "  - Jaew Bong (Minced fermented fish, dried chili, galangal, lemongrass, kaffir lime leaves, shallots, garlic, tamarind juice)"
                 ],
                 "mains": [
                     "Grilled Pork Neck",
@@ -1315,7 +1327,10 @@
                     "ผักเคียง",
                     "น้ำจิ้มแจ่ว",
                     "ส้มตำไทย / ส้มตำปูปลาร้า",
-                    "น้ำพริก (หนุ่ม/อ่องหมูสับ/แจ่วบอง)"
+                    "ตัวเลือกน้ำพริก (เลือก 1 อย่าง):",
+                    "  - น้ำพริกหนุ่ม (พริกหนุ่มย่าง หอมแดงย่าง กระเทียมย่าง น้ำปลา เกลือ)",
+                    "  - น้ำพริกอ่องหมูสับ (หมูสับ มะเขือเทศ พริกแห้ง หอมแดง กระเทียม กะปิ น้ำปลา น้ำตาลทราย)",
+                    "  - น้ำพริกแจ่วบอง (ปลาร้าสับ พริกแห้ง ข่า ตะไคร้ ใบมะกรูด หอมแดง กระเทียม น้ำมะขามเปียก)"
                 ],
                 "mains": [
                     "เสือร้องไห้",
@@ -1328,7 +1343,10 @@
                     "Side Vegetables",
                     "Jaew Dipping Sauce",
                     "Papaya Salad",
-                    "Nam Prik (Num / Ong / Jaew Bong)"
+                    "Chili Dip Options (Choose 1):",
+                    "  - Nam Prik Num (Grilled green chili, grilled shallots, grilled garlic, fish sauce, salt)",
+                    "  - Nam Prik Ong (Minced pork, tomatoes, dried chili, shallots, garlic, shrimp paste, fish sauce, sugar)",
+                    "  - Jaew Bong (Minced fermented fish, dried chili, galangal, lemongrass, kaffir lime leaves, shallots, garlic, tamarind juice)"
                 ],
                 "mains": [
                     "Weeping Tiger (Grilled Beef)",
@@ -1428,7 +1446,10 @@
                     "ผักเคียง",
                     "น้ำจิ้มมะขาม",
                     "ส้มตำไทย / ส้มตำปูปลาร้า",
-                    "น้ำพริก (หนุ่ม/อ่องหมูสับ/แจ่วบอง)"
+                    "ตัวเลือกน้ำพริก (เลือก 1 อย่าง):",
+                    "  - น้ำพริกหนุ่ม (พริกหนุ่มย่าง หอมแดงย่าง กระเทียมย่าง น้ำปลา เกลือ)",
+                    "  - น้ำพริกอ่องหมูสับ (หมูสับ มะเขือเทศ พริกแห้ง หอมแดง กระเทียม กะปิ น้ำปลา น้ำตาลทราย)",
+                    "  - น้ำพริกแจ่วบอง (ปลาร้าสับ พริกแห้ง ข่า ตะไคร้ ใบมะกรูด หอมแดง กระเทียม น้ำมะขามเปียก)"
                 ],
                 "mains": [
                     "ไก่ย่าง",
@@ -1441,7 +1462,10 @@
                     "Side Vegetables",
                     "Tamarind Dipping Sauce",
                     "Papaya Salad",
-                    "Nam Prik (Num / Ong / Jaew Bong)"
+                    "Chili Dip Options (Choose 1):",
+                    "  - Nam Prik Num (Grilled green chili, grilled shallots, grilled garlic, fish sauce, salt)",
+                    "  - Nam Prik Ong (Minced pork, tomatoes, dried chili, shallots, garlic, shrimp paste, fish sauce, sugar)",
+                    "  - Jaew Bong (Minced fermented fish, dried chili, galangal, lemongrass, kaffir lime leaves, shallots, garlic, tamarind juice)"
                 ],
                 "mains": [
                     "Grilled Chicken",
