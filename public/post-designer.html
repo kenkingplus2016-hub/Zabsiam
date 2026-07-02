@@ -235,8 +235,19 @@
 
     </div>
 
+    <!-- BG Removal Overlay -->
+    <div id="pd-bg-loading" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:9999; flex-direction:column; align-items:center; justify-content:center; color:white;">
+        <div class="pd-spinner" style="width:50px; height:50px; border-width:4px;"></div>
+        <h2 style="margin-top:20px;">กำลังใช้ AI ลบพื้นหลัง...</h2>
+        <p style="color:var(--text-secondary);">การลบครั้งแรกอาจใช้เวลา 10-30 วินาทีเพื่อโหลดโมเดล AI</p>
+    </div>
+
     <!-- ═══ SCRIPTS ═══ -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
+    <script type="module">
+        import { removeBackground } from 'https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.7.0/+esm';
+        window.imglyRemoveBackground = removeBackground;
+    </script>
     <script>
     // ====================================================
     //  POST DESIGNER — KHRUA THAI LONDON
@@ -885,6 +896,10 @@
                     <button class="pd-btn" onclick="startCropMode()" style="flex:1; padding:5px;"><i class="fas fa-crop-alt"></i> ครอปตัดภาพ</button>
                 </div>
                 <div class="pd-prop-row" style="margin-top:5px;">
+                    <span class="pd-prop-label">พื้นหลัง (BG)</span>
+                    <button class="pd-btn" onclick="removeBackground()" style="flex:1; padding:5px; background:var(--gold); color:var(--dark-green);"><i class="fas fa-magic"></i> ลบพื้นหลังอัตโนมัติ</button>
+                </div>
+                <div class="pd-prop-row" style="margin-top:5px;">
                     <span class="pd-prop-label">กรอบรูปทรง</span>
                     <div class="pd-font-styles">
                         <button class="pd-font-style-btn" onclick="applyImageMask('circle')" title="วงกลม"><i class="fas fa-circle"></i></button>
@@ -1433,6 +1448,63 @@
             
             canvas.renderAll();
             syncLayers();
+        }
+
+        // ── Remove Background Tool ──
+        async function removeBackground() {
+            const obj = canvas.getActiveObject();
+            if (!obj || obj.type !== 'image') return;
+            
+            const loading = document.getElementById('pd-bg-loading');
+            loading.style.display = 'flex';
+            
+            try {
+                // Get the original image source URL or Data URL
+                let imageSource = obj.getSrc();
+                if (imageSource.startsWith('/images/')) {
+                    // For local server relative paths, make them absolute
+                    imageSource = window.location.origin + imageSource;
+                }
+                
+                // Call imgly background removal
+                // Note: The first time it runs, it downloads ~40MB of WASM models
+                const blob = await window.imglyRemoveBackground(imageSource, {
+                    debug: true,
+                    progress: (key, current, total) => {
+                        console.log(`Downloading ${key}: ${current} of ${total}`);
+                    }
+                });
+                
+                const url = URL.createObjectURL(blob);
+                
+                // Replace image on canvas while keeping position and scale
+                fabric.Image.fromURL(url, function(newImg) {
+                    newImg.set({
+                        left: obj.left,
+                        top: obj.top,
+                        scaleX: obj.scaleX,
+                        scaleY: obj.scaleY,
+                        originX: obj.originX,
+                        originY: obj.originY,
+                        angle: obj.angle,
+                        cornerColor: '#1B3022',
+                        cornerStrokeColor: '#D4AF37',
+                        transparentCorners: false,
+                        borderColor: '#D4AF37'
+                    });
+                    
+                    canvas.remove(obj);
+                    canvas.add(newImg);
+                    canvas.setActiveObject(newImg);
+                    canvas.renderAll();
+                    syncLayers();
+                    loading.style.display = 'none';
+                });
+            } catch (error) {
+                console.error("Background Removal Error:", error);
+                alert("เกิดข้อผิดพลาดในการลบพื้นหลัง กรุณาลองใหม่อีกครั้งครับ (หรือภาพอาจซับซ้อนเกินไป)");
+                loading.style.display = 'none';
+            }
         }
     </script>
 </body>
