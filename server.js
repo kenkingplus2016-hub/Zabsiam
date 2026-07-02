@@ -37,6 +37,105 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
+const line = require('@line/bot-sdk');
+
+// LINE Messaging API Configuration
+const lineConfig = {
+    channelAccessToken: process.env.LINE_CHANNEL_ACCESS_TOKEN || '1RwOWm/xr9A2ZjB/DtyKWdDLLZR3OOazbCqFjw6YWWbaFMbeLwXo92TJeMWDhHu1B305V2LT97tNHfgBVXLNOnB/d+qgMN/xA5PMkEAZbTw71jf8HJo2ey4XoOcfXHAqv1sLOW/rk0ICnCMo7Hqi0QdB04t89/1O/w1cDnyilFU=',
+    channelSecret: process.env.LINE_CHANNEL_SECRET || '675ce1d6a258a621e5c5d2aa1223dce8'
+};
+const lineClient = new line.Client(lineConfig);
+
+// Route for LINE Webhook - MUST be before express.json()
+app.post('/api/line-webhook', line.middleware(lineConfig), (req, res) => {
+    Promise
+      .all(req.body.events.map(handleLineEvent))
+      .then((result) => res.json(result))
+      .catch((err) => {
+        console.error("LINE Webhook Error:", err);
+        res.status(500).end();
+      });
+});
+
+async function handleLineEvent(event) {
+    if (event.type !== 'message' || event.message.type !== 'text') {
+        return Promise.resolve(null);
+    }
+    
+    const text = event.message.text.trim();
+    const args = text.split(/\s+/);
+    const command = args[0];
+    
+    const invPath = path.join(__dirname, 'data', 'inventory.json');
+    let inventory = [];
+    try {
+        inventory = JSON.parse(fs.readFileSync(invPath, 'utf8'));
+    } catch(e) {
+        console.error("Cannot read inventory", e);
+    }
+
+    let replyText = '';
+
+    if (command === 'สต็อก') {
+        let lowStock = inventory.filter(item => item.quantity <= item.min_threshold);
+        if (lowStock.length > 0) {
+            replyText = '⚠️ รายการที่ใกล้หมด/หมดแล้ว:\n\n';
+            lowStock.forEach(item => {
+                replyText += `- ${item.name}: ${item.quantity} ${item.unit}\n`;
+            });
+            replyText += '\n(พิมพ์ "สต็อกทั้งหมด" เพื่อดูทุกรายการ)';
+        } else {
+            replyText = '✅ สต็อกสินค้าทุกรายการยังปกติครับ\n(พิมพ์ "สต็อกทั้งหมด" เพื่อดูทุกรายการ)';
+        }
+    } else if (command === 'สต็อกทั้งหมด') {
+        replyText = '📦 รายการสต็อกทั้งหมด:\n\n';
+        inventory.forEach(item => {
+            const warning = item.quantity <= item.min_threshold ? ' ⚠️' : '';
+            replyText += `- ${item.name}: ${item.quantity} ${item.unit}${warning}\n`;
+        });
+    } else if (command === 'เบิก' || command === 'เติม') {
+        if (args.length < 3) {
+            replyText = `❌ รูปแบบคำสั่งไม่ถูกต้อง\nตัวอย่าง: ${command} น้ำปลา 2`;
+        } else {
+            const amount = parseInt(args[args.length - 1]);
+            const itemName = args.slice(1, -1).join(' ').toLowerCase();
+            
+            if (isNaN(amount) || amount <= 0) {
+                replyText = '❌ จำนวนต้องเป็นตัวเลขที่มากกว่า 0';
+            } else {
+                // Find item (fuzzy match)
+                const itemIndex = inventory.findIndex(i => i.name.toLowerCase().includes(itemName));
+                
+                if (itemIndex === -1) {
+                    replyText = `❌ ไม่พบสินค้าที่ชื่อคล้าย "${itemName}" ในระบบ`;
+                } else {
+                    const item = inventory[itemIndex];
+                    if (command === 'เบิก') {
+                        item.quantity -= amount;
+                        replyText = `✅ เบิก ${item.name} จำนวน ${amount} ${item.unit} เรียบร้อย\n📦 คงเหลือ: ${item.quantity} ${item.unit}`;
+                    } else {
+                        item.quantity += amount;
+                        replyText = `✅ เติม ${item.name} จำนวน ${amount} ${item.unit} เรียบร้อย\n📦 คงเหลือ: ${item.quantity} ${item.unit}`;
+                    }
+                    
+                    try {
+                        fs.writeFileSync(invPath, JSON.stringify(inventory, null, 4), 'utf8');
+                    } catch(e) {
+                        replyText = '❌ เกิดข้อผิดพลาดในการบันทึกสต็อก';
+                    }
+                }
+            }
+        }
+    } else {
+        replyText = 'คำสั่งที่รองรับ:\n1. สต็อก (ดูสินค้าใกล้หมด)\n2. สต็อกทั้งหมด\n3. เบิก [ชื่อสินค้า] [จำนวน]\n4. เติม [ชื่อสินค้า] [จำนวน]';
+    }
+
+    return lineClient.replyMessage(event.replyToken, {
+        type: 'text',
+        text: replyText
+    });
+}
+
 // Middleware
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
 app.use(express.json({ limit: '50mb' }));
