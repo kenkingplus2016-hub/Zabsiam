@@ -828,3 +828,46 @@ body.post-designer-body {
     color: var(--gold);
     background: rgba(255,255,255,0.1);
 }
+
+/* Crop UI Styles */
+.pd-crop-ui {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-dark);
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    display: none;
+    gap: 10px;
+    z-index: 1000;
+}
+.pd-crop-ui.active {
+    display: flex;
+}
+.pd-crop-btn {
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: 0.2s;
+}
+.pd-crop-btn.confirm {
+    background: var(--gold);
+    color: var(--dark-green);
+}
+.pd-crop-btn.confirm:hover {
+    background: #e5c455;
+}
+.pd-crop-btn.cancel {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+}
+.pd-crop-btn.cancel:hover {
+    background: rgba(255,255,255,0.1);
+}

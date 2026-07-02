@@ -198,6 +198,12 @@
 
         <!-- ── CENTER CANVAS ── -->
         <main class="pd-canvas-area">
+            <!-- Crop UI -->
+            <div class="pd-crop-ui" id="pd-crop-ui">
+                <button class="pd-crop-btn cancel" onclick="cancelCrop()">ยกเลิก</button>
+                <button class="pd-crop-btn confirm" onclick="confirmCrop()">บันทึกภาพ</button>
+            </div>
+            
             <div class="pd-canvas-wrapper" id="pd-canvas-wrapper">
                 <canvas id="postCanvas"></canvas>
             </div>
@@ -871,6 +877,24 @@
             `;
         }
 
+        // Image-specific
+        if (obj.type === 'image') {
+            html += `
+                <div class="pd-prop-row" style="margin-top:10px;">
+                    <span class="pd-prop-label">ตัดภาพ (Crop)</span>
+                    <button class="pd-btn" onclick="startCropMode()" style="flex:1; padding:5px;"><i class="fas fa-crop-alt"></i> ครอปตัดภาพ</button>
+                </div>
+                <div class="pd-prop-row" style="margin-top:5px;">
+                    <span class="pd-prop-label">กรอบรูปทรง</span>
+                    <div class="pd-font-styles">
+                        <button class="pd-font-style-btn" onclick="applyImageMask('circle')" title="วงกลม"><i class="fas fa-circle"></i></button>
+                        <button class="pd-font-style-btn" onclick="applyImageMask('rect')" title="ขอบมน"><i class="fas fa-square"></i></button>
+                        <button class="pd-font-style-btn" onclick="applyImageMask('none')" title="ยกเลิกกรอบ"><i class="fas fa-ban"></i></button>
+                    </div>
+                </div>
+            `;
+        }
+
         content.innerHTML = html;
     }
 
@@ -1290,6 +1314,126 @@
                 }
             })
             .catch(err => console.error(err));
+        // ── Crop & Mask Tools ──
+        function applyImageMask(type) {
+            const obj = canvas.getActiveObject();
+            if (!obj || obj.type !== 'image') return;
+            
+            if (type === 'none') {
+                obj.set('clipPath', null);
+            } else if (type === 'circle') {
+                const min = Math.min(obj.width, obj.height);
+                const clipPath = new fabric.Circle({
+                    radius: min / 2,
+                    originX: 'center',
+                    originY: 'center'
+                });
+                obj.set('clipPath', clipPath);
+            } else if (type === 'rect') {
+                const clipPath = new fabric.Rect({
+                    width: obj.width,
+                    height: obj.height,
+                    rx: 50,
+                    ry: 50,
+                    originX: 'center',
+                    originY: 'center'
+                });
+                obj.set('clipPath', clipPath);
+            }
+            canvas.renderAll();
+        }
+
+        let cropRect = null;
+        let cropTarget = null;
+
+        function startCropMode() {
+            const obj = canvas.getActiveObject();
+            if (!obj || obj.type !== 'image') return;
+            
+            cropTarget = obj;
+            obj.set('hasControls', false);
+            obj.set('selectable', false);
+            
+            // Create a crop rectangle over the image
+            const rect = new fabric.Rect({
+                left: obj.left,
+                top: obj.top,
+                width: obj.getScaledWidth() * 0.8,
+                height: obj.getScaledHeight() * 0.8,
+                fill: 'rgba(255, 255, 255, 0.4)',
+                stroke: '#D4AF37',
+                strokeWidth: 2,
+                strokeDashArray: [5, 5],
+                cornerColor: '#1B3022',
+                cornerStrokeColor: '#D4AF37',
+                transparentCorners: false,
+                borderColor: '#D4AF37',
+                hasRotatingPoint: false
+            });
+            
+            // Center the crop rect on the image
+            rect.set({
+                left: obj.left + (obj.getScaledWidth() - rect.width) / 2,
+                top: obj.top + (obj.getScaledHeight() - rect.height) / 2
+            });
+
+            cropRect = rect;
+            canvas.add(cropRect);
+            canvas.setActiveObject(cropRect);
+            canvas.renderAll();
+            
+            document.getElementById('pd-crop-ui').classList.add('active');
+        }
+
+        function cancelCrop() {
+            if (cropTarget) {
+                cropTarget.set('hasControls', true);
+                cropTarget.set('selectable', true);
+            }
+            if (cropRect) {
+                canvas.remove(cropRect);
+            }
+            cropTarget = null;
+            cropRect = null;
+            document.getElementById('pd-crop-ui').classList.remove('active');
+            canvas.renderAll();
+        }
+
+        function confirmCrop() {
+            if (!cropTarget || !cropRect) return cancelCrop();
+            
+            // Calculate relative coordinates
+            const cropX = (cropRect.left - cropTarget.left) / cropTarget.scaleX;
+            const cropY = (cropRect.top - cropTarget.top) / cropTarget.scaleY;
+            const cropWidth = (cropRect.width * cropRect.scaleX) / cropTarget.scaleX;
+            const cropHeight = (cropRect.height * cropRect.scaleY) / cropTarget.scaleY;
+
+            // Prevent invalid crop bounds
+            const newCropX = Math.max(0, (cropTarget.cropX || 0) + cropX);
+            const newCropY = Math.max(0, (cropTarget.cropY || 0) + cropY);
+            const newWidth = Math.min(cropTarget.width - newCropX, cropWidth);
+            const newHeight = Math.min(cropTarget.height - newCropY, cropHeight);
+
+            // Update image properties
+            cropTarget.set({
+                cropX: newCropX,
+                cropY: newCropY,
+                width: newWidth,
+                height: newHeight,
+                left: cropRect.left,
+                top: cropRect.top,
+                hasControls: true,
+                selectable: true
+            });
+            
+            canvas.remove(cropRect);
+            cropTarget = null;
+            cropRect = null;
+            document.getElementById('pd-crop-ui').classList.remove('active');
+            
+            canvas.renderAll();
+            syncLayers();
+        }
     </script>
 </body>
 </html>
