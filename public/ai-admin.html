@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Khrua Thai London Admin</title>
+  <style>
+    :root {
+      --ink: #202620;
+      --muted: #667167;
+      --line: #dce1d7;
+      --paper: #fffdf7;
+      --soft: #f5f2e9;
+      --green: #2f6b4f;
+      --green-dark: #1d4734;
+      --red: #ad392f;
+      --gold: #bb8730;
+      --blue: #315f83;
+      --white: #ffffff;
+      --shadow: 0 14px 36px rgba(29, 44, 32, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: linear-gradient(135deg, #fffdf7 0%, #f4f0e6 48%, #edf4f7 100%);
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      line-height: 1.5;
+    }
+    button, input, textarea, select { font: inherit; }
+    header {
+      background: #17251d;
+      color: var(--white);
+      padding: 22px clamp(16px, 4vw, 42px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    h1 { margin: 0; font-size: clamp(24px, 3vw, 34px); letter-spacing: 0; }
+    header p { margin: 4px 0 0; color: rgba(255,255,255,.74); }
+    main { padding: 22px clamp(16px, 4vw, 42px) 40px; }
+    .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .button {
+      border: 0;
+      border-radius: 8px;
+      min-height: 42px;
+      padding: 10px 14px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      background: var(--green);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .button.secondary { color: var(--green-dark); background: var(--white); border: 1px solid var(--line); }
+    .button.gold { background: var(--gold); }
+    .button.red { background: var(--red); }
+    .button.blue { background: var(--blue); }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .card, .panel {
+      background: rgba(255,255,255,.86);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+    .card { padding: 16px; }
+    .card strong { display: block; color: var(--green-dark); font-size: 14px; }
+    .card span { display: block; font-size: 30px; font-weight: 750; margin-top: 3px; }
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(320px, .8fr) minmax(420px, 1.2fr);
+      gap: 18px;
+      align-items: start;
+    }
+    .panel { overflow: hidden; }
+    .panel-head {
+      padding: 14px 16px;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+    }
+    .panel-head h2, .panel-head h3 { margin: 0; font-size: 18px; }
+    .panel-body { padding: 16px; }
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .field { display: grid; gap: 6px; }
+    .field.full { grid-column: 1 / -1; }
+    label { color: var(--green-dark); font-size: 13px; font-weight: 700; }
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      min-height: 42px;
+      padding: 10px 11px;
+      background: var(--white);
+      color: var(--ink);
+      outline: 0;
+    }
+    textarea { min-height: 86px; resize: vertical; }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(47,107,79,.12);
+    }
+    .tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .tab {
+      border: 1px solid var(--line);
+      background: var(--white);
+      color: var(--green-dark);
+      border-radius: 8px;
+      padding: 9px 12px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    .tab.active { background: var(--green); color: var(--white); border-color: var(--green); }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { padding: 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { color: var(--green-dark); background: #faf8ef; }
+    .table-wrap { overflow-x: auto; }
+    .pill {
+      display: inline-flex;
+      border-radius: 999px;
+      padding: 4px 9px;
+      background: var(--soft);
+      color: var(--green-dark);
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .empty { color: var(--muted); padding: 24px; text-align: center; }
+    .status { color: var(--green-dark); min-height: 20px; font-size: 14px; font-weight: 700; }
+    @media (max-width: 980px) {
+      .cards, .layout { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .form-grid { grid-template-columns: 1fr; }
+      .button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Khrua Thai London Admin</h1>
+      <p>หลังร้านสำหรับออเดอร์ สต็อก รายรับรายจ่าย และทีม AI</p>
+    </div>
+    <div class="actions">
+      <a class="button secondary" href="./khrua-thai-order-hub.html">Order Hub</a>
+      <a class="button secondary" href="./khrua-thai-ai-control-room.html">AI Team</a>
+      <a class="button secondary" href="http://localhost:8080/" target="_blank" rel="noopener">เว็บไซต์หน้าร้าน</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="cards">
+      <div class="card"><strong>ออเดอร์ทั้งหมด</strong><span id="statOrders">0</span></div>
+      <div class="card"><strong>งานที่ยังไม่เสร็จ</strong><span id="statOpen">0</span></div>
+      <div class="card"><strong>รายรับรวม</strong><span id="statRevenue">£0</span></div>
+      <div class="card"><strong>กำไรขั้นต้น</strong><span id="statProfit">£0</span></div>
+    </section>
+
+    <section class="layout">
+      <div class="panel">
+        <div class="panel-head">
+          <h2>เพิ่มออเดอร์ / งานใหม่</h2>
+          <div class="status" id="status"></div>
+        </div>
+        <div class="panel-body">
+          <div class="form-grid">
+            <div class="field">
+              <label for="customer">ลูกค้า</label>
+              <input id="customer" placeholder="ชื่อลูกค้า">
+            </div>
+            <div class="field">
+              <label for="contact">ติดต่อ</label>
+              <input id="contact" placeholder="เบอร์ / อีเมล">
+            </div>
+            <div class="field">
+              <label for="type">ประเภท</label>
+              <select id="type">
+                <option>Food boxes</option>
+                <option>Pre-order</option>
+                <option>Catering</option>
+                <option>Event buffet</option>
+                <option>Corporate lunch</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="statusInput">สถานะ</label>
+              <select id="statusInput">
+                <option>New</option>
+                <option>Quoted</option>
+                <option>Confirmed</option>
+                <option>Preparing</option>
+                <option>Delivered</option>
+                <option>Cancelled</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="count">จำนวนคน/กล่อง</label>
+              <input id="count" type="number" min="1" placeholder="เช่น 30">
+            </div>
+            <div class="field">
+              <label for="date">วันที่</label>
+              <input id="date" type="date">
+            </div>
+            <div class="field">
+              <label for="time">เวลา</label>
+              <input id="time" type="time">
+            </div>
+            <div class="field">
+              <label for="revenue">รายรับ £</label>
+              <input id="revenue" type="number" min="0" step="0.01" placeholder="0">
+            </div>
+            <div class="field">
+              <label for="cost">ต้นทุน £</label>
+              <input id="cost" type="number" min="0" step="0.01" placeholder="0">
+            </div>
+            <div class="field full">
+              <label for="address">ที่อยู่ / สถานที่</label>
+              <input id="address" placeholder="สถานที่จัดส่งหรือจัดงาน">
+            </div>
+            <div class="field full">
+              <label for="menu">เมนู / หมายเหตุ</label>
+              <textarea id="menu" placeholder="เมนูที่สั่ง แพ้อาหาร งานที่ต้องเตรียม"></textarea>
+            </div>
+          </div>
+          <div class="actions" style="margin-top:14px">
+            <button class="button" type="button" id="saveOrder">บันทึกออเดอร์</button>
+            <button class="button gold" type="button" id="sendToSales">คัดลอกส่ง Sales AI</button>
+            <button class="button secondary" type="button" id="clearForm">ล้างฟอร์ม</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h2>ข้อมูลหลังร้าน</h2>
+          <div class="actions">
+            <button class="button secondary" type="button" id="exportCsv">Export CSV</button>
+            <button class="button red" type="button" id="clearData">ล้างข้อมูล</button>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="tabs">
+            <button class="tab active" type="button" data-tab="orders">ออเดอร์</button>
+            <button class="tab" type="button" data-tab="stock">สต็อก</button>
+            <button class="tab" type="button" data-tab="finance">การเงิน</button>
+          </div>
+          <div class="table-wrap" id="tableWrap"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const storeKey = "khruaThaiAdminOrders";
+    let activeTab = "orders";
+    const fields = ["customer","contact","type","statusInput","count","date","time","revenue","cost","address","menu"];
+    const sampleStock = [
+      ["Rice", "เช็กทุกวัน", "Stock AI"],
+      ["Chicken / Beef / Prawns", "เช็กก่อนรับงานใหญ่", "Stock AI"],
+      ["Vegetables / Herbs", "ซื้อใกล้วันผลิต", "Operations AI"],
+      ["Food boxes / Sauce cups", "ห้ามต่ำกว่าออเดอร์ +10%", "Stock AI"]
+    ];
+
+    function el(id) { return document.getElementById(id); }
+    function money(n) { return `£${Number(n || 0).toFixed(0)}`; }
+    function orders() { return JSON.parse(localStorage.getItem(storeKey) || "[]"); }
+    function saveOrders(items) { localStorage.setItem(storeKey, JSON.stringify(items)); }
+    function status(text) {
+      el("status").textContent = text;
+      setTimeout(() => el("status").textContent = "", 1800);
+    }
+    function formData() {
+      return {
+        id: Date.now(),
+        created: new Date().toLocaleString("en-GB"),
+        customer: el("customer").value.trim() || "ยังไม่ระบุ",
+        contact: el("contact").value.trim(),
+        type: el("type").value,
+        status: el("statusInput").value,
+        count: el("count").value.trim(),
+        date: el("date").value,
+        time: el("time").value,
+        revenue: Number(el("revenue").value || 0),
+        cost: Number(el("cost").value || 0),
+        address: el("address").value.trim(),
+        menu: el("menu").value.trim()
+      };
+    }
+    function clearForm() {
+      fields.forEach(id => {
+        const item = el(id);
+        if (item.tagName === "SELECT") item.selectedIndex = 0;
+        else item.value = "";
+      });
+    }
+    function renderStats() {
+      const data = orders();
+      const open = data.filter(o => !["Delivered","Cancelled"].includes(o.status)).length;
+      const revenue = data.reduce((sum, o) => sum + Number(o.revenue || 0), 0);
+      const cost = data.reduce((sum, o) => sum + Number(o.cost || 0), 0);
+      el("statOrders").textContent = data.length;
+      el("statOpen").textContent = open;
+      el("statRevenue").textContent = money(revenue);
+      el("statProfit").textContent = money(revenue - cost);
+    }
+    function renderTable() {
+      const wrap = el("tableWrap");
+      const data = orders();
+      if (activeTab === "orders") {
+        if (!data.length) {
+          wrap.innerHTML = `<div class="empty">ยังไม่มีออเดอร์ กรอกฟอร์มด้านซ้ายแล้วกดบันทึกได้เลย</div>`;
+          return;
+        }
+        wrap.innerHTML = `<table><thead><tr><th>ลูกค้า</th><th>งาน</th><th>วันเวลา</th><th>สถานะ</th><th>ยอด</th><th>หมายเหตุ</th></tr></thead><tbody>${data.map(o => `
+          <tr>
+            <td><strong>${o.customer}</strong><br>${o.contact || ""}</td>
+            <td>${o.type}<br>${o.count || ""}</td>
+            <td>${o.date || ""}<br>${o.time || ""}</td>
+            <td><span class="pill">${o.status}</span></td>
+            <td>${money(o.revenue)}<br>Cost ${money(o.cost)}</td>
+            <td>${o.menu || ""}<br>${o.address || ""}</td>
+          </tr>`).join("")}</tbody></table>`;
+      }
+      if (activeTab === "stock") {
+        wrap.innerHTML = `<table><thead><tr><th>รายการ</th><th>กติกา</th><th>ส่งต่อให้</th></tr></thead><tbody>${sampleStock.map(r => `<tr><td>${r[0]}</td><td>${r[1]}</td><td><span class="pill">${r[2]}</span></td></tr>`).join("")}</tbody></table>`;
+      }
+      if (activeTab === "finance") {
+        const revenue = data.reduce((sum, o) => sum + Number(o.revenue || 0), 0);
+        const cost = data.reduce((sum, o) => sum + Number(o.cost || 0), 0);
+        wrap.innerHTML = `<table><thead><tr><th>หัวข้อ</th><th>จำนวน</th></tr></thead><tbody>
+          <tr><td>รายรับรวม</td><td>${money(revenue)}</td></tr>
+          <tr><td>ต้นทุนรวม</td><td>${money(cost)}</td></tr>
+          <tr><td>กำไรขั้นต้น</td><td>${money(revenue - cost)}</td></tr>
+          <tr><td>จำนวนออเดอร์</td><td>${data.length}</td></tr>
+        </tbody></table>`;
+      }
+    }
+    function render() { renderStats(); renderTable(); }
+    function csv() {
+      const headers = ["Created","Customer","Contact","Type","Status","Count","Date","Time","Revenue","Cost","Address","Menu"];
+      const rows = orders().map(o => [o.created,o.customer,o.contact,o.type,o.status,o.count,o.date,o.time,o.revenue,o.cost,o.address,o.menu]);
+      return [headers, ...rows].map(row => row.map(v => `"${String(v || "").replaceAll('"','""')}"`).join(",")).join("\n");
+    }
+    function downloadCsv() {
+      const blob = new Blob([csv()], { type: "text/csv;charset=utf-8" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "khrua-thai-orders.csv";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      status("ดาวน์โหลด CSV แล้ว");
+    }
+    function copySales() {
+      const o = formData();
+      const text = `นี่คือออเดอร์/lead ของ Khrua Thai London\n\nลูกค้า: ${o.customer}\nติดต่อ: ${o.contact}\nประเภท: ${o.type}\nจำนวน: ${o.count}\nวันเวลา: ${o.date} ${o.time}\nสถานที่: ${o.address}\nรายรับประมาณ: £${o.revenue}\nต้นทุนประมาณ: £${o.cost}\nเมนู/หมายเหตุ: ${o.menu}\n\nช่วย Sales AI สรุปข้อมูล ถามข้อมูลที่ยังขาด และร่างข้อความตอบลูกค้า`;
+      navigator.clipboard.writeText(text).then(() => status("คัดลอกส่ง Sales AI แล้ว"));
+    }
+    el("saveOrder").addEventListener("click", () => {
+      const item = formData();
+      const data = orders();
+      data.unshift(item);
+      saveOrders(data);
+      clearForm();
+      status("บันทึกออเดอร์แล้ว");
+      render();
+    });
+    el("clearForm").addEventListener("click", () => { clearForm(); status("ล้างฟอร์มแล้ว"); });
+    el("sendToSales").addEventListener("click", copySales);
+    el("exportCsv").addEventListener("click", downloadCsv);
+    el("clearData").addEventListener("click", () => {
+      if (confirm("ต้องการล้างข้อมูลหลังร้านในเครื่องนี้ทั้งหมดใช่ไหม?")) {
+        saveOrders([]);
+        render();
+        status("ล้างข้อมูลแล้ว");
+      }
+    });
+    document.querySelectorAll(".tab").forEach(btn => btn.addEventListener("click", () => {
+      activeTab = btn.dataset.tab;
+      document.querySelectorAll(".tab").forEach(b => b.classList.toggle("active", b === btn));
+      render();
+    }));
+    render();
+  </script>
+</body>
+</html>

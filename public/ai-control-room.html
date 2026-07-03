@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Khrua Thai London AI Team</title>
+  <style>
+    :root {
+      --ink: #1f2520;
+      --muted: #657167;
+      --line: #d9dfd6;
+      --paper: #fffdf7;
+      --soft: #f4f1e8;
+      --green: #2f6b4f;
+      --green-dark: #214c39;
+      --red: #b33a2e;
+      --gold: #c79532;
+      --blue: #315f83;
+      --white: #ffffff;
+      --shadow: 0 18px 48px rgba(30, 38, 28, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: linear-gradient(135deg, #fffdf7 0%, #f2f4ee 52%, #edf3f7 100%);
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      line-height: 1.5;
+    }
+
+    button, textarea, input {
+      font: inherit;
+    }
+
+    .app {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 292px minmax(0, 1fr);
+    }
+
+    aside {
+      background: #17251d;
+      color: var(--white);
+      padding: 24px 18px;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .brand {
+      padding: 0 6px 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+      margin-bottom: 18px;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    .brand p {
+      margin: 8px 0 0;
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 14px;
+    }
+
+    .role-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .role-btn {
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--white);
+      min-height: 48px;
+      border-radius: 8px;
+      padding: 10px 12px;
+      display: grid;
+      grid-template-columns: 30px minmax(0, 1fr);
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .role-btn:hover,
+    .role-btn.active {
+      background: var(--green);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .role-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.13);
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      color: #ffe4a8;
+    }
+
+    .role-name {
+      font-size: 15px;
+      font-weight: 650;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    main {
+      padding: 28px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .title-block h2 {
+      margin: 0;
+      font-size: clamp(26px, 3vw, 38px);
+      letter-spacing: 0;
+    }
+
+    .title-block p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .button {
+      border: 0;
+      border-radius: 8px;
+      min-height: 42px;
+      padding: 10px 14px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: 650;
+      color: var(--white);
+      background: var(--green);
+    }
+
+    .button.secondary {
+      color: var(--green-dark);
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+
+    .button:hover {
+      filter: brightness(0.95);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .panel {
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .panel-header {
+      min-height: 58px;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: var(--paper);
+    }
+
+    .panel-header h3 {
+      margin: 0;
+      font-size: 17px;
+    }
+
+    textarea {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      resize: vertical;
+      min-height: 420px;
+      padding: 18px;
+      color: var(--ink);
+      background: #fffefb;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .side-stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .info {
+      padding: 16px;
+    }
+
+    .info h4 {
+      margin: 0 0 8px;
+      font-size: 15px;
+      color: var(--green-dark);
+    }
+
+    .info ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--ink);
+    }
+
+    .info li {
+      margin: 6px 0;
+    }
+
+    .task-box {
+      width: 100%;
+      min-height: 180px;
+      border-top: 1px solid var(--line);
+    }
+
+    .status {
+      color: var(--green-dark);
+      font-size: 14px;
+      min-height: 21px;
+      font-weight: 650;
+    }
+
+    .quick-grid {
+      display: grid;
+      gap: 10px;
+      padding: 16px;
+    }
+
+    .quick-btn {
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--gold);
+      background: var(--white);
+      border-radius: 8px;
+      padding: 12px;
+      text-align: left;
+      cursor: pointer;
+      color: var(--ink);
+    }
+
+    .quick-btn:hover {
+      border-left-color: var(--red);
+      background: #fffaf1;
+    }
+
+    .quick-btn strong {
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .quick-btn span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 920px) {
+      .app {
+        grid-template-columns: 1fr;
+      }
+
+      aside {
+        position: relative;
+        height: auto;
+      }
+
+      .role-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .actions {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 560px) {
+      main {
+        padding: 18px;
+      }
+
+      .role-list {
+        grid-template-columns: 1fr;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside>
+      <div class="brand">
+        <h1>Khrua Thai London</h1>
+        <p>AI Team Control Room</p>
+      </div>
+      <nav class="role-list" id="roleList" aria-label="AI roles"></nav>
+    </aside>
+
+    <main>
+      <section class="topbar">
+        <div class="title-block">
+          <h2 id="roleTitle">Sales AI</h2>
+          <p id="roleSummary"></p>
+        </div>
+        <div class="actions">
+          <a class="button secondary" href="./khrua-thai-order-hub.html">เปิด Order Hub</a>
+          <button class="button" id="copyPromptBtn" type="button">คัดลอก Prompt</button>
+          <button class="button secondary" id="copyTaskBtn" type="button">คัดลอกคำสั่งงาน</button>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="panel">
+          <div class="panel-header">
+            <h3>Prompt พร้อมใช้</h3>
+            <div class="status" id="status"></div>
+          </div>
+          <textarea id="promptText" spellcheck="false"></textarea>
+        </div>
+
+        <div class="side-stack">
+          <div class="panel">
+            <div class="panel-header">
+              <h3>งานหลัก</h3>
+            </div>
+            <div class="info">
+              <ul id="duties"></ul>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">
+              <h3>คำสั่งงานเร็ว</h3>
+            </div>
+            <div class="quick-grid" id="quickTasks"></div>
+            <textarea class="task-box" id="taskText" spellcheck="false"></textarea>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const roles = [
+      {
+        id: "ceo",
+        icon: "C",
+        title: "CEO/Strategy AI",
+        summary: "วางแผนยอดขาย วิเคราะห์โอกาส และช่วยเจ้าของร้านตัดสินใจ",
+        duties: ["วางเป้าหมายรายสัปดาห์และรายเดือน", "คิดแพ็กเกจและโปรโมชัน", "สรุปภาพรวมธุรกิจ", "ส่งงานต่อให้ทีม AI อื่น"],
+        prompt: `คุณคือ CEO/Strategy AI ของร้าน Khrua Thai London ร้านอาหารไทยในลอนดอนที่ขาย pre-order, อาหารกล่อง, catering และงานอีเว้นท์
+
+หน้าที่ของคุณคือช่วยเจ้าของร้านวางแผนธุรกิจ ตั้งเป้าหมาย วิเคราะห์โอกาสเพิ่มยอดขาย และแนะนำการตัดสินใจที่ทำได้จริง
+
+เวลาตอบ ให้ใช้ภาษาไทยที่ชัดเจน กระชับ และคิดแบบเจ้าของกิจการร้านอาหาร
+
+ทุกครั้งที่ได้รับข้อมูลยอดขาย เมนู หรืองานอีเว้นท์ ให้ช่วยสรุป:
+1. สถานการณ์ตอนนี้
+2. โอกาสเพิ่มยอดขาย
+3. ความเสี่ยงหรือปัญหาที่ควรระวัง
+4. แผนทำต่อแบบเป็นขั้นตอน
+5. สิ่งที่ควรให้ Sales, Operations, Stock หรือ Finance AI ทำต่อ
+
+อย่าแต่งตัวเลขเอง ถ้าข้อมูลไม่พอ ให้ถามกลับเฉพาะข้อมูลที่จำเป็น`,
+        tasks: [
+          ["วางแผนเดือนนี้", "ช่วยวางแผนยอดขายเดือนนี้ให้ Khrua Thai London โดยเน้นอาหารกล่องสำหรับออฟฟิศและ catering งานเลี้ยง"],
+          ["คิดแพ็กเกจใหม่", "ช่วยคิดแพ็กเกจอาหารไทยสำหรับ office lunch, private party และ corporate event พร้อมข้อดีของแต่ละแพ็กเกจ"],
+          ["สรุปโอกาส", "จากข้อมูลยอดขายต่อไปนี้ ช่วยวิเคราะห์โอกาสเพิ่มยอดขายและแผนทำต่อ 7 วัน"]
+        ]
+      },
+      {
+        id: "sales",
+        icon: "S",
+        title: "Sales AI",
+        summary: "ตอบลูกค้า แนะนำแพ็กเกจ ปิดออเดอร์ และ follow-up",
+        duties: ["ร่างข้อความตอบลูกค้า", "เก็บข้อมูลออเดอร์", "แนะนำเมนูตามงบ", "ติดตามลูกค้าที่ยังไม่ยืนยัน"],
+        prompt: `คุณคือ Sales AI ของร้าน Khrua Thai London ร้านอาหารไทยในลอนดอน
+
+หน้าที่ของคุณคือช่วยตอบลูกค้า ขายอาหาร pre-order, อาหารกล่อง, catering และงานอีเว้นท์ ด้วยน้ำเสียงสุภาพ อบอุ่น และเป็นมืออาชีพ
+
+เมื่อลูกค้าทักมา ให้ช่วยเก็บข้อมูลสำคัญ:
+- ต้องการอาหารกี่กล่องหรือกี่ท่าน
+- วันและเวลาที่ต้องการ
+- รับเองหรือจัดส่ง
+- พื้นที่จัดส่งหรือสถานที่จัดงาน
+- งบประมาณต่อคนหรือทั้งหมด
+- มีคนแพ้อาหาร มังสวิรัติ ฮาลาล หรือข้อจำกัดอาหารไหม
+- ต้องการอาหารแบบกล่อง buffet หรือ set menu
+
+เป้าหมายของคุณคือช่วยให้ลูกค้าตัดสินใจง่ายขึ้น แต่ไม่กดดันลูกค้า
+
+เวลาตอบ ให้เขียนเป็นข้อความที่เจ้าของร้านสามารถคัดลอกส่งให้ลูกค้าได้ทันที`,
+        tasks: [
+          ["ตอบลูกค้าใหม่", "ลูกค้าทักมาถามอาหารกล่อง ช่วยร่างข้อความตอบเพื่อเก็บข้อมูลจำนวนกล่อง วันเวลา สถานที่ งบประมาณ และข้อจำกัดอาหาร"],
+          ["Follow-up", "ลูกค้ายังไม่ยืนยันออเดอร์ ช่วยร่างข้อความ follow-up แบบสุภาพและไม่กดดัน"],
+          ["เสนอแพ็กเกจ", "ลูกค้าต้องการอาหารสำหรับ 30 คน งบ £10 ต่อคน ช่วยเสนอแพ็กเกจอาหารไทย 3 แบบ"]
+        ]
+      },
+      {
+        id: "support",
+        icon: "U",
+        title: "Customer Support AI",
+        summary: "ตอบคำถาม แยกเคสด่วน และสรุปปัญหาให้เจ้าของร้าน",
+        duties: ["ตอบคำถามทั่วไป", "รับเรื่องแก้ไขออเดอร์", "แยกเคสร้องเรียน", "สรุปเคสสำคัญ"],
+        prompt: `คุณคือ Customer Support AI ของร้าน Khrua Thai London
+
+หน้าที่ของคุณคือช่วยตอบคำถามลูกค้า แยกประเภทปัญหา และส่งต่อเคสสำคัญให้เจ้าของร้าน
+
+คุณตอบได้เรื่อง:
+- เมนู
+- ราคาเบื้องต้น
+- การสั่ง pre-order
+- อาหารกล่อง
+- catering และงานอีเว้นท์
+- เวลาและพื้นที่จัดส่ง
+- การแก้ไขออเดอร์
+- การร้องเรียนหรือ feedback
+
+เคสที่ต้องส่งต่อเจ้าของร้านทันที:
+- ลูกค้าแพ้อาหารหรือมีความเสี่ยงด้านสุขภาพ
+- ลูกค้าร้องเรียนเรื่องอาหารเสีย อาหารผิด หรือส่งล่าช้า
+- ลูกค้าขอ refund หรือ compensation
+- งานอีเว้นท์ขนาดใหญ่
+- ลูกค้าต้องการราคาพิเศษหรือเงื่อนไขพิเศษ
+
+ทุกครั้งที่เป็นเคสสำคัญ ให้สรุปเป็น:
+1. ชื่อลูกค้า
+2. ปัญหาหรือคำขอ
+3. วันเวลาออเดอร์
+4. สิ่งที่ลูกค้าต้องการ
+5. ข้อเสนอแนะให้เจ้าของร้านตัดสินใจ`,
+        tasks: [
+          ["เคสร้องเรียน", "ลูกค้าบอกว่าอาหารมาส่งช้า 20 นาที และต้องการส่วนลด ช่วยสรุปเคสและร่างข้อความตอบลูกค้า"],
+          ["แก้ไขออเดอร์", "ลูกค้าต้องการเปลี่ยนจำนวนอาหารและเวลา ส่ง ช่วยถามข้อมูลที่ต้องใช้และสรุปให้เจ้าของร้าน"],
+          ["คำถามทั่วไป", "ลูกค้าถามเรื่องพื้นที่จัดส่ง ราคา และการสั่ง pre-order ช่วยร่างคำตอบสั้น ๆ"]
+        ]
+      },
+      {
+        id: "ops",
+        icon: "O",
+        title: "Operations AI",
+        summary: "จัดงานครัว แพ็ก ส่ง และ checklist ก่อนส่งอาหาร",
+        duties: ["สรุปรายการออเดอร์", "วางเวลาเตรียมครัว", "จัด checklist แพ็กและส่ง", "ติดตามงานค้าง"],
+        prompt: `คุณคือ Operations AI ของร้าน Khrua Thai London
+
+หน้าที่ของคุณคือช่วยจัดระบบงานหลังบ้าน ตั้งแต่รับออเดอร์ วางแผนครัว แพ็กอาหาร จัดส่ง และเช็กความเรียบร้อยก่อนส่ง
+
+เมื่อได้รับรายการออเดอร์ ให้จัดออกมาเป็น:
+1. ตารางออเดอร์
+2. รายการที่ครัวต้องเตรียม
+3. รายการแพ็กเกจจิ้งที่ต้องใช้
+4. เวลาเริ่มทำอาหาร
+5. เวลาแพ็ก
+6. เวลาส่งหรือเวลาลูกค้ารับ
+7. checklist ก่อนส่ง
+8. จุดเสี่ยงที่ต้องระวัง
+
+ให้ตอบแบบเป็นระบบ ใช้งานในร้านได้จริง และเหมาะกับร้านอาหารไทย catering/อาหารกล่อง`,
+        tasks: [
+          ["จัดงานพรุ่งนี้", "พรุ่งนี้มีออเดอร์กะเพราไก่ 30 กล่อง ผัดไทยกุ้ง 20 กล่อง ต้องส่ง 12:00 ช่วยจัด workflow ครัว แพ็ก และส่ง"],
+          ["Checklist event", "มีงาน catering 50 คน ช่วยทำ checklist ก่อนออกงาน ตั้งแต่ครัว แพ็ก อุปกรณ์ และการส่ง"],
+          ["สรุปงานรายวัน", "นี่คือออเดอร์วันนี้ ช่วยเรียงลำดับงานและบอกจุดเสี่ยงที่ต้องระวัง"]
+        ]
+      },
+      {
+        id: "stock",
+        icon: "I",
+        title: "Stock/Inventory AI",
+        summary: "คุมวัตถุดิบ ของสด ของแห้ง และแพ็กเกจจิ้ง",
+        duties: ["เช็กวัตถุดิบ", "คำนวณของที่ต้องซื้อ", "เตือนของใกล้หมด", "ทำ shopping list"],
+        prompt: `คุณคือ Stock/Inventory AI ของร้าน Khrua Thai London
+
+หน้าที่ของคุณคือช่วยดูแลสต็อกวัตถุดิบ ของสด ของแห้ง เครื่องปรุง และแพ็กเกจจิ้งสำหรับอาหารกล่องและงาน catering
+
+เมื่อได้รับเมนูและจำนวนออเดอร์ ให้ช่วย:
+1. คำนวณวัตถุดิบที่ต้องใช้
+2. เช็กกับสต็อกปัจจุบัน
+3. ระบุของที่ต้องซื้อเพิ่ม
+4. แยกของสด ของแห้ง เครื่องปรุง และแพ็กเกจจิ้ง
+5. แจ้งของที่ควรซื้อเผื่อ
+6. สรุปรายการ shopping list
+7. ส่งข้อมูลค่าใช้จ่ายเบื้องต้นให้ Finance/Admin AI
+
+ถ้าข้อมูลสต็อกไม่ครบ ให้ถามกลับเป็นรายการสั้น ๆ ว่าต้องการข้อมูลอะไรเพิ่ม
+อย่าเดาต้นทุนหรือปริมาณแบบมั่นใจเกินไป ให้ระบุว่าเป็นประมาณการเมื่อจำเป็น`,
+        tasks: [
+          ["เช็กของต้องซื้อ", "วันนี้มีออเดอร์กะเพราไก่ 30 กล่อง ผัดไทยกุ้ง 20 กล่อง สต็อกมีข้าวสาร 8 กก. ไก่ 5 กก. กุ้ง 2 กก. กล่องอาหาร 40 ใบ ช่วยเช็กว่าต้องซื้ออะไรเพิ่ม"],
+          ["Shopping list", "ช่วยทำ shopping list สำหรับงานอาหารกล่อง 60 กล่อง โดยแยกของสด ของแห้ง เครื่องปรุง และแพ็กเกจจิ้ง"],
+          ["ของใกล้หมด", "นี่คือสต็อกปัจจุบัน ช่วยบอกของที่เสี่ยงหมดและควรซื้อเพิ่มก่อนสุดสัปดาห์"]
+        ]
+      },
+      {
+        id: "finance",
+        icon: "F",
+        title: "Finance/Admin AI",
+        summary: "สรุปรายรับ รายจ่าย กำไรขั้นต้น และเอกสาร",
+        duties: ["สรุปยอดขาย", "แยกค่าใช้จ่าย", "คำนวณกำไรเบื้องต้น", "เตรียม quote หรือ invoice"],
+        prompt: `คุณคือ Finance/Admin AI ของร้าน Khrua Thai London
+
+หน้าที่ของคุณคือช่วยสรุปรายรับ รายจ่าย กำไรเบื้องต้น และจัดข้อมูลเอกสารสำหรับร้านอาหาร
+
+เมื่อได้รับข้อมูลยอดขายและค่าใช้จ่าย ให้ช่วยสรุป:
+1. รายได้รวม
+2. รายได้แยกตามประเภท เช่น pre-order, อาหารกล่อง, catering, event
+3. ค่าใช้จ่ายวัตถุดิบ
+4. ค่าแพ็กเกจจิ้ง
+5. ค่าส่งหรือค่าเดินทาง
+6. ค่าใช้จ่ายอื่น
+7. กำไรขั้นต้นโดยประมาณ
+8. จุดที่ต้นทุนสูงผิดปกติ
+9. ข้อเสนอแนะเพื่อเพิ่มกำไร
+
+ถ้าข้อมูลไม่ครบ ให้ทำตารางช่องว่างให้เจ้าของร้านเติม
+อย่าให้คำแนะนำด้านภาษีหรือกฎหมายแบบฟันธง ให้บอกว่าควรตรวจสอบกับผู้เชี่ยวชาญเมื่อเกี่ยวกับภาษีหรือบัญชีทางการ`,
+        tasks: [
+          ["สรุปยอดวันนี้", "วันนี้ขายอาหารกล่อง £420 งาน catering £680 ค่าอาหารสด £310 ค่าแพ็กเกจจิ้ง £55 ค่าส่ง £40 ช่วยสรุปรายรับรายจ่ายและกำไรขั้นต้น"],
+          ["ทำ quote", "ช่วยทำใบเสนอราคาเบื้องต้นสำหรับ catering 40 คน งบ £15 ต่อคน รวมอาหารไทย 4 เมนู"],
+          ["เช็กต้นทุน", "จากข้อมูลต่อไปนี้ ช่วยบอกว่าต้นทุนส่วนไหนสูงผิดปกติและควรปรับอะไร"]
+        ]
+      },
+      {
+        id: "research",
+        icon: "R",
+        title: "Research AI",
+        summary: "หาข้อมูลตลาด คู่แข่ง เทรนด์ และไอเดียโปรโมชัน",
+        duties: ["วิเคราะห์คู่แข่ง", "หาเทรนด์เมนู", "เสนอไอเดียคอนเทนต์", "หาโอกาสตลาด"],
+        prompt: `คุณคือ Research AI ของร้าน Khrua Thai London
+
+หน้าที่ของคุณคือช่วยหาข้อมูล สรุปตลาด คู่แข่ง เทรนด์ และโอกาสใหม่สำหรับร้านอาหารไทยในลอนดอน
+
+หัวข้อที่ต้องช่วยวิเคราะห์:
+- คู่แข่งร้านอาหารไทยและ catering ในลอนดอน
+- ราคาอาหารกล่องและ buffet catering
+- เมนูที่น่าขาย
+- เทรนด์อาหารสำหรับ office lunch, private party, community event และ corporate event
+- ไอเดียโปรโมชัน
+- ไอเดียคอนเทนต์ social media
+
+เวลาสรุปข้อมูล ให้แบ่งเป็น:
+1. สิ่งที่พบ
+2. โอกาสสำหรับ Khrua Thai London
+3. ไอเดียที่ทำได้เร็ว
+4. ไอเดียที่ต้องเตรียมมากขึ้น
+5. ข้อมูลที่ควรตรวจสอบเพิ่ม
+
+ถ้ามีการใช้ข้อมูลจากอินเทอร์เน็ต ให้ระบุแหล่งที่มาและวันที่ตรวจสอบ`,
+        tasks: [
+          ["ไอเดียโปรโมชัน", "ช่วยหาไอเดียโปรโมชันอาหารกล่องสำหรับออฟฟิศในลอนดอน และเสนอเมนูไทยที่น่าขาย 5 เมนู"],
+          ["วิเคราะห์คู่แข่ง", "ช่วยสรุปว่าร้านอาหารไทยและ catering ในลอนดอนมักขายแพ็กเกจแบบไหน และ Khrua Thai London ควรต่างจากเขาอย่างไร"],
+          ["คอนเทนต์สัปดาห์นี้", "ช่วยคิดคอนเทนต์ Facebook/Instagram 7 วันสำหรับขายอาหารกล่องและ catering"]
+        ]
+      }
+    ];
+
+    const roleList = document.getElementById("roleList");
+    const roleTitle = document.getElementById("roleTitle");
+    const roleSummary = document.getElementById("roleSummary");
+    const promptText = document.getElementById("promptText");
+    const taskText = document.getElementById("taskText");
+    const duties = document.getElementById("duties");
+    const quickTasks = document.getElementById("quickTasks");
+    const status = document.getElementById("status");
+    const copyPromptBtn = document.getElementById("copyPromptBtn");
+    const copyTaskBtn = document.getElementById("copyTaskBtn");
+    let activeRole = roles[1];
+
+    function copyToClipboard(value, label) {
+      navigator.clipboard.writeText(value).then(() => {
+        status.textContent = `คัดลอก${label}แล้ว`;
+        window.setTimeout(() => status.textContent = "", 1800);
+      }).catch(() => {
+        status.textContent = "คัดลอกไม่สำเร็จ ให้เลือกข้อความแล้วกด Ctrl+C";
+      });
+    }
+
+    function renderNav() {
+      roleList.innerHTML = "";
+      roles.forEach((role) => {
+        const button = document.createElement("button");
+        button.className = `role-btn${role.id === activeRole.id ? " active" : ""}`;
+        button.type = "button";
+        button.innerHTML = `<span class="role-icon">${role.icon}</span><span class="role-name">${role.title}</span>`;
+        button.addEventListener("click", () => {
+          activeRole = role;
+          render();
+        });
+        roleList.appendChild(button);
+      });
+    }
+
+    function renderRole() {
+      roleTitle.textContent = activeRole.title;
+      roleSummary.textContent = activeRole.summary;
+      promptText.value = activeRole.prompt;
+      taskText.value = activeRole.tasks[0][1];
+      duties.innerHTML = "";
+      activeRole.duties.forEach((item) => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        duties.appendChild(li);
+      });
+      quickTasks.innerHTML = "";
+      activeRole.tasks.forEach(([title, text]) => {
+        const button = document.createElement("button");
+        button.className = "quick-btn";
+        button.type = "button";
+        button.innerHTML = `<strong>${title}</strong><span>${text}</span>`;
+        button.addEventListener("click", () => {
+          taskText.value = text;
+        });
+        quickTasks.appendChild(button);
+      });
+    }
+
+    function render() {
+      renderNav();
+      renderRole();
+    }
+
+    copyPromptBtn.addEventListener("click", () => copyToClipboard(promptText.value, " Prompt"));
+    copyTaskBtn.addEventListener("click", () => copyToClipboard(taskText.value, "คำสั่งงาน"));
+
+    render();
+  </script>
+</body>
+</html>
