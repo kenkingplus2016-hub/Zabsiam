@@ -498,6 +498,67 @@ app.post('/api/bookings/status', requireAuth, (req, res) => {
     });
 });
 
+// ManyChat Webhook Endpoint
+app.post('/api/webhook/manychat', (req, res) => {
+    // ManyChat will send a JSON payload with order details
+    const { name, phone, menuSet, address, pax } = req.body;
+    
+    console.log("Received Order from ManyChat:", req.body);
+    
+    if (!name || !menuSet) {
+        return res.status(400).json({ success: false, error: 'Missing required fields' });
+    }
+
+    const bookingsPath = path.join(__dirname, 'data', 'bookings.json');
+    let bookings = [];
+    if (fs.existsSync(bookingsPath)) {
+        try {
+            bookings = JSON.parse(fs.readFileSync(bookingsPath, 'utf8'));
+        } catch (e) {
+            bookings = [];
+        }
+    }
+
+    // Generate unique ID like BKG-1234
+    const newId = 'BKG-' + Math.floor(1000 + Math.random() * 9000);
+    const dateToday = new Date().toISOString().split('T')[0];
+
+    const newBooking = {
+        id: newId,
+        custName: name,
+        custPhone: phone || 'N/A',
+        custEmail: '',
+        menuSet: menuSet,
+        pax: pax || '1',
+        eventDate: dateToday,
+        eventPlace: address || 'N/A',
+        status: 'pending',
+        timestamp: new Date().toISOString(),
+        source: 'manychat'
+    };
+
+    bookings.push(newBooking);
+    fs.writeFileSync(bookingsPath, JSON.stringify(bookings, null, 4), 'utf8');
+
+    // Send LINE Notification to Admin about new ManyChat order
+    try {
+        const message = `🔔 New Order from Facebook (ManyChat)!
+Order ID: ${newId}
+Name: ${name}
+Order: ${menuSet}
+Phone: ${phone || '-'}
+Address: ${address || '-'}`;
+        
+        client.broadcast({ type: 'text', text: message }).catch(err => {
+            console.error("Failed to broadcast ManyChat order to LINE:", err);
+        });
+    } catch(err) {
+        console.error("LINE Notify Error:", err);
+    }
+
+    res.json({ success: true, message: 'Order received and saved' });
+});
+
 // Delete Booking (Admin Only)
 app.delete('/api/bookings/:id', requireAuth, (req, res) => {
     const { id } = req.params;
