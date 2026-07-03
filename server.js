@@ -559,6 +559,107 @@ Address: ${address || '-'}`;
     res.json({ success: true, message: 'Order received and saved' });
 });
 
+// Make.com (Facebook Messenger AI) Webhook Endpoint
+app.post('/api/webhook/make', async (req, res) => {
+    // Make.com will send JSON payload after AI extraction
+    const { name, phone, menuSet, address, price, quantity } = req.body;
+    
+    console.log("Received Order from Make.com (Messenger):", req.body);
+    
+    if (!name || !menuSet || !price) {
+        return res.status(400).json({ success: false, error: 'Missing required fields' });
+    }
+
+    try {
+        const qty = parseInt(quantity) || 1;
+        const totalAmount = parseFloat(price) * qty;
+
+        // 1. Generate Stripe Checkout Session URL
+        const session = await stripe.checkout.sessions.create({
+            payment_method_types: ['card'],
+            line_items: [
+                {
+                    price_data: {
+                        currency: 'gbp',
+                        product_data: {
+                            name: `Khrua Thai Order: ${menuSet}`,
+                            description: `Delivery to: ${address || 'N/A'}`
+                        },
+                        unit_amount: Math.round(totalAmount * 100), // convert GBP to pence
+                    },
+                    quantity: qty,
+                },
+            ],
+            mode: 'payment',
+            // Hardcode base URL or use request host in real production
+            success_url: `https://khruathailondon.co.uk/success.html`,
+            cancel_url: `https://khruathailondon.co.uk/cancel.html`,
+        });
+
+        // 2. Save Booking to Database
+        const bookingsPath = path.join(__dirname, 'data', 'bookings.json');
+        let bookings = [];
+        if (fs.existsSync(bookingsPath)) {
+            try {
+                bookings = JSON.parse(fs.readFileSync(bookingsPath, 'utf8'));
+            } catch (e) {
+                bookings = [];
+            }
+        }
+
+        const newId = 'FB-' + Math.floor(1000 + Math.random() * 9000);
+        const dateToday = new Date().toISOString().split('T')[0];
+
+        const newBooking = {
+            id: newId,
+            custName: name,
+            custPhone: phone || 'N/A',
+            custEmail: '',
+            menuSet: `${menuSet} (x${qty})`,
+            pax: qty.toString(),
+            eventDate: dateToday,
+            eventPlace: address || 'N/A',
+            status: 'pending_payment',
+            amount: totalAmount,
+            stripeSessionId: session.id,
+            timestamp: new Date().toISOString(),
+            source: 'messenger_ai'
+        };
+
+        bookings.push(newBooking);
+        fs.writeFileSync(bookingsPath, JSON.stringify(bookings, null, 4), 'utf8');
+
+        // 3. Send LINE Notification to Admin
+        try {
+            const message = `🚨 New FB Messenger Order (Pending Payment)!
+Order ID: ${newId}
+Name: ${name}
+Order: ${newBooking.menuSet}
+Total: £${totalAmount}
+Address: ${newBooking.eventPlace}`;
+            
+            client.broadcast({ type: 'text', text: message }).catch(err => {
+                console.error("Failed to broadcast Make.com order to LINE:", err);
+            });
+        } catch(err) {
+            console.error("LINE Notify Error:", err);
+        }
+
+        // 4. Return Stripe URL back to Make.com
+        // Make.com will use this URL to reply to the customer in Messenger
+        res.json({ 
+            success: true, 
+            message: 'Order received', 
+            checkoutUrl: session.url,
+            orderId: newId
+        });
+
+    } catch (error) {
+        console.error('Make.com Webhook Error:', error.message);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
 // Delete Booking (Admin Only)
 app.delete('/api/bookings/:id', requireAuth, (req, res) => {
     const { id } = req.params;
