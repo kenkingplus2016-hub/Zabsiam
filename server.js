@@ -742,7 +742,7 @@ app.delete('/api/bookings/:id', requireAuth, (req, res) => {
 // Save booking and create Stripe Checkout Session
 app.post('/api/create-checkout-session', async (req, res) => {
     try {
-        const { custName, custPhone, custEmail, eventDate, eventPlace, custAddress, menuSet, allergy, allergyDetail, customChoices, paymentMethod, totalAmount, category } = req.body;
+        const { custName, custPhone, custEmail, eventDate, eventPlace, custAddress, menuSet, allergy, allergyDetail, customChoices, paymentMethod, totalAmount, category, totalSets } = req.body;
         
         // 1. Save booking to file
         const bookingsPath = path.join(__dirname, 'data', 'bookings.json');
@@ -809,9 +809,9 @@ app.post('/api/create-checkout-session', async (req, res) => {
                                     `สถานที่: ${eventPlace || '-'} ${custAddress ? '('+custAddress+')' : ''}\n` +
                                     `ลูกค้า: ${custName}\n` +
                                     `เบอร์: ${custPhone}\n` +
-                                    `เมนู: ${menuSet}\n` +
+                                    `เมนู: ${menuSet} ${totalSets ? '(จำนวน: ' + totalSets + ' ชุด)' : ''}\n` +
                                     `แพ้/ไม่กิน: ${allergyDetail || '-'}\n` +
-                                    `เพิ่มเติม: ${customChoices || '-'}\n` +
+                                    `เพิ่มเติม: ${customChoices ? (Array.isArray(customChoices) ? customChoices.join(', ') : customChoices) : '-'}\n` +
                                     `ยอดรวม: £${totalAmount.toFixed(2)}\n` +
                                     `วิธีจ่าย: ${paymentMethod}`;
                     lineClient.pushMessage(targetId, { type: 'text', text: message })
