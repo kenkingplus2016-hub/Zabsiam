@@ -116,11 +116,11 @@
                 </div>
                 <div style="display: flex; gap: 10px; align-items: flex-end;">
                     <div style="flex: 1; display: flex; flex-direction: column; gap: 5px;">
-                        <label id="l-date" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 0.95rem;">วันที่ / Date</label>
+                        <label id="l-date" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 0.85rem;">วันที่จัดส่ง / Delivery Date</label>
                         <input type="date" id="eventDate" required style="width:100%;">
                     </div>
                     <div style="flex: 1; display: flex; flex-direction: column; gap: 5px;">
-                        <label id="l-time" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 0.95rem;">เวลา / Time</label>
+                        <label id="l-time" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 0.85rem;">เวลาจัดส่ง / Delivery Time</label>
                         <input type="time" id="eventTime" required style="width:100%;">
                     </div>
                 </div>
@@ -594,7 +594,8 @@
                                 <option value="" disabled ${!preselectedVal ? 'selected' : ''}>-- เลือก / Choose --</option>
                                 ${opt.choices.map(c => {
                                     const isSel = (preselectedVal === c.th) ? 'selected' : '';
-                                    return `<option value="${c.th}" ${isSel}>${c.th} / ${c.en}</option>`;
+                                    const text = (c.th === c.en) ? c.th : `${c.th} / ${c.en}`;
+                                    return `<option value="${c.th}" ${isSel}>${text}</option>`;
                                 }).join('')}
                             </select>
                         `;
@@ -706,7 +707,7 @@
         if (btn) { document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); }
         const t = {
             th: { 
-                connect: "ติดต่อเรา", booking: "ข้อมูลการสั่งจอง", name: "ชื่อ-นามสกุล", phone: "เบอร์ติดต่อ", date: "วันที่รับอาหาร / Date", time: "เวลา / Time",
+                connect: "ติดต่อเรา", booking: "ข้อมูลการสั่งจอง", name: "ชื่อ-นามสกุล", phone: "เบอร์ติดต่อ", date: "วันที่จัดส่ง / Delivery Date", time: "เวลาจัดส่ง / Delivery Time",
                 venue: "สถานที่จัดงาน", address: "ที่อยู่จัดส่ง", payment: "วิธีชำระเงินมัดจำ", submit: "ยืนยันการจอง",
                 allergy: "ข้อมูลการแพ้อาหาร", peanuts: "ถั่ว", milk: "นม / ผลิตภัณฑ์จากนม", seafood: "อาหารทะเล", eggs: "ไข่", msg: "ผงชูรส (MSG)", fishsauce: "น้ำปลา (Fish Sauce)", knorr: "คนอร์ (Knorr)",
                 other: "อื่นๆ ระบุ (ถ้ามี)",
@@ -715,7 +716,7 @@
                 d_desc: "ชำระมัดจำ 50% สำหรับงานจัดเลี้ยง หรือ ชำระเต็มจำนวนสำหรับเซตดิลิเวอรีบ็อกซ์ (ราคาไม่รวมภาษีและค่าจัดส่ง)"
             },
             en: { 
-                connect: "Connect With Us", booking: "Booking Details", name: "Contact Name", phone: "Phone Number", date: "Event Date", time: "Event Time", 
+                connect: "Connect With Us", booking: "Booking Details", name: "Contact Name", phone: "Phone Number", date: "Delivery Date", time: "Delivery Time", 
                 venue: "Venue Name", address: "Full Address", payment: "Payment Method", submit: "Confirm Booking",
                 allergy: "Food Allergy / Dietary Requirements", peanuts: "Peanuts", milk: "Milk / Dairy", seafood: "Seafood", eggs: "Eggs", msg: "MSG", fishsauce: "Fish Sauce", knorr: "Knorr / Bouillon",
                 other: "Others (if any)",
