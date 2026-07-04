@@ -367,6 +367,10 @@
         if (!set.options) {
             set.options = [];
         }
+
+        // เอาตัวเลือก "เลือกข้าว/เส้น" ออกตามที่คุณลูกค้าต้องการ
+        set.options = set.options.filter(o => o.id !== 'carb_type');
+
         if (set.options.some(o => o.id.includes('spicy'))) {
             return set.options;
         }
