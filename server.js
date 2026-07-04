@@ -808,18 +808,19 @@ app.post('/api/create-checkout-session', async (req, res) => {
             if (fs.existsSync(groupPath)) {
                 const { targetId } = JSON.parse(fs.readFileSync(groupPath, 'utf8'));
                 if (targetId) {
+                    const safeTotal = Number(totalAmount) || 0;
                     const message = `🛎️ [ออเดอร์ใหม่เข้าแล้ว!]\n` +
-                                    `🎫 คิวที่: ${ticketNumber}\n` +
-                                    `รหัส: ${bookingId}\n` +
+                                    `🎫 คิวที่: ${ticketNumber || '-'}\n` +
+                                    `รหัส: ${bookingId || '-'}\n` +
                                     `เวลา/วันที่: ${eventDate || '-'} ${eventTime || '-'}\n` +
                                     `สถานที่: ${eventPlace || '-'} ${custAddress ? '('+custAddress+')' : ''}\n` +
-                                    `ลูกค้า: ${custName}\n` +
-                                    `เบอร์: ${custPhone}\n` +
-                                    `เมนู: ${menuSet} ${totalSets ? '(จำนวน: ' + totalSets + ' ชุด)' : ''}\n` +
+                                    `ลูกค้า: ${custName || '-'}\n` +
+                                    `เบอร์: ${custPhone || '-'}\n` +
+                                    `เมนู: ${menuSet || '-'} ${totalSets ? '(จำนวน: ' + totalSets + ' ชุด)' : ''}\n` +
                                     `แพ้/ไม่กิน: ${allergyDetail || '-'}\n` +
                                     `เพิ่มเติม: ${customChoices ? (Array.isArray(customChoices) ? customChoices.join(', ') : customChoices) : '-'}\n` +
-                                    `ยอดรวม: £${totalAmount.toFixed(2)}\n` +
-                                    `วิธีจ่าย: ${paymentMethod}`;
+                                    `ยอดรวม: £${safeTotal.toFixed(2)}\n` +
+                                    `วิธีจ่าย: ${paymentMethod || '-'}`;
                     lineClient.pushMessage(targetId, { type: 'text', text: message })
                         .catch(e => console.error('Error sending LINE notify:', e));
                 }
