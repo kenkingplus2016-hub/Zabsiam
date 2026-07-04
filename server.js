@@ -226,6 +226,21 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+// Debug route to check LINE connection
+app.get('/api/check-line', (req, res) => {
+    const groupPath = path.join(__dirname, 'data', 'kitchen_group.json');
+    if (fs.existsSync(groupPath)) {
+        try {
+            const data = JSON.parse(fs.readFileSync(groupPath, 'utf8'));
+            res.json({ connected: !!data.targetId, targetId: data.targetId || null });
+        } catch(e) {
+            res.json({ connected: false, error: 'JSON parse error' });
+        }
+    } else {
+        res.json({ connected: false, error: 'File does not exist' });
+    }
+});
+
 // Login Route
 app.post('/api/login', (req, res) => {
     let { username, password } = req.body;
@@ -777,7 +792,7 @@ app.post('/api/create-checkout-session', async (req, res) => {
         } catch(e) { console.error('Ticket counter error:', e); }
 
         // 50% deposit for Catering, 100% for Delivery Box (Classic)
-        const depositAmount = (category === 'Classic') ? totalAmount : totalAmount / 2;
+        const depositAmount = (category === 'Classic') ? Number(totalAmount || 0) : Number(totalAmount || 0) / 2;
         
         const newBooking = {
             id: bookingId,
@@ -837,7 +852,7 @@ app.post('/api/create-checkout-session', async (req, res) => {
                        <p>We have received your booking <b>${bookingId}</b> for <b>${eventDate}</b>.</p>
                        <p><b>Venue:</b> ${eventPlace}</p>
                        <p><b>Menu:</b> ${menuSet}</p>
-                       <p><b>Total Amount:</b> £${totalAmount.toFixed(2)}</p>
+                       <p><b>Total Amount:</b> £${Number(totalAmount || 0).toFixed(2)}</p>
                        <p>Your booking is currently pending. We will contact you shortly to confirm the details.</p>
                        <p>Thank you,<br>Khrua Thai Team</p>`
             };
