@@ -854,8 +854,7 @@ app.post('/api/create-checkout-session', async (req, res) => {
             fs.writeFileSync(membersPath, JSON.stringify([]));
         }
 
-        const totalSets = req.body.totalSets || 1;
-        const pointsEarned = totalSets * 10; // 10 points per Set
+        const pointsEarned = (totalSets || 1) * 10; // 10 points per Set
         let member = members.find(m => m.phone === custPhone);
         if (member) {
             member.points += pointsEarned;
