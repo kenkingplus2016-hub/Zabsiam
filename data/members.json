@@ -16,5 +16,11 @@
         "name": "sirapat kendee",
         "points": 40,
         "totalSpent": 85.8
+    },
+    {
+        "phone": "123",
+        "name": "Test",
+        "points": 20,
+        "totalSpent": 100
     }
 ]
