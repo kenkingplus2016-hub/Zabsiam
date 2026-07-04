@@ -126,8 +126,17 @@ async function handleLineEvent(event) {
                 }
             }
         }
+    } else if (command === 'ตั้งห้องครัว') {
+        const targetId = event.source.groupId || event.source.roomId || event.source.userId;
+        const groupPath = path.join(__dirname, 'data', 'kitchen_group.json');
+        try {
+            fs.writeFileSync(groupPath, JSON.stringify({ targetId }, null, 4), 'utf8');
+            replyText = '✅ ตั้งค่าห้องครัวสำเร็จ!\nจากนี้ไประบบจะส่งออเดอร์ใหม่เข้ากลุ่มนี้ครับ 🛎️';
+        } catch(e) {
+            replyText = '❌ เกิดข้อผิดพลาดในการตั้งค่าห้องครัว';
+        }
     } else {
-        replyText = 'คำสั่งที่รองรับ:\n1. สต็อก (ดูสินค้าใกล้หมด)\n2. สต็อกทั้งหมด\n3. เบิก [ชื่อสินค้า] [จำนวน]\n4. เติม [ชื่อสินค้า] [จำนวน]';
+        replyText = 'คำสั่งที่รองรับ:\n1. สต็อก (ดูสินค้าใกล้หมด)\n2. สต็อกทั้งหมด\n3. เบิก/เติม [ชื่อสินค้า] [จำนวน]\n4. ตั้งห้องครัว';
     }
 
     return lineClient.replyMessage(event.replyToken, {
@@ -713,6 +722,38 @@ app.post('/api/create-checkout-session', async (req, res) => {
 
         bookings.push(newBooking);
         fs.writeFileSync(bookingsPath, JSON.stringify(bookings, null, 4));
+
+        // Send data to Make.com Webhook
+        try {
+            fetch('https://hook.us2.make.com/tzigcu51uj5ftfo2hmr9j6mom33wg0td', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(newBooking)
+            }).then(r => console.log('Make.com webhook fired')).catch(e => console.error('Make.com webhook error:', e));
+        } catch(e) {
+            console.error('Make.com fetch error:', e);
+        }
+
+        // Send LINE Notification to Kitchen
+        try {
+            const groupPath = path.join(__dirname, 'data', 'kitchen_group.json');
+            if (fs.existsSync(groupPath)) {
+                const { targetId } = JSON.parse(fs.readFileSync(groupPath, 'utf8'));
+                if (targetId) {
+                    const message = `🛎️ [ออเดอร์ใหม่เข้าแล้ว!]\n` +
+                                    `รหัส: ${bookingId}\n` +
+                                    `ลูกค้า: ${custName}\n` +
+                                    `เบอร์: ${custPhone}\n` +
+                                    `เมนู: ${menuSet}\n` +
+                                    `แพ้/ไม่กิน: ${allergyDetail || '-'}\n` +
+                                    `เพิ่มเติม: ${customChoices || '-'}\n` +
+                                    `ยอดรวม: £${totalAmount.toFixed(2)}\n` +
+                                    `วิธีจ่าย: ${paymentMethod}`;
+                    lineClient.pushMessage(targetId, { type: 'text', text: message })
+                        .catch(e => console.error('Error sending LINE notify:', e));
+                }
+            }
+        } catch(e) { console.error('Error in kitchen notify:', e); }
 
         // Send Email Notification to Customer
         if (custEmail) {
