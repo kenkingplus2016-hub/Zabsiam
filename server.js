@@ -135,8 +135,54 @@ async function handleLineEvent(event) {
         } catch(e) {
             replyText = '❌ เกิดข้อผิดพลาดในการตั้งค่าห้องครัว';
         }
+    } else if (command === 'สูตร') {
+        const recipesPath = path.join(__dirname, 'data', 'recipes.csv');
+        let recipesCsv = '';
+        try { recipesCsv = fs.readFileSync(recipesPath, 'utf8'); } catch(e) {}
+        
+        const requestedMenu = args.slice(1).join(' ').trim();
+        
+        function parseCSVLine(line) {
+            const result = [];
+            let current = '';
+            let inQuotes = false;
+            for (let i = 0; i < line.length; i++) {
+                const char = line[i];
+                if (char === '"') inQuotes = !inQuotes;
+                else if (char === ',' && !inQuotes) { result.push(current.trim()); current = ''; }
+                else current += char;
+            }
+            result.push(current.trim());
+            return result;
+        }
+
+        const lines = recipesCsv.split('\n').filter(l => l.trim().length > 0);
+        let menus = new Set();
+        let ingredients = [];
+        let steps = [];
+        
+        for (let i = 1; i < lines.length; i++) {
+            const parsed = parseCSVLine(lines[i]);
+            if (parsed.length >= 4) {
+                const menuName = parsed[0];
+                menus.add(menuName);
+                if (requestedMenu && menuName === requestedMenu) {
+                    if (parsed[1] === 'วิธีทำ') steps.push(parsed[2].replace(/^"|"$/g, ''));
+                    else ingredients.push(`- ${parsed[2]} ${parsed[3] !== '-' ? parsed[3] : ''}`);
+                }
+            }
+        }
+
+        if (!requestedMenu) {
+            replyText = '📋 รายชื่อสูตรอาหาร:\n' + Array.from(menus).map(m => `- ${m}`).join('\n') + 
+                       '\n\n(พิมพ์ "สูตร [ชื่ออาหาร]" เพื่อดูวิธีทำ)';
+        } else if (ingredients.length === 0 && steps.length === 0) {
+            replyText = `❌ ไม่พบสูตรของ "${requestedMenu}" ครับ\n(พิมพ์ "สูตร" เพื่อดูรายชื่อ)`;
+        } else {
+            replyText = `🍳 สูตร: ${requestedMenu}\n\n[ส่วนผสม]\n${ingredients.join('\n')}\n\n[วิธีทำ]\n${steps.join('\n')}`;
+        }
     } else {
-        replyText = 'คำสั่งที่รองรับ:\n1. สต็อก (ดูสินค้าใกล้หมด)\n2. สต็อกทั้งหมด\n3. เบิก/เติม [ชื่อสินค้า] [จำนวน]\n4. ตั้งห้องครัว';
+        replyText = 'คำสั่งที่รองรับ:\n1. สต็อก (ดูสินค้าใกล้หมด)\n2. สต็อกทั้งหมด\n3. เบิก/เติม [ชื่อสินค้า] [จำนวน]\n4. ตั้งห้องครัว\n5. สูตร (ดูสูตรอาหาร)';
     }
 
     return lineClient.replyMessage(event.replyToken, {
