@@ -114,14 +114,14 @@
                     <label id="l-email">อีเมล / Email Address</label>
                     <input type="email" id="custEmail" required placeholder="example@email.com">
                 </div>
-                <div style="display: flex; gap: 10px;">
-                    <div style="flex: 1;">
-                        <label id="l-date">วันที่จัดส่ง / Event Date</label>
-                        <input type="date" id="eventDate" required>
+                <div style="display: flex; gap: 10px; align-items: flex-end;">
+                    <div style="flex: 1; display: flex; flex-direction: column; gap: 5px;">
+                        <label id="l-date" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 0.95rem;">วันที่ / Date</label>
+                        <input type="date" id="eventDate" required style="width:100%;">
                     </div>
-                    <div style="flex: 1;">
-                        <label id="l-time">เวลารับอาหาร / Event Time</label>
-                        <input type="time" id="eventTime" required>
+                    <div style="flex: 1; display: flex; flex-direction: column; gap: 5px;">
+                        <label id="l-time" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 0.95rem;">เวลา / Time</label>
+                        <input type="time" id="eventTime" required style="width:100%;">
                     </div>
                 </div>
                 <div class="full-width">
@@ -706,7 +706,7 @@
         if (btn) { document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); }
         const t = {
             th: { 
-                connect: "ติดต่อเรา", booking: "ข้อมูลการสั่งจอง", name: "ชื่อผู้ติดต่อ", phone: "เบอร์โทรศัพท์", date: "วันที่จัดงาน", 
+                connect: "ติดต่อเรา", booking: "ข้อมูลการสั่งจอง", name: "ชื่อ-นามสกุล", phone: "เบอร์ติดต่อ", date: "วันที่รับอาหาร / Date", time: "เวลา / Time",
                 venue: "สถานที่จัดงาน", address: "ที่อยู่จัดส่ง", payment: "วิธีชำระเงินมัดจำ", submit: "ยืนยันการจอง",
                 allergy: "ข้อมูลการแพ้อาหาร", peanuts: "ถั่ว", milk: "นม / ผลิตภัณฑ์จากนม", seafood: "อาหารทะเล", eggs: "ไข่", msg: "ผงชูรส (MSG)", fishsauce: "น้ำปลา (Fish Sauce)", knorr: "คนอร์ (Knorr)",
                 other: "อื่นๆ ระบุ (ถ้ามี)",
@@ -715,7 +715,7 @@
                 d_desc: "ชำระมัดจำ 50% สำหรับงานจัดเลี้ยง หรือ ชำระเต็มจำนวนสำหรับเซตดิลิเวอรีบ็อกซ์ (ราคาไม่รวมภาษีและค่าจัดส่ง)"
             },
             en: { 
-                connect: "Connect With Us", booking: "Booking Details", name: "Contact Name", phone: "Phone Number", date: "Event Date", 
+                connect: "Connect With Us", booking: "Booking Details", name: "Contact Name", phone: "Phone Number", date: "Event Date", time: "Event Time", 
                 venue: "Venue Name", address: "Full Address", payment: "Payment Method", submit: "Confirm Booking",
                 allergy: "Food Allergy / Dietary Requirements", peanuts: "Peanuts", milk: "Milk / Dairy", seafood: "Seafood", eggs: "Eggs", msg: "MSG", fishsauce: "Fish Sauce", knorr: "Knorr / Bouillon",
                 other: "Others (if any)",
@@ -734,6 +734,7 @@
         document.getElementById('l-name').innerText = t.name;
         document.getElementById('l-phone').innerText = t.phone;
         document.getElementById('l-date').innerText = t.date;
+        document.getElementById('l-time').innerText = t.time;
         document.getElementById('l-venue').innerText = t.venue;
         document.getElementById('l-address').innerText = t.address;
         document.getElementById('t-payment').innerText = t.payment;
