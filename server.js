@@ -754,6 +754,22 @@ app.post('/api/create-checkout-session', async (req, res) => {
         } catch (e) { console.error('Error reading bookings:', e); }
 
         const bookingId = 'BK' + Date.now();
+        
+        // Generate Daily Ticket Number
+        let ticketNumber = 1;
+        try {
+            const ticketPath = path.join(__dirname, 'data', 'ticket_counter.json');
+            const todayStr = new Date().toISOString().split('T')[0];
+            let counter = { date: todayStr, lastNumber: 0 };
+            if (fs.existsSync(ticketPath)) {
+                const saved = JSON.parse(fs.readFileSync(ticketPath, 'utf8'));
+                if (saved.date === todayStr) counter = saved;
+            }
+            counter.lastNumber += 1;
+            ticketNumber = counter.lastNumber;
+            fs.writeFileSync(ticketPath, JSON.stringify(counter, null, 2), 'utf8');
+        } catch(e) { console.error('Ticket counter error:', e); }
+
         // 50% deposit for Catering, 100% for Delivery Box (Classic)
         const depositAmount = (category === 'Classic') ? totalAmount : totalAmount / 2;
         
@@ -787,7 +803,10 @@ app.post('/api/create-checkout-session', async (req, res) => {
                 const { targetId } = JSON.parse(fs.readFileSync(groupPath, 'utf8'));
                 if (targetId) {
                     const message = `🛎️ [ออเดอร์ใหม่เข้าแล้ว!]\n` +
+                                    `🎫 คิวที่: ${ticketNumber}\n` +
                                     `รหัส: ${bookingId}\n` +
+                                    `เวลา/วันที่: ${eventDate || '-'}\n` +
+                                    `สถานที่: ${eventPlace || '-'} ${custAddress ? '('+custAddress+')' : ''}\n` +
                                     `ลูกค้า: ${custName}\n` +
                                     `เบอร์: ${custPhone}\n` +
                                     `เมนู: ${menuSet}\n` +
