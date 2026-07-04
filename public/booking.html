@@ -114,9 +114,15 @@
                     <label id="l-email">อีเมล / Email Address</label>
                     <input type="email" id="custEmail" required placeholder="example@email.com">
                 </div>
-                <div>
-                    <label id="l-date">วันที่จัดงาน / Event Date</label>
-                    <input type="date" id="eventDate" required>
+                <div style="display: flex; gap: 10px;">
+                    <div style="flex: 1;">
+                        <label id="l-date">วันที่จัดส่ง / Event Date</label>
+                        <input type="date" id="eventDate" required>
+                    </div>
+                    <div style="flex: 1;">
+                        <label id="l-time">เวลารับอาหาร / Event Time</label>
+                        <input type="time" id="eventTime" required>
+                    </div>
                 </div>
                 <div class="full-width">
                     <label id="l-venue">สถานที่จัดงาน / Venue Name</label>
@@ -365,50 +371,16 @@
             return set.options;
         }
 
-        const setStr = JSON.stringify(set).toLowerCase();
-        
-        // Curry / แกง
-        const hasCurry = setStr.includes('แกง') || setStr.includes('curry') || setStr.includes('massaman') || setStr.includes('panang');
-        // Basil / กระเพรา / กะเพรา
-        const hasBasil = setStr.includes('กระเพรา') || setStr.includes('กะเพรา') || setStr.includes('basil');
-        // Som Tum / ส้มตำ
-        const hasSomTum = setStr.includes('ส้มตำ') || setStr.includes('som tum') || setStr.includes('somtum') || setStr.includes('papaya salad');
-
-        if (hasCurry) {
-            set.options.push({
-                id: "spicy_curry",
-                label: { "th": "ระดับความเผ็ดแกง", "en": "Spiciness Level - Curry" },
-                choices: [
-                    { "th": "Mild (เผ็ดน้อย)", "en": "Mild (เผ็ดน้อย)" },
-                    { "th": "Medium (เผ็ดกลาง)", "en": "Medium (เผ็ดกลาง)" },
-                    { "th": "Thai Spicy", "en": "Thai Spicy" }
-                ]
-            });
-        }
-
-        if (hasBasil) {
-            set.options.push({
-                id: "spicy_basil",
-                label: { "th": "ระดับความเผ็ดผัดกะเพรา", "en": "Spiciness Level - Basil Stir Fry" },
-                choices: [
-                    { "th": "Mild (เผ็ดน้อย)", "en": "Mild (เผ็ดน้อย)" },
-                    { "th": "Medium (เผ็ดกลาง)", "en": "Medium (เผ็ดกลาง)" },
-                    { "th": "Thai Spicy", "en": "Thai Spicy" }
-                ]
-            });
-        }
-
-        if (hasSomTum) {
-            set.options.push({
-                id: "spicy_somtum",
-                label: { "th": "ระดับความเผ็ดส้มตำ", "en": "Spiciness Level - Som Tum" },
-                choices: [
-                    { "th": "Mild (เผ็ดน้อย)", "en": "Mild (เผ็ดน้อย)" },
-                    { "th": "Medium (เผ็ดกลาง)", "en": "Medium (เผ็ดกลาง)" },
-                    { "th": "Thai Spicy", "en": "Thai Spicy" }
-                ]
-            });
-        }
+        // Add a universal spiciness option for every menu
+        set.options.push({
+            id: "spicy_level",
+            label: { "th": "ระดับความเผ็ด", "en": "Spiciness Level" },
+            choices: [
+                { "th": "Mild (เผ็ดน้อย)", "en": "Mild (เผ็ดน้อย)" },
+                { "th": "Medium (เผ็ดกลาง)", "en": "Medium (เผ็ดกลาง)" },
+                { "th": "Thai Spicy (เผ็ดปกติ)", "en": "Thai Spicy (เผ็ดปกติ)" }
+            ]
+        });
 
         return set.options;
     }
@@ -650,11 +622,12 @@
         const custPhone = document.getElementById('custPhone').value;
         const custEmail = document.getElementById('custEmail').value;
         const eventDate = document.getElementById('eventDate').value;
+        const eventTime = document.getElementById('eventTime').value;
         const eventPlace = document.getElementById('eventPlace').value;
         const custAddress = document.getElementById('custAddress').value;
 
         const menuSelectVal = document.getElementById('menuSetSelect').value;
-        if (!custName || !custPhone || !custEmail || !eventDate || !eventPlace || !custAddress || !menuSelectVal) {
+        if (!custName || !custPhone || !custEmail || !eventDate || !eventTime || !eventPlace || !custAddress || !menuSelectVal) {
             alert("กรุณากรอกข้อมูลให้ครบถ้วน / Please fill in all required fields and select a menu set.");
             return;
         }
@@ -695,7 +668,7 @@
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    custName, custPhone, custEmail, eventDate, eventPlace, custAddress,
+                    custName, custPhone, custEmail, eventDate, eventTime, eventPlace, custAddress,
                     menuSet, allergy, allergyDetail,
                     customChoices: customChoices.length > 0 ? customChoices : undefined,
                     paymentMethod: selectedPaymentMethod,

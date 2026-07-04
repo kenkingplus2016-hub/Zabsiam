@@ -776,7 +776,7 @@ app.post('/api/create-checkout-session', async (req, res) => {
         const newBooking = {
             id: bookingId,
             date: new Date().toISOString(),
-            custName, custPhone, custEmail, eventDate, eventPlace, custAddress,
+            custName, custPhone, custEmail, eventDate, eventTime, eventPlace, custAddress,
             menuSet, allergy, allergyDetail, customChoices, paymentMethod,
             totalAmount, depositAmount,
             status: paymentMethod === 'Card' ? 'pending_payment' : 'pending_confirmation'
@@ -805,7 +805,7 @@ app.post('/api/create-checkout-session', async (req, res) => {
                     const message = `🛎️ [ออเดอร์ใหม่เข้าแล้ว!]\n` +
                                     `🎫 คิวที่: ${ticketNumber}\n` +
                                     `รหัส: ${bookingId}\n` +
-                                    `เวลา/วันที่: ${eventDate || '-'}\n` +
+                                    `เวลา/วันที่: ${eventDate || '-'} ${eventTime || '-'}\n` +
                                     `สถานที่: ${eventPlace || '-'} ${custAddress ? '('+custAddress+')' : ''}\n` +
                                     `ลูกค้า: ${custName}\n` +
                                     `เบอร์: ${custPhone}\n` +
