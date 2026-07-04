@@ -213,7 +213,13 @@ const requireAuth = (req, res, next) => {
 // --- ROUTES ---
 
 // Serve static files from 'public' directory
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'), {
+    setHeaders: (res, filePath) => {
+        if (filePath.endsWith('.html')) {
+            res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, private');
+        }
+    }
+}));
 
 // Root route redirects to index.html
 app.get('/', (req, res) => {
