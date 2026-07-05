@@ -1110,8 +1110,8 @@
   {
     "id": 102,
     "name": {
-      "th": "สยามต้นตำรับ: ไก่ทอดหาดใหญ่",
-      "en": "Siam Authentic: Hat Yai Fried Chicken"
+      "th": "Special Box ไก่ทอดหาดใหญ่",
+      "en": "Special Box Hat Yai Fried Chicken"
     },
     "price": "16.95",
     "unit": {
@@ -1934,8 +1934,8 @@
   {
     "id": 20,
     "name": {
-      "th": "สยามพฤกษา: เมี่ยงคำซีบาส",
-      "en": "Siam Pruksa Box Set: Sea Bass Miang Kham"
+      "th": "Special Box เมี่ยงคำซีบาส",
+      "en": "Special Box Sea Bass Miang Kham"
     },
     "price": "14.95",
     "unit": {
@@ -1980,8 +1980,8 @@
   {
     "id": 21,
     "name": {
-      "th": "สยามพฤกษา: ยำส้มโอกุ้ง",
-      "en": "Siam Pruksa Box Set: Pomelo Salad with Prawns"
+      "th": "Special Box ยำส้มโอกุ้ง",
+      "en": "Special Box Pomelo Salad with Prawns"
     },
     "price": "14.95",
     "unit": {
@@ -2040,8 +2040,8 @@
   {
     "id": 22,
     "name": {
-      "th": "สยามพฤกษา: แซลมอนลุยสวน",
-      "en": "Siam Pruksa Box Set: Salmon Lui Suan"
+      "th": "Special Box แซลมอนลุยสวน",
+      "en": "Special Box Salmon Lui Suan"
     },
     "price": "14.95",
     "unit": {
@@ -2100,8 +2100,8 @@
   {
     "id": 23,
     "name": {
-      "th": "สยามพฤกษา: พล่ากุ้ง",
-      "en": "Siam Pruksa Box Set: Spicy Prawn Salad"
+      "th": "Special Box พล่ากุ้ง",
+      "en": "Special Box Spicy Prawn Salad"
     },
     "price": "14.95",
     "unit": {
@@ -2160,8 +2160,8 @@
   {
     "id": 24,
     "name": {
-      "th": "สยามพฤกษา: ยำมะม่วง",
-      "en": "Siam Pruksa Box Set: Mango Salad"
+      "th": "Special Box ยำมะม่วง",
+      "en": "Special Box Mango Salad"
     },
     "price": "14.95",
     "unit": {
@@ -2220,8 +2220,8 @@
   {
     "id": 25,
     "name": {
-      "th": "สยามพฤกษา: ยำวุ้นเส้น",
-      "en": "Siam Pruksa Box Set: Glass Noodle Salad"
+      "th": "Special Box ยำวุ้นเส้น",
+      "en": "Special Box Glass Noodle Salad"
     },
     "price": "14.95",
     "unit": {
@@ -2280,8 +2280,8 @@
   {
     "id": 26,
     "name": {
-      "th": "สยามพฤกษา: ยำหมูยอ",
-      "en": "Siam Pruksa Box Set: Pork Sausage Salad"
+      "th": "Special Box ยำหมูยอ",
+      "en": "Special Box Pork Sausage Salad"
     },
     "price": "14.95",
     "unit": {
@@ -2340,8 +2340,8 @@
   {
     "id": 27,
     "name": {
-      "th": "สยามพฤกษา: ยำถั่วพลู",
-      "en": "Siam Pruksa Box Set: Winged Bean Salad"
+      "th": "Special Box ยำถั่วพลู",
+      "en": "Special Box Winged Bean Salad"
     },
     "price": "14.95",
     "unit": {
@@ -2400,8 +2400,8 @@
   {
     "id": 28,
     "name": {
-      "th": "สยามพฤกษา: แสร้งว่ากุ้ง",
-      "en": "Siam Pruksa Box Set: Saeng Wa Prawn Salad"
+      "th": "Special Box แสร้งว่ากุ้ง",
+      "en": "Special Box Saeng Wa Prawn Salad"
     },
     "price": "14.95",
     "unit": {
@@ -2460,8 +2460,8 @@
   {
     "id": 29,
     "name": {
-      "th": "สยามพฤกษา: ยำแซ่บปลาหมึกยัดไส้",
-      "en": "Siam Pruksa Box Set: Spicy Stuffed Squid Salad"
+      "th": "Special Box ยำแซ่บปลาหมึกยัดไส้",
+      "en": "Special Box Spicy Stuffed Squid Salad"
     },
     "price": "16.95",
     "unit": {
@@ -2520,8 +2520,8 @@
   {
     "id": 30,
     "name": {
-      "th": "สยามพฤกษา: ส้มตำไทย",
-      "en": "Siam Pruksa Box Set: Som Tum Thai"
+      "th": "Special Box ส้มตำไทย",
+      "en": "Special Box Som Tum Thai"
     },
     "price": "14.95",
     "unit": {
@@ -2580,8 +2580,8 @@
   {
     "id": 31,
     "name": {
-      "th": "สยามพฤกษา: ส้มตำปูปลาร้า",
-      "en": "Siam Pruksa Box Set: Som Tum Pu Pla Ra"
+      "th": "Special Box ส้มตำปูปลาร้า",
+      "en": "Special Box Som Tum Pu Pla Ra"
     },
     "price": "15.95",
     "unit": {
@@ -2640,8 +2640,8 @@
   {
     "id": 100,
     "name": {
-      "th": "สยามพฤกษา: เมี่ยงรวมมิตร",
-      "en": "Siam Pruksa Box Set: Mixed Miang"
+      "th": "Special Box เมี่ยงรวมมิตร",
+      "en": "Special Box Mixed Miang"
     },
     "price": "16.95",
     "unit": {
@@ -2682,8 +2682,8 @@
   {
     "id": 101,
     "name": {
-      "th": "สยามพฤกษา: ต้มยำทะเล",
-      "en": "Siam Pruksa Box Set: Tom Yum Seafood"
+      "th": "Special Box ต้มยำทะเล",
+      "en": "Special Box Tom Yum Seafood"
     },
     "price": "18.95",
     "unit": {

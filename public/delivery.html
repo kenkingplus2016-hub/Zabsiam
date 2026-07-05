@@ -319,10 +319,10 @@
                 </div>
             `;
             
-            if (set.name.en.includes('Siam Pruksa') || set.name.en.includes('Siam Authentic') || set.name.en.includes('Special Box') || set.name.en.includes('Lunch Box')) {
-                pruksaHtml += cardHtml;
-            } else {
+            if (set.name.en.match(/Set [A-Z]/)) {
                 menuHtml += cardHtml;
+            } else {
+                pruksaHtml += cardHtml;
             }
         });
         menuContainer.innerHTML = menuHtml;
