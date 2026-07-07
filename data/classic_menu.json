@@ -2146,7 +2146,7 @@
         "items": {
             "th": {
                 "mains": [
-                    "ข้าวสวย",
+                    "ข้าว (เลือกข้าวสวย หรือ ข้าวผัดไข่)",
                     "ผัดกะเพรา (เลือกเนื้อสัตว์ได้)"
                 ],
                 "starters": [
@@ -2158,7 +2158,7 @@
             },
             "en": {
                 "mains": [
-                    "Jasmine Rice",
+                    "Rice (Choose Jasmine Rice or Egg Fried Rice)",
                     "Chilli & Basil Stir Fry (Choose Meat)"
                 ],
                 "starters": [
@@ -2170,6 +2170,23 @@
             }
         },
         "options": [
+            {
+                "id": "rice_type",
+                "label": {
+                    "th": "เลือกประเภทข้าว",
+                    "en": "Choose Rice"
+                },
+                "choices": [
+                    {
+                        "th": "ข้าวสวย",
+                        "en": "Jasmine Rice"
+                    },
+                    {
+                        "th": "ข้าวผัดไข่",
+                        "en": "Egg Fried Rice"
+                    }
+                ]
+            },
             {
                 "id": "meat_type",
                 "label": {
