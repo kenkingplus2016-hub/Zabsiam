@@ -5,7 +5,7 @@
             "th": "Lunch Box Set VIP",
             "en": "Lunch Box Set VIP"
         },
-        "price": 16.95,
+        "price": 22.95,
         "img": "corporate-cover.jpg",
         "unit": {
             "th": "เซต",
@@ -73,6 +73,16 @@
                         "th": "กุ้ง (+£1.00)",
                         "en": "Prawns (+£1.00)",
                         "extra": 1
+                    },
+                    {
+                        "th": "คอหมูย่าง (+£2.00)",
+                        "en": "Grilled Pork Neck (+£2.00)",
+                        "extra": 2
+                    },
+                    {
+                        "th": "เสือร้องไห้ (+£2.50)",
+                        "en": "Crying Tiger Beef (+£2.50)",
+                        "extra": 2.5
                     }
                 ]
             },
