@@ -353,7 +353,7 @@
                 </div>
             `;
             
-            if (set.name.en.match(/Set [A-Z]/) || set.id === 'lunch_box_signature') {
+            if (set.name.en.match(/Set [A-Z]/) || set.name.en.includes('Special') || set.id === 'lunch_box_signature') {
                 menuHtml += cardHtml;
             } else {
                 pruksaHtml += cardHtml;
