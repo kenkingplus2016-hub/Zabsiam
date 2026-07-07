@@ -353,9 +353,9 @@
                 </div>
             `;
             
-            if (set.name.en.match(/Set [A-Z]/) && !set.name.en.includes('VIP')) {
+            if (set.name.en.match(/Set [A-Z]/) && set.id !== 'lunch_box_vip') {
                 menuHtml += cardHtml;
-            } else if (set.name.en.includes('VIP')) {
+            } else if (set.id === 'lunch_box_vip') {
                 menuHtml += cardHtml;
                 pruksaHtml += cardHtml;
             } else {
