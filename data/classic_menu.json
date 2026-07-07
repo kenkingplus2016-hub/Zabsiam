@@ -2755,23 +2755,35 @@
             "th": "เซต",
             "en": "Set"
         },
+        "desc": {
+            "th": "ข้าวกล่องพร้อมทาน: กะเพราและส้มตำรสจัดจ้าน",
+            "en": "Ready-to-eat Lunch Box: Spicy Krapow and Som Tum"
+        },
         "items": {
-            "th": [
-                "ข้าวสวย",
-                "ผัดกะเพรา (เลือกเนื้อสัตว์ได้)",
-                "ส้มตำ (เลือกประเภทได้)",
-                "ไข่ดาว",
-                "ผักเคียง",
-                "พริกน้ำปลา"
-            ],
-            "en": [
-                "Jasmine Rice",
-                "Holy Basil Stir Fry (Choose Meat)",
-                "Som Tum (Choose Type)",
-                "Fried Egg",
-                "Side Vegetables",
-                "Prik Nam Pla"
-            ]
+            "th": {
+                "mains": [
+                    "ข้าวสวย",
+                    "ผัดกะเพรา (เลือกเนื้อสัตว์ได้)"
+                ],
+                "starters": [
+                    "ส้มตำ (เลือกประเภทได้)",
+                    "ไข่ดาว",
+                    "ผักเคียง",
+                    "พริกน้ำปลา"
+                ]
+            },
+            "en": {
+                "mains": [
+                    "Jasmine Rice",
+                    "Holy Basil Stir Fry (Choose Meat)"
+                ],
+                "starters": [
+                    "Som Tum (Choose Type)",
+                    "Fried Egg",
+                    "Side Vegetables",
+                    "Prik Nam Pla"
+                ]
+            }
         },
         "options": [
             {
@@ -2786,7 +2798,7 @@
                         "en": "Chicken"
                     },
                     {
-                        "th": "หมูชิ้น / หมูสับ",
+                        "th": "หมู",
                         "en": "Pork"
                     },
                     {
