@@ -333,7 +333,7 @@
                     <div class="menu-grid">
                         <div class="menu-card" onclick="openModal('${set.id}')">
                             <div class="img-container">
-                                <img src="images/${set.img}" alt="${set.name[currentLang].replace(': ', ':<br>').replace(' — ', '<br>').replace(' - ', '<br>')}" class="menu-img" onerror="this.onerror=null; this.src='logo.png';">
+                                <img src="images/${set.img}?v=${new Date().getTime()}" alt="${set.name[currentLang].replace(': ', ':<br>').replace(' — ', '<br>').replace(' - ', '<br>')}" class="menu-img" onerror="this.onerror=null; this.src='logo.png';">
                             </div>
                             <div class="card-content">
                                 <h3 style="color:var(--dark-green); margin-bottom:10px;">${currentLang === 'th' ? 'รายการอาหารในชุด' : 'Menu Items in Set'}</h3>
