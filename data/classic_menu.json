@@ -904,8 +904,8 @@
     {
         "id": 18,
         "name": {
-            "th": "Special Box Set E — วันพุธ - ศุกร์",
-            "en": "Special Box Set E — Wednesday - Friday"
+            "th": "Special Signature Box Set",
+            "en": "Special Signature Box Set"
         },
         "price": "22.95",
         "unit": {
@@ -913,8 +913,8 @@
             "en": "1 Person"
         },
         "desc": {
-            "th": "น้ำตกหมู ข้าวเหนียว ส้มตำปลาร้า ผักเคียง และแกงอ่อม (ไก่/หมู/เนื้อ) — จัดส่งวันพุธ - ศุกร์ (เวลาส่ง 11.00 - 13.00 น. / 18.00 - 20.00 น.) | ปิดรับออเดอร์ 15.00 น. ของวันก่อนหน้า (Pre-order) | รัศมีส่งไม่เกิน 5 ไมล์",
-            "en": "Nam Tok Moo (Spicy Grilled Pork Salad), Sticky Rice, Papaya Salad with Fermented Fish, Side Vegetables and Om Curry (Chicken/Pork/Beef) — Delivered Wednesday - Friday (11:00 AM - 1:00 PM / 6:00 PM - 8:00 PM) | Cut-off 3:00 PM day before (Pre-order) | Radius Within 5 miles"
+            "th": "เซตพิเศษซิกเนเจอร์: เลือกน้ำตกคอหมูย่างหรือน้ำตกเสือร้องไห้ เสิร์ฟพร้อมแกงอ่อม (เลือกเนื้อสัตว์ได้) ส้มตำ ข้าวเหนียว และผักเคียง",
+            "en": "Special Signature Set: Choose Nam Tok Grilled Pork Neck or Crying Tiger Beef, served with Om Curry (Choice of meat), Papaya Salad, Sticky Rice and Side Vegetables."
         },
         "img": "Special Box Set E 1.jpg",
         "recipe": {
@@ -978,24 +978,24 @@
         "items": {
             "th": {
                 "starters": [
-                    "ผักเคียง",
-                    "ส้มตำปลาร้า",
-                    "แกงอ่อม (ไก่/หมู/เนื้อ)"
+                    "แกงอ่อม (ไก่/หมู/เนื้อ)",
+                    "ส้มตำ (ไทย/ปูปลาร้า)",
+                    "ผักเคียง"
                 ],
                 "mains": [
-                    "น้ำตกหมู",
+                    "น้ำตก (คอหมูย่าง หรือ เสือร้องไห้)",
                     "ข้าวเหนียว"
                 ],
                 "desserts": []
             },
             "en": {
                 "starters": [
-                    "Side Vegetables",
-                    "Papaya Salad with Fermented Fish",
-                    "Om Curry (Chicken/Pork/Beef)"
+                    "Om Curry (Choice of meat)",
+                    "Papaya Salad (Choice)",
+                    "Side Vegetables"
                 ],
                 "mains": [
-                    "Nam Tok Moo (Spicy Grilled Pork Salad)",
+                    "Nam Tok (Pork Neck or Crying Tiger)",
                     "Sticky Rice"
                 ],
                 "desserts": []
@@ -1003,189 +1003,57 @@
         },
         "options": [
             {
-                "id": "om_curry",
+                "id": "nam_tok_meat",
                 "label": {
-                    "th": "เลือกแกงอ่อม",
-                    "en": "Select Om Curry Meat"
+                    "th": "เลือกน้ำตก",
+                    "en": "Choose Nam Tok Meat"
                 },
                 "choices": [
                     {
-                        "th": "แกงอ่อมไก่",
-                        "en": "Om Curry Chicken"
+                        "th": "น้ำตกคอหมูย่าง",
+                        "en": "Nam Tok Grilled Pork Neck"
                     },
                     {
-                        "th": "แกงอ่อมหมู",
-                        "en": "Om Curry Pork"
-                    },
-                    {
-                        "th": "แกงอ่อมเนื้อ",
-                        "en": "Om Curry Beef"
+                        "th": "น้ำตกเสือร้องไห้",
+                        "en": "Nam Tok Crying Tiger Beef"
                     }
                 ]
             },
-            {
-                "id": "spiciness",
-                "label": {
-                    "th": "เลือกระดับความเผ็ด (น้ำตก)",
-                    "en": "Select Spiciness (Nam Tok)"
-                },
-                "choices": [
-                    {
-                        "th": "เผ็ดน้อย",
-                        "en": "Mild Spiciness"
-                    },
-                    {
-                        "th": "เผ็ดปกติ",
-                        "en": "Normal Spiciness"
-                    },
-                    {
-                        "th": "เผ็ดมาก",
-                        "en": "Extra Spicy"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "id": 19,
-        "name": {
-            "th": "Special Box Set F — วันพุธ - ศุกร์",
-            "en": "Special Box Set F — Wednesday - Friday"
-        },
-        "price": "22.95",
-        "unit": {
-            "th": "1 ท่าน",
-            "en": "1 Person"
-        },
-        "desc": {
-            "th": "น้ำตกเสือร้องไห้ ข้าวเหนียว ส้มตำปลาร้า ผักเคียง และแกงอ่อม (ไก่/หมู/เนื้อ) — จัดส่งวันพุธ - ศุกร์ (เวลาส่ง 11.00 - 13.00 น. / 18.00 - 20.00 น.) | ปิดรับออเดอร์ 15.00 น. ของวันก่อนหน้า (Pre-order) | รัศมีส่งไม่เกิน 5 ไมล์",
-            "en": "Nam Tok Crying Tiger (Spicy Grilled Beef Salad), Sticky Rice, Papaya Salad with Fermented Fish, Side Vegetables and Om Curry (Chicken/Pork/Beef) — Delivered Wednesday - Friday (11:00 AM - 1:00 PM / 6:00 PM - 8:00 PM) | Cut-off 3:00 PM day before (Pre-order) | Radius Within 5 miles"
-        },
-        "img": "Special Box Set F 1.jpg",
-        "items": {
-            "th": {
-                "starters": [
-                    "ผักเคียง",
-                    "ส้มตำปลาร้า",
-                    "แกงอ่อม (ไก่/หมู/เนื้อ)"
-                ],
-                "mains": [
-                    "น้ำตกเสือร้องไห้",
-                    "ข้าวเหนียว"
-                ],
-                "desserts": []
-            },
-            "en": {
-                "starters": [
-                    "Side Vegetables",
-                    "Papaya Salad with Fermented Fish",
-                    "Om Curry (Chicken/Pork/Beef)"
-                ],
-                "mains": [
-                    "Nam Tok Crying Tiger (Spicy Grilled Beef Salad)",
-                    "Sticky Rice"
-                ],
-                "desserts": []
-            }
-        },
-        "recipe": {
-            "th": [
-                "สูตรหมัก (น้ำตก):",
-                "ซอสหอยนางรม 100 กรัม",
-                "ซีอิ๊วขาว 20 กรัม",
-                "ซอสปรุงรสฝาเขียว 20 กรัม",
-                "น้ำตาลทราย 15 กรัม, น้ำตาลปี๊บ 15 กรัม",
-                "ผงชูรส 15 กรัม",
-                "น้ำมันพืช 1 ช้อนชา, พริกป่น 1 ช้อนชา",
-                "กระเทียม 2 ช้อนชา, รากผักชี 2 ช้อนชา",
-                "ส่วนผสมเครื่องปรุงน้ำตก:",
-                "หอมแดงซอย, ต้นหอมซอย, ผักชีฝรั่งซอย, ใบมะกรูดซอย, ใบสะระแหน่",
-                "พริกป่น, ข้าวคั่ว, ผงชูรส, น้ำปลา, น้ำมะนาว",
-                "ตกแต่ง:",
-                "พริกทอด, ใบมะกรูดทอด",
-                "",
-                "--- สูตรส้มตำปลาร้า (วัตถุดิบหลัก) ---",
-                "มะละกอสับ 120 กรัม, มะเขือเทศ 2-3 ลูก (40 กรัม), ถั่วฝักยาว 3-4 ท่อน (25 กรัม)",
-                "กระเทียม 3 กลีบ (6 กรัม), พริกแดงสด 3-5 เม็ด (5-8 กรัม), มะเขือเปราะ 1 ลูก (20 กรัม)",
-                "เครื่องปรุงส้มตำ:",
-                "น้ำปลาร้าต้มสุก 2 ช้อนโต๊ะ, น้ำปลา 1 ช้อนโต๊ะ, น้ำมะนาว 1 ช้อนโต๊ะ",
-                "น้ำตาลปี๊บ ½ ช้อนชา, พริกป่น ½ ช้อนชา, ผงชูรส ½ ช้อนชา, ปูเค็ม 1 ตัว",
-                "",
-                "--- สูตรแกงอ่อม (ไก่/หมู/เนื้อ) ---",
-                "เนื้อสัตว์ 500 กรัม (สันคอหมู / ไก่ / เนื้อวัว)",
-                "เครื่องแกง: พริกแดงจินดา, หอมแดง, ตะไคร้ซอย, กระเทียม",
-                "ผัก: ผักชีลาว, ต้นหอม, มะเขือเปราะ, กะหล่ำปลี, ใบแมงลัก",
-                "เครื่องปรุง: น้ำปลาร้า, น้ำปลา, เกลือ, ข้าวคั่ว, ผงปรุงรส"
-            ],
-            "en": [
-                "Meat Marinade (Nam Tok):",
-                "Oyster sauce 100g",
-                "Light soy sauce 20g",
-                "Green cap seasoning sauce 20g",
-                "Sugar 15g, Palm sugar 15g",
-                "MSG 15g",
-                "Vegetable oil 1 tsp, Chili powder 1 tsp",
-                "Garlic 2 tsp, Coriander root 2 tsp",
-                "Nam Tok Dressing & Herbs:",
-                "Sliced red onion, Sliced spring onion, Sliced culantro, Sliced kaffir lime leaves, Mint leaves",
-                "Chili powder, Roasted rice powder, MSG, Fish sauce, Lime juice",
-                "Garnish:",
-                "Fried chili, Fried kaffir lime leaves",
-                "",
-                "--- Som Tum Pla Ra (Papaya Salad) Recipe ---",
-                "Shredded papaya 120g, Tomatoes 2-3 (40g), Yardlong beans 3-4 pcs (25g)",
-                "Garlic 3 cloves (6g), Fresh red chilis 3-5 (5-8g), Thai eggplant 1 (20g)",
-                "Som Tum Seasoning:",
-                "Boiled fermented fish sauce 2 tbsp, Fish sauce 1 tbsp, Lime juice 1 tbsp",
-                "Palm sugar ½ tsp, Chili powder ½ tsp, MSG ½ tsp, Salted crab 1 pc",
-                "",
-                "--- Om Curry (Chicken/Pork/Beef) Recipe ---",
-                "Meat 500g (Pork neck / Chicken / Beef)",
-                "Curry Paste: Red jinda chilis, Shallots, Sliced lemongrass, Garlic",
-                "Vegetables: Dill, Spring onion, Thai eggplant, Cabbage, Lemon basil",
-                "Seasoning: Fermented fish sauce, Fish sauce, Salt, Roasted rice powder, Seasoning powder"
-            ]
-        },
-        "options": [
             {
                 "id": "om_curry",
                 "label": {
-                    "th": "เลือกแกงอ่อม",
-                    "en": "Select Om Curry Meat"
+                    "th": "เลือกเนื้อสัตว์ (แกงอ่อม)",
+                    "en": "Choose Meat (Om Curry)"
                 },
                 "choices": [
                     {
-                        "th": "แกงอ่อมไก่",
-                        "en": "Om Curry Chicken"
+                        "th": "ไก่",
+                        "en": "Chicken"
                     },
                     {
-                        "th": "แกงอ่อมหมู",
-                        "en": "Om Curry Pork"
+                        "th": "หมู",
+                        "en": "Pork"
                     },
                     {
-                        "th": "แกงอ่อมเนื้อ",
-                        "en": "Om Curry Beef"
+                        "th": "เนื้อ",
+                        "en": "Beef"
                     }
                 ]
             },
             {
-                "id": "spiciness",
+                "id": "papaya_salad",
                 "label": {
-                    "th": "เลือกระดับความเผ็ด (น้ำตก)",
-                    "en": "Select Spiciness (Nam Tok)"
+                    "th": "เลือกส้มตำ",
+                    "en": "Select Papaya Salad"
                 },
                 "choices": [
                     {
-                        "th": "เผ็ดน้อย",
-                        "en": "Mild Spiciness"
+                        "th": "ส้มตำไทย",
+                        "en": "Som Tum Thai"
                     },
                     {
-                        "th": "เผ็ดปกติ",
-                        "en": "Normal Spiciness"
-                    },
-                    {
-                        "th": "เผ็ดมาก",
-                        "en": "Extra Spicy"
+                        "th": "ส้มตำปูปลาร้า",
+                        "en": "Som Tum Pu Pla Ra"
                     }
                 ]
             }
