@@ -351,7 +351,7 @@
                 </div>
             `;
             
-            if (set.name.en.match(/Set [A-Z]/)) {
+            if (set.name.en.match(/Set [A-Z]/) && !set.name.en.includes('VIP')) {
                 menuHtml += cardHtml;
             } else {
                 pruksaHtml += cardHtml;

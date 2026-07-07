@@ -2093,8 +2093,8 @@
     {
         "id": "lunch_box_vip",
         "name": {
-            "th": "Lunch Box VIP (จัดเซตเองได้)",
-            "en": "Lunch Box VIP (Fully Customizable)"
+            "th": "Lunch Box Set VIP",
+            "en": "Lunch Box Set VIP"
         },
         "price": 16.95,
         "img": "corporate-cover.jpg",
