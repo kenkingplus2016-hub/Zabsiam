@@ -436,7 +436,7 @@
             if (isLunchBox) {
                 lblTechnique.style.display = 'none';
                 techList.innerHTML = `
-                    ${data.desserts.map(i => `<li style="list-style:none; font-weight:700; color:var(--dark-green); margin-top:10px; font-size:1.1rem; line-height:1.4;">${i}</li>`).join('')}
+                    ${data.desserts ? data.desserts.map(i => `<li style="list-style:none; font-weight:700; color:var(--dark-green); margin-top:10px; font-size:1.1rem; line-height:1.4;">${i}</li>`).join('') : ''}
                     ${recipeHtml}
                     <li style="margin-top:20px; padding:15px; background:rgba(212,175,55,0.1); border-left:4px solid var(--gold); border-radius:5px; font-size:0.9rem; color:var(--dark-green); list-style:none; line-height:1.5;">
                         <strong><i class="fas fa-truck"></i> เงื่อนไขพิเศษสำหรับ Lunch Box:</strong><br>
