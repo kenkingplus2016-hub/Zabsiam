@@ -1026,20 +1026,36 @@
                 },
                 "choices": [
                     {
-                        "th": "แกงเขียวหวานไก่",
-                        "en": "Green Curry Chicken"
+                        "th": "แกงเขียวหวาน",
+                        "en": "Green Curry"
                     },
                     {
-                        "th": "แกงมัสมั่นไก่",
-                        "en": "Massaman Curry Chicken"
+                        "th": "แกงมัสมั่น",
+                        "en": "Massaman Curry"
                     },
                     {
-                        "th": "แกงพะแนงหมู",
-                        "en": "Panang Curry Pork"
+                        "th": "แกงพะแนง",
+                        "en": "Panang Curry"
                     },
                     {
                         "th": "ต้มข่าไก่",
                         "en": "Tom Kha Gai (Coconut Soup)"
+                    },
+                    {
+                        "th": "แกงอ่อม",
+                        "en": "Om Curry (Isan Spicy Dill Soup)"
+                    },
+                    {
+                        "th": "แกงแดง",
+                        "en": "Red Curry"
+                    },
+                    {
+                        "th": "แกงกะหรี่",
+                        "en": "Yellow Curry"
+                    },
+                    {
+                        "th": "แกงเทโพ",
+                        "en": "Tae Po Curry"
                     }
                 ]
             }
