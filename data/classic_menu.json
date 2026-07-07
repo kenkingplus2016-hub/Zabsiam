@@ -22,7 +22,6 @@
                     "แกงไทย (เลือกชนิดแกงและเนื้อสัตว์ได้)"
                 ],
                 "starters": [
-                    "เมนูไข่ (เลือกไข่ดาว หรือ ไข่เจียว)",
                     "พริกน้ำปลา"
                 ]
             },
@@ -32,7 +31,6 @@
                     "Thai Curry (Choose your curry and meat)"
                 ],
                 "starters": [
-                    "Egg (Choose Fried Egg or Omelette)",
                     "Prik Nam Pla"
                 ]
             }
@@ -81,23 +79,6 @@
                         "th": "เสือร้องไห้ (+£2.50)",
                         "en": "Crying Tiger Beef (+£2.50)",
                         "extra": 2.5
-                    }
-                ]
-            },
-            {
-                "id": "egg_type",
-                "label": {
-                    "th": "เลือกประเภทไข่",
-                    "en": "Choose Egg"
-                },
-                "choices": [
-                    {
-                        "th": "ไข่ดาว",
-                        "en": "Fried Egg"
-                    },
-                    {
-                        "th": "ไข่เจียว",
-                        "en": "Thai Omelette"
                     }
                 ]
             },
