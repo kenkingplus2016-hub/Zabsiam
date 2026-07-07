@@ -305,8 +305,8 @@
     {
         "id": "lunch_box_prik_klua",
         "name": {
-            "th": "Signature Lunch Box คั่วพริกเกลือหมูกรอบ",
-            "en": "Signature Lunch Box Moo krob kau prik klua"
+            "th": "Signature Lunch Box คั่วพริกเกลือหมูกรอบ + ส้มตำ",
+            "en": "Signature Lunch Box Moo krob kau prik klua & Som Tum"
         },
         "price": 16.95,
         "img": "Lunch Box (Set D)1.jpg",
@@ -315,8 +315,8 @@
             "en": "Set"
         },
         "desc": {
-            "th": "เซตข้าวกล่องซิกเนเจอร์: คั่วพริกเกลือรสจัดจ้าน เลือกเนื้อสัตว์และข้าวที่คุณชื่นชอบ พร้อมไข่ดาว",
-            "en": "Signature Lunch Box: Spicy Chilli & Salt Stir Fry (Kau Prik Klua). Customize your meat and rice. Served with Fried Egg."
+            "th": "เซตข้าวกล่องซิกเนเจอร์: คั่วพริกเกลือรสจัดจ้าน เลือกเนื้อสัตว์และข้าวที่คุณชื่นชอบ พร้อมส้มตำไทยและไข่ดาว",
+            "en": "Signature Lunch Box: Spicy Chilli & Salt Stir Fry (Kau Prik Klua). Customize your meat and rice. Served with Som Tum Thai and Fried Egg."
         },
         "items": {
             "th": {
@@ -325,6 +325,7 @@
                     "คั่วพริกเกลือ (เลือกเนื้อสัตว์ได้)"
                 ],
                 "starters": [
+                    "ส้มตำไทย",
                     "ไข่ดาว",
                     "พริกน้ำปลา"
                 ]
@@ -335,6 +336,7 @@
                     "Chilli & Salt Stir Fry (Choose Meat)"
                 ],
                 "starters": [
+                    "Som Tum Thai (Papaya Salad)",
                     "Fried Egg",
                     "Prik Nam Pla"
                 ]
@@ -391,6 +393,27 @@
                     {
                         "th": "ข้าวผัดไข่",
                         "en": "Egg Fried Rice"
+                    }
+                ]
+            },
+            {
+                "id": "somtum_type",
+                "label": {
+                    "th": "เลือกส้มตำ",
+                    "en": "Choose Papaya Salad"
+                },
+                "choices": [
+                    {
+                        "th": "ส้มตำไทย",
+                        "en": "Som Tum Thai"
+                    },
+                    {
+                        "th": "ส้มตำปูปลาร้า",
+                        "en": "Som Tum Pu Pla Ra"
+                    },
+                    {
+                        "th": "ตำแตง",
+                        "en": "Spicy Cucumber Salad"
                     }
                 ]
             }
