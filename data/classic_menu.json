@@ -883,8 +883,8 @@
             "en": "1 Person"
         },
         "desc": {
-            "th": "เซตพิเศษ VIP: เลือกเนื้อสัตว์ (ไก่ย่าง คอหมูย่าง เสือร้องไห้ หมูกรอบ) พร้อมน้ำจิ้มหรือน้ำพริกตามชอบ และข้าวเหนียว",
-            "en": "Special VIP Set: Choose your meat (Grilled Chicken, Pork Neck, Crying Tiger, Crispy Pork Belly) with your choice of dip/nam prik and sticky rice."
+            "th": "เซตพิเศษ VIP: อาหารจานหลักเนื้อสัตว์ (ตามเลือก) เสิร์ฟพร้อมข้าวเหนียว ส้มตำ (ตามเลือก) ผักเคียง น้ำพริก/น้ำจิ้ม (ตามเลือก) และแกง (ตามเลือก)",
+            "en": "Special VIP Set: Main course meat (by choice) served with sticky rice, Som Tum (by choice), side vegetables, dipping sauce/nam prik (by choice), and curry (by choice)."
         },
         "img": "Kor Moo Yang sum tum.jpg",
         "items": {
@@ -892,7 +892,8 @@
                 "starters": [
                     "ส้มตำ (ตามเลือก)",
                     "ผักเคียง",
-                    "น้ำพริก/น้ำจิ้ม (ตามเลือก)"
+                    "น้ำพริก/น้ำจิ้ม (ตามเลือก)",
+                    "แกง (ตามเลือก)"
                 ],
                 "mains": [
                     "เนื้อสัตว์ (ตามเลือก)",
@@ -902,12 +903,13 @@
             },
             "en": {
                 "starters": [
-                    "Papaya Salad (Choice)",
+                    "Som Tum (by choice)",
                     "Side Vegetables",
-                    "Dip/Nam Prik (Choice)"
+                    "Nam Prik / Dipping Sauce (by choice)",
+                    "Curry (by choice)"
                 ],
                 "mains": [
-                    "Meat of Choice",
+                    "Meat (by choice)",
                     "Sticky Rice"
                 ],
                 "desserts": []
@@ -1013,6 +1015,31 @@
                     {
                         "th": "น้ำจิ้มซีฟู้ด",
                         "en": "Seafood Sauce"
+                    }
+                ]
+            },
+            {
+                "id": "curry_choice",
+                "label": {
+                    "th": "เลือกแกง",
+                    "en": "Choose Curry"
+                },
+                "choices": [
+                    {
+                        "th": "แกงเขียวหวานไก่",
+                        "en": "Green Curry Chicken"
+                    },
+                    {
+                        "th": "แกงมัสมั่นไก่",
+                        "en": "Massaman Curry Chicken"
+                    },
+                    {
+                        "th": "แกงพะแนงหมู",
+                        "en": "Panang Curry Pork"
+                    },
+                    {
+                        "th": "ต้มข่าไก่",
+                        "en": "Tom Kha Gai (Coconut Soup)"
                     }
                 ]
             }
