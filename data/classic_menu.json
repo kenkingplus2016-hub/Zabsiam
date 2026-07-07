@@ -757,48 +757,40 @@
     {
         "id": 14,
         "name": {
-            "th": "Special Box Set A — วันพุธ - ศุกร์",
-            "en": "Special Box Set A — Wednesday - Friday"
+            "th": "Special Box Set VIP",
+            "en": "Special Box Set VIP"
         },
-        "price": "22.95",
+        "price": 19.59,
         "unit": {
             "th": "1 ท่าน",
             "en": "1 Person"
         },
         "desc": {
-            "th": "หมูกรอบ น้ำจิ้มซีฟู้ด ข้าวเหนียว ผักเคียง และส้มตำไทย/ส้มตำปูปลาร้า — จัดส่งวันพุธ - ศุกร์ (เวลาส่ง 11.00 - 13.00 น. / 18.00 - 20.00 น.) | ปิดรับออเดอร์ 15.00 น. ของวันก่อนหน้า (Pre-order) | รัศมีส่งไม่เกิน 5 ไมล์",
-            "en": "Crispy Pork Belly, Seafood Dipping Sauce, Sticky Rice, Side Vegetables, Papaya Salad — Delivered Wednesday - Friday (11:00 AM - 1:00 PM / 6:00 PM - 8:00 PM) | Cut-off 3:00 PM day before (Pre-order) | Radius Within 5 miles"
+            "th": "เซตพิเศษ VIP: เลือกเนื้อสัตว์ (ไก่ย่าง คอหมูย่าง เสือร้องไห้ หมูกรอบ) พร้อมน้ำจิ้มหรือน้ำพริกตามชอบ และข้าวเหนียว",
+            "en": "Special VIP Set: Choose your meat (Grilled Chicken, Pork Neck, Crying Tiger, Crispy Pork Belly) with your choice of dip/nam prik and sticky rice."
         },
         "img": "Special Box Set A 1.jpg",
         "items": {
             "th": {
                 "starters": [
+                    "ส้มตำ (ตามเลือก)",
                     "ผักเคียง",
-                    "น้ำจิ้มซีฟู้ด",
-                    "ส้มตำไทย / ส้มตำปูปลาร้า",
-                    "ตัวเลือกน้ำพริก (เลือก 1 อย่าง):",
-                    "  - น้ำพริกหนุ่ม (พริกหนุ่มย่าง หอมแดงย่าง กระเทียมย่าง น้ำปลา เกลือ)",
-                    "  - น้ำพริกอ่องหมูสับ (หมูสับ มะเขือเทศ พริกแห้ง หอมแดง กระเทียม กะปิ น้ำปลา น้ำตาลทราย)",
-                    "  - น้ำพริกแจ่วบอง (ปลาร้าสับ พริกแห้ง ข่า ตะไคร้ ใบมะกรูด หอมแดง กระเทียม น้ำมะขามเปียก)"
+                    "น้ำพริก/น้ำจิ้ม (ตามเลือก)"
                 ],
                 "mains": [
-                    "หมูกรอบ",
+                    "เนื้อสัตว์ (ตามเลือก)",
                     "ข้าวเหนียว"
                 ],
                 "desserts": []
             },
             "en": {
                 "starters": [
+                    "Papaya Salad (Choice)",
                     "Side Vegetables",
-                    "Seafood Dipping Sauce",
-                    "Papaya Salad",
-                    "Chili Dip Options (Choose 1):",
-                    "  - Nam Prik Num (Grilled green chili, grilled shallots, grilled garlic, fish sauce, salt)",
-                    "  - Nam Prik Ong (Minced pork, tomatoes, dried chili, shallots, garlic, shrimp paste, fish sauce, sugar)",
-                    "  - Jaew Bong (Minced fermented fish, dried chili, galangal, lemongrass, kaffir lime leaves, shallots, garlic, tamarind juice)"
+                    "Dip/Nam Prik (Choice)"
                 ],
                 "mains": [
-                    "Crispy Pork Belly",
+                    "Meat of Choice",
                     "Sticky Rice"
                 ],
                 "desserts": []
@@ -834,124 +826,33 @@
         },
         "options": [
             {
-                "id": "papaya_salad",
+                "id": "meat_type",
                 "label": {
-                    "th": "เลือกส้มตำ",
-                    "en": "Select Papaya Salad"
+                    "th": "เลือกเนื้อสัตว์",
+                    "en": "Choose Meat"
                 },
                 "choices": [
                     {
-                        "th": "ส้มตำไทย (มะละกอดิบ ถั่วฝักยาว มะเขือเทศ พริกขี้หนู กระเทียม น้ำปลา น้ำมะนาว น้ำตาลปี๊บ กุ้งแห้ง ถั่วลิสง)",
-                        "en": "Som Tum Thai (Green Papaya, Long Beans, Tomatoes, Chili, Garlic, Fish Sauce, Lime, Palm Sugar, Dried Shrimp, Peanuts)"
+                        "th": "ไก่ย่าง",
+                        "en": "Grilled Chicken"
                     },
                     {
-                        "th": "ส้มตำปูปลาร้า (มะละกอดิบ ถั่วฝักยาว มะเขือเทศ แครอท พริกขี้หนู กระเทียม น้ำปลา น้ำมะนาว น้ำตาลปี๊บ ปูนาดอง ปลาร้าต้มสุก)",
-                        "en": "Som Tum Pu Pla Ra (Green Papaya, Long Beans, Tomatoes, Carrots, Chili, Garlic, Fish Sauce, Lime, Palm Sugar, Pickled Crab, Boiled Fermented Fish)"
+                        "th": "คอหมูย่าง (+£2)",
+                        "en": "Grilled Pork Neck (+£2)",
+                        "extra": 2
+                    },
+                    {
+                        "th": "เสือร้องไห้ (+£2)",
+                        "en": "Crying Tiger Beef (+£2)",
+                        "extra": 2
+                    },
+                    {
+                        "th": "หมูกรอบ (+£2)",
+                        "en": "Crispy Pork Belly (+£2)",
+                        "extra": 2
                     }
                 ]
             },
-            {
-                "id": "chili_dip",
-                "label": {
-                    "th": "เลือกน้ำพริก",
-                    "en": "Select Chili Dip"
-                },
-                "choices": [
-                    {
-                        "th": "น้ำพริกหนุ่ม (พริกหนุ่มย่าง หอมแดงย่าง กระเทียมย่าง น้ำปลา เกลือ)",
-                        "en": "Nam Prik Num (Grilled green chili, grilled shallots, grilled garlic, fish sauce, salt)"
-                    },
-                    {
-                        "th": "น้ำพริกอ่องหมูสับ (หมูสับ มะเขือเทศ พริกแห้ง หอมแดง กระเทียม กะปิ น้ำปลา น้ำตาลทราย)",
-                        "en": "Nam Prik Ong (Minced pork, tomatoes, dried chili, shallots, garlic, shrimp paste, fish sauce, sugar)"
-                    },
-                    {
-                        "th": "น้ำพริกแจ่วบอง (ปลาร้าสับ พริกแห้ง ข่า ตะไคร้ ใบมะกรูด หอมแดง กระเทียม น้ำมะขามเปียก)",
-                        "en": "Jaew Bong (Minced fermented fish, dried chili, galangal, lemongrass, kaffir lime leaves, shallots, garlic, tamarind juice)"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "id": 15,
-        "name": {
-            "th": "Special Box Set B — วันพุธ - ศุกร์",
-            "en": "Special Box Set B — Wednesday - Friday"
-        },
-        "price": "22.95",
-        "unit": {
-            "th": "1 ท่าน",
-            "en": "1 Person"
-        },
-        "desc": {
-            "th": "คอหมูย่าง ข้าวเหนียว ส้มตำไทย/ส้มตำปูปลาร้า น้ำจิ้มแจ่ว น้ำพริก (หนุ่ม/อ่องหมูสับ/แจ่วบอง) และผักเคียง — จัดส่งวันพุธ - ศุกร์ (เวลาส่ง 11.00 - 13.00 น. / 18.00 - 20.00 น.) | ปิดรับออเดอร์ 15.00 น. ของวันก่อนหน้า (Pre-order) | รัศมีส่งไม่เกิน 5 ไมล์",
-            "en": "Grilled Pork Neck, Sticky Rice, Papaya Salad, Jaew Dipping Sauce, Side Vegetables — Delivered Wednesday - Friday (11:00 AM - 1:00 PM / 6:00 PM - 8:00 PM) | Cut-off 3:00 PM day before (Pre-order) | Radius Within 5 miles"
-        },
-        "img": "Special Box Set B1.jpg",
-        "items": {
-            "th": {
-                "starters": [
-                    "ผักเคียง",
-                    "น้ำจิ้มแจ่ว",
-                    "ส้มตำไทย / ส้มตำปูปลาร้า",
-                    "ตัวเลือกน้ำพริก (เลือก 1 อย่าง):",
-                    "  - น้ำพริกหนุ่ม (พริกหนุ่มย่าง หอมแดงย่าง กระเทียมย่าง น้ำปลา เกลือ)",
-                    "  - น้ำพริกอ่องหมูสับ (หมูสับ มะเขือเทศ พริกแห้ง หอมแดง กระเทียม กะปิ น้ำปลา น้ำตาลทราย)",
-                    "  - น้ำพริกแจ่วบอง (ปลาร้าสับ พริกแห้ง ข่า ตะไคร้ ใบมะกรูด หอมแดง กระเทียม น้ำมะขามเปียก)"
-                ],
-                "mains": [
-                    "คอหมูย่าง",
-                    "ข้าวเหนียว"
-                ],
-                "desserts": []
-            },
-            "en": {
-                "starters": [
-                    "Side Vegetables",
-                    "Jaew Dipping Sauce",
-                    "Papaya Salad",
-                    "Chili Dip Options (Choose 1):",
-                    "  - Nam Prik Num (Grilled green chili, grilled shallots, grilled garlic, fish sauce, salt)",
-                    "  - Nam Prik Ong (Minced pork, tomatoes, dried chili, shallots, garlic, shrimp paste, fish sauce, sugar)",
-                    "  - Jaew Bong (Minced fermented fish, dried chili, galangal, lemongrass, kaffir lime leaves, shallots, garlic, tamarind juice)"
-                ],
-                "mains": [
-                    "Grilled Pork Neck",
-                    "Sticky Rice"
-                ],
-                "desserts": []
-            }
-        },
-        "recipe": {
-            "th": [
-                "",
-                "--- สูตรน้ำจิ้มแจ่ว ---",
-                "น้ำปลา 2 ช้อนโต๊ะ, น้ำมะนาว 2 ช้อนโต๊ะ, พริกป่น ½–1 ช้อนชา",
-                "ข้าวคั่ว 1 ช้อนโต๊ะ, น้ำตาลปี๊บ 2 ช้อนชา, ผงชูรส 1 ช้อนชา",
-                "ต้นหอมซอย 4 กรัม, ผักชีฝรั่งซอย 3-4 กรัม, หอมแดงซอย 2-3 กรัม",
-                "",
-                "--- สูตรส้มตำไทย ---",
-                "มะละกอสับ 150 กรัม, มะเขือเทศเชอร์รี่ 3-4 ลูก, ถั่วฝักยาว 1-2 ฝัก",
-                "กระเทียม 2 กลีบ, พริกแดงสด 2-3 เม็ด, น้ำปลา 1 ช้อนโต๊ะ",
-                "น้ำมะนาว 1½ ช้อนโต๊ะ, น้ำตาลปี๊บ 1 ช้อนโต๊ะ, ผงชูรส 1 ช้อนชา",
-                "ถั่วลิสงคั่ว 1-2 ช้อนโต๊ะ, กุ้งแห้ง 1 ช้อนโต๊ะ"
-            ],
-            "en": [
-                "",
-                "--- Jaew Dipping Sauce Recipe ---",
-                "Fish sauce 2 tbsp, Lime juice 2 tbsp, Chili powder ½-1 tsp",
-                "Roasted rice powder 1 tbsp, Palm sugar 2 tsp, MSG 1 tsp",
-                "Sliced spring onion 4g, Sliced culantro 3-4g, Sliced red onion 2-3g",
-                "",
-                "--- Som Tum Thai (Papaya Salad) Recipe ---",
-                "Shredded papaya 150g, Cherry tomatoes 3-4 pcs, Yardlong beans 1-2 pcs",
-                "Garlic 2 cloves, Fresh red chilis 2-3 pcs, Fish sauce 1 tbsp",
-                "Lime juice 1½ tbsp, Palm sugar 1 tbsp, MSG 1 tsp",
-                "Roasted peanuts 1-2 tbsp, Dried shrimp 1 tbsp"
-            ]
-        },
-        "options": [
             {
                 "id": "papaya_salad",
                 "label": {
@@ -960,281 +861,41 @@
                 },
                 "choices": [
                     {
-                        "th": "ส้มตำไทย (มะละกอดิบ ถั่วฝักยาว มะเขือเทศ พริกขี้หนู กระเทียม น้ำปลา น้ำมะนาว น้ำตาลปี๊บ กุ้งแห้ง ถั่วลิสง)",
-                        "en": "Som Tum Thai (Green Papaya, Long Beans, Tomatoes, Chili, Garlic, Fish Sauce, Lime, Palm Sugar, Dried Shrimp, Peanuts)"
+                        "th": "ส้มตำไทย",
+                        "en": "Som Tum Thai"
                     },
                     {
-                        "th": "ส้มตำปูปลาร้า (มะละกอดิบ ถั่วฝักยาว มะเขือเทศ แครอท พริกขี้หนู กระเทียม น้ำปลา น้ำมะนาว น้ำตาลปี๊บ ปูนาดอง ปลาร้าต้มสุก)",
-                        "en": "Som Tum Pu Pla Ra (Green Papaya, Long Beans, Tomatoes, Carrots, Chili, Garlic, Fish Sauce, Lime, Palm Sugar, Pickled Crab, Boiled Fermented Fish)"
+                        "th": "ส้มตำปูปลาร้า",
+                        "en": "Som Tum Pu Pla Ra"
                     }
                 ]
             },
             {
                 "id": "chili_dip",
                 "label": {
-                    "th": "เลือกน้ำพริก",
-                    "en": "Select Chili Dip"
+                    "th": "เลือกน้ำพริก / น้ำจิ้ม",
+                    "en": "Select Dip / Chili Paste"
                 },
                 "choices": [
                     {
-                        "th": "น้ำพริกหนุ่ม (พริกหนุ่มย่าง หอมแดงย่าง กระเทียมย่าง น้ำปลา เกลือ)",
-                        "en": "Nam Prik Num (Grilled green chili, grilled shallots, grilled garlic, fish sauce, salt)"
+                        "th": "น้ำพริกหนุ่ม",
+                        "en": "Nam Prik Num (Green Chili Dip)"
                     },
                     {
-                        "th": "น้ำพริกอ่องหมูสับ (หมูสับ มะเขือเทศ พริกแห้ง หอมแดง กระเทียม กะปิ น้ำปลา น้ำตาลทราย)",
-                        "en": "Nam Prik Ong (Minced pork, tomatoes, dried chili, shallots, garlic, shrimp paste, fish sauce, sugar)"
+                        "th": "น้ำพริกอ่องหมูสับ",
+                        "en": "Nam Prik Ong (Tomato & Minced Pork Dip)"
                     },
                     {
-                        "th": "น้ำพริกแจ่วบอง (ปลาร้าสับ พริกแห้ง ข่า ตะไคร้ ใบมะกรูด หอมแดง กระเทียม น้ำมะขามเปียก)",
-                        "en": "Jaew Bong (Minced fermented fish, dried chili, galangal, lemongrass, kaffir lime leaves, shallots, garlic, tamarind juice)"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "id": 16,
-        "name": {
-            "th": "Special Box Set C — วันพุธ - ศุกร์",
-            "en": "Special Box Set C — Wednesday - Friday"
-        },
-        "price": "22.95",
-        "unit": {
-            "th": "1 ท่าน",
-            "en": "1 Person"
-        },
-        "desc": {
-            "th": "เสือร้องไห้ ข้าวเหนียว ส้มตำไทย/ส้มตำปูปลาร้า น้ำจิ้มแจ่ว น้ำพริก (หนุ่ม/อ่องหมูสับ/แจ่วบอง) และผักเคียง — จัดส่งวันพุธ - ศุกร์ (เวลาส่ง 11.00 - 13.00 น. / 18.00 - 20.00 น.) | ปิดรับออเดอร์ 15.00 น. ของวันก่อนหน้า (Pre-order) | รัศมีส่งไม่เกิน 5 ไมล์",
-            "en": "Weeping Tiger (Grilled Beef), Sticky Rice, Papaya Salad, Jaew Dipping Sauce, Side Vegetables — Delivered Wednesday - Friday (11:00 AM - 1:00 PM / 6:00 PM - 8:00 PM) | Cut-off 3:00 PM day before (Pre-order) | Radius Within 5 miles"
-        },
-        "img": "Special Box Set C1.jpg",
-        "items": {
-            "th": {
-                "starters": [
-                    "ผักเคียง",
-                    "น้ำจิ้มแจ่ว",
-                    "ส้มตำไทย / ส้มตำปูปลาร้า",
-                    "ตัวเลือกน้ำพริก (เลือก 1 อย่าง):",
-                    "  - น้ำพริกหนุ่ม (พริกหนุ่มย่าง หอมแดงย่าง กระเทียมย่าง น้ำปลา เกลือ)",
-                    "  - น้ำพริกอ่องหมูสับ (หมูสับ มะเขือเทศ พริกแห้ง หอมแดง กระเทียม กะปิ น้ำปลา น้ำตาลทราย)",
-                    "  - น้ำพริกแจ่วบอง (ปลาร้าสับ พริกแห้ง ข่า ตะไคร้ ใบมะกรูด หอมแดง กระเทียม น้ำมะขามเปียก)"
-                ],
-                "mains": [
-                    "เสือร้องไห้",
-                    "ข้าวเหนียว"
-                ],
-                "desserts": []
-            },
-            "en": {
-                "starters": [
-                    "Side Vegetables",
-                    "Jaew Dipping Sauce",
-                    "Papaya Salad",
-                    "Chili Dip Options (Choose 1):",
-                    "  - Nam Prik Num (Grilled green chili, grilled shallots, grilled garlic, fish sauce, salt)",
-                    "  - Nam Prik Ong (Minced pork, tomatoes, dried chili, shallots, garlic, shrimp paste, fish sauce, sugar)",
-                    "  - Jaew Bong (Minced fermented fish, dried chili, galangal, lemongrass, kaffir lime leaves, shallots, garlic, tamarind juice)"
-                ],
-                "mains": [
-                    "Weeping Tiger (Grilled Beef)",
-                    "Sticky Rice"
-                ],
-                "desserts": []
-            }
-        },
-        "recipe": {
-            "th": [
-                "",
-                "--- สูตรน้ำจิ้มแจ่ว ---",
-                "น้ำปลา 2 ช้อนโต๊ะ, น้ำมะนาว 2 ช้อนโต๊ะ, พริกป่น ½–1 ช้อนชา",
-                "ข้าวคั่ว 1 ช้อนโต๊ะ, น้ำตาลปี๊บ 2 ช้อนชา, ผงชูรส 1 ช้อนชา",
-                "ต้นหอมซอย 4 กรัม, ผักชีฝรั่งซอย 3-4 กรัม, หอมแดงซอย 2-3 กรัม",
-                "",
-                "--- สูตรส้มตำไทย ---",
-                "มะละกอสับ 150 กรัม, มะเขือเทศเชอร์รี่ 3-4 ลูก, ถั่วฝักยาว 1-2 ฝัก",
-                "กระเทียม 2 กลีบ, พริกแดงสด 2-3 เม็ด, น้ำปลา 1 ช้อนโต๊ะ",
-                "น้ำมะนาว 1½ ช้อนโต๊ะ, น้ำตาลปี๊บ 1 ช้อนโต๊ะ, ผงชูรส 1 ช้อนชา",
-                "ถั่วลิสงคั่ว 1-2 ช้อนโต๊ะ, กุ้งแห้ง 1 ช้อนโต๊ะ"
-            ],
-            "en": [
-                "",
-                "--- Jaew Dipping Sauce Recipe ---",
-                "Fish sauce 2 tbsp, Lime juice 2 tbsp, Chili powder ½-1 tsp",
-                "Roasted rice powder 1 tbsp, Palm sugar 2 tsp, MSG 1 tsp",
-                "Sliced spring onion 4g, Sliced culantro 3-4g, Sliced red onion 2-3g",
-                "",
-                "--- Som Tum Thai (Papaya Salad) Recipe ---",
-                "Shredded papaya 150g, Cherry tomatoes 3-4 pcs, Yardlong beans 1-2 pcs",
-                "Garlic 2 cloves, Fresh red chilis 2-3 pcs, Fish sauce 1 tbsp",
-                "Lime juice 1½ tbsp, Palm sugar 1 tbsp, MSG 1 tsp",
-                "Roasted peanuts 1-2 tbsp, Dried shrimp 1 tbsp"
-            ]
-        },
-        "options": [
-            {
-                "id": "papaya_salad",
-                "label": {
-                    "th": "เลือกส้มตำ",
-                    "en": "Select Papaya Salad"
-                },
-                "choices": [
-                    {
-                        "th": "ส้มตำไทย (มะละกอดิบ ถั่วฝักยาว มะเขือเทศ พริกขี้หนู กระเทียม น้ำปลา น้ำมะนาว น้ำตาลปี๊บ กุ้งแห้ง ถั่วลิสง)",
-                        "en": "Som Tum Thai (Green Papaya, Long Beans, Tomatoes, Chili, Garlic, Fish Sauce, Lime, Palm Sugar, Dried Shrimp, Peanuts)"
+                        "th": "น้ำพริกแจ่วบอง",
+                        "en": "Nam Prik Jaew Bong (Fermented Fish Chili Dip)"
                     },
                     {
-                        "th": "ส้มตำปูปลาร้า (มะละกอดิบ ถั่วฝักยาว มะเขือเทศ แครอท พริกขี้หนู กระเทียม น้ำปลา น้ำมะนาว น้ำตาลปี๊บ ปูนาดอง ปลาร้าต้มสุก)",
-                        "en": "Som Tum Pu Pla Ra (Green Papaya, Long Beans, Tomatoes, Carrots, Chili, Garlic, Fish Sauce, Lime, Palm Sugar, Pickled Crab, Boiled Fermented Fish)"
-                    }
-                ]
-            },
-            {
-                "id": "chili_dip",
-                "label": {
-                    "th": "เลือกน้ำพริก",
-                    "en": "Select Chili Dip"
-                },
-                "choices": [
-                    {
-                        "th": "น้ำพริกหนุ่ม (พริกหนุ่มย่าง หอมแดงย่าง กระเทียมย่าง น้ำปลา เกลือ)",
-                        "en": "Nam Prik Num (Grilled green chili, grilled shallots, grilled garlic, fish sauce, salt)"
+                        "th": "น้ำจิ้มแจ่ว",
+                        "en": "Jaew Sauce (Spicy Tamarind Sauce)"
                     },
                     {
-                        "th": "น้ำพริกอ่องหมูสับ (หมูสับ มะเขือเทศ พริกแห้ง หอมแดง กระเทียม กะปิ น้ำปลา น้ำตาลทราย)",
-                        "en": "Nam Prik Ong (Minced pork, tomatoes, dried chili, shallots, garlic, shrimp paste, fish sauce, sugar)"
-                    },
-                    {
-                        "th": "น้ำพริกแจ่วบอง (ปลาร้าสับ พริกแห้ง ข่า ตะไคร้ ใบมะกรูด หอมแดง กระเทียม น้ำมะขามเปียก)",
-                        "en": "Jaew Bong (Minced fermented fish, dried chili, galangal, lemongrass, kaffir lime leaves, shallots, garlic, tamarind juice)"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "id": 17,
-        "name": {
-            "th": "Special Box Set D — วันพุธ - ศุกร์",
-            "en": "Special Box Set D — Wednesday - Friday"
-        },
-        "price": "22.95",
-        "unit": {
-            "th": "1 ท่าน",
-            "en": "1 Person"
-        },
-        "desc": {
-            "th": "ไก่ย่าง ข้าวเหนียว ส้มตำไทย/ส้มตำปูปลาร้า น้ำจิ้มมะขาม น้ำพริก (หนุ่ม/อ่องหมูสับ/แจ่วบอง) และผักเคียง — จัดส่งวันพุธ - ศุกร์ (เวลาส่ง 11.00 - 13.00 น. / 18.00 - 20.00 น.) | ปิดรับออเดอร์ 15.00 น. ของวันก่อนหน้า (Pre-order) | รัศมีส่งไม่เกิน 5 ไมล์",
-            "en": "Grilled Chicken, Sticky Rice, Papaya Salad, Tamarind Dipping Sauce, Side Vegetables — Delivered Wednesday - Friday (11:00 AM - 1:00 PM / 6:00 PM - 8:00 PM) | Cut-off 3:00 PM day before (Pre-order) | Radius Within 5 miles"
-        },
-        "img": "Special Box Set D 1.jpg",
-        "items": {
-            "th": {
-                "starters": [
-                    "ผักเคียง",
-                    "น้ำจิ้มมะขาม",
-                    "ส้มตำไทย / ส้มตำปูปลาร้า",
-                    "ตัวเลือกน้ำพริก (เลือก 1 อย่าง):",
-                    "  - น้ำพริกหนุ่ม (พริกหนุ่มย่าง หอมแดงย่าง กระเทียมย่าง น้ำปลา เกลือ)",
-                    "  - น้ำพริกอ่องหมูสับ (หมูสับ มะเขือเทศ พริกแห้ง หอมแดง กระเทียม กะปิ น้ำปลา น้ำตาลทราย)",
-                    "  - น้ำพริกแจ่วบอง (ปลาร้าสับ พริกแห้ง ข่า ตะไคร้ ใบมะกรูด หอมแดง กระเทียม น้ำมะขามเปียก)"
-                ],
-                "mains": [
-                    "ไก่ย่าง",
-                    "ข้าวเหนียว"
-                ],
-                "desserts": []
-            },
-            "en": {
-                "starters": [
-                    "Side Vegetables",
-                    "Tamarind Dipping Sauce",
-                    "Papaya Salad",
-                    "Chili Dip Options (Choose 1):",
-                    "  - Nam Prik Num (Grilled green chili, grilled shallots, grilled garlic, fish sauce, salt)",
-                    "  - Nam Prik Ong (Minced pork, tomatoes, dried chili, shallots, garlic, shrimp paste, fish sauce, sugar)",
-                    "  - Jaew Bong (Minced fermented fish, dried chili, galangal, lemongrass, kaffir lime leaves, shallots, garlic, tamarind juice)"
-                ],
-                "mains": [
-                    "Grilled Chicken",
-                    "Sticky Rice"
-                ],
-                "desserts": []
-            }
-        },
-        "recipe": {
-            "th": [
-                "สูตรหมักไก่ย่าง:",
-                "ซีอิ๊วขาว 2 ช้อนโต๊ะ, น้ำปลา 1 ช้อนโต๊ะ, ซอสหอยนางรม 1 ช้อนโต๊ะ",
-                "น้ำตาลปี๊บ 1 ช้อนโต๊ะ, กระเทียมสับ 1 ช้อนโต๊ะ, รากผักชี 2-3 ราก",
-                "พริกไทยป่น 1 ช้อนชา, ขมิ้นผง ½ ช้อนชา, นมสด 2 ช้อนโต๊ะ",
-                "น้ำมันพืช 1 ช้อนโต๊ะ, คนอร์ 1 ช้อนโต๊ะ",
-                "",
-                "--- สูตรน้ำจิ้มแจ่ว ---",
-                "น้ำปลา 2 ช้อนโต๊ะ, น้ำมะนาว 2 ช้อนโต๊ะ, พริกป่น ½–1 ช้อนชา",
-                "ข้าวคั่ว 1 ช้อนโต๊ะ, น้ำตาลปี๊บ 2 ช้อนชา, ผงชูรส 1 ช้อนชา",
-                "ต้นหอมซอย 4 กรัม, ผักชีฝรั่งซอย 3-4 กรัม, หอมแดงซอย 2-3 กรัม",
-                "",
-                "--- สูตรส้มตำไทย ---",
-                "มะละกอสับ 150 กรัม, มะเขือเทศเชอร์รี่ 3-4 ลูก, ถั่วฝักยาว 1-2 ฝัก",
-                "กระเทียม 2 กลีบ, พริกแดงสด 2-3 เม็ด, น้ำปลา 1 ช้อนโต๊ะ",
-                "น้ำมะนาว 1½ ช้อนโต๊ะ, น้ำตาลปี๊บ 1 ช้อนโต๊ะ, ผงชูรส 1 ช้อนชา",
-                "ถั่วลิสงคั่ว 1-2 ช้อนโต๊ะ, กุ้งแห้ง 1 ช้อนโต๊ะ"
-            ],
-            "en": [
-                "Grilled Chicken Marinade:",
-                "Light soy sauce 2 tbsp, Fish sauce 1 tbsp, Oyster sauce 1 tbsp",
-                "Palm sugar 1 tbsp, Minced garlic 1 tbsp, Coriander root 2-3 roots",
-                "Pepper powder 1 tsp, Turmeric powder ½ tsp, Fresh milk 2 tbsp",
-                "Vegetable oil 1 tbsp, Knorr 1 tbsp",
-                "",
-                "--- Jaew Dipping Sauce Recipe ---",
-                "Fish sauce 2 tbsp, Lime juice 2 tbsp, Chili powder ½-1 tsp",
-                "Roasted rice powder 1 tbsp, Palm sugar 2 tsp, MSG 1 tsp",
-                "Sliced spring onion 4g, Sliced culantro 3-4g, Sliced red onion 2-3g",
-                "",
-                "--- Som Tum Thai (Papaya Salad) Recipe ---",
-                "Shredded papaya 150g, Cherry tomatoes 3-4 pcs, Yardlong beans 1-2 pcs",
-                "Garlic 2 cloves, Fresh red chilis 2-3 pcs, Fish sauce 1 tbsp",
-                "Lime juice 1½ tbsp, Palm sugar 1 tbsp, MSG 1 tsp",
-                "Roasted peanuts 1-2 tbsp, Dried shrimp 1 tbsp"
-            ]
-        },
-        "options": [
-            {
-                "id": "papaya_salad",
-                "label": {
-                    "th": "เลือกส้มตำ",
-                    "en": "Select Papaya Salad"
-                },
-                "choices": [
-                    {
-                        "th": "ส้มตำไทย (มะละกอดิบ ถั่วฝักยาว มะเขือเทศ พริกขี้หนู กระเทียม น้ำปลา น้ำมะนาว น้ำตาลปี๊บ กุ้งแห้ง ถั่วลิสง)",
-                        "en": "Som Tum Thai (Green Papaya, Long Beans, Tomatoes, Chili, Garlic, Fish Sauce, Lime, Palm Sugar, Dried Shrimp, Peanuts)"
-                    },
-                    {
-                        "th": "ส้มตำปูปลาร้า (มะละกอดิบ ถั่วฝักยาว มะเขือเทศ แครอท พริกขี้หนู กระเทียม น้ำปลา น้ำมะนาว น้ำตาลปี๊บ ปูนาดอง ปลาร้าต้มสุก)",
-                        "en": "Som Tum Pu Pla Ra (Green Papaya, Long Beans, Tomatoes, Carrots, Chili, Garlic, Fish Sauce, Lime, Palm Sugar, Pickled Crab, Boiled Fermented Fish)"
-                    }
-                ]
-            },
-            {
-                "id": "chili_dip",
-                "label": {
-                    "th": "เลือกน้ำพริก",
-                    "en": "Select Chili Dip"
-                },
-                "choices": [
-                    {
-                        "th": "น้ำพริกหนุ่ม (พริกหนุ่มย่าง หอมแดงย่าง กระเทียมย่าง น้ำปลา เกลือ)",
-                        "en": "Nam Prik Num (Grilled green chili, grilled shallots, grilled garlic, fish sauce, salt)"
-                    },
-                    {
-                        "th": "น้ำพริกอ่องหมูสับ (หมูสับ มะเขือเทศ พริกแห้ง หอมแดง กระเทียม กะปิ น้ำปลา น้ำตาลทราย)",
-                        "en": "Nam Prik Ong (Minced pork, tomatoes, dried chili, shallots, garlic, shrimp paste, fish sauce, sugar)"
-                    },
-                    {
-                        "th": "น้ำพริกแจ่วบอง (ปลาร้าสับ พริกแห้ง ข่า ตะไคร้ ใบมะกรูด หอมแดง กระเทียม น้ำมะขามเปียก)",
-                        "en": "Jaew Bong (Minced fermented fish, dried chili, galangal, lemongrass, kaffir lime leaves, shallots, garlic, tamarind juice)"
+                        "th": "น้ำจิ้มซีฟู้ด",
+                        "en": "Seafood Sauce"
                     }
                 ]
             }
