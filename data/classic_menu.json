@@ -179,761 +179,6 @@
         }
     },
     {
-        "id": 10,
-        "name": {
-            "th": "Lunch Box (Set A)",
-            "en": "Lunch Box (Set A)"
-        },
-        "price": "22.95",
-        "unit": {
-            "th": "1 ท่าน",
-            "en": "1 Person"
-        },
-        "desc": {
-            "th": "ข้าวกะเพรา (หมูสับ/ไก่สับ/เนื้อสับ) + ไข่ดาว พริกน้ำปลา, ส้มตำไทย/ส้มตำปูปลาร้า, คอหมูย่าง/เสือร้องไห้ น้ำจิ้มแจ่ว, แกง (เลือกประเภทและเนื้อสัตว์ได้) และผักเคียง",
-            "en": "Basil Stir-Fry (Pork/Chicken/Beef) with Rice & Fried Egg, Som Tum Thai/Pu Pla Ra, Grilled Pork Neck / Weeping Tiger with Jaew, Curry (Customizable Type & Meat), Side Vegetables"
-        },
-        "img": "Lunch Box (Set A) 1.jpg",
-        "items": {
-            "th": {
-                "starters": [
-                    "พริกน้ำปลา",
-                    "น้ำจิ้มแจ่ว",
-                    "ผักเคียง"
-                ],
-                "mains": [
-                    "ข้าวกะเพรา (หมูสับ/ไก่สับ/เนื้อสับ) ไข่ดาว",
-                    "แกง (เลือกประเภทและเนื้อสัตว์ได้)",
-                    "คอหมูย่าง / เสือร้องไห้",
-                    "ส้มตำไทย / ส้มตำปูปลาร้า"
-                ],
-                "desserts": [
-                    "📅 จัดส่งวันพุธ - ศุกร์ (เวลาส่ง 11.00 - 13.00 น. / 18.00 - 20.00 น.) | ปิดรับออเดอร์ 15.00 น. ของวันก่อนหน้า (Pre-order) | จัดส่งเฉพาะรัศมีไม่เกิน 5 ไมล์"
-                ]
-            },
-            "en": {
-                "starters": [
-                    "Nam Pla Prik",
-                    "Jaew Dipping Sauce",
-                    "Side Vegetables"
-                ],
-                "mains": [
-                    "Basil Stir-Fry (Pork/Chicken/Beef) with Rice & Fried Egg",
-                    "Curry (Customizable Type & Meat)",
-                    "Grilled Pork Neck / Weeping Tiger",
-                    "Som Tum Thai / Pu Pla Ra"
-                ],
-                "desserts": [
-                    "📅 Delivered Wednesday - Friday (Delivery: 11:00 AM - 1:00 PM / 6:00 PM - 8:00 PM) | Cut-off: 3:00 PM day before (Pre-order) | Delivery Radius: Within 5 miles"
-                ]
-            }
-        },
-        "options": [
-            {
-                "id": "main_dish",
-                "label": {
-                    "th": "เลือกเนื้อสัตว์กะเพรา",
-                    "en": "Select Basil Stir-Fry Meat"
-                },
-                "choices": [
-                    {
-                        "th": "หมูสับ",
-                        "en": "Minced Pork"
-                    },
-                    {
-                        "th": "ไก่สับ",
-                        "en": "Minced Chicken"
-                    },
-                    {
-                        "th": "เนื้อสับ",
-                        "en": "Minced Beef"
-                    }
-                ]
-            },
-            {
-                "id": "papaya_salad",
-                "label": {
-                    "th": "เลือกส้มตำ",
-                    "en": "Select Papaya Salad"
-                },
-                "choices": [
-                    {
-                        "th": "ส้มตำไทย (มะละกอดิบ ถั่วฝักยาว มะเขือเทศ พริกขี้หนู กระเทียม น้ำปลา น้ำมะนาว น้ำตาลปี๊บ กุ้งแห้ง ถั่วลิสง)",
-                        "en": "Som Tum Thai (Green Papaya, Long Beans, Tomatoes, Chili, Garlic, Fish Sauce, Lime, Palm Sugar, Dried Shrimp, Peanuts)"
-                    },
-                    {
-                        "th": "ส้มตำปูปลาร้า (มะละกอดิบ ถั่วฝักยาว มะเขือเทศ แครอท พริกขี้หนู กระเทียม น้ำปลา น้ำมะนาว น้ำตาลปี๊บ ปูนาดอง ปลาร้าต้มสุก)",
-                        "en": "Som Tum Pu Pla Ra (Green Papaya, Long Beans, Tomatoes, Carrots, Chili, Garlic, Fish Sauce, Lime, Palm Sugar, Pickled Crab, Boiled Fermented Fish)"
-                    }
-                ]
-            },
-            {
-                "id": "grilled_meat",
-                "label": {
-                    "th": "เลือกเมนูย่าง",
-                    "en": "Select Grilled Meat"
-                },
-                "choices": [
-                    {
-                        "th": "คอหมูย่าง",
-                        "en": "Grilled Pork Neck"
-                    },
-                    {
-                        "th": "เสือร้องไห้",
-                        "en": "Weeping Tiger (Grilled Beef)"
-                    }
-                ]
-            },
-            {
-                "id": "curry_type",
-                "label": {
-                    "th": "เลือกประเภทแกง",
-                    "en": "Select Curry Type"
-                },
-                "choices": [
-                    {
-                        "th": "แกงเขียวหวาน",
-                        "en": "Green Curry"
-                    },
-                    {
-                        "th": "แกงพะแนง",
-                        "en": "Panang Curry"
-                    },
-                    {
-                        "th": "แกงแดง",
-                        "en": "Red Curry"
-                    },
-                    {
-                        "th": "แกงเทโพ",
-                        "en": "Te Po Curry"
-                    },
-                    {
-                        "th": "แกงมัสมั่น",
-                        "en": "Massaman Curry"
-                    }
-                ]
-            },
-            {
-                "id": "curry_meat",
-                "label": {
-                    "th": "เลือกเนื้อสัตว์ในแกง",
-                    "en": "Select Meat for Curry"
-                },
-                "choices": [
-                    {
-                        "th": "ไก่",
-                        "en": "Chicken"
-                    },
-                    {
-                        "th": "หมู",
-                        "en": "Pork"
-                    },
-                    {
-                        "th": "เนื้อ",
-                        "en": "Beef"
-                    }
-                ]
-            }
-        ],
-        "recipe": {
-            "th": [
-                "",
-                "--- สูตรน้ำจิ้มแจ่ว ---",
-                "น้ำปลา 2 ช้อนโต๊ะ, น้ำมะนาว 2 ช้อนโต๊ะ, พริกป่น ½–1 ช้อนชา",
-                "ข้าวคั่ว 1 ช้อนโต๊ะ, น้ำตาลปี๊บ 2 ช้อนชา, ผงชูรส 1 ช้อนชา",
-                "ต้นหอมซอย 4 กรัม, ผักชีฝรั่งซอย 3-4 กรัม, หอมแดงซอย 2-3 กรัม",
-                "",
-                "--- สูตรส้มตำไทย ---",
-                "มะละกอสับ 150 กรัม, มะเขือเทศเชอร์รี่ 3-4 ลูก, ถั่วฝักยาว 1-2 ฝัก",
-                "กระเทียม 2 กลีบ, พริกแดงสด 2-3 เม็ด, น้ำปลา 1 ช้อนโต๊ะ",
-                "น้ำมะนาว 1½ ช้อนโต๊ะ, น้ำตาลปี๊บ 1 ช้อนโต๊ะ, ผงชูรส 1 ช้อนชา",
-                "ถั่วลิสงคั่ว 1-2 ช้อนโต๊ะ, กุ้งแห้ง 1 ช้อนโต๊ะ",
-                "",
-                "--- สูตรซอสผัดกะเพรา ---",
-                "น้ำปลา 4 ชต., ซอสฝาเขียว 4 ชต., ซีอิ๊วขาว 4 ชต.",
-                "ซอสหอยนางรม 14 ชต., ซีอิ๊วดำหวาน 2 ชต., น้ำตาลทราย 4 ชต.",
-                "ผงปรุงรส 2 ชต., พริกป่น 2 ชต., กระเทียมสับ 2½ ชต.",
-                "พริกไทยป่น ½ ชต., น้ำเปล่า 250 ml"
-            ],
-            "en": [
-                "",
-                "--- Jaew Dipping Sauce Recipe ---",
-                "Fish sauce 2 tbsp, Lime juice 2 tbsp, Chili powder ½-1 tsp",
-                "Roasted rice powder 1 tbsp, Palm sugar 2 tsp, MSG 1 tsp",
-                "Sliced spring onion 4g, Sliced culantro 3-4g, Sliced red onion 2-3g",
-                "",
-                "--- Som Tum Thai (Papaya Salad) Recipe ---",
-                "Shredded papaya 150g, Cherry tomatoes 3-4 pcs, Yardlong beans 1-2 pcs",
-                "Garlic 2 cloves, Fresh red chilis 2-3 pcs, Fish sauce 1 tbsp",
-                "Lime juice 1½ tbsp, Palm sugar 1 tbsp, MSG 1 tsp",
-                "Roasted peanuts 1-2 tbsp, Dried shrimp 1 tbsp",
-                "",
-                "--- Basil Stir-fry Sauce Recipe ---",
-                "Fish sauce 4 tbsp, Green cap seasoning 4 tbsp, Light soy sauce 4 tbsp",
-                "Oyster sauce 14 tbsp, Sweet dark soy sauce 2 tbsp, Sugar 4 tbsp",
-                "Seasoning powder 2 tbsp, Chili powder 2 tbsp, Minced garlic 2½ tbsp",
-                "Ground pepper ½ tbsp, Water 250 ml"
-            ]
-        }
-    },
-    {
-        "id": 11,
-        "name": {
-            "th": "Lunch Box (Set B)",
-            "en": "Lunch Box (Set B)"
-        },
-        "price": "22.95",
-        "unit": {
-            "th": "1 ท่าน",
-            "en": "1 Person"
-        },
-        "desc": {
-            "th": "ข้าวกะเพราหมูกรอบ + ไข่ดาว พริกน้ำปลา, ส้มตำไทย/ส้มตำปูปลาร้า, คอหมูย่าง/เสือร้องไห้ น้ำจิ้มแจ่ว, แกง (เลือกประเภทและเนื้อสัตว์ได้) และผักเคียง",
-            "en": "Crispy Pork Belly Basil Stir-Fry with Rice & Fried Egg, Som Tum Thai/Pu Pla Ra, Grilled Pork Neck / Weeping Tiger with Jaew, Curry (Customizable Type & Meat), Side Vegetables"
-        },
-        "img": "Lunch Box (Set B)1.jpg",
-        "items": {
-            "th": {
-                "starters": [
-                    "พริกน้ำปลา",
-                    "น้ำจิ้มแจ่ว",
-                    "ผักเคียง"
-                ],
-                "mains": [
-                    "ข้าวกะเพราหมูกรอบไข่ดาว",
-                    "แกง (เลือกประเภทและเนื้อสัตว์ได้)",
-                    "คอหมูย่าง / เสือร้องไห้",
-                    "ส้มตำไทย / ส้มตำปูปลาร้า"
-                ],
-                "desserts": [
-                    "📅 จัดส่งวันพุธ - ศุกร์ (เวลาส่ง 11.00 - 13.00 น. / 18.00 - 20.00 น.) | ปิดรับออเดอร์ 15.00 น. ของวันก่อนหน้า (Pre-order) | จัดส่งเฉพาะรัศมีไม่เกิน 5 ไมล์"
-                ]
-            },
-            "en": {
-                "starters": [
-                    "Nam Pla Prik",
-                    "Jaew Dipping Sauce",
-                    "Side Vegetables"
-                ],
-                "mains": [
-                    "Crispy Pork Belly Basil with Rice & Fried Egg",
-                    "Curry (Customizable Type & Meat)",
-                    "Grilled Pork Neck / Weeping Tiger",
-                    "Som Tum Thai / Pu Pla Ra"
-                ],
-                "desserts": [
-                    "📅 Delivered Wednesday - Friday (Delivery: 11:00 AM - 1:00 PM / 6:00 PM - 8:00 PM) | Cut-off: 3:00 PM day before (Pre-order) | Delivery Radius: Within 5 miles"
-                ]
-            }
-        },
-        "options": [
-            {
-                "id": "papaya_salad",
-                "label": {
-                    "th": "เลือกส้มตำ",
-                    "en": "Select Papaya Salad"
-                },
-                "choices": [
-                    {
-                        "th": "ส้มตำไทย (มะละกอดิบ ถั่วฝักยาว มะเขือเทศ พริกขี้หนู กระเทียม น้ำปลา น้ำมะนาว น้ำตาลปี๊บ กุ้งแห้ง ถั่วลิสง)",
-                        "en": "Som Tum Thai (Green Papaya, Long Beans, Tomatoes, Chili, Garlic, Fish Sauce, Lime, Palm Sugar, Dried Shrimp, Peanuts)"
-                    },
-                    {
-                        "th": "ส้มตำปูปลาร้า (มะละกอดิบ ถั่วฝักยาว มะเขือเทศ แครอท พริกขี้หนู กระเทียม น้ำปลา น้ำมะนาว น้ำตาลปี๊บ ปูนาดอง ปลาร้าต้มสุก)",
-                        "en": "Som Tum Pu Pla Ra (Green Papaya, Long Beans, Tomatoes, Carrots, Chili, Garlic, Fish Sauce, Lime, Palm Sugar, Pickled Crab, Boiled Fermented Fish)"
-                    }
-                ]
-            },
-            {
-                "id": "grilled_meat",
-                "label": {
-                    "th": "เลือกเมนูย่าง",
-                    "en": "Select Grilled Meat"
-                },
-                "choices": [
-                    {
-                        "th": "คอหมูย่าง",
-                        "en": "Grilled Pork Neck"
-                    },
-                    {
-                        "th": "เสือร้องไห้",
-                        "en": "Weeping Tiger (Grilled Beef)"
-                    }
-                ]
-            },
-            {
-                "id": "curry_type",
-                "label": {
-                    "th": "เลือกประเภทแกง",
-                    "en": "Select Curry Type"
-                },
-                "choices": [
-                    {
-                        "th": "แกงเขียวหวาน",
-                        "en": "Green Curry"
-                    },
-                    {
-                        "th": "แกงพะแนง",
-                        "en": "Panang Curry"
-                    },
-                    {
-                        "th": "แกงแดง",
-                        "en": "Red Curry"
-                    },
-                    {
-                        "th": "แกงเทโพ",
-                        "en": "Te Po Curry"
-                    },
-                    {
-                        "th": "แกงมัสมั่น",
-                        "en": "Massaman Curry"
-                    }
-                ]
-            },
-            {
-                "id": "curry_meat",
-                "label": {
-                    "th": "เลือกเนื้อสัตว์ในแกง",
-                    "en": "Select Meat for Curry"
-                },
-                "choices": [
-                    {
-                        "th": "ไก่",
-                        "en": "Chicken"
-                    },
-                    {
-                        "th": "หมู",
-                        "en": "Pork"
-                    },
-                    {
-                        "th": "เนื้อ",
-                        "en": "Beef"
-                    }
-                ]
-            }
-        ],
-        "recipe": {
-            "th": [
-                "",
-                "--- สูตรน้ำจิ้มแจ่ว ---",
-                "น้ำปลา 2 ช้อนโต๊ะ, น้ำมะนาว 2 ช้อนโต๊ะ, พริกป่น ½–1 ช้อนชา",
-                "ข้าวคั่ว 1 ช้อนโต๊ะ, น้ำตาลปี๊บ 2 ช้อนชา, ผงชูรส 1 ช้อนชา",
-                "ต้นหอมซอย 4 กรัม, ผักชีฝรั่งซอย 3-4 กรัม, หอมแดงซอย 2-3 กรัม",
-                "",
-                "--- สูตรส้มตำไทย ---",
-                "มะละกอสับ 150 กรัม, มะเขือเทศเชอร์รี่ 3-4 ลูก, ถั่วฝักยาว 1-2 ฝัก",
-                "กระเทียม 2 กลีบ, พริกแดงสด 2-3 เม็ด, น้ำปลา 1 ช้อนโต๊ะ",
-                "น้ำมะนาว 1½ ช้อนโต๊ะ, น้ำตาลปี๊บ 1 ช้อนโต๊ะ, ผงชูรส 1 ช้อนชา",
-                "ถั่วลิสงคั่ว 1-2 ช้อนโต๊ะ, กุ้งแห้ง 1 ช้อนโต๊ะ",
-                "",
-                "--- สูตรซอสผัดกะเพรา ---",
-                "น้ำปลา 4 ชต., ซอสฝาเขียว 4 ชต., ซีอิ๊วขาว 4 ชต.",
-                "ซอสหอยนางรม 14 ชต., ซีอิ๊วดำหวาน 2 ชต., น้ำตาลทราย 4 ชต.",
-                "ผงปรุงรส 2 ชต., พริกป่น 2 ชต., กระเทียมสับ 2½ ชต.",
-                "พริกไทยป่น ½ ชต., น้ำเปล่า 250 ml"
-            ],
-            "en": [
-                "",
-                "--- Jaew Dipping Sauce Recipe ---",
-                "Fish sauce 2 tbsp, Lime juice 2 tbsp, Chili powder ½-1 tsp",
-                "Roasted rice powder 1 tbsp, Palm sugar 2 tsp, MSG 1 tsp",
-                "Sliced spring onion 4g, Sliced culantro 3-4g, Sliced red onion 2-3g",
-                "",
-                "--- Som Tum Thai (Papaya Salad) Recipe ---",
-                "Shredded papaya 150g, Cherry tomatoes 3-4 pcs, Yardlong beans 1-2 pcs",
-                "Garlic 2 cloves, Fresh red chilis 2-3 pcs, Fish sauce 1 tbsp",
-                "Lime juice 1½ tbsp, Palm sugar 1 tbsp, MSG 1 tsp",
-                "Roasted peanuts 1-2 tbsp, Dried shrimp 1 tbsp",
-                "",
-                "--- Basil Stir-fry Sauce Recipe ---",
-                "Fish sauce 4 tbsp, Green cap seasoning 4 tbsp, Light soy sauce 4 tbsp",
-                "Oyster sauce 14 tbsp, Sweet dark soy sauce 2 tbsp, Sugar 4 tbsp",
-                "Seasoning powder 2 tbsp, Chili powder 2 tbsp, Minced garlic 2½ tbsp",
-                "Ground pepper ½ tbsp, Water 250 ml"
-            ]
-        }
-    },
-    {
-        "id": 12,
-        "name": {
-            "th": "Lunch Box (Set C)",
-            "en": "Lunch Box (Set C)"
-        },
-        "price": "22.95",
-        "unit": {
-            "th": "1 ท่าน",
-            "en": "1 Person"
-        },
-        "desc": {
-            "th": "ข้าวกะเพรา (เนื้อ/ไก่/หมู) + ไข่ดาว พริกน้ำปลา, ส้มตำไทย/ส้มตำปูปลาร้า, คอหมูย่าง/เสือร้องไห้ น้ำจิ้มแจ่ว, แกง (เลือกประเภทและเนื้อสัตว์ได้) และผักเคียง",
-            "en": "Basil Stir-Fry (Beef/Chicken/Pork) with Rice & Fried Egg, Som Tum Thai/Pu Pla Ra, Grilled Pork Neck / Weeping Tiger with Jaew, Curry (Customizable Type & Meat), Side Vegetables"
-        },
-        "img": "Lunch Box (Set C) 1.jpg",
-        "items": {
-            "th": {
-                "starters": [
-                    "พริกน้ำปลา",
-                    "น้ำจิ้มแจ่ว",
-                    "ผักเคียง"
-                ],
-                "mains": [
-                    "ข้าวกะเพรา (เนื้อ/ไก่/หมู) ไข่ดาว",
-                    "แกง (เลือกประเภทและเนื้อสัตว์ได้)",
-                    "คอหมูย่าง / เสือร้องไห้",
-                    "ส้มตำไทย / ส้มตำปูปลาร้า"
-                ],
-                "desserts": [
-                    "📅 จัดส่งวันพุธ - ศุกร์ (เวลาส่ง 11.00 - 13.00 น. / 18.00 - 20.00 น.) | ปิดรับออเดอร์ 15.00 น. ของวันก่อนหน้า (Pre-order) | จัดส่งเฉพาะรัศมีไม่เกิน 5 ไมล์"
-                ]
-            },
-            "en": {
-                "starters": [
-                    "Nam Pla Prik",
-                    "Jaew Dipping Sauce",
-                    "Side Vegetables"
-                ],
-                "mains": [
-                    "Basil Stir-Fry (Beef/Chicken/Pork) with Rice & Fried Egg",
-                    "Curry (Customizable Type & Meat)",
-                    "Grilled Pork Neck / Weeping Tiger",
-                    "Som Tum Thai / Pu Pla Ra"
-                ],
-                "desserts": [
-                    "📅 Delivered Wednesday - Friday (Delivery: 11:00 AM - 1:00 PM / 6:00 PM - 8:00 PM) | Cut-off: 3:00 PM day before (Pre-order) | Delivery Radius: Within 5 miles"
-                ]
-            }
-        },
-        "options": [
-            {
-                "id": "main_dish",
-                "label": {
-                    "th": "เลือกเนื้อสัตว์กะเพราชิ้น",
-                    "en": "Select Basil Stir-Fry Meat"
-                },
-                "choices": [
-                    {
-                        "th": "เนื้อ",
-                        "en": "Beef"
-                    },
-                    {
-                        "th": "ไก่",
-                        "en": "Chicken"
-                    },
-                    {
-                        "th": "หมู",
-                        "en": "Pork"
-                    }
-                ]
-            },
-            {
-                "id": "papaya_salad",
-                "label": {
-                    "th": "เลือกส้มตำ",
-                    "en": "Select Papaya Salad"
-                },
-                "choices": [
-                    {
-                        "th": "ส้มตำไทย (มะละกอดิบ ถั่วฝักยาว มะเขือเทศ พริกขี้หนู กระเทียม น้ำปลา น้ำมะนาว น้ำตาลปี๊บ กุ้งแห้ง ถั่วลิสง)",
-                        "en": "Som Tum Thai (Green Papaya, Long Beans, Tomatoes, Chili, Garlic, Fish Sauce, Lime, Palm Sugar, Dried Shrimp, Peanuts)"
-                    },
-                    {
-                        "th": "ส้มตำปูปลาร้า (มะละกอดิบ ถั่วฝักยาว มะเขือเทศ แครอท พริกขี้หนู กระเทียม น้ำปลา น้ำมะนาว น้ำตาลปี๊บ ปูนาดอง ปลาร้าต้มสุก)",
-                        "en": "Som Tum Pu Pla Ra (Green Papaya, Long Beans, Tomatoes, Carrots, Chili, Garlic, Fish Sauce, Lime, Palm Sugar, Pickled Crab, Boiled Fermented Fish)"
-                    }
-                ]
-            },
-            {
-                "id": "grilled_meat",
-                "label": {
-                    "th": "เลือกเมนูย่าง",
-                    "en": "Select Grilled Meat"
-                },
-                "choices": [
-                    {
-                        "th": "คอหมูย่าง",
-                        "en": "Grilled Pork Neck"
-                    },
-                    {
-                        "th": "เสือร้องไห้",
-                        "en": "Weeping Tiger (Grilled Beef)"
-                    }
-                ]
-            },
-            {
-                "id": "curry_type",
-                "label": {
-                    "th": "เลือกประเภทแกง",
-                    "en": "Select Curry Type"
-                },
-                "choices": [
-                    {
-                        "th": "แกงเขียวหวาน",
-                        "en": "Green Curry"
-                    },
-                    {
-                        "th": "แกงพะแนง",
-                        "en": "Panang Curry"
-                    },
-                    {
-                        "th": "แกงแดง",
-                        "en": "Red Curry"
-                    },
-                    {
-                        "th": "แกงเทโพ",
-                        "en": "Te Po Curry"
-                    },
-                    {
-                        "th": "แกงมัสมั่น",
-                        "en": "Massaman Curry"
-                    }
-                ]
-            },
-            {
-                "id": "curry_meat",
-                "label": {
-                    "th": "เลือกเนื้อสัตว์ในแกง",
-                    "en": "Select Meat for Curry"
-                },
-                "choices": [
-                    {
-                        "th": "ไก่",
-                        "en": "Chicken"
-                    },
-                    {
-                        "th": "หมู",
-                        "en": "Pork"
-                    },
-                    {
-                        "th": "เนื้อ",
-                        "en": "Beef"
-                    }
-                ]
-            }
-        ],
-        "recipe": {
-            "th": [
-                "",
-                "--- สูตรน้ำจิ้มแจ่ว ---",
-                "น้ำปลา 2 ช้อนโต๊ะ, น้ำมะนาว 2 ช้อนโต๊ะ, พริกป่น ½–1 ช้อนชา",
-                "ข้าวคั่ว 1 ช้อนโต๊ะ, น้ำตาลปี๊บ 2 ช้อนชา, ผงชูรส 1 ช้อนชา",
-                "ต้นหอมซอย 4 กรัม, ผักชีฝรั่งซอย 3-4 กรัม, หอมแดงซอย 2-3 กรัม",
-                "",
-                "--- สูตรส้มตำไทย ---",
-                "มะละกอสับ 150 กรัม, มะเขือเทศเชอร์รี่ 3-4 ลูก, ถั่วฝักยาว 1-2 ฝัก",
-                "กระเทียม 2 กลีบ, พริกแดงสด 2-3 เม็ด, น้ำปลา 1 ช้อนโต๊ะ",
-                "น้ำมะนาว 1½ ช้อนโต๊ะ, น้ำตาลปี๊บ 1 ช้อนโต๊ะ, ผงชูรส 1 ช้อนชา",
-                "ถั่วลิสงคั่ว 1-2 ช้อนโต๊ะ, กุ้งแห้ง 1 ช้อนโต๊ะ",
-                "",
-                "--- สูตรซอสผัดกะเพรา ---",
-                "น้ำปลา 4 ชต., ซอสฝาเขียว 4 ชต., ซีอิ๊วขาว 4 ชต.",
-                "ซอสหอยนางรม 14 ชต., ซีอิ๊วดำหวาน 2 ชต., น้ำตาลทราย 4 ชต.",
-                "ผงปรุงรส 2 ชต., พริกป่น 2 ชต., กระเทียมสับ 2½ ชต.",
-                "พริกไทยป่น ½ ชต., น้ำเปล่า 250 ml"
-            ],
-            "en": [
-                "",
-                "--- Jaew Dipping Sauce Recipe ---",
-                "Fish sauce 2 tbsp, Lime juice 2 tbsp, Chili powder ½-1 tsp",
-                "Roasted rice powder 1 tbsp, Palm sugar 2 tsp, MSG 1 tsp",
-                "Sliced spring onion 4g, Sliced culantro 3-4g, Sliced red onion 2-3g",
-                "",
-                "--- Som Tum Thai (Papaya Salad) Recipe ---",
-                "Shredded papaya 150g, Cherry tomatoes 3-4 pcs, Yardlong beans 1-2 pcs",
-                "Garlic 2 cloves, Fresh red chilis 2-3 pcs, Fish sauce 1 tbsp",
-                "Lime juice 1½ tbsp, Palm sugar 1 tbsp, MSG 1 tsp",
-                "Roasted peanuts 1-2 tbsp, Dried shrimp 1 tbsp",
-                "",
-                "--- Basil Stir-fry Sauce Recipe ---",
-                "Fish sauce 4 tbsp, Green cap seasoning 4 tbsp, Light soy sauce 4 tbsp",
-                "Oyster sauce 14 tbsp, Sweet dark soy sauce 2 tbsp, Sugar 4 tbsp",
-                "Seasoning powder 2 tbsp, Chili powder 2 tbsp, Minced garlic 2½ tbsp",
-                "Ground pepper ½ tbsp, Water 250 ml"
-            ]
-        }
-    },
-    {
-        "id": 13,
-        "name": {
-            "th": "Lunch Box (Set D)",
-            "en": "Lunch Box (Set D)"
-        },
-        "price": "22.95",
-        "unit": {
-            "th": "1 ท่าน",
-            "en": "1 Person"
-        },
-        "desc": {
-            "th": "ข้าวราดหมูสามชั้น/ไก่คั่วพริกเกลือ + ไข่ดาว พริกน้ำปลา, ส้มตำไทย/ส้มตำปูปลาร้า, คอหมูย่าง/เสือร้องไห้ น้ำจิ้มแจ่ว, แกง (เลือกประเภทและเนื้อสัตว์ได้) และผักเคียง",
-            "en": "Stir-Fried Pork Belly/Chicken with Chili & Salt on Rice & Fried Egg, Som Tum Thai/Pu Pla Ra, Grilled Pork Neck / Weeping Tiger with Jaew, Curry (Customizable Type & Meat), Side Vegetables"
-        },
-        "img": "Lunch Box (Set D)1.jpg",
-        "items": {
-            "th": {
-                "starters": [
-                    "พริกน้ำปลา",
-                    "น้ำจิ้มแจ่ว",
-                    "ผักเคียง"
-                ],
-                "mains": [
-                    "ข้าวราดคั่วพริกเกลือ (หมูสามชั้น/ไก่) ไข่ดาว",
-                    "แกง (เลือกประเภทและเนื้อสัตว์ได้)",
-                    "คอหมูย่าง / เสือร้องไห้",
-                    "ส้มตำไทย / ส้มตำปูปลาร้า"
-                ],
-                "desserts": [
-                    "📅 จัดส่งวันพุธ - ศุกร์ (เวลาส่ง 11.00 - 13.00 น. / 18.00 - 20.00 น.) | ปิดรับออเดอร์ 15.00 น. ของวันก่อนหน้า (Pre-order) | จัดส่งเฉพาะรัศมีไม่เกิน 5 ไมล์"
-                ]
-            },
-            "en": {
-                "starters": [
-                    "Nam Pla Prik",
-                    "Jaew Dipping Sauce",
-                    "Side Vegetables"
-                ],
-                "mains": [
-                    "Pork Belly/Chicken Chili & Salt with Rice & Fried Egg",
-                    "Curry (Customizable Type & Meat)",
-                    "Grilled Pork Neck / Weeping Tiger",
-                    "Som Tum Thai / Pu Pla Ra"
-                ],
-                "desserts": [
-                    "📅 Delivered Wednesday - Friday (Delivery: 11:00 AM - 1:00 PM / 6:00 PM - 8:00 PM) | Cut-off: 3:00 PM day before (Pre-order) | Delivery Radius: Within 5 miles"
-                ]
-            }
-        },
-        "options": [
-            {
-                "id": "main_dish",
-                "label": {
-                    "th": "เลือกเนื้อสัตว์คั่วพริกเกลือ",
-                    "en": "Select Chili & Salt Meat"
-                },
-                "choices": [
-                    {
-                        "th": "หมูสามชั้น",
-                        "en": "Pork Belly"
-                    },
-                    {
-                        "th": "ไก่",
-                        "en": "Chicken"
-                    }
-                ]
-            },
-            {
-                "id": "papaya_salad",
-                "label": {
-                    "th": "เลือกส้มตำ",
-                    "en": "Select Papaya Salad"
-                },
-                "choices": [
-                    {
-                        "th": "ส้มตำไทย (มะละกอดิบ ถั่วฝักยาว มะเขือเทศ พริกขี้หนู กระเทียม น้ำปลา น้ำมะนาว น้ำตาลปี๊บ กุ้งแห้ง ถั่วลิสง)",
-                        "en": "Som Tum Thai (Green Papaya, Long Beans, Tomatoes, Chili, Garlic, Fish Sauce, Lime, Palm Sugar, Dried Shrimp, Peanuts)"
-                    },
-                    {
-                        "th": "ส้มตำปูปลาร้า (มะละกอดิบ ถั่วฝักยาว มะเขือเทศ แครอท พริกขี้หนู กระเทียม น้ำปลา น้ำมะนาว น้ำตาลปี๊บ ปูนาดอง ปลาร้าต้มสุก)",
-                        "en": "Som Tum Pu Pla Ra (Green Papaya, Long Beans, Tomatoes, Carrots, Chili, Garlic, Fish Sauce, Lime, Palm Sugar, Pickled Crab, Boiled Fermented Fish)"
-                    }
-                ]
-            },
-            {
-                "id": "grilled_meat",
-                "label": {
-                    "th": "เลือกเมนูย่าง",
-                    "en": "Select Grilled Meat"
-                },
-                "choices": [
-                    {
-                        "th": "คอหมูย่าง",
-                        "en": "Grilled Pork Neck"
-                    },
-                    {
-                        "th": "เสือร้องไห้",
-                        "en": "Weeping Tiger (Grilled Beef)"
-                    }
-                ]
-            },
-            {
-                "id": "curry_type",
-                "label": {
-                    "th": "เลือกประเภทแกง",
-                    "en": "Select Curry Type"
-                },
-                "choices": [
-                    {
-                        "th": "แกงเขียวหวาน",
-                        "en": "Green Curry"
-                    },
-                    {
-                        "th": "แกงพะแนง",
-                        "en": "Panang Curry"
-                    },
-                    {
-                        "th": "แกงแดง",
-                        "en": "Red Curry"
-                    },
-                    {
-                        "th": "แกงเทโพ",
-                        "en": "Te Po Curry"
-                    },
-                    {
-                        "th": "แกงมัสมั่น",
-                        "en": "Massaman Curry"
-                    }
-                ]
-            },
-            {
-                "id": "curry_meat",
-                "label": {
-                    "th": "เลือกเนื้อสัตว์ในแกง",
-                    "en": "Select Meat for Curry"
-                },
-                "choices": [
-                    {
-                        "th": "ไก่",
-                        "en": "Chicken"
-                    },
-                    {
-                        "th": "หมู",
-                        "en": "Pork"
-                    },
-                    {
-                        "th": "เนื้อ",
-                        "en": "Beef"
-                    }
-                ]
-            }
-        ],
-        "recipe": {
-            "th": [
-                "",
-                "--- สูตรน้ำจิ้มแจ่ว ---",
-                "น้ำปลา 2 ช้อนโต๊ะ, น้ำมะนาว 2 ช้อนโต๊ะ, พริกป่น ½–1 ช้อนชา",
-                "ข้าวคั่ว 1 ช้อนโต๊ะ, น้ำตาลปี๊บ 2 ช้อนชา, ผงชูรส 1 ช้อนชา",
-                "ต้นหอมซอย 4 กรัม, ผักชีฝรั่งซอย 3-4 กรัม, หอมแดงซอย 2-3 กรัม",
-                "",
-                "--- สูตรส้มตำไทย ---",
-                "มะละกอสับ 150 กรัม, มะเขือเทศเชอร์รี่ 3-4 ลูก, ถั่วฝักยาว 1-2 ฝัก",
-                "กระเทียม 2 กลีบ, พริกแดงสด 2-3 เม็ด, น้ำปลา 1 ช้อนโต๊ะ",
-                "น้ำมะนาว 1½ ช้อนโต๊ะ, น้ำตาลปี๊บ 1 ช้อนโต๊ะ, ผงชูรส 1 ช้อนชา",
-                "ถั่วลิสงคั่ว 1-2 ช้อนโต๊ะ, กุ้งแห้ง 1 ช้อนโต๊ะ"
-            ],
-            "en": [
-                "",
-                "--- Jaew Dipping Sauce Recipe ---",
-                "Fish sauce 2 tbsp, Lime juice 2 tbsp, Chili powder ½-1 tsp",
-                "Roasted rice powder 1 tbsp, Palm sugar 2 tsp, MSG 1 tsp",
-                "Sliced spring onion 4g, Sliced culantro 3-4g, Sliced red onion 2-3g",
-                "",
-                "--- Som Tum Thai (Papaya Salad) Recipe ---",
-                "Shredded papaya 150g, Cherry tomatoes 3-4 pcs, Yardlong beans 1-2 pcs",
-                "Garlic 2 cloves, Fresh red chilis 2-3 pcs, Fish sauce 1 tbsp",
-                "Lime juice 1½ tbsp, Palm sugar 1 tbsp, MSG 1 tsp",
-                "Roasted peanuts 1-2 tbsp, Dried shrimp 1 tbsp"
-            ]
-        }
-    },
-    {
         "id": 103,
         "name": {
             "th": "Lunch Box (Set E)",
@@ -2840,6 +2085,139 @@
                     {
                         "th": "ตำแตง",
                         "en": "Spicy Cucumber Salad"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "lunch_box_vip",
+        "name": {
+            "th": "Lunch Box Set VIP (จัดเซตเองได้)",
+            "en": "Lunch Box Set VIP (Fully Customizable)"
+        },
+        "price": 16.95,
+        "img": "corporate-cover.jpg",
+        "unit": {
+            "th": "เซต",
+            "en": "Set"
+        },
+        "desc": {
+            "th": "เซตข้าวกล่องสุดพรีเมียม: เลือกเนื้อสัตว์ ไข่ และแกงที่คุณชื่นชอบได้ดั่งใจ",
+            "en": "Premium Lunch Box: Customize your meat, egg, and curry exactly how you like it."
+        },
+        "items": {
+            "th": {
+                "mains": [
+                    "ข้าวสวยหอมมะลิ",
+                    "แกงไทย (เลือกชนิดแกงและเนื้อสัตว์ได้)"
+                ],
+                "starters": [
+                    "เมนูไข่ (เลือกไข่ดาว หรือ ไข่เจียว)",
+                    "ผักเคียง",
+                    "พริกน้ำปลา"
+                ]
+            },
+            "en": {
+                "mains": [
+                    "Jasmine Rice",
+                    "Thai Curry (Choose your curry and meat)"
+                ],
+                "starters": [
+                    "Egg (Choose Fried Egg or Omelette)",
+                    "Side Vegetables",
+                    "Prik Nam Pla"
+                ]
+            }
+        },
+        "options": [
+            {
+                "id": "meat_type",
+                "label": {
+                    "th": "เลือกเนื้อสัตว์",
+                    "en": "Choose Meat"
+                },
+                "choices": [
+                    {
+                        "th": "ไก่",
+                        "en": "Chicken"
+                    },
+                    {
+                        "th": "หมู",
+                        "en": "Pork"
+                    },
+                    {
+                        "th": "ผักรวม",
+                        "en": "Vegetables"
+                    },
+                    {
+                        "th": "หมูกรอบ (+£1.00)",
+                        "en": "Crispy Pork Belly (+£1.00)",
+                        "extra": 1
+                    },
+                    {
+                        "th": "เนื้อ (+£1.00)",
+                        "en": "Beef (+£1.00)",
+                        "extra": 1
+                    },
+                    {
+                        "th": "กุ้ง (+£1.00)",
+                        "en": "Prawns (+£1.00)",
+                        "extra": 1
+                    }
+                ]
+            },
+            {
+                "id": "egg_type",
+                "label": {
+                    "th": "เลือกประเภทไข่",
+                    "en": "Choose Egg"
+                },
+                "choices": [
+                    {
+                        "th": "ไข่ดาว",
+                        "en": "Fried Egg"
+                    },
+                    {
+                        "th": "ไข่เจียว",
+                        "en": "Thai Omelette"
+                    }
+                ]
+            },
+            {
+                "id": "curry_type",
+                "label": {
+                    "th": "เลือกแกง",
+                    "en": "Choose Curry"
+                },
+                "choices": [
+                    {
+                        "th": "แกงเขียวหวาน",
+                        "en": "Green Curry"
+                    },
+                    {
+                        "th": "แกงเผ็ด / แกงแดง",
+                        "en": "Red Curry"
+                    },
+                    {
+                        "th": "พะแนง",
+                        "en": "Panang Curry"
+                    },
+                    {
+                        "th": "มัสมั่น",
+                        "en": "Massaman Curry"
+                    },
+                    {
+                        "th": "แกงกะหรี่",
+                        "en": "Yellow Curry"
+                    },
+                    {
+                        "th": "แกงฮังเล",
+                        "en": "Hung Lay Curry"
+                    },
+                    {
+                        "th": "แกงอ่อม",
+                        "en": "Om Curry"
                     }
                 ]
             }
