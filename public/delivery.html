@@ -355,6 +355,9 @@
             
             if (set.name.en.match(/Set [A-Z]/) && !set.name.en.includes('VIP')) {
                 menuHtml += cardHtml;
+            } else if (set.name.en.includes('VIP')) {
+                menuHtml += cardHtml;
+                pruksaHtml += cardHtml;
             } else {
                 pruksaHtml += cardHtml;
             }
