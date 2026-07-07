@@ -291,10 +291,12 @@
             } else {
                 console.error("Failed to load classic menu");
                 document.getElementById('menu-container').innerHTML = `<h2 style="color:red; text-align:center;">Error: Failed to load menu data (Status: ${res.status})</h2>`;
+                alert("Error: Failed to load menu data (Status: " + res.status + ")");
             }
         } catch (err) {
             console.error("Error loading classic menu:", err);
-            document.getElementById('menu-container').innerHTML = `<h2 style="color:red; text-align:center;">Error: Cannot fetch menu data. Make sure the Node.js server is running.<br><small>${err.message}</small></h2>`;
+            document.getElementById('menu-container').innerHTML = `<h2 style="color:red; text-align:center;">Error: Cannot fetch menu data.<br><small>${err.message}</small></h2>`;
+            alert("Error: " + err.message + "\n\nPlease clear your browser cache (Ctrl+F5).");
         }
     }
 
