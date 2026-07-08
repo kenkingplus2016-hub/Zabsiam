@@ -57,7 +57,7 @@ function updateFloatingCart() {
     if (!floatBtn) {
         floatBtn = document.createElement('a');
         floatBtn.id = 'floating-cart';
-        floatBtn.href = '/booking.html';
+        floatBtn.href = 'booking.html';
         floatBtn.innerHTML = `
             <i class="fas fa-shopping-cart"></i>
             <span id="floating-cart-badge">0</span>
