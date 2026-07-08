@@ -2012,6 +2012,28 @@
         "desserts": []
       }
     },
-    "options": []
+    "options": [
+      {
+        "id": "sticky_rice_flavor",
+        "label": {
+          "th": "เลือกข้าวเหนียวมูน",
+          "en": "Sticky Rice Flavor"
+        },
+        "choices": [
+          {
+            "th": "ข้าวเหนียวมูนกะทิ",
+            "en": "Original Sweet Coconut Sticky Rice"
+          },
+          {
+            "th": "ข้าวเหนียวมูนใบเตย (+£1)",
+            "en": "Pandan Sweet Sticky Rice (+£1)"
+          },
+          {
+            "th": "ข้าวเหนียวมูนอัญชัน (+£1)",
+            "en": "Butterfly Pea Sweet Sticky Rice (+£1)"
+          }
+        ]
+      }
+    ]
   }
 ]

@@ -375,6 +375,11 @@
             return set.options;
         }
 
+        // Do not add spiciness level to dessert items
+        if (set.id === 'lunch_box_mango_sticky_rice') {
+            return set.options;
+        }
+
         // Add a universal spiciness option for every menu
         set.options.push({
             id: "spicy_level",
