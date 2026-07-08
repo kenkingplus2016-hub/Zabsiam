@@ -252,16 +252,16 @@
                             <div class="text-3xl font-extrabold text-dark-green">£${set.price}</div>
                             <div class="text-sm text-gray-500 font-semibold mt-1">${priceLabel} (${set.unit[currentLang]})</div>
                             <div class="text-xs text-gold mt-0.5">${excludeLabel}</div>
-                            <button onclick="event.preventDefault(); addToCart({
+                            <button onclick="event.preventDefault(); try { addToCart({
                                 id: 'authentic-' + set.id,
-                                name_th: set.name.th || set.name_th,
-                                name_en: set.name.en || set.name_en,
+                                name_th: set.name && set.name.th ? set.name.th : set.name_th,
+                                name_en: set.name && set.name.en ? set.name.en : set.name_en,
                                 price: parseFloat(set.price),
                                 qty: 1,
                                 category: 'Authentic',
-                                unit_th: set.unit?.th || '5 ท่าน',
-                                unit_en: set.unit?.en || '5 Persons'
-                            })" class="inline-block mt-3 bg-dark-green text-gold border-2 border-gold px-5 py-2 rounded-full font-bold text-sm no-underline transition-all duration-300 hover:bg-gold hover:text-dark-green shadow-md cursor-pointer">
+                                unit_th: (set.unit && set.unit.th) ? set.unit.th : '5 ท่าน',
+                                unit_en: (set.unit && set.unit.en) ? set.unit.en : '5 Persons'
+                            }); } catch(err) { alert('Error: ' + err.message); }" class="inline-block mt-3 bg-dark-green text-gold border-2 border-gold px-5 py-2 rounded-full font-bold text-sm no-underline transition-all duration-300 hover:bg-gold hover:text-dark-green shadow-md cursor-pointer">
                                 <i class="fas fa-shopping-cart mr-1"></i> ${currentLang === 'th' ? 'เพิ่มลงตะกร้า' : 'Add to Cart'}
                             </button>
                         </div>
