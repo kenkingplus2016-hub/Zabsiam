@@ -543,32 +543,7 @@
         document.getElementById('lbl-ingredients').innerHTML = `<i class="fas fa-utensils"></i> ${t.lbl_ing}`;
         document.getElementById('lbl-technique').innerHTML = `<i class="fas fa-ice-cream"></i> ${t.lbl_tech}`;
 
-        // Delivery conditions bilingual
-        if (lang === 'en') {
-            document.getElementById('cond-title').innerHTML = 'Delivery Box Set<br>Terms';
-            document.getElementById('cond-cutoff-label').innerText = 'Order Cut-off (Prior Day)';
-            document.getElementById('cond-cutoff-time').innerText = '3:00 PM';
-            document.getElementById('cond-days-label').innerText = 'Delivery Days';
-            document.getElementById('cond-days').innerText = 'Wed - Sun';
-            document.getElementById('cond-delivery-label').innerText = 'Delivery Time';
-            document.getElementById('cond-delivery-time').innerHTML = '11:00 AM - 1:00 PM';
-            document.getElementById('cond-radius-label').innerText = 'Delivery Radius';
-            document.getElementById('cond-radius').innerText = 'Within 5 miles';
-            document.getElementById('cond-note').innerText = '📌 Open for booking daily | Delivery: Wed-Sun | Order before 3:00 PM prior to delivery day';
-        } else {
-            document.getElementById('cond-title').innerHTML = 'เงื่อนไขการจัดส่ง<br>ดิลิเวอรีบ็อกซ์เซต';
-            document.getElementById('cond-cutoff-label').innerText = 'ปิดรับออเดอร์ก่อนวันจัดส่ง';
-            document.getElementById('cond-cutoff-time').innerText = '15:00 น.';
-            document.getElementById('cond-days-label').innerText = 'จัดส่งเฉพาะ';
-            document.getElementById('cond-days').innerText = 'พุธ - อาทิตย์';
-            document.getElementById('cond-delivery-label').innerText = 'จัดส่งเวลา';
-            document.getElementById('cond-delivery-time').innerHTML = '11:00 - 13:00 น.';
-            document.getElementById('cond-radius-label').innerText = 'รัศมีจัดส่ง';
-            document.getElementById('cond-radius').innerText = 'ไม่เกิน 5 ไมล์';
-            document.getElementById('cond-note').innerText = '📌 เปิดจองได้ทุกวัน | จัดส่งเฉพาะ พุธ-อาทิตย์ | สั่งก่อน 15:00 น. ก่อนวันจัดส่ง';
-        }
-
-        renderMenu();
+                renderMenu();
     }
 
 
