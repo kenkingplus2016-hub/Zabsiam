@@ -270,8 +270,11 @@
             const res = await fetch('/api/classic-menu?v=' + new Date().getTime());
             if (res.ok) {
                 const allSets = await res.json();
-                // Only show Family Box Sets on Delivery page (exclude Thai Style Tray Sets)
-                classicSets = allSets.filter(s => s.name.en.includes('Family') || s.name.en.includes('Lunch Box') || s.name.en.includes('Special') || s.name.en.includes('Siam Pruksa') || s.name.en.includes('Siam Authentic'));
+                // Only show Family Box Sets on Delivery page (exclude Thai Style Tray Sets and Desserts)
+                classicSets = allSets.filter(s => {
+                    if (s.id === 'lunch_box_mango_sticky_rice') return false;
+                    return s.name.en.includes('Family') || s.name.en.includes('Lunch Box') || s.name.en.includes('Special') || s.name.en.includes('Siam Pruksa') || s.name.en.includes('Siam Authentic');
+                });
                 renderMenu();
             } else {
                 console.error("Failed to load classic menu");
