@@ -791,8 +791,8 @@ app.post('/api/create-checkout-session', async (req, res) => {
             fs.writeFileSync(ticketPath, JSON.stringify(counter, null, 2), 'utf8');
         } catch(e) { console.error('Ticket counter error:', e); }
 
-        // 50% deposit for Catering, 100% for Delivery Box (Classic)
-        const depositAmount = (category === 'Classic') ? Number(totalAmount || 0) : Number(totalAmount || 0) / 2;
+        // 50% deposit for Catering, 100% for Delivery Box (Classic) or Mixed Cart (already calculated by frontend)
+        const depositAmount = (category === 'Classic' || category === 'Mixed Cart') ? Number(totalAmount || 0) : Number(totalAmount || 0) / 2;
         
         const newBooking = {
             id: bookingId,

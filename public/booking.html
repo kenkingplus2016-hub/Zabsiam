@@ -75,6 +75,7 @@
   html[lang="en"] .nav-th { display: none !important; }
   html[lang="en"] .nav-en { display: inline !important; }
 </style>
+    <link rel="stylesheet" href="css/cart.css">
 </head>
 <body>
 
@@ -275,374 +276,111 @@
 
 <script>
     let selectedPaymentMethod = 'Transfer';
-    let currentLang = 'th';
-    let allMenuSets = [];
-    let currentTotalSets = 1;
     
-    // --- Map & Delivery Zone Variables ---
-    let map = null;
-    let vauxhallMarker = null;
-    let customerMarker = null;
-    let deliveryCircle = null;
-    const VAUXHALL_LAT = 51.4862;
-    const VAUXHALL_LNG = -0.1229;
-    const MAX_DISTANCE_METERS = 16093.4; // 10 miles in meters
-
-    function initMap() {
-        if (map) return; // already initialized
-        document.getElementById('map-container').style.display = 'block';
-        map = L.map('map').setView([VAUXHALL_LAT, VAUXHALL_LNG], 11);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '© OpenStreetMap'
-        }).addTo(map);
-
-        // Center Marker (Vauxhall)
-        vauxhallMarker = L.marker([VAUXHALL_LAT, VAUXHALL_LNG]).addTo(map)
-            .bindPopup("<b>จุดกระจายสินค้า (Vauxhall)</b>")
-            .openPopup();
-
-        // 10-mile radius circle
-        deliveryCircle = L.circle([VAUXHALL_LAT, VAUXHALL_LNG], {
-            color: '#28a745',
-            fillColor: '#28a745',
-            fillOpacity: 0.1,
-            radius: MAX_DISTANCE_METERS
-        }).addTo(map);
-    }
-
-    async function verifyAddress() {
-        const address = document.getElementById('custAddress').value.trim();
-        const statusBox = document.getElementById('delivery-status');
+    let currentLang = 'th';
+    let selectedPaymentMethod = 'PromptPay';
+    let finalAmountToPay = 0;
+    let totalItemsCount = 0;
+    
+    function renderCartSummary() {
+        const cart = getCart();
+        const container = document.getElementById('cart-items-list');
         
-        if (!address) {
-            statusBox.style.background = '#ffeeba';
-            statusBox.style.color = '#856404';
-            statusBox.innerHTML = '⚠️ กรุณากรอกที่อยู่ก่อนเช็คโซนจัดส่ง / Please enter address first';
+        if (cart.length === 0) {
+            container.innerHTML = `<div style="text-align:center; padding:30px; color:#999;">
+                <i class="fas fa-box-open" style="font-size:3rem; margin-bottom:15px; color:var(--gold);"></i><br>
+                ${currentLang === 'th' ? 'ไม่มีสินค้าในตะกร้า' : 'Your cart is empty'}
+            </div>`;
+            document.getElementById('cart-classic-price').innerText = "0.00";
+            document.getElementById('cart-catering-deposit').innerText = "0.00";
+            document.getElementById('cart-total-to-pay').innerText = "0.00";
+            document.getElementById('btn-submit').disabled = true;
             return;
         }
-
-        initMap();
-        statusBox.style.background = '#e2e3e5';
-        statusBox.style.color = '#383d41';
-        statusBox.innerHTML = 'กำลังค้นหาพิกัด... / Locating... <i class="fas fa-spinner fa-spin"></i>';
-
-        try {
-            // Use Nominatim API (Free OpenStreetMap Geocoding)
-            // Note: Added 'UK' to query to restrict search area
-            const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address + ', UK')}`);
-            const data = await res.json();
-
-            if (data.length === 0) {
-                statusBox.style.background = '#f8d7da';
-                statusBox.style.color = '#721c24';
-                statusBox.innerHTML = '❌ ค้นหาที่อยู่ไม่พบ (โปรดระบุ Postcode หรือที่อยู่ให้ชัดเจนขึ้น) / Address not found';
-                return;
-            }
-
-            const custLat = parseFloat(data[0].lat);
-            const custLng = parseFloat(data[0].lon);
-            const latlng = L.latLng(custLat, custLng);
-            const center = L.latLng(VAUXHALL_LAT, VAUXHALL_LNG);
-            const distanceMeters = center.distanceTo(latlng);
-            const distanceMiles = (distanceMeters / 1609.34).toFixed(1);
-
-            if (customerMarker) map.removeLayer(customerMarker);
+        
+        document.getElementById('btn-submit').disabled = false;
+        
+        let html = '';
+        let classicTotal = 0;
+        let cateringTotal = 0;
+        totalItemsCount = 0;
+        
+        cart.forEach((item, index) => {
+            const isCatering = item.category === 'Authentic';
+            const itemTotal = item.price * item.qty;
             
-            customerMarker = L.marker([custLat, custLng], {
-                icon: L.icon({
-                    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
-                    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-                    iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34], shadowSize: [41, 41]
-                })
-            }).addTo(map);
-
-            // Zoom map to fit both points
-            map.fitBounds(L.latLngBounds([center, latlng]).pad(0.2));
-
-            if (distanceMeters <= MAX_DISTANCE_METERS) {
-                statusBox.style.background = '#d4edda';
-                statusBox.style.color = '#155724';
-                statusBox.innerHTML = `✅ อยู่ในโซนจัดส่ง! ระยะทางประมาณ ${distanceMiles} ไมล์ (Within Delivery Zone)`;
-                document.getElementById('btn-submit').disabled = false;
-                document.getElementById('btn-submit').style.opacity = '1';
+            if (isCatering) {
+                cateringTotal += itemTotal;
             } else {
-                statusBox.style.background = '#f8d7da';
-                statusBox.style.color = '#721c24';
-                statusBox.innerHTML = `⚠️ นอกโซนจัดส่ง (ระยะทาง ${distanceMiles} ไมล์ ซึ่งเกิน 10 ไมล์) กรุณาติดต่อแอดมินก่อนจองครับ`;
-                // Optionally disable submit button
-                // document.getElementById('btn-submit').disabled = true;
-                // document.getElementById('btn-submit').style.opacity = '0.5';
+                classicTotal += itemTotal;
             }
-
-        } catch (error) {
-            statusBox.innerHTML = '❌ ระบบค้นหาพิกัดขัดข้องชั่วคราว / System Error';
-        }
-    }
-
-    function extendOptionsWithSpiciness(set) {
-        if (!set.options) {
-            set.options = [];
-        }
-
-        // เอาตัวเลือก "เลือกข้าว/เส้น" ออกตามที่คุณลูกค้าต้องการ
-        set.options = set.options.filter(o => o.id !== 'carb_type');
-
-        if (set.options.some(o => o.id.includes('spicy'))) {
-            return set.options;
-        }
-        // Standard rule: Do not add spiciness level to dessert and snack items
-        const sid = String(set.id).toLowerCase();
-        if (sid === 'lunch_box_mango_sticky_rice' || sid.includes('dessert') || sid.includes('snack')) {
-            return set.options;
-        }
-
-        // Add a universal spiciness option for every menu
-        set.options.push({
-            id: "spicy_level",
-            label: { "th": "ระดับความเผ็ด", "en": "Spiciness Level" },
-            choices: [
-                { "th": "Mild (เผ็ดน้อย)", "en": "Mild (เผ็ดน้อย)" },
-                { "th": "Medium (เผ็ดกลาง)", "en": "Medium (เผ็ดกลาง)" },
-                { "th": "Thai Spicy (เผ็ดปกติ)", "en": "Thai Spicy (เผ็ดปกติ)" }
-            ]
-        });
-
-        return set.options;
-    }
-
-    // Load all menus on page load
-    async function loadAllMenus() {
-        try {
-            const [menuRes, classicRes] = await Promise.all([
-                fetch('/api/menu'),
-                fetch('/api/classic-menu')
-            ]);
-            const menuData = menuRes.ok ? await menuRes.json() : [];
-            const classicData = classicRes.ok ? await classicRes.json() : [];
-
-            const select = document.getElementById('menuSetSelect');
-
-            // Group 1: Authentic Thai Sets
-            if (menuData.length > 0) {
-                const grp1 = document.createElement('optgroup');
-                grp1.label = '🍽️ เซทตำรับไทย / Authentic Thai Sets';
-                menuData.forEach(s => {
-                    extendOptionsWithSpiciness(s);
-                    const opt = document.createElement('option');
-                    const key = `authentic-${s.id}`;
-                    opt.value = key;
-                    opt.textContent = `SET ${s.id} — ${s.name.th} (${s.name.en}) — £${s.price}`;
-                    grp1.appendChild(opt);
-                    allMenuSets.push({ key, name_th: s.name.th, name_en: s.name.en, price: parseFloat(s.price), unit_th: '5 ท่าน', unit_en: '5 Persons', category: 'Authentic', options: s.options || null });
-                });
-                select.appendChild(grp1);
-            }
-
-            // Group 2: Classic / Delivery Sets
-            if (classicData.length > 0) {
-                const grp2 = document.createElement('optgroup');
-                grp2.label = '🥡 เซตถาดไทยสไตล์ / Thai Style Tray Sets';
-                classicData.forEach(s => {
-                    extendOptionsWithSpiciness(s);
-                    const opt = document.createElement('option');
-                    const key = `classic-${s.id}`;
-                    opt.value = key;
-                    opt.textContent = `${s.name.th} (${s.name.en}) — £${s.price} / ${s.unit.th}`;
-                    grp2.appendChild(opt);
-                    allMenuSets.push({ key, name_th: s.name.th, name_en: s.name.en, price: parseFloat(s.price), unit_th: s.unit.th, unit_en: s.unit.en, category: 'Classic', options: s.options || null });
-                });
-                select.appendChild(grp2);
-            }
-
-            // Group 3: Premium Royal Canapes (Custom Selection)
-            const grp3 = document.createElement('optgroup');
-            grp3.label = '🍢 เมนูบริการชาววัง / Premium Royal Gathering Sets';
             
+            totalItemsCount += item.qty;
             
-
-            const optCanape = document.createElement('option');
-            optCanape.value = 'royal-canapes';
-            optCanape.textContent = 'เดอะ รอยัล สยาม แกเธอริง (เลือกเอง) / The Royal Siam Gathering (Bespoke Cart)';
-            grp3.appendChild(optCanape);
-            
-            select.appendChild(grp3);
-
-
-            allMenuSets.push({
-                key: 'royal-canapes',
-                name_th: 'เดอะ รอยัล สยาม แกเธอริง (เซตสั่งเอง)',
-                name_en: 'The Royal Siam Gathering (Bespoke Selection)',
-                price: 0,
-                unit_th: 'รายการที่เลือก',
-                unit_en: 'Selected Items',
-                category: 'RoyalCanapes',
-                options: null
-            });
-
-            // Auto-select from URL parameter (?set=authentic-1 or ?set=classic-1 or ?set=royal-canapes)
-            const urlParams = new URLSearchParams(window.location.search);
-            const preselect = urlParams.get('set');
-            const urlQty = urlParams.get('qty');
-            if (urlQty) document.getElementById('orderQty').value = urlQty;
-            if (preselect && select.querySelector(`option[value="${preselect}"]`)) {
-                select.value = preselect;
-                onMenuSelectChange();
-                // Scroll to form
-                document.getElementById('orderForm').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            let optionsHtml = '';
+            if (item.options && item.options.length > 0) {
+                optionsHtml = `<div style="font-size:0.85rem; color:#666; margin-top:4px;">
+                    <i class="fas fa-utensils" style="color:var(--gold); font-size:0.75rem;"></i> ${item.options.join(', ')}
+                </div>`;
             }
-        } catch (err) {
-            console.error('Error loading menus:', err);
-        }
-    }
-
-    function onMenuSelectChange() {
-        const key = document.getElementById('menuSetSelect').value;
-        const info = allMenuSets.find(s => s.key === key);
-        const infoBox = document.getElementById('selected-set-info');
-        const customSection = document.getElementById('customization-section');
-        const customContainer = document.getElementById('custom-options-container');
-
-        if (info) {
-            if (key === 'royal-canapes') {
-                document.getElementById('qty-section').style.display = 'none';
-                const urlParams = new URLSearchParams(window.location.search);
-                const itemsStr = urlParams.get('items') || '';
-                
-                if (!itemsStr) {
-                    document.getElementById('info-set-name').textContent = `${info.name_th} / ${info.name_en}`;
-                    document.getElementById('info-set-unit').innerHTML = `<span style="color:red; font-weight:600;">${currentLang === 'th' ? 'กรุณาเลือกเมนูคำพอดีคำหรือเซตแกงที่หน้าหลักก่อนครับ' : 'Please select Canapé or Curry items from the page first.'}</span>`;
-                    document.getElementById('info-set-price').textContent = `£0`;
-                    document.getElementById('info-set-deposit').textContent = `มัดจำ 50% = £0`;
-                    infoBox.style.display = 'block';
-                    customSection.style.display = 'none';
-                    return;
-                }
-
-                const selections = {};
-                itemsStr.split(',').forEach(pair => {
-                    const [id, qty] = pair.split(':');
-                    if (id && qty) {
-                        selections[id] = parseInt(qty);
-                    }
-                });
-
-                Promise.all([
-                    fetch('/api/royal-menu').then(res => res.json()),
-                    fetch('/api/curry-menu').then(res => res.json())
-                ])
-                .then(([categories, curryItems]) => {
-                    let totalSets = 0;
-                    let totalPrice = 0;
-                    let listHTML = '<ul id="canapes-booking-list" style="margin: 10px 0; padding-left: 20px; text-align: left; list-style-type: disc; font-size: 0.9rem;">';
-
-                    // Parse Canapés
-                    categories.forEach(cat => {
-                        cat.items.forEach(item => {
-                            if (selections[item.id]) {
-                                const qty = selections[item.id];
-                                const subtotal = item.price * qty;
-                                totalSets += qty;
-                                totalPrice += subtotal;
-                                listHTML += `
-                                    <li style="margin-bottom: 5px; color: var(--dark-green); line-height: 1.4;">
-                                        <strong>🍢 ${item.name[currentLang]}</strong> x ${qty} ${currentLang === 'th' ? 'ชุด (32 ชิ้น)' : 'Sets (32 Pcs)'}
-                                        <span style="color: var(--gold); font-weight: 700; margin-left: 8px;">£${subtotal}</span>
-                                    </li>
-                                `;
-                            }
-                        });
-                    });
-
-                    // Parse Curry items
-                    curryItems.forEach(item => {
-                        if (selections[item.id]) {
-                            const qty = selections[item.id];
-                            const subtotal = item.price * qty;
-                            totalSets += qty;
-                            totalPrice += subtotal;
-                            listHTML += `
-                                <li style="margin-bottom: 5px; color: var(--dark-green); line-height: 1.4;">
-                                    <strong>🍛 ${item.name[currentLang]}</strong> x ${qty} ${currentLang === 'th' ? 'ชุด (6 กล่อง)' : 'Sets (6 Meals)'}
-                                    <span style="color: var(--gold); font-weight: 700; margin-left: 8px;">£${subtotal}</span>
-                                </li>
-                            `;
-                        }
-                    });
-
-                    listHTML += '</ul>';
-
-                    document.getElementById('info-set-name').textContent = `${info.name_th} / ${info.name_en}`;
-                    
-                    const unitContainer = document.getElementById('info-set-unit');
-                    unitContainer.innerHTML = `
-                        <div style="font-weight:700; margin-bottom: 5px; color: var(--dark-green);">${currentLang === 'th' ? 'รายการจองชาววังที่เลือกสั่ง:' : 'Selected Royal Items:'}</div>
-                        ${listHTML}
-                        <div style="font-size: 0.8rem; color: #888; margin-top: 8px; font-style: italic;">
-                            ${currentLang === 'th' ? '* จำหน่ายตามเซตคำว่าง (32 ชิ้น) และเซตแกงข้าวกล่อง (6 กล่อง)' : '* Sold in portions of 32-pieces canapés and sets of 6 curry meals'}
+            
+            html += `
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; padding:12px 0; border-bottom:1px solid #f0f0f0;">
+                    <div style="flex:1; padding-right:10px;">
+                        <div style="font-weight:bold; color:var(--dark-green); font-size:1.05rem;">
+                            ${currentLang === 'th' ? item.name_th : item.name_en}
                         </div>
-                    `;
-
-                    document.getElementById('info-set-price').textContent = `£${totalPrice}`;
-                    document.getElementById('info-set-deposit').textContent = `มัดจำ 50% = £${(totalPrice / 2).toFixed(2)}`;
+                        <div style="font-size:0.85rem; color:#888;">
+                            £${item.price.toFixed(2)} / ${currentLang === 'th' ? item.unit_th : item.unit_en}
+                            <span style="display:inline-block; margin-left:8px; padding:2px 6px; background:${isCatering ? 'rgba(212,175,55,0.2)' : '#e8f5e9'}; color:${isCatering ? '#b08d00' : '#2e7d32'}; border-radius:10px; font-size:0.75rem; font-weight:bold;">
+                                ${isCatering ? (currentLang === 'th' ? 'มัดจำ 50%' : '50% Deposit') : (currentLang === 'th' ? 'ชำระเต็มจำนวน' : 'Full Payment')}
+                            </span>
+                        </div>
+                        ${optionsHtml}
+                        
+                        <div style="display:flex; align-items:center; margin-top:8px; border:1.5px solid #eee; border-radius:8px; width:fit-content; background:#fafafa;">
+                            <button type="button" onclick="changeQty(${index}, -1)" style="border:none; background:transparent; width:30px; height:30px; font-weight:bold; color:var(--dark-green); cursor:pointer;">-</button>
+                            <span style="font-weight:bold; width:30px; text-align:center; font-size:0.95rem;">${item.qty}</span>
+                            <button type="button" onclick="changeQty(${index}, 1)" style="border:none; background:transparent; width:30px; height:30px; font-weight:bold; color:var(--dark-green); cursor:pointer;">+</button>
+                        </div>
+                    </div>
                     
-                    info.price = totalPrice;
-                    currentTotalSets = totalSets; // Save total sets for submission
-                    infoBox.style.display = 'block';
-                    customSection.style.display = 'none';
-                });
-            } else {
-                const qty = parseInt(document.getElementById('orderQty').value) || 1;
-                document.getElementById('qty-section').style.display = 'block';
-                currentTotalSets = qty; // Update total sets to match qty
-                document.getElementById('info-set-name').textContent = `${info.name_th} / ${info.name_en}`;
-                document.getElementById('info-set-unit').textContent = `สำหรับ ${info.unit_th} / For ${info.unit_en}`;
-                document.getElementById('info-set-price').textContent = `£${(info.price * qty).toFixed(2)}`;
-                if (info.category === 'Classic') {
-                    document.getElementById('info-set-deposit').textContent = `${currentLang === 'th' ? 'ชำระเต็มจำนวน' : 'Full Payment'} = £${(info.price * qty).toFixed(2)}`;
-                } else {
-                    document.getElementById('info-set-deposit').textContent = `มัดจำ 50% = £${((info.price * qty) / 2).toFixed(2)}`;
-                }
-                infoBox.style.display = 'block';
-
-                // Render customization options if available
-                if (info.options && info.options.length > 0) {
-                    customContainer.innerHTML = '';
-                    const urlParams = new URLSearchParams(window.location.search);
-                    info.options.forEach(opt => {
-                        const preselectedVal = urlParams.get(`custom_${opt.id}`);
-                        const wrapper = document.createElement('div');
-                        wrapper.innerHTML = `
-                            <label style="font-weight:600; color:var(--dark-green); font-size:0.95rem; display:block; margin-bottom:5px;">
-                                <i class="fas fa-chevron-right" style="color:var(--gold); margin-right:5px;"></i>
-                                ${opt.label.th} / ${opt.label.en}
-                            </label>
-                            <select name="custom_${opt.id}" style="width:100%; padding:12px; border:2px solid #ddd; border-radius:10px; font-family:'Prompt'; font-size:0.95rem; color:var(--dark-green); background:white; cursor:pointer;" required>
-                                <option value="" disabled ${!preselectedVal ? 'selected' : ''}>-- เลือก / Choose --</option>
-                                ${opt.choices.map(c => {
-                                    const isSel = (preselectedVal === c.th) ? 'selected' : '';
-                                    const text = (c.th === c.en) ? c.th : `${c.th} / ${c.en}`;
-                                    return `<option value="${c.th}" ${isSel}>${text}</option>`;
-                                }).join('')}
-                            </select>
-                        `;
-                        customContainer.appendChild(wrapper);
-                    });
-                    customSection.style.display = 'block';
-                } else {
-                    customContainer.innerHTML = '';
-                    customSection.style.display = 'none';
-                }
-            }
-        } else {
-            document.getElementById('qty-section').style.display = 'none';
-            infoBox.style.display = 'none';
-            customContainer.innerHTML = '';
-            customSection.style.display = 'none';
-        }
+                    <div style="text-align:right; display:flex; flex-direction:column; justify-content:space-between; height:100%;">
+                        <div style="font-weight:bold; color:var(--dark-green); font-size:1.1rem; margin-bottom:15px;">
+                            £${itemTotal.toFixed(2)}
+                        </div>
+                        <button type="button" onclick="removeItem(${index})" style="border:none; background:transparent; color:#ff3b30; cursor:pointer; font-size:0.85rem; text-decoration:underline; text-align:right;">
+                            ${currentLang === 'th' ? 'ลบรายการ' : 'Remove'}
+                        </button>
+                    </div>
+                </div>
+            `;
+        });
+        
+        container.innerHTML = html;
+        
+        const cateringDeposit = cateringTotal / 2;
+        finalAmountToPay = classicTotal + cateringDeposit;
+        
+        document.getElementById('cart-classic-price').innerText = classicTotal.toFixed(2);
+        document.getElementById('cart-catering-deposit').innerText = cateringDeposit.toFixed(2);
+        document.getElementById('cart-total-to-pay').innerText = finalAmountToPay.toFixed(2);
     }
-
-    document.getElementById('menuSetSelect').addEventListener('change', onMenuSelectChange);
+    
+    window.changeQty = function(index, delta) {
+        let cart = getCart();
+        if (cart[index]) {
+            let newQty = cart[index].qty + delta;
+            if (newQty < 1) newQty = 1;
+            updateCartQty(index, newQty);
+            renderCartSummary();
+        }
+    };
+    
+    window.removeItem = function(index) {
+        removeFromCart(index);
+        renderCartSummary();
+    };
 
     function selectPay(el, method) {
         document.querySelectorAll('.pay-option').forEach(opt => opt.classList.remove('active'));
@@ -651,6 +389,9 @@
     }
 
     async function submitBooking() {
+        const cart = getCart();
+        if (cart.length === 0) return;
+        
         const custName = document.getElementById('custName').value;
         const custPhone = document.getElementById('custPhone').value;
         const custEmail = document.getElementById('custEmail').value;
@@ -659,34 +400,20 @@
         const eventPlace = document.getElementById('eventPlace').value;
         const custAddress = document.getElementById('custAddress').value;
 
-        const menuSelectVal = document.getElementById('menuSetSelect').value;
-        if (!custName || !custPhone || !custEmail || !eventDate || !eventTime || !eventPlace || !custAddress || !menuSelectVal) {
-            alert("กรุณากรอกข้อมูลให้ครบถ้วน / Please fill in all required fields and select a menu set.");
+        if (!custName || !custPhone || !custEmail || !eventDate || !eventTime || !eventPlace || !custAddress) {
+            alert("กรุณากรอกข้อมูลให้ครบถ้วน / Please fill in all required fields.");
             return;
         }
 
-        const selectedSet = allMenuSets.find(s => s.key === menuSelectVal);
-        const menuSet = selectedSet ? `${selectedSet.name_th} (${selectedSet.name_en})` : menuSelectVal;
-        const totalAmount = selectedSet ? selectedSet.price : 0;
-
-        // Collect customization choices
-        const customSelects = document.querySelectorAll('#custom-options-container select');
-        const customChoices = [];
-        for (const sel of customSelects) {
-            if (sel.offsetParent !== null && !sel.value) {
-                alert('กรุณาเลือกรายการอาหารให้ครบ / Please complete all menu choices.');
-                return;
+        // Format cart into a readable string for the backend/LINE
+        let menuSetStr = cart.map(item => {
+            let line = `${item.qty}x ${item.name_th} (${item.name_en})`;
+            if (item.options && item.options.length > 0) {
+                line += ` [ ${item.options.join(', ')} ]`;
             }
-            if (sel.value) customChoices.push(sel.value);
-        }
-
-        if (menuSelectVal === 'royal-canapes') {
-            const listItems = document.querySelectorAll('#canapes-booking-list li');
-            listItems.forEach(li => {
-                customChoices.push(li.innerText.trim().replace(/\s+/g, ' '));
-            });
-        }
-
+            return line;
+        }).join('\n');
+        
         const allergyEls = document.querySelectorAll('input[name="allergy"]:checked');
         const allergy = Array.from(allergyEls).map(el => el.value);
         const allergyDetail = document.getElementById('allergy-detail').value;
@@ -702,23 +429,25 @@
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     custName, custPhone, custEmail, eventDate, eventTime, eventPlace, custAddress,
-                    menuSet, allergy, allergyDetail,
-                    customChoices: customChoices.length > 0 ? customChoices : undefined,
+                    menuSet: menuSetStr, 
+                    allergy, allergyDetail,
                     paymentMethod: selectedPaymentMethod,
-                    totalAmount,
-                    totalSets: currentTotalSets,
-                    category: selectedSet ? selectedSet.category : 'Unknown'
+                    totalAmount: finalAmountToPay,
+                    totalSets: totalItemsCount,
+                    category: 'Mixed Cart'
                 })
             });
 
             const result = await response.json();
 
             if (result.url) {
+                clearCart();
                 window.location.href = result.url;
             } else if (result.success) {
+                clearCart();
                 window.location.href = `/success.html?method=${result.method}&id=${result.bookingId}`;
             } else {
-                alert('เกิดข้อผิดพลาด / Error: ' + (result.error || 'Unknown error. Please check API keys.'));
+                alert('เกิดข้อผิดพลาด / Error: ' + (result.error || 'Unknown error.'));
                 btn.innerText = originalText;
                 btn.disabled = false;
             }
@@ -736,29 +465,30 @@
         const t = {
             th: { 
                 connect: "ติดต่อเรา", booking: "ข้อมูลการสั่งจอง", name: "ชื่อ-นามสกุล", phone: "เบอร์ติดต่อ", date: "วันที่จัดส่ง / Delivery Date", time: "เวลาจัดส่ง / Delivery Time",
-                venue: "สถานที่จัดงาน", address: "ที่อยู่จัดส่ง", payment: "วิธีชำระเงินมัดจำ", submit: "ยืนยันการจอง",
-                allergy: "ข้อมูลการแพ้อาหาร", peanuts: "ถั่ว", milk: "นม / ผลิตภัณฑ์จากนม", seafood: "อาหารทะเล", eggs: "ไข่", msg: "ผงชูรส (MSG)", fishsauce: "น้ำปลา (Fish Sauce)", knorr: "คนอร์ (Knorr)",
-                other: "อื่นๆ ระบุ (ถ้ามี)",
-                menu_select: "เลือกชุดเมนู (ราคายังไม่รวมภาษีและบริการ)",
-                d_title: "เงื่อนไขการชำระเงิน (Payment Terms):",
-                d_desc: "ชำระมัดจำ 50% สำหรับงานจัดเลี้ยง หรือ ชำระเต็มจำนวนสำหรับเซตดิลิเวอรีบ็อกซ์ (ราคาไม่รวมภาษีและค่าจัดส่ง)"
+                venue: "สถานที่จัดงาน", address: "ที่อยู่จัดส่ง", payment: "วิธีชำระเงิน", submit: "ยืนยันการสั่งจอง",
+                allergy: "ข้อมูลการแพ้อาหาร", peanuts: "ถั่ว", milk: "นม", seafood: "อาหารทะเล", eggs: "ไข่", msg: "ผงชูรส", fishsauce: "น้ำปลา", knorr: "คนอร์",
+                other: "อื่นๆ ระบุ",
+                d_title: "เงื่อนไขการชำระเงิน:",
+                d_desc: "ระบบจะคำนวณยอดชำระเต็มจำนวนสำหรับชุดอาหารกล่อง และยอดมัดจำ 50% สำหรับเมนูจัดเลี้ยงโดยอัตโนมัติ"
             },
             en: { 
                 connect: "Connect With Us", booking: "Booking Details", name: "Contact Name", phone: "Phone Number", date: "Delivery Date", time: "Delivery Time", 
                 venue: "Venue Name", address: "Full Address", payment: "Payment Method", submit: "Confirm Booking",
-                allergy: "Food Allergy / Dietary Requirements", peanuts: "Peanuts", milk: "Milk / Dairy", seafood: "Seafood", eggs: "Eggs", msg: "MSG", fishsauce: "Fish Sauce", knorr: "Knorr / Bouillon",
-                other: "Others (if any)",
-                menu_select: "Select Menu Set (Excl. Tax & Service)",
+                allergy: "Food Allergy", peanuts: "Peanuts", milk: "Dairy", seafood: "Seafood", eggs: "Eggs", msg: "MSG", fishsauce: "Fish Sauce", knorr: "Bouillon",
+                other: "Others",
                 d_title: "Payment Terms:",
-                d_desc: "50% deposit for catering events, or full payment for delivery box sets. (Excl. Tax & Delivery)"
+                d_desc: "The system automatically calculates full payment for delivery sets and a 50% deposit for catering menus."
             }
         }[lang];
+
+        document.getElementById('lbl-cart-title').innerText = lang === 'th' ? 'ตะกร้าสินค้า / Your Cart' : 'Your Cart';
+        document.getElementById('lbl-total-classic').innerText = lang === 'th' ? 'ยอดเต็มจำนวน (กล่อง/ของหวาน):' : 'Full Payment (Boxes/Desserts):';
+        document.getElementById('lbl-total-catering').innerText = lang === 'th' ? 'ยอดมัดจำ 50% (จัดเลี้ยง):' : '50% Deposit (Catering):';
+        document.getElementById('lbl-amount-to-pay').innerText = lang === 'th' ? 'ยอดชำระเบื้องต้น / Amount to Pay Now:' : 'Amount to Pay Now:';
         
+        renderCartSummary();
 
-
-
-
-        document.getElementById('t-connect').innerText = t.connect;
+    document.getElementById('t-connect').innerText = t.connect;
         document.getElementById('t-booking').innerText = t.booking;
         document.getElementById('l-name').innerText = t.name;
         document.getElementById('l-phone').innerText = t.phone;
@@ -856,5 +586,6 @@ s0.parentNode.insertBefore(s1,s0);
     }
 }
 </style>
+    <script src="js/cart.js"></script>
 </body>
 </html>

@@ -154,7 +154,7 @@
         </div>
     </div>
     <div class="flex gap-3 w-full md:w-auto">
-        <button onclick="clearCart()" class="px-5 py-2.5 bg-transparent border border-gold text-gold rounded-full text-sm font-semibold transition-all hover:bg-gold/10" id="btn-clear-cart">ล้างข้อมูล / Clear</button>
+        <button onclick="clearLocalCart()" class="px-5 py-2.5 bg-transparent border border-gold text-gold rounded-full text-sm font-semibold transition-all hover:bg-gold/10" id="btn-clear-cart">ล้างข้อมูล / Clear</button>
         <button onclick="bookCustomCanapes()" class="flex-1 md:flex-initial px-8 py-2.5 bg-gold text-dark-green font-bold rounded-full text-sm transition-all hover:bg-white active:scale-95 shadow-[0_4px_12px_rgba(212,175,55,0.3)]">
             <i class="fas fa-calendar-alt mr-1"></i> <span id="btn-book-cart">ดำเนินการจองเซตนี้ / Book This Selection</span>
         </button>
@@ -267,9 +267,9 @@
                                     <div class="flex justify-between items-center border-t border-gray-100 pt-4 mt-2">
                                         <span class="text-xs text-gray-400 font-medium">${currentLang === 'th' ? 'จำนวนสั่งซื้อ (ชุด 12 ชิ้น)' : 'Quantity (32-Pcs Set)'}</span>
                                         <div class="flex items-center gap-3">
-                                            <button onclick="updateCart('${item.id}', -1)" class="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full text-dark-green font-bold text-lg transition hover:bg-gold hover:text-dark-green active:scale-90">-</button>
+                                            <button onclick="updateLocalCart('${item.id}', -1)" class="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full text-dark-green font-bold text-lg transition hover:bg-gold hover:text-dark-green active:scale-90">-</button>
                                             <span class="font-bold text-base w-6 text-center" id="qty-${item.id}">${qty}</span>
-                                            <button onclick="updateCart('${item.id}', 1)" class="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full text-dark-green font-bold text-lg transition hover:bg-gold hover:text-dark-green active:scale-90">+</button>
+                                            <button onclick="updateLocalCart('${item.id}', 1)" class="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full text-dark-green font-bold text-lg transition hover:bg-gold hover:text-dark-green active:scale-90">+</button>
                                         </div>
                                     </div>
                                 </div>

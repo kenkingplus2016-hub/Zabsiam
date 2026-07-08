@@ -141,6 +141,7 @@
   html[lang="en"] .nav-th { display: none !important; }
   html[lang="en"] .nav-en { display: inline !important; }
 </style>
+    <link rel="stylesheet" href="css/cart.css">
 </head>
 <body>
 
@@ -503,8 +504,18 @@
                 modalBookBtn.href = '#';
                 modalBookBtn.onclick = function(e) {
                     e.preventDefault();
-                    const qty = document.getElementById('modal-qty-input').value || 1;
-                    window.location.href = `booking.html?set=classic-${set.id}&qty=${qty}`;
+                    const qty = parseInt(document.getElementById('modal-qty-input').value) || 1;
+                    addToCart({
+                        id: `classic-${set.id}`,
+                        name_th: set.name_th,
+                        name_en: set.name_en,
+                        price: set.price,
+                        qty: qty,
+                        category: "Classic",
+                        unit_th: set.unit_th || "กล่อง",
+                        unit_en: set.unit_en || "Box"
+                    });
+                    closeModal();
                 };
             }
 
@@ -910,5 +921,6 @@ s0.parentNode.insertBefore(s1,s0);
     <strong>Khrua Thai London - The Best Authentic Thai Delivery Lunch</strong><br>
     We specialize in premium <strong>lunch box set thai</strong>, <strong>delivery lunch box</strong>, and <strong>Pinto Lunch</strong> services across the UK. Whether you are looking for a quick <strong>lunch box thai</strong> or comprehensive <strong>Delivery Box Sets</strong> for your corporate events, we provide the finest <strong>lunch box uk</strong> options. Order your authentic <strong>lunch box set</strong>, <strong>Delivery Box</strong>, or <strong>delivery lunch</strong> today and experience the true taste of Thailand!
 </div>
+    <script src="js/cart.js"></script>
 </body>
 </html>
