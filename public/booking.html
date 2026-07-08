@@ -155,6 +155,15 @@
             <select id="menuSetSelect" style="width:100%; padding:14px; border:2px solid var(--gold); border-radius:12px; font-family:'Prompt'; font-size:1rem; font-weight:600; color:var(--dark-green); background:white; cursor:pointer; appearance:auto; margin-bottom:10px;">
                 <option value="" disabled selected>-- กรุณาเลือกเมนู / Please select a menu --</option>
             </select>
+
+            <div id="qty-section" style="margin-bottom:15px; display:none;">
+                <label id="l-qty" style="color:var(--dark-green); font-weight:600; display:block; margin-bottom:5px;">จำนวน / Quantity</label>
+                <div style="display:flex; align-items:center; border:2px solid var(--gold); border-radius:12px; overflow:hidden; background:#fff; width:fit-content;">
+                    <button type="button" onclick="document.getElementById('orderQty').stepDown(); updateSetInfo();" style="border:none; background:var(--cream); color:var(--dark-green); width:45px; height:45px; font-weight:bold; font-size:1.2rem; cursor:pointer;">-</button>
+                    <input type="number" id="orderQty" min="1" value="1" required style="width:60px; text-align:center; border:none; font-weight:bold; font-size:1.1rem; color:var(--dark-green);" onchange="updateSetInfo()">
+                    <button type="button" onclick="document.getElementById('orderQty').stepUp(); updateSetInfo();" style="border:none; background:var(--cream); color:var(--dark-green); width:45px; height:45px; font-weight:bold; font-size:1.2rem; cursor:pointer;">+</button>
+                </div>
+            </div>
             <div id="selected-set-info" style="display:none; background:#fffcf0; border:1.5px solid var(--gold); border-radius:12px; padding:15px; margin-bottom:15px;">
                 <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
                     <div>
@@ -583,11 +592,11 @@
                 currentTotalSets = 1; // Default 1 set for classic/authentic menus
                 document.getElementById('info-set-name').textContent = `${info.name_th} / ${info.name_en}`;
                 document.getElementById('info-set-unit').textContent = `สำหรับ ${info.unit_th} / For ${info.unit_en}`;
-                document.getElementById('info-set-price').textContent = `£${info.price.toFixed(0)}`;
+                document.getElementById('info-set-price').textContent = `£${(info.price * qty).toFixed(0)}`;
                 if (info.category === 'Classic') {
                     document.getElementById('info-set-deposit').textContent = `${currentLang === 'th' ? 'ชำระเต็มจำนวน' : 'Full Payment'} = £${info.price.toFixed(2)}`;
                 } else {
-                    document.getElementById('info-set-deposit').textContent = `มัดจำ 50% = £${(info.price / 2).toFixed(2)}`;
+                    document.getElementById('info-set-deposit').textContent = `มัดจำ 50% = £${((info.price * qty) / 2).toFixed(2)}`;
                 }
                 infoBox.style.display = 'block';
 

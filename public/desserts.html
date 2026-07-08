@@ -251,6 +251,16 @@
                 </div>
             </div>
 
+            
+            <!-- Quantity Selector -->
+            <div id="modal-qty-section" style="margin-top:20px; text-align:center;">
+                <h4 style="color:var(--dark-green); margin:0 0 10px 0; font-size:1rem;"><span class="nav-th">จำนวน / Quantity</span><span class="nav-en">Quantity</span></h4>
+                <div style="display:inline-flex; align-items:center; border:2px solid var(--gold); border-radius:25px; overflow:hidden; background:#fff;">
+                    <button type="button" onclick="decreaseModalQty()" style="border:none; background:var(--cream); color:var(--dark-green); width:40px; height:40px; font-weight:bold; font-size:1.2rem; cursor:pointer;">-</button>
+                    <input type="text" id="modal-qty-input" value="1" readonly style="width:50px; text-align:center; border:none; font-weight:bold; font-size:1.1rem; color:var(--dark-green); pointer-events:none;">
+                    <button type="button" onclick="increaseModalQty()" style="border:none; background:var(--cream); color:var(--dark-green); width:40px; height:40px; font-weight:bold; font-size:1.2rem; cursor:pointer;">+</button>
+                </div>
+            </div>
             <!-- Book Button inside Modal -->
             <div id="modal-book-section" style="margin-top:20px; text-align:center;">
                 <a id="modal-book-btn" href="#" style="display:inline-block; background:var(--dark-green); color:var(--gold); border:2px solid var(--gold); padding:12px 35px; border-radius:30px; font-weight:700; font-size:1rem; text-decoration:none; transition:0.3s; box-shadow:0 6px 15px rgba(0,0,0,0.2);" onmouseover="this.style.background='var(--gold)';this.style.color='var(--dark-green)';" onmouseout="this.style.background='var(--dark-green)';this.style.color='var(--gold)';">
@@ -380,6 +390,7 @@
         const set = classicSets.find(s => s.id == setId);
         if (set) {
             extendOptionsWithSpiciness(set);
+            document.getElementById('modal-qty-input').value = 1;
             document.getElementById('modal-img').src = 'images/' + set.img;
             document.getElementById('modal-title').innerHTML = set.name[currentLang].replace(': ', ':<br>').replace(' — ', '<br>').replace(' - ', '<br>');
             document.getElementById('modal-en-title').innerText = `${set.name.en} - £${set.price} (${set.unit.en})`;
@@ -470,7 +481,8 @@
                 modalBookBtn.onclick = function(e) {
                     e.preventDefault();
                     const selects = modalCustomOptions.querySelectorAll('select');
-                    let queryParams = `?set=classic-${set.id}`;
+                    const qty = document.getElementById('modal-qty-input').value || 1;
+                    let queryParams = `?set=classic-${set.id}&qty=${qty}`;
                     let allSelected = true;
                     selects.forEach(sel => {
                         if (!sel.value) {
@@ -488,12 +500,28 @@
             } else {
                 modalCustomize.style.display = 'none';
                 modalCustomOptions.innerHTML = '';
-                modalBookBtn.onclick = null;
-                modalBookBtn.href = `booking.html?set=classic-${set.id}`;
+                modalBookBtn.href = '#';
+                modalBookBtn.onclick = function(e) {
+                    e.preventDefault();
+                    const qty = document.getElementById('modal-qty-input').value || 1;
+                    window.location.href = `booking.html?set=classic-${set.id}&qty=${qty}`;
+                };
             }
 
             document.getElementById('comp-modal').style.display = 'flex';
             document.body.style.overflow = 'hidden';
+        }
+    }
+
+    
+    function increaseModalQty() {
+        const input = document.getElementById('modal-qty-input');
+        input.value = parseInt(input.value) + 1;
+    }
+    function decreaseModalQty() {
+        const input = document.getElementById('modal-qty-input');
+        if (parseInt(input.value) > 1) {
+            input.value = parseInt(input.value) - 1;
         }
     }
 
