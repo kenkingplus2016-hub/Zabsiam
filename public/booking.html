@@ -151,42 +151,32 @@
                 </div>
             </div>
 
-            <!-- Menu Selection Section (Dynamic Dropdown) -->
-            <h3 id="t-menu-select" style="color:var(--dark-green); margin-top:20px;">เลือกชุดเมนู / Select Menu Set</h3>
-            <select id="menuSetSelect" style="width:100%; padding:14px; border:2px solid var(--gold); border-radius:12px; font-family:'Prompt'; font-size:1rem; font-weight:600; color:var(--dark-green); background:white; cursor:pointer; appearance:auto; margin-bottom:10px;">
-                <option value="" disabled selected>-- กรุณาเลือกเมนู / Please select a menu --</option>
-            </select>
-
-            <div id="qty-section" style="margin-bottom:15px; display:none;">
-                <label id="l-qty" style="color:var(--dark-green); font-weight:600; display:block; margin-bottom:5px;">จำนวน / Quantity</label>
-                <div style="display:flex; align-items:center; border:2px solid var(--gold); border-radius:12px; overflow:hidden; background:#fff; width:fit-content;">
-                    <button type="button" onclick="document.getElementById('orderQty').stepDown(); updateSetInfo();" style="border:none; background:var(--cream); color:var(--dark-green); width:45px; height:45px; font-weight:bold; font-size:1.2rem; cursor:pointer;">-</button>
-                    <input type="number" id="orderQty" min="1" value="1" required style="width:60px; text-align:center; border:none; font-weight:bold; font-size:1.1rem; color:var(--dark-green);" onchange="updateSetInfo()">
-                    <button type="button" onclick="document.getElementById('orderQty').stepUp(); updateSetInfo();" style="border:none; background:var(--cream); color:var(--dark-green); width:45px; height:45px; font-weight:bold; font-size:1.2rem; cursor:pointer;">+</button>
+            <!-- Menu Selection Section (Cart) -->
+            <div id="cart-summary-container" style="background:#fff; border:1.5px solid var(--gold); border-radius:12px; padding:20px; margin-bottom:20px; margin-top:20px;">
+                <h3 style="color:var(--dark-green); font-weight:bold; font-size:1.2rem; margin-bottom:15px; border-bottom:1px solid #eee; padding-bottom:10px;">
+                    <i class="fas fa-shopping-cart" style="color:var(--gold); margin-right:8px;"></i> 
+                    <span id="lbl-cart-title">ตะกร้าสินค้า / Your Cart</span>
+                </h3>
+                <div id="cart-items-list">
+                    <!-- Cart items will be rendered here -->
+                </div>
+                
+                <div style="margin-top:20px; padding-top:15px; border-top:2px dashed var(--gold);">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                        <span id="lbl-total-classic" style="color:#666;">ยอดเต็มจำนวน (กล่อง/ของหวาน):</span>
+                        <span style="font-weight:bold;">£<span id="cart-classic-price">0.00</span></span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                        <span id="lbl-total-catering" style="color:#666;">ยอดมัดจำ 50% (จัดเลี้ยง):</span>
+                        <span style="font-weight:bold; color:var(--dark-green);">£<span id="cart-catering-deposit">0.00</span></span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; margin-top:10px; padding-top:10px; border-top:1px solid #eee;">
+                        <span id="lbl-amount-to-pay" style="color:var(--dark-green); font-weight:bold; font-size:1.1rem;">ยอดชำระเบื้องต้น / Amount to Pay Now:</span>
+                        <span style="color:red; font-weight:bold; font-size:1.3rem;">£<span id="cart-total-to-pay">0.00</span></span>
+                    </div>
                 </div>
             </div>
-            <div id="selected-set-info" style="display:none; background:#fffcf0; border:1.5px solid var(--gold); border-radius:12px; padding:15px; margin-bottom:15px;">
-                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
-                    <div>
-                        <div id="info-set-name" style="font-weight:700; color:var(--dark-green); font-size:1.1rem;"></div>
-                        <div id="info-set-unit" style="font-size:0.85rem; color:#666;"></div>
-                    </div>
-                    <div style="text-align:right;">
-                        <div id="info-set-price" style="font-size:1.5rem; font-weight:800; color:var(--dark-green);"></div>
-                        <div id="info-set-deposit" style="font-size:0.85rem; color:var(--gold); font-weight:600;"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Dynamic Customization Options (shown when set has options) -->
-            <div id="customization-section" style="display:none; margin-top:15px; background:rgba(27,48,34,0.05); padding:20px; border-radius:15px; border:2px solid var(--dark-green);">
-                <h4 style="color:var(--dark-green); margin:0 0 15px 0; font-size:1rem;">
-                    <i class="fas fa-list-check" style="color:var(--gold);"></i>
-                    <span id="custom-title">เลือกรายการอาหาร / Customize Your Order</span>
-                </h4>
-                <div id="custom-options-container" style="display:grid; gap:12px;"></div>
-            </div>
-
+            
             <!-- Allergy Section -->
             <div style="margin-top:20px; background:rgba(212,175,55,0.05); padding:20px; border-radius:15px; border:1px dashed var(--gold);">
                 <label id="l-allergy" style="color:var(--dark-green); font-weight:600; display:block; margin-bottom:10px;">ข้อมูลการแพ้อาหาร / Food Allergy & Dietary Requirements</label>
@@ -275,8 +265,6 @@
 </div>
 
 <script>
-    let selectedPaymentMethod = 'Transfer';
-    
     let currentLang = 'th';
     let selectedPaymentMethod = 'PromptPay';
     let finalAmountToPay = 0;
@@ -405,7 +393,6 @@
             return;
         }
 
-        // Format cart into a readable string for the backend/LINE
         let menuSetStr = cart.map(item => {
             let line = `${item.qty}x ${item.name_th} (${item.name_en})`;
             if (item.options && item.options.length > 0) {
@@ -486,9 +473,7 @@
         document.getElementById('lbl-total-catering').innerText = lang === 'th' ? 'ยอดมัดจำ 50% (จัดเลี้ยง):' : '50% Deposit (Catering):';
         document.getElementById('lbl-amount-to-pay').innerText = lang === 'th' ? 'ยอดชำระเบื้องต้น / Amount to Pay Now:' : 'Amount to Pay Now:';
         
-        renderCartSummary();
-
-    document.getElementById('t-connect').innerText = t.connect;
+        document.getElementById('t-connect').innerText = t.connect;
         document.getElementById('t-booking').innerText = t.booking;
         document.getElementById('l-name').innerText = t.name;
         document.getElementById('l-phone').innerText = t.phone;
@@ -509,11 +494,12 @@
         if(document.getElementById('opt-fishsauce')) document.getElementById('opt-fishsauce').innerText = t.fishsauce;
         if(document.getElementById('opt-knorr')) document.getElementById('opt-knorr').innerText = t.knorr;
         document.getElementById('allergy-detail').placeholder = t.other;
-        document.getElementById('t-menu-select').innerText = t.menu_select;
+        
+        renderCartSummary();
     }
 
     // Initialize
-    loadAllMenus();
+    document.addEventListener("DOMContentLoaded", () => { renderCartSummary(); });
 </script>
     <script src="mobile-menu.js"></script>
 
