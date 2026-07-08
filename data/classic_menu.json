@@ -886,7 +886,7 @@
       "th": "เซตพิเศษ VIP: อาหารจานหลักเนื้อสัตว์ (ตามเลือก) เสิร์ฟพร้อมข้าวเหนียว ส้มตำ (ตามเลือก) ผักเคียง น้ำพริก/น้ำจิ้ม (ตามเลือก)",
       "en": "Special VIP Set: Main course meat (by choice) served with sticky rice, Som Tum (by choice), side vegetables, dipping sauce/nam prik (by choice)."
     },
-    "img": "Special Box Set VIP.jpg",
+    "img": "box_vip_special_set.jpg",
     "items": {
       "th": {
         "starters": [
