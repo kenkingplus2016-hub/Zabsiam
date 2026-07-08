@@ -37,7 +37,8 @@
     <div class="container">
         <i class="fas fa-check-circle success-icon" id="status-icon"></i>
         <h1 id="status-title">ชำระเงินสำเร็จ / Booking Received</h1>
-        <p id="status-desc">ขอบคุณที่เลือกใช้บริการของเรา เราได้รับการยืนยันของคุณเรียบร้อยแล้ว<br>ทีมงานจะทำการติดต่อกลับไปยังช่องทางที่คุณระบุไว้โดยเร็วที่สุด</p>
+        <p id="status-desc">ขอบคุณที่เลือกใช้บริการของเรา เราได้รับการยืนยันของคุณเรียบร้อยแล้ว<br>ทีมงานจะทำการติดต่อกลับไปยังช่องทางที่คุณระบุไว้โดยเร็วที่สุด<br><br>
+        <span style="font-size: 0.95rem; color: #555;">Thank you for choosing our service. We have successfully received your booking.<br>Our team will contact you shortly via your specified contact method.</span></p>
 
         <!-- Dynamic Payment Info -->
         <div id="transfer-info" class="payment-details">
@@ -59,7 +60,7 @@
 
         if (method === 'Transfer') {
             document.getElementById('status-title').innerText = "ได้รับข้อมูลการจองแล้ว / Booking Received";
-            document.getElementById('status-desc').innerText = "กรุณาโอนเงินมัดจำตามข้อมูลด้านล่างเพื่อยืนยันคิวงานครับ\nPlease complete the bank transfer below to confirm your booking.";
+            document.getElementById('status-desc').innerHTML = "กรุณาโอนเงินมัดจำตามข้อมูลด้านล่างเพื่อยืนยันคิวงานครับ<br><span style='font-size: 0.95rem; color: #555;'>Please complete the bank transfer below to confirm your booking.</span>";
             document.getElementById('transfer-info').style.display = 'block';
             document.getElementById('status-icon').className = "fas fa-university success-icon";
             document.getElementById('status-icon').style.color = "var(--gold)";
