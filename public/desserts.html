@@ -240,7 +240,7 @@
                 const allSets = await res.json();
                 // Only show Desserts
                 classicSets = allSets.filter(s => {
-                    return s.id === 'lunch_box_mango_sticky_rice' || s.id.includes('dessert');
+                    return s.id === 'lunch_box_mango_sticky_rice' || String(s.id).includes('dessert');
                 });
                 renderMenu();
             } else {
