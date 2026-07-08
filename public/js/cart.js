@@ -11,8 +11,13 @@ function getCart() {
 }
 
 function saveCart(cart) {
-    localStorage.setItem(CART_KEY, JSON.stringify(cart));
-    updateFloatingCart();
+    try {
+        localStorage.setItem(CART_KEY, JSON.stringify(cart));
+        updateFloatingCart();
+    } catch (e) {
+        alert('⚠️ ระบบตะกร้าสินค้าไม่สามารถทำงานได้ เนื่องจากเบราว์เซอร์ของคุณปิดกั้นการบันทึกข้อมูล (Block Cookies / LocalStorage)\n\nกรุณาปิดโหมดไม่ระบุตัวตน (Incognito) หรือตั้งค่าอนุญาต Cookie ก่อนทำการสั่งซื้อครับ');
+        throw e;
+    }
 }
 
 function addToCart(item) {
