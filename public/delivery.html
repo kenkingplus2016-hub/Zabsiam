@@ -363,11 +363,13 @@
         if (set.options.some(o => o.id.includes('spicy'))) {
             return set.options;
         }
-
-        // Do not add spiciness level to dessert items
-        if (set.id === 'lunch_box_mango_sticky_rice') {
+        // Standard rule: Do not add spiciness level to dessert and snack items
+        const sid = String(set.id).toLowerCase();
+        if (sid === 'lunch_box_mango_sticky_rice' || sid.includes('dessert') || sid.includes('snack')) {
             return set.options;
         }
+
+
 
         // Add a universal spiciness option for every menu
         set.options.push({
