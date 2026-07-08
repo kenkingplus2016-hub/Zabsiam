@@ -6,7 +6,7 @@
       "en": "Signature Lunch Box (Pad Krapow & Som Tum)"
     },
     "price": 16.95,
-    "img": "Lunch Box (Pad Krapow & Som Tum).jpg",
+    "img": "box_krapow.jpg",
     "unit": {
       "th": "เซต",
       "en": "Set"
@@ -426,7 +426,7 @@
       "en": "Signature Lunch Box Set"
     },
     "price": 19.95,
-    "img": "Signature Lunch Box Set.jpg",
+    "img": "box_signature_kor_moo_yang.jpg",
     "unit": {
       "th": "เซต",
       "en": "Set"
@@ -508,7 +508,7 @@
       "en": "Premium Lunch Box Thai Curry"
     },
     "price": 19.95,
-    "img": "Green Curry Chicken launch box.jpg",
+    "img": "box_vip_green_curry.jpg",
     "unit": {
       "th": "เซต",
       "en": "Set"
@@ -834,7 +834,7 @@
       "th": "ไก่ทอดหาดใหญ่ น้ำอาจาด น้ำจิ้มไก่ หอมเจียว ข้าวหมก",
       "en": "Hat Yai Fried Chicken, Ajad Relish, Sweet Chili Sauce, Fried Shallots, Khao Mok Rice"
     },
-    "img": "Special Box Hat Yai Fried Chicken.jpg",
+    "img": "box_hat_yai.jpg",
     "items": {
       "th": {
         "starters": [
