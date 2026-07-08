@@ -330,9 +330,9 @@
                                 ${currentLang === 'th' ? 'ชำระเต็มจำนวน (100%):' : 'Full Payment (100%):'} £${parseFloat(set.price).toFixed(2)}
                             </div>
                             <div style="font-size:0.75rem; color:#999; margin-top:2px;">${excludeLabel}</div>
-                            <a href="booking.html?set=classic-${set.id}" style="display:inline-block; margin-top:12px; background:var(--dark-green); color:var(--gold); border:2px solid var(--gold); padding:8px 20px; border-radius:25px; font-weight:700; font-size:0.85rem; text-decoration:none; transition:0.3s; box-shadow:0 4px 10px rgba(0,0,0,0.15);" onmouseover="this.style.background='var(--gold)';this.style.color='var(--dark-green)';" onmouseout="this.style.background='var(--dark-green)';this.style.color='var(--gold)';">
-                                <i class="fas fa-calendar-check"></i> ${currentLang === 'th' ? 'จองเซตนี้' : 'Book This Set'}
-                            </a>
+                            <button onclick="openModal('${set.id}')" style="cursor:pointer; display:inline-block; border:none;  style="margin-top:12px; background:var(--dark-green); color:var(--gold); border:2px solid var(--gold); padding:8px 20px; border-radius:25px; font-weight:700; font-size:0.85rem; text-decoration:none; transition:0.3s; box-shadow:0 4px 10px rgba(0,0,0,0.15);" onmouseover="this.style.background='var(--gold)';this.style.color='var(--dark-green)';" onmouseout="this.style.background='var(--dark-green)';this.style.color='var(--gold)';" >
+                                <i class="fas fa-shopping-cart"></i> ${currentLang === 'th' ? 'เลือกรายการ' : 'Select Items'}
+                            </button>
                         </div>
                     </div>
                     <div class="menu-grid">
@@ -347,9 +347,6 @@
                                     <button class="view-btn">
                                         <i class="fas fa-search-plus"></i> ${btnText}
                                     </button>
-                                    <div style="text-align: center;" title="สแกนเพื่อจอง / Scan to Book">
-                                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent('https://khruathailondon.co.uk/booking.html?set=classic-' + set.id)}" alt="QR Code" style="width: 130px; height: 130px; border-radius: 8px; border: 2px solid var(--gold); padding: 5px; background: white; transition: 0.3s;" onmouseover="this.style.transform='scale(1.6)';" onmouseout="this.style.transform='scale(1)';">
-                                        <div style="font-size: 0.75rem; color: #666; margin-top: 5px; font-weight: bold;">SCAN TO BOOK</div>
                                     </div>
                                 </div>
                             </div>
@@ -505,7 +502,24 @@
                         alert(currentLang === 'th' ? 'กรุณาเลือกรายการอาหารให้ครบถ้วน / Please complete all selections' : 'Please complete all menu selections');
                         return;
                     }
-                    window.location.href = 'booking.html' + queryParams;
+                    
+                    let customChoicesArr = [];
+                    selects.forEach(sel => {
+                        customChoicesArr.push(sel.value);
+                    });
+                    
+                    addToCart({
+                        id: `classic-${set.id}`,
+                        name_th: set.name.th || set.name_th,
+                        name_en: set.name.en || set.name_en,
+                        price: parseFloat(set.price),
+                        qty: parseInt(qty),
+                        category: 'Classic',
+                        unit_th: set.unit?.th || 'ชุด',
+                        unit_en: set.unit?.en || 'Set',
+                        options: customChoicesArr
+                    });
+                    closeModal();
                 };
             } else {
                 modalCustomize.style.display = 'none';
