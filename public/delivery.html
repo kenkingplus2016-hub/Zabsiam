@@ -208,22 +208,7 @@
 </section>
 
 <div class="container">
-    <div class="tab-container">
-        <button class="tab-btn active" id="tab-delivery-btn" onclick="switchDeliveryTab('delivery')">
-            ดิลิเวอรีบ็อกซ์เซต / Delivery Box Sets
-        </button>
-        <button class="tab-btn" id="tab-pruksa-btn" onclick="switchDeliveryTab('pruksa')">
-            ดิลิเวอรีบ็อกซ์ / Delivery Box
-        </button>
-    </div>
-    
-    <div id="tab-delivery-content">
-        <div id="menu-container"></div>
-    </div>
-    
-    <div id="tab-pruksa-content" style="display:none;">
-        <div id="pruksa-container"></div>
-    </div>
+    <div id="menu-container"></div>
 </div>
 
 <!-- Modal -->
@@ -302,9 +287,7 @@
 
     function renderMenu() {
         const menuContainer = document.getElementById('menu-container');
-        const pruksaContainer = document.getElementById('pruksa-container');
         let menuHtml = '';
-        let pruksaHtml = '';
 
         classicSets.forEach(set => {
             const btnText = currentLang === 'th' ? 'ดูรายละเอียดอาหาร / View Details' : 'View Details / Items';
@@ -353,14 +336,9 @@
                 </div>
             `;
             
-            if (set.name.en.includes('Set')) {
-                menuHtml += cardHtml;
-            } else {
-                pruksaHtml += cardHtml;
-            }
+            menuHtml += cardHtml;
         });
         menuContainer.innerHTML = menuHtml;
-        pruksaContainer.innerHTML = pruksaHtml;
     }
 
     function extendOptionsWithSpiciness(set) {
@@ -591,18 +569,7 @@
         renderMenu();
     }
 
-    function switchDeliveryTab(tabId) {
-        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-        if(tabId === 'delivery') {
-            document.getElementById('tab-delivery-btn').classList.add('active');
-            document.getElementById('tab-delivery-content').style.display = 'block';
-            document.getElementById('tab-pruksa-content').style.display = 'none';
-        } else {
-            document.getElementById('tab-pruksa-btn').classList.add('active');
-            document.getElementById('tab-pruksa-content').style.display = 'block';
-            document.getElementById('tab-delivery-content').style.display = 'none';
-        }
-    }
+
 
     loadClassicMenu();
 </script>
