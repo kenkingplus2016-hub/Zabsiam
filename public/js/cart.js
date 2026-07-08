@@ -67,6 +67,11 @@ function updateFloatingCart() {
     
     document.getElementById('floating-cart-badge').innerText = totalItems;
     
+    // Force update href in case it was created with the old absolute path
+    if (floatBtn.getAttribute('href') === '/booking.html') {
+        floatBtn.href = 'booking.html';
+    }
+    
     // Do not show floating cart inside booking.html
     if (window.location.pathname.includes('booking.html')) {
         floatBtn.style.display = 'none';
