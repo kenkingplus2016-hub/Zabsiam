@@ -883,8 +883,8 @@
             "en": "1 Person"
         },
         "desc": {
-            "th": "เซตพิเศษ VIP: อาหารจานหลักเนื้อสัตว์ (ตามเลือก) เสิร์ฟพร้อมข้าวเหนียว ส้มตำ (ตามเลือก) ผักเคียง น้ำพริก/น้ำจิ้ม (ตามเลือก) และแกง (ตามเลือก)",
-            "en": "Special VIP Set: Main course meat (by choice) served with sticky rice, Som Tum (by choice), side vegetables, dipping sauce/nam prik (by choice), and curry (by choice)."
+            "th": "เซตพิเศษ VIP: อาหารจานหลักเนื้อสัตว์ (ตามเลือก) เสิร์ฟพร้อมข้าวเหนียว ส้มตำ (ตามเลือก) ผักเคียง น้ำพริก/น้ำจิ้ม (ตามเลือก)",
+            "en": "Special VIP Set: Main course meat (by choice) served with sticky rice, Som Tum (by choice), side vegetables, dipping sauce/nam prik (by choice)."
         },
         "img": "Kor Moo Yang sum tum.jpg",
         "items": {
@@ -892,8 +892,7 @@
                 "starters": [
                     "ส้มตำ (ตามเลือก)",
                     "ผักเคียง",
-                    "น้ำพริก/น้ำจิ้ม (ตามเลือก)",
-                    "แกง (ตามเลือก)"
+                    "น้ำพริก/น้ำจิ้ม (ตามเลือก)"
                 ],
                 "mains": [
                     "เนื้อสัตว์ (ตามเลือก)",
@@ -905,8 +904,7 @@
                 "starters": [
                     "Som Tum (by choice)",
                     "Side Vegetables",
-                    "Nam Prik / Dipping Sauce (by choice)",
-                    "Curry (by choice)"
+                    "Nam Prik / Dipping Sauce (by choice)"
                 ],
                 "mains": [
                     "Meat (by choice)",
@@ -1015,47 +1013,6 @@
                     {
                         "th": "น้ำจิ้มซีฟู้ด",
                         "en": "Seafood Sauce"
-                    }
-                ]
-            },
-            {
-                "id": "curry_choice",
-                "label": {
-                    "th": "เลือกแกง",
-                    "en": "Choose Curry"
-                },
-                "choices": [
-                    {
-                        "th": "แกงเขียวหวาน",
-                        "en": "Green Curry"
-                    },
-                    {
-                        "th": "แกงมัสมั่น",
-                        "en": "Massaman Curry"
-                    },
-                    {
-                        "th": "แกงพะแนง",
-                        "en": "Panang Curry"
-                    },
-                    {
-                        "th": "ต้มข่าไก่",
-                        "en": "Tom Kha Gai (Coconut Soup)"
-                    },
-                    {
-                        "th": "แกงอ่อม",
-                        "en": "Om Curry (Isan Spicy Dill Soup)"
-                    },
-                    {
-                        "th": "แกงแดง",
-                        "en": "Red Curry"
-                    },
-                    {
-                        "th": "แกงกะหรี่",
-                        "en": "Yellow Curry"
-                    },
-                    {
-                        "th": "แกงเทโพ",
-                        "en": "Tae Po Curry"
                     }
                 ]
             }
