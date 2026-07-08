@@ -1983,5 +1983,35 @@
         ]
       }
     ]
+  },
+  {
+    "id": "lunch_box_mango_sticky_rice",
+    "name": {
+      "th": "Delivery Box ข้าวเหนียวมะม่วง",
+      "en": "Delivery Box Mango Sticky Rice"
+    },
+    "price": 8.95,
+    "unit": {
+      "th": "1 กล่อง",
+      "en": "1 Box"
+    },
+    "desc": {
+      "th": "ข้าวเหนียวมูนมะม่วงน้ำดอกไม้หวานหอม เสิร์ฟพร้อมน้ำกะทิราดในรูปแบบกล่องดิลิเวอรี",
+      "en": "Sweet Mango Sticky Rice served with coconut milk dressing in a premium delivery box."
+    },
+    "img": "box_mango_sticky_rice.jpg",
+    "items": {
+      "th": {
+        "starters": [],
+        "mains": [],
+        "desserts": []
+      },
+      "en": {
+        "starters": [],
+        "mains": [],
+        "desserts": []
+      }
+    },
+    "options": []
   }
 ]
