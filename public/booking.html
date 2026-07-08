@@ -503,6 +503,7 @@
 
         if (info) {
             if (key === 'royal-canapes') {
+                document.getElementById('qty-section').style.display = 'none';
                 const urlParams = new URLSearchParams(window.location.search);
                 const itemsStr = urlParams.get('items') || '';
                 
@@ -589,12 +590,14 @@
                     customSection.style.display = 'none';
                 });
             } else {
-                currentTotalSets = 1; // Default 1 set for classic/authentic menus
+                const qty = parseInt(document.getElementById('orderQty').value) || 1;
+                document.getElementById('qty-section').style.display = 'block';
+                currentTotalSets = qty; // Update total sets to match qty
                 document.getElementById('info-set-name').textContent = `${info.name_th} / ${info.name_en}`;
                 document.getElementById('info-set-unit').textContent = `สำหรับ ${info.unit_th} / For ${info.unit_en}`;
-                document.getElementById('info-set-price').textContent = `£${(info.price * qty).toFixed(0)}`;
+                document.getElementById('info-set-price').textContent = `£${(info.price * qty).toFixed(2)}`;
                 if (info.category === 'Classic') {
-                    document.getElementById('info-set-deposit').textContent = `${currentLang === 'th' ? 'ชำระเต็มจำนวน' : 'Full Payment'} = £${info.price.toFixed(2)}`;
+                    document.getElementById('info-set-deposit').textContent = `${currentLang === 'th' ? 'ชำระเต็มจำนวน' : 'Full Payment'} = £${(info.price * qty).toFixed(2)}`;
                 } else {
                     document.getElementById('info-set-deposit').textContent = `มัดจำ 50% = £${((info.price * qty) / 2).toFixed(2)}`;
                 }
@@ -630,6 +633,7 @@
                 }
             }
         } else {
+            document.getElementById('qty-section').style.display = 'none';
             infoBox.style.display = 'none';
             customContainer.innerHTML = '';
             customSection.style.display = 'none';
