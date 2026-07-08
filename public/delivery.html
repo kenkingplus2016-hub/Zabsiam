@@ -521,6 +521,7 @@
                             options: customChoicesArr
                         });
                         closeModal();
+                        window.location.href = 'booking.html';
                     } catch (err) {
                         alert("Error adding to cart: " + err.message + "\n" + err.stack);
                     }
@@ -544,6 +545,7 @@
                             unit_en: (set.unit && set.unit.en) ? set.unit.en : "Box"
                         });
                         closeModal();
+                        window.location.href = 'booking.html';
                     } catch (err) {
                         alert("Error adding to cart (else): " + err.message + "\n" + err.stack);
                     }
