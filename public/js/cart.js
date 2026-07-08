@@ -2,7 +2,12 @@
 const CART_KEY = 'khruathai_cart';
 
 function getCart() {
-    return JSON.parse(localStorage.getItem(CART_KEY)) || [];
+    try {
+        let cart = JSON.parse(localStorage.getItem(CART_KEY));
+        return Array.isArray(cart) ? cart : [];
+    } catch (e) {
+        return [];
+    }
 }
 
 function saveCart(cart) {
