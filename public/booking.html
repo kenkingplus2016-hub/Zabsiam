@@ -483,6 +483,8 @@
             // Auto-select from URL parameter (?set=authentic-1 or ?set=classic-1 or ?set=royal-canapes)
             const urlParams = new URLSearchParams(window.location.search);
             const preselect = urlParams.get('set');
+            const urlQty = urlParams.get('qty');
+            if (urlQty) document.getElementById('orderQty').value = urlQty;
             if (preselect && select.querySelector(`option[value="${preselect}"]`)) {
                 select.value = preselect;
                 onMenuSelectChange();
