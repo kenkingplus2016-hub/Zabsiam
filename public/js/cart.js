@@ -72,6 +72,29 @@ function updateFloatingCart() {
         floatBtn.href = 'booking.html';
     }
     
+    // Update top nav booking link to show cart icon
+    const navBooking = document.getElementById('nav-booking');
+    if (navBooking) {
+        if (!document.getElementById('nav-cart-badge-inner')) {
+            navBooking.style.position = 'relative';
+            navBooking.style.paddingRight = '15px';
+            navBooking.style.display = 'inline-flex';
+            navBooking.style.alignItems = 'center';
+            navBooking.innerHTML = `<i class="fas fa-shopping-cart" style="font-size: 1.3rem;"></i>
+                <span id="nav-cart-badge-inner" style="position:absolute; top:-8px; right:-5px; background:#FF3B30; color:white; font-size:0.75rem; width:20px; height:20px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; border:2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.2); display:none;">0</span>`;
+        }
+        
+        const navBadge = document.getElementById('nav-cart-badge-inner');
+        if (navBadge) {
+            navBadge.innerText = totalItems;
+            if (totalItems > 0) {
+                navBadge.style.display = 'flex';
+            } else {
+                navBadge.style.display = 'none';
+            }
+        }
+    }
+    
     // Do not show floating cart inside booking.html
     if (window.location.pathname.includes('booking.html')) {
         floatBtn.style.display = 'none';
