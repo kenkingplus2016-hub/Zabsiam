@@ -295,7 +295,7 @@
                 // Only show Family Box Sets on Delivery page (exclude Thai Style Tray Sets and Desserts)
                 classicSets = allSets.filter(s => {
                     if (s.id === 'lunch_box_mango_sticky_rice') return false;
-                    return s.name.en.includes('Family') || s.name.en.includes('Lunch Box') || s.name.en.includes('Special') || s.name.en.includes('Siam Pruksa') || s.name.en.includes('Siam Authentic');
+                    return s.name.en.includes('Family') || s.name.en.includes('Box') || s.name.en.includes('Special') || s.name.en.includes('Siam Pruksa') || s.name.en.includes('Siam Authentic');
                 });
                 renderMenu();
             } else {
