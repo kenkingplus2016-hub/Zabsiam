@@ -379,7 +379,7 @@
   {
     "id": "lunch_box_squid_salted_egg",
     "name": {
-      "th": "Signature Box ผัดหมึกไข่เค็ม",
+      "th": "Signature Box ปลาหมึกผัดไข่เค็ม",
       "en": "Signature Box Stir-fried Squid with Salted Egg"
     },
     "price": 17.95,
@@ -396,7 +396,7 @@
       "th": {
         "mains": [
           "ข้าว (เลือกข้าวสวย หรือ ข้าวผัดไข่)",
-          "ผัดหมึกไข่เค็ม"
+          "ปลาหมึกผัดไข่เค็ม"
         ],
         "starters": [
           "ส้มตำ (เลือกประเภทได้)",
