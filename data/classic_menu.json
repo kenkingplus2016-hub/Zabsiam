@@ -137,7 +137,7 @@
     "items": {
       "th": {
         "mains": [
-          "ข้าวกะเพรา (หมูสับ/ไก่สับ/เนื้อสับ) + ไข่ดาว",
+          "ข้าวกะเพรา (เลือกเนื้อสัตว์ได้) + ไข่ดาว",
           "แกง (เลือกประเภทและเนื้อสัตว์ได้)",
           "คอหมูย่าง / เสือร้องไห้",
           "ส้มตำ (เลือกประเภทได้)"
@@ -150,7 +150,7 @@
       },
       "en": {
         "mains": [
-          "Pad Krapow (Pork/Chicken/Beef) with Rice & Fried Egg",
+          "Pad Krapow (Choose Meat) with Rice & Fried Egg",
           "Thai Curry (Customizable Type & Meat)",
           "Grilled Pork Neck / Crying Tiger",
           "Som Tum (Papaya Salad)"
@@ -181,6 +181,16 @@
           {
             "th": "เนื้อสับ",
             "en": "Minced Beef"
+          },
+          {
+            "th": "ปลาหมึก (+£1)",
+            "en": "Squid (+£1)",
+            "extra": 1
+          },
+          {
+            "th": "หมูกรอบ (+£1)",
+            "en": "Crispy Pork Belly (+£1)",
+            "extra": 1
           }
         ]
       },
@@ -219,6 +229,14 @@
           {
             "th": "แกงพะแนง",
             "en": "Panang Curry"
+          },
+          {
+            "th": "แกงมัสมั่น",
+            "en": "Massaman Curry"
+          },
+          {
+            "th": "แกงกะหรี่",
+            "en": "Yellow Curry"
           }
         ]
       },
