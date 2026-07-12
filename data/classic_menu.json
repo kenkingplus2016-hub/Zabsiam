@@ -178,98 +178,109 @@
       "en": "Set"
     },
     "desc": {
-      "th": "เซตข้าวกล่องสุดพรีเมียม: เลือกเนื้อสัตว์ ไข่ และแกงที่คุณชื่นชอบได้ดั่งใจ",
-      "en": "Premium Lunch Box: Customize your meat, egg, and curry exactly how you like it."
+      "th": "เซตวีไอพีสุดเอ็กซ์คลูซีฟ: เลือกเนื้อสัตว์ (หมูกรอบ/คอหมูย่าง/เสือร้องไห้) พร้อมส้มตำ น้ำพริก ข้าวเหนียว ผักเคียง และน้ำจิ้มรสเด็ด",
+      "en": "Exclusive VIP Set: Choose your meat (Crispy Pork/Pork Neck/Crying Tiger) served with Som Tum, Nam Prik (Chili Paste), Sticky Rice, Vegetables, and dipping sauce."
     },
     "items": {
       "th": {
         "mains": [
-          "ข้าวสวยหอมมะลิ",
-          "แกงไทย (เลือกชนิดแกงและเนื้อสัตว์ได้)"
+          "เนื้อสัตว์ (หมูกรอบ / คอหมูย่าง / เสือร้องไห้)",
+          "ส้มตำ (ส้มตำไทย / ปูปลาร้า)",
+          "ข้าวเหนียว"
         ],
         "starters": [
-          "เมนูไข่ (เลือกไข่ดาว หรือ ไข่เจียว)",
-          "ผักเคียง",
-          "พริกน้ำปลา"
+          "น้ำพริก (หนุ่ม / อ่อง)",
+          "น้ำจิ้ม (ซีฟู้ด / แจ่ว / มะขาม)",
+          "ผักเคียง"
         ]
       },
       "en": {
         "mains": [
-          "Jasmine Rice",
-          "Thai Curry (Choose your curry and meat)"
+          "Meat (Crispy Pork / Pork Neck / Crying Tiger)",
+          "Som Tum (Thai / Pu Pla Ra)",
+          "Sticky Rice"
         ],
         "starters": [
-          "Egg (Choose Fried Egg or Omelette)",
-          "Side Vegetables",
-          "Prik Nam Pla"
+          "Nam Prik (Noom / Ong)",
+          "Dipping Sauce (Seafood / Jaew / Tamarind)",
+          "Side Vegetables"
         ]
       }
     },
     "options": [
       {
-        "id": "curry_type",
+        "id": "vip_meat",
         "label": {
-          "th": "เลือกแกง",
-          "en": "Select Curry"
+          "th": "เลือกเนื้อสัตว์",
+          "en": "Select Meat"
         },
         "choices": [
           {
-            "th": "แกงเขียวหวาน",
-            "en": "Green Curry"
+            "th": "หมูกรอบ",
+            "en": "Crispy Pork Belly"
           },
           {
-            "th": "แกงแดง",
-            "en": "Red Curry"
+            "th": "คอหมูย่าง",
+            "en": "Grilled Pork Neck"
           },
           {
-            "th": "แกงพะแนง",
-            "en": "Panang Curry"
-          },
-          {
-            "th": "แกงมัสมั่น",
-            "en": "Massaman Curry"
-          },
-          {
-            "th": "แกงกะหรี่",
-            "en": "Yellow Curry"
+            "th": "เสือร้องไห้",
+            "en": "Crying Tiger Beef"
           }
         ]
       },
       {
-        "id": "curry_meat",
+        "id": "vip_somtum",
         "label": {
-          "th": "เลือกเนื้อสัตว์ในแกง",
-          "en": "Select Curry Meat"
+          "th": "เลือกส้มตำ",
+          "en": "Select Papaya Salad"
         },
         "choices": [
           {
-            "th": "ไก่",
-            "en": "Chicken"
+            "th": "ส้มตำไทย",
+            "en": "Som Tum Thai"
           },
           {
-            "th": "หมู",
-            "en": "Pork"
-          },
-          {
-            "th": "เนื้อ",
-            "en": "Beef"
+            "th": "ส้มตำปูปลาร้า",
+            "en": "Som Tum Pu Pla Ra"
           }
         ]
       },
       {
-        "id": "egg_type",
+        "id": "vip_namprik",
         "label": {
-          "th": "เลือกไข่",
-          "en": "Select Egg"
+          "th": "เลือกน้ำพริก",
+          "en": "Select Chili Paste"
         },
         "choices": [
           {
-            "th": "ไข่ดาว",
-            "en": "Fried Egg"
+            "th": "น้ำพริกหนุ่ม",
+            "en": "Nam Prik Noom (Green Chili Paste)"
           },
           {
-            "th": "ไข่เจียว",
-            "en": "Thai Omelette"
+            "th": "น้ำพริกอ่อง",
+            "en": "Nam Prik Ong (Tomato Chili Paste)"
+          }
+        ]
+      },
+      {
+        "id": "vip_sauce",
+        "label": {
+          "th": "เลือกน้ำจิ้ม",
+          "en": "Select Dipping Sauce"
+        },
+        "choices": [
+          {
+            "th": "น้ำจิ้มซีฟู้ด",
+            "en": "Seafood Sauce"
+          },
+          {
+            "th": "น้ำจิ้มแจ่ว",
+            "en": "Jaew Sauce"
+          },
+          {
+            "th": "น้ำจิ้มมะขาม",
+            "en": "Tamarind Sauce"
           }
         ]
       }
