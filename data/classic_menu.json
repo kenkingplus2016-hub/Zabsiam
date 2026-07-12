@@ -1,124 +1,5 @@
 [
   {
-    "id": "lunch_box_krapow",
-    "name": {
-      "th": "Signature Lunch Box ผัดกะเพรา + ส้มตำ",
-      "en": "Signature Lunch Box (Pad Krapow & Som Tum)"
-    },
-    "price": 16.95,
-    "img": "box_krapow.jpg",
-    "unit": {
-      "th": "เซต",
-      "en": "Set"
-    },
-    "desc": {
-      "th": "ข้าวกล่องพร้อมทาน: กะเพราและส้มตำรสจัดจ้าน",
-      "en": "Ready-to-eat Lunch Box: Spicy Pad Krapow and Som Tum"
-    },
-    "items": {
-      "th": {
-        "mains": [
-          "ข้าว (เลือกข้าวสวย หรือ ข้าวผัดไข่)",
-          "ผัดกะเพรา (เลือกเนื้อสัตว์ได้)"
-        ],
-        "starters": [
-          "ส้มตำ (เลือกประเภทได้)",
-          "ไข่ดาว",
-          "ผักเคียง",
-          "พริกน้ำปลา"
-        ]
-      },
-      "en": {
-        "mains": [
-          "Rice (Choose Jasmine Rice or Egg Fried Rice)",
-          "Chilli & Basil Stir Fry (Choose Meat)"
-        ],
-        "starters": [
-          "Som Tum (Choose Type)",
-          "Fried Egg",
-          "Side Vegetables",
-          "Prik Nam Pla"
-        ]
-      }
-    },
-    "options": [
-      {
-        "id": "rice_type",
-        "label": {
-          "th": "เลือกประเภทข้าว",
-          "en": "Choose Rice"
-        },
-        "choices": [
-          {
-            "th": "ข้าวสวย",
-            "en": "Jasmine Rice"
-          },
-          {
-            "th": "ข้าวผัดไข่",
-            "en": "Egg Fried Rice"
-          }
-        ]
-      },
-      {
-        "id": "meat_type",
-        "label": {
-          "th": "เลือกเนื้อสัตว์",
-          "en": "Choose Meat"
-        },
-        "choices": [
-          {
-            "th": "ไก่",
-            "en": "Chicken"
-          },
-          {
-            "th": "หมู",
-            "en": "Pork"
-          },
-          {
-            "th": "ผักรวม",
-            "en": "Vegetables"
-          },
-          {
-            "th": "หมูกรอบ (+£1)",
-            "en": "Crispy Pork Belly (+£1)",
-            "extra": 1
-          },
-          {
-            "th": "เนื้อ (+£1)",
-            "en": "Beef (+£1)",
-            "extra": 1
-          },
-          {
-            "th": "กุ้ง (+£1)",
-            "en": "Prawns (+£1)",
-            "extra": 1
-          }
-        ]
-      },
-      {
-        "id": "somtum_type",
-        "label": {
-          "th": "เลือกส้มตำ",
-          "en": "Choose Papaya Salad"
-        },
-        "choices": [
-          {
-            "th": "ส้มตำไทย",
-            "en": "Som Tum Thai"
-          },
-          {
-            "th": "ส้มตำปูปลาร้า",
-            "en": "Som Tum Pu Pla Ra"
-          },
-          {
-            "th": "ตำแตง",
-            "en": "Spicy Cucumber Salad"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "id": "lunch_box_set_a",
     "name": {
       "th": "Special Box Set พรีเมียม",
@@ -266,6 +147,125 @@
         "label": {
           "th": "เลือกส้มตำ",
           "en": "Select Papaya Salad"
+        },
+        "choices": [
+          {
+            "th": "ส้มตำไทย",
+            "en": "Som Tum Thai"
+          },
+          {
+            "th": "ส้มตำปูปลาร้า",
+            "en": "Som Tum Pu Pla Ra"
+          },
+          {
+            "th": "ตำแตง",
+            "en": "Spicy Cucumber Salad"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "lunch_box_krapow",
+    "name": {
+      "th": "Signature Lunch Box ผัดกะเพรา + ส้มตำ",
+      "en": "Signature Lunch Box (Pad Krapow & Som Tum)"
+    },
+    "price": 16.95,
+    "img": "box_krapow.jpg",
+    "unit": {
+      "th": "เซต",
+      "en": "Set"
+    },
+    "desc": {
+      "th": "ข้าวกล่องพร้อมทาน: กะเพราและส้มตำรสจัดจ้าน",
+      "en": "Ready-to-eat Lunch Box: Spicy Pad Krapow and Som Tum"
+    },
+    "items": {
+      "th": {
+        "mains": [
+          "ข้าว (เลือกข้าวสวย หรือ ข้าวผัดไข่)",
+          "ผัดกะเพรา (เลือกเนื้อสัตว์ได้)"
+        ],
+        "starters": [
+          "ส้มตำ (เลือกประเภทได้)",
+          "ไข่ดาว",
+          "ผักเคียง",
+          "พริกน้ำปลา"
+        ]
+      },
+      "en": {
+        "mains": [
+          "Rice (Choose Jasmine Rice or Egg Fried Rice)",
+          "Chilli & Basil Stir Fry (Choose Meat)"
+        ],
+        "starters": [
+          "Som Tum (Choose Type)",
+          "Fried Egg",
+          "Side Vegetables",
+          "Prik Nam Pla"
+        ]
+      }
+    },
+    "options": [
+      {
+        "id": "rice_type",
+        "label": {
+          "th": "เลือกประเภทข้าว",
+          "en": "Choose Rice"
+        },
+        "choices": [
+          {
+            "th": "ข้าวสวย",
+            "en": "Jasmine Rice"
+          },
+          {
+            "th": "ข้าวผัดไข่",
+            "en": "Egg Fried Rice"
+          }
+        ]
+      },
+      {
+        "id": "meat_type",
+        "label": {
+          "th": "เลือกเนื้อสัตว์",
+          "en": "Choose Meat"
+        },
+        "choices": [
+          {
+            "th": "ไก่",
+            "en": "Chicken"
+          },
+          {
+            "th": "หมู",
+            "en": "Pork"
+          },
+          {
+            "th": "ผักรวม",
+            "en": "Vegetables"
+          },
+          {
+            "th": "หมูกรอบ (+£1)",
+            "en": "Crispy Pork Belly (+£1)",
+            "extra": 1
+          },
+          {
+            "th": "เนื้อ (+£1)",
+            "en": "Beef (+£1)",
+            "extra": 1
+          },
+          {
+            "th": "กุ้ง (+£1)",
+            "en": "Prawns (+£1)",
+            "extra": 1
+          }
+        ]
+      },
+      {
+        "id": "somtum_type",
+        "label": {
+          "th": "เลือกส้มตำ",
+          "en": "Choose Papaya Salad"
         },
         "choices": [
           {
