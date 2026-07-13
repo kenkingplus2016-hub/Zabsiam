@@ -827,8 +827,8 @@
       "en": "Set"
     },
     "desc": {
-      "th": "เซตข้าวกล่องซิกเนเจอร์: ปลาหมึกผัดไข่เค็มรสชาติกลมกล่อม หอมมันไข่เค็มแท้ๆ เสิร์ฟพร้อมข้าวสวยร้อนๆ ส้มตำแซ่บๆ และไข่ดาว",
-      "en": "Signature Box: Rich and creamy Stir-fried Squid with Salted Egg Yolk sauce. Served with your choice of rice, Som Tum Papaya Salad, and a Fried Egg."
+      "th": "เซตข้าวกล่องซิกเนเจอร์: ปลาหมึกผัดไข่เค็ม เสิร์ฟพร้อมข้าวสวยร้อนๆ",
+      "en": "Signature Box: Stir-fried Squid with Salted Egg Yolk sauce. Served with your choice of rice."
     },
     "items": {
       "th": {
@@ -837,8 +837,6 @@
           "ปลาหมึกผัดไข่เค็ม"
         ],
         "starters": [
-          "ส้มตำ (เลือกประเภทได้)",
-          "ไข่ดาว",
           "พริกน้ำปลา"
         ]
       },
@@ -848,8 +846,6 @@
           "Stir-fried Squid with Salted Egg"
         ],
         "starters": [
-          "Som Tum (Choose Type)",
-          "Fried Egg",
           "Prik Nam Pla"
         ]
       }
@@ -869,27 +865,6 @@
           {
             "th": "ข้าวผัดไข่",
             "en": "Egg Fried Rice"
-          }
-        ]
-      },
-      {
-        "id": "somtum_type",
-        "label": {
-          "th": "เลือกส้มตำ",
-          "en": "Choose Papaya Salad"
-        },
-        "choices": [
-          {
-            "th": "ส้มตำไทย",
-            "en": "Som Tum Thai"
-          },
-          {
-            "th": "ส้มตำปูปลาร้า",
-            "en": "Som Tum Pu Pla Ra"
-          },
-          {
-            "th": "ตำแตง",
-            "en": "Spicy Cucumber Salad"
           }
         ]
       }
