@@ -2185,66 +2185,6 @@
     "options": []
   },
   {
-    "id": 101,
-    "name": {
-      "th": "Special Box ต้มยำทะเล",
-      "en": "Special Box Tom Yum Seafood"
-    },
-    "price": "18.95",
-    "unit": {
-      "th": "1 ท่าน",
-      "en": "1 Person"
-    },
-    "desc": {
-      "th": "ต้มยำทะเล<br><span style='font-size:0.85rem; color:var(--dark-green); font-weight:600;'>วัตถุดิบ: กุ้งแม่น้ำ, ปลาหมึกกล้วย, หอยแมลงภู่, หมูเด้ง, ไข่ต้ม</span>",
-      "en": "Tom Yum Seafood<br><span style='font-size:0.85rem; color:var(--dark-green); font-weight:600;'>Ingredients: Tiger Prawns, Squid, Mussels, Minced Pork Paste, Boiled Egg</span>"
-    },
-    "img": "Tom Yum Seafood.jpg",
-    "items": {
-      "th": {
-        "starters": [
-          "ข้าวสวย/ขนมจีน"
-        ],
-        "mains": [
-          "ต้มยำทะเล (วัตถุดิบ: กุ้งแม่น้ำ ปลาหมึกกล้วย หอยแมลงภู่ หมูเด้ง ไข่ต้ม)"
-        ],
-        "desserts": [
-          "📅 จัดส่งเฉพาะ พุธ - ศุกร์ (เวลาส่ง 11.00 - 13.00 น. / 18.00 - 20.00 น.) | ปิดรับออเดอร์ 15.00 น. ของวันก่อนหน้า (Pre-order) | จัดส่งเฉพาะรัศมีไม่เกิน 5 ไมล์"
-        ]
-      },
-      "en": {
-        "starters": [
-          "Steamed Rice / Rice Noodles"
-        ],
-        "mains": [
-          "Tom Yum Seafood (Ingredients: Tiger Prawns, Squid, Mussels, Minced Pork Paste, Boiled Egg)"
-        ],
-        "desserts": [
-          "📅 Delivered Wed-Fri (11:00 AM - 1:00 PM / 6:00 PM - 8:00 PM) | Cut-off: 3:00 PM day before (Pre-order) | Delivery Radius: Within 5 miles"
-        ]
-      }
-    },
-    "options": [
-      {
-        "id": "carb_type",
-        "label": {
-          "th": "เลือกข้าว/เส้น",
-          "en": "Select Rice/Noodles"
-        },
-        "choices": [
-          {
-            "th": "ข้าวสวย",
-            "en": "Steamed Rice"
-          },
-          {
-            "th": "ขนมจีน",
-            "en": "Rice Noodles"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "id": "lunch_box_mango_sticky_rice",
     "name": {
       "th": "Special Box ข้าวเหนียวมะม่วง",
