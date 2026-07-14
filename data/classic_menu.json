@@ -447,8 +447,8 @@
   {
     "id": "lunch_box_signature",
     "name": {
-      "th": "Signature Lunch Box Set",
-      "en": "Signature Lunch Box Set"
+      "th": "Signature Grilled Meat Box Set",
+      "en": "Signature Grilled Meat Box Set"
     },
     "price": 19.95,
     "img": "box_signature_kor_moo_yang.jpg",
@@ -457,8 +457,8 @@
       "en": "Set"
     },
     "desc": {
-      "th": "เซตซิกเนเจอร์: คอหมูย่าง/เสือร้องไห้ น้ำจิ้มแจ่วรสเด็ด และส้มตำ ข้าวเหนียว",
-      "en": "Signature Set: Sticky Rice in Banana Leaf, Charcoal Grilled Meat, Spicy Jaew Sauce, and Som Tum"
+      "th": "เซตซิกเนเจอร์: คอหมูย่าง หรือ เสือร้องไห้ (เนื้อย่างเตาถ่าน) น้ำจิ้มแจ่วรสเด็ด ส้มตำไทย หรือ ส้มตำปูปลาร้า และข้าวเหนียว",
+      "en": "Signature Set: Grilled Pork Neck or Crying Tiger Beef (Charcoal Grilled Meat), Spicy Jaew Sauce, Som Tum Thai or Som Tum Pu Pla Ra, and Sticky Rice"
     },
     "items": {
       "th": {
