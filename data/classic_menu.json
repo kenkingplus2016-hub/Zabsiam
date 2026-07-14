@@ -821,7 +821,7 @@
       "en": "Signature Box Stir-fried Squid with Salted Egg"
     },
     "price": 17.95,
-    "img": "Pad Prik Gaeng Moo krob.jpg",
+    "img": "box_squid_salted_egg.jpg",
     "unit": {
       "th": "เซต",
       "en": "Set"
@@ -877,7 +877,7 @@
       "en": "Signature Box Stir-fried Crab in Yellow Curry"
     },
     "price": 18.95,
-    "img": "Pad Prik Gaeng Moo krob.jpg",
+    "img": "box_crab_curry.jpg",
     "unit": {
       "th": "เซต",
       "en": "Set"
@@ -2243,7 +2243,7 @@
       "en": "Signature Box Seafood Hor Mok with Rice"
     },
     "price": 17.95,
-    "img": "corporate-cover.jpg",
+    "img": "box_hor_mok_seafood.jpg",
     "unit": {
       "th": "เซต",
       "en": "Set"
