@@ -592,7 +592,7 @@
     },
     "desc": {
       "th": "ข้าวกล่องพร้อมทาน: กะเพราและส้มตำรสจัดจ้าน",
-      "en": "Ready-to-eat Lunch Box: Spicy Pad Krapow and Som Tum"
+      "en": "Ready-to-eat Signature Box: Spicy Pad Krapow and Som Tum"
     },
     "items": {
       "th": {
@@ -821,7 +821,7 @@
       "en": "Signature Box Stir-fried Squid with Salted Egg"
     },
     "price": 17.95,
-    "img": "box_squid_salted_egg.jpg",
+    "img": "Signature Box Stir-fried Squid with Salted Egg.jpg",
     "unit": {
       "th": "เซต",
       "en": "Set"
@@ -877,7 +877,7 @@
       "en": "Signature Box Stir-fried Crab in Yellow Curry"
     },
     "price": 18.95,
-    "img": "box_crab_curry.jpg",
+    "img": "Signature Box Stir-fried Crab in Yellow Curry.jpg",
     "unit": {
       "th": "เซต",
       "en": "Set"
@@ -2243,7 +2243,7 @@
       "en": "Signature Box Seafood Hor Mok with Rice"
     },
     "price": 17.95,
-    "img": "box_hor_mok_seafood.jpg",
+    "img": "Signature Box Seafood Hor Mok with Rice.jpg",
     "unit": {
       "th": "เซต",
       "en": "Set"
