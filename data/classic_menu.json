@@ -1,5 +1,126 @@
 [
   {
+    "id": "lunch_box_vip",
+    "name": {
+      "th": "Special Box Set VIP",
+      "en": "Special Box Set VIP"
+    },
+    "price": 25.95,
+    "img": "Special Box Set VIP.jpg",
+    "unit": {
+      "th": "เซต",
+      "en": "Set"
+    },
+    "desc": {
+      "th": "เซตวีไอพีสุดเอ็กซ์คลูซีฟ: เลือกเนื้อสัตว์ (หมูกรอบ/คอหมูย่าง/เสือร้องไห้) พร้อมส้มตำ น้ำพริก ข้าวเหนียว ผักเคียง และน้ำจิ้มรสเด็ด",
+      "en": "Exclusive VIP Set: Choose your meat (Crispy Pork/Pork Neck/Crying Tiger) served with Som Tum, Nam Prik (Chili Paste), Sticky Rice, Vegetables, and dipping sauce."
+    },
+    "items": {
+      "th": {
+        "mains": [
+          "เนื้อสัตว์ (หมูกรอบ / คอหมูย่าง / เสือร้องไห้)",
+          "ส้มตำ (ส้มตำไทย / ปูปลาร้า)",
+          "ข้าวเหนียว"
+        ],
+        "starters": [
+          "น้ำพริก (หนุ่ม / อ่อง)",
+          "น้ำจิ้ม (ซีฟู้ด / แจ่ว / มะขาม)",
+          "ผักเคียง"
+        ]
+      },
+      "en": {
+        "mains": [
+          "Meat (Crispy Pork / Pork Neck / Crying Tiger)",
+          "Som Tum (Thai / Pu Pla Ra)",
+          "Sticky Rice"
+        ],
+        "starters": [
+          "Nam Prik (Noom / Ong)",
+          "Dipping Sauce (Seafood / Jaew / Tamarind)",
+          "Side Vegetables"
+        ]
+      }
+    },
+    "options": [
+      {
+        "id": "vip_meat",
+        "label": {
+          "th": "เลือกเนื้อสัตว์",
+          "en": "Select Meat"
+        },
+        "choices": [
+          {
+            "th": "หมูกรอบ",
+            "en": "Crispy Pork Belly"
+          },
+          {
+            "th": "คอหมูย่าง",
+            "en": "Grilled Pork Neck"
+          },
+          {
+            "th": "เสือร้องไห้",
+            "en": "Crying Tiger Beef"
+          }
+        ]
+      },
+      {
+        "id": "vip_somtum",
+        "label": {
+          "th": "เลือกส้มตำ",
+          "en": "Select Papaya Salad"
+        },
+        "choices": [
+          {
+            "th": "ส้มตำไทย",
+            "en": "Som Tum Thai"
+          },
+          {
+            "th": "ส้มตำปูปลาร้า",
+            "en": "Som Tum Pu Pla Ra"
+          }
+        ]
+      },
+      {
+        "id": "vip_namprik",
+        "label": {
+          "th": "เลือกน้ำพริก",
+          "en": "Select Chili Paste"
+        },
+        "choices": [
+          {
+            "th": "น้ำพริกหนุ่ม",
+            "en": "Nam Prik Noom (Green Chili Paste)"
+          },
+          {
+            "th": "น้ำพริกอ่อง",
+            "en": "Nam Prik Ong (Tomato Chili Paste)"
+          }
+        ]
+      },
+      {
+        "id": "vip_sauce",
+        "label": {
+          "th": "เลือกน้ำจิ้ม",
+          "en": "Select Dipping Sauce"
+        },
+        "choices": [
+          {
+            "th": "น้ำจิ้มซีฟู้ด",
+            "en": "Seafood Sauce"
+          },
+          {
+            "th": "น้ำจิ้มแจ่ว",
+            "en": "Jaew Sauce"
+          },
+          {
+            "th": "น้ำจิ้มมะขาม",
+            "en": "Tamarind Sauce"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "lunch_box_set_a",
     "name": {
       "th": "Special Box Set พรีเมียม",
@@ -1167,153 +1288,6 @@
         ]
       }
     }
-  },
-  {
-    "id": 14,
-    "name": {
-      "th": "Special Box Set VIP",
-      "en": "Special Box Set VIP"
-    },
-    "price": 19.59,
-    "unit": {
-      "th": "1 ท่าน",
-      "en": "1 Person"
-    },
-    "desc": {
-      "th": "เซตพิเศษ VIP: อาหารจานหลักเนื้อสัตว์ (ตามเลือก) เสิร์ฟพร้อมข้าวเหนียว ส้มตำ (ตามเลือก) ผักเคียง น้ำพริก/น้ำจิ้ม (ตามเลือก)",
-      "en": "Special VIP Set: Main course meat (by choice) served with sticky rice, Som Tum (by choice), side vegetables, dipping sauce/nam prik (by choice)."
-    },
-    "img": "box_vip_special_set.jpg",
-    "items": {
-      "th": {
-        "starters": [
-          "ส้มตำ (ตามเลือก)",
-          "ผักเคียง",
-          "น้ำพริก/น้ำจิ้ม (ตามเลือก)"
-        ],
-        "mains": [
-          "เนื้อสัตว์ (ตามเลือก)",
-          "ข้าวเหนียว"
-        ],
-        "desserts": []
-      },
-      "en": {
-        "starters": [
-          "Som Tum (by choice)",
-          "Side Vegetables",
-          "Nam Prik / Dipping Sauce (by choice)"
-        ],
-        "mains": [
-          "Meat (by choice)",
-          "Sticky Rice"
-        ],
-        "desserts": []
-      }
-    },
-    "recipe": {
-      "th": [
-        "",
-        "--- สูตรน้ำจิ้มซีฟู้ด ---",
-        "พริกขี้หนู ½ ถ้วย, กระเทียม ½ ถ้วย, น้ำส้มสายชู 1 ช้อนโต๊ะ",
-        "น้ำมะนาว 2 ช้อนโต๊ะ, น้ำตาลปี๊บ 3 ช้อนโต๊ะ, เกลือ 1 ช้อนชา",
-        "น้ำปลา 1 ช้อนโต๊ะ, ผงชูรส 1 ช้อนชา, น้ำอุ่น 1 ช้อนโต๊ะ",
-        "",
-        "--- สูตรส้มตำไทย ---",
-        "มะละกอสับ 150 กรัม, มะเขือเทศเชอร์รี่ 3-4 ลูก, ถั่วฝักยาว 1-2 ฝัก",
-        "กระเทียม 2 กลีบ, พริกแดงสด 2-3 เม็ด, น้ำปลา 1 ช้อนโต๊ะ",
-        "น้ำมะนาว 1½ ช้อนโต๊ะ, น้ำตาลปี๊บ 1 ช้อนโต๊ะ, ผงชูรส 1 ช้อนชา",
-        "ถั่วลิสงคั่ว 1-2 ช้อนโต๊ะ, กุ้งแห้ง 1 ช้อนโต๊ะ"
-      ],
-      "en": [
-        "",
-        "--- Seafood Dipping Sauce Recipe ---",
-        "Bird's eye chili ½ cup, Garlic ½ cup, Vinegar 1 tbsp",
-        "Lime juice 2 tbsp, Palm sugar 3 tbsp, Salt 1 tsp",
-        "Fish sauce 1 tbsp, MSG 1 tsp, Warm water 1 tbsp",
-        "",
-        "--- Som Tum Thai (Papaya Salad) Recipe ---",
-        "Shredded papaya 150g, Cherry tomatoes 3-4 pcs, Yardlong beans 1-2 pcs",
-        "Garlic 2 cloves, Fresh red chilis 2-3 pcs, Fish sauce 1 tbsp",
-        "Lime juice 1½ tbsp, Palm sugar 1 tbsp, MSG 1 tsp",
-        "Roasted peanuts 1-2 tbsp, Dried shrimp 1 tbsp"
-      ]
-    },
-    "options": [
-      {
-        "id": "meat_type",
-        "label": {
-          "th": "เลือกเนื้อสัตว์",
-          "en": "Choose Meat"
-        },
-        "choices": [
-          {
-            "th": "ไก่ย่าง",
-            "en": "Grilled Chicken"
-          },
-          {
-            "th": "คอหมูย่าง (+£2)",
-            "en": "Grilled Pork Neck (+£2)",
-            "extra": 2
-          },
-          {
-            "th": "เสือร้องไห้ (+£2)",
-            "en": "Crying Tiger Beef (+£2)",
-            "extra": 2
-          },
-          {
-            "th": "หมูกรอบ (+£2)",
-            "en": "Crispy Pork Belly (+£2)",
-            "extra": 2
-          }
-        ]
-      },
-      {
-        "id": "papaya_salad",
-        "label": {
-          "th": "เลือกส้มตำ",
-          "en": "Select Papaya Salad"
-        },
-        "choices": [
-          {
-            "th": "ส้มตำไทย",
-            "en": "Som Tum Thai"
-          },
-          {
-            "th": "ส้มตำปูปลาร้า",
-            "en": "Som Tum Pu Pla Ra"
-          }
-        ]
-      },
-      {
-        "id": "chili_dip",
-        "label": {
-          "th": "เลือกน้ำพริก / น้ำจิ้ม",
-          "en": "Select Dip / Chili Paste"
-        },
-        "choices": [
-          {
-            "th": "น้ำพริกหนุ่ม",
-            "en": "Nam Prik Num (Green Chili Dip)"
-          },
-          {
-            "th": "น้ำพริกอ่องหมูสับ",
-            "en": "Nam Prik Ong (Tomato & Minced Pork Dip)"
-          },
-          {
-            "th": "น้ำพริกแจ่วบอง",
-            "en": "Nam Prik Jaew Bong (Fermented Fish Chili Dip)"
-          },
-          {
-            "th": "น้ำจิ้มแจ่ว",
-            "en": "Jaew Sauce (Spicy Tamarind Sauce)"
-          },
-          {
-            "th": "น้ำจิ้มซีฟู้ด",
-            "en": "Seafood Sauce"
-          }
-        ]
-      }
-    ]
   },
   {
     "id": 20,
