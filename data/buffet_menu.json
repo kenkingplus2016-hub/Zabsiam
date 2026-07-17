@@ -421,28 +421,28 @@
                 "id": "item_czpunjqxr",
                 "th": "ผัดเผ็ดกุ้ง",
                 "en": "Pad Phed Prawns (Spicy Stir-fried Red Curry)",
-                "img": "logo.png",
+                "img": "pad_phed_prawns.jpg",
                 "price": 15
             },
             {
                 "id": "item_e4cc147i6",
                 "th": "ผัดเผ็ดหมู",
                 "en": "Pad Phed Pork (Spicy Stir-fried Red Curry)",
-                "img": "logo.png",
+                "img": "pad_phed_pork.jpg",
                 "price": 14
             },
             {
                 "id": "item_bw0qj8o0y",
                 "th": "ผัดเผ็ดไก่",
                 "en": "Pad Phed Chicken (Spicy Stir-fried Red Curry)",
-                "img": "logo.png",
+                "img": "pad_phed_chicken.jpg",
                 "price": 14
             },
             {
                 "id": "item_jg57d7o8h",
                 "th": "ผัดเผ็ดเนื้อ",
                 "en": "Pad Phed Beef (Spicy Stir-fried Red Curry)",
-                "img": "pad_phed_beef.jpg",
+                "img": "pad_phed_beef_new.jpg",
                 "price": 15
             },
             {
