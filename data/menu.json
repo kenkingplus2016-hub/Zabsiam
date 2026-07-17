@@ -11080,7 +11080,7 @@
                 },
                 "th": "ไส้อั่ว & ไส้กรอกอีสาน",
                 "en": "Sai Ua & Isan Sausage",
-                "img": "sai_ua.png",
+                "img": "sai_ua.jpg",
                 "ingredients": {
                     "th": [
                         "เนื้อหมูคุณภาพ",
@@ -11182,7 +11182,7 @@
                 },
                 "th": "กุ้งทอดซอสมะขาม",
                 "en": "Fried Shrimp with Tamarind Sauce",
-                "img": "tamarind_shrimp.png",
+                "img": "tamarind_shrimp.jpg",
                 "ingredients": {
                     "th": [
                         "กุ้งตัวโตทอดกรอบ",
@@ -11205,7 +11205,7 @@
                 },
                 "th": "ปลากะพงทอดน้ำปลา",
                 "en": "Deep Fried Sea Bass with Fish Sauce",
-                "img": "seabass_fishsauce.png",
+                "img": "seabass_fishsauce.jpg",
                 "ingredients": {
                     "th": [
                         "ปลากะพงสด",
@@ -11226,7 +11226,7 @@
                 },
                 "th": "ปลากะพงทอดสามรส",
                 "en": "Deep Fried Sea Bass with Three-Flavored Sauce",
-                "img": "seabass_3flavor.png",
+                "img": "seabass_3flavor.jpg",
                 "ingredients": {
                     "th": [
                         "ปลากะพงทอดกรอบ",
