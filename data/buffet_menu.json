@@ -225,7 +225,7 @@
                 "th": "แกงแดงเนื้อ",
                 "en": "Red Curry with Beef",
                 "img": "red_curry_beef.jpg",
-                "price": 15,
+                "price": 16,
                 "unit": "ถ้วย"
             },
             {
@@ -297,7 +297,7 @@
                 "th": "แกงเทโพเนื้อ",
                 "en": "Tae Po Curry Beef",
                 "img": "taepo_beef.jpg",
-                "price": 14,
+                "price": 16,
                 "unit": "ถ้วย"
             },
             {
@@ -463,7 +463,7 @@
                 "id": "item_pa7w5c75g",
                 "th": "ไก่ผัดขิง",
                 "en": "Stir-fried Chicken with Ginger",
-                "img": "logo.png",
+                "img": "stir_fried_chicken_ginger.jpg",
                 "price": 14
             },
             {
