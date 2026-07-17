@@ -240,7 +240,7 @@
                 "id": "item_4nqvtl4rl",
                 "th": "แกงพะแนงเนื้อ",
                 "en": "Panang Curry with Beef",
-                "img": "logo.png",
+                "img": "panang_beef.jpg",
                 "price": 16,
                 "unit": "ถ้วย"
             },
@@ -248,7 +248,7 @@
                 "id": "item_ahnwc36j8",
                 "th": "แกงพะแนงกุ้ง",
                 "en": "Panang Curry with Prawns",
-                "img": "logo.png",
+                "img": "panang_prawns.jpg",
                 "price": 15,
                 "unit": "ถ้วย"
             },
@@ -581,7 +581,7 @@
                 "id": "item_owgurx3xq",
                 "th": "แกงแดงผักรวมเต้าหู้",
                 "en": "Red Curry Mixed Vegetables Tofu",
-                "img": "logo.png",
+                "img": "red_curry_veg.jpg",
                 "price": 12,
                 "unit": "ถ้วย"
             },
@@ -589,7 +589,7 @@
                 "id": "item_geepwab97",
                 "th": "แกงเขียวหวานผักรวมเต้าหู้",
                 "en": "Green Curry Mixed Vegetables Tofu",
-                "img": "logo.png",
+                "img": "green_curry_veg.jpg",
                 "price": 12,
                 "unit": "ถ้วย"
             },
@@ -597,7 +597,7 @@
                 "id": "item_lpl8y41uw",
                 "th": "แกงพะแนงผักรวมเต้าหู้",
                 "en": "Panang Curry Mixed Vegetables Tofu",
-                "img": "logo.png",
+                "img": "panang_curry_veg.jpg",
                 "price": 12,
                 "unit": "ถ้วย"
             },
