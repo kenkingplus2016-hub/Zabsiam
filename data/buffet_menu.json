@@ -177,63 +177,72 @@
                 "th": "แกงเขียวหวานไก่ / หมู",
                 "en": "Green Curry Chicken / Pork",
                 "img": "a763fe7b-c7e7-4b7c-8a93-5da8057971ad.jpg",
-                "price": 14
+                "price": 14,
+                "unit": "ถ้วย"
             },
             {
                 "id": "item_dv9va38bn",
                 "th": "แกงกะหรี่ไก่",
                 "en": "Yellow Chicken Curry",
                 "img": "logo.png",
-                "price": 14
+                "price": 14,
+                "unit": "ถ้วย"
             },
             {
                 "id": "item_nbvxgywtc",
                 "th": "แกงเขียวหวานเนื้อ",
                 "en": "Green Curry Beef",
                 "img": "logo.png",
-                "price": 16
+                "price": 16,
+                "unit": "ถ้วย"
             },
             {
                 "id": "item_o97mx07fl",
                 "th": "แกงมัสมันไก่",
                 "en": "Massaman Chicken",
                 "img": "a165f8a8-9de3-432d-8fe2-1760a2f1710b.jpg",
-                "price": 14
+                "price": 14,
+                "unit": "ถ้วย"
             },
             {
                 "id": "item_0il9ze066",
                 "th": "แกงมัสมันเนื้อ",
                 "en": "Massaman Beef",
                 "img": "logo.png",
-                "price": 16
+                "price": 16,
+                "unit": "ถ้วย"
             },
             {
                 "id": "item_i4xv9bkpn",
                 "th": "แกงแดงไก่",
                 "en": "Red Curry with Chicken",
                 "img": "red curry prok.jpg",
-                "price": 14
+                "price": 14,
+                "unit": "ถ้วย"
             },
             {
                 "id": "item_q7qjxkvkl",
                 "th": "แกงพะแนงหมู / ไก่",
                 "en": "Panang Curry with Pork / Chicken",
                 "img": "panang curry.jpg",
-                "price": 14
+                "price": 14,
+                "unit": "ถ้วย"
             },
             {
                 "id": "item_4nqvtl4rl",
                 "th": "แกงพะแนงเนื้อ",
                 "en": "Panang Curry with Beef",
                 "img": "logo.png",
-                "price": 16
+                "price": 16,
+                "unit": "ถ้วย"
             },
             {
                 "id": "item_i7gvqkgwg",
                 "th": "แกงหมูเทโพ",
                 "en": "Tae Po Pork Curry",
                 "img": "Gaeng Moo Tae Po.jpg",
-                "price": 14
+                "price": 14,
+                "unit": "ถ้วย"
             },
             {
                 "id": "item_5y8jmxqvs",
@@ -275,7 +284,8 @@
                 "th": "แกงส้มแป๊ะซะปลากระพง",
                 "en": "Gaeng Som Pae Sa Sea Bass",
                 "img": "logo.png",
-                "price": 15
+                "price": 15,
+                "unit": "ถ้วย"
             },
             {
                 "id": "item_gca4f0q0c",
