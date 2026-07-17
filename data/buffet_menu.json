@@ -224,7 +224,7 @@
                 "id": "item_i4xv9bkpn",
                 "th": "แกงแดงไก่",
                 "en": "Red Curry with Chicken",
-                "img": "red curry prok.jpg",
+                "img": "red_curry_chicken.jpg",
                 "price": 14,
                 "unit": "ถ้วย"
             },
@@ -460,6 +460,30 @@
                 "en": "Hat Yai Fried Chicken",
                 "img": "logo.png",
                 "price": 14
+            },
+            {
+                "id": "item_dcbgmoghd",
+                "th": "แกงแดงหมู",
+                "en": "Red Curry with Pork",
+                "img": "red_curry_pork.jpg",
+                "price": 14,
+                "unit": "ถ้วย"
+            },
+            {
+                "id": "item_p0rdw5hmz",
+                "th": "แกงแดงเนื้อ",
+                "en": "Red Curry with Beef",
+                "img": "red_curry_beef.jpg",
+                "price": 15,
+                "unit": "ถ้วย"
+            },
+            {
+                "id": "item_xp1g4vzg3",
+                "th": "แกงแดงกุ้ง",
+                "en": "Red Curry with Prawn",
+                "img": "red_curry_prawns.jpg",
+                "price": 15,
+                "unit": "ถ้วย"
             }
         ]
     },
