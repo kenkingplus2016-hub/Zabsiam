@@ -181,6 +181,14 @@
                 "unit": "ถ้วย"
             },
             {
+                "id": "item_d0r1c4ln1",
+                "th": "แกงเขียวหวานกุ้ง",
+                "en": "Green Curry with Prawns",
+                "img": "logo.png",
+                "price": 15,
+                "unit": "ถ้วย"
+            },
+            {
                 "id": "item_dv9va38bn",
                 "th": "แกงกะหรี่ไก่",
                 "en": "Thai Curry Chicken",
