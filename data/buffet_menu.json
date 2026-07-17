@@ -94,7 +94,7 @@
                 "id": "item_qh3xhjx8e",
                 "th": "ไส้กรอกอีสาน",
                 "en": "Isan Sausage",
-                "img": "sai_ua.jpg",
+                "img": "sausage.jpg",
                 "price": 14
             },
             {
@@ -108,7 +108,7 @@
                 "id": "item_98mn7rvyi",
                 "th": "กุ้งห่มสไบ",
                 "en": "Goong Hom Sabai (Shrimp in Blanket)",
-                "img": "logo.png",
+                "img": "prawn_roll.jpg",
                 "price": 15
             },
             {
@@ -129,7 +129,7 @@
                 "id": "item_f0oq54jui",
                 "th": "ปอเปี๊ยะกุ้งทอด",
                 "en": "Crispy Prawn Spring Rolls",
-                "img": "logo.png",
+                "img": "prawn_roll.jpg",
                 "price": 15
             },
             {
@@ -151,7 +151,7 @@
                 "id": "item_5oi3n13k0",
                 "th": "ต้มข่ากุ้ง",
                 "en": "Tom Kha Goong",
-                "img": "logo.png",
+                "img": "tom_kha_prawn.jpg",
                 "price": 15,
                 "unit": "ถ้วย"
             },
@@ -159,7 +159,7 @@
                 "id": "item_dm6zwskjv",
                 "th": "ต้มข่าไก่",
                 "en": "Tom Kha Gai (Coconut Galangal Soup)",
-                "img": "logo.png",
+                "img": "tom_kha_chicken.jpg",
                 "price": 14,
                 "unit": "ถ้วย"
             }
