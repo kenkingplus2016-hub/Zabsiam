@@ -56,6 +56,20 @@
                 "price": 14
             },
             {
+                "id": "item_5sp61u7do",
+                "th": "หมูปิ้งนมสด",
+                "en": "Pork Skewer with Milk",
+                "img": "pork skewers.jpg",
+                "price": 14
+            },
+            {
+                "id": "item_txs2mmeyb",
+                "th": "ไก่สะเต๊ะ",
+                "en": "Chicken Satay",
+                "img": "logo.png",
+                "price": 14
+            },
+            {
                 "id": "item_5q6xay7hm",
                 "th": "ลาบไก่ / หมู",
                 "en": "Larb Gai / Pork",
@@ -98,20 +112,6 @@
                 "price": 15
             },
             {
-                "id": "item_lizqe4mc8",
-                "th": "ต้มยำกุ้ง",
-                "en": "Tom Yum Goong (Spicy Shrimp Soup)",
-                "img": "logo.png",
-                "price": 15
-            },
-            {
-                "id": "item_5sp61u7do",
-                "th": "หมูปิ้งนมสด",
-                "en": "Pork Skewer with Milk",
-                "img": "pork skewers.jpg",
-                "price": 14
-            },
-            {
                 "id": "item_4od49b1pz",
                 "th": "ม้าฮ่อ",
                 "en": "Ma Hor",
@@ -145,6 +145,13 @@
                 "en": "Tom Kha Gai (Coconut Galangal Soup)",
                 "img": "logo.png",
                 "price": 14
+            },
+            {
+                "id": "item_lizqe4mc8",
+                "th": "ต้มยำกุ้ง",
+                "en": "Tom Yum Goong (Spicy Shrimp Soup)",
+                "img": "logo.png",
+                "price": 15
             },
             {
                 "id": "item_5oi3n13k0",
