@@ -371,6 +371,41 @@
                 "en": "Glass Noodle Salad with Shrimp (+£3)",
                 "img": "fd82bc4b-8027-41f2-a6f9-97c217d7297f.jpg",
                 "price": 12
+            },
+            {
+                "id": "item_dv9va38bn",
+                "th": "แกงกะหรี่ไก่",
+                "en": "Yellow Chicken Curry",
+                "img": "logo.png",
+                "price": 14
+            },
+            {
+                "id": "item_ee6ct2kge",
+                "th": "ไก่ย่าง",
+                "en": "Thai Grilled Chicken",
+                "img": "logo.png",
+                "price": 14
+            },
+            {
+                "id": "item_eotshjc55",
+                "th": "ไก่ทอดหาดใหญ่",
+                "en": "Hat Yai Fried Chicken",
+                "img": "logo.png",
+                "price": 14
+            },
+            {
+                "id": "item_f7nm00wph",
+                "th": "เสือร้องไห้ย่าง",
+                "en": "Crying Tiger Grilled Beef",
+                "img": "logo.png",
+                "price": 14
+            },
+            {
+                "id": "item_1sq90u1i5",
+                "th": "ยำวุ้นเส้นหมูยอ",
+                "en": "Glass Noodle Salad with Vietnamese Pork Sausage",
+                "img": "logo.png",
+                "price": 14
             }
         ]
     },
