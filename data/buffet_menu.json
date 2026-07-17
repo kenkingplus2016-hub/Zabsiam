@@ -240,13 +240,6 @@
                 "price": 18
             },
             {
-                "id": "item_pt2remcsy",
-                "th": "ข้าวหอมมะลิ",
-                "en": "Jasmine Rice",
-                "img": "4b00ee9d-26c8-45f9-9f0d-e4014da7e1b2.jpg",
-                "price": 12
-            },
-            {
                 "id": "item_7fpb2g6mv",
                 "th": "กุ้งทอดซอสมะขาม",
                 "en": "Fried Shrimp with Tamarind Sauce",
@@ -450,6 +443,27 @@
                 "en": "Tom Yum Goong Fried Rice",
                 "img": "logo.png",
                 "price": 15
+            },
+            {
+                "id": "item_pt2remcsy",
+                "th": "ข้าวหอมมะลิ",
+                "en": "Jasmine Rice",
+                "img": "4b00ee9d-26c8-45f9-9f0d-e4014da7e1b2.jpg",
+                "price": 12
+            },
+            {
+                "id": "item_47u308grz",
+                "th": "ผัดไทยกุ้ง",
+                "en": "Pad Thai with Prawns",
+                "img": "logo.png",
+                "price": 15
+            },
+            {
+                "id": "item_yli8d1lit",
+                "th": "ผัดไทยผักรวม",
+                "en": "Pad Thai with Mixed Vegetables",
+                "img": "logo.png",
+                "price": 12
             }
         ]
     },
