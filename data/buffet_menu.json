@@ -189,14 +189,6 @@
                 "unit": "ถ้วย"
             },
             {
-                "id": "item_dv9va38bn",
-                "th": "แกงกะหรี่ไก่",
-                "en": "Thai Curry Chicken",
-                "img": "thai_curry_chicken.jpg",
-                "price": 14,
-                "unit": "ถ้วย"
-            },
-            {
                 "id": "item_nbvxgywtc",
                 "th": "แกงเขียวหวานเนื้อ",
                 "en": "Green Curry Beef",
@@ -218,6 +210,14 @@
                 "en": "Massaman Beef",
                 "img": "massaman_beef.jpg",
                 "price": 16,
+                "unit": "ถ้วย"
+            },
+            {
+                "id": "item_dv9va38bn",
+                "th": "แกงกะหรี่ไก่",
+                "en": "Thai Curry Chicken",
+                "img": "thai_curry_chicken.jpg",
+                "price": 14,
                 "unit": "ถ้วย"
             },
             {
