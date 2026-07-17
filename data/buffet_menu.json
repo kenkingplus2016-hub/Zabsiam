@@ -173,9 +173,17 @@
         },
         "items": [
             {
-                "id": "item_mebob3uri",
-                "th": "แกงเขียวหวานไก่ / หมู",
-                "en": "Green Curry Chicken / Pork",
+                "id": "item_24nr1dvsx",
+                "th": "แกงเขียวหวานไก่",
+                "en": "Green Curry Chicken",
+                "img": "green_curry_chicken_pork.jpg",
+                "price": 14,
+                "unit": "ถ้วย"
+            },
+            {
+                "id": "item_g2jwt02c3",
+                "th": "แกงเขียวหวานหมู",
+                "en": "Green Curry Pork",
                 "img": "green_curry_chicken_pork.jpg",
                 "price": 14,
                 "unit": "ถ้วย"
