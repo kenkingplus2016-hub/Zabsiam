@@ -470,22 +470,22 @@
                 "id": "item_p0kbmekw0",
                 "th": "น้ำพริกอ่อง",
                 "en": "Nam Prik Ong (Northern Tomato Pork Chili Dip)",
-                "img": "logo.png",
+                "img": "nam_prik_ong.jpg",
                 "price": 12
             },
             {
                 "id": "item_itz3mmj1h",
                 "th": "น้ำพริกหนุ่ม",
                 "en": "Nam Prik Noom (Northern Green Chili Dip)",
-                "img": "logo.png",
+                "img": "nam_prik_noom.jpg",
                 "price": 12
             },
             {
                 "id": "item_9lsc9fnms",
                 "th": "น้ำพริกกะปิ",
                 "en": "Nam Prik Kapi (Shrimp Paste Chili Dip)",
-                "img": "logo.png",
-                "price": 12
+                "img": "nam_prik_kapi.jpg",
+                "price": 14
             },
             {
                 "id": "item_6g60e1plb",
