@@ -393,6 +393,13 @@
                 "price": 17
             },
             {
+                "id": "item_u8gcmvnbu",
+                "th": "พล่ากุ้ง",
+                "en": "Spicy Lemongrass Prawn Salad (Pla Goong)",
+                "img": "logo.png",
+                "price": 15
+            },
+            {
                 "id": "item_ee6ct2kge",
                 "th": "ไก่ย่าง",
                 "en": "Thai Grilled Chicken",
