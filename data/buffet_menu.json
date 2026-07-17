@@ -498,10 +498,10 @@
         },
         "items": [
             {
-                "id": "item_s380hdq8w",
-                "th": "ผลไม้รวม",
-                "en": "Mixed Fruits",
-                "img": "31069432-168d-44ec-b0e9-80f828aa322e.jpg",
+                "id": "item_orzanzia2",
+                "th": "ข้าวเหนียวมะม่วงน้ำดอกไม้",
+                "en": "Mango Sticky Rice (Nam Dok Mai)",
+                "img": "mango sticky rice.jpeg",
                 "price": 12
             },
             {
@@ -516,6 +516,13 @@
                 "th": "ทับทิมกรอบ",
                 "en": "Tub Tim Krop",
                 "img": "tub tim krop.jpg",
+                "price": 12
+            },
+            {
+                "id": "item_kd2pgn0wa",
+                "th": "บวชชีกล้วย",
+                "en": "Banana in Coconut Milk",
+                "img": "Banana with Condensed Milk.jpg",
                 "price": 12
             },
             {
@@ -617,17 +624,10 @@
                 "price": 12
             },
             {
-                "id": "item_orzanzia2",
-                "th": "ข้าวเหนียวมะม่วงน้ำดอกไม้",
-                "en": "Mango Sticky Rice (Nam Dok Mai)",
-                "img": "mango sticky rice.jpeg",
-                "price": 12
-            },
-            {
-                "id": "item_kd2pgn0wa",
-                "th": "บวชชีกล้วย",
-                "en": "Banana in Coconut Milk",
-                "img": "Banana with Condensed Milk.jpg",
+                "id": "item_s380hdq8w",
+                "th": "ผลไม้รวม",
+                "en": "Mixed Fruits",
+                "img": "31069432-168d-44ec-b0e9-80f828aa322e.jpg",
                 "price": 12
             }
         ]
