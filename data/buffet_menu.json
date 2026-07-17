@@ -410,13 +410,6 @@
                 "price": 12
             },
             {
-                "id": "item_7odwg5bba",
-                "th": "ผัดไทย",
-                "en": "Pad Thai",
-                "img": "pad_thai_premium.png",
-                "price": 12
-            },
-            {
                 "id": "item_4vbehqmwd",
                 "th": "ข้าวผัดมันกุ้ง",
                 "en": "Shrimp Paste Fried Rice",
@@ -443,6 +436,13 @@
                 "en": "Pad Thai with Prawns",
                 "img": "logo.png",
                 "price": 15
+            },
+            {
+                "id": "item_7odwg5bba",
+                "th": "ผัดไทยไก่",
+                "en": "Pad Thai with Chicken",
+                "img": "pad_thai_premium.png",
+                "price": 12
             },
             {
                 "id": "item_yli8d1lit",
