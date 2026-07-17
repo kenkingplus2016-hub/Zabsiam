@@ -447,10 +447,17 @@
             },
             {
                 "id": "item_0wp6jv7eb",
-                "th": "ผัดเปรี้ยวหวาน",
-                "en": "Sweet and Sour Stir-fry",
+                "th": "ผัดเปรี้ยวหวานไก่",
+                "en": "Sweet and Sour Chicken",
                 "img": "logo.png",
                 "price": 12
+            },
+            {
+                "id": "item_7ajmnb8k8",
+                "th": "ผัดเปรี้ยวหวานปลากระพง",
+                "en": "Sweet and Sour Sea Bass",
+                "img": "logo.png",
+                "price": 15
             },
             {
                 "id": "item_pa7w5c75g",
