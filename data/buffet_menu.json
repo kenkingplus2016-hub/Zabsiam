@@ -441,6 +441,13 @@
                 "en": "Salmon 'Pla' Salad (+£2)",
                 "img": "005dbfc3-c862-4aac-a9e7-57ada41bcfa5.jpg",
                 "price": 17
+            },
+            {
+                "id": "item_rasqo7a1h",
+                "th": "ยำวุ้นเส้นกุ้ง (+£3)",
+                "en": "Glass Noodle Salad with Shrimp (+£3)",
+                "img": "fd82bc4b-8027-41f2-a6f9-97c217d7297f.jpg",
+                "price": 12
             }
         ]
     },
@@ -451,13 +458,6 @@
             "en": "Desserts"
         },
         "items": [
-            {
-                "id": "item_rasqo7a1h",
-                "th": "ยำวุ้นเส้นกุ้ง (+£3)",
-                "en": "Glass Noodle Salad with Shrimp (+£3)",
-                "img": "fd82bc4b-8027-41f2-a6f9-97c217d7297f.jpg",
-                "price": 12
-            },
             {
                 "id": "item_s380hdq8w",
                 "th": "ผลไม้รวม",
