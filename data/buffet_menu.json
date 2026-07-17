@@ -176,7 +176,7 @@
                 "id": "item_mebob3uri",
                 "th": "แกงเขียวหวานไก่ / หมู",
                 "en": "Green Curry Chicken / Pork",
-                "img": "a763fe7b-c7e7-4b7c-8a93-5da8057971ad.jpg",
+                "img": "green_curry_chicken_pork.jpg",
                 "price": 14,
                 "unit": "ถ้วย"
             },
@@ -184,7 +184,7 @@
                 "id": "item_d0r1c4ln1",
                 "th": "แกงเขียวหวานกุ้ง",
                 "en": "Green Curry with Prawns",
-                "img": "logo.png",
+                "img": "green_curry_prawns.jpg",
                 "price": 15,
                 "unit": "ถ้วย"
             },
@@ -200,7 +200,7 @@
                 "id": "item_nbvxgywtc",
                 "th": "แกงเขียวหวานเนื้อ",
                 "en": "Green Curry Beef",
-                "img": "logo.png",
+                "img": "green_curry_beef.jpg",
                 "price": 16,
                 "unit": "ถ้วย"
             },
@@ -208,7 +208,7 @@
                 "id": "item_o97mx07fl",
                 "th": "แกงมัสมันไก่",
                 "en": "Massaman Chicken",
-                "img": "a165f8a8-9de3-432d-8fe2-1760a2f1710b.jpg",
+                "img": "massaman_chicken.jpg",
                 "price": 14,
                 "unit": "ถ้วย"
             },
@@ -216,7 +216,7 @@
                 "id": "item_0il9ze066",
                 "th": "แกงมัสมันเนื้อ",
                 "en": "Massaman Beef",
-                "img": "logo.png",
+                "img": "massaman_beef.jpg",
                 "price": 16,
                 "unit": "ถ้วย"
             },
