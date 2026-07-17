@@ -352,6 +352,13 @@
                 "price": 14
             },
             {
+                "id": "item_f7nm00wph",
+                "th": "เสือร้องไห้",
+                "en": "Crying Tiger Grilled Beef",
+                "img": "logo.png",
+                "price": 14
+            },
+            {
                 "id": "item_m95e7v3m1",
                 "th": "ยำแซ่บปลาหมึกยัดไส้",
                 "en": "Spicy Stuffed Squid",
@@ -383,13 +390,6 @@
                 "id": "item_eotshjc55",
                 "th": "ไก่ทอดหาดใหญ่",
                 "en": "Hat Yai Fried Chicken",
-                "img": "logo.png",
-                "price": 14
-            },
-            {
-                "id": "item_f7nm00wph",
-                "th": "เสือร้องไห้ย่าง",
-                "en": "Crying Tiger Grilled Beef",
                 "img": "logo.png",
                 "price": 14
             }
