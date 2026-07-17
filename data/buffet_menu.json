@@ -547,13 +547,6 @@
                 "price": 12
             },
             {
-                "id": "item_mx46vlryb",
-                "th": "ขนมชั้นอัญชัน",
-                "en": "Butterfly Pea Layer Sweet",
-                "img": "khanom_chan_pea.png",
-                "price": 12
-            },
-            {
                 "id": "item_dbq8x2pru",
                 "th": "ขนมครองแครงอัญชันมะพร้าวอ่อน",
                 "en": "Krong Krang Butterfly Pea with Young Coconut",
@@ -593,6 +586,13 @@
                 "th": "ขนมชั้นใบเตย",
                 "en": "Pandan Layer Sweet",
                 "img": "logo.png",
+                "price": 12
+            },
+            {
+                "id": "item_mx46vlryb",
+                "th": "ขนมชั้นอัญชัน",
+                "en": "Butterfly Pea Layer Sweet",
+                "img": "khanom_chan_pea.png",
                 "price": 12
             },
             {
