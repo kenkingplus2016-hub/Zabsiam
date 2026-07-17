@@ -240,20 +240,6 @@
                 "price": 12
             },
             {
-                "id": "item_sehaqc89j",
-                "th": "ข้าวผัดสับปะรด",
-                "en": "Pineapple Fried Rice",
-                "img": "pineapple_rice.png",
-                "price": 12
-            },
-            {
-                "id": "item_7odwg5bba",
-                "th": "ผัดไทย",
-                "en": "Pad Thai",
-                "img": "pad_thai_premium.png",
-                "price": 12
-            },
-            {
                 "id": "item_7fpb2g6mv",
                 "th": "กุ้งทอดซอสมะขาม",
                 "en": "Fried Shrimp with Tamarind Sauce",
@@ -299,13 +285,6 @@
                 "id": "item_0e6f0kd3q",
                 "th": "กุ้งแม่น้ำย่าง",
                 "en": "Grilled River Prawns",
-                "img": "logo.png",
-                "price": 15
-            },
-            {
-                "id": "item_4vbehqmwd",
-                "th": "ข้าวผัดมันกุ้ง",
-                "en": "Shrimp Paste Fried Rice",
                 "img": "logo.png",
                 "price": 15
             },
@@ -366,13 +345,6 @@
                 "price": 12
             },
             {
-                "id": "item_gjo8dnmcx",
-                "th": "ข้าวผัดต้มยำกุ้ง",
-                "en": "Tom Yum Goong Fried Rice",
-                "img": "logo.png",
-                "price": 15
-            },
-            {
                 "id": "item_6g60e1plb",
                 "th": "คอหมูย่าง",
                 "en": "Grilled Pork Neck",
@@ -399,6 +371,43 @@
                 "en": "Glass Noodle Salad with Shrimp (+£3)",
                 "img": "fd82bc4b-8027-41f2-a6f9-97c217d7297f.jpg",
                 "price": 12
+            }
+        ]
+    },
+    {
+        "id": "rice",
+        "title": {
+            "th": "เมนูข้าว และ ผัดเส้น (Rice & Noodles)",
+            "en": "Rice & Noodles"
+        },
+        "items": [
+            {
+                "id": "item_sehaqc89j",
+                "th": "ข้าวผัดสับปะรด",
+                "en": "Pineapple Fried Rice",
+                "img": "pineapple_rice.png",
+                "price": 12
+            },
+            {
+                "id": "item_7odwg5bba",
+                "th": "ผัดไทย",
+                "en": "Pad Thai",
+                "img": "pad_thai_premium.png",
+                "price": 12
+            },
+            {
+                "id": "item_4vbehqmwd",
+                "th": "ข้าวผัดมันกุ้ง",
+                "en": "Shrimp Paste Fried Rice",
+                "img": "logo.png",
+                "price": 15
+            },
+            {
+                "id": "item_gjo8dnmcx",
+                "th": "ข้าวผัดต้มยำกุ้ง",
+                "en": "Tom Yum Goong Fried Rice",
+                "img": "logo.png",
+                "price": 15
             }
         ]
     },
