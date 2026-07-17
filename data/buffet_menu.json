@@ -261,20 +261,6 @@
                 "price": 12
             },
             {
-                "id": "item_orzanzia2",
-                "th": "ข้าวเหนียวมะม่วงน้ำดอกไม้",
-                "en": "Mango Sticky Rice (Nam Dok Mai)",
-                "img": "mango sticky rice.jpeg",
-                "price": 12
-            },
-            {
-                "id": "item_kd2pgn0wa",
-                "th": "บวชชีกล้วย",
-                "en": "Banana in Coconut Milk",
-                "img": "Banana with Condensed Milk.jpg",
-                "price": 12
-            },
-            {
                 "id": "item_sehaqc89j",
                 "th": "ข้าวผัดสับปะรด",
                 "en": "Pineapple Fried Rice",
@@ -575,6 +561,20 @@
                 "th": "ไอศกรีมมะม่วงข้าวเหนียวมูน",
                 "en": "Mango Ice Cream with Sticky Rice",
                 "img": "logo.png",
+                "price": 12
+            },
+            {
+                "id": "item_orzanzia2",
+                "th": "ข้าวเหนียวมะม่วงน้ำดอกไม้",
+                "en": "Mango Sticky Rice (Nam Dok Mai)",
+                "img": "mango sticky rice.jpeg",
+                "price": 12
+            },
+            {
+                "id": "item_kd2pgn0wa",
+                "th": "บวชชีกล้วย",
+                "en": "Banana in Coconut Milk",
+                "img": "Banana with Condensed Milk.jpg",
                 "price": 12
             }
         ]
