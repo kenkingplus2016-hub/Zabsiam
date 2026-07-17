@@ -277,13 +277,6 @@
                 "unit": "ถ้วย"
             },
             {
-                "id": "item_5y8jmxqvs",
-                "th": "ปลาซีบาสลุยสวน",
-                "en": "Sea Bass Fish Larb",
-                "img": "pla seabass lui suan.jpg",
-                "price": 15
-            },
-            {
                 "id": "item_5l42k8cs1",
                 "th": "ปูผัดผงกะหรี่",
                 "en": "Crab Curry",
@@ -309,6 +302,13 @@
                 "th": "ปลากะพงทอดสามรส",
                 "en": "Deep Fried Sea Bass with Three-Flavored Sauce",
                 "img": "seabass_3flavor.jpg",
+                "price": 15
+            },
+            {
+                "id": "item_5y8jmxqvs",
+                "th": "ปลาซีบาสลุยสวน",
+                "en": "Sea Bass Fish Larb",
+                "img": "pla seabass lui suan.jpg",
                 "price": 15
             },
             {
