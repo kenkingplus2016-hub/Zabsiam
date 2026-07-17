@@ -63,27 +63,6 @@
                 "price": 14
             },
             {
-                "id": "item_lolxvnzii",
-                "th": "พล่าปลาแซลมอน (+£2)",
-                "en": "Salmon 'Pla' Salad (+£2)",
-                "img": "005dbfc3-c862-4aac-a9e7-57ada41bcfa5.jpg",
-                "price": 17
-            },
-            {
-                "id": "item_m95e7v3m1",
-                "th": "ยำแซ่บปลาหมึกยัดไส้",
-                "en": "Spicy Stuffed Squid",
-                "img": "spicy stuffed squid salad.jpg",
-                "price": 15
-            },
-            {
-                "id": "item_6g60e1plb",
-                "th": "คอหมูย่าง",
-                "en": "Grilled Pork Neck",
-                "img": "Grilled Pork Neck.jpg",
-                "price": 14
-            },
-            {
                 "id": "item_1ax624iq8",
                 "th": "ไส้อั่ว",
                 "en": "Sai Ua (Northern Thai Sausage)",
@@ -124,34 +103,6 @@
                 "en": "Tom Yum Goong (Spicy Shrimp Soup)",
                 "img": "logo.png",
                 "price": 15
-            },
-            {
-                "id": "item_gjo8dnmcx",
-                "th": "ข้าวผัดต้มยำกุ้ง",
-                "en": "Tom Yum Goong Fried Rice",
-                "img": "logo.png",
-                "price": 15
-            },
-            {
-                "id": "item_9lsc9fnms",
-                "th": "น้ำพริกกะปิ",
-                "en": "Nam Prik Kapi (Shrimp Paste Chili Dip)",
-                "img": "logo.png",
-                "price": 12
-            },
-            {
-                "id": "item_itz3mmj1h",
-                "th": "น้ำพริกหนุ่ม",
-                "en": "Nam Prik Noom (Northern Green Chili Dip)",
-                "img": "logo.png",
-                "price": 12
-            },
-            {
-                "id": "item_p0kbmekw0",
-                "th": "น้ำพริกอ่อง",
-                "en": "Nam Prik Ong (Northern Tomato Pork Chili Dip)",
-                "img": "logo.png",
-                "price": 12
             }
         ]
     },
@@ -427,6 +378,55 @@
                 "en": "Stir-fried Chicken with Ginger",
                 "img": "logo.png",
                 "price": 14
+            },
+            {
+                "id": "item_p0kbmekw0",
+                "th": "น้ำพริกอ่อง",
+                "en": "Nam Prik Ong (Northern Tomato Pork Chili Dip)",
+                "img": "logo.png",
+                "price": 12
+            },
+            {
+                "id": "item_itz3mmj1h",
+                "th": "น้ำพริกหนุ่ม",
+                "en": "Nam Prik Noom (Northern Green Chili Dip)",
+                "img": "logo.png",
+                "price": 12
+            },
+            {
+                "id": "item_9lsc9fnms",
+                "th": "น้ำพริกกะปิ",
+                "en": "Nam Prik Kapi (Shrimp Paste Chili Dip)",
+                "img": "logo.png",
+                "price": 12
+            },
+            {
+                "id": "item_gjo8dnmcx",
+                "th": "ข้าวผัดต้มยำกุ้ง",
+                "en": "Tom Yum Goong Fried Rice",
+                "img": "logo.png",
+                "price": 15
+            },
+            {
+                "id": "item_6g60e1plb",
+                "th": "คอหมูย่าง",
+                "en": "Grilled Pork Neck",
+                "img": "Grilled Pork Neck.jpg",
+                "price": 14
+            },
+            {
+                "id": "item_m95e7v3m1",
+                "th": "ยำแซ่บปลาหมึกยัดไส้",
+                "en": "Spicy Stuffed Squid",
+                "img": "spicy stuffed squid salad.jpg",
+                "price": 15
+            },
+            {
+                "id": "item_lolxvnzii",
+                "th": "พล่าปลาแซลมอน (+£2)",
+                "en": "Salmon 'Pla' Salad (+£2)",
+                "img": "005dbfc3-c862-4aac-a9e7-57ada41bcfa5.jpg",
+                "price": 17
             }
         ]
     },
