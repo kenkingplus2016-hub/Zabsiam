@@ -253,14 +253,6 @@
                 "unit": "ถ้วย"
             },
             {
-                "id": "item_i7gvqkgwg",
-                "th": "แกงหมูเทโพ",
-                "en": "Tae Po Pork Curry",
-                "img": "Gaeng Moo Tae Po.jpg",
-                "price": 14,
-                "unit": "ถ้วย"
-            },
-            {
                 "id": "item_5y8jmxqvs",
                 "th": "ปลาซีบาสลุยสวน",
                 "en": "Sea Bass Fish Larb",
@@ -301,6 +293,46 @@
                 "en": "Gaeng Som Pae Sa Sea Bass",
                 "img": "logo.png",
                 "price": 15,
+                "unit": "ถ้วย"
+            },
+            {
+                "id": "item_nbexkcqhg",
+                "th": "แกงเทโพเนื้อ",
+                "en": "Tae Po Curry Beef",
+                "img": "logo.png",
+                "price": 14,
+                "unit": "ถ้วย"
+            },
+            {
+                "id": "item_mzvssqvby",
+                "th": "แกงเทโพไก่",
+                "en": "Tae Po Curry Chicken",
+                "img": "logo.png",
+                "price": 14,
+                "unit": "ถ้วย"
+            },
+            {
+                "id": "item_j90037r8x",
+                "th": "แกงเทโพกุ้ง",
+                "en": "Tae Po Curry Prawn",
+                "img": "logo.png",
+                "price": 15,
+                "unit": "ถ้วย"
+            },
+            {
+                "id": "item_h3o6ly72u",
+                "th": "แกงเทโพหมู",
+                "en": "Tae Po Curry Pork",
+                "img": "logo.png",
+                "price": 14,
+                "unit": "ถ้วย"
+            },
+            {
+                "id": "item_5l75grdse",
+                "th": "แกงเทโพหมูสามชั้น",
+                "en": "Tae Po Curry Pork Belly",
+                "img": "logo.png",
+                "price": 14,
                 "unit": "ถ้วย"
             },
             {
@@ -544,6 +576,38 @@
                 "en": "Stir-fried Asparagus in Oyster Sauce",
                 "img": "logo.png",
                 "price": 15
+            },
+            {
+                "id": "item_owgurx3xq",
+                "th": "แกงแดงผักรวมเต้าหู้",
+                "en": "Red Curry Mixed Vegetables Tofu",
+                "img": "logo.png",
+                "price": 12,
+                "unit": "ถ้วย"
+            },
+            {
+                "id": "item_geepwab97",
+                "th": "แกงเขียวหวานผักรวมเต้าหู้",
+                "en": "Green Curry Mixed Vegetables Tofu",
+                "img": "logo.png",
+                "price": 12,
+                "unit": "ถ้วย"
+            },
+            {
+                "id": "item_lpl8y41uw",
+                "th": "แกงพะแนงผักรวมเต้าหู้",
+                "en": "Panang Curry Mixed Vegetables Tofu",
+                "img": "logo.png",
+                "price": 12,
+                "unit": "ถ้วย"
+            },
+            {
+                "id": "item_3clv38eoe",
+                "th": "แกงเทโพผักรวมเต้าหู้",
+                "en": "Tae Po Curry Mixed Vegetables Tofu",
+                "img": "logo.png",
+                "price": 12,
+                "unit": "ถ้วย"
             }
         ]
     },
