@@ -22,8 +22,8 @@
             },
             {
                 "id": "item_2bsa6jstk",
-                "th": "ยำส้มโอกุ้งสด (+£3)",
-                "en": "Pomelo Salad with Shrimp (+£3)",
+                "th": "ยำส้มโอกุ้งสด",
+                "en": "Pomelo Salad with Shrimp",
                 "img": "c9dcd15e-891c-455d-ae3c-2c37f74c1b96.jpg",
                 "price": 18
             },
@@ -36,8 +36,8 @@
             },
             {
                 "id": "item_rpwztizvb",
-                "th": "เมี่ยงคำส้มโอกุ้ง (+£3)",
-                "en": "Pomelo Miang Kham with Shrimp (+£3)",
+                "th": "เมี่ยงคำส้มโอกุ้ง",
+                "en": "Pomelo Miang Kham with Shrimp",
                 "img": "pomeloleaf wrap.jpg",
                 "price": 18
             },
@@ -120,8 +120,8 @@
             },
             {
                 "id": "item_u48e3j6r3",
-                "th": "แซลมอนลุยสวนเกี๊ยวกรอบ (+£2)",
-                "en": "Salmon Lui Suan Wonton (+£2)",
+                "th": "แซลมอนลุยสวนเกี๊ยวกรอบ",
+                "en": "Salmon Lui Suan Wonton",
                 "img": "e0ecdb4e-2584-48ef-ab8e-7292ae447711.jpg",
                 "price": 17
             },
@@ -155,8 +155,8 @@
             },
             {
                 "id": "item_5oi3n13k0",
-                "th": "ต้มข่ากุ้ง (+£3)",
-                "en": "Tom Kha Goong (+£3)",
+                "th": "ต้มข่ากุ้ง",
+                "en": "Tom Kha Goong",
                 "img": "logo.png",
                 "price": 18
             }
@@ -178,8 +178,8 @@
             },
             {
                 "id": "item_nbvxgywtc",
-                "th": "แกงเขียวหวานเนื้อ (+£2)",
-                "en": "Green Curry Beef (+£2)",
+                "th": "แกงเขียวหวานเนื้อ",
+                "en": "Green Curry Beef",
                 "img": "logo.png",
                 "price": 16
             },
@@ -192,8 +192,8 @@
             },
             {
                 "id": "item_0il9ze066",
-                "th": "แกงมัสมันเนื้อ (+£2)",
-                "en": "Massaman Beef (+£2)",
+                "th": "แกงมัสมันเนื้อ",
+                "en": "Massaman Beef",
                 "img": "logo.png",
                 "price": 16
             },
@@ -213,8 +213,8 @@
             },
             {
                 "id": "item_4nqvtl4rl",
-                "th": "แกงพะแนงเนื้อ (+£2)",
-                "en": "Panang Curry with Beef (+£2)",
+                "th": "แกงพะแนงเนื้อ",
+                "en": "Panang Curry with Beef",
                 "img": "logo.png",
                 "price": 16
             },
@@ -234,8 +234,8 @@
             },
             {
                 "id": "item_5l42k8cs1",
-                "th": "ปูผัดผงกะหรี่ (+£3)",
-                "en": "Crab Curry (+£3)",
+                "th": "ปูผัดผงกะหรี่",
+                "en": "Crab Curry",
                 "img": "de8fafb8-521d-4420-9913-62aafbe3f5e4.jpg",
                 "price": 18
             },
@@ -360,15 +360,15 @@
             },
             {
                 "id": "item_lolxvnzii",
-                "th": "พล่าปลาแซลมอน (+£2)",
-                "en": "Salmon 'Pla' Salad (+£2)",
+                "th": "พล่าปลาแซลมอน",
+                "en": "Salmon 'Pla' Salad",
                 "img": "005dbfc3-c862-4aac-a9e7-57ada41bcfa5.jpg",
                 "price": 17
             },
             {
                 "id": "item_rasqo7a1h",
-                "th": "ยำวุ้นเส้นกุ้ง (+£3)",
-                "en": "Glass Noodle Salad with Shrimp (+£3)",
+                "th": "ยำวุ้นเส้นกุ้ง",
+                "en": "Glass Noodle Salad with Shrimp",
                 "img": "fd82bc4b-8027-41f2-a6f9-97c217d7297f.jpg",
                 "price": 12
             },
@@ -483,15 +483,15 @@
             },
             {
                 "id": "item_p78h6ho90",
-                "th": "ผัดเนื้อผักรวมน้ำมันหอย (+£2)",
-                "en": "Stir-fried Beef with Veg (+£2)",
+                "th": "ผัดเนื้อผักรวมน้ำมันหอย",
+                "en": "Stir-fried Beef with Veg",
                 "img": "74845001-324c-482d-8a79-c1c5d8d0a68f.jpg",
                 "price": 17
             },
             {
                 "id": "item_zy5pdsi21",
-                "th": "ผัดผักรวมกุ้งน้ำมันหอย (+£3)",
-                "en": "Stir-fried Veg with Shrimp (+£3)",
+                "th": "ผัดผักรวมกุ้งน้ำมันหอย",
+                "en": "Stir-fried Veg with Shrimp",
                 "img": "Stir-fried Mixed Vegetables with Shrimp.jpg",
                 "price": 18
             },
