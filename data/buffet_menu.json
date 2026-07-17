@@ -35,6 +35,20 @@
                 "price": 15
             },
             {
+                "id": "item_u48e3j6r3",
+                "th": "แซลมอนลุยสวนเกี๊ยวกรอบ",
+                "en": "Salmon Lui Suan Wonton",
+                "img": "e0ecdb4e-2584-48ef-ab8e-7292ae447711.jpg",
+                "price": 17
+            },
+            {
+                "id": "item_5q6xay7hm",
+                "th": "ลาบไก่ / หมู",
+                "en": "Larb Gai / Pork",
+                "img": "ec66c9e5-348b-49d0-b53a-94f58b3b941f.jpg",
+                "price": 14
+            },
+            {
                 "id": "item_rpwztizvb",
                 "th": "เมี่ยงคำส้มโอกุ้ง",
                 "en": "Pomelo Miang Kham with Shrimp",
@@ -67,13 +81,6 @@
                 "th": "ไก่สะเต๊ะ",
                 "en": "Chicken Satay",
                 "img": "logo.png",
-                "price": 14
-            },
-            {
-                "id": "item_5q6xay7hm",
-                "th": "ลาบไก่ / หมู",
-                "en": "Larb Gai / Pork",
-                "img": "ec66c9e5-348b-49d0-b53a-94f58b3b941f.jpg",
                 "price": 14
             },
             {
@@ -117,13 +124,6 @@
                 "en": "Ma Hor",
                 "img": "ma ho.jpg",
                 "price": 12
-            },
-            {
-                "id": "item_u48e3j6r3",
-                "th": "แซลมอนลุยสวนเกี๊ยวกรอบ",
-                "en": "Salmon Lui Suan Wonton",
-                "img": "e0ecdb4e-2584-48ef-ab8e-7292ae447711.jpg",
-                "price": 17
             },
             {
                 "id": "item_f0oq54jui",
