@@ -245,6 +245,14 @@
                 "unit": "ถ้วย"
             },
             {
+                "id": "item_ahnwc36j8",
+                "th": "แกงพะแนงกุ้ง",
+                "en": "Panang Curry with Prawns",
+                "img": "logo.png",
+                "price": 15,
+                "unit": "ถ้วย"
+            },
+            {
                 "id": "item_i7gvqkgwg",
                 "th": "แกงหมูเทโพ",
                 "en": "Tae Po Pork Curry",
