@@ -366,13 +366,6 @@
                 "price": 17
             },
             {
-                "id": "item_rasqo7a1h",
-                "th": "ยำวุ้นเส้นกุ้ง",
-                "en": "Glass Noodle Salad with Shrimp",
-                "img": "fd82bc4b-8027-41f2-a6f9-97c217d7297f.jpg",
-                "price": 12
-            },
-            {
                 "id": "item_dv9va38bn",
                 "th": "แกงกะหรี่ไก่",
                 "en": "Yellow Chicken Curry",
@@ -397,13 +390,6 @@
                 "id": "item_f7nm00wph",
                 "th": "เสือร้องไห้ย่าง",
                 "en": "Crying Tiger Grilled Beef",
-                "img": "logo.png",
-                "price": 14
-            },
-            {
-                "id": "item_1sq90u1i5",
-                "th": "ยำวุ้นเส้นหมูยอ",
-                "en": "Glass Noodle Salad with Vietnamese Pork Sausage",
                 "img": "logo.png",
                 "price": 14
             }
@@ -463,6 +449,20 @@
                 "th": "ผัดไทยผักรวม",
                 "en": "Pad Thai with Mixed Vegetables",
                 "img": "logo.png",
+                "price": 12
+            },
+            {
+                "id": "item_1sq90u1i5",
+                "th": "ยำวุ้นเส้นหมูยอ",
+                "en": "Glass Noodle Salad with Vietnamese Pork Sausage",
+                "img": "logo.png",
+                "price": 14
+            },
+            {
+                "id": "item_rasqo7a1h",
+                "th": "ยำวุ้นเส้นกุ้ง",
+                "en": "Glass Noodle Salad with Shrimp",
+                "img": "fd82bc4b-8027-41f2-a6f9-97c217d7297f.jpg",
                 "price": 12
             }
         ]
