@@ -140,13 +140,6 @@
                 "price": 12
             },
             {
-                "id": "item_dm6zwskjv",
-                "th": "ต้มข่าไก่",
-                "en": "Tom Kha Gai (Coconut Galangal Soup)",
-                "img": "logo.png",
-                "price": 14
-            },
-            {
                 "id": "item_lizqe4mc8",
                 "th": "ต้มยำกุ้ง",
                 "en": "Tom Yum Goong (Spicy Shrimp Soup)",
@@ -158,7 +151,14 @@
                 "th": "ต้มข่ากุ้ง",
                 "en": "Tom Kha Goong",
                 "img": "logo.png",
-                "price": 18
+                "price": 15
+            },
+            {
+                "id": "item_dm6zwskjv",
+                "th": "ต้มข่าไก่",
+                "en": "Tom Kha Gai (Coconut Galangal Soup)",
+                "img": "logo.png",
+                "price": 14
             }
         ]
     },
