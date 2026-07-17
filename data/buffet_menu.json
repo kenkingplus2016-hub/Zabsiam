@@ -625,8 +625,15 @@
             },
             {
                 "id": "item_2657use5q",
-                "th": "ขนมตะโก้",
-                "en": "Khanom Tako (Thai Pudding with Coconut Topping)",
+                "th": "ขนมตะโก้ข้าวโพด",
+                "en": "Tako (Sweet Corn Thai Pudding)",
+                "img": "logo.png",
+                "price": 12
+            },
+            {
+                "id": "item_v0kvvnz7v",
+                "th": "ขนมตะโก้เผือก",
+                "en": "Tako (Taro Thai Pudding)",
                 "img": "logo.png",
                 "price": 12
             },
