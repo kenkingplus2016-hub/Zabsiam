@@ -407,15 +407,43 @@
                 "id": "item_6u785z0ne",
                 "th": "ผัดฉ่าปลากระพง",
                 "en": "Stir-fried Sea Bass with Herbs and Spices (Phad Cha)",
-                "img": "logo.png",
+                "img": "phad_cha_seabass.jpg",
                 "price": 12
             },
             {
                 "id": "item_yamxvxfr8",
-                "th": "ผัดเผ็ด",
-                "en": "Pad Phed (Spicy Stir-fried Red Curry)",
+                "th": "ผัดเผ็ดปลากระพง",
+                "en": "Pad Phed Sea Bass (Spicy Stir-fried Red Curry)",
                 "img": "logo.png",
-                "price": 12
+                "price": 15
+            },
+            {
+                "id": "item_czpunjqxr",
+                "th": "ผัดเผ็ดกุ้ง",
+                "en": "Pad Phed Prawns (Spicy Stir-fried Red Curry)",
+                "img": "logo.png",
+                "price": 15
+            },
+            {
+                "id": "item_e4cc147i6",
+                "th": "ผัดเผ็ดหมู",
+                "en": "Pad Phed Pork (Spicy Stir-fried Red Curry)",
+                "img": "logo.png",
+                "price": 14
+            },
+            {
+                "id": "item_bw0qj8o0y",
+                "th": "ผัดเผ็ดไก่",
+                "en": "Pad Phed Chicken (Spicy Stir-fried Red Curry)",
+                "img": "logo.png",
+                "price": 14
+            },
+            {
+                "id": "item_jg57d7o8h",
+                "th": "ผัดเผ็ดเนื้อ",
+                "en": "Pad Phed Beef (Spicy Stir-fried Red Curry)",
+                "img": "logo.png",
+                "price": 15
             },
             {
                 "id": "item_0wp6jv7eb",
