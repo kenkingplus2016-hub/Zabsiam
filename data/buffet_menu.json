@@ -277,6 +277,46 @@
                 "unit": "ถ้วย"
             },
             {
+                "id": "item_nbexkcqhg",
+                "th": "แกงเทโพเนื้อ",
+                "en": "Tae Po Curry Beef",
+                "img": "taepo_beef.jpg",
+                "price": 14,
+                "unit": "ถ้วย"
+            },
+            {
+                "id": "item_mzvssqvby",
+                "th": "แกงเทโพไก่",
+                "en": "Tae Po Curry Chicken",
+                "img": "taepo_chicken.jpg",
+                "price": 14,
+                "unit": "ถ้วย"
+            },
+            {
+                "id": "item_j90037r8x",
+                "th": "แกงเทโพกุ้ง",
+                "en": "Tae Po Curry Prawn",
+                "img": "taepo_prawn.jpg",
+                "price": 15,
+                "unit": "ถ้วย"
+            },
+            {
+                "id": "item_h3o6ly72u",
+                "th": "แกงเทโพหมู",
+                "en": "Tae Po Curry Pork",
+                "img": "taepo_pork.jpg",
+                "price": 14,
+                "unit": "ถ้วย"
+            },
+            {
+                "id": "item_5l75grdse",
+                "th": "แกงเทโพหมูสามชั้น",
+                "en": "Tae Po Curry Pork Belly",
+                "img": "taepo_porkbelly.jpg",
+                "price": 14,
+                "unit": "ถ้วย"
+            },
+            {
                 "id": "item_5l42k8cs1",
                 "th": "ปูผัดผงกะหรี่",
                 "en": "Crab Curry",
@@ -317,46 +357,6 @@
                 "en": "Gaeng Som Pae Sa Sea Bass",
                 "img": "logo.png",
                 "price": 15,
-                "unit": "ถ้วย"
-            },
-            {
-                "id": "item_nbexkcqhg",
-                "th": "แกงเทโพเนื้อ",
-                "en": "Tae Po Curry Beef",
-                "img": "taepo_beef.jpg",
-                "price": 14,
-                "unit": "ถ้วย"
-            },
-            {
-                "id": "item_mzvssqvby",
-                "th": "แกงเทโพไก่",
-                "en": "Tae Po Curry Chicken",
-                "img": "taepo_chicken.jpg",
-                "price": 14,
-                "unit": "ถ้วย"
-            },
-            {
-                "id": "item_j90037r8x",
-                "th": "แกงเทโพกุ้ง",
-                "en": "Tae Po Curry Prawn",
-                "img": "taepo_prawn.jpg",
-                "price": 15,
-                "unit": "ถ้วย"
-            },
-            {
-                "id": "item_h3o6ly72u",
-                "th": "แกงเทโพหมู",
-                "en": "Tae Po Curry Pork",
-                "img": "taepo_pork.jpg",
-                "price": 14,
-                "unit": "ถ้วย"
-            },
-            {
-                "id": "item_5l75grdse",
-                "th": "แกงเทโพหมูสามชั้น",
-                "en": "Tae Po Curry Pork Belly",
-                "img": "taepo_porkbelly.jpg",
-                "price": 14,
                 "unit": "ถ้วย"
             },
             {
