@@ -364,7 +364,7 @@
                 "id": "item_5y8jmxqvs",
                 "th": "ปลาซีบาสลุยสวน",
                 "en": "Sea Bass Fish Larb",
-                "img": "pla seabass lui suan.jpg",
+                "img": "sea_bass_lui_suan.jpg",
                 "price": 15
             },
             {
@@ -414,7 +414,7 @@
                 "id": "item_yamxvxfr8",
                 "th": "ผัดเผ็ดปลากระพง",
                 "en": "Pad Phed Sea Bass (Spicy Stir-fried Red Curry)",
-                "img": "logo.png",
+                "img": "pad_phed_seabass.jpg",
                 "price": 15
             },
             {
@@ -442,21 +442,21 @@
                 "id": "item_jg57d7o8h",
                 "th": "ผัดเผ็ดเนื้อ",
                 "en": "Pad Phed Beef (Spicy Stir-fried Red Curry)",
-                "img": "logo.png",
+                "img": "pad_phed_beef.jpg",
                 "price": 15
             },
             {
                 "id": "item_0wp6jv7eb",
                 "th": "ผัดเปรี้ยวหวานไก่",
                 "en": "Sweet and Sour Chicken",
-                "img": "logo.png",
+                "img": "sweet_sour_chicken.jpg",
                 "price": 12
             },
             {
                 "id": "item_7ajmnb8k8",
                 "th": "ผัดเปรี้ยวหวานปลากระพง",
                 "en": "Sweet and Sour Sea Bass",
-                "img": "logo.png",
+                "img": "sweet_sour_seabass.jpg",
                 "price": 15
             },
             {
