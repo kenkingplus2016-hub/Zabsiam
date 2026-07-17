@@ -261,9 +261,17 @@
                 "unit": "ถ้วย"
             },
             {
-                "id": "item_q7qjxkvkl",
-                "th": "แกงพะแนงหมู / ไก่",
-                "en": "Panang Curry with Pork / Chicken",
+                "id": "item_7mnkkzj7o",
+                "th": "แกงพะแนงหมู",
+                "en": "Panang Curry with Pork",
+                "img": "panang curry.jpg",
+                "price": 14,
+                "unit": "ถ้วย"
+            },
+            {
+                "id": "item_3otm2f6s3",
+                "th": "แกงพะแนงไก่",
+                "en": "Panang Curry with Chicken",
                 "img": "panang curry.jpg",
                 "price": 14,
                 "unit": "ถ้วย"
