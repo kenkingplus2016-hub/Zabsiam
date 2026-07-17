@@ -305,6 +305,14 @@ app.get('/api/menu', (req, res) => {
     });
 });
 
+app.get('/api/buffet', (req, res) => {
+    const menuPath = path.join(__dirname, 'data', 'buffet_menu.json');
+    fs.readFile(menuPath, 'utf8', (err, data) => {
+        if (err) return res.status(500).json({ error: 'Cannot read buffet data' });
+        res.json(JSON.parse(data));
+    });
+});
+
 // Update Menu Data (Admin Only)
 app.post('/api/menu', requireAuth, (req, res) => {
     const menuPath = path.join(__dirname, 'data', 'menu.json');
