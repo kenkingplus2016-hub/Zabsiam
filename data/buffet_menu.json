@@ -137,7 +137,7 @@
                 "th": "ต้มยำกุ้ง",
                 "en": "Tom Yum Goong (Spicy Shrimp Soup)",
                 "img": "tom_yum_goong.jpg",
-                "price": 15,
+                "price": 5,
                 "unit": "ถ้วย"
             },
             {
@@ -145,7 +145,7 @@
                 "th": "ต้มข่ากุ้ง",
                 "en": "Tom Kha Goong",
                 "img": "tom_kha_prawn.jpg",
-                "price": 15,
+                "price": 5,
                 "unit": "ถ้วย"
             },
             {
@@ -153,7 +153,7 @@
                 "th": "ต้มข่าไก่",
                 "en": "Tom Kha Gai (Coconut Galangal Soup)",
                 "img": "tom_kha_chicken.jpg",
-                "price": 14,
+                "price": 5,
                 "unit": "ถ้วย"
             }
         ]
