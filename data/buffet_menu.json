@@ -591,21 +591,21 @@
                 "id": "item_yli8d1lit",
                 "th": "ผัดไทยผักรวม",
                 "en": "Pad Thai with Mixed Vegetables",
-                "img": "logo.png",
+                "img": "pad_thai_veg.jpg",
                 "price": 12
             },
             {
                 "id": "item_1sq90u1i5",
                 "th": "ยำวุ้นเส้นหมูยอ",
                 "en": "Glass Noodle Salad with Vietnamese Pork Sausage",
-                "img": "logo.png",
+                "img": "yum_woon_sen_moo_yor.jpg",
                 "price": 14
             },
             {
                 "id": "item_rasqo7a1h",
                 "th": "ยำวุ้นเส้นกุ้ง",
                 "en": "Glass Noodle Salad with Shrimp",
-                "img": "fd82bc4b-8027-41f2-a6f9-97c217d7297f.jpg",
+                "img": "logo.png",
                 "price": 12
             }
         ]
