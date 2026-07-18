@@ -91,14 +91,16 @@
                 "th": "ไส้อั่ว",
                 "en": "Sai Ua (Northern Thai Sausage)",
                 "img": "sai_ua_new.jpg",
-                "price": 14
+                "price": 14,
+                "unit": "120 กรัม"
             },
             {
                 "id": "item_qh3xhjx8e",
                 "th": "ไส้กรอกอีสาน",
                 "en": "Isan Sausage",
                 "img": "isan_sausage_new.jpg",
-                "price": 14
+                "price": 14,
+                "unit": "120 กรัม"
             },
             {
                 "id": "item_rh14l5km2",
