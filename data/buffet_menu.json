@@ -43,7 +43,8 @@
                 "th": "ลาบไก่ / หมู",
                 "en": "Larb Gai / Pork",
                 "img": "ec66c9e5-348b-49d0-b53a-94f58b3b941f.jpg",
-                "price": 14
+                "price": 14,
+                "unit": "6 ชิ้น"
             },
             {
                 "id": "item_rpwztizvb",
@@ -58,28 +59,32 @@
                 "th": "ข้าวเกรียบปากหม้อ",
                 "en": "Rice Skin Dumplings",
                 "img": "58b9011b-b7e8-4704-a7ad-ac8377965b8a.jpg",
-                "price": 12
+                "price": 14,
+                "unit": "6 ชิ้น"
             },
             {
                 "id": "item_t67oir607",
                 "th": "หมูสะเต๊ะ",
                 "en": "Pork Satay",
                 "img": "90fda180-3c60-4ede-b8f6-d23ece956883.jpg",
-                "price": 14
+                "price": 14,
+                "unit": "6 ไม้"
             },
             {
                 "id": "item_5sp61u7do",
                 "th": "หมูปิ้งนมสด",
                 "en": "Pork Skewer with Milk",
                 "img": "pork skewers.jpg",
-                "price": 14
+                "price": 14,
+                "unit": "6 ไม้"
             },
             {
                 "id": "item_txs2mmeyb",
                 "th": "ไก่สะเต๊ะ",
                 "en": "Chicken Satay",
                 "img": "chicken_satay_new.jpg",
-                "price": 14
+                "price": 14,
+                "unit": "6 ไม้"
             },
             {
                 "id": "item_1ax624iq8",
