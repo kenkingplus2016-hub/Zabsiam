@@ -632,6 +632,13 @@
                 "en": "Glass Noodle Salad with Shrimp",
                 "img": "yum_woon_sen_shrimp.jpg",
                 "price": 12
+            },
+            {
+                "id": "item_xbqsymzb1",
+                "th": "ข้าวเหนียว",
+                "en": "Sticky Rice",
+                "img": "sticky_rice.jpg",
+                "price": 12
             }
         ]
     },
