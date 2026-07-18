@@ -131,7 +131,8 @@
                 "th": "ม้าฮ่อ",
                 "en": "Ma Hor",
                 "img": "ma ho.jpg",
-                "price": 12
+                "price": 12,
+                "unit": "6 ชิ้น"
             },
             {
                 "id": "item_f0oq54jui",
@@ -146,7 +147,8 @@
                 "th": "ปอเปี๊ยะสดเห็ดเข็มทอง",
                 "en": "Fresh Spring Rolls with Enoki Mushroom",
                 "img": "fresh_spring_rolls_enoki.jpg",
-                "price": 12
+                "price": 12,
+                "unit": "6 ชิ้น"
             },
             {
                 "id": "item_lizqe4mc8",
