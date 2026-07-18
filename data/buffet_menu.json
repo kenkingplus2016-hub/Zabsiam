@@ -102,14 +102,14 @@
                 "th": "กุ้งห่มสไบ",
                 "en": "Goong Hom Sabai (Shrimp in Blanket)",
                 "img": "goong_hom_sabai.jpg",
-                "price": 15
+                "price": 16
             },
             {
                 "id": "item_s05ny7wzh",
                 "th": "ทอดมันกุ้ง",
                 "en": "Tod Mun Goong (Deep Fried Shrimp Cakes)",
                 "img": "tod_mun_goong.jpg",
-                "price": 15
+                "price": 16
             },
             {
                 "id": "item_4od49b1pz",
@@ -123,7 +123,7 @@
                 "th": "ปอเปี๊ยะกุ้งทอด",
                 "en": "Crispy Prawn Spring Rolls",
                 "img": "crispy_prawn_spring_rolls.jpg",
-                "price": 15
+                "price": 16
             },
             {
                 "id": "item_i8dt8y3do",
