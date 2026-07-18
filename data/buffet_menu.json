@@ -205,6 +205,14 @@
                 "unit": "ถ้วย"
             },
             {
+                "id": "item_geepwab97",
+                "th": "แกงเขียวหวานผักรวมเต้าหู้",
+                "en": "Green Curry Mixed Vegetables Tofu",
+                "img": "green_curry_veg.jpg",
+                "price": 12,
+                "unit": "ถ้วย"
+            },
+            {
                 "id": "item_i4xv9bkpn",
                 "th": "แกงแดงไก่",
                 "en": "Red Curry with Chicken",
@@ -234,6 +242,14 @@
                 "en": "Red Curry with Prawn",
                 "img": "red_curry_prawns.jpg",
                 "price": 15,
+                "unit": "ถ้วย"
+            },
+            {
+                "id": "item_owgurx3xq",
+                "th": "แกงแดงผักรวมเต้าหู้",
+                "en": "Red Curry Mixed Vegetables Tofu",
+                "img": "red_curry_veg.jpg",
+                "price": 12,
                 "unit": "ถ้วย"
             },
             {
@@ -293,6 +309,14 @@
                 "unit": "ถ้วย"
             },
             {
+                "id": "item_lpl8y41uw",
+                "th": "แกงพะแนงผักรวมเต้าหู้",
+                "en": "Panang Curry Mixed Vegetables Tofu",
+                "img": "panang_curry_veg.jpg",
+                "price": 12,
+                "unit": "ถ้วย"
+            },
+            {
                 "id": "item_nbexkcqhg",
                 "th": "แกงเทโพเนื้อ",
                 "en": "Tae Po Curry Beef",
@@ -330,6 +354,14 @@
                 "en": "Tae Po Curry Pork Belly",
                 "img": "taepo_porkbelly.jpg",
                 "price": 14,
+                "unit": "ถ้วย"
+            },
+            {
+                "id": "item_3clv38eoe",
+                "th": "แกงเทโพผักรวมเต้าหู้",
+                "en": "Tae Po Curry Mixed Vegetables Tofu",
+                "img": "taepo_veg.jpg",
+                "price": 12,
                 "unit": "ถ้วย"
             },
             {
@@ -535,38 +567,6 @@
                 "en": "Hat Yai Fried Chicken",
                 "img": "hatyai_fried_chicken.jpg",
                 "price": 14
-            },
-            {
-                "id": "item_owgurx3xq",
-                "th": "แกงแดงผักรวมเต้าหู้",
-                "en": "Red Curry Mixed Vegetables Tofu",
-                "img": "red_curry_veg.jpg",
-                "price": 12,
-                "unit": "ถ้วย"
-            },
-            {
-                "id": "item_geepwab97",
-                "th": "แกงเขียวหวานผักรวมเต้าหู้",
-                "en": "Green Curry Mixed Vegetables Tofu",
-                "img": "green_curry_veg.jpg",
-                "price": 12,
-                "unit": "ถ้วย"
-            },
-            {
-                "id": "item_lpl8y41uw",
-                "th": "แกงพะแนงผักรวมเต้าหู้",
-                "en": "Panang Curry Mixed Vegetables Tofu",
-                "img": "panang_curry_veg.jpg",
-                "price": 12,
-                "unit": "ถ้วย"
-            },
-            {
-                "id": "item_3clv38eoe",
-                "th": "แกงเทโพผักรวมเต้าหู้",
-                "en": "Tae Po Curry Mixed Vegetables Tofu",
-                "img": "taepo_veg.jpg",
-                "price": 12,
-                "unit": "ถ้วย"
             }
         ]
     },
