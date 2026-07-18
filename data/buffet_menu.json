@@ -189,7 +189,7 @@
                 "en": "Green Curry Chicken",
                 "img": "green_curry_chicken_pork.jpg",
                 "price": 14,
-                "unit": "ถ้วย"
+                "unit": "750 กรัม 6 ถ้วย"
             },
             {
                 "id": "item_g2jwt02c3",
@@ -197,7 +197,7 @@
                 "en": "Green Curry Pork",
                 "img": "green_curry_pork.jpg",
                 "price": 14,
-                "unit": "ถ้วย"
+                "unit": "750 กรัม 6 ถ้วย"
             },
             {
                 "id": "item_d0r1c4ln1",
@@ -229,7 +229,7 @@
                 "en": "Red Curry with Chicken",
                 "img": "red_curry_chicken.jpg",
                 "price": 14,
-                "unit": "ถ้วย"
+                "unit": "750 กรัม 6 ถ้วย"
             },
             {
                 "id": "item_dcbgmoghd",
@@ -237,7 +237,7 @@
                 "en": "Red Curry with Pork",
                 "img": "red_curry_pork.jpg",
                 "price": 14,
-                "unit": "ถ้วย"
+                "unit": "750 กรัม 6 ถ้วย"
             },
             {
                 "id": "item_p0rdw5hmz",
@@ -269,7 +269,7 @@
                 "en": "Massaman Chicken",
                 "img": "massaman_chicken.jpg",
                 "price": 14,
-                "unit": "ถ้วย"
+                "unit": "750 กรัม 6 ถ้วย"
             },
             {
                 "id": "item_0il9ze066",
@@ -285,7 +285,7 @@
                 "en": "Thai Curry Chicken",
                 "img": "thai_curry_chicken.jpg",
                 "price": 14,
-                "unit": "ถ้วย"
+                "unit": "750 กรัม 6 ถ้วย"
             },
             {
                 "id": "item_7mnkkzj7o",
@@ -293,7 +293,7 @@
                 "en": "Panang Curry with Pork",
                 "img": "panang_pork.jpg",
                 "price": 14,
-                "unit": "ถ้วย"
+                "unit": "750 กรัม 6 ถ้วย"
             },
             {
                 "id": "item_3otm2f6s3",
@@ -301,7 +301,7 @@
                 "en": "Panang Curry with Chicken",
                 "img": "panang_chicken.jpg",
                 "price": 14,
-                "unit": "ถ้วย"
+                "unit": "750 กรัม 6 ถ้วย"
             },
             {
                 "id": "item_4nqvtl4rl",
@@ -341,7 +341,7 @@
                 "en": "Tae Po Curry Chicken",
                 "img": "taepo_chicken.jpg",
                 "price": 14,
-                "unit": "ถ้วย"
+                "unit": "750 กรัม 6 ถ้วย"
             },
             {
                 "id": "item_j90037r8x",
@@ -357,7 +357,7 @@
                 "en": "Tae Po Curry Pork",
                 "img": "taepo_pork_new.jpg",
                 "price": 14,
-                "unit": "ถ้วย"
+                "unit": "750 กรัม 6 ถ้วย"
             },
             {
                 "id": "item_5l75grdse",
@@ -365,7 +365,7 @@
                 "en": "Tae Po Curry Pork Belly",
                 "img": "taepo_porkbelly.jpg",
                 "price": 14,
-                "unit": "ถ้วย"
+                "unit": "750 กรัม 6 ถ้วย"
             },
             {
                 "id": "item_3clv38eoe",
