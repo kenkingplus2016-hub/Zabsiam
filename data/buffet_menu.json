@@ -19,21 +19,24 @@
                 "th": "ยำส้มโอกุ้งสด",
                 "en": "Pomelo Salad with Shrimp",
                 "img": "c9dcd15e-891c-455d-ae3c-2c37f74c1b96.jpg",
-                "price": 16
+                "price": 16,
+                "unit": "6 ชิ้น"
             },
             {
                 "id": "item_h6fjm5s4s",
                 "th": "เมี่ยงคำปลาซีบาส",
                 "en": "Miang Kham Sea Bass",
                 "img": "58f1df5c-0f97-44c0-8327-02b4686f8f8b.jpg",
-                "price": 16
+                "price": 16,
+                "unit": "6 ชิ้น"
             },
             {
                 "id": "item_u48e3j6r3",
                 "th": "แซลมอนลุยสวนเกี๊ยวกรอบ",
                 "en": "Salmon Lui Suan Wonton",
                 "img": "e0ecdb4e-2584-48ef-ab8e-7292ae447711.jpg",
-                "price": 16
+                "price": 16,
+                "unit": "6 ชิ้น"
             },
             {
                 "id": "item_5q6xay7hm",
@@ -47,7 +50,8 @@
                 "th": "เมี่ยงคำส้มโอกุ้ง",
                 "en": "Pomelo Miang Kham with Shrimp",
                 "img": "pomeloleaf wrap.jpg",
-                "price": 16
+                "price": 16,
+                "unit": "6 ชิ้น"
             },
             {
                 "id": "item_4ccsh455q",
