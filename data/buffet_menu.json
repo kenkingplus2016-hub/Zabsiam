@@ -549,14 +549,14 @@
                 "id": "item_sehaqc89j",
                 "th": "ข้าวผัดสับปะรด",
                 "en": "Pineapple Fried Rice",
-                "img": "pineapple_rice.png",
+                "img": "pineapple_fried_rice.jpg",
                 "price": 12
             },
             {
                 "id": "item_4vbehqmwd",
                 "th": "ข้าวผัดมันกุ้ง",
                 "en": "Shrimp Paste Fried Rice",
-                "img": "logo.png",
+                "img": "shrimp_paste_fried_rice.jpg",
                 "price": 15
             },
             {
