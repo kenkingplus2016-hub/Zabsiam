@@ -552,14 +552,16 @@
                 "th": "คอหมูย่าง",
                 "en": "Grilled Pork Neck",
                 "img": "grilled_pork_neck_new.jpg",
-                "price": 16
+                "price": 16,
+                "unit": "180g ชุด"
             },
             {
                 "id": "item_f7nm00wph",
                 "th": "เสือร้องไห้",
                 "en": "Crying Tiger Grilled Beef",
                 "img": "crying_tiger.jpg",
-                "price": 18
+                "price": 18,
+                "unit": "180g ชุด"
             },
             {
                 "id": "item_m95e7v3m1",
