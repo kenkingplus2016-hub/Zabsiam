@@ -204,16 +204,16 @@
                 "th": "แกงเขียวหวานกุ้ง",
                 "en": "Green Curry with Prawns",
                 "img": "green_curry_prawns.jpg",
-                "price": 15,
-                "unit": "ถ้วย"
+                "price": 16,
+                "unit": "750 กรัม 6 ถ้วย"
             },
             {
                 "id": "item_nbvxgywtc",
                 "th": "แกงเขียวหวานเนื้อ",
                 "en": "Green Curry Beef",
                 "img": "green_curry_beef.jpg",
-                "price": 16,
-                "unit": "ถ้วย"
+                "price": 18,
+                "unit": "750 กรัม 6 ถ้วย"
             },
             {
                 "id": "item_geepwab97",
@@ -244,16 +244,16 @@
                 "th": "แกงแดงเนื้อ",
                 "en": "Red Curry with Beef",
                 "img": "red_curry_beef.jpg",
-                "price": 16,
-                "unit": "ถ้วย"
+                "price": 18,
+                "unit": "750 กรัม 6 ถ้วย"
             },
             {
                 "id": "item_xp1g4vzg3",
                 "th": "แกงแดงกุ้ง",
                 "en": "Red Curry with Prawn",
                 "img": "red_curry_prawns.jpg",
-                "price": 15,
-                "unit": "ถ้วย"
+                "price": 16,
+                "unit": "750 กรัม 6 ถ้วย"
             },
             {
                 "id": "item_owgurx3xq",
@@ -276,8 +276,8 @@
                 "th": "แกงมัสมันเนื้อ",
                 "en": "Massaman Beef",
                 "img": "massaman_beef.jpg",
-                "price": 16,
-                "unit": "ถ้วย"
+                "price": 18,
+                "unit": "750 กรัม 6 ถ้วย"
             },
             {
                 "id": "item_dv9va38bn",
@@ -308,16 +308,16 @@
                 "th": "แกงพะแนงเนื้อ",
                 "en": "Panang Curry with Beef",
                 "img": "panang_beef.jpg",
-                "price": 16,
-                "unit": "ถ้วย"
+                "price": 18,
+                "unit": "750 กรัม 6 ถ้วย"
             },
             {
                 "id": "item_ahnwc36j8",
                 "th": "แกงพะแนงกุ้ง",
                 "en": "Panang Curry with Prawns",
                 "img": "panang_prawns.jpg",
-                "price": 15,
-                "unit": "ถ้วย"
+                "price": 16,
+                "unit": "750 กรัม 6 ถ้วย"
             },
             {
                 "id": "item_lpl8y41uw",
@@ -332,8 +332,8 @@
                 "th": "แกงเทโพเนื้อ",
                 "en": "Tae Po Curry Beef",
                 "img": "taepo_beef.jpg",
-                "price": 16,
-                "unit": "ถ้วย"
+                "price": 18,
+                "unit": "750 กรัม 6 ถ้วย"
             },
             {
                 "id": "item_mzvssqvby",
@@ -348,8 +348,8 @@
                 "th": "แกงเทโพกุ้ง",
                 "en": "Tae Po Curry Prawn",
                 "img": "taepo_prawn.jpg",
-                "price": 15,
-                "unit": "ถ้วย"
+                "price": 16,
+                "unit": "750 กรัม 6 ถ้วย"
             },
             {
                 "id": "item_h3o6ly72u",
@@ -465,7 +465,8 @@
                 "th": "ผัดเผ็ดกุ้ง",
                 "en": "Pad Phed Prawns (Spicy Stir-fried Red Curry)",
                 "img": "pad_phed_prawns.jpg",
-                "price": 15
+                "price": 16,
+                "unit": "750 กรัม 6 ถ้วย"
             },
             {
                 "id": "item_e4cc147i6",
@@ -486,7 +487,8 @@
                 "th": "ผัดเผ็ดเนื้อ",
                 "en": "Pad Phed Beef (Spicy Stir-fried Red Curry)",
                 "img": "pad_phed_beef_final.jpg",
-                "price": 15
+                "price": 18,
+                "unit": "750 กรัม 6 ถ้วย"
             },
             {
                 "id": "item_0wp6jv7eb",
