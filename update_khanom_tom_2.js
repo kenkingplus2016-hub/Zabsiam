@@ -8,9 +8,9 @@ let updated = 0;
 data.forEach(category => {
     category.items.forEach(item => {
         if (item.th.includes('ขนมต้มไทยโบราณ') || item.en.toLowerCase().includes('khanom tom')) {
-            item.price = 12;
-            item.unit = '12 ลูก/จาน';
-            console.log(`Updated price for ${item.th} (${item.en}) to £12 and unit to 12 ลูก/จาน`);
+            item.price = 8;
+            item.unit = '2 ลูก';
+            console.log(`Updated price for ${item.th} (${item.en}) to £8 and unit to 2 ลูก`);
             updated++;
         }
     });

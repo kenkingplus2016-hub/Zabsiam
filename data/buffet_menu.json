@@ -816,7 +816,8 @@
                 "th": "ขนมต้มไทยโบราณ",
                 "en": "Traditional Thai Coconut Dumplings",
                 "img": "khanom_tom.jpg",
-                "price": 12
+                "price": 8,
+                "unit": "2 ลูก"
             },
             {
                 "id": "item_6khxkgaio",
