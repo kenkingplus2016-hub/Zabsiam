@@ -752,7 +752,8 @@
                 "th": "ข้าวเหนียวมะม่วงน้ำดอกไม้",
                 "en": "Mango Sticky Rice (Nam Dok Mai)",
                 "img": "mango sticky rice.jpeg",
-                "price": 12
+                "price": 7,
+                "unit": "ชุด"
             },
             {
                 "id": "item_ss15jkmtu",
