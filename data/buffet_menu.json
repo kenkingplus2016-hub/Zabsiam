@@ -639,7 +639,8 @@
                 "th": "ข้าวหอมมะลิ",
                 "en": "Jasmine Rice",
                 "img": "4b00ee9d-26c8-45f9-9f0d-e4014da7e1b2.jpg",
-                "price": 5
+                "price": 7,
+                "unit": "ถ้วย"
             },
             {
                 "id": "item_47u308grz",
@@ -662,7 +663,8 @@
                 "th": "ผัดไทยผักรวม",
                 "en": "Pad Thai with Mixed Vegetables",
                 "img": "pad_thai_veg.jpg",
-                "price": 12
+                "price": 12,
+                "unit": "จาน"
             },
             {
                 "id": "item_1sq90u1i5",
@@ -701,35 +703,40 @@
                 "th": "ผัดผักรวมน้ำมันหอย",
                 "en": "Stir-fried Mixed Veg",
                 "img": "f7c5f80d-eea3-43ea-b086-42896599d5eb.jpg",
-                "price": 15
+                "price": 12,
+                "unit": "จาน"
             },
             {
                 "id": "item_p78h6ho90",
                 "th": "ผัดเนื้อผักรวมน้ำมันหอย",
                 "en": "Stir-fried Beef with Veg",
                 "img": "74845001-324c-482d-8a79-c1c5d8d0a68f.jpg",
-                "price": 17
+                "price": 18,
+                "unit": "จาน"
             },
             {
                 "id": "item_zy5pdsi21",
                 "th": "ผัดผักรวมกุ้งน้ำมันหอย",
                 "en": "Stir-fried Veg with Shrimp",
                 "img": "Stir-fried Mixed Vegetables with Shrimp.jpg",
-                "price": 18
+                "price": 16,
+                "unit": "จาน"
             },
             {
                 "id": "item_68xjbvro4",
                 "th": "ผัดผักฉ่อยน้ำมันหอย",
                 "en": "Stir-fried Bok Choy in Oyster Sauce",
                 "img": "bok_choy.jpg",
-                "price": 15
+                "price": 12,
+                "unit": "จาน"
             },
             {
                 "id": "item_gky2spb4s",
                 "th": "หน่อไม้ฝรั่งผัดน้ำมันหอย",
                 "en": "Stir-fried Asparagus in Oyster Sauce",
                 "img": "asparagus.jpg",
-                "price": 15
+                "price": 12,
+                "unit": "จาน"
             }
         ]
     },
