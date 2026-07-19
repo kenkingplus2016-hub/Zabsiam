@@ -872,14 +872,16 @@
                 "th": "ขนมตะโก้ข้าวโพด",
                 "en": "Tako (Sweet Corn Thai Pudding)",
                 "img": "tako_corn.jpg",
-                "price": 12
+                "price": 10,
+                "unit": "2 ชิ้น"
             },
             {
                 "id": "item_v0kvvnz7v",
                 "th": "ขนมตะโก้เผือก",
                 "en": "Tako (Taro Thai Pudding)",
                 "img": "tako_taro.jpg",
-                "price": 12
+                "price": 10,
+                "unit": "2 ชิ้น"
             },
             {
                 "id": "item_vea70we67",
