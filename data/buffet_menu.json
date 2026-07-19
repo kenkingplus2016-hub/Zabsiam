@@ -752,15 +752,15 @@
                 "th": "ข้าวเหนียวมะม่วงน้ำดอกไม้",
                 "en": "Mango Sticky Rice (Nam Dok Mai)",
                 "img": "mango sticky rice.jpeg",
-                "price": 7,
-                "unit": "ชุด"
+                "price": 9.95,
+                "unit": "จาน"
             },
             {
                 "id": "item_ss15jkmtu",
                 "th": "ลอดช่องสิงคโปร์",
                 "en": "Lod Chong Singapore",
                 "img": "Lod Chong Singapore.jpg",
-                "price": 12,
+                "price": 7.95,
                 "unit": "ถ้วย"
             },
             {
@@ -768,7 +768,7 @@
                 "th": "ทับทิมกรอบ",
                 "en": "Tub Tim Krop",
                 "img": "tub tim krop.jpg",
-                "price": 12,
+                "price": 7.95,
                 "unit": "ถ้วย"
             },
             {
@@ -776,7 +776,7 @@
                 "th": "บวชชีกล้วย",
                 "en": "Banana in Coconut Milk",
                 "img": "Banana with Condensed Milk.jpg",
-                "price": 12,
+                "price": 7.95,
                 "unit": "ถ้วย"
             },
             {
@@ -784,7 +784,7 @@
                 "th": "ขนมครองแครงอัญชันมะพร้าวอ่อน",
                 "en": "Krong Krang Butterfly Pea with Young Coconut",
                 "img": "krong_krang_butterfly_pea.jpg",
-                "price": 12,
+                "price": 7.95,
                 "unit": "ถ้วย"
             },
             {
@@ -792,7 +792,7 @@
                 "th": "บัวลอยสาคู",
                 "en": "Bua Loy Sago",
                 "img": "bua_loy_sago.jpg",
-                "price": 12,
+                "price": 7.95,
                 "unit": "ถ้วย"
             },
             {
@@ -800,7 +800,7 @@
                 "th": "บัวลอย 5 สี",
                 "en": "5-Color Bua Loy",
                 "img": "bua_loy_5_color.jpg",
-                "price": 12,
+                "price": 7.95,
                 "unit": "ถ้วย"
             },
             {
@@ -808,7 +808,7 @@
                 "th": "ลอดช่องอัญชันใบเตย",
                 "en": "Lod Chong Butterfly Pea & Pandan",
                 "img": "lod_chong_butterfly_pea.jpg",
-                "price": 12,
+                "price": 7.95,
                 "unit": "ถ้วย"
             },
             {
@@ -879,14 +879,16 @@
                 "th": "ไอศกรีมกะทิข้าวเหนียว",
                 "en": "Coconut Ice Cream with Sticky Rice",
                 "img": "coconut_ice_cream.jpg",
-                "price": 12
+                "price": 7.95,
+                "unit": "ถ้วย"
             },
             {
                 "id": "item_a2c1r4g76",
                 "th": "ไอศกรีมมะม่วงข้าวเหนียวมูน",
                 "en": "Mango Ice Cream with Sticky Rice",
                 "img": "mango_ice_cream.jpg",
-                "price": 12
+                "price": 7.95,
+                "unit": "ถ้วย"
             },
             {
                 "id": "item_s380hdq8w",
