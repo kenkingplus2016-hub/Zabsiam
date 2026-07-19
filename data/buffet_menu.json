@@ -380,7 +380,8 @@
                 "th": "ปูผัดผงกะหรี่",
                 "en": "Crab Curry",
                 "img": "crab_curry.jpg",
-                "price": 18
+                "price": 45,
+                "unit": "500 กรัม 2 จาน"
             },
             {
                 "id": "item_7fpb2g6mv",

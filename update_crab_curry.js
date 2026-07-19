@@ -1,45 +1,24 @@
 const fs = require('fs');
-const path = require('path');
 
-const brainDir = 'C:/Users/KENDEE/.gemini/antigravity/brain/9d10d3e1-29fa-4160-9fdc-24b2e2180579';
-const imagesDir = 'public/images';
 const jsonPath = 'data/buffet_menu.json';
+const data = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
 
-// Find the newest media__*.jpg file
-const files = fs.readdirSync(brainDir)
-    .filter(f => f.startsWith('media__') && f.endsWith('.jpg'))
-    .map(f => ({name: f, time: fs.statSync(path.join(brainDir, f)).mtime.getTime()}))
-    .sort((a,b) => b.time - a.time);
+let updated = 0;
 
-if (files.length > 0) {
-    const newestFile = files[0].name;
-    const srcPath = path.join(brainDir, newestFile);
-    const destPath = path.join(imagesDir, 'crab_curry.jpg');
-    
-    // Copy the file
-    fs.copyFileSync(srcPath, destPath);
-    console.log(`Copied ${newestFile} to crab_curry.jpg`);
-
-    // Update the JSON mapping
-    const data = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
-    let updated = 0;
-    
-    data.forEach(category => {
-        category.items.forEach(item => {
-            if (item.th === 'ปูผัดผงกะหรี่') {
-                item.img = 'crab_curry.jpg';
-                console.log('Mapped crab_curry.jpg to ปูผัดผงกะหรี่');
-                updated++;
-            }
-        });
+data.forEach(category => {
+    category.items.forEach(item => {
+        if (item.th.includes('ปูผัดผงกะหรี่') || item.en.toLowerCase().includes('crab curry')) {
+            item.price = 45;
+            item.unit = '500 กรัม 2 จาน';
+            console.log(`Updated price for ${item.th} (${item.en}) to £45 and unit to 500 กรัม 2 จาน`);
+            updated++;
+        }
     });
+});
 
-    if (updated > 0) {
-        fs.writeFileSync(jsonPath, JSON.stringify(data, null, 4), 'utf8');
-        console.log('JSON updated successfully.');
-    } else {
-        console.log('Could not find ปูผัดผงกะหรี่ in the JSON.');
-    }
+if (updated > 0) {
+    fs.writeFileSync(jsonPath, JSON.stringify(data, null, 4), 'utf8');
+    console.log(`Successfully updated ${updated} items.`);
 } else {
-    console.log('No newly uploaded images found.');
+    console.log('Could not find ปูผัดผงกะหรี่ in the menu.');
 }
