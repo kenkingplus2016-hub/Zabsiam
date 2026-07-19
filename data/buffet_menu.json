@@ -888,16 +888,16 @@
                 "th": "ไอศกรีมกะทิข้าวเหนียว",
                 "en": "Coconut Ice Cream with Sticky Rice",
                 "img": "coconut_ice_cream.jpg",
-                "price": 7,
-                "unit": "ถ้วย"
+                "price": 70,
+                "unit": "10 ถ้วย"
             },
             {
                 "id": "item_a2c1r4g76",
                 "th": "ไอศกรีมมะม่วงข้าวเหนียวมูน",
                 "en": "Mango Ice Cream with Sticky Rice",
                 "img": "mango_ice_cream.jpg",
-                "price": 12,
-                "unit": "ถ้วย"
+                "price": 80,
+                "unit": "10 ถ้วย"
             },
             {
                 "id": "item_s380hdq8w",
