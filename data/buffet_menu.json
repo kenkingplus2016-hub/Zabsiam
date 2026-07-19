@@ -568,7 +568,8 @@
                 "th": "ยำแซ่บปลาหมึกยัดไส้",
                 "en": "Spicy Stuffed Squid",
                 "img": "spicy stuffed squid salad.jpg",
-                "price": 15
+                "price": 18,
+                "unit": "3 ตัว"
             },
             {
                 "id": "item_lolxvnzii",
