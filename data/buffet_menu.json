@@ -220,8 +220,8 @@
                 "th": "แกงเขียวหวานผักรวมเต้าหู้",
                 "en": "Green Curry Mixed Vegetables Tofu",
                 "img": "green_curry_veg.jpg",
-                "price": 12,
-                "unit": "ถ้วย"
+                "price": 14,
+                "unit": "750 กรัม 6 ถ้วย"
             },
             {
                 "id": "item_i4xv9bkpn",
@@ -260,8 +260,8 @@
                 "th": "แกงแดงผักรวมเต้าหู้",
                 "en": "Red Curry Mixed Vegetables Tofu",
                 "img": "red_curry_veg.jpg",
-                "price": 12,
-                "unit": "ถ้วย"
+                "price": 14,
+                "unit": "750 กรัม 6 ถ้วย"
             },
             {
                 "id": "item_o97mx07fl",
@@ -324,8 +324,8 @@
                 "th": "แกงพะแนงผักรวมเต้าหู้",
                 "en": "Panang Curry Mixed Vegetables Tofu",
                 "img": "panang_curry_veg.jpg",
-                "price": 12,
-                "unit": "ถ้วย"
+                "price": 14,
+                "unit": "750 กรัม 6 ถ้วย"
             },
             {
                 "id": "item_nbexkcqhg",
@@ -372,8 +372,8 @@
                 "th": "แกงเทโพผักรวมเต้าหู้",
                 "en": "Tae Po Curry Mixed Vegetables Tofu",
                 "img": "taepo_veg.jpg",
-                "price": 12,
-                "unit": "ถ้วย"
+                "price": 14,
+                "unit": "750 กรัม 6 ถ้วย"
             },
             {
                 "id": "item_5l42k8cs1",
