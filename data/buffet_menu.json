@@ -451,29 +451,32 @@
                 "th": "ปลาหมึกผัดพริกเผา",
                 "en": "Stir-fried Squid with Chili Paste",
                 "img": "squid_chili_paste.jpg",
-                "price": 15
+                "price": 18,
+                "unit": "จาน"
             },
             {
                 "id": "item_6u785z0ne",
                 "th": "ผัดฉ่าปลากระพง",
                 "en": "Stir-fried Sea Bass with Herbs and Spices (Phad Cha)",
                 "img": "phad_cha_seabass.jpg",
-                "price": 12
+                "price": 16,
+                "unit": "จาน"
             },
             {
                 "id": "item_yamxvxfr8",
                 "th": "ผัดเผ็ดปลากระพง",
                 "en": "Pad Phed Sea Bass (Spicy Stir-fried Red Curry)",
                 "img": "pad_phed_seabass.jpg",
-                "price": 15
+                "price": 16,
+                "unit": "จาน"
             },
             {
                 "id": "item_czpunjqxr",
                 "th": "ผัดเผ็ดกุ้ง",
                 "en": "Pad Phed Prawns (Spicy Stir-fried Red Curry)",
                 "img": "pad_phed_prawns.jpg",
-                "price": 16,
-                "unit": "750 กรัม 6 ถ้วย"
+                "price": 15,
+                "unit": "จาน"
             },
             {
                 "id": "item_e4cc147i6",
@@ -495,21 +498,23 @@
                 "en": "Pad Phed Beef (Spicy Stir-fried Red Curry)",
                 "img": "pad_phed_beef_final.jpg",
                 "price": 18,
-                "unit": "750 กรัม 6 ถ้วย"
+                "unit": "จาน"
             },
             {
                 "id": "item_0wp6jv7eb",
                 "th": "ผัดเปรี้ยวหวานไก่",
                 "en": "Sweet and Sour Chicken",
                 "img": "sweet_sour_chicken.jpg",
-                "price": 12
+                "price": 14,
+                "unit": "จาน"
             },
             {
                 "id": "item_7ajmnb8k8",
                 "th": "ผัดเปรี้ยวหวานปลากระพง",
                 "en": "Sweet and Sour Sea Bass",
                 "img": "sweet_sour_seabass.jpg",
-                "price": 15
+                "price": 16,
+                "unit": "จาน"
             },
             {
                 "id": "item_pa7w5c75g",
