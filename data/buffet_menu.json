@@ -28,7 +28,7 @@
                 "en": "Miang Kham Sea Bass",
                 "img": "58f1df5c-0f97-44c0-8327-02b4686f8f8b.jpg",
                 "price": 16,
-                "unit": "6 ชิ้น"
+                "unit": "225g จาน"
             },
             {
                 "id": "item_u48e3j6r3",
@@ -395,21 +395,24 @@
                 "th": "ปลากะพงทอดน้ำปลา",
                 "en": "Deep Fried Sea Bass with Fish Sauce",
                 "img": "seabass_fishsauce.jpg",
-                "price": 16
+                "price": 16,
+                "unit": "225g จาน"
             },
             {
                 "id": "item_zc0cfaon5",
                 "th": "ปลากะพงทอดสามรส",
                 "en": "Deep Fried Sea Bass with Three-Flavored Sauce",
                 "img": "seabass_3flavor.jpg",
-                "price": 16
+                "price": 16,
+                "unit": "225g จาน"
             },
             {
                 "id": "item_5y8jmxqvs",
                 "th": "ปลาซีบาสลุยสวน",
                 "en": "Sea Bass Fish Larb",
                 "img": "sea_bass_lui_suan.jpg",
-                "price": 16
+                "price": 16,
+                "unit": "225g จาน"
             },
             {
                 "id": "item_dpvu362o8",
@@ -417,14 +420,15 @@
                 "en": "Gaeng Som Pae Sa Sea Bass",
                 "img": "gaeng_som_pae_sa.jpg",
                 "price": 16,
-                "unit": "ถ้วย"
+                "unit": "225g จาน"
             },
             {
                 "id": "item_gca4f0q0c",
                 "th": "ปลากระพงนึ่งมะนาว",
                 "en": "Steamed Sea Bass with Lime and Garlic",
                 "img": "steamed_seabass_lime.jpg",
-                "price": 16
+                "price": 16,
+                "unit": "225g จาน"
             },
             {
                 "id": "item_0d345alpy",
