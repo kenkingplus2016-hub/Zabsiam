@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -160,8 +160,8 @@
         </a>
     </nav>
     <div class="lang-toggle">
-        <button class="lang-btn active" onclick="changeLang('th', this)">TH</button>
-        <button class="lang-btn" onclick="changeLang('en', this)">EN</button>
+        <button class="lang-btn" onclick="changeLang('th', this)">TH</button>
+        <button class="lang-btn active" onclick="changeLang('en', this)">EN</button>
     </div>
 </header>
 
@@ -277,7 +277,7 @@
 
 <script>
     let classicSets = [];
-    let currentLang = 'th';
+    let currentLang = "en";
 
     async function loadClassicMenu() {
         try {
