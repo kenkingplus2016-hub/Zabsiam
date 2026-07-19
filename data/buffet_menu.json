@@ -155,24 +155,24 @@
                 "th": "ต้มยำกุ้ง",
                 "en": "Tom Yum Goong (Spicy Shrimp Soup)",
                 "img": "tom_yum_goong.jpg",
-                "price": 5,
-                "unit": "ถ้วย"
+                "price": 45,
+                "unit": "3000 กรัม/หม้อ"
             },
             {
                 "id": "item_5oi3n13k0",
                 "th": "ต้มข่ากุ้ง",
                 "en": "Tom Kha Goong",
                 "img": "tom_kha_prawn.jpg",
-                "price": 5,
-                "unit": "ถ้วย"
+                "price": 45,
+                "unit": "3000 กรัม/หม้อ"
             },
             {
                 "id": "item_dm6zwskjv",
                 "th": "ต้มข่าไก่",
                 "en": "Tom Kha Gai (Coconut Galangal Soup)",
                 "img": "tom_kha_chicken.jpg",
-                "price": 5,
-                "unit": "ถ้วย"
+                "price": 40,
+                "unit": "3000 กรัม/หม้อ"
             }
         ]
     },
@@ -188,192 +188,192 @@
                 "th": "แกงเขียวหวานไก่",
                 "en": "Green Curry Chicken",
                 "img": "green_curry_chicken_pork.jpg",
-                "price": 14,
-                "unit": "750 กรัม 6 ถ้วย"
+                "price": 40,
+                "unit": "3000 กรัม/หม้อ"
             },
             {
                 "id": "item_g2jwt02c3",
                 "th": "แกงเขียวหวานหมู",
                 "en": "Green Curry Pork",
                 "img": "green_curry_pork.jpg",
-                "price": 14,
-                "unit": "750 กรัม 6 ถ้วย"
+                "price": 40,
+                "unit": "3000 กรัม/หม้อ"
             },
             {
                 "id": "item_d0r1c4ln1",
                 "th": "แกงเขียวหวานกุ้ง",
                 "en": "Green Curry with Prawns",
                 "img": "green_curry_prawns.jpg",
-                "price": 16,
-                "unit": "750 กรัม 6 ถ้วย"
+                "price": 45,
+                "unit": "3000 กรัม/หม้อ"
             },
             {
                 "id": "item_nbvxgywtc",
                 "th": "แกงเขียวหวานเนื้อ",
                 "en": "Green Curry Beef",
                 "img": "green_curry_beef.jpg",
-                "price": 18,
-                "unit": "750 กรัม 6 ถ้วย"
+                "price": 45,
+                "unit": "3000 กรัม/หม้อ"
             },
             {
                 "id": "item_geepwab97",
                 "th": "แกงเขียวหวานผักรวมเต้าหู้",
                 "en": "Green Curry Mixed Vegetables Tofu",
                 "img": "green_curry_veg.jpg",
-                "price": 14,
-                "unit": "750 กรัม 6 ถ้วย"
+                "price": 35,
+                "unit": "3000 กรัม/หม้อ"
             },
             {
                 "id": "item_i4xv9bkpn",
                 "th": "แกงแดงไก่",
                 "en": "Red Curry with Chicken",
                 "img": "red_curry_chicken.jpg",
-                "price": 14,
-                "unit": "750 กรัม 6 ถ้วย"
+                "price": 40,
+                "unit": "3000 กรัม/หม้อ"
             },
             {
                 "id": "item_dcbgmoghd",
                 "th": "แกงแดงหมู",
                 "en": "Red Curry with Pork",
                 "img": "red_curry_pork.jpg",
-                "price": 14,
-                "unit": "750 กรัม 6 ถ้วย"
+                "price": 40,
+                "unit": "3000 กรัม/หม้อ"
             },
             {
                 "id": "item_p0rdw5hmz",
                 "th": "แกงแดงเนื้อ",
                 "en": "Red Curry with Beef",
                 "img": "red_curry_beef.jpg",
-                "price": 18,
-                "unit": "750 กรัม 6 ถ้วย"
+                "price": 45,
+                "unit": "3000 กรัม/หม้อ"
             },
             {
                 "id": "item_xp1g4vzg3",
                 "th": "แกงแดงกุ้ง",
                 "en": "Red Curry with Prawn",
                 "img": "red_curry_prawns.jpg",
-                "price": 16,
-                "unit": "750 กรัม 6 ถ้วย"
+                "price": 45,
+                "unit": "3000 กรัม/หม้อ"
             },
             {
                 "id": "item_owgurx3xq",
                 "th": "แกงแดงผักรวมเต้าหู้",
                 "en": "Red Curry Mixed Vegetables Tofu",
                 "img": "red_curry_veg.jpg",
-                "price": 14,
-                "unit": "750 กรัม 6 ถ้วย"
+                "price": 35,
+                "unit": "3000 กรัม/หม้อ"
             },
             {
                 "id": "item_o97mx07fl",
                 "th": "แกงมัสมันไก่",
                 "en": "Massaman Chicken",
                 "img": "massaman_chicken.jpg",
-                "price": 14,
-                "unit": "750 กรัม 6 ถ้วย"
+                "price": 40,
+                "unit": "3000 กรัม/หม้อ"
             },
             {
                 "id": "item_0il9ze066",
                 "th": "แกงมัสมันเนื้อ",
                 "en": "Massaman Beef",
                 "img": "massaman_beef.jpg",
-                "price": 18,
-                "unit": "750 กรัม 6 ถ้วย"
+                "price": 45,
+                "unit": "3000 กรัม/หม้อ"
             },
             {
                 "id": "item_dv9va38bn",
                 "th": "แกงกะหรี่ไก่",
                 "en": "Thai Curry Chicken",
                 "img": "thai_curry_chicken.jpg",
-                "price": 14,
-                "unit": "750 กรัม 6 ถ้วย"
+                "price": 40,
+                "unit": "3000 กรัม/หม้อ"
             },
             {
                 "id": "item_7mnkkzj7o",
                 "th": "แกงพะแนงหมู",
                 "en": "Panang Curry with Pork",
                 "img": "panang_pork.jpg",
-                "price": 14,
-                "unit": "750 กรัม 6 ถ้วย"
+                "price": 40,
+                "unit": "3000 กรัม/หม้อ"
             },
             {
                 "id": "item_3otm2f6s3",
                 "th": "แกงพะแนงไก่",
                 "en": "Panang Curry with Chicken",
                 "img": "panang_chicken.jpg",
-                "price": 14,
-                "unit": "750 กรัม 6 ถ้วย"
+                "price": 40,
+                "unit": "3000 กรัม/หม้อ"
             },
             {
                 "id": "item_4nqvtl4rl",
                 "th": "แกงพะแนงเนื้อ",
                 "en": "Panang Curry with Beef",
                 "img": "panang_beef.jpg",
-                "price": 18,
-                "unit": "750 กรัม 6 ถ้วย"
+                "price": 45,
+                "unit": "3000 กรัม/หม้อ"
             },
             {
                 "id": "item_ahnwc36j8",
                 "th": "แกงพะแนงกุ้ง",
                 "en": "Panang Curry with Prawns",
                 "img": "panang_prawns.jpg",
-                "price": 16,
-                "unit": "750 กรัม 6 ถ้วย"
+                "price": 45,
+                "unit": "3000 กรัม/หม้อ"
             },
             {
                 "id": "item_lpl8y41uw",
                 "th": "แกงพะแนงผักรวมเต้าหู้",
                 "en": "Panang Curry Mixed Vegetables Tofu",
                 "img": "panang_curry_veg.jpg",
-                "price": 14,
-                "unit": "750 กรัม 6 ถ้วย"
+                "price": 35,
+                "unit": "3000 กรัม/หม้อ"
             },
             {
                 "id": "item_nbexkcqhg",
                 "th": "แกงเทโพเนื้อ",
                 "en": "Tae Po Curry Beef",
                 "img": "taepo_beef.jpg",
-                "price": 18,
-                "unit": "750 กรัม 6 ถ้วย"
+                "price": 45,
+                "unit": "3000 กรัม/หม้อ"
             },
             {
                 "id": "item_mzvssqvby",
                 "th": "แกงเทโพไก่",
                 "en": "Tae Po Curry Chicken",
                 "img": "taepo_chicken.jpg",
-                "price": 14,
-                "unit": "750 กรัม 6 ถ้วย"
+                "price": 40,
+                "unit": "3000 กรัม/หม้อ"
             },
             {
                 "id": "item_j90037r8x",
                 "th": "แกงเทโพกุ้ง",
                 "en": "Tae Po Curry Prawn",
                 "img": "taepo_prawn.jpg",
-                "price": 16,
-                "unit": "750 กรัม 6 ถ้วย"
+                "price": 45,
+                "unit": "3000 กรัม/หม้อ"
             },
             {
                 "id": "item_h3o6ly72u",
                 "th": "แกงเทโพหมู",
                 "en": "Tae Po Curry Pork",
                 "img": "taepo_pork_new.jpg",
-                "price": 14,
-                "unit": "750 กรัม 6 ถ้วย"
+                "price": 40,
+                "unit": "3000 กรัม/หม้อ"
             },
             {
                 "id": "item_5l75grdse",
                 "th": "แกงเทโพหมูสามชั้น",
                 "en": "Tae Po Curry Pork Belly",
                 "img": "taepo_porkbelly.jpg",
-                "price": 14,
-                "unit": "750 กรัม 6 ถ้วย"
+                "price": 40,
+                "unit": "3000 กรัม/หม้อ"
             },
             {
                 "id": "item_3clv38eoe",
                 "th": "แกงเทโพผักรวมเต้าหู้",
                 "en": "Tae Po Curry Mixed Vegetables Tofu",
                 "img": "taepo_veg.jpg",
-                "price": 14,
-                "unit": "750 กรัม 6 ถ้วย"
+                "price": 35,
+                "unit": "3000 กรัม/หม้อ"
             },
             {
                 "id": "item_5l42k8cs1",
@@ -600,6 +600,14 @@
                 "img": "hatyai_fried_chicken.jpg",
                 "price": 14,
                 "unit": "ตัว"
+            },
+            {
+                "id": "item_duckcurry_1784464708234",
+                "th": "แกงเผ็ดเป็ดย่าง",
+                "en": "Roasted Duck Red Curry",
+                "img": "d4df9605-e117-4cd1-9c6a-ff5536551b9d.jpg",
+                "price": 45,
+                "unit": "3000 กรัม/หม้อ"
             }
         ]
     },
