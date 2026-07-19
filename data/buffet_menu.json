@@ -443,7 +443,8 @@
                 "th": "กุ้งแม่น้ำย่าง",
                 "en": "Grilled River Prawns",
                 "img": "grilled_river_prawns.jpg",
-                "price": 45
+                "price": 45,
+                "unit": "2 ตัว"
             },
             {
                 "id": "item_61ec9mqso",
