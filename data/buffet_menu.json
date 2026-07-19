@@ -824,48 +824,48 @@
                 "th": "ขนมชั้นใบเตย",
                 "en": "Pandan Layer Sweet",
                 "img": "khanom_chan_pandan.jpg",
-                "price": 8,
-                "unit": "2 ชิ้น"
+                "price": 22,
+                "unit": "25 ชิ้น/ถาด"
             },
             {
                 "id": "item_mx46vlryb",
                 "th": "ขนมชั้นอัญชัน",
                 "en": "Butterfly Pea Layer Sweet",
                 "img": "khanom_chan_butterfly_pea.jpg",
-                "price": 8,
-                "unit": "2 ชิ้น"
+                "price": 22,
+                "unit": "25 ชิ้น/ถาด"
             },
             {
                 "id": "item_4x37ftxwo",
                 "th": "วุ้นกะทิใบเตย",
                 "en": "Pandan Coconut Jelly",
                 "img": "pandan_coconut_jelly.jpg",
-                "price": 8,
-                "unit": "2 ชิ้น"
+                "price": 22,
+                "unit": "25 ชิ้น/ถาด"
             },
             {
                 "id": "item_dkeal6jqd",
                 "th": "วุ้นกะทิอัญชันมะพร้าวอ่อน",
                 "en": "Butterfly Pea Coconut Jelly",
                 "img": "butterfly_pea_coconut_jelly.jpg",
-                "price": 8,
-                "unit": "2 ชิ้น"
+                "price": 22,
+                "unit": "25 ชิ้น/ถาด"
             },
             {
                 "id": "item_7bpwz9fhh",
                 "th": "ขนมหม้อแกง",
                 "en": "Khanom Mo Kaeng",
                 "img": "khanom_mo_kaeng.jpg",
-                "price": 8,
-                "unit": "2 ชิ้น"
+                "price": 22,
+                "unit": "25 ชิ้น/ถาด"
             },
             {
                 "id": "item_lnrjc9b18",
                 "th": "ขนมเปียกปูน",
                 "en": "Khanom Piak Poon (Pandan Sweet Pudding)",
                 "img": "khanom_piak_poon.jpg",
-                "price": 8,
-                "unit": "2 ชิ้น"
+                "price": 22,
+                "unit": "25 ชิ้น/ถาด"
             },
             {
                 "id": "item_2657use5q",
