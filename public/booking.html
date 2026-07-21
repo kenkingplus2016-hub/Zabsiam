@@ -170,6 +170,10 @@
                         <span style="font-weight:bold;">£<span id="cart-classic-price">0.00</span></span>
                     </div>
                     <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                        <span id="lbl-total-catering-full" style="color:#666;">ยอดเต็ม 100% (จัดเลี้ยง):</span>
+                        <span style="font-weight:bold;">£<span id="cart-catering-full">0.00</span></span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
                         <span id="lbl-total-catering" style="color:#666;">ยอดมัดจำ 50% (จัดเลี้ยง):</span>
                         <span style="font-weight:bold; color:var(--dark-green);">£<span id="cart-catering-deposit">0.00</span></span>
                     </div>
@@ -247,14 +251,24 @@
             <!-- Payment Section -->
             <h3 id="t-payment" style="color:var(--dark-green); margin-top:20px;">วิธีชำระเงินมัดจำ / Payment Method</h3>
             <div class="payment-methods">
-                <div class="pay-option active" onclick="selectPay(this, 'Transfer')">
-                    <i class="fas fa-university"></i>
-                    <span id="p-transfer">โอนเงิน<br>Bank Transfer</span>
-                </div>
-                <div class="pay-option" onclick="selectPay(this, 'Card')">
+                <div class="pay-option active" style="cursor: default; width: 100%;">
                     <i class="far fa-credit-card"></i>
                     <span id="p-card">บัตรเครดิต<br>Credit Card</span>
                 </div>
+            </div>
+
+            <div id="catering-payment-options" style="display:none; margin-top:20px; padding:15px; border:1px solid #d4af37; border-radius:8px; background-color:#fffdf5;">
+                <h4 style="color:var(--dark-green); margin-top:0; margin-bottom:10px; font-size:1rem;" id="t-catering-pay">เลือกรูปแบบการชำระเงิน (จัดเลี้ยง) / Catering Payment Option</h4>
+                
+                <label style="display:flex; align-items:center; cursor:pointer; margin-bottom:10px;">
+                    <input type="radio" name="cateringPayType" value="deposit" checked onchange="toggleCateringPayment(false)" style="margin-right:10px; width:18px; height:18px; accent-color:var(--gold);">
+                    <span id="opt-deposit-text" style="font-size:0.95rem;">ชำระมัดจำ 50% / Pay 50% Deposit</span>
+                </label>
+                
+                <label style="display:flex; align-items:center; cursor:pointer;">
+                    <input type="radio" name="cateringPayType" value="full" onchange="toggleCateringPayment(true)" style="margin-right:10px; width:18px; height:18px; accent-color:var(--gold);">
+                    <span id="opt-full-text" style="font-size:0.95rem;">ชำระเต็มจำนวน 100% / Pay 100% Full Amount</span>
+                </label>
             </div>
 
             <div class="deposit-alert">
@@ -269,9 +283,10 @@
 
 <script>
     let currentLang = "en";
-    let selectedPaymentMethod = 'PromptPay';
+    let selectedPaymentMethod = 'Card';
     let finalAmountToPay = 0;
     let totalItemsCount = 0;
+    let isFullPayment = false;
     
     function renderCartSummary() {
         const cart = getCart();
@@ -323,8 +338,8 @@
                         </div>
                         <div style="font-size:0.85rem; color:#888;">
                             £${item.price.toFixed(2)} / ${currentLang === 'th' ? item.unit_th : item.unit_en}
-                            <span style="display:inline-block; margin-left:8px; padding:2px 6px; background:${isCatering ? 'rgba(212,175,55,0.2)' : '#e8f5e9'}; color:${isCatering ? '#b08d00' : '#2e7d32'}; border-radius:10px; font-size:0.75rem; font-weight:bold;">
-                                ${isCatering ? (currentLang === 'th' ? 'มัดจำ 50%' : '50% Deposit') : (currentLang === 'th' ? 'ชำระเต็มจำนวน' : 'Full Payment')}
+                            <span style="display:inline-block; margin-left:8px; padding:2px 6px; background:${(isCatering && !isFullPayment) ? 'rgba(212,175,55,0.2)' : '#e8f5e9'}; color:${(isCatering && !isFullPayment) ? '#b08d00' : '#2e7d32'}; border-radius:10px; font-size:0.75rem; font-weight:bold;">
+                                ${isCatering ? (isFullPayment ? (currentLang === 'th' ? 'ชำระเต็มจำนวน' : 'Full Payment') : (currentLang === 'th' ? 'มัดจำ 50%' : '50% Deposit')) : (currentLang === 'th' ? 'ชำระเต็มจำนวน' : 'Full Payment')}
                             </span>
                         </div>
                         ${optionsHtml}
@@ -350,13 +365,28 @@
         
         container.innerHTML = html;
         
-        const cateringDeposit = cateringTotal / 2;
+        if (document.getElementById('catering-payment-options')) {
+            document.getElementById('catering-payment-options').style.display = cateringTotal > 0 ? 'block' : 'none';
+        }
+        
+        const cateringDeposit = isFullPayment ? cateringTotal : (cateringTotal / 2);
         finalAmountToPay = classicTotal + cateringDeposit;
         
+        document.getElementById('lbl-total-catering').innerText = isFullPayment 
+            ? (currentLang === 'th' ? "ยอดจัดเลี้ยง (ชำระเต็ม):" : "Catering (Full):")
+            : (currentLang === 'th' ? "ยอดมัดจำ 50% (จัดเลี้ยง):" : "50% Deposit (Catering):");
+        
+        document.getElementById('lbl-total-catering-full').innerText = currentLang === 'th' ? "ยอดเต็ม 100% (จัดเลี้ยง):" : "100% Full Amount (Catering):";
+            
         document.getElementById('cart-classic-price').innerText = classicTotal.toFixed(2);
+        document.getElementById('cart-catering-full').innerText = cateringTotal.toFixed(2);
         document.getElementById('cart-catering-deposit').innerText = cateringDeposit.toFixed(2);
         document.getElementById('cart-total-to-pay').innerText = finalAmountToPay.toFixed(2);
     }
+    window.toggleCateringPayment = function(isFull) {
+        isFullPayment = isFull;
+        renderCartSummary();
+    };
     
     window.changeQty = function(index, delta) {
         let cart = getCart();
@@ -473,8 +503,13 @@
 
         document.getElementById('lbl-cart-title').innerText = lang === 'th' ? 'ตะกร้าสินค้า / Your Cart' : 'Your Cart';
         document.getElementById('lbl-total-classic').innerText = lang === 'th' ? 'ยอดเต็มจำนวน (กล่อง/ของหวาน):' : 'Full Payment (Boxes/Desserts):';
+        document.getElementById('lbl-total-catering-full').innerText = lang === 'th' ? 'ยอดเต็ม 100% (จัดเลี้ยง):' : '100% Full Amount (Catering):';
         document.getElementById('lbl-total-catering').innerText = lang === 'th' ? 'ยอดมัดจำ 50% (จัดเลี้ยง):' : '50% Deposit (Catering):';
         document.getElementById('lbl-amount-to-pay').innerText = lang === 'th' ? 'ยอดชำระเบื้องต้น / Amount to Pay Now:' : 'Amount to Pay Now:';
+        
+        if(document.getElementById('t-catering-pay')) document.getElementById('t-catering-pay').innerText = lang === 'th' ? 'เลือกรูปแบบการชำระเงิน (จัดเลี้ยง) / Catering Payment Option' : 'Catering Payment Option';
+        if(document.getElementById('opt-deposit-text')) document.getElementById('opt-deposit-text').innerText = lang === 'th' ? 'ชำระมัดจำ 50% / Pay 50% Deposit' : 'Pay 50% Deposit';
+        if(document.getElementById('opt-full-text')) document.getElementById('opt-full-text').innerText = lang === 'th' ? 'ชำระเต็มจำนวน 100% / Pay 100% Full Amount' : 'Pay 100% Full Amount';
         
         document.getElementById('t-connect').innerText = t.connect;
         document.getElementById('t-booking').innerText = t.booking;
@@ -591,3 +626,4 @@ s0.parentNode.insertBefore(s1,s0);
     <script src="js/cart_v2.js"></script>
 </body>
 </html>
+
