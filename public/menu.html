@@ -56,7 +56,16 @@
         .swiper-pagination-bullet-active {
             background: #D4AF37 !important;
         }
-    </style>
+    
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .filter-btn {
+            @apply px-5 py-2 rounded-full text-sm font-semibold border border-gray-300 text-gray-600 hover:border-dark-green hover:text-dark-green transition-colors cursor-pointer bg-white;
+        }
+        .filter-btn.active {
+            @apply bg-dark-green text-white border-dark-green;
+        }
+        </style>
     <link rel="stylesheet" href="responsive.css">
     <link rel="stylesheet" href="light-theme.css">
 
@@ -151,21 +160,16 @@
             </div>
         </div>
         
-        <!-- Divider before a la carte -->
-        <div class="flex items-center justify-center gap-4 mb-2 mt-4">
-            <div class="h-px bg-gold flex-1 max-w-[150px]"></div>
-            <h3 class="text-xl md:text-2xl font-bold text-dark-green font-prompt text-center">
-                A La Carte Trays
-            </h3>
-            <div class="h-px bg-gold flex-1 max-w-[150px]"></div>
-        </div>
-        <p class="text-center text-gray-500 font-prompt text-sm mb-2">
-            
-            Or scroll down to order individual trays from our menu.
-        </p>
-    </section>
+        </section>
 
-    <main class="w-full max-w-[1200px] mx-auto px-5 py-10" id="buffet-container">
+    <!-- Category Filter Bar -->
+    <div class="sticky top-[80px] md:top-[120px] z-[900] bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm mb-6 w-full hidden md:block">
+        <div class="max-w-[1200px] mx-auto px-5 py-3 overflow-x-auto whitespace-nowrap hide-scrollbar flex gap-2" id="category-filter-bar">
+            <!-- Filter buttons injected here -->
+        </div>
+    </div>
+    
+    <main class="w-full max-w-[1200px] mx-auto px-5 py-6" id="buffet-container">
         <!-- Rendered by JS -->
         <div class="text-center py-10"><i class="fas fa-spinner fa-spin text-3xl text-gold"></i><p class="mt-3 text-gray-500">Loading Menu...</p></div>
     </main>
@@ -228,41 +232,72 @@
             }
         }
 
+        
+        let currentCategory = 'all';
+
         function renderBuffet() {
+            renderFilters();
+            renderGrid();
+        }
+
+        function renderFilters() {
+            const filterContainer = document.getElementById('category-filter-bar');
+            if (!filterContainer) return;
+            
+            let html = `<button class="filter-btn ${currentCategory === 'all' ? 'active' : ''}" onclick="filterCategory('all')">All Dishes</button>`;
+            
+            buffetData.forEach(category => {
+                if (category.id === 'services') return;
+                const catTitle = category.title.en || category.title.th || category.title;
+                const isActive = currentCategory === category.id ? 'active' : '';
+                html += `<button class="filter-btn ${isActive}" onclick="filterCategory('${category.id}')">${catTitle}</button>`;
+            });
+            
+            filterContainer.innerHTML = html;
+        }
+
+        window.filterCategory = function(catId) {
+            currentCategory = catId;
+            renderFilters();
+            renderGrid();
+            window.scrollTo({ top: document.getElementById('category-filter-bar').offsetTop - 100, behavior: 'smooth' });
+        };
+
+        function renderGrid() {
             const container = document.getElementById('buffet-container');
             let html = '';
 
             buffetData.forEach(category => {
                 if (category.id === 'services') return;
+                if (currentCategory !== 'all' && category.id !== currentCategory) return;
+                
+                const catTitle = category.title.en || category.title.th || category.title;
+                
                 html += `
-                    <div class="mb-12">
-                        <div class="flex items-center gap-4 mb-6">
-                            <h2 class="text-2xl md:text-3xl font-bold text-dark-green font-prompt border-l-4 border-gold pl-4">${category.title.en || category.title.th || category.title}</h2>
+                    <div class="mb-12" id="section-${category.id}">
+                        <div class="flex items-center gap-4 mb-6 pb-2 border-b-2 border-gray-100">
+                            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 font-prompt">${catTitle}</h2>
                         </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
                 `;
 
                 category.items.forEach(item => {
                     const imgSrc = item.img === 'logo.png' ? 'logo.png' : (item.img.startsWith('http') ? item.img : `images/${item.img}`);
-                    const unit = item.unit || 'จาน';
+                    const unit = item.unit || 'Portion';
                     
                     html += `
-                        <div class="bg-white rounded-xl overflow-hidden border border-[#eaeaea] transition-all duration-300 hover:-translate-y-1 hover:border-gold hover:shadow-[0_10px_20px_rgba(212,175,55,0.15)] flex flex-col relative group" id="card-${item.id}">
-                            <div class="absolute top-2 left-2 z-10 flex gap-2">
-                                <button onclick="showQRCode('${item.id}', '${item.en}', ${item.price})" class="bg-white/90 text-dark-green w-8 h-8 rounded-full flex items-center justify-center shadow-md hover:bg-gold hover:text-white transition-colors" title="QR Code">
-                                    <i class="fas fa-qrcode"></i>
-                                </button>
+                        <div class="bg-white rounded-lg overflow-hidden flex flex-col relative group" id="card-${item.id}">
+                            <div class="relative w-full aspect-square overflow-hidden bg-gray-50 mb-3 rounded-lg">
+                                <img src="${imgSrc}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='logo.png';">
+                                <div class="absolute top-2 right-2 bg-white/90 backdrop-blur-sm text-dark-green px-2.5 py-1 rounded-md font-bold text-sm shadow-sm border border-gray-100">
+                                    £${item.price}
+                                </div>
                             </div>
-                            <div class="absolute top-2 right-2 z-10">
-                                <div class="bg-gold text-dark-green px-3 py-1 rounded-full font-bold text-sm shadow-md">£${item.price} / ${unit}</div>
-                            </div>
-                            <div class="h-[180px] overflow-hidden">
-                                <img src="${imgSrc}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='logo.png';">
-                            </div>
-                            <div class="p-4 flex flex-col flex-1">
-                                <h3 class="font-bold text-dark-green text-base mb-3 flex-1 leading-snug">${item.en}</h3>
-                                <button onclick="addBuffetItem('${item.id}', '${item.en}', ${item.price}, '${imgSrc}')" class="w-full bg-dark-green text-gold py-2 rounded-full font-bold text-sm hover:bg-gold hover:text-dark-green transition-colors border border-dark-green mt-auto">
-                                    <i class="fas fa-plus mr-1"></i> Add to Cart
+                            <div class="flex flex-col flex-1 px-1">
+                                <h3 class="font-bold text-gray-800 text-[15px] mb-1 leading-snug flex-1">${item.en}</h3>
+                                <p class="text-[11px] text-gray-500 mb-3 uppercase tracking-wider">${unit}</p>
+                                <button onclick="addBuffetItem('${item.id}', '${item.en}', ${item.price}, '${imgSrc}')" class="w-full bg-[#1B3022] text-white py-2.5 rounded-md font-bold text-sm hover:bg-[#2c4c36] transition-colors flex items-center justify-center gap-2 mt-auto">
+                                    <i class="fas fa-shopping-basket"></i> Add to basket
                                 </button>
                             </div>
                         </div>
@@ -274,9 +309,7 @@
 
             container.innerHTML = html;
         }
-
-
-        let currentPackage = null;
+    let currentPackage = null;
         
         function openPackageModal(id, thName, enName, price, img, thUnit, enUnit) {
             currentPackage = { id, name_th: thName, name_en: enName, price, img, unit_th: thUnit, unit_en: enUnit };
