@@ -1197,7 +1197,8 @@
                 "id": "r24",
                 "name": {
                     "th": "วุ้นกะทิใบเตย",
-                    "en": "Pandan Coconut Jelly"
+                    "en": "Pandan Coconut Jelly",
+                    "img": "Pandan Coconut Jelly.jpg"
                 },
                 "price": 12,
                 "unit": "12 ชิ้น / 12 Pcs",
@@ -1270,7 +1271,8 @@
                 "id": "r25",
                 "name": {
                     "th": "วุ้นกะทิอัญชันมะพร้าวอ่อน",
-                    "en": "Butterfly Pea Coconut Jelly with Young Coconut"
+                    "en": "Butterfly Pea Coconut Jelly with Young Coconut",
+                    "img": "Butterfly Pea Coconut Jelly with Young Coconut.jpg"
                 },
                 "price": 12,
                 "unit": "12 ชิ้น / 12 Pcs",
@@ -1346,7 +1348,8 @@
                 "id": "r26",
                 "name": {
                     "th": "ขนมหม้อแกง",
-                    "en": "Khanom Mo Kaeng"
+                    "en": "Khanom Mo Kaeng",
+                    "img": "Khanom Mo Kaeng.jpg"
                 },
                 "price": 12,
                 "unit": "12 ชิ้น / 12 Pcs",
