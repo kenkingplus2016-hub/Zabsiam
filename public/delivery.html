@@ -135,13 +135,7 @@
     </script>
 
 
-<style>
-  html[lang="th"] .nav-en { display: none !important; }
-  html[lang="th"] .nav-th { display: inline !important; }
-  html[lang="en"] .nav-th { display: none !important; }
-  html[lang="en"] .nav-en { display: inline !important; }
-</style>
-    <link rel="stylesheet" href="css/cart.css">
+<link rel="stylesheet" href="css/cart.css">
 </head>
 <body>
 
@@ -149,11 +143,11 @@
     <img src="logo.png" alt="Khrua Thai London" class="brand-logo">
     <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
         <nav>
-        <a href="index.html" id="nav-home" class="nav-link"><span class="nav-th">หน้าแรก</span><span class="nav-en">Home</span></a>
-        <a href="menu.html" id="nav-menu" class="nav-link"><span class="nav-th">เซตตำรับไทย</span><span class="nav-en">Authentic Thai Sets</span></a>
+        <a href="index.html" id="nav-home" class="nav-link">Home</a>
+        <a href="menu.html" id="nav-menu" class="nav-link">Authentic Thai Sets</a>
         <a href="royal.html" id="nav-royal" class="nav-link">The Royal Siam Gathering</a>
-        <a href="delivery.html" id="nav-delivery" class="nav-link active"><span class="nav-th">ดิลิเวอรีบ็อกซ์เซต</span><span class="nav-en">Delivery Box Sets</span></a>
-        <a href="desserts.html" id="nav-desserts" class="nav-link"><span class="nav-th">ของหวาน</span><span class="nav-en">Desserts</span></a>
+        <a href="delivery.html" id="nav-delivery" class="nav-link active">Delivery Box Sets</a>
+        <a href="desserts.html" id="nav-desserts" class="nav-link">Desserts</a>
         <a href="booking.html" id="nav-booking" class="nav-link" style="position:relative; padding-right:15px; display:inline-flex; align-items:center;">
             <i class="fas fa-shopping-cart" style="font-size: 1.3rem;"></i>
             <span id="nav-cart-badge-inner" style="position:absolute; top:-8px; right:-5px; background:#FF3B30; color:white; font-size:0.75rem; width:20px; height:20px; border-radius:50%; display:none; align-items:center; justify-content:center; font-weight:bold; border:2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">0</span>
@@ -266,7 +260,7 @@
             
             <!-- Quantity Selector -->
             <div id="modal-qty-section" style="margin-top:20px; text-align:center;">
-                <h4 style="color:var(--dark-green); margin:0 0 10px 0; font-size:1rem;"><span class="nav-th">จำนวน / Quantity</span><span class="nav-en">Quantity</span></h4>
+                <h4 style="color:var(--dark-green); margin:0 0 10px 0; font-size:1rem;">Quantity</h4>
                 <div style="display:inline-flex; align-items:center; border:2px solid var(--gold); border-radius:25px; overflow:hidden; background:#fff;">
                     <button type="button" onclick="decreaseModalQty()" style="border:none; background:var(--cream); color:var(--dark-green); width:40px; height:40px; font-weight:bold; font-size:1.2rem; cursor:pointer;">-</button>
                     <input type="text" id="modal-qty-input" value="1" readonly style="width:50px; text-align:center; border:none; font-weight:bold; font-size:1.1rem; color:var(--dark-green); pointer-events:none;">

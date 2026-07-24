@@ -81,13 +81,7 @@
     </script>
 
 
-<style>
-  html[lang="th"] .nav-en { display: none !important; }
-  html[lang="th"] .nav-th { display: inline !important; }
-  html[lang="en"] .nav-th { display: none !important; }
-  html[lang="en"] .nav-en { display: inline !important; }
-</style>
-    <link href="css/cart.css" rel="stylesheet">
+<link href="css/cart.css" rel="stylesheet">
 </head>
 <body class="font-prompt bg-cream text-gray-800 overflow-x-hidden">
 
@@ -95,21 +89,17 @@
     <img src="logo.png" alt="Khrua Thai London" class="h-[100px] md:h-[220px] w-auto block mx-auto  transition-transform duration-300">
     <div class="mobile-menu-btn absolute top-6 right-6 md:hidden text-3xl cursor-pointer text-dark-green"><i class="fas fa-bars"></i></div>
     <nav class="flex justify-center flex-wrap gap-2.5 mt-3 px-4 hidden md:flex" id="main-nav">
-        <a href="index.html" id="nav-home" class="nav-link"><span class="nav-th">หน้าแรก</span><span class="nav-en">Home</span></a>
-        <a href="menu.html" id="nav-menu" class="nav-link"><span class="nav-th">เซตตำรับไทย</span><span class="nav-en">Authentic Thai Sets</span></a>
+        <a href="index.html" id="nav-home" class="nav-link">Home</a>
+        <a href="menu.html" id="nav-menu" class="nav-link">Authentic Thai Sets</a>
         <a href="royal.html" id="nav-royal" class="nav-link active">The Royal Siam Gathering</a>
-        <a href="delivery.html" id="nav-delivery" class="nav-link"><span class="nav-th">ดิลิเวอรีบ็อกซ์เซต</span><span class="nav-en">Delivery Box Sets</span></a>
-        <a href="desserts.html" id="nav-desserts" class="nav-link"><span class="nav-th">ของหวาน</span><span class="nav-en">Desserts</span></a>
+        <a href="delivery.html" id="nav-delivery" class="nav-link">Delivery Box Sets</a>
+        <a href="desserts.html" id="nav-desserts" class="nav-link">Desserts</a>
         <a href="booking.html" id="nav-booking" class="nav-link" style="position:relative; padding-right:15px; display:inline-flex; align-items:center;">
             <i class="fas fa-shopping-cart" style="font-size: 1.3rem;"></i>
             <span id="nav-cart-badge-inner" style="position:absolute; top:-8px; right:-5px; background:#FF3B30; color:white; font-size:0.75rem; width:20px; height:20px; border-radius:50%; display:none; align-items:center; justify-content:center; font-weight:bold; border:2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">0</span>
         </a>
     </nav>
-    <div class="flex justify-center gap-2 mt-2.5">
-        <button class="lang-btn active" onclick="changeLang('th', this)">TH</button>
-        <button class="lang-btn" onclick="changeLang('en', this)">EN</button>
-    </div>
-</header>
+    </header>
 
 <section class="bg-white py-[70px] px-5 text-center border-b-2 border-gold">
     <span class="text-gold tracking-[4px] uppercase text-xs block mb-3 font-semibold" id="hero-tag">Luxury Royal Banquet & Canapés</span>
