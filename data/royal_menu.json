@@ -1341,6 +1341,38 @@
                         "(TH) เทคนิคการทำ"
                     ]
                 }
+            },
+            {
+                "id": "r26",
+                "name": {
+                    "th": "ขนมหม้อแกง",
+                    "en": "Khanom Mo Kaeng"
+                },
+                "price": 12,
+                "unit": "12 ชิ้น / 12 Pcs",
+                "desc": {
+                    "th": "ขนมหม้อแกงสูตรโบราณ อบจนหน้าเหลืองหอม หวานมันกำลังดี โรยหน้าด้วยอัลมอนด์สไลด์บางๆ และอบเชย",
+                    "en": "Traditional baked Thai custard with coconut milk and palm sugar, beautifully garnished with sliced almonds and cinnamon."
+                },
+                "img": "Khanom Mo Kaeng.jpg",
+                "main_ingredients": {
+                    "th": [
+                        "เผือก/ถั่วทองนึ่งสุก",
+                        "ไข่เป็ดและไข่ไก่",
+                        "หัวกะทิคั้นสด",
+                        "น้ำตาลมะพร้าวแท้",
+                        "อัลมอนด์สไลด์",
+                        "อบเชย (ตกแต่ง)"
+                    ],
+                    "en": [
+                        "Steamed Taro / Mung Bean",
+                        "Duck & Chicken Eggs",
+                        "Fresh Coconut Cream",
+                        "Palm Sugar",
+                        "Sliced Almonds",
+                        "Cinnamon stick (Garnish)"
+                    ]
+                }
             }
         ]
     }
