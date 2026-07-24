@@ -381,7 +381,7 @@
                 "en": "Roasted Duck Red Curry",
                 "img": "red_curry_duck.jpg",
                 "price": 45,
-                "unit": "ถ้วย"
+                "unit": "3000 กรัม/หม้อ"
             },
             {
                 "id": "item_5l42k8cs1",
@@ -831,56 +831,56 @@
                 "th": "ลอดช่องสิงคโปร์",
                 "en": "Lod Chong Singapore",
                 "img": "Lod Chong Singapore.jpg",
-                "price": 7.95,
-                "unit": "ถ้วย"
+                "price": 69,
+                "unit": "10 ถ้วย / 10 Bowls"
             },
             {
                 "id": "item_uqe004wjj",
                 "th": "ทับทิมกรอบ",
                 "en": "Tub Tim Krop",
                 "img": "tub tim krop.jpg",
-                "price": 7.95,
-                "unit": "ถ้วย"
+                "price": 69,
+                "unit": "10 ถ้วย / 10 Bowls"
             },
             {
                 "id": "item_kd2pgn0wa",
                 "th": "บวชชีกล้วย",
                 "en": "Banana in Coconut Milk",
                 "img": "Banana with Condensed Milk.jpg",
-                "price": 7.95,
-                "unit": "ถ้วย"
+                "price": 69,
+                "unit": "10 ถ้วย / 10 Bowls"
             },
             {
                 "id": "item_dbq8x2pru",
                 "th": "ขนมครองแครงอัญชันมะพร้าวอ่อน",
                 "en": "Krong Krang Butterfly Pea with Young Coconut",
                 "img": "krong_krang_butterfly_pea.jpg",
-                "price": 7.95,
-                "unit": "ถ้วย"
+                "price": 69,
+                "unit": "10 ถ้วย / 10 Bowls"
             },
             {
                 "id": "item_m1u691ydo",
                 "th": "บัวลอยสาคู",
                 "en": "Bua Loy Sago",
                 "img": "bua_loy_sago.jpg",
-                "price": 7.95,
-                "unit": "ถ้วย"
+                "price": 69,
+                "unit": "10 ถ้วย / 10 Bowls"
             },
             {
                 "id": "item_oee9nwl71",
                 "th": "บัวลอย 5 สี",
                 "en": "5-Color Bua Loy",
                 "img": "bua_loy_5_color.jpg",
-                "price": 7.95,
-                "unit": "ถ้วย"
+                "price": 69,
+                "unit": "10 ถ้วย / 10 Bowls"
             },
             {
                 "id": "item_l23p9p0m6",
                 "th": "ลอดช่องอัญชันใบเตย",
                 "en": "Lod Chong Butterfly Pea & Pandan",
                 "img": "lod_chong_butterfly_pea.jpg",
-                "price": 7.95,
-                "unit": "ถ้วย"
+                "price": 69,
+                "unit": "10 ถ้วย / 10 Bowls"
             },
             {
                 "id": "item_wiryj5kc6",
