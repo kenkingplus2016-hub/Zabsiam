@@ -12,7 +12,7 @@
                 "en": "Som Tum Thai",
                 "img": "16e55889-df22-4b4b-8d4b-493784a03d23.jpg",
                 "price": 12,
-                "unit": "12 ชิ้น"
+                "unit": "12 pcs"
             },
             {
                 "id": "item_2bsa6jstk",
@@ -20,7 +20,7 @@
                 "en": "Pomelo Salad with Shrimp",
                 "img": "c9dcd15e-891c-455d-ae3c-2c37f74c1b96.jpg",
                 "price": 16,
-                "unit": "12 ชิ้น"
+                "unit": "12 pcs"
             },
             {
                 "id": "item_h6fjm5s4s",
@@ -28,7 +28,7 @@
                 "en": "Miang Kham Sea Bass",
                 "img": "58f1df5c-0f97-44c0-8327-02b4686f8f8b.jpg",
                 "price": 16,
-                "unit": "12 ชิ้น"
+                "unit": "12 pcs"
             },
             {
                 "id": "item_5q6xay7hm",
@@ -36,7 +36,7 @@
                 "en": "Larb Gai / Pork",
                 "img": "ec66c9e5-348b-49d0-b53a-94f58b3b941f.jpg",
                 "price": 14,
-                "unit": "12 ชิ้น"
+                "unit": "12 pcs"
             },
             {
                 "id": "item_rpwztizvb",
@@ -44,7 +44,7 @@
                 "en": "Pomelo Miang Kham with Shrimp",
                 "img": "pomeloleaf wrap.jpg",
                 "price": 16,
-                "unit": "12 ชิ้น"
+                "unit": "12 pcs"
             },
             {
                 "id": "item_4ccsh455q",
@@ -52,7 +52,7 @@
                 "en": "Rice Skin Dumplings",
                 "img": "58b9011b-b7e8-4704-a7ad-ac8377965b8a.jpg",
                 "price": 14,
-                "unit": "12 ชิ้น"
+                "unit": "12 pcs"
             },
             {
                 "id": "item_t67oir607",
@@ -60,7 +60,7 @@
                 "en": "Pork Satay",
                 "img": "90fda180-3c60-4ede-b8f6-d23ece956883.jpg",
                 "price": 12,
-                "unit": "12 ไม้"
+                "unit": "12 skewers"
             },
             {
                 "id": "item_txs2mmeyb",
@@ -68,7 +68,7 @@
                 "en": "Chicken Satay",
                 "img": "chicken_satay_new.jpg",
                 "price": 12,
-                "unit": "12 ไม้"
+                "unit": "12 skewers"
             },
             {
                 "id": "item_1ax624iq8",
@@ -76,7 +76,7 @@
                 "en": "Sai Ua (Northern Thai Sausage)",
                 "img": "sai_ua_new.jpg",
                 "price": 14,
-                "unit": "120 กรัม"
+                "unit": "120g"
             },
             {
                 "id": "item_qh3xhjx8e",
@@ -84,7 +84,7 @@
                 "en": "Isan Sausage",
                 "img": "isan_sausage_new.jpg",
                 "price": 14,
-                "unit": "120 กรัม"
+                "unit": "120g"
             },
             {
                 "id": "item_rh14l5km2",
@@ -92,7 +92,7 @@
                 "en": "Thung Thong (Golden Bags)",
                 "img": "thung_thong_new.jpg",
                 "price": 16,
-                "unit": "12 ชิ้น"
+                "unit": "12 pcs"
             },
             {
                 "id": "item_98mn7rvyi",
@@ -100,7 +100,7 @@
                 "en": "Goong Hom Sabai (Shrimp in Blanket)",
                 "img": "goong_hom_sabai.jpg",
                 "price": 16,
-                "unit": "12 ชิ้น"
+                "unit": "12 pcs"
             },
             {
                 "id": "item_s05ny7wzh",
@@ -108,7 +108,7 @@
                 "en": "Tod Mun Goong (Deep Fried Shrimp Cakes)",
                 "img": "tod_mun_goong.jpg",
                 "price": 16,
-                "unit": "12 ชิ้น"
+                "unit": "12 pcs"
             },
             {
                 "id": "item_lizqe4mc8",
@@ -116,7 +116,7 @@
                 "en": "Tom Yum Goong (Spicy Shrimp Soup)",
                 "img": "tom_yum_goong.jpg",
                 "price": 45,
-                "unit": "3000 กรัม/หม้อ"
+                "unit": "3000 g/pot"
             },
             {
                 "id": "item_5sp61u7do",
@@ -124,7 +124,7 @@
                 "en": "Pork Skewer with Milk",
                 "img": "pork skewers.jpg",
                 "price": 12,
-                "unit": "12 ไม้"
+                "unit": "12 skewers"
             },
             {
                 "id": "item_4od49b1pz",
@@ -132,7 +132,7 @@
                 "en": "Ma Hor",
                 "img": "ma ho.jpg",
                 "price": 12,
-                "unit": "12 ชิ้น"
+                "unit": "12 pcs"
             },
             {
                 "id": "item_u48e3j6r3",
@@ -140,7 +140,7 @@
                 "en": "Salmon Lui Suan Wonton",
                 "img": "e0ecdb4e-2584-48ef-ab8e-7292ae447711.jpg",
                 "price": 16,
-                "unit": "12 ชิ้น"
+                "unit": "12 pcs"
             },
             {
                 "id": "item_f0oq54jui",
@@ -148,7 +148,7 @@
                 "en": "Crispy Prawn Spring Rolls",
                 "img": "crispy_prawn_spring_rolls.jpg",
                 "price": 16,
-                "unit": "12 ชิ้น"
+                "unit": "12 pcs"
             },
             {
                 "id": "item_i8dt8y3do",
@@ -156,7 +156,7 @@
                 "en": "Fresh Spring Rolls with Enoki Mushroom",
                 "img": "fresh_spring_rolls_enoki.jpg",
                 "price": 12,
-                "unit": "12 ชิ้น"
+                "unit": "12 pcs"
             },
             {
                 "id": "item_dm6zwskjv",
@@ -164,7 +164,7 @@
                 "en": "Tom Kha Gai (Coconut Galangal Soup)",
                 "img": "tom_kha_chicken.jpg",
                 "price": 40,
-                "unit": "3000 กรัม/หม้อ"
+                "unit": "3000 g/pot"
             },
             {
                 "id": "item_5oi3n13k0",
@@ -172,7 +172,7 @@
                 "en": "Tom Kha Goong",
                 "img": "tom_kha_prawn.jpg",
                 "price": 45,
-                "unit": "3000 กรัม/หม้อ"
+                "unit": "3000 g/pot"
             }
         ]
     },
@@ -189,7 +189,7 @@
                 "en": "Green Curry Chicken",
                 "img": "green_curry_chicken_pork.jpg",
                 "price": 40,
-                "unit": "3000 กรัม/หม้อ"
+                "unit": "3000 g/pot"
             },
             {
                 "id": "item_g2jwt02c3",
@@ -197,7 +197,7 @@
                 "en": "Green Curry Pork",
                 "img": "green_curry_pork.jpg",
                 "price": 40,
-                "unit": "3000 กรัม/หม้อ"
+                "unit": "3000 g/pot"
             },
             {
                 "id": "item_d0r1c4ln1",
@@ -205,7 +205,7 @@
                 "en": "Green Curry with Prawns",
                 "img": "green_curry_prawns.jpg",
                 "price": 45,
-                "unit": "3000 กรัม/หม้อ"
+                "unit": "3000 g/pot"
             },
             {
                 "id": "item_nbvxgywtc",
@@ -213,7 +213,7 @@
                 "en": "Green Curry Beef",
                 "img": "green_curry_beef.jpg",
                 "price": 45,
-                "unit": "3000 กรัม/หม้อ"
+                "unit": "3000 g/pot"
             },
             {
                 "id": "item_i4xv9bkpn",
@@ -221,7 +221,7 @@
                 "en": "Red Curry with Chicken",
                 "img": "red_curry_chicken.jpg",
                 "price": 40,
-                "unit": "3000 กรัม/หม้อ"
+                "unit": "3000 g/pot"
             },
             {
                 "id": "item_dcbgmoghd",
@@ -229,7 +229,7 @@
                 "en": "Red Curry with Pork",
                 "img": "red_curry_pork.jpg",
                 "price": 40,
-                "unit": "3000 กรัม/หม้อ"
+                "unit": "3000 g/pot"
             },
             {
                 "id": "item_p0rdw5hmz",
@@ -237,7 +237,7 @@
                 "en": "Red Curry with Beef",
                 "img": "red_curry_beef.jpg",
                 "price": 45,
-                "unit": "3000 กรัม/หม้อ"
+                "unit": "3000 g/pot"
             },
             {
                 "id": "item_xp1g4vzg3",
@@ -245,7 +245,7 @@
                 "en": "Red Curry with Prawn",
                 "img": "red_curry_prawns.jpg",
                 "price": 45,
-                "unit": "3000 กรัม/หม้อ"
+                "unit": "3000 g/pot"
             },
             {
                 "id": "item_owgurx3xq",
@@ -253,7 +253,7 @@
                 "en": "Red Curry Mixed Vegetables Tofu",
                 "img": "red_curry_veg.jpg",
                 "price": 35,
-                "unit": "3000 กรัม/หม้อ"
+                "unit": "3000 g/pot"
             },
             {
                 "id": "item_geepwab97",
@@ -261,7 +261,7 @@
                 "en": "Green Curry Mixed Vegetables Tofu",
                 "img": "green_curry_veg.jpg",
                 "price": 35,
-                "unit": "3000 กรัม/หม้อ"
+                "unit": "3000 g/pot"
             },
             {
                 "id": "item_o97mx07fl",
@@ -269,7 +269,7 @@
                 "en": "Massaman Chicken",
                 "img": "massaman_chicken.jpg",
                 "price": 40,
-                "unit": "3000 กรัม/หม้อ"
+                "unit": "3000 g/pot"
             },
             {
                 "id": "item_0il9ze066",
@@ -277,7 +277,7 @@
                 "en": "Massaman Beef",
                 "img": "massaman_beef.jpg",
                 "price": 45,
-                "unit": "3000 กรัม/หม้อ"
+                "unit": "3000 g/pot"
             },
             {
                 "id": "item_dv9va38bn",
@@ -285,7 +285,7 @@
                 "en": "Thai Curry Chicken",
                 "img": "thai_curry_chicken.jpg",
                 "price": 40,
-                "unit": "3000 กรัม/หม้อ"
+                "unit": "3000 g/pot"
             },
             {
                 "id": "item_7mnkkzj7o",
@@ -293,7 +293,7 @@
                 "en": "Panang Curry with Pork",
                 "img": "panang_pork.jpg",
                 "price": 40,
-                "unit": "3000 กรัม/หม้อ"
+                "unit": "3000 g/pot"
             },
             {
                 "id": "item_3otm2f6s3",
@@ -301,7 +301,7 @@
                 "en": "Panang Curry with Chicken",
                 "img": "panang_chicken.jpg",
                 "price": 40,
-                "unit": "3000 กรัม/หม้อ"
+                "unit": "3000 g/pot"
             },
             {
                 "id": "item_4nqvtl4rl",
@@ -309,7 +309,7 @@
                 "en": "Panang Curry with Beef",
                 "img": "panang_beef.jpg",
                 "price": 45,
-                "unit": "3000 กรัม/หม้อ"
+                "unit": "3000 g/pot"
             },
             {
                 "id": "item_ahnwc36j8",
@@ -317,7 +317,7 @@
                 "en": "Panang Curry with Prawns",
                 "img": "panang_prawns.jpg",
                 "price": 45,
-                "unit": "3000 กรัม/หม้อ"
+                "unit": "3000 g/pot"
             },
             {
                 "id": "item_nbexkcqhg",
@@ -325,7 +325,7 @@
                 "en": "Tae Po Curry Beef",
                 "img": "taepo_beef.jpg",
                 "price": 45,
-                "unit": "3000 กรัม/หม้อ"
+                "unit": "3000 g/pot"
             },
             {
                 "id": "item_mzvssqvby",
@@ -333,7 +333,7 @@
                 "en": "Tae Po Curry Chicken",
                 "img": "taepo_chicken.jpg",
                 "price": 40,
-                "unit": "3000 กรัม/หม้อ"
+                "unit": "3000 g/pot"
             },
             {
                 "id": "item_j90037r8x",
@@ -341,7 +341,7 @@
                 "en": "Tae Po Curry Prawn",
                 "img": "taepo_prawn.jpg",
                 "price": 45,
-                "unit": "3000 กรัม/หม้อ"
+                "unit": "3000 g/pot"
             },
             {
                 "id": "item_h3o6ly72u",
@@ -349,7 +349,7 @@
                 "en": "Tae Po Curry Pork",
                 "img": "taepo_pork_new.jpg",
                 "price": 40,
-                "unit": "3000 กรัม/หม้อ"
+                "unit": "3000 g/pot"
             },
             {
                 "id": "item_5l75grdse",
@@ -357,7 +357,7 @@
                 "en": "Tae Po Curry Pork Belly",
                 "img": "taepo_porkbelly.jpg",
                 "price": 40,
-                "unit": "3000 กรัม/หม้อ"
+                "unit": "3000 g/pot"
             },
             {
                 "id": "item_3clv38eoe",
@@ -365,7 +365,7 @@
                 "en": "Tae Po Curry Mixed Vegetables Tofu",
                 "img": "taepo_veg.jpg",
                 "price": 35,
-                "unit": "3000 กรัม/หม้อ"
+                "unit": "3000 g/pot"
             },
             {
                 "id": "item_lpl8y41uw",
@@ -373,7 +373,7 @@
                 "en": "Panang Curry Mixed Vegetables Tofu",
                 "img": "panang_curry_veg.jpg",
                 "price": 35,
-                "unit": "3000 กรัม/หม้อ"
+                "unit": "3000 g/pot"
             },
             {
                 "id": "item_duckcurry_1784464708234",
@@ -381,7 +381,7 @@
                 "en": "Roasted Duck Red Curry",
                 "img": "red_curry_duck.jpg",
                 "price": 45,
-                "unit": "3000 กรัม/หม้อ"
+                "unit": "3000 g/pot"
             },
             {
                 "id": "item_5l42k8cs1",
@@ -389,7 +389,7 @@
                 "en": "Crab Curry",
                 "img": "crab_curry.jpg",
                 "price": 45,
-                "unit": "500 กรัม 2 จาน"
+                "unit": "500g / 2 plates"
             },
             {
                 "id": "item_7fpb2g6mv",
@@ -397,7 +397,7 @@
                 "en": "Fried Shrimp with Tamarind Sauce",
                 "img": "tamarind_shrimp.jpg",
                 "price": 15,
-                "unit": "12 ชิ้น"
+                "unit": "12 pcs"
             },
             {
                 "id": "item_q3o2hj7jy",
@@ -405,7 +405,7 @@
                 "en": "Deep Fried Sea Bass with Fish Sauce",
                 "img": "seabass_fishsauce.jpg",
                 "price": 16,
-                "unit": "225g จาน"
+                "unit": "225g / plate"
             },
             {
                 "id": "item_zc0cfaon5",
@@ -413,7 +413,7 @@
                 "en": "Deep Fried Sea Bass with Three-Flavored Sauce",
                 "img": "seabass_3flavor.jpg",
                 "price": 16,
-                "unit": "225g จาน"
+                "unit": "225g / plate"
             },
             {
                 "id": "item_5y8jmxqvs",
@@ -421,7 +421,7 @@
                 "en": "Sea Bass Fish Larb",
                 "img": "sea_bass_lui_suan.jpg",
                 "price": 16,
-                "unit": "225g จาน"
+                "unit": "225g / plate"
             },
             {
                 "id": "item_dpvu362o8",
@@ -429,7 +429,7 @@
                 "en": "Gaeng Som Pae Sa Sea Bass",
                 "img": "gaeng_som_pae_sa.jpg",
                 "price": 45,
-                "unit": "3000 กรัม/หม้อ"
+                "unit": "3000 g/pot"
             },
             {
                 "id": "item_gca4f0q0c",
@@ -437,7 +437,7 @@
                 "en": "Steamed Sea Bass with Lime and Garlic",
                 "img": "steamed_seabass_lime.jpg",
                 "price": 45,
-                "unit": "3000 กรัม/หม้อ"
+                "unit": "3000 g/pot"
             },
             {
                 "id": "item_0d345alpy",
@@ -445,7 +445,7 @@
                 "en": "Steamed Squid with Lime and Garlic",
                 "img": "steamed_squid_lime.jpg",
                 "price": 50,
-                "unit": "3000 กรัม/หม้อ"
+                "unit": "3000 g/pot"
             },
             {
                 "id": "item_0e6f0kd3q",
@@ -453,7 +453,7 @@
                 "en": "Grilled River Prawns",
                 "img": "grilled_river_prawns.jpg",
                 "price": 45,
-                "unit": "2 ตัว"
+                "unit": "2 pcs"
             },
             {
                 "id": "item_61ec9mqso",
@@ -461,7 +461,7 @@
                 "en": "Stir-fried Squid with Chili Paste",
                 "img": "squid_chili_paste.jpg",
                 "price": 35,
-                "unit": "1000 กรัม"
+                "unit": "1000g"
             },
             {
                 "id": "item_6u785z0ne",
@@ -469,7 +469,7 @@
                 "en": "Stir-fried Sea Bass with Herbs and Spices (Phad Cha)",
                 "img": "phad_cha_seabass.jpg",
                 "price": 35,
-                "unit": "1000 กรัม"
+                "unit": "1000g"
             },
             {
                 "id": "item_yamxvxfr8",
@@ -477,7 +477,7 @@
                 "en": "Pad Phed Sea Bass (Spicy Stir-fried Red Curry)",
                 "img": "pad_phed_seabass.jpg",
                 "price": 35,
-                "unit": "1000 กรัม"
+                "unit": "1000g"
             },
             {
                 "id": "item_w78svh7rl",
@@ -485,7 +485,7 @@
                 "en": "Pad Phed Prawns (Spicy Stir-fried Red Curry)",
                 "img": "pad_phed_prawns.jpg",
                 "price": 35,
-                "unit": "1000 กรัม"
+                "unit": "1000g"
             },
             {
                 "id": "item_ghqe2eigu",
@@ -493,7 +493,7 @@
                 "en": "Pad Phed Pork (Spicy Stir-fried Red Curry)",
                 "img": "pad_phed_pork_updated.jpg",
                 "price": 25,
-                "unit": "1000 กรัม"
+                "unit": "1000g"
             },
             {
                 "id": "item_7k4y4awa7",
@@ -501,7 +501,7 @@
                 "en": "Pad Phed Chicken (Spicy Stir-fried Red Curry)",
                 "img": "pad_phed_chicken.jpg",
                 "price": 25,
-                "unit": "1000 กรัม"
+                "unit": "1000g"
             },
             {
                 "id": "item_8nqkko3k4",
@@ -509,7 +509,7 @@
                 "en": "Pad Phed Beef (Spicy Stir-fried Red Curry)",
                 "img": "pad_phed_beef_final.jpg",
                 "price": 35,
-                "unit": "1000 กรัม"
+                "unit": "1000g"
             },
             {
                 "id": "item_czpunjqxr",
@@ -517,7 +517,7 @@
                 "en": "Pad Phed Prawns (Spicy Stir-fried Red Curry)",
                 "img": "pad_phed_prawns.jpg",
                 "price": 35,
-                "unit": "1000 กรัม"
+                "unit": "1000g"
             },
             {
                 "id": "item_e4cc147i6",
@@ -525,7 +525,7 @@
                 "en": "Pad Phed Pork (Spicy Stir-fried Red Curry)",
                 "img": "pad_phed_pork_updated.jpg",
                 "price": 25,
-                "unit": "1000 กรัม"
+                "unit": "1000g"
             },
             {
                 "id": "item_bw0qj8o0y",
@@ -533,7 +533,7 @@
                 "en": "Pad Phed Chicken (Spicy Stir-fried Red Curry)",
                 "img": "pad_phed_chicken.jpg",
                 "price": 25,
-                "unit": "1000 กรัม"
+                "unit": "1000g"
             },
             {
                 "id": "item_jg57d7o8h",
@@ -541,7 +541,7 @@
                 "en": "Pad Phed Beef (Spicy Stir-fried Red Curry)",
                 "img": "pad_phed_beef_final.jpg",
                 "price": 35,
-                "unit": "1000 กรัม"
+                "unit": "1000g"
             },
             {
                 "id": "item_0wp6jv7eb",
@@ -549,7 +549,7 @@
                 "en": "Sweet and Sour Chicken",
                 "img": "sweet_sour_chicken.jpg",
                 "price": 25,
-                "unit": "1000 กรัม"
+                "unit": "1000g"
             },
             {
                 "id": "item_prmp3czsl",
@@ -557,7 +557,7 @@
                 "en": "Sweet and Sour Sea Bass",
                 "img": "sweet_sour_seabass.jpg",
                 "price": 35,
-                "unit": "1000 กรัม"
+                "unit": "1000g"
             },
             {
                 "id": "item_7ajmnb8k8",
@@ -565,7 +565,7 @@
                 "en": "Sweet and Sour Chicken",
                 "img": "sweet_sour_chicken.jpg",
                 "price": 25,
-                "unit": "1000 กรัม"
+                "unit": "1000g"
             },
             {
                 "id": "item_pa7w5c75g",
@@ -573,7 +573,7 @@
                 "en": "Stir-fried Chicken with Ginger",
                 "img": "stir_fried_chicken_ginger.jpg",
                 "price": 25,
-                "unit": "1000 กรัม"
+                "unit": "1000g"
             },
             {
                 "id": "item_p0kbmekw0",
@@ -581,7 +581,7 @@
                 "en": "Nam Prik Ong (Northern Tomato Pork Chili Dip)",
                 "img": "nam_prik_ong.jpg",
                 "price": 25,
-                "unit": "750 กรัม"
+                "unit": "750g"
             },
             {
                 "id": "item_itz3mmj1h",
@@ -589,7 +589,7 @@
                 "en": "Nam Prik Noom (Northern Green Chili Dip)",
                 "img": "nam_prik_noom.jpg",
                 "price": 25,
-                "unit": "750 กรัม"
+                "unit": "750g"
             },
             {
                 "id": "item_9lsc9fnms",
@@ -597,7 +597,7 @@
                 "en": "Nam Prik Kapi (Shrimp Paste Chili Dip)",
                 "img": "nam_prik_kapi.jpg",
                 "price": 35,
-                "unit": "750 กรัม"
+                "unit": "750g"
             },
             {
                 "id": "item_6g60e1plb",
@@ -605,7 +605,7 @@
                 "en": "Grilled Pork Neck",
                 "img": "grilled_pork_neck_new.jpg",
                 "price": 35,
-                "unit": "1500 กรัม"
+                "unit": "1500g"
             },
             {
                 "id": "item_f7nm00wph",
@@ -613,7 +613,7 @@
                 "en": "Crying Tiger Grilled Beef",
                 "img": "crying_tiger.jpg",
                 "price": 45,
-                "unit": "1500 กรัม"
+                "unit": "1500g"
             },
             {
                 "id": "item_m95e7v3m1",
@@ -621,7 +621,7 @@
                 "en": "Spicy Stuffed Squid",
                 "img": "spicy stuffed squid salad.jpg",
                 "price": 18,
-                "unit": "3 ตัว"
+                "unit": "3 pcs"
             },
             {
                 "id": "item_lolxvnzii",
@@ -629,7 +629,7 @@
                 "en": "Salmon 'Pla' Salad",
                 "img": "005dbfc3-c862-4aac-a9e7-57ada41bcfa5.jpg",
                 "price": 65,
-                "unit": "1000 กรัม"
+                "unit": "1000g"
             },
             {
                 "id": "item_u8gcmvnbu",
@@ -637,7 +637,7 @@
                 "en": "Spicy Lemongrass Prawn Salad (Pla Goong)",
                 "img": "pla_goong.jpg",
                 "price": 35,
-                "unit": "1000 กรัม"
+                "unit": "1000g"
             },
             {
                 "id": "item_ee6ct2kge",
@@ -645,7 +645,7 @@
                 "en": "Thai Grilled Chicken",
                 "img": "grilled_chicken.jpg",
                 "price": 14,
-                "unit": "ตัว"
+                "unit": "pc"
             },
             {
                 "id": "item_eotshjc55",
@@ -653,7 +653,7 @@
                 "en": "Hat Yai Fried Chicken",
                 "img": "hatyai_fried_chicken.jpg",
                 "price": 14,
-                "unit": "ตัว"
+                "unit": "pc"
             }
         ]
     },
@@ -670,7 +670,7 @@
                 "en": "Jasmine Rice",
                 "img": "4b00ee9d-26c8-45f9-9f0d-e4014da7e1b2.jpg",
                 "price": 15,
-                "unit": "โถ"
+                "unit": "pot"
             },
             {
                 "id": "item_xbqsymzb1",
@@ -678,7 +678,7 @@
                 "en": "Sticky Rice",
                 "img": "sticky_rice.jpg",
                 "price": 12,
-                "unit": "กระติบ (12 ที่)"
+                "unit": "basket (12 servings)"
             },
             {
                 "id": "item_chicken_fried_rice",
@@ -686,7 +686,7 @@
                 "en": "Chicken Fried Rice",
                 "img": "chicken_fried_rice.jpg",
                 "price": 40,
-                "unit": "ถาด"
+                "unit": "tray"
             },
             {
                 "id": "item_prawn_fried_rice",
@@ -694,7 +694,7 @@
                 "en": "Prawn Fried Rice",
                 "img": "prawn_fried_rice.jpg",
                 "price": 55,
-                "unit": "ถาด"
+                "unit": "tray"
             },
             {
                 "id": "item_qm9czrm5o",
@@ -702,7 +702,7 @@
                 "en": "Pineapple Fried Rice",
                 "img": "pineapple_fried_rice.jpg",
                 "price": 55,
-                "unit": "ถาด"
+                "unit": "tray"
             },
             {
                 "id": "item_crab_paste_fried_rice",
@@ -710,7 +710,7 @@
                 "en": "Fried Rice with Crab Paste",
                 "img": "crab_paste_fried_rice.jpg",
                 "price": 65,
-                "unit": "ถาด"
+                "unit": "tray"
             },
             {
                 "id": "item_crab_fried_rice",
@@ -718,7 +718,7 @@
                 "en": "Crab Fried Rice",
                 "img": "crab_fried_rice.jpg",
                 "price": 75,
-                "unit": "ถาด"
+                "unit": "tray"
             },
             {
                 "id": "item_47u308grz",
@@ -726,7 +726,7 @@
                 "en": "Pad Thai with Prawns",
                 "img": "pad_thai_prawns.jpg",
                 "price": 35,
-                "unit": "2000 กรัม / ถาด"
+                "unit": "2000g / tray"
             },
             {
                 "id": "item_7odwg5bba",
@@ -734,7 +734,7 @@
                 "en": "Pad Thai with Chicken",
                 "img": "pad_thai_chicken.jpg",
                 "price": 25,
-                "unit": "2000 กรัม / ถาด"
+                "unit": "2000g / tray"
             },
             {
                 "id": "item_yli8d1lit",
@@ -742,7 +742,7 @@
                 "en": "Pad Thai with Mixed Vegetables",
                 "img": "pad_thai_veg.jpg",
                 "price": 20,
-                "unit": "2000 กรัม / ถาด"
+                "unit": "2000g / tray"
             },
             {
                 "id": "item_rasqo7a1h",
@@ -750,7 +750,7 @@
                 "en": "Glass Noodle Salad with Shrimp",
                 "img": "yum_woon_sen_shrimp.jpg",
                 "price": 35,
-                "unit": "2000 กรัม / ถาด"
+                "unit": "2000g / tray"
             },
             {
                 "id": "item_1sq90u1i5",
@@ -758,7 +758,7 @@
                 "en": "Glass Noodle Salad with Vietnamese Pork Sausage",
                 "img": "yum_woon_sen_moo_yor.jpg",
                 "price": 35,
-                "unit": "2000 กรัม / ถาด"
+                "unit": "2000g / tray"
             }
         ]
     },
@@ -775,7 +775,7 @@
                 "en": "Stir-fried Mixed Veg",
                 "img": "f7c5f80d-eea3-43ea-b086-42896599d5eb.jpg",
                 "price": 25,
-                "unit": "ถาด"
+                "unit": "tray"
             },
             {
                 "id": "item_p78h6ho90",
@@ -783,7 +783,7 @@
                 "en": "Stir-fried Beef with Veg",
                 "img": "74845001-324c-482d-8a79-c1c5d8d0a68f.jpg",
                 "price": 35,
-                "unit": "ถาด"
+                "unit": "tray"
             },
             {
                 "id": "item_zy5pdsi21",
@@ -791,7 +791,7 @@
                 "en": "Stir-fried Veg with Shrimp",
                 "img": "Stir-fried Mixed Vegetables with Shrimp.jpg",
                 "price": 45,
-                "unit": "ถาด"
+                "unit": "tray"
             },
             {
                 "id": "item_68xjbvro4",
@@ -799,7 +799,7 @@
                 "en": "Stir-fried Bok Choy in Oyster Sauce",
                 "img": "bok_choy.jpg",
                 "price": 25,
-                "unit": "ถาด"
+                "unit": "tray"
             },
             {
                 "id": "item_gky2spb4s",
@@ -807,7 +807,7 @@
                 "en": "Stir-fried Asparagus in Oyster Sauce",
                 "img": "asparagus.jpg",
                 "price": 25,
-                "unit": "ถาด"
+                "unit": "tray"
             }
         ]
     },
@@ -824,7 +824,7 @@
                 "en": "Mango Sticky Rice (Nam Dok Mai)",
                 "img": "mango sticky rice.jpeg",
                 "price": 9.95,
-                "unit": "จาน"
+                "unit": "plate"
             },
             {
                 "id": "item_ss15jkmtu",
@@ -832,7 +832,7 @@
                 "en": "Lod Chong Singapore",
                 "img": "Lod Chong Singapore.jpg",
                 "price": 69,
-                "unit": "10 ถ้วย / 10 Bowls"
+                "unit": "10 Bowls"
             },
             {
                 "id": "item_uqe004wjj",
@@ -840,7 +840,7 @@
                 "en": "Tub Tim Krop",
                 "img": "tub tim krop.jpg",
                 "price": 69,
-                "unit": "10 ถ้วย / 10 Bowls"
+                "unit": "10 Bowls"
             },
             {
                 "id": "item_kd2pgn0wa",
@@ -848,7 +848,7 @@
                 "en": "Banana in Coconut Milk",
                 "img": "Banana with Condensed Milk.jpg",
                 "price": 69,
-                "unit": "10 ถ้วย / 10 Bowls"
+                "unit": "10 Bowls"
             },
             {
                 "id": "item_dbq8x2pru",
@@ -856,7 +856,7 @@
                 "en": "Krong Krang Butterfly Pea with Young Coconut",
                 "img": "krong_krang_butterfly_pea.jpg",
                 "price": 69,
-                "unit": "10 ถ้วย / 10 Bowls"
+                "unit": "10 Bowls"
             },
             {
                 "id": "item_m1u691ydo",
@@ -864,7 +864,7 @@
                 "en": "Bua Loy Sago",
                 "img": "bua_loy_sago.jpg",
                 "price": 69,
-                "unit": "10 ถ้วย / 10 Bowls"
+                "unit": "10 Bowls"
             },
             {
                 "id": "item_oee9nwl71",
@@ -872,7 +872,7 @@
                 "en": "5-Color Bua Loy",
                 "img": "bua_loy_5_color.jpg",
                 "price": 69,
-                "unit": "10 ถ้วย / 10 Bowls"
+                "unit": "10 Bowls"
             },
             {
                 "id": "item_l23p9p0m6",
@@ -880,7 +880,7 @@
                 "en": "Lod Chong Butterfly Pea & Pandan",
                 "img": "lod_chong_butterfly_pea.jpg",
                 "price": 69,
-                "unit": "10 ถ้วย / 10 Bowls"
+                "unit": "10 Bowls"
             },
             {
                 "id": "item_wiryj5kc6",
@@ -888,7 +888,7 @@
                 "en": "Traditional Thai Coconut Dumplings",
                 "img": "khanom_tom.jpg",
                 "price": 22,
-                "unit": "25 ชิ้น / ถาด"
+                "unit": "25 pcs/tray"
             },
             {
                 "id": "item_6khxkgaio",
@@ -896,7 +896,7 @@
                 "en": "Pandan Layer Sweet",
                 "img": "khanom_chan_pandan.jpg",
                 "price": 22,
-                "unit": "25 ชิ้น/ถาด"
+                "unit": "25 pcs/tray"
             },
             {
                 "id": "item_mx46vlryb",
@@ -904,7 +904,7 @@
                 "en": "Butterfly Pea Layer Sweet",
                 "img": "khanom_chan_butterfly_pea.jpg",
                 "price": 22,
-                "unit": "25 ชิ้น/ถาด"
+                "unit": "25 pcs/tray"
             },
             {
                 "id": "item_4x37ftxwo",
@@ -912,7 +912,7 @@
                 "en": "Pandan Coconut Jelly",
                 "img": "Pandan Coconut Jelly1.jpg",
                 "price": 22,
-                "unit": "25 ชิ้น/ถาด"
+                "unit": "25 pcs/tray"
             },
             {
                 "id": "item_dkeal6jqd",
@@ -920,7 +920,7 @@
                 "en": "Butterfly Pea Coconut Jelly",
                 "img": "Butterfly Pea Coconut Jelly1.jpg",
                 "price": 22,
-                "unit": "25 ชิ้น/ถาด"
+                "unit": "25 pcs/tray"
             },
             {
                 "id": "item_7bpwz9fhh",
@@ -928,7 +928,7 @@
                 "en": "Khanom Mo Kaeng",
                 "img": "Khanom Mo Kaeng1.jpg",
                 "price": 22,
-                "unit": "25 ชิ้น/ถาด"
+                "unit": "25 pcs/tray"
             },
             {
                 "id": "item_lnrjc9b18",
@@ -936,7 +936,7 @@
                 "en": "Khanom Piak Poon Pandan",
                 "img": "Khanom Piak Poon Pandan.jpg",
                 "price": 22,
-                "unit": "25 ชิ้น/ถาด"
+                "unit": "25 pcs/tray"
             },
             {
                 "id": "item_2657use5q",
@@ -944,7 +944,7 @@
                 "en": "Tako (Sweet Corn Thai Pudding)",
                 "img": "Tako (Sweet Corn Thai Pudding).jpg",
                 "price": 25,
-                "unit": "25 ชิ้น / ถาด"
+                "unit": "25 pcs/tray"
             },
             {
                 "id": "item_v0kvvnz7v",
@@ -952,7 +952,7 @@
                 "en": "Tako (Taro Thai Pudding)",
                 "img": "Tako (Taro Thai Pudding).jpg",
                 "price": 25,
-                "unit": "25 ชิ้น / ถาด"
+                "unit": "25 pcs/tray"
             },
             {
                 "id": "item_vea70we67",
@@ -960,7 +960,7 @@
                 "en": "Coconut Ice Cream with Sticky Rice",
                 "img": "coconut_ice_cream.jpg",
                 "price": 70,
-                "unit": "10 ถ้วย"
+                "unit": "10 cups"
             },
             {
                 "id": "item_a2c1r4g76",
@@ -968,15 +968,15 @@
                 "en": "Mango Ice Cream with Sticky Rice",
                 "img": "mango_ice_cream.jpg",
                 "price": 80,
-                "unit": "10 ถ้วย"
+                "unit": "10 cups"
             },
             {
                 "id": "item_s380hdq8w",
                 "th": "ผลไม้รวม",
                 "en": "Mixed Fruits",
-                "img": "mixed_fruits.jpg",
+                "img": "Mixed Fruits 1.jpg",
                 "price": 25,
-                "unit": "ถาด"
+                "unit": "tray"
             }
         ]
     },
@@ -993,7 +993,7 @@
                 "en": "Lemongrass Tea",
                 "img": "Lemongrass Tea.jpg",
                 "price": 75,
-                "unit": "เหยือก (2.5L)"
+                "unit": "jug (2.5L)"
             },
             {
                 "id": "drink_bael",
@@ -1001,7 +1001,7 @@
                 "en": "Bael Fruit Tea",
                 "img": "Bael Fruit Tea.jpg",
                 "price": 75,
-                "unit": "เหยือก (2.5L)"
+                "unit": "jug (2.5L)"
             },
             {
                 "id": "drink_butterfly_pea",
@@ -1009,7 +1009,7 @@
                 "en": "Butterfly Pea Tea",
                 "img": "Butterfly Pea Tea.jpg",
                 "price": 75,
-                "unit": "เหยือก (2.5L)"
+                "unit": "jug (2.5L)"
             },
             {
                 "id": "drink_green_tea",
@@ -1017,7 +1017,7 @@
                 "en": "Green Tea",
                 "img": "Green Tea.jpg",
                 "price": 75,
-                "unit": "เหยือก (2.5L)"
+                "unit": "jug (2.5L)"
             },
             {
                 "id": "drink_fruit_tea",
@@ -1025,7 +1025,7 @@
                 "en": "Fruit Tea",
                 "img": "Fruit Tea.jpg",
                 "price": 75,
-                "unit": "เหยือก (2.5L)"
+                "unit": "jug (2.5L)"
             },
             {
                 "id": "drink_hot_coffee",
@@ -1033,7 +1033,7 @@
                 "en": "Hot Coffee",
                 "img": "Hot Coffee.jpg",
                 "price": 75,
-                "unit": "เหยือก (2.5L)"
+                "unit": "jug (2.5L)"
             },
             {
                 "id": "drink_soy_milk",
@@ -1041,7 +1041,7 @@
                 "en": "Soy Milk",
                 "img": "Soy Milk.jpg",
                 "price": 75,
-                "unit": "เหยือก (2.5L)"
+                "unit": "jug (2.5L)"
             },
             {
                 "id": "drink_orange_juice",
@@ -1049,7 +1049,7 @@
                 "en": "Fresh Orange Juice",
                 "img": "Fresh Orange Juice.jpg",
                 "price": 75,
-                "unit": "เหยือก (2.5L)"
+                "unit": "jug (2.5L)"
             },
             {
                 "id": "drink_blue_lemon",
@@ -1057,7 +1057,7 @@
                 "en": "Blue Lemon Soda",
                 "img": "blue_lemon_soda.jpg",
                 "price": 75,
-                "unit": "เหยือก (2.5L)"
+                "unit": "jug (2.5L)"
             },
             {
                 "id": "drink_coffee_honey",
@@ -1065,7 +1065,7 @@
                 "en": "Coffee Honey Lemon Soda",
                 "img": "coffeehoney_lemon_soda.jpg",
                 "price": 75,
-                "unit": "เหยือก (2.5L)"
+                "unit": "jug (2.5L)"
             },
             {
                 "id": "drink_green_tea_honey",
@@ -1073,7 +1073,7 @@
                 "en": "Green Tea Honey Lemon Soda",
                 "img": "green_tea_honey_lemon_soda.jpg",
                 "price": 75,
-                "unit": "เหยือก (2.5L)"
+                "unit": "jug (2.5L)"
             },
             {
                 "id": "drink_ice_black_tea",
@@ -1081,7 +1081,7 @@
                 "en": "Ice Black Tea",
                 "img": "ice_black_tea.jpg",
                 "price": 75,
-                "unit": "เหยือก (2.5L)"
+                "unit": "jug (2.5L)"
             },
             {
                 "id": "drink_peach_honey",
@@ -1089,7 +1089,7 @@
                 "en": "Peach Honey Lemon Soda",
                 "img": "peach_honey_lemon_soda.jpg",
                 "price": 75,
-                "unit": "เหยือก (2.5L)"
+                "unit": "jug (2.5L)"
             },
             {
                 "id": "drink_pink_orange",
@@ -1097,7 +1097,7 @@
                 "en": "Pink Orange Soda",
                 "img": "pink_orange_soda.jpg",
                 "price": 75,
-                "unit": "เหยือก (2.5L)"
+                "unit": "jug (2.5L)"
             },
             {
                 "id": "drink_red_honey",
@@ -1105,7 +1105,7 @@
                 "en": "Red Honey Soda",
                 "img": "Red Honey Soda.jpg",
                 "price": 75,
-                "unit": "เหยือก (2.5L)"
+                "unit": "jug (2.5L)"
             },
             {
                 "id": "drink_strawberry_peach",
@@ -1113,7 +1113,7 @@
                 "en": "Strawberry Peach Soda",
                 "img": "strawberry_peach_soda.jpg",
                 "price": 75,
-                "unit": "เหยือก (2.5L)"
+                "unit": "jug (2.5L)"
             },
             {
                 "id": "drink_thai_milk_tea",
@@ -1121,14 +1121,14 @@
                 "en": "Thai Milk Tea",
                 "img": "thai_milk_tea.jpg",
                 "price": 75,
-                "unit": "เหยือก (2.5L)"
+                "unit": "jug (2.5L)"
             },
             {
                 "id": "drink_18",
                 "th": "น้ำส้มคั้น",
                 "en": "Fresh Orange Juice",
                 "price": 75,
-                "unit": "เหยือก (2.5L)",
+                "unit": "jug (2.5L)",
                 "img": "fresh_orange_juice.jpg"
             }
         ]
@@ -1146,7 +1146,7 @@
                 "en": "Waitstaff (On-site service)",
                 "img": "logo.png",
                 "price": 75,
-                "unit": "ท่าน"
+                "unit": "person"
             }
         ]
     }
