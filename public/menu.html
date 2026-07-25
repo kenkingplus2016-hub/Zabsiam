@@ -257,6 +257,7 @@
             <div class="flex gap-3 p-5 overflow-x-auto bg-white border-r border-gray-100">
                 <img id="modal-thumb-1" src="" class="w-20 h-20 object-cover border-2 border-[#5c8b54] rounded-md cursor-pointer hover:opacity-90 transition-opacity" onclick="document.getElementById('modal-main-img').src=this.src; document.querySelectorAll('.modal-thumb').forEach(el=>el.classList.replace('border-[#5c8b54]', 'border-transparent')); this.classList.replace('border-transparent', 'border-[#5c8b54]');">
                 <img id="modal-thumb-2" src="" class="w-20 h-20 object-cover border-2 border-transparent rounded-md cursor-pointer opacity-70 hover:opacity-100 transition-opacity hidden modal-thumb" onclick="document.getElementById('modal-main-img').src=this.src; document.querySelectorAll('.modal-thumb').forEach(el=>el.classList.replace('border-[#5c8b54]', 'border-transparent')); this.classList.replace('border-transparent', 'border-[#5c8b54]');">
+                <img id="modal-thumb-3" src="" class="w-20 h-20 object-cover border-2 border-transparent rounded-md cursor-pointer opacity-70 hover:opacity-100 transition-opacity hidden modal-thumb" onclick="document.getElementById('modal-main-img').src=this.src; document.querySelectorAll('.modal-thumb').forEach(el=>el.classList.replace('border-[#5c8b54]', 'border-transparent')); this.classList.replace('border-transparent', 'border-[#5c8b54]');">
             </div>
         </div>
 
@@ -652,6 +653,7 @@ function generateIngredients(item) {
             const mainImg = document.getElementById('modal-main-img');
             const thumb1 = document.getElementById('modal-thumb-1');
             const thumb2 = document.getElementById('modal-thumb-2');
+            const thumb3 = document.getElementById('modal-thumb-3');
             
             mainImg.src = imgSrc;
             thumb1.src = imgSrc;
@@ -666,6 +668,16 @@ function generateIngredients(item) {
                 thumb2.classList.replace('border-[#5c8b54]', 'border-transparent');
             } else {
                 thumb2.classList.add('hidden');
+            }
+
+            if (item.img_3) {
+                const img3Src = item.img_3.startsWith('http') ? item.img_3 : `images/${item.img_3}`;
+                thumb3.src = img3Src;
+                thumb3.classList.remove('hidden');
+                thumb3.classList.add('modal-thumb');
+                thumb3.classList.replace('border-[#5c8b54]', 'border-transparent');
+            } else {
+                thumb3.classList.add('hidden');
             }
             document.getElementById('acc-ingredients').innerHTML = generateIngredients(item);
             document.getElementById('acc-nutrition').innerHTML = generateNutrition(item);
