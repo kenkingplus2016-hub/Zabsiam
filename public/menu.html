@@ -176,206 +176,32 @@
 
     
 <!-- Product Detail Modal -->
-<div id="product-modal" class="fixed inset-0 bg-black/60 z-[2000] hidden items-center justify-center p-4 md:p-8 backdrop-blur-sm overflow-y-auto" onclick="closeProductModal()">
-    <div class="bg-white w-full max-w-[1000px] rounded-xl shadow-2xl relative my-auto flex flex-col md:flex-row overflow-hidden" onclick="event.stopPropagation()">
-        <!-- Close Button -->
-        <button onclick="closeProductModal()" class="absolute top-4 right-4 z-10 bg-white/80 rounded-full w-8 h-8 flex items-center justify-center text-gray-600 hover:text-gray-900 shadow-sm border border-gray-200 transition-colors backdrop-blur-sm">
-            <i class="fas fa-times text-lg"></i>
+<div id="product-modal" class="fixed inset-0 bg-black/60 z-[9999] hidden items-center justify-center p-4 backdrop-blur-sm">
+    <div class="bg-white rounded-xl w-full max-w-[500px] overflow-hidden flex flex-col relative shadow-2xl animate-fade-in-up">
+        <!-- Close button -->
+        <button onclick="closeProductModal()" class="absolute top-4 right-4 bg-black/50 hover:bg-black/80 text-white w-8 h-8 flex items-center justify-center rounded-full z-10 transition-colors">
+            <i class="fas fa-times"></i>
         </button>
 
-        <!-- Left: Images -->
-        <div class="w-full md:w-1/2 bg-gray-50 flex flex-col">
-            <div class="relative aspect-[4/3] md:aspect-square overflow-hidden bg-gray-100">
-                <img id="modal-main-img" src="" class="absolute inset-0 w-full h-full object-cover">
-            </div>
-            <!-- Thumbnails -->
-            <div class="flex gap-3 p-5 overflow-x-auto bg-white border-r border-gray-100">
-                <img id="modal-thumb-1" src="" class="w-20 h-20 object-cover border-2 border-[#5c8b54] rounded-md cursor-pointer hover:opacity-90 transition-opacity" onclick="document.getElementById('modal-main-img').src=this.src; document.querySelectorAll('.modal-thumb').forEach(el=>el.classList.replace('border-[#5c8b54]', 'border-transparent')); this.classList.replace('border-transparent', 'border-[#5c8b54]');">
-                <img id="modal-thumb-2" src="" class="w-20 h-20 object-cover border-2 border-transparent rounded-md cursor-pointer opacity-70 hover:opacity-100 transition-opacity hidden modal-thumb" onclick="document.getElementById('modal-main-img').src=this.src; document.querySelectorAll('.modal-thumb').forEach(el=>el.classList.replace('border-[#5c8b54]', 'border-transparent')); this.classList.replace('border-transparent', 'border-[#5c8b54]');">
-                <img id="modal-thumb-3" src="" class="w-20 h-20 object-cover border-2 border-transparent rounded-md cursor-pointer opacity-70 hover:opacity-100 transition-opacity hidden modal-thumb" onclick="document.getElementById('modal-main-img').src=this.src; document.querySelectorAll('.modal-thumb').forEach(el=>el.classList.replace('border-[#5c8b54]', 'border-transparent')); this.classList.replace('border-transparent', 'border-[#5c8b54]');">
-            </div>
+        <!-- Image Container -->
+        <div class="w-full aspect-[4/3] bg-gray-100 relative">
+            <img id="modal-main-img" src="" alt="Product" class="w-full h-full object-cover">
         </div>
 
-        <!-- Right: Details -->
-        <div class="w-full md:w-1/2 p-6 md:p-10 flex flex-col md:h-[600px] overflow-y-auto hide-scrollbar bg-white">
-            <h2 id="modal-title" class="text-2xl md:text-[28px] font-bold text-gray-800 mb-3 font-serif leading-tight">Product Title</h2>
-            
-            <!-- Dietary Icons -->
-            <div class="flex gap-2 mb-5 text-gray-500 text-xs font-bold">
-                <span class="border border-gray-300 rounded-full w-7 h-7 flex items-center justify-center" title="Gluten Free">GF</span>
-                <span class="border border-gray-300 rounded-full w-7 h-7 flex items-center justify-center" title="Dairy Free">DF</span>
-                <span class="border border-gray-300 rounded-full w-7 h-7 flex items-center justify-center"><i class="fas fa-pepper-hot text-red-500"></i></span>
-            </div>
-
-            <!-- Description -->
-            <div id="modal-desc" class="text-gray-600 mb-8 text-[15px] leading-relaxed">
-                A classic mild Thai dish made with premium ingredients. Please check the ingredients tab for more details.
-            </div>
-
-            <!-- Pricing Rows -->
-            <div class="flex flex-col gap-2.5 mb-8">
-                <!-- Serves 1 -->
-                <div class="flex items-center justify-between bg-[#f8f9fa] px-4 py-3 rounded border border-gray-100">
-                    <div class="text-[15px] text-gray-700">Serves 1 <span id="modal-weight-1" class="text-gray-400 text-sm ml-1">(250g)</span></div>
-                    <div class="flex items-center gap-6">
-                        <span id="modal-price-1" class="font-bold text-gray-800 text-lg">£0.00</span>
-                        <button id="modal-add-1" class="bg-[#598c73] text-white px-8 py-2 rounded font-semibold hover:bg-[#46705c] transition-colors">Add</button>
-                    </div>
-                </div>
-                <!-- Serves 2 -->
-                <div class="flex items-center justify-between bg-[#f8f9fa] px-4 py-3 rounded border border-gray-100">
-                    <div class="text-[15px] text-gray-700">Serves 2 <span id="modal-weight-2" class="text-gray-400 text-sm ml-1">(500g)</span></div>
-                    <div class="flex items-center gap-6">
-                        <span id="modal-price-2" class="font-bold text-gray-800 text-lg">£0.00</span>
-                        <button id="modal-add-2" class="bg-[#598c73] text-white px-8 py-2 rounded font-semibold hover:bg-[#46705c] transition-colors">Add</button>
-                    </div>
-                </div>
-                <!-- Serves 4 -->
-                <div class="flex items-center justify-between bg-[#f8f9fa] px-4 py-3 rounded border border-gray-100">
-                    <div class="text-[15px] text-gray-700">Serves 4 <span id="modal-weight-4" class="text-gray-400 text-sm ml-1">(1kg)</span></div>
-                    <div class="flex items-center gap-6">
-                        <span id="modal-price-4" class="font-bold text-gray-800 text-lg">£0.00</span>
-                        <button id="modal-add-4" class="bg-[#598c73] text-white px-8 py-2 rounded font-semibold hover:bg-[#46705c] transition-colors">Add</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Accordions -->
-            <div class="flex flex-col border-t border-gray-200 mt-auto">
-                <div class="border-b border-gray-200">
-                    <button onclick="toggleAccordion('acc-nutrition')" class="w-full py-4 flex justify-between items-center text-left text-gray-700 font-semibold hover:text-black transition-colors text-lg">
-                        Nutrition
-                        <i class="fas fa-plus text-gray-400 text-sm transition-transform duration-300" id="acc-nutrition-icon"></i>
-                    </button>
-                    <div id="acc-nutrition" class="hidden pb-5 text-[15px] text-gray-600 leading-relaxed">
-                        Information will be updated soon. Typical values per 100g: Energy 500kJ/120kcal.
-                    </div>
-                </div>
-                <div class="border-b border-gray-200">
-                    <button onclick="toggleAccordion('acc-ingredients')" class="w-full py-4 flex justify-between items-center text-left text-gray-700 font-semibold hover:text-black transition-colors text-lg">
-                        Ingredients
-                        <i class="fas fa-plus text-gray-400 text-sm transition-transform duration-300" id="acc-ingredients-icon"></i>
-                    </button>
-                    <div id="acc-ingredients" class="hidden pb-5 text-[15px] text-gray-600 leading-relaxed">
-                        Authentic Thai ingredients. See packaging for full list.
-                    </div>
-                </div>
-                <div class="border-b border-gray-200">
-                    <button onclick="toggleAccordion('acc-cooking')" class="w-full py-4 flex justify-between items-center text-left text-gray-700 font-semibold hover:text-black transition-colors text-lg">
-                        Cooking/Serving Instructions
-                        <i class="fas fa-plus text-gray-400 text-sm transition-transform duration-300" id="acc-cooking-icon"></i>
-                    </button>
-                    
-                    
-                    <div id="acc-cooking" class="hidden pb-5 text-[14px] text-gray-700 leading-relaxed">
-                        <p class="mb-4 font-medium text-gray-600">
-                            These cooking instructions are only a guide. Your appliance may have a personality of its own (or a different power rating). Please adjust accordingly.
-                        </p>
-                        
-                        <!-- SERVES 1 -->
-                        <div class="bg-gray-100 text-center py-1.5 text-xs font-bold uppercase tracking-widest mb-4 text-gray-500">
-                            serves 1
-                        </div>
-                        <div class="mb-6">
-                            <h4 class="font-bold text-gray-800 mb-1">Microwave:</h4>
-                            <p class="mb-3">Remove sleeve, pierce film lid and place on a microwaveable plate. Cook on full power.</p>
-                            <div class="flex items-center gap-2 mb-2 font-semibold">
-                                <i class="fas fa-wave-square text-lg w-6 text-center text-gray-600"></i> <span>850W</span>
-                            </div>
-                            <div class="flex items-start gap-2 mb-4">
-                                <i class="far fa-clock text-lg w-6 text-center mt-0.5 text-gray-600"></i>
-                                <span>3 mins &gt; stir gently &amp; re-cover &gt; 2 mins<br>Allow to stand for 2 mins and stir well before serving. Ensure piping hot.</span>
-                            </div>
-                            
-                            <h4 class="font-bold text-gray-800 mb-1">Oven:</h4>
-                            <p class="mb-3">Preheat oven. Remove sleeve and pierce film. Place on a baking tray in the centre of the oven.</p>
-                            <h5 class="font-bold text-gray-600 text-xs mb-2">Oven Settings</h5>
-                            <div class="flex items-center gap-2 mb-2 font-semibold">
-                                <i class="fas fa-fire-burner text-lg w-6 text-center text-gray-600"></i> <span>Fan 180&deg;C, Electric 200&deg;C, Gas Mark 6.</span>
-                            </div>
-                            <div class="flex items-start gap-2 mb-4">
-                                <i class="far fa-clock text-lg w-6 text-center mt-0.5 text-gray-600"></i>
-                                <span>40 mins<br>Allow to stand for 2 mins and stir well before serving. Ensure piping hot.</span>
-                            </div>
-
-                            <h4 class="font-bold text-gray-800 mb-1">Defrost Instructions:</h4>
-                            <p class="mb-4">Should this product defrost, keep refrigerated and eat within 48 hours. Follow the microwave guidelines but cook for 2 mins - stir well then cook for a further 1 min 30 secs.</p>
-
-                            <h4 class="font-bold text-gray-800 mb-1">Extra Warnings:</h4>
-                            <p class="mb-2">Although every care has been taken to remove all bones, some may remain. Steam may be released when removing film lid.</p>
-                        </div>
-
-                        <!-- SERVES 2 -->
-                        <div class="bg-gray-100 text-center py-1.5 text-xs font-bold uppercase tracking-widest mb-4 text-gray-500 mt-8">
-                            serves 2
-                        </div>
-                        <div class="mb-6">
-                            <h4 class="font-bold text-gray-800 mb-1">Microwave:</h4>
-                            <p class="mb-3">Remove sleeve, pierce film lid and place on a microwaveable plate. Cook on full power.</p>
-                            <div class="flex items-center gap-2 mb-2 font-semibold">
-                                <i class="fas fa-wave-square text-lg w-6 text-center text-gray-600"></i> <span>850W</span>
-                            </div>
-                            <div class="flex items-start gap-2 mb-4">
-                                <i class="far fa-clock text-lg w-6 text-center mt-0.5 text-gray-600"></i>
-                                <span>7 mins &gt; stir gently &amp; re-cover &gt; 6 mins<br>Allow to stand for 2 mins and stir well before serving. Ensure piping hot.</span>
-                            </div>
-                            
-                            <h4 class="font-bold text-gray-800 mb-1">Oven:</h4>
-                            <p class="mb-3">Preheat oven. Remove sleeve and pierce film. Place on a baking tray in the centre of the oven.</p>
-                            <h5 class="font-bold text-gray-600 text-xs mb-2">Oven Settings</h5>
-                            <div class="flex items-center gap-2 mb-2 font-semibold">
-                                <i class="fas fa-fire-burner text-lg w-6 text-center text-gray-600"></i> <span>Fan 180&deg;C, Electric 200&deg;C, Gas Mark 6.</span>
-                            </div>
-                            <div class="flex items-start gap-2 mb-4">
-                                <i class="far fa-clock text-lg w-6 text-center mt-0.5 text-gray-600"></i>
-                                <span>45 mins<br>Allow to stand for 2 mins and stir well before serving. Ensure piping hot.</span>
-                            </div>
-
-                            <h4 class="font-bold text-gray-800 mb-1">Defrost Instructions:</h4>
-                            <p class="mb-4">Should this product defrost, keep refrigerated and eat within 48 hours. Follow the microwave guidelines but cook for 3 mins - stir well - 3 mins.</p>
-
-                            <h4 class="font-bold text-gray-800 mb-1">Extra Warnings:</h4>
-                            <p class="mb-2">Although every care has been taken to remove all bones, some may remain. Steam may be released when removing film lid.</p>
-                        </div>
-
-                        <!-- SERVES 4 -->
-                        <div class="bg-gray-100 text-center py-1.5 text-xs font-bold uppercase tracking-widest mb-4 text-gray-500 mt-8">
-                            serves 4
-                        </div>
-                        <div class="mb-2">
-                            <h4 class="font-bold text-gray-800 mb-1">Microwave:</h4>
-                            <p class="mb-3">Remove sleeve, pierce film lid and place on a microwaveable plate. Cook on full power.</p>
-                            <div class="flex items-center gap-2 mb-2 font-semibold">
-                                <i class="fas fa-wave-square text-lg w-6 text-center text-gray-600"></i> <span>850W</span>
-                            </div>
-                            <div class="flex items-start gap-2 mb-4">
-                                <i class="far fa-clock text-lg w-6 text-center mt-0.5 text-gray-600"></i>
-                                <span>10 mins &gt; stir gently &amp; re-cover &gt; 9 mins<br>Allow to stand for 2 mins and stir well before serving. Ensure piping hot.</span>
-                            </div>
-                            
-                            <h4 class="font-bold text-gray-800 mb-1">Oven:</h4>
-                            <p class="mb-3">Preheat oven. Remove sleeve and pierce film. Place on a baking tray in the centre of the oven.</p>
-                            <h5 class="font-bold text-gray-600 text-xs mb-2">Oven Settings</h5>
-                            <div class="flex items-center gap-2 mb-2 font-semibold">
-                                <i class="fas fa-fire-burner text-lg w-6 text-center text-gray-600"></i> <span>Fan 180&deg;C, Electric 200&deg;C, Gas Mark 6.</span>
-                            </div>
-                            <div class="flex items-start gap-2 mb-4">
-                                <i class="far fa-clock text-lg w-6 text-center mt-0.5 text-gray-600"></i>
-                                <span>60 mins<br>Allow to stand for 2 mins and stir well before serving. Ensure piping hot.</span>
-                            </div>
-
-                            <h4 class="font-bold text-gray-800 mb-1">Defrost Instructions:</h4>
-                            <p class="mb-4">Should this product defrost, keep refrigerated and eat within 48 hours. Follow the microwave guidelines but cook for 5 mins - stir well - 5 mins.</p>
-
-                            <h4 class="font-bold text-gray-800 mb-1">Extra Warnings:</h4>
-                            <p class="mb-2">Although every care has been taken to remove all bones, some may remain. Steam may be released when removing film lid.</p>
-                        </div>
-                    </div>
-
-
-                </div>
+        <!-- Content -->
+        <div class="p-6 md:p-8 flex flex-col bg-white">
+            <div class="flex justify-between items-start gap-4 mb-3">
+                <h2 id="modal-title" class="text-2xl font-bold text-gray-800 font-prompt leading-tight">Product Title</h2>
+                <span id="modal-price" class="text-xl font-bold text-[#e65c00]">£0.00</span>
             </div>
             
+            <div id="modal-desc" class="text-gray-600 mb-6 text-[15px] leading-relaxed">
+                Experience the authentic taste of Thailand with our signature street food dish. Made fresh to order with premium ingredients.
+            </div>
+
+            <button onclick="closeProductModal()" class="w-full bg-[#1a433d] text-white py-3 rounded-lg font-bold hover:bg-[#122e2a] transition-colors text-lg">
+                Close
+            </button>
         </div>
     </div>
 </div>
@@ -577,50 +403,14 @@ function generateIngredients(item) {
             const imgSrc = item.img === 'logo.png' ? 'logo.png' : (item.img.startsWith('http') ? item.img : `images/${item.img}`);
             
             // Populate data
-            document.getElementById('modal-title').innerText = item.en;
+            document.getElementById('modal-title').innerText = item.en || item.th;
             if (item.desc) {
                 document.getElementById('modal-desc').innerHTML = item.desc;
-            } else {
-                document.getElementById('modal-desc').innerHTML = "Experience the authentic taste of Thailand with our signature " + item.en + ". Made fresh to order.";
             }
+            document.getElementById('modal-main-img').src = imgSrc;
             
-            // Images
-            const mainImg = document.getElementById('modal-main-img');
-            const thumb1 = document.getElementById('modal-thumb-1');
-            const thumb2 = document.getElementById('modal-thumb-2');
-            const thumb3 = document.getElementById('modal-thumb-3');
-            
-            mainImg.src = imgSrc;
-            thumb1.src = imgSrc;
-            thumb1.classList.add('modal-thumb');
-            thumb1.classList.replace('border-transparent', 'border-[#5c8b54]');
-            
-            if (item.img_hover) {
-                const hoverSrc = item.img_hover.startsWith('http') ? item.img_hover : `images/${item.img_hover}`;
-                thumb2.src = hoverSrc;
-                thumb2.classList.remove('hidden');
-                thumb2.classList.add('modal-thumb');
-                thumb2.classList.replace('border-[#5c8b54]', 'border-transparent');
-            } else {
-                thumb2.classList.add('hidden');
-            }
-
-            if (item.img_3) {
-                const img3Src = item.img_3.startsWith('http') ? item.img_3 : `images/${item.img_3}`;
-                thumb3.src = img3Src;
-                thumb3.classList.remove('hidden');
-                thumb3.classList.add('modal-thumb');
-                thumb3.classList.replace('border-[#5c8b54]', 'border-transparent');
-            } else {
-                thumb3.classList.add('hidden');
-            }
-            document.getElementById('acc-ingredients').innerHTML = generateIngredients(item);
-            document.getElementById('acc-nutrition').innerHTML = generateNutrition(item);
-            // Prices & Weights & Add functions
-            closeProductModal(); };
-
-            document.getElementById('modal-add-2').onclick = () => { addBuffetItem(item.id + '_s2', item.en + ' (Serves 2)', item.price * 1.7, imgSrc); closeProductModal(); };
-            document.getElementById('modal-add-4').onclick = () => { addBuffetItem(item.id + '_s4', item.en + ' (Serves 4)', item.price * 3.2, imgSrc); closeProductModal(); };
+            const p1 = item.price_s1 || item.price;
+            document.getElementById('modal-price').innerText = '£' + p1.toFixed(2);
             
             // Show modal
             document.getElementById('product-modal').style.display = 'flex';
