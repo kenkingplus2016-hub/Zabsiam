@@ -33,22 +33,22 @@
                 total += itemTotal;
                 
                 html += `
-                    <div class="flex justify-between items-center py-4 border-b border-gray-100">
+                    <div class="flex justify-between items-center py-4 border-b border-gray-800">
                         <div class="flex items-center gap-4">
-                            <div class="w-16 h-16 bg-gray-100 rounded-md overflow-hidden">
+                            <div class="w-16 h-16 bg-black rounded-md overflow-hidden">
                                 <img src="${item.img || 'logo2.png'}" alt="${item.name}" class="w-full h-full object-cover" onerror="this.src='logo2.png'">
                             </div>
                             <div>
-                                <h4 class="font-bold text-gray-800">${item.name}</h4>
+                                <h4 class="font-bold text-white">${item.name}</h4>
                                 <div class="text-sm text-gray-500">£${item.price.toFixed(2)} each</div>
                             </div>
                         </div>
                         <div class="flex flex-col items-end gap-2">
                             <div class="font-bold text-[#e65c00]">£${itemTotal.toFixed(2)}</div>
-                            <div class="flex items-center border border-gray-300 rounded overflow-hidden">
-                                <button onclick="updateQty(${index}, -1)" class="w-6 h-6 bg-gray-50 flex items-center justify-center font-bold text-gray-600">-</button>
+                            <div class="flex items-center border border-gray-700 rounded overflow-hidden">
+                                <button onclick="updateQty(${index}, -1)" class="w-6 h-6 bg-black flex items-center justify-center font-bold text-gray-300">-</button>
                                 <span class="w-8 text-center text-sm font-bold">${item.qty}</span>
-                                <button onclick="updateQty(${index}, 1)" class="w-6 h-6 bg-gray-50 flex items-center justify-center font-bold text-gray-600">+</button>
+                                <button onclick="updateQty(${index}, 1)" class="w-6 h-6 bg-black flex items-center justify-center font-bold text-gray-300">+</button>
                             </div>
                         </div>
                     </div>
@@ -120,8 +120,23 @@
             document.getElementById('checkout-form').addEventListener('submit', submitOrder);
         });
     </script>
-</head>
-<body class="bg-gray-50 min-h-screen flex flex-col font-sans">
+
+    <style>
+        body, html { background-color: #000 !important; color: #fff !important; }
+        .mega-header { background-color: #000 !important; border-bottom: 1px solid #333 !important; }
+        .mega-nav-link { color: #fff !important; }
+        .mega-dropdown { background-color: #111 !important; border-color: #333 !important; }
+        .category-card, .menu-card { background-color: #111 !important; border-color: #333 !important; color: #fff !important; }
+        .category-card:hover, .menu-card:hover { border-color: #e65c00 !important; }
+        .category-card h3, .menu-card h3 { color: #fff !important; }
+        .menu-card p { color: #ccc !important; }
+        .modal-content { background-color: #111 !important; color: #fff !important; }
+        .close { color: #fff !important; }
+        /* Fix inputs in dark mode */
+        input, textarea, select { background-color: #222 !important; color: #fff !important; border-color: #444 !important; }
+    </style>
+    </head>
+<body class="bg-black min-h-screen flex flex-col font-sans bg-black text-white">
     
     <header class="bg-black shadow-sm py-4 px-6 flex justify-between items-center sticky top-0 z-50">
         <a href="index.html" class="flex items-center gap-3 font-bold text-2xl text-white no-underline">
@@ -133,47 +148,47 @@
     <main class="flex-grow max-w-5xl mx-auto w-full p-4 md:p-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
         
         <!-- Left: Cart Items -->
-        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 h-fit">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6 pb-4 border-b border-gray-200">Your Order</h2>
+        <div class="bg-gray-900 rounded-xl shadow-sm border border-gray-800 p-6 md:p-8 h-fit">
+            <h2 class="text-2xl font-bold text-white mb-6 pb-4 border-b border-gray-700">Your Order</h2>
             
             <div id="checkout-items" class="min-h-[200px]">
                 <!-- Items render here -->
             </div>
             
-            <div class="mt-6 pt-6 border-t border-gray-200 flex justify-between items-center">
-                <span class="text-lg font-bold text-gray-600">Total</span>
+            <div class="mt-6 pt-6 border-t border-gray-700 flex justify-between items-center">
+                <span class="text-lg font-bold text-gray-300">Total</span>
                 <span id="checkout-total" class="text-3xl font-black text-white">£0.00</span>
             </div>
         </div>
 
         <!-- Right: Checkout Form -->
-        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 h-fit">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6 pb-4 border-b border-gray-200">Pickup Details</h2>
+        <div class="bg-gray-900 rounded-xl shadow-sm border border-gray-800 p-6 md:p-8 h-fit">
+            <h2 class="text-2xl font-bold text-white mb-6 pb-4 border-b border-gray-700">Pickup Details</h2>
             
             <form id="checkout-form" class="space-y-5">
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
-                        <label class="block text-sm font-bold text-gray-700 mb-1">Full Name</label>
-                        <input type="text" id="name" required class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#e65c00] focus:border-transparent outline-none">
+                        <label class="block text-sm font-bold text-gray-200 mb-1">Full Name</label>
+                        <input type="text" id="name" required class="w-full border border-gray-700 rounded-lg p-3 focus:ring-2 focus:ring-[#e65c00] focus:border-transparent outline-none">
                     </div>
                     <div>
-                        <label class="block text-sm font-bold text-gray-700 mb-1">Phone Number</label>
-                        <input type="tel" id="phone" required class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#e65c00] focus:border-transparent outline-none">
+                        <label class="block text-sm font-bold text-gray-200 mb-1">Phone Number</label>
+                        <input type="tel" id="phone" required class="w-full border border-gray-700 rounded-lg p-3 focus:ring-2 focus:ring-[#e65c00] focus:border-transparent outline-none">
                     </div>
                 </div>
 
                 <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-1">Pickup Market Location</label>
-                    <select id="location" required class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#e65c00] focus:border-transparent outline-none bg-white">
+                    <label class="block text-sm font-bold text-gray-200 mb-1">Pickup Market Location</label>
+                    <select id="location" required class="w-full border border-gray-700 rounded-lg p-3 focus:ring-2 focus:ring-[#e65c00] focus:border-transparent outline-none bg-gray-900">
                         <option value="">Select a location...</option>
                         <option value="Duke of York Square">Duke of York Square (Saturdays)</option>
                     </select>
                 </div>
                 
                 <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-1">Pickup Time</label>
-                    <select id="time" required class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#e65c00] focus:border-transparent outline-none bg-white">
+                    <label class="block text-sm font-bold text-gray-200 mb-1">Pickup Time</label>
+                    <select id="time" required class="w-full border border-gray-700 rounded-lg p-3 focus:ring-2 focus:ring-[#e65c00] focus:border-transparent outline-none bg-gray-900">
                         <option value="">Select a time...</option>
                         <option value="10:00 AM - 11:00 AM">10:00 AM - 11:00 AM</option>
                         <option value="11:00 AM - 12:00 PM">11:00 AM - 12:00 PM</option>
@@ -185,19 +200,19 @@
                 </div>
 
                 <div class="pt-4 pb-2">
-                    <label class="block text-sm font-bold text-gray-700 mb-3">Payment Method</label>
+                    <label class="block text-sm font-bold text-gray-200 mb-3">Payment Method</label>
                     <div class="space-y-3">
-                        <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                        <label class="flex items-center p-4 border border-gray-700 rounded-lg cursor-pointer hover:bg-black transition-colors">
                             <input type="radio" name="payment" value="store" checked class="w-5 h-5 text-[#e65c00] focus:ring-[#e65c00]">
                             <div class="ml-3">
-                                <div class="font-bold text-gray-800">Pay at Storefront</div>
+                                <div class="font-bold text-white">Pay at Storefront</div>
                                 <div class="text-sm text-gray-500">Cash or Scan to Pay when you pick up.</div>
                             </div>
                         </label>
-                        <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                        <label class="flex items-center p-4 border border-gray-700 rounded-lg cursor-pointer hover:bg-black transition-colors">
                             <input type="radio" name="payment" value="online" class="w-5 h-5 text-[#e65c00] focus:ring-[#e65c00]">
                             <div class="ml-3">
-                                <div class="font-bold text-gray-800">Pay Online via Website</div>
+                                <div class="font-bold text-white">Pay Online via Website</div>
                                 <div class="text-sm text-gray-500">We will send you a secure payment link on WhatsApp.</div>
                             </div>
                         </label>
@@ -214,7 +229,7 @@
 
     </main>
 
-    <footer class="bg-black py-8 text-center mt-auto border-t border-gray-200">
+    <footer class="bg-black py-8 text-center mt-auto border-t border-gray-700">
         <p class="text-gray-400 font-bold">© 2026 ZabSiam LONDON.</p>
     </footer>
 

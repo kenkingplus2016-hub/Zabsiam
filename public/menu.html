@@ -29,7 +29,7 @@
     <style type="text/tailwindcss">
         @layer utilities {
             .nav-link {
-                @apply text-gray-700 no-underline px-4 py-2 text-sm font-bold transition-colors duration-300 hover:text-[#5c8b54] hover:bg-gray-50 rounded-md;
+                @apply text-gray-200 no-underline px-4 py-2 text-sm font-bold transition-colors duration-300 hover:text-[#5c8b54] hover:bg-black rounded-md;
             }
             .nav-link.active {
                 @apply text-[#5c8b54] bg-[#f0f8ed];
@@ -50,7 +50,7 @@
         }
 
         body {
-            @apply font-prompt bg-cream text-gray-800 overflow-x-hidden;
+            @apply font-prompt bg-cream text-white overflow-x-hidden;
         }
 
         .swiper-pagination-bullet-active {
@@ -60,7 +60,7 @@
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         .filter-btn {
-            @apply px-5 py-2 rounded-full text-sm font-semibold border border-gray-300 text-gray-600 hover:border-dark-green hover:text-dark-green transition-colors cursor-pointer bg-white;
+            @apply px-5 py-2 rounded-full text-sm font-semibold border border-gray-700 text-gray-300 hover:border-dark-green hover:text-dark-green transition-colors cursor-pointer bg-gray-900;
         }
         .filter-btn.active {
             @apply bg-dark-green text-white border-dark-green;
@@ -82,8 +82,23 @@
 
 <link href="css/cart.css" rel="stylesheet">
     <link rel="stylesheet" href="css/megamenu.css">
-</head>
-<body class="font-prompt bg-cream text-gray-800 overflow-x-hidden">
+
+    <style>
+        body, html { background-color: #000 !important; color: #fff !important; }
+        .mega-header { background-color: #000 !important; border-bottom: 1px solid #333 !important; }
+        .mega-nav-link { color: #fff !important; }
+        .mega-dropdown { background-color: #111 !important; border-color: #333 !important; }
+        .category-card, .menu-card { background-color: #111 !important; border-color: #333 !important; color: #fff !important; }
+        .category-card:hover, .menu-card:hover { border-color: #e65c00 !important; }
+        .category-card h3, .menu-card h3 { color: #fff !important; }
+        .menu-card p { color: #ccc !important; }
+        .modal-content { background-color: #111 !important; color: #fff !important; }
+        .close { color: #fff !important; }
+        /* Fix inputs in dark mode */
+        input, textarea, select { background-color: #222 !important; color: #fff !important; border-color: #444 !important; }
+    </style>
+    </head>
+<body class="font-prompt bg-cream text-white overflow-x-hidden bg-black text-white">
 
 <header class="mega-header">
     <div class="mega-nav-container">
@@ -158,7 +173,7 @@
 
     <!-- QR Code Modal -->
     <div id="qr-modal" class="fixed inset-0 bg-black/80 z-[4000] items-center justify-center p-5 hidden backdrop-blur-sm">
-        <div class="bg-white w-full max-w-[350px] rounded-[20px] overflow-hidden relative shadow-2xl border-2 border-gold flex flex-col text-center" style="animation: popIn 0.3s ease-out;">
+        <div class="bg-gray-900 w-full max-w-[350px] rounded-[20px] overflow-hidden relative shadow-2xl border-2 border-gold flex flex-col text-center" style="animation: popIn 0.3s ease-out;">
             <button onclick="document.getElementById('qr-modal').style.display='none'" class="absolute top-3 right-3 text-gray-400 hover:text-dark-green text-2xl transition-colors">&times;</button>
             <div class="bg-dark-green p-4 text-gold font-bold text-lg font-prompt">
                 สแกนเพื่อสั่งเมนูนี้
@@ -175,33 +190,33 @@
     
 <!-- Product Detail Modal -->
 <div id="product-modal" class="fixed inset-0 bg-black/60 z-[9999] hidden items-center justify-center p-4 backdrop-blur-sm">
-    <div class="bg-white rounded-xl w-full max-w-[500px] overflow-hidden flex flex-col relative shadow-2xl animate-fade-in-up">
+    <div class="bg-gray-900 rounded-xl w-full max-w-[500px] overflow-hidden flex flex-col relative shadow-2xl animate-fade-in-up">
         <!-- Close button -->
         <button onclick="closeProductModal()" class="absolute top-4 right-4 bg-black/50 hover:bg-black/80 text-white w-8 h-8 flex items-center justify-center rounded-full z-10 transition-colors">
             <i class="fas fa-times"></i>
         </button>
 
         <!-- Image Container -->
-        <div class="w-full aspect-[4/3] bg-gray-100 relative">
+        <div class="w-full aspect-[4/3] bg-black relative">
             <img id="modal-main-img" src="" alt="Product" class="w-full h-full object-cover">
         </div>
 
         <!-- Content -->
-        <div class="p-6 md:p-8 flex flex-col bg-white">
+        <div class="p-6 md:p-8 flex flex-col bg-gray-900">
             <div class="flex justify-between items-start gap-4 mb-3">
-                <h2 id="modal-title" class="text-2xl font-bold text-gray-800 font-prompt leading-tight">Product Title</h2>
+                <h2 id="modal-title" class="text-2xl font-bold text-white font-prompt leading-tight">Product Title</h2>
                 <span id="modal-price" class="text-xl font-bold text-[#e65c00]">£0.00</span>
             </div>
             
-            <div id="modal-desc" class="text-gray-600 mb-6 text-[15px] leading-relaxed">
+            <div id="modal-desc" class="text-gray-300 mb-6 text-[15px] leading-relaxed">
                 Experience the authentic taste of Thailand with our signature street food dish. Made fresh to order with premium ingredients.
             </div>
             
             <div class="mt-2 mb-6 flex gap-3">
-                <div class="flex items-center border border-gray-300 rounded-lg overflow-hidden w-28">
-                    <button id="modal-qty-minus" class="w-10 h-11 bg-gray-50 hover:bg-gray-100 flex items-center justify-center font-bold text-gray-700 text-lg transition-colors">-</button>
-                    <input type="number" id="modal-qty" value="1" min="1" class="w-8 h-11 text-center border-0 focus:ring-0 p-0 text-base font-bold bg-white text-gray-800" readonly>
-                    <button id="modal-qty-plus" class="w-10 h-11 bg-gray-50 hover:bg-gray-100 flex items-center justify-center font-bold text-gray-700 text-lg transition-colors">+</button>
+                <div class="flex items-center border border-gray-700 rounded-lg overflow-hidden w-28">
+                    <button id="modal-qty-minus" class="w-10 h-11 bg-black hover:bg-black flex items-center justify-center font-bold text-gray-200 text-lg transition-colors">-</button>
+                    <input type="number" id="modal-qty" value="1" min="1" class="w-8 h-11 text-center border-0 focus:ring-0 p-0 text-base font-bold bg-gray-900 text-white" readonly>
+                    <button id="modal-qty-plus" class="w-10 h-11 bg-black hover:bg-black flex items-center justify-center font-bold text-gray-200 text-lg transition-colors">+</button>
                 </div>
                 <button id="modal-add-btn" class="flex-1 bg-[#e65c00] text-white font-bold rounded-lg hover:bg-[#c44e00] transition-colors flex items-center justify-center gap-2 text-lg">
                     <i class="fas fa-shopping-cart"></i> Add to Order
@@ -317,9 +332,9 @@
     let portion = 2.6; // multiplier for ~260g portion
 
     return `
-    <div class="overflow-hidden rounded-lg border border-gray-200">
-        <table class="w-full text-[14px] text-left text-gray-600">
-            <thead class="text-gray-800 bg-gray-50 border-b border-gray-200 text-xs uppercase tracking-wider font-semibold">
+    <div class="overflow-hidden rounded-lg border border-gray-700">
+        <table class="w-full text-[14px] text-left text-gray-300">
+            <thead class="text-white bg-black border-b border-gray-700 text-xs uppercase tracking-wider font-semibold">
                 <tr>
                     <th class="py-2.5 px-3">Typical Values</th>
                     <th class="py-2.5 px-3 text-right">Per 100g</th>
@@ -327,16 +342,16 @@
                 </tr>
             </thead>
             <tbody class="divide-y divide-gray-100">
-                <tr class="hover:bg-gray-50"><td class="py-2 px-3 font-medium text-gray-800">Energy (kJ)</td><td class="py-2 px-3 text-right">${Math.round(base.kJ)}</td><td class="py-2 px-3 text-right">${Math.round(base.kJ * portion)}</td></tr>
-                <tr class="hover:bg-gray-50"><td class="py-2 px-3 font-medium text-gray-800">Energy (cal)</td><td class="py-2 px-3 text-right">${Math.round(base.cal)}</td><td class="py-2 px-3 text-right">${Math.round(base.cal * portion)}</td></tr>
-                <tr class="hover:bg-gray-50"><td class="py-2 px-3">Protein (g)</td><td class="py-2 px-3 text-right">${base.protein.toFixed(1)}</td><td class="py-2 px-3 text-right">${(base.protein * portion).toFixed(1)}</td></tr>
-                <tr class="hover:bg-gray-50"><td class="py-2 px-3">Carbohydrate (g)</td><td class="py-2 px-3 text-right">${base.carb.toFixed(1)}</td><td class="py-2 px-3 text-right">${(base.carb * portion).toFixed(1)}</td></tr>
-                <tr class="hover:bg-gray-50"><td class="py-1 px-3 pl-6 text-gray-500 text-xs">of which: sugars (g)</td><td class="py-1 px-3 text-right text-gray-500">${base.sugars.toFixed(1)}</td><td class="py-1 px-3 text-right text-gray-500">${(base.sugars * portion).toFixed(1)}</td></tr>
-                <tr class="hover:bg-gray-50"><td class="py-2 px-3">Fat (g)</td><td class="py-2 px-3 text-right">${base.fat.toFixed(1)}</td><td class="py-2 px-3 text-right">${(base.fat * portion).toFixed(1)}</td></tr>
-                <tr class="hover:bg-gray-50"><td class="py-1 px-3 pl-6 text-gray-500 text-xs">of which are saturates (g)</td><td class="py-1 px-3 text-right text-gray-500">${base.satFat.toFixed(2)}</td><td class="py-1 px-3 text-right text-gray-500">${(base.satFat * portion).toFixed(2)}</td></tr>
-                <tr class="hover:bg-gray-50"><td class="py-2 px-3">Fibre (g)</td><td class="py-2 px-3 text-right">${base.fibre.toFixed(1)}</td><td class="py-2 px-3 text-right">${(base.fibre * portion).toFixed(1)}</td></tr>
-                <tr class="hover:bg-gray-50"><td class="py-2 px-3">Sodium (g)</td><td class="py-2 px-3 text-right">${base.sodium.toFixed(2)}</td><td class="py-2 px-3 text-right">${(base.sodium * portion).toFixed(2)}</td></tr>
-                <tr class="hover:bg-gray-50"><td class="py-2 px-3">Salt (g)</td><td class="py-2 px-3 text-right">${base.salt.toFixed(2)}</td><td class="py-2 px-3 text-right">${(base.salt * portion).toFixed(2)}</td></tr>
+                <tr class="hover:bg-black"><td class="py-2 px-3 font-medium text-white">Energy (kJ)</td><td class="py-2 px-3 text-right">${Math.round(base.kJ)}</td><td class="py-2 px-3 text-right">${Math.round(base.kJ * portion)}</td></tr>
+                <tr class="hover:bg-black"><td class="py-2 px-3 font-medium text-white">Energy (cal)</td><td class="py-2 px-3 text-right">${Math.round(base.cal)}</td><td class="py-2 px-3 text-right">${Math.round(base.cal * portion)}</td></tr>
+                <tr class="hover:bg-black"><td class="py-2 px-3">Protein (g)</td><td class="py-2 px-3 text-right">${base.protein.toFixed(1)}</td><td class="py-2 px-3 text-right">${(base.protein * portion).toFixed(1)}</td></tr>
+                <tr class="hover:bg-black"><td class="py-2 px-3">Carbohydrate (g)</td><td class="py-2 px-3 text-right">${base.carb.toFixed(1)}</td><td class="py-2 px-3 text-right">${(base.carb * portion).toFixed(1)}</td></tr>
+                <tr class="hover:bg-black"><td class="py-1 px-3 pl-6 text-gray-500 text-xs">of which: sugars (g)</td><td class="py-1 px-3 text-right text-gray-500">${base.sugars.toFixed(1)}</td><td class="py-1 px-3 text-right text-gray-500">${(base.sugars * portion).toFixed(1)}</td></tr>
+                <tr class="hover:bg-black"><td class="py-2 px-3">Fat (g)</td><td class="py-2 px-3 text-right">${base.fat.toFixed(1)}</td><td class="py-2 px-3 text-right">${(base.fat * portion).toFixed(1)}</td></tr>
+                <tr class="hover:bg-black"><td class="py-1 px-3 pl-6 text-gray-500 text-xs">of which are saturates (g)</td><td class="py-1 px-3 text-right text-gray-500">${base.satFat.toFixed(2)}</td><td class="py-1 px-3 text-right text-gray-500">${(base.satFat * portion).toFixed(2)}</td></tr>
+                <tr class="hover:bg-black"><td class="py-2 px-3">Fibre (g)</td><td class="py-2 px-3 text-right">${base.fibre.toFixed(1)}</td><td class="py-2 px-3 text-right">${(base.fibre * portion).toFixed(1)}</td></tr>
+                <tr class="hover:bg-black"><td class="py-2 px-3">Sodium (g)</td><td class="py-2 px-3 text-right">${base.sodium.toFixed(2)}</td><td class="py-2 px-3 text-right">${(base.sodium * portion).toFixed(2)}</td></tr>
+                <tr class="hover:bg-black"><td class="py-2 px-3">Salt (g)</td><td class="py-2 px-3 text-right">${base.salt.toFixed(2)}</td><td class="py-2 px-3 text-right">${(base.salt * portion).toFixed(2)}</td></tr>
             </tbody>
         </table>
     </div>
@@ -492,8 +507,8 @@ function generateIngredients(item) {
                 
                 html += `
                     <div class="mb-12" id="section-${category.id}">
-                        <div class="flex items-center gap-4 mb-6 pb-2 border-b-2 border-gray-100">
-                            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 font-prompt">${catTitle}</h2>
+                        <div class="flex items-center gap-4 mb-6 pb-2 border-b-2 border-gray-800">
+                            <h2 class="text-2xl md:text-3xl font-bold text-white font-prompt">${catTitle}</h2>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
                 `;
@@ -512,24 +527,24 @@ function generateIngredients(item) {
                     
                     html += `
                         
-                        <div class="bg-white rounded-lg overflow-hidden flex flex-col relative group border border-gray-100 shadow-sm hover:shadow-md transition-shadow" id="card-${item.id}">
-                            <div class="relative w-full aspect-square overflow-hidden bg-gray-50 rounded-t-lg group/img">
+                        <div class="bg-gray-900 rounded-lg overflow-hidden flex flex-col relative group border border-gray-800 shadow-sm hover:shadow-md transition-shadow" id="card-${item.id}">
+                            <div class="relative w-full aspect-square overflow-hidden bg-black rounded-t-lg group/img">
                                 <!-- Primary Image -->
                                 <img src="${imgSrc}" onclick="openProductModal('${item.id}')" class="cursor-pointer absolute inset-0 w-full h-full object-cover transition-all duration-500 ${hasHoverImg ? 'group-hover/img:opacity-0' : 'group-hover/img:scale-105'}" onerror="this.src='logo2.png';">
                                 <!-- Secondary Hover Image (Only visible on hover if it exists) -->
                                 ${hasHoverImg ? `<img src="${hoverImgSrc}" onclick="openProductModal('${item.id}')" class="cursor-pointer absolute inset-0 w-full h-full object-cover transition-all duration-500 opacity-0 group-hover/img:opacity-100 group-hover/img:scale-105" onerror="this.src='logo2.png';">` : ''}
                                 <!-- Info Icon (Top Right) -->
-                                <button onclick="showQRCode('${item.id}', '${item.en}', ${item.price})" class="absolute top-2 right-2 bg-white/80 backdrop-blur-sm text-gray-500 hover:text-dark-green w-8 h-8 rounded-full flex items-center justify-center shadow-sm transition-colors border border-gray-200">
+                                <button onclick="showQRCode('${item.id}', '${item.en}', ${item.price})" class="absolute top-2 right-2 bg-gray-900/80 backdrop-blur-sm text-gray-500 hover:text-dark-green w-8 h-8 rounded-full flex items-center justify-center shadow-sm transition-colors border border-gray-700">
                                     <i class="fas fa-info"></i>
                                 </button>
                             </div>
                             
                             <div class="p-4 flex flex-col flex-1">
-                                <h3 onclick="openProductModal('${item.id}')" class="font-bold text-gray-800 text-[16px] mb-2 leading-snug cursor-pointer hover:text-[#598c73] transition-colors">${item.en}</h3>
+                                <h3 onclick="openProductModal('${item.id}')" class="font-bold text-white text-[16px] mb-2 leading-snug cursor-pointer hover:text-[#598c73] transition-colors">${item.en}</h3>
                                 
 
                                 
-                                <div class="mt-auto pt-3 border-t border-gray-100">
+                                <div class="mt-auto pt-3 border-t border-gray-800">
                                     <p class="font-bold text-[#e65c00] text-lg text-center">£${p1.toFixed(2)}</p>
                                 </div>
                             </div>
@@ -541,7 +556,7 @@ function generateIngredients(item) {
             });
 
             if (!hasResults && searchTerm) {
-                html = `<div class="text-center py-12"><i class="fas fa-search text-4xl text-gray-300 mb-4"></i><h3 class="text-xl font-bold text-gray-700">No dishes found for "${searchTerm}"</h3><p class="text-gray-500 mt-2">Try adjusting your search or browsing the categories.</p></div>`;
+                html = `<div class="text-center py-12"><i class="fas fa-search text-4xl text-gray-300 mb-4"></i><h3 class="text-xl font-bold text-gray-200">No dishes found for "${searchTerm}"</h3><p class="text-gray-500 mt-2">Try adjusting your search or browsing the categories.</p></div>`;
             }
 
             container.innerHTML = html;
@@ -680,10 +695,10 @@ function generateIngredients(item) {
                     catTitle += ` <span class="text-dark-green bg-gold px-2 py-0.5 rounded text-sm font-normal ml-2 inline-block whitespace-nowrap">${catLimits[id][cat.id][currentLang]}</span>`;
                 }
                 
-                html += '<div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100"><h4 class="font-bold text-dark-green mb-3 border-b pb-2 text-lg">' + catTitle + '</h4><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">';
+                html += '<div class="bg-gray-900 p-4 rounded-xl shadow-sm border border-gray-800"><h4 class="font-bold text-dark-green mb-3 border-b pb-2 text-lg">' + catTitle + '</h4><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">';
                 cat.items.forEach((item, iIdx) => {
                     const cbId = 'pkg-item-' + cIdx + '-' + iIdx;
-                    html += '<label class="flex items-start gap-3 p-2 hover:bg-gray-50 rounded cursor-pointer border border-transparent hover:border-gray-200 transition-colors"><input type="checkbox" id="' + cbId + '" class="pkg-item-checkbox mt-1 w-4 h-4 text-dark-green rounded focus:ring-gold" data-thname="' + item.th.replace(/'/g, "\\'") + '" data-enname="' + item.en.replace(/'/g, "\\'") + '"><div class="flex-1"><p class="text-sm font-bold text-gray-800">' + item.th + '</p><p class="text-xs text-gray-500">' + item.en + '</p></div></label>';
+                    html += '<label class="flex items-start gap-3 p-2 hover:bg-black rounded cursor-pointer border border-transparent hover:border-gray-700 transition-colors"><input type="checkbox" id="' + cbId + '" class="pkg-item-checkbox mt-1 w-4 h-4 text-dark-green rounded focus:ring-gold" data-thname="' + item.th.replace(/'/g, "\\'") + '" data-enname="' + item.en.replace(/'/g, "\\'") + '"><div class="flex-1"><p class="text-sm font-bold text-white">' + item.th + '</p><p class="text-xs text-gray-500">' + item.en + '</p></div></label>';
                 });
                 html += '</div></div>';
             });
