@@ -219,7 +219,7 @@
                 "id": "item_g2jwt02c3",
                 "th": "แกงเขียวหวานหมู",
                 "en": "Green Curry Pork",
-                "img": "green_curry_pork.jpg",
+                "img": "green_curry_pork_bowl.jpg",
                 "price": 40,
                 "unit": "3000 g/pot",
                 "price_s1": 6.95,
@@ -227,7 +227,8 @@
                 "price_s4": 26.95,
                 "weight_s1": "260g",
                 "weight_s2": "520g",
-                "weight_s4": "1040g"
+                "weight_s4": "1040g",
+                "img_hover": "green_curry_pork_pkg.jpg"
             },
             {
                 "id": "item_d0r1c4ln1",
