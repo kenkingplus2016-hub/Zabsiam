@@ -17,7 +17,7 @@
             {
                 "id": "item_2bsa6jstk",
                 "th": "ยำส้มโอกุ้งสด",
-                "en": "Pomelo Salad with Shrimp",
+                "en": "Pomelo Salad Shrimp",
                 "img": "c9dcd15e-891c-455d-ae3c-2c37f74c1b96.jpg",
                 "price": 16,
                 "unit": "12 pcs"
@@ -41,7 +41,7 @@
             {
                 "id": "item_rpwztizvb",
                 "th": "เมี่ยงคำส้มโอกุ้ง",
-                "en": "Pomelo Miang Kham with Shrimp",
+                "en": "Pomelo Miang Kham Shrimp",
                 "img": "pomeloleaf wrap.jpg",
                 "price": 16,
                 "unit": "12 pcs"
@@ -127,7 +127,7 @@
             {
                 "id": "item_5sp61u7do",
                 "th": "หมูปิ้งนมสด",
-                "en": "Pork Skewer with Milk",
+                "en": "Pork Skewer Milk",
                 "img": "pork skewers.jpg",
                 "price": 12,
                 "unit": "12 skewers"
@@ -159,7 +159,7 @@
             {
                 "id": "item_i8dt8y3do",
                 "th": "ปอเปี๊ยะสดเห็ดเข็มทอง",
-                "en": "Fresh Spring Rolls with Enoki Mushroom",
+                "en": "Fresh Spring Rolls Enoki Mushroom",
                 "img": "fresh_spring_rolls_enoki.jpg",
                 "price": 12,
                 "unit": "12 pcs"
@@ -233,7 +233,7 @@
             {
                 "id": "item_d0r1c4ln1",
                 "th": "แกงเขียวหวานกุ้ง",
-                "en": "Green Curry with Prawns",
+                "en": "Green Curry Prawns",
                 "img": "green_curry_prawns.jpg",
                 "price": 45,
                 "unit": "3000 g/pot",
@@ -575,7 +575,7 @@
             {
                 "id": "item_7fpb2g6mv",
                 "th": "กุ้งทอดซอสมะขาม",
-                "en": "Fried Shrimp with Tamarind Sauce",
+                "en": "Fried Shrimp Tamarind Sauce",
                 "img": "tamarind_shrimp.jpg",
                 "price": 15,
                 "unit": "12 pcs"
@@ -583,7 +583,7 @@
             {
                 "id": "item_q3o2hj7jy",
                 "th": "ปลากะพงทอดน้ำปลา",
-                "en": "Deep Fried Sea Bass with Fish Sauce",
+                "en": "Deep Fried Sea Bass Fish Sauce",
                 "img": "seabass_fishsauce.jpg",
                 "price": 16,
                 "unit": "225g / plate"
@@ -591,7 +591,7 @@
             {
                 "id": "item_zc0cfaon5",
                 "th": "ปลากะพงทอดสามรส",
-                "en": "Deep Fried Sea Bass with Three-Flavored Sauce",
+                "en": "Deep Fried Sea Bass Three-Flavored Sauce",
                 "img": "seabass_3flavor.jpg",
                 "price": 16,
                 "unit": "225g / plate"
@@ -621,7 +621,7 @@
             {
                 "id": "item_gca4f0q0c",
                 "th": "ปลากระพงนึ่งมะนาว",
-                "en": "Steamed Sea Bass with Lime and Garlic",
+                "en": "Steamed Sea Bass Lime and Garlic",
                 "img": "steamed_seabass_lime.jpg",
                 "price": 45,
                 "unit": "3000 g/pot"
@@ -629,7 +629,7 @@
             {
                 "id": "item_0d345alpy",
                 "th": "ปลาหมึกนึ่งมะนาว",
-                "en": "Steamed Squid with Lime and Garlic",
+                "en": "Steamed Squid Lime and Garlic",
                 "img": "steamed_squid_lime.jpg",
                 "price": 50,
                 "unit": "3000 g/pot"
@@ -645,7 +645,7 @@
             {
                 "id": "item_61ec9mqso",
                 "th": "ปลาหมึกผัดพริกเผา",
-                "en": "Stir-fried Squid with Chili Paste",
+                "en": "Stir-fried Squid Chili Paste",
                 "img": "squid_chili_paste.jpg",
                 "price": 35,
                 "unit": "1000g"
@@ -653,7 +653,7 @@
             {
                 "id": "item_6u785z0ne",
                 "th": "ผัดฉ่าปลากระพง",
-                "en": "Stir-fried Sea Bass with Herbs and Spices (Phad Cha)",
+                "en": "Stir-fried Sea Bass Herbs and Spices (Phad Cha)",
                 "img": "phad_cha_seabass.jpg",
                 "price": 35,
                 "unit": "1000g"
@@ -685,7 +685,7 @@
             {
                 "id": "item_pa7w5c75g",
                 "th": "ไก่ผัดขิง",
-                "en": "Stir-fried Chicken with Ginger",
+                "en": "Stir-fried Chicken Ginger",
                 "img": "stir_fried_chicken_ginger.jpg",
                 "price": 25,
                 "unit": "1000g"
@@ -822,7 +822,7 @@
             {
                 "id": "item_crab_paste_fried_rice",
                 "th": "ข้าวผัดมันปู",
-                "en": "Fried Rice with Crab Paste",
+                "en": "Fried Rice Crab Paste",
                 "img": "crab_paste_fried_rice.jpg",
                 "price": 65,
                 "unit": "tray"
@@ -838,7 +838,7 @@
             {
                 "id": "item_47u308grz",
                 "th": "ผัดไทยกุ้ง",
-                "en": "Pad Thai with Prawns",
+                "en": "Pad Thai Prawns",
                 "img": "pad_thai_prawns.jpg",
                 "price": 35,
                 "unit": "2000g / tray"
@@ -846,7 +846,7 @@
             {
                 "id": "item_7odwg5bba",
                 "th": "ผัดไทยไก่",
-                "en": "Pad Thai with Chicken",
+                "en": "Pad Thai Chicken",
                 "img": "pad_thai_chicken.jpg",
                 "price": 25,
                 "unit": "2000g / tray"
@@ -854,7 +854,7 @@
             {
                 "id": "item_yli8d1lit",
                 "th": "ผัดไทยผักรวม",
-                "en": "Pad Thai with Mixed Vegetables",
+                "en": "Pad Thai Mixed Vegetables",
                 "img": "pad_thai_veg.jpg",
                 "price": 20,
                 "unit": "2000g / tray"
@@ -862,7 +862,7 @@
             {
                 "id": "item_rasqo7a1h",
                 "th": "ยำวุ้นเส้นกุ้ง",
-                "en": "Glass Noodle Salad with Shrimp",
+                "en": "Glass Noodle Salad Shrimp",
                 "img": "yum_woon_sen_shrimp.jpg",
                 "price": 35,
                 "unit": "2000g / tray"
@@ -870,7 +870,7 @@
             {
                 "id": "item_1sq90u1i5",
                 "th": "ยำวุ้นเส้นหมูยอ",
-                "en": "Glass Noodle Salad with Vietnamese Pork Sausage",
+                "en": "Glass Noodle Salad Vietnamese Pork Sausage",
                 "img": "yum_woon_sen_moo_yor.jpg",
                 "price": 35,
                 "unit": "2000g / tray"
@@ -895,7 +895,7 @@
             {
                 "id": "item_p78h6ho90",
                 "th": "ผัดเนื้อผักรวมน้ำมันหอย",
-                "en": "Stir-fried Beef with Veg",
+                "en": "Stir-fried Beef Veg",
                 "img": "74845001-324c-482d-8a79-c1c5d8d0a68f.jpg",
                 "price": 35,
                 "unit": "tray"
@@ -903,7 +903,7 @@
             {
                 "id": "item_zy5pdsi21",
                 "th": "ผัดผักรวมกุ้งน้ำมันหอย",
-                "en": "Stir-fried Veg with Shrimp",
+                "en": "Stir-fried Veg Shrimp",
                 "img": "Stir-fried Mixed Vegetables with Shrimp.jpg",
                 "price": 45,
                 "unit": "tray"
@@ -968,7 +968,7 @@
             {
                 "id": "item_dbq8x2pru",
                 "th": "ขนมครองแครงอัญชันมะพร้าวอ่อน",
-                "en": "Krong Krang Butterfly Pea with Young Coconut",
+                "en": "Krong Krang Butterfly Pea Young Coconut",
                 "img": "krong_krang_butterfly_pea.jpg",
                 "price": 69,
                 "unit": "10 Bowls"
@@ -1078,7 +1078,7 @@
             {
                 "id": "item_vea70we67",
                 "th": "ไอศกรีมกะทิข้าวเหนียว",
-                "en": "Coconut Ice Cream with Sticky Rice",
+                "en": "Coconut Ice Cream Sticky Rice",
                 "img": "coconut_ice_cream.jpg",
                 "price": 70,
                 "unit": "10 cups"
@@ -1086,7 +1086,7 @@
             {
                 "id": "item_a2c1r4g76",
                 "th": "ไอศกรีมมะม่วงข้าวเหนียวมูน",
-                "en": "Mango Ice Cream with Sticky Rice",
+                "en": "Mango Ice Cream Sticky Rice",
                 "img": "mango_ice_cream.jpg",
                 "price": 80,
                 "unit": "10 cups"
