@@ -270,7 +270,8 @@
                 "price_s4": 26.95,
                 "weight_s1": "260g",
                 "weight_s2": "520g",
-                "weight_s4": "1040g"
+                "weight_s4": "1040g",
+                "img_hover": "Red Curry  Chicken pkg.jpg"
             },
             {
                 "id": "item_dcbgmoghd",
@@ -299,7 +300,8 @@
                 "price_s4": 34.95,
                 "weight_s1": "260g",
                 "weight_s2": "520g",
-                "weight_s4": "1040g"
+                "weight_s4": "1040g",
+                "img_hover": "Red Curry beef pkg.jpg"
             },
             {
                 "id": "item_xp1g4vzg3",
@@ -397,7 +399,8 @@
                 "price_s4": 26.95,
                 "weight_s1": "260g",
                 "weight_s2": "520g",
-                "weight_s4": "1040g"
+                "weight_s4": "1040g",
+                "img_hover": "Panang Curry Pork pkg.jpg"
             },
             {
                 "id": "item_3otm2f6s3",
@@ -411,7 +414,8 @@
                 "price_s4": 26.95,
                 "weight_s1": "260g",
                 "weight_s2": "520g",
-                "weight_s4": "1040g"
+                "weight_s4": "1040g",
+                "img_hover": "Panang Curry Chicken pkg.jpg"
             },
             {
                 "id": "item_4nqvtl4rl",
@@ -425,7 +429,8 @@
                 "price_s4": 34.95,
                 "weight_s1": "260g",
                 "weight_s2": "520g",
-                "weight_s4": "1040g"
+                "weight_s4": "1040g",
+                "img_hover": "Panang Curry beef pkg.jpg"
             },
             {
                 "id": "item_ahnwc36j8",
