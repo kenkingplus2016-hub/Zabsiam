@@ -321,8 +321,8 @@
                 "price": 35,
                 "unit": "3000 g/pot",
                 "price_s1": 6.5,
-                "price_s2": 11.5,
-                "price_s4": 19.5,
+                "price_s2": 12.95,
+                "price_s4": 25.5,
                 "weight_s1": "260g",
                 "weight_s2": "520g",
                 "weight_s4": "1040g"
@@ -335,8 +335,8 @@
                 "price": 35,
                 "unit": "3000 g/pot",
                 "price_s1": 6.5,
-                "price_s2": 11.5,
-                "price_s4": 19.5,
+                "price_s2": 12.95,
+                "price_s4": 25.5,
                 "weight_s1": "260g",
                 "weight_s2": "520g",
                 "weight_s4": "1040g"
@@ -517,8 +517,8 @@
                 "price": 35,
                 "unit": "3000 g/pot",
                 "price_s1": 6.5,
-                "price_s2": 11.5,
-                "price_s4": 19.5,
+                "price_s2": 12.95,
+                "price_s4": 25.5,
                 "weight_s1": "260g",
                 "weight_s2": "520g",
                 "weight_s4": "1040g"
@@ -531,8 +531,8 @@
                 "price": 35,
                 "unit": "3000 g/pot",
                 "price_s1": 6.5,
-                "price_s2": 11.5,
-                "price_s4": 19.5,
+                "price_s2": 12.95,
+                "price_s4": 25.5,
                 "weight_s1": "260g",
                 "weight_s2": "520g",
                 "weight_s4": "1040g"
