@@ -41,6 +41,7 @@
     height: 100%;
     align-items: center;
     flex: 1;
+    justify-content: center;
 }
 
 .mega-nav-item {
