@@ -1,7 +1,7 @@
 /* Mega Menu Styles */
 .mega-header {
-    background-color: #1a433d; /* Dark green from the reference */
-    color: white;
+    background-color: #1a433d !important; /* Dark green from the reference */
+    color: white !important;
     width: 100%;
     position: fixed;
     top: 0;
@@ -143,9 +143,10 @@
 }
 
 .mega-column a {
-    color: #666;
+    color: #333;
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
+    font-weight: 500;
     margin-bottom: 10px;
     transition: color 0.2s;
 }
