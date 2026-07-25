@@ -261,7 +261,7 @@
             {
                 "id": "item_i4xv9bkpn",
                 "th": "แกงแดงไก่",
-                "en": "Red Curry with Chicken",
+                "en": "Red Curry Chicken",
                 "img": "red_curry_chicken.jpg",
                 "price": 40,
                 "unit": "3000 g/pot",
@@ -276,7 +276,7 @@
             {
                 "id": "item_dcbgmoghd",
                 "th": "แกงแดงหมู",
-                "en": "Red Curry with Pork",
+                "en": "Red Curry Pork",
                 "img": "red_curry_pork.jpg",
                 "price": 40,
                 "unit": "3000 g/pot",
@@ -291,7 +291,7 @@
             {
                 "id": "item_p0rdw5hmz",
                 "th": "แกงแดงเนื้อ",
-                "en": "Red Curry with Beef",
+                "en": "Red Curry Beef",
                 "img": "red_curry_beef.jpg",
                 "price": 45,
                 "unit": "3000 g/pot",
@@ -306,7 +306,7 @@
             {
                 "id": "item_xp1g4vzg3",
                 "th": "แกงแดงกุ้ง",
-                "en": "Red Curry with Prawn",
+                "en": "Red Curry Prawn",
                 "img": "red_curry_prawns.jpg",
                 "price": 45,
                 "unit": "3000 g/pot",
@@ -390,7 +390,7 @@
             {
                 "id": "item_7mnkkzj7o",
                 "th": "แกงพะแนงหมู",
-                "en": "Panang Curry with Pork",
+                "en": "Panang Curry Pork",
                 "img": "panang_pork.jpg",
                 "price": 40,
                 "unit": "3000 g/pot",
@@ -405,7 +405,7 @@
             {
                 "id": "item_3otm2f6s3",
                 "th": "แกงพะแนงไก่",
-                "en": "Panang Curry with Chicken",
+                "en": "Panang Curry Chicken",
                 "img": "panang_chicken.jpg",
                 "price": 40,
                 "unit": "3000 g/pot",
@@ -420,7 +420,7 @@
             {
                 "id": "item_4nqvtl4rl",
                 "th": "แกงพะแนงเนื้อ",
-                "en": "Panang Curry with Beef",
+                "en": "Panang Curry Beef",
                 "img": "panang_beef.jpg",
                 "price": 45,
                 "unit": "3000 g/pot",
@@ -435,7 +435,7 @@
             {
                 "id": "item_ahnwc36j8",
                 "th": "แกงพะแนงกุ้ง",
-                "en": "Panang Curry with Prawns",
+                "en": "Panang Curry Prawns",
                 "img": "panang_prawns.jpg",
                 "price": 45,
                 "unit": "3000 g/pot",
