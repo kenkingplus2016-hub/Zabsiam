@@ -68,6 +68,15 @@
                 "price": 15,
                 "price_s1": 15,
                 "weight_s1": "Portion"
+            },
+            {
+                "id": "seabass_lui_suan",
+                "th": "ปลาซีบาสลุยสวน",
+                "en": "Sea Bass Lui Suan Salad",
+                "img": "sea_bass_lui_suan.jpg",
+                "price": 16,
+                "price_s1": 16,
+                "weight_s1": "Portion"
             }
         ]
     },
