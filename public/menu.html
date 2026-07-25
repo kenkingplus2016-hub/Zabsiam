@@ -81,56 +81,118 @@
 
 
 <link href="css/cart.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/megamenu.css">
 </head>
 <body class="font-prompt bg-cream text-gray-800 overflow-x-hidden">
 
-<header class="bg-white border-b border-gray-200 sticky top-0 z-[1000] shadow-sm">
-    <!-- Top Row: Logo, Search, Cart -->
-    <div class="max-w-[1200px] mx-auto px-5 py-4 flex items-center justify-between gap-4 md:gap-8">
-        <!-- Logo -->
-        <a href="index.html" class="flex-shrink-0">
-            <img src="logo.png" alt="Khrua Thai London" class="h-[40px] md:h-[50px] w-auto">
+<header class="mega-header">
+    <div class="mega-nav-container">
+        <a href="index.html" class="mega-logo">
+            <img src="logo.png" alt="KHRUA THAI">
+            KHRUA THAI
         </a>
         
-        <!-- Search Bar -->
-        <div class="hidden md:flex flex-1 max-w-[600px] relative">
-            <input type="text" id="menu-search" onkeyup="searchMenu(this.value)" placeholder="Search for dishes..." class="w-full pl-4 pr-10 py-2.5 rounded-full border border-gray-300 focus:outline-none focus:border-[#5c8b54] focus:ring-1 focus:ring-[#5c8b54] transition-colors shadow-inner bg-gray-50/50">
-            <button class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[#5c8b54]">
-                <i class="fas fa-search"></i>
-            </button>
-        </div>
-
-        <!-- Right: Cart & Mobile Menu -->
-        <div class="flex items-center gap-4">
-            <a href="booking.html" class="flex items-center gap-2 text-gray-700 hover:text-[#5c8b54] transition-colors group bg-gray-50 px-4 py-2 rounded-full border border-gray-200 hover:border-[#5c8b54]">
-                <div class="relative">
-                    <i class="fas fa-shopping-basket text-xl group-hover:scale-110 transition-transform"></i>
-                    <span id="nav-cart-badge-inner" class="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center shadow-sm" style="display:none;">0</span>
+        <div class="mega-nav-links">
+            <!-- Main Meals -->
+            <div class="mega-nav-item">
+                <a href="menu.html" class="mega-nav-link">Main Meals</a>
+                <div class="mega-dropdown">
+                    <div class="mega-dropdown-content">
+                        <div class="mega-columns">
+                            <div class="mega-column">
+                                <div class="mega-column-title">By Protein</div>
+                                <a href="menu.html">Chicken Meals</a>
+                                <a href="menu.html">Beef Meals</a>
+                                <a href="menu.html">Pork Meals</a>
+                                <a href="menu.html">Seafood</a>
+                            </div>
+                            <div class="mega-column">
+                                <div class="mega-column-title">Vegetarian & Vegan</div>
+                                <a href="menu.html">All Vegetarian</a>
+                                <a href="menu.html">Vegan Meals</a>
+                            </div>
+                        </div>
+                        <div class="mega-featured">
+                            <a href="menu.html" class="mega-feature-card">
+                                <img src="images/green_curry_pork_bowl.jpg" alt="Green Curry">
+                                <span>Authentic Thai Curries</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <span class="hidden md:block font-bold text-sm">Basket</span>
-            </a>
-            <div class="mobile-menu-btn md:hidden text-2xl cursor-pointer text-gray-700"><i class="fas fa-bars"></i></div>
-        </div>
-    </div>
-    
-    <!-- Mobile Search -->
-    <div class="md:hidden px-5 pb-4">
-        <div class="relative">
-            <input type="text" id="mobile-menu-search" onkeyup="searchMenu(this.value)" placeholder="Search for dishes..." class="w-full pl-4 pr-10 py-2 rounded-full border border-gray-300 focus:outline-none focus:border-[#5c8b54] bg-gray-50/50 shadow-inner">
-            <i class="fas fa-search absolute right-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
-        </div>
-    </div>
+            </div>
+            
+            <!-- Entertaining -->
+            <div class="mega-nav-item">
+                <a href="menu.html" class="mega-nav-link">Entertaining</a>
+                <div class="mega-dropdown">
+                    <div class="mega-dropdown-content">
+                        <div class="mega-columns">
+                            <div class="mega-column">
+                                <div class="mega-column-title">Event Types</div>
+                                <a href="menu.html">Canapés</a>
+                                <a href="menu.html">Dinner Party</a>
+                                <a href="menu.html">Afternoon Tea</a>
+                                <a href="menu.html">Buffet</a>
+                                <a href="menu.html">Birthday Party</a>
+                            </div>
+                        </div>
+                        <div class="mega-featured">
+                            <a href="menu.html" class="mega-feature-card">
+                                <img src="images/780f7b8bb98d.jpg" alt="Entertaining">
+                                <span>Premium Event Catering</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <!-- Bottom Row: Navigation Links -->
-    <nav class="hidden md:block border-t border-gray-100 bg-gray-50/30" id="main-nav">
-        <div class="max-w-[1200px] mx-auto px-5 flex justify-start gap-2 py-1.5 overflow-x-auto hide-scrollbar">
-            <a href="#" class="nav-link">Canapés</a>
-            <a href="#" class="nav-link">Dinner Party</a>
-            <a href="#" class="nav-link">Afternoon Tea</a>
-            <a href="#" class="nav-link active">Buffet</a>
-            <a href="#" class="nav-link">Birthday Party</a>
+            <!-- Puddings -->
+            <div class="mega-nav-item">
+                <a href="desserts.html" class="mega-nav-link">Puddings</a>
+                <div class="mega-dropdown">
+                    <div class="mega-dropdown-content">
+                        <div class="mega-columns">
+                            <div class="mega-column">
+                                <div class="mega-column-title">Thai Desserts</div>
+                                <a href="desserts.html">Coconut Jelly</a>
+                                <a href="desserts.html">Mango Sticky Rice</a>
+                                <a href="desserts.html">Traditional Sweets</a>
+                            </div>
+                        </div>
+                        <div class="mega-featured">
+                            <a href="desserts.html" class="mega-feature-card">
+                                <img src="images/Butterfly Pea Coconut Jelly with Young Coconut.jpg" alt="Puddings">
+                                <span>Delightful Thai Puddings</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meal Boxes -->
+            <div class="mega-nav-item">
+                <a href="delivery.html" class="mega-nav-link">Meal Boxes</a>
+            </div>
+
+            <!-- Summer Meals -->
+            <div class="mega-nav-item">
+                <a href="menu.html" class="mega-nav-link">Summer Meals</a>
+            </div>
         </div>
-    </nav>
+
+        <div class="mega-search">
+            <input type="text" placeholder="Search for Meals...">
+            <i class="fas fa-search"></i>
+        </div>
+
+        <div class="mega-icons">
+            <a href="booking.html" class="mega-icon-btn">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="nav-cart-badge-inner" class="mega-cart-badge" style="display:none;">0</span>
+            </a>
+        </div>
+    </div>
 </header>
     
 
