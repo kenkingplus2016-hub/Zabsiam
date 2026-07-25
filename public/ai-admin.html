@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Khrua Thai London Admin</title>
+  <title>ZabSiam London Admin</title>
   <style>
     :root {
       --ink: #202620;
@@ -163,14 +163,14 @@
   <header class="mega-header">
     <div class="mega-nav-container">
         <a href="index.html" class="mega-logo">
-            <img src="logo.png" alt="KHRUA THAI">
-            KHRUA THAI
+            <img src="logo.png" alt="ZabSiam">
+            ZabSiam
         </a>
         
         <div class="mega-nav-links">
-            <!-- Our Menu -->
+            <!-- Thai Street Food -->
             <div class="mega-nav-item">
-                <a href="menu.html" class="mega-nav-link">Our Menu</a>
+                <a href="menu.html" class="mega-nav-link">Thai Street Food</a>
                 <div class="mega-dropdown">
                     <div class="mega-dropdown-content">
                         <div class="mega-columns">
@@ -406,7 +406,7 @@
     }
     function copySales() {
       const o = formData();
-      const text = `นี่คือออเดอร์/lead ของ Khrua Thai London\n\nลูกค้า: ${o.customer}\nติดต่อ: ${o.contact}\nประเภท: ${o.type}\nจำนวน: ${o.count}\nวันเวลา: ${o.date} ${o.time}\nสถานที่: ${o.address}\nรายรับประมาณ: £${o.revenue}\nต้นทุนประมาณ: £${o.cost}\nเมนู/หมายเหตุ: ${o.menu}\n\nช่วย Sales AI สรุปข้อมูล ถามข้อมูลที่ยังขาด และร่างข้อความตอบลูกค้า`;
+      const text = `นี่คือออเดอร์/lead ของ ZabSiam London\n\nลูกค้า: ${o.customer}\nติดต่อ: ${o.contact}\nประเภท: ${o.type}\nจำนวน: ${o.count}\nวันเวลา: ${o.date} ${o.time}\nสถานที่: ${o.address}\nรายรับประมาณ: £${o.revenue}\nต้นทุนประมาณ: £${o.cost}\nเมนู/หมายเหตุ: ${o.menu}\n\nช่วย Sales AI สรุปข้อมูล ถามข้อมูลที่ยังขาด และร่างข้อความตอบลูกค้า`;
       navigator.clipboard.writeText(text).then(() => status("คัดลอกส่ง Sales AI แล้ว"));
     }
     el("saveOrder").addEventListener("click", () => {
