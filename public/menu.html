@@ -88,7 +88,7 @@
 <header class="mega-header">
     <div class="mega-nav-container">
         <a href="index.html" class="mega-logo">
-            <img src="logo.png" alt="ZabSiam">
+            <img src="logo2.png" alt="ZabSiam">
             ZabSiam
         </a>
         
@@ -410,7 +410,7 @@ function generateIngredients(item) {
             if (!activeItemData) return;
             
             const item = activeItemData;
-            const imgSrc = item.img === 'logo.png' ? 'logo.png' : (item.img.startsWith('http') ? item.img : `images/${item.img}`);
+            const imgSrc = item.img === 'logo2.png' ? 'logo2.png' : (item.img.startsWith('http') ? item.img : `images/${item.img}`);
             
             // Populate data
             document.getElementById('modal-title').innerText = item.en || item.th;
@@ -500,7 +500,7 @@ function generateIngredients(item) {
                 `;
 
                 filteredItems.forEach(item => {
-                    const imgSrc = item.img === 'logo.png' ? 'logo.png' : (item.img.startsWith('http') ? item.img : `images/${item.img}`);
+                    const imgSrc = item.img === 'logo2.png' ? 'logo2.png' : (item.img.startsWith('http') ? item.img : `images/${item.img}`);
                     const unit = item.unit || 'Portion';
                     // Check if there is a hover image in data, otherwise use the same image but keep the zoom effect
                     const hasHoverImg = !!item.img_hover;
@@ -516,9 +516,9 @@ function generateIngredients(item) {
                         <div class="bg-white rounded-lg overflow-hidden flex flex-col relative group border border-gray-100 shadow-sm hover:shadow-md transition-shadow" id="card-${item.id}">
                             <div class="relative w-full aspect-square overflow-hidden bg-gray-50 rounded-t-lg group/img">
                                 <!-- Primary Image -->
-                                <img src="${imgSrc}" onclick="openProductModal('${item.id}')" class="cursor-pointer absolute inset-0 w-full h-full object-cover transition-all duration-500 ${hasHoverImg ? 'group-hover/img:opacity-0' : 'group-hover/img:scale-105'}" onerror="this.src='logo.png';">
+                                <img src="${imgSrc}" onclick="openProductModal('${item.id}')" class="cursor-pointer absolute inset-0 w-full h-full object-cover transition-all duration-500 ${hasHoverImg ? 'group-hover/img:opacity-0' : 'group-hover/img:scale-105'}" onerror="this.src='logo2.png';">
                                 <!-- Secondary Hover Image (Only visible on hover if it exists) -->
-                                ${hasHoverImg ? `<img src="${hoverImgSrc}" onclick="openProductModal('${item.id}')" class="cursor-pointer absolute inset-0 w-full h-full object-cover transition-all duration-500 opacity-0 group-hover/img:opacity-100 group-hover/img:scale-105" onerror="this.src='logo.png';">` : ''}
+                                ${hasHoverImg ? `<img src="${hoverImgSrc}" onclick="openProductModal('${item.id}')" class="cursor-pointer absolute inset-0 w-full h-full object-cover transition-all duration-500 opacity-0 group-hover/img:opacity-100 group-hover/img:scale-105" onerror="this.src='logo2.png';">` : ''}
                                 <!-- Info Icon (Top Right) -->
                                 <button onclick="showQRCode('${item.id}', '${item.en}', ${item.price})" class="absolute top-2 right-2 bg-white/80 backdrop-blur-sm text-gray-500 hover:text-dark-green w-8 h-8 rounded-full flex items-center justify-center shadow-sm transition-colors border border-gray-200">
                                     <i class="fas fa-info"></i>
@@ -784,7 +784,7 @@ function generateIngredients(item) {
                 for (let cat of buffetData) {
                     const item = cat.items.find(i => i.id === addItemId);
                     if (item) {
-                        const imgSrc = item.img === 'logo.png' ? 'logo.png' : (item.img.startsWith('http') ? item.img : `images/${item.img}`);
+                        const imgSrc = item.img === 'logo2.png' ? 'logo2.png' : (item.img.startsWith('http') ? item.img : `images/${item.img}`);
                         addBuffetItem(item.id, item.th, item.price, imgSrc);
                         
                         // Scroll to item

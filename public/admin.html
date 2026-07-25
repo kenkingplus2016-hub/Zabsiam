@@ -128,7 +128,7 @@
     <header class="mega-header">
     <div class="mega-nav-container">
         <a href="index.html" class="mega-logo">
-            <img src="logo.png" alt="ZabSiam">
+            <img src="logo2.png" alt="ZabSiam">
             ZabSiam
         </a>
         
@@ -996,9 +996,9 @@
             container.innerHTML = '';
             
             // Build options string for select dropdowns
-            let optionsHtml = `<option value="logo.png">logo.png (ภาพพื้นฐาน)</option>`;
+            let optionsHtml = `<option value="logo2.png">logo2.png (ภาพพื้นฐาน)</option>`;
             globalImageList.forEach(img => {
-                if(img !== 'logo.png') {
+                if(img !== 'logo2.png') {
                     optionsHtml += `<option value="${img}">${img}</option>`;
                 }
             });
@@ -1074,9 +1074,9 @@
             const container = document.getElementById('classic-menu-editor-container');
             container.innerHTML = '';
             
-            let optionsHtml = `<option value="logo.png">logo.png (ภาพพื้นฐาน)</option>`;
+            let optionsHtml = `<option value="logo2.png">logo2.png (ภาพพื้นฐาน)</option>`;
             globalImageList.forEach(img => {
-                if(img !== 'logo.png') {
+                if(img !== 'logo2.png') {
                     optionsHtml += `<option value="${img}">${img}</option>`;
                 }
             });
@@ -1142,9 +1142,9 @@
             const container = document.getElementById('royal-menu-editor-container');
             container.innerHTML = '';
 
-            let optionsHtml = `<option value="logo.png">logo.png (ภาพพื้นฐาน)</option>`;
+            let optionsHtml = `<option value="logo2.png">logo2.png (ภาพพื้นฐาน)</option>`;
             globalImageList.forEach(img => {
-                if(img !== 'logo.png') {
+                if(img !== 'logo2.png') {
                     optionsHtml += `<option value="${img}">${img}</option>`;
                 }
             });
@@ -1218,9 +1218,9 @@
             const container = document.getElementById('curry-menu-editor-container');
             container.innerHTML = '';
 
-            let optionsHtml = `<option value="logo.png">logo.png (ภาพพื้นฐาน)</option>`;
+            let optionsHtml = `<option value="logo2.png">logo2.png (ภาพพื้นฐาน)</option>`;
             globalImageList.forEach(img => {
-                if(img !== 'logo.png') {
+                if(img !== 'logo2.png') {
                     optionsHtml += `<option value="${img}">${img}</option>`;
                 }
             });
@@ -1233,7 +1233,7 @@
                     <div class="menu-item-row">
                         <div class="menu-item-name">${item.name.th}</div>
                         <select class="menu-item-select curry-select" data-idx="${idx}" onchange="updateCurryMenuData(${idx}, this.value)">
-                            <option value="${item.img || 'logo.png'}" selected hidden>${item.img || 'logo.png'}</option>
+                            <option value="${item.img || 'logo2.png'}" selected hidden>${item.img || 'logo2.png'}</option>
                             ${optionsHtml}
                         </select>
                     </div>
@@ -1247,7 +1247,7 @@
             const selects = container.querySelectorAll('.curry-select');
             selects.forEach(sel => {
                 const idx = parseInt(sel.dataset.idx);
-                sel.value = globalCurryMenuData[idx].img || 'logo.png';
+                sel.value = globalCurryMenuData[idx].img || 'logo2.png';
             });
 
             document.getElementById('save-curry-menu-btn').style.display = 'block';
