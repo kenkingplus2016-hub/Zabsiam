@@ -37,30 +37,6 @@
                 "img": "pomeloleaf wrap.jpg",
                 "price": 16,
                 "unit": "12 pcs"
-            },
-            {
-                "id": "item_u48e3j6r3",
-                "th": "แซลมอนลุยสวนเกี๊ยวกรอบ",
-                "en": "Salmon Lui Suan Wonton",
-                "img": "e0ecdb4e-2584-48ef-ab8e-7292ae447711.jpg",
-                "price": 16,
-                "unit": "12 pcs"
-            },
-            {
-                "id": "item_f0oq54jui",
-                "th": "ปอเปี๊ยะกุ้งทอด",
-                "en": "Crispy Prawn Spring Rolls",
-                "img": "crispy_prawn_spring_rolls.jpg",
-                "price": 16,
-                "unit": "12 pcs"
-            },
-            {
-                "id": "item_i8dt8y3do",
-                "th": "ปอเปี๊ยะสดเห็ดเข็มทอง",
-                "en": "Fresh Spring Rolls Enoki Mushroom",
-                "img": "fresh_spring_rolls_enoki.jpg",
-                "price": 12,
-                "unit": "12 pcs"
             }
         ]
     },
@@ -71,14 +47,6 @@
             "en": "Meat"
         },
         "items": [
-            {
-                "id": "item_7fpb2g6mv",
-                "th": "กุ้งทอดซอสมะขาม",
-                "en": "Fried Shrimp Tamarind Sauce",
-                "img": "tamarind_shrimp.jpg",
-                "price": 15,
-                "unit": "12 pcs"
-            },
             {
                 "id": "item_5y8jmxqvs",
                 "th": "ปลาซีบาสลุยสวน",
@@ -102,14 +70,6 @@
                 "img": "pla_goong.jpg",
                 "price": 35,
                 "unit": "1000g"
-            },
-            {
-                "id": "item_eotshjc55",
-                "th": "ไก่ทอดหาดใหญ่",
-                "en": "Hat Yai Fried Chicken",
-                "img": "hatyai_fried_chicken.jpg",
-                "price": 14,
-                "unit": "pc"
             }
         ]
     },
@@ -137,87 +97,6 @@
         },
         "items": [
             {
-                "id": "box_103",
-                "th": "Lunch Box (Set E)",
-                "en": "Lunch Box (Set E)",
-                "img": "Pad Prik Gang1.jpg",
-                "price": 16.95,
-                "unit": "1 Person",
-                "desc": "Pad Prik Gaeng (Red Curry Stir-Fry with choice of Pork/Chicken/Beef/Squid) served with Steamed Rice and Side Vegetables"
-            },
-            {
-                "id": "box_104",
-                "th": "Lunch Box (Set F)",
-                "en": "Lunch Box (Set F)",
-                "img": "Pad Phed 5.jpg",
-                "price": 16.95,
-                "unit": "1 Person",
-                "desc": "Pad Phed (Spicy Red Curry Stir-Fry with choice of Minced Pork/Chicken/Beef or Crispy Pork) served with Steamed Rice, Side Vegetables, and Nam Pla Prik"
-            },
-            {
-                "id": "box_102",
-                "th": "Special Box ไก่ทอดหาดใหญ่",
-                "en": "Special Box Hat Yai Fried Chicken",
-                "img": "Hat Yai Fried Chicken.jpg",
-                "price": 16.95,
-                "unit": "1-2 Persons",
-                "desc": "Hat Yai Fried Chicken, Ajad Relish, Sweet Chili Sauce, Fried Shallots, Khao Mok Rice"
-            },
-            {
-                "id": "box_14",
-                "th": "Special Box Set A — วันพุธ - ศุกร์",
-                "en": "Special Box Set A — Wednesday - Friday",
-                "img": "Special Box Set A 1.jpg",
-                "price": 22.95,
-                "unit": "1 Person",
-                "desc": "Crispy Pork Belly, Seafood Dipping Sauce, Sticky Rice, Side Vegetables, Papaya Salad — Delivered Wednesday - Friday (11:00 AM - 1:00 PM / 6:00 PM - 8:00 PM) | Cut-off 3:00 PM day before (Pre-order) | Radius Within 5 miles"
-            },
-            {
-                "id": "box_15",
-                "th": "Special Box Set B — วันพุธ - ศุกร์",
-                "en": "Special Box Set B — Wednesday - Friday",
-                "img": "Special Box Set B1.jpg",
-                "price": 22.95,
-                "unit": "1 Person",
-                "desc": "Grilled Pork Neck, Sticky Rice, Papaya Salad, Jaew Dipping Sauce, Side Vegetables — Delivered Wednesday - Friday (11:00 AM - 1:00 PM / 6:00 PM - 8:00 PM) | Cut-off 3:00 PM day before (Pre-order) | Radius Within 5 miles"
-            },
-            {
-                "id": "box_16",
-                "th": "Special Box Set C — วันพุธ - ศุกร์",
-                "en": "Special Box Set C — Wednesday - Friday",
-                "img": "Special Box Set C1.jpg",
-                "price": 22.95,
-                "unit": "1 Person",
-                "desc": "Weeping Tiger (Grilled Beef), Sticky Rice, Papaya Salad, Jaew Dipping Sauce, Side Vegetables — Delivered Wednesday - Friday (11:00 AM - 1:00 PM / 6:00 PM - 8:00 PM) | Cut-off 3:00 PM day before (Pre-order) | Radius Within 5 miles"
-            },
-            {
-                "id": "box_17",
-                "th": "Special Box Set D — วันพุธ - ศุกร์",
-                "en": "Special Box Set D — Wednesday - Friday",
-                "img": "Special Box Set D 1.jpg",
-                "price": 22.95,
-                "unit": "1 Person",
-                "desc": "Grilled Chicken, Sticky Rice, Papaya Salad, Tamarind Dipping Sauce, Side Vegetables — Delivered Wednesday - Friday (11:00 AM - 1:00 PM / 6:00 PM - 8:00 PM) | Cut-off 3:00 PM day before (Pre-order) | Radius Within 5 miles"
-            },
-            {
-                "id": "box_18",
-                "th": "Special Box Set E — วันพุธ - ศุกร์",
-                "en": "Special Box Set E — Wednesday - Friday",
-                "img": "Special Box Set E 1.jpg",
-                "price": 22.95,
-                "unit": "1 Person",
-                "desc": "Nam Tok Moo (Spicy Grilled Pork Salad), Sticky Rice, Papaya Salad with Fermented Fish, Side Vegetables and Om Curry (Chicken/Pork/Beef) — Delivered Wednesday - Friday (11:00 AM - 1:00 PM / 6:00 PM - 8:00 PM) | Cut-off 3:00 PM day before (Pre-order) | Radius Within 5 miles"
-            },
-            {
-                "id": "box_19",
-                "th": "Special Box Set F — วันพุธ - ศุกร์",
-                "en": "Special Box Set F — Wednesday - Friday",
-                "img": "Special Box Set F 1.jpg",
-                "price": 22.95,
-                "unit": "1 Person",
-                "desc": "Nam Tok Crying Tiger (Spicy Grilled Beef Salad), Sticky Rice, Papaya Salad with Fermented Fish, Side Vegetables and Om Curry (Chicken/Pork/Beef) — Delivered Wednesday - Friday (11:00 AM - 1:00 PM / 6:00 PM - 8:00 PM) | Cut-off 3:00 PM day before (Pre-order) | Radius Within 5 miles"
-            },
-            {
                 "id": "box_20",
                 "th": "Special Box เมี่ยงคำซีบาส",
                 "en": "Special Box Sea Bass Miang Kham",
@@ -234,15 +113,6 @@
                 "price": 14.95,
                 "unit": "1 Person",
                 "desc": "Pomelo Salad with Prawns<br><span style='font-size:0.85rem; color:var(--dark-green); font-weight:600;'>Ingredients: Pomelo, Prawns, Roasted Coconut, Roasted Peanuts, Fried Shallots, Kaffir Lime Leaves, Bird's Eye Chili, Dressing (Roasted Chili Paste, Palm Sugar, Fish Sauce, Tamarind Juice, Coconut Cream)</span>"
-            },
-            {
-                "id": "box_22",
-                "th": "Special Box แซลมอนลุยสวน",
-                "en": "Special Box Salmon Lui Suan",
-                "img": "Salmon Lui Suan  box.jpg",
-                "price": 14.95,
-                "unit": "1 Person",
-                "desc": "Salmon Lui Suan<br><span style='font-size:0.85rem; color:var(--dark-green); font-weight:600;'>Ingredients: Salmon, Lemongrass, Shallots, Ginger, Bird's Eye Chili, Kaffir Lime Leaves, Mint Leaves, Culantro, Cashew Nuts, Chili Powder, Dressing (Fish Sauce, Lime Juice, Palm Sugar, Roasted Chili Paste)</span>"
             },
             {
                 "id": "box_23",
@@ -290,24 +160,6 @@
                 "desc": "Winged Bean Salad<br><span style='font-size:0.85rem; color:var(--dark-green); font-weight:600;'>Ingredients: Fresh Winged Beans, Prawns, Minced Pork, Boiled Egg, Roasted Peanuts, Fried Shallots, Fried Dried Chili, Dressing (Roasted Chili Paste, Coconut Milk, Lime Juice, Fish Sauce, Palm Sugar, Bird's Eye Chili, Red Jinda Chili)</span>"
             },
             {
-                "id": "box_28",
-                "th": "Special Box แสร้งว่ากุ้ง",
-                "en": "Special Box Saeng Wa Prawn Salad",
-                "img": "Saeng Wa Prawn Salad box.jpg",
-                "price": 14.95,
-                "unit": "1 Person",
-                "desc": "Saeng Wa Prawn Salad<br><span style='font-size:0.85rem; color:var(--dark-green); font-weight:600;'>Ingredients: Prawns, Shallots, Finely Sliced Lemongrass, Finely Sliced Fresh Ginger, Spring Onions, Sliced Kaffir Lime Leaves, Coriander Leaves, Lime Juice, Fish Sauce, Sugar, Sliced Bird's Eye Chili, Tamarind</span>"
-            },
-            {
-                "id": "box_31",
-                "th": "Special Box ส้มตำปูปลาร้า",
-                "en": "Special Box Som Tum Pu Pla Ra",
-                "img": "Som Tum Pu Pla Ra  box.jpg",
-                "price": 15.95,
-                "unit": "1 Person",
-                "desc": "Som Tum Pu Pla Ra with fresh side vegetables and sticky rice/rice noodles — A refreshing Thai botanical set<br><span style='font-size:0.85rem; color:var(--dark-green); font-weight:600;'>Ingredients: Green Papaya, Long Beans, Tomatoes, Carrots, Bird's Eye Chili, Garlic, Fish Sauce, Lime Juice, Palm Sugar, Pickled Rice Field Crab, Boiled Fermented Fish</span>"
-            },
-            {
                 "id": "box_100",
                 "th": "Special Box เมี่ยงรวมมิตร",
                 "en": "Special Box Mixed Miang",
@@ -333,15 +185,6 @@
                 "price": 13.95,
                 "unit": "Set",
                 "desc": "Ready-to-eat Lunch Box: Spicy Krapow and Som Tum"
-            },
-            {
-                "id": "box_lunch_box_vip",
-                "th": "Lunch Box Set VIP",
-                "en": "Lunch Box Set VIP",
-                "img": "corporate-cover.jpg",
-                "price": 16.95,
-                "unit": "Set",
-                "desc": "Premium Lunch Box: Customize your meat, egg, and curry exactly how you like it."
             }
         ]
     },
@@ -367,15 +210,6 @@
             "th": "บริการ (Services)",
             "en": "Services"
         },
-        "items": [
-            {
-                "id": "svc_waitstaff",
-                "th": "พนักงานเสิร์ฟ (Waitstaff)",
-                "en": "Waitstaff (On-site service)",
-                "img": "logo.png",
-                "price": 75,
-                "unit": "person"
-            }
-        ]
+        "items": []
     }
 ]
