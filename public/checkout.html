@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | ZabSiam - Thai Street Food</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/megamenu.css">
+    
+    <script>
+        // Placeholder WhatsApp Number - Change this!
+        const WHATSAPP_NUMBER = "447123456789"; 
+
+        function renderCheckout() {
+            const cart = getCart();
+            const container = document.getElementById('checkout-items');
+            const totalEl = document.getElementById('checkout-total');
+            
+            if (cart.length === 0) {
+                container.innerHTML = '<p class="text-gray-500 text-center py-8">Your order is empty.</p>';
+                totalEl.innerText = '£0.00';
+                document.getElementById('checkout-btn').disabled = true;
+                document.getElementById('checkout-btn').classList.add('opacity-50', 'cursor-not-allowed');
+                return;
+            }
+            
+            let html = '';
+            let total = 0;
+            
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * item.qty;
+                total += itemTotal;
+                
+                html += `
+                    <div class="flex justify-between items-center py-4 border-b border-gray-100">
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 h-16 bg-gray-100 rounded-md overflow-hidden">
+                                <img src="${item.img || 'logo.png'}" alt="${item.name}" class="w-full h-full object-cover" onerror="this.src='logo.png'">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">${item.name}</h4>
+                                <div class="text-sm text-gray-500">£${item.price.toFixed(2)} each</div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-end gap-2">
+                            <div class="font-bold text-[#e65c00]">£${itemTotal.toFixed(2)}</div>
+                            <div class="flex items-center border border-gray-300 rounded overflow-hidden">
+                                <button onclick="updateQty(${index}, -1)" class="w-6 h-6 bg-gray-50 flex items-center justify-center font-bold text-gray-600">-</button>
+                                <span class="w-8 text-center text-sm font-bold">${item.qty}</span>
+                                <button onclick="updateQty(${index}, 1)" class="w-6 h-6 bg-gray-50 flex items-center justify-center font-bold text-gray-600">+</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+            totalEl.innerText = '£' + total.toFixed(2);
+            document.getElementById('checkout-btn').disabled = false;
+            document.getElementById('checkout-btn').classList.remove('opacity-50', 'cursor-not-allowed');
+        }
+        
+        function updateQty(index, change) {
+            const cart = getCart();
+            const newQty = cart[index].qty + change;
+            if (newQty > 0) {
+                updateCartQty(index, newQty);
+            } else {
+                if (confirm('Remove item from order?')) {
+                    removeFromCart(index);
+                }
+            }
+            renderCheckout();
+        }
+        
+        function submitOrder(e) {
+            e.preventDefault();
+            const cart = getCart();
+            if (cart.length === 0) return;
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const location = document.getElementById('location').value;
+            const time = document.getElementById('time').value;
+            const payment = document.querySelector('input[name="payment"]:checked').value;
+            
+            let msg = `🛒 *NEW PRE-ORDER (ZabSiam)*\n\n`;
+            msg += `👤 *Name:* ${name}\n`;
+            msg += `📱 *Phone:* ${phone}\n`;
+            msg += `📍 *Pickup Market:* ${location}\n`;
+            msg += `⏰ *Pickup Time:* ${time}\n`;
+            msg += `💳 *Payment Method:* ${payment === 'store' ? 'Pay at Store (Cash/Scan)' : 'Pay Online (Link requested)'}\n\n`;
+            
+            msg += `📦 *Order Details:*\n`;
+            let total = 0;
+            cart.forEach(item => {
+                msg += `- ${item.qty}x ${item.name} (£${(item.price * item.qty).toFixed(2)})\n`;
+                total += item.price * item.qty;
+            });
+            
+            msg += `\n💰 *Total:* £${total.toFixed(2)}\n\n`;
+            
+            if (payment === 'online') {
+                msg += `*Please send me a payment link to complete my order.*\n`;
+            } else {
+                msg += `*I will pay at the storefront when picking up.*\n`;
+            }
+            
+            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+            window.open(url, '_blank');
+            
+            // Clear cart after redirect
+            clearCart();
+            window.location.href = 'success.html';
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCheckout();
+            document.getElementById('checkout-form').addEventListener('submit', submitOrder);
+        });
+    </script>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col font-sans">
+    
+    <header class="bg-white shadow-sm py-4 px-6 flex justify-between items-center sticky top-0 z-50">
+        <a href="index.html" class="flex items-center gap-3 font-bold text-2xl text-[#1a433d] no-underline">
+            <img src="logo.png" alt="ZabSiam" class="h-10">
+            ZabSiam
+        </a>
+        <a href="menu.html" class="text-gray-600 font-bold hover:text-[#e65c00]">Back to Menu</a>
+    </header>
+
+    <main class="flex-grow max-w-5xl mx-auto w-full p-4 md:p-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- Left: Cart Items -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 h-fit">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 pb-4 border-b border-gray-200">Your Order</h2>
+            
+            <div id="checkout-items" class="min-h-[200px]">
+                <!-- Items render here -->
+            </div>
+            
+            <div class="mt-6 pt-6 border-t border-gray-200 flex justify-between items-center">
+                <span class="text-lg font-bold text-gray-600">Total</span>
+                <span id="checkout-total" class="text-3xl font-black text-[#1a433d]">£0.00</span>
+            </div>
+        </div>
+
+        <!-- Right: Checkout Form -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 h-fit">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 pb-4 border-b border-gray-200">Pickup Details</h2>
+            
+            <form id="checkout-form" class="space-y-5">
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-1">Full Name</label>
+                        <input type="text" id="name" required class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#e65c00] focus:border-transparent outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-1">Phone Number</label>
+                        <input type="tel" id="phone" required class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#e65c00] focus:border-transparent outline-none">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-1">Pickup Market Location</label>
+                    <select id="location" required class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#e65c00] focus:border-transparent outline-none bg-white">
+                        <option value="">Select a location...</option>
+                        <option value="Duke of York Square">Duke of York Square (Saturdays)</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-1">Pickup Time</label>
+                    <select id="time" required class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#e65c00] focus:border-transparent outline-none bg-white">
+                        <option value="">Select a time...</option>
+                        <option value="10:00 AM - 11:00 AM">10:00 AM - 11:00 AM</option>
+                        <option value="11:00 AM - 12:00 PM">11:00 AM - 12:00 PM</option>
+                        <option value="12:00 PM - 1:00 PM">12:00 PM - 1:00 PM</option>
+                        <option value="1:00 PM - 2:00 PM">1:00 PM - 2:00 PM</option>
+                        <option value="2:00 PM - 3:00 PM">2:00 PM - 3:00 PM</option>
+                        <option value="3:00 PM - 4:00 PM">3:00 PM - 4:00 PM</option>
+                    </select>
+                </div>
+
+                <div class="pt-4 pb-2">
+                    <label class="block text-sm font-bold text-gray-700 mb-3">Payment Method</label>
+                    <div class="space-y-3">
+                        <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                            <input type="radio" name="payment" value="store" checked class="w-5 h-5 text-[#e65c00] focus:ring-[#e65c00]">
+                            <div class="ml-3">
+                                <div class="font-bold text-gray-800">Pay at Storefront</div>
+                                <div class="text-sm text-gray-500">Cash or Scan to Pay when you pick up.</div>
+                            </div>
+                        </label>
+                        <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                            <input type="radio" name="payment" value="online" class="w-5 h-5 text-[#e65c00] focus:ring-[#e65c00]">
+                            <div class="ml-3">
+                                <div class="font-bold text-gray-800">Pay Online via Website</div>
+                                <div class="text-sm text-gray-500">We will send you a secure payment link on WhatsApp.</div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" id="checkout-btn" class="w-full bg-[#1a433d] text-white font-bold text-lg py-4 rounded-lg shadow-lg hover:bg-[#13322d] transition-all flex justify-center items-center gap-2 mt-4">
+                    <i class="fab fa-whatsapp text-xl"></i> Submit Pre-order via WhatsApp
+                </button>
+                <p class="text-center text-sm text-gray-500 mt-3">You will be redirected to WhatsApp to confirm your order.</p>
+
+            </form>
+        </div>
+
+    </main>
+
+    <footer class="bg-gray-100 py-8 text-center mt-auto border-t border-gray-200">
+        <p class="text-gray-500 font-bold">© 2026 ZabSiam LONDON.</p>
+    </footer>
+
+    <script src="js/cart.js"></script>
+</body>
+</html>
