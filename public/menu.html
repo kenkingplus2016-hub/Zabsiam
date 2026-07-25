@@ -226,7 +226,7 @@
             <div class="flex flex-col gap-2.5 mb-8">
                 <!-- Serves 1 -->
                 <div class="flex items-center justify-between bg-[#f8f9fa] px-4 py-3 rounded border border-gray-100">
-                    <div class="text-[15px] text-gray-700">Serves 1 <span class="text-gray-400 text-sm ml-1">(250g)</span></div>
+                    <div class="text-[15px] text-gray-700">Serves 1 <span id="modal-weight-1" class="text-gray-400 text-sm ml-1">(250g)</span></div>
                     <div class="flex items-center gap-6">
                         <span id="modal-price-1" class="font-bold text-gray-800 text-lg">£0.00</span>
                         <button id="modal-add-1" class="bg-[#598c73] text-white px-8 py-2 rounded font-semibold hover:bg-[#46705c] transition-colors">Add</button>
@@ -234,7 +234,7 @@
                 </div>
                 <!-- Serves 2 -->
                 <div class="flex items-center justify-between bg-[#f8f9fa] px-4 py-3 rounded border border-gray-100">
-                    <div class="text-[15px] text-gray-700">Serves 2 <span class="text-gray-400 text-sm ml-1">(500g)</span></div>
+                    <div class="text-[15px] text-gray-700">Serves 2 <span id="modal-weight-2" class="text-gray-400 text-sm ml-1">(500g)</span></div>
                     <div class="flex items-center gap-6">
                         <span id="modal-price-2" class="font-bold text-gray-800 text-lg">£0.00</span>
                         <button id="modal-add-2" class="bg-[#598c73] text-white px-8 py-2 rounded font-semibold hover:bg-[#46705c] transition-colors">Add</button>
@@ -242,7 +242,7 @@
                 </div>
                 <!-- Serves 4 -->
                 <div class="flex items-center justify-between bg-[#f8f9fa] px-4 py-3 rounded border border-gray-100">
-                    <div class="text-[15px] text-gray-700">Serves 4 <span class="text-gray-400 text-sm ml-1">(1kg)</span></div>
+                    <div class="text-[15px] text-gray-700">Serves 4 <span id="modal-weight-4" class="text-gray-400 text-sm ml-1">(1kg)</span></div>
                     <div class="flex items-center gap-6">
                         <span id="modal-price-4" class="font-bold text-gray-800 text-lg">£0.00</span>
                         <button id="modal-add-4" class="bg-[#598c73] text-white px-8 py-2 rounded font-semibold hover:bg-[#46705c] transition-colors">Add</button>
@@ -504,13 +504,30 @@
             } else {
                 thumb2.classList.add('hidden');
             }
+            // Prices & Weights & Add functions
+            const p1 = item.price_s1 || item.price;
+            const p2 = item.price_s2 || (item.price * 1.7);
+            const p4 = item.price_s4 || (item.price * 3.2);
             
-            // Prices & Add functions
-            document.getElementById('modal-price-1').innerText = '£' + item.price.toFixed(2);
-            document.getElementById('modal-price-2').innerText = '£' + (item.price * 1.7).toFixed(2);
-            document.getElementById('modal-price-4').innerText = '£' + (item.price * 3.2).toFixed(2);
+            const w1 = item.weight_s1 || '250g';
+            const w2 = item.weight_s2 || '500g';
+            const w4 = item.weight_s4 || '1kg';
             
-            document.getElementById('modal-add-1').onclick = () => { addBuffetItem(item.id + '_s1', item.en + ' (Serves 1)', item.price, imgSrc); closeProductModal(); };
+            document.getElementById('modal-price-1').innerText = '£' + p1.toFixed(2);
+            document.getElementById('modal-price-2').innerText = '£' + p2.toFixed(2);
+            document.getElementById('modal-price-4').innerText = '£' + p4.toFixed(2);
+            
+            const w1El = document.getElementById('modal-weight-1');
+            const w2El = document.getElementById('modal-weight-2');
+            const w4El = document.getElementById('modal-weight-4');
+            if(w1El) w1El.innerText = '(' + w1 + ')';
+            if(w2El) w2El.innerText = '(' + w2 + ')';
+            if(w4El) w4El.innerText = '(' + w4 + ')';
+            
+            document.getElementById('modal-add-1').onclick = () => { addBuffetItem(item.id + '_s1', item.en + ' (Serves 1)', p1, imgSrc); closeProductModal(); };
+            document.getElementById('modal-add-2').onclick = () => { addBuffetItem(item.id + '_s2', item.en + ' (Serves 2)', p2, imgSrc); closeProductModal(); };
+            document.getElementById('modal-add-4').onclick = () => { addBuffetItem(item.id + '_s4', item.en + ' (Serves 4)', p4, imgSrc); closeProductModal(); };
+
             document.getElementById('modal-add-2').onclick = () => { addBuffetItem(item.id + '_s2', item.en + ' (Serves 2)', item.price * 1.7, imgSrc); closeProductModal(); };
             document.getElementById('modal-add-4').onclick = () => { addBuffetItem(item.id + '_s4', item.en + ' (Serves 4)', item.price * 3.2, imgSrc); closeProductModal(); };
             
