@@ -7,36 +7,67 @@
         },
         "items": [
             {
-                "id": "item_2bsa6jstk",
-                "th": "ยำส้มโอกุ้งสด",
-                "en": "Pomelo Salad Shrimp",
-                "img": "c9dcd15e-891c-455d-ae3c-2c37f74c1b96.jpg",
-                "price": 16,
-                "unit": "12 pcs"
+                "id": "pla_salmon",
+                "th": "พล่าปลาแซลมอน",
+                "en": "Salmon 'Pla' Salad",
+                "img": "005dbfc3-c862-4aac-a9e7-57ada41bcfa5.jpg",
+                "price": 14,
+                "price_s1": 14,
+                "weight_s1": "Portion"
             },
             {
-                "id": "item_h6fjm5s4s",
+                "id": "pla_prawn",
+                "th": "พล่ากุ้ง",
+                "en": "Prawn 'Pla' Salad",
+                "img": "pla_goong.jpg",
+                "price": 14,
+                "price_s1": 14,
+                "weight_s1": "Portion"
+            },
+            {
+                "id": "pla_chicken",
+                "th": "พล่าไก่",
+                "en": "Chicken 'Pla' Salad",
+                "img": "logo.png",
+                "price": 12,
+                "price_s1": 12,
+                "weight_s1": "Portion"
+            },
+            {
+                "id": "larb_chicken",
+                "th": "ลาบไก่",
+                "en": "Larb Chicken",
+                "img": "ec66c9e5-348b-49d0-b53a-94f58b3b941f.jpg",
+                "price": 12,
+                "price_s1": 12,
+                "weight_s1": "Portion"
+            },
+            {
+                "id": "larb_salmon",
+                "th": "ลาบปลาแซลมอน",
+                "en": "Larb Salmon",
+                "img": "logo.png",
+                "price": 14,
+                "price_s1": 14,
+                "weight_s1": "Portion"
+            },
+            {
+                "id": "miang_seabass",
                 "th": "เมี่ยงคำปลาซีบาส",
                 "en": "Miang Kham Sea Bass",
                 "img": "58f1df5c-0f97-44c0-8327-02b4686f8f8b.jpg",
-                "price": 16,
-                "unit": "12 pcs"
+                "price": 15,
+                "price_s1": 15,
+                "weight_s1": "Portion"
             },
             {
-                "id": "item_5q6xay7hm",
-                "th": "ลาบไก่ / หมู",
-                "en": "Larb Gai / Pork",
-                "img": "ec66c9e5-348b-49d0-b53a-94f58b3b941f.jpg",
-                "price": 14,
-                "unit": "12 pcs"
-            },
-            {
-                "id": "item_rpwztizvb",
-                "th": "เมี่ยงคำส้มโอกุ้ง",
-                "en": "Pomelo Miang Kham Shrimp",
-                "img": "pomeloleaf wrap.jpg",
-                "price": 16,
-                "unit": "12 pcs"
+                "id": "miang_salmon",
+                "th": "เมี่ยงคำแซลมอน",
+                "en": "Miang Kham Salmon",
+                "img": "logo.png",
+                "price": 15,
+                "price_s1": 15,
+                "weight_s1": "Portion"
             }
         ]
     },
@@ -48,38 +79,33 @@
         },
         "items": [
             {
-                "id": "item_5y8jmxqvs",
-                "th": "ปลาซีบาสลุยสวน",
-                "en": "Sea Bass Fish Larb",
-                "img": "sea_bass_lui_suan.jpg",
-                "price": 16,
-                "unit": "225g / plate"
+                "id": "pad_krapow_chicken",
+                "th": "ผัดกะเพราไก่",
+                "en": "Pad Krapow Chicken",
+                "img": "logo.png",
+                "price": 12,
+                "price_s1": 12,
+                "weight_s1": "Portion"
             },
             {
-                "id": "item_lolxvnzii",
-                "th": "พล่าปลาแซลมอน",
-                "en": "Salmon 'Pla' Salad",
-                "img": "005dbfc3-c862-4aac-a9e7-57ada41bcfa5.jpg",
-                "price": 65,
-                "unit": "1000g"
+                "id": "pad_krapow_beef",
+                "th": "ผัดกะเพราเนื้อ",
+                "en": "Pad Krapow Beef",
+                "img": "logo.png",
+                "price": 14,
+                "price_s1": 14,
+                "weight_s1": "Portion"
             },
             {
-                "id": "item_u8gcmvnbu",
-                "th": "พล่ากุ้ง",
-                "en": "Spicy Lemongrass Prawn Salad (Pla Goong)",
-                "img": "pla_goong.jpg",
-                "price": 35,
-                "unit": "1000g"
+                "id": "hat_yai_chicken",
+                "th": "ไก่ทอดหาดใหญ่",
+                "en": "Hat Yai Fried Chicken",
+                "img": "logo.png",
+                "price": 12,
+                "price_s1": 12,
+                "weight_s1": "Portion"
             }
         ]
-    },
-    {
-        "id": "rice",
-        "title": {
-            "th": "เมนูข้าว และ ผัดเส้น (Rice & Noodles)",
-            "en": "Rice & Noodles"
-        },
-        "items": []
     },
     {
         "id": "vegetables",
@@ -90,126 +116,21 @@
         "items": []
     },
     {
-        "id": "box_sets",
+        "id": "desserts",
         "title": {
-            "th": "Meal Boxes",
-            "en": "Meal Boxes"
+            "th": "Puddings",
+            "en": "Puddings"
         },
         "items": [
             {
-                "id": "box_20",
-                "th": "Special Box เมี่ยงคำซีบาส",
-                "en": "Special Box Sea Bass Miang Kham",
-                "img": "Sea Bass Miang Kham 2.jpg",
-                "price": 14.95,
-                "unit": "1 Person",
-                "desc": "Sea Bass Miang Kham<br><span style='font-size:0.85rem; color:var(--dark-green); font-weight:600;'>Ingredients: Fried Sea Bass, Betel Leaves, Roasted Coconut, Roasted Peanuts, Roasted Dried Shrimp, Ginger, Lime, Shallots, Bird's Eye Chili, Miang Kham Sauce (Palm Sugar, Shrimp Paste, Coconut, Peanuts, Dried Shrimp, Sliced Ginger, Sliced Galangal, Sliced Lemongrass, Salt)</span>"
-            },
-            {
-                "id": "box_21",
-                "th": "Special Box ยำส้มโอกุ้ง",
-                "en": "Special Box Pomelo Salad with Prawns",
-                "img": "Pomelo Salad with Prawns box 2.jpg",
-                "price": 14.95,
-                "unit": "1 Person",
-                "desc": "Pomelo Salad with Prawns<br><span style='font-size:0.85rem; color:var(--dark-green); font-weight:600;'>Ingredients: Pomelo, Prawns, Roasted Coconut, Roasted Peanuts, Fried Shallots, Kaffir Lime Leaves, Bird's Eye Chili, Dressing (Roasted Chili Paste, Palm Sugar, Fish Sauce, Tamarind Juice, Coconut Cream)</span>"
-            },
-            {
-                "id": "box_23",
-                "th": "Special Box พล่ากุ้ง",
-                "en": "Special Box Spicy Prawn Salad",
-                "img": "Spicy Prawn Salad box1.jpg",
-                "price": 14.95,
-                "unit": "1 Person",
-                "desc": "Spicy Prawn Salad<br><span style='font-size:0.85rem; color:var(--dark-green); font-weight:600;'>Ingredients: Fresh Prawns, Lemongrass, Shallots, Kaffir Lime Leaves, Bird's Eye Chili, Roasted Chili Paste, Coconut Cream, Fish Sauce, Lime Juice, Palm Sugar, Mint Leaves, Culantro</span>"
-            },
-            {
-                "id": "box_24",
-                "th": "Special Box ยำมะม่วง",
-                "en": "Special Box Mango Salad",
-                "img": "Mango Salad  box.jpg",
-                "price": 14.95,
-                "unit": "1 Person",
-                "desc": "Mango Salad<br><span style='font-size:0.85rem; color:var(--dark-green); font-weight:600;'>Ingredients: Sour Green Mango, Shallots, Dried Shrimp, Cashew Nuts, Dressing (Bird's Eye Chili, Chili Powder, Palm Sugar, Fish Sauce, Lime Juice, Boiled Fermented Fish)</span>"
-            },
-            {
-                "id": "box_25",
-                "th": "Special Box ยำวุ้นเส้น",
-                "en": "Special Box Glass Noodle Salad",
-                "img": "Glass Noodle Salad  box.jpg",
-                "price": 14.95,
-                "unit": "1 Person",
-                "desc": "Glass Noodle Salad<br><span style='font-size:0.85rem; color:var(--dark-green); font-weight:600;'>Ingredients: Glass Noodles, Fresh Prawns, Minced Pork or Chicken, Shallots, Celery, Cherry Tomatoes, Bird's Eye Chili, Spring Onions, Dressing (Garlic, Coriander Roots, Lime, Fish Sauce, Vinegar, Sugar, Sriracha Sauce, Bird's Eye Chili)</span>"
-            },
-            {
-                "id": "box_26",
-                "th": "Special Box ยำหมูยอ",
-                "en": "Special Box Pork Sausage Salad",
-                "img": "Pork Sausage Saladbox.jpg",
-                "price": 14.95,
-                "unit": "1 Person",
-                "desc": "Pork Sausage Salad<br><span style='font-size:0.85rem; color:var(--dark-green); font-weight:600;'>Ingredients: Glass Noodles, Vietnamese Sausage, Minced Pork or Chicken, Shallots, Celery, Cherry Tomatoes, Bird's Eye Chili, Spring Onions, Dressing (Garlic, Coriander Roots, Lime, Fish Sauce, Vinegar, Sugar, Sriracha Sauce, Bird's Eye Chili)</span>"
-            },
-            {
-                "id": "box_27",
-                "th": "Special Box ยำถั่วพลู",
-                "en": "Special Box Winged Bean Salad",
-                "img": "Winged Bean Salad 2.jpg",
-                "price": 14.95,
-                "unit": "1 Person",
-                "desc": "Winged Bean Salad<br><span style='font-size:0.85rem; color:var(--dark-green); font-weight:600;'>Ingredients: Fresh Winged Beans, Prawns, Minced Pork, Boiled Egg, Roasted Peanuts, Fried Shallots, Fried Dried Chili, Dressing (Roasted Chili Paste, Coconut Milk, Lime Juice, Fish Sauce, Palm Sugar, Bird's Eye Chili, Red Jinda Chili)</span>"
-            },
-            {
-                "id": "box_100",
-                "th": "Special Box เมี่ยงรวมมิตร",
-                "en": "Special Box Mixed Miang",
-                "img": "Mixed Miang salad  box.jpg",
-                "price": 16.95,
-                "unit": "1 Person",
-                "desc": "Mixed Miang<br><span style='font-size:0.85rem; color:var(--dark-green); font-weight:600;'>Ingredients: Pork Belly, Prawns, Boiled Squid, Rice Vermicelli, Lettuce, Seafood Dipping Sauce</span>"
-            },
-            {
-                "id": "box_101",
-                "th": "Special Box ต้มยำทะเล",
-                "en": "Special Box Tom Yum Seafood",
-                "img": "Tom Yum Seafood.jpg",
-                "price": 18.95,
-                "unit": "1 Person",
-                "desc": "Tom Yum Seafood<br><span style='font-size:0.85rem; color:var(--dark-green); font-weight:600;'>Ingredients: Tiger Prawns, Squid, Mussels, Minced Pork Paste, Boiled Egg</span>"
-            },
-            {
-                "id": "box_lunch_box_krapow",
-                "th": "Lunch Box ผัดกะเพรา + ส้มตำ",
-                "en": "Lunch Box Set E (Pad Krapow & Som Tum)",
-                "img": "corporate-cover.jpg",
-                "price": 13.95,
-                "unit": "Set",
-                "desc": "Ready-to-eat Lunch Box: Spicy Krapow and Som Tum"
+                "id": "mango_sticky_rice",
+                "th": "ข้าวเหนียวมะม่วง",
+                "en": "Mango Sticky Rice",
+                "img": "mango sticky rice.jpg",
+                "price": 8,
+                "price_s1": 8,
+                "weight_s1": "Portion"
             }
         ]
-    },
-    {
-        "id": "desserts",
-        "title": {
-            "th": "Desserts",
-            "en": "Desserts"
-        },
-        "items": []
-    },
-    {
-        "id": "drinks",
-        "title": {
-            "th": "Drinks",
-            "en": "Drinks"
-        },
-        "items": []
-    },
-    {
-        "id": "services",
-        "title": {
-            "th": "บริการ (Services)",
-            "en": "Services"
-        },
-        "items": []
     }
 ]
