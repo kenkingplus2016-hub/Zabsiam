@@ -50,10 +50,10 @@
 }
 
 .mega-nav-link {
-    color: white;
+    color: white !important;
     text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
+    font-weight: 600;
+    font-size: 1rem;
     padding: 0 15px;
     height: 100%;
     display: flex;
@@ -63,7 +63,7 @@
 }
 
 .mega-nav-item:hover .mega-nav-link {
-    color: #e6e6e6;
+    color: #e6e6e6 !important;
     border-bottom: 3px solid white;
 }
 
@@ -79,7 +79,7 @@
     padding-right: 35px;
     border-radius: 20px;
     border: none;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     outline: none;
 }
 .mega-search i {
@@ -97,7 +97,7 @@
     left: 0;
     width: 100%;
     background-color: white;
-    color: #333;
+    color: #000;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     opacity: 0;
     visibility: hidden;
@@ -115,7 +115,7 @@
 .mega-dropdown-content {
     max-width: 1400px;
     width: 100%;
-    padding: 30px 20px;
+    padding: 40px 20px;
     display: flex;
     gap: 40px;
 }
@@ -134,20 +134,20 @@
 }
 
 .mega-column-title {
-    font-weight: 700;
-    font-size: 0.9rem;
-    color: #444;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #000;
     margin-bottom: 15px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 5px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 8px;
 }
 
 .mega-column a {
-    color: #333;
+    color: #000;
     text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
-    margin-bottom: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
     transition: color 0.2s;
 }
 
