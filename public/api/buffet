@@ -116,7 +116,13 @@
                 "en": "Tom Yum Goong (Spicy Shrimp Soup)",
                 "img": "tom_yum_goong.jpg",
                 "price": 45,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 7.95,
+                "price_s2": 15.9,
+                "price_s4": 30.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_5sp61u7do",
@@ -164,7 +170,13 @@
                 "en": "Tom Kha Gai (Coconut Galangal Soup)",
                 "img": "tom_kha_chicken.jpg",
                 "price": 40,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.95,
+                "price_s2": 12.95,
+                "price_s4": 26.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_5oi3n13k0",
@@ -172,7 +184,13 @@
                 "en": "Tom Kha Goong",
                 "img": "tom_kha_prawn.jpg",
                 "price": 45,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 7.95,
+                "price_s2": 15.9,
+                "price_s4": 30.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             }
         ]
     },
@@ -189,7 +207,13 @@
                 "en": "Green Curry Chicken",
                 "img": "green_curry_chicken_pork.jpg",
                 "price": 40,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.95,
+                "price_s2": 12.95,
+                "price_s4": 26.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_g2jwt02c3",
@@ -197,7 +221,13 @@
                 "en": "Green Curry Pork",
                 "img": "green_curry_pork.jpg",
                 "price": 40,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.95,
+                "price_s2": 12.95,
+                "price_s4": 26.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_d0r1c4ln1",
@@ -205,7 +235,13 @@
                 "en": "Green Curry with Prawns",
                 "img": "green_curry_prawns.jpg",
                 "price": 45,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 7.95,
+                "price_s2": 15.9,
+                "price_s4": 30.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_nbvxgywtc",
@@ -213,7 +249,13 @@
                 "en": "Green Curry Beef",
                 "img": "green_curry_beef.jpg",
                 "price": 45,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 8.95,
+                "price_s2": 17.9,
+                "price_s4": 34.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_i4xv9bkpn",
@@ -221,7 +263,13 @@
                 "en": "Red Curry with Chicken",
                 "img": "red_curry_chicken.jpg",
                 "price": 40,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.95,
+                "price_s2": 12.95,
+                "price_s4": 26.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_dcbgmoghd",
@@ -229,7 +277,13 @@
                 "en": "Red Curry with Pork",
                 "img": "red_curry_pork.jpg",
                 "price": 40,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.95,
+                "price_s2": 12.95,
+                "price_s4": 26.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_p0rdw5hmz",
@@ -237,7 +291,13 @@
                 "en": "Red Curry with Beef",
                 "img": "red_curry_beef.jpg",
                 "price": 45,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 8.95,
+                "price_s2": 17.9,
+                "price_s4": 34.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_xp1g4vzg3",
@@ -245,7 +305,13 @@
                 "en": "Red Curry with Prawn",
                 "img": "red_curry_prawns.jpg",
                 "price": 45,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 7.95,
+                "price_s2": 15.9,
+                "price_s4": 30.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_owgurx3xq",
@@ -253,7 +319,13 @@
                 "en": "Red Curry Mixed Vegetables Tofu",
                 "img": "red_curry_veg.jpg",
                 "price": 35,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.5,
+                "price_s2": 12.95,
+                "price_s4": 25.5,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_geepwab97",
@@ -261,7 +333,13 @@
                 "en": "Green Curry Mixed Vegetables Tofu",
                 "img": "green_curry_veg.jpg",
                 "price": 35,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.5,
+                "price_s2": 12.95,
+                "price_s4": 25.5,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_o97mx07fl",
@@ -269,7 +347,13 @@
                 "en": "Massaman Chicken",
                 "img": "massaman_chicken.jpg",
                 "price": 40,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.95,
+                "price_s2": 12.95,
+                "price_s4": 26.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_0il9ze066",
@@ -277,7 +361,13 @@
                 "en": "Massaman Beef",
                 "img": "massaman_beef.jpg",
                 "price": 45,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 8.95,
+                "price_s2": 17.9,
+                "price_s4": 34.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_dv9va38bn",
@@ -285,7 +375,13 @@
                 "en": "Thai Curry Chicken",
                 "img": "thai_curry_chicken.jpg",
                 "price": 40,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.95,
+                "price_s2": 12.95,
+                "price_s4": 26.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_7mnkkzj7o",
@@ -293,7 +389,13 @@
                 "en": "Panang Curry with Pork",
                 "img": "panang_pork.jpg",
                 "price": 40,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.95,
+                "price_s2": 12.95,
+                "price_s4": 26.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_3otm2f6s3",
@@ -301,7 +403,13 @@
                 "en": "Panang Curry with Chicken",
                 "img": "panang_chicken.jpg",
                 "price": 40,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.95,
+                "price_s2": 12.95,
+                "price_s4": 26.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_4nqvtl4rl",
@@ -309,7 +417,13 @@
                 "en": "Panang Curry with Beef",
                 "img": "panang_beef.jpg",
                 "price": 45,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 8.95,
+                "price_s2": 17.9,
+                "price_s4": 34.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_ahnwc36j8",
@@ -317,7 +431,13 @@
                 "en": "Panang Curry with Prawns",
                 "img": "panang_prawns.jpg",
                 "price": 45,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 7.95,
+                "price_s2": 15.9,
+                "price_s4": 30.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_nbexkcqhg",
@@ -325,7 +445,13 @@
                 "en": "Tae Po Curry Beef",
                 "img": "taepo_beef.jpg",
                 "price": 45,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 8.95,
+                "price_s2": 17.9,
+                "price_s4": 34.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_mzvssqvby",
@@ -333,7 +459,13 @@
                 "en": "Tae Po Curry Chicken",
                 "img": "taepo_chicken.jpg",
                 "price": 40,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.95,
+                "price_s2": 12.95,
+                "price_s4": 26.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_j90037r8x",
@@ -341,7 +473,13 @@
                 "en": "Tae Po Curry Prawn",
                 "img": "taepo_prawn.jpg",
                 "price": 45,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 7.95,
+                "price_s2": 15.9,
+                "price_s4": 30.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_h3o6ly72u",
@@ -349,7 +487,13 @@
                 "en": "Tae Po Curry Pork",
                 "img": "taepo_pork_new.jpg",
                 "price": 40,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.95,
+                "price_s2": 12.95,
+                "price_s4": 26.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_5l75grdse",
@@ -357,7 +501,13 @@
                 "en": "Tae Po Curry Pork Belly",
                 "img": "taepo_porkbelly.jpg",
                 "price": 40,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.95,
+                "price_s2": 12.95,
+                "price_s4": 26.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_3clv38eoe",
@@ -365,7 +515,13 @@
                 "en": "Tae Po Curry Mixed Vegetables Tofu",
                 "img": "taepo_veg.jpg",
                 "price": 35,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.5,
+                "price_s2": 12.95,
+                "price_s4": 25.5,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_lpl8y41uw",
@@ -373,7 +529,13 @@
                 "en": "Panang Curry Mixed Vegetables Tofu",
                 "img": "panang_curry_veg.jpg",
                 "price": 35,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.5,
+                "price_s2": 12.95,
+                "price_s4": 25.5,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_duckcurry_1784464708234",
@@ -381,7 +543,13 @@
                 "en": "Roasted Duck Red Curry",
                 "img": "red_curry_duck.jpg",
                 "price": 45,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.95,
+                "price_s2": 12.95,
+                "price_s4": 26.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_5l42k8cs1",
@@ -389,7 +557,13 @@
                 "en": "Crab Curry",
                 "img": "crab_curry.jpg",
                 "price": 45,
-                "unit": "500g / 2 plates"
+                "unit": "500g / 2 plates",
+                "price_s1": 6.95,
+                "price_s2": 12.95,
+                "price_s4": 26.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_7fpb2g6mv",
@@ -429,7 +603,13 @@
                 "en": "Gaeng Som Pae Sa Sea Bass",
                 "img": "gaeng_som_pae_sa.jpg",
                 "price": 45,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 7.95,
+                "price_s2": 15.9,
+                "price_s4": 30.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_gca4f0q0c",
@@ -468,78 +648,6 @@
                 "th": "ผัดฉ่าปลากระพง",
                 "en": "Stir-fried Sea Bass with Herbs and Spices (Phad Cha)",
                 "img": "phad_cha_seabass.jpg",
-                "price": 35,
-                "unit": "1000g"
-            },
-            {
-                "id": "item_yamxvxfr8",
-                "th": "ผัดเผ็ดปลากระพง",
-                "en": "Pad Phed Sea Bass (Spicy Stir-fried Red Curry)",
-                "img": "pad_phed_seabass.jpg",
-                "price": 35,
-                "unit": "1000g"
-            },
-            {
-                "id": "item_w78svh7rl",
-                "th": "ผัดเผ็ดกุ้ง",
-                "en": "Pad Phed Prawns (Spicy Stir-fried Red Curry)",
-                "img": "pad_phed_prawns.jpg",
-                "price": 35,
-                "unit": "1000g"
-            },
-            {
-                "id": "item_ghqe2eigu",
-                "th": "ผัดเผ็ดหมู",
-                "en": "Pad Phed Pork (Spicy Stir-fried Red Curry)",
-                "img": "pad_phed_pork_updated.jpg",
-                "price": 25,
-                "unit": "1000g"
-            },
-            {
-                "id": "item_7k4y4awa7",
-                "th": "ผัดเผ็ดไก่",
-                "en": "Pad Phed Chicken (Spicy Stir-fried Red Curry)",
-                "img": "pad_phed_chicken.jpg",
-                "price": 25,
-                "unit": "1000g"
-            },
-            {
-                "id": "item_8nqkko3k4",
-                "th": "ผัดเผ็ดเนื้อ",
-                "en": "Pad Phed Beef (Spicy Stir-fried Red Curry)",
-                "img": "pad_phed_beef_final.jpg",
-                "price": 35,
-                "unit": "1000g"
-            },
-            {
-                "id": "item_czpunjqxr",
-                "th": "ผัดเผ็ดกุ้ง",
-                "en": "Pad Phed Prawns (Spicy Stir-fried Red Curry)",
-                "img": "pad_phed_prawns.jpg",
-                "price": 35,
-                "unit": "1000g"
-            },
-            {
-                "id": "item_e4cc147i6",
-                "th": "ผัดเผ็ดหมู",
-                "en": "Pad Phed Pork (Spicy Stir-fried Red Curry)",
-                "img": "pad_phed_pork_updated.jpg",
-                "price": 25,
-                "unit": "1000g"
-            },
-            {
-                "id": "item_bw0qj8o0y",
-                "th": "ผัดเผ็ดไก่",
-                "en": "Pad Phed Chicken (Spicy Stir-fried Red Curry)",
-                "img": "pad_phed_chicken.jpg",
-                "price": 25,
-                "unit": "1000g"
-            },
-            {
-                "id": "item_jg57d7o8h",
-                "th": "ผัดเผ็ดเนื้อ",
-                "en": "Pad Phed Beef (Spicy Stir-fried Red Curry)",
-                "img": "pad_phed_beef_final.jpg",
                 "price": 35,
                 "unit": "1000g"
             },
@@ -928,7 +1036,13 @@
                 "en": "Khanom Mo Kaeng",
                 "img": "Khanom Mo Kaeng1.jpg",
                 "price": 22,
-                "unit": "25 pcs/tray"
+                "unit": "25 pcs/tray",
+                "price_s1": 6.95,
+                "price_s2": 12.95,
+                "price_s4": 26.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_lnrjc9b18",
