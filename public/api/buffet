@@ -227,7 +227,8 @@
                 "price_s4": 26.95,
                 "weight_s1": "260g",
                 "weight_s2": "520g",
-                "weight_s4": "1040g"
+                "weight_s4": "1040g",
+                "img_hover": "green_curry_pork_pkg.jpg"
             },
             {
                 "id": "item_d0r1c4ln1",
@@ -283,7 +284,8 @@
                 "price_s4": 26.95,
                 "weight_s1": "260g",
                 "weight_s2": "520g",
-                "weight_s4": "1040g"
+                "weight_s4": "1040g",
+                "img_hover": "Red_curry_pork_pkg.jpg"
             },
             {
                 "id": "item_p0rdw5hmz",
