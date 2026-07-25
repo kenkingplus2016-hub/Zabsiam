@@ -245,8 +245,86 @@
         </div>
 </header>
 
-    <section class="hero-banner">
-        <h1>Authentic Thai Street Food Market</h1>
+    <section class="hero-slider" style="position: relative; width: 100%; max-width: 100%; margin-top: 60px; overflow: hidden; aspect-ratio: 21/9; max-height: 600px; background: #000;">
+        <div class="slides" style="display: flex; transition: transform 0.5s ease-in-out; width: 300%; height: 100%;">
+            <div class="slide" style="width: 33.333%; height: 100%;">
+                <img src="images/b1.jpg" alt="ZabSiam Banner 1" style="width: 100%; height: 100%; object-fit: contain;" onerror="this.src='logo2.png'; this.style.objectFit='contain';">
+            </div>
+            <div class="slide" style="width: 33.333%; height: 100%;">
+                <img src="images/b2.jpg" alt="ZabSiam Banner 2" style="width: 100%; height: 100%; object-fit: contain;" onerror="this.src='logo2.png'; this.style.objectFit='contain';">
+            </div>
+            <div class="slide" style="width: 33.333%; height: 100%;">
+                <img src="images/b3.jpg" alt="ZabSiam Banner 3" style="width: 100%; height: 100%; object-fit: contain;" onerror="this.src='logo2.png'; this.style.objectFit='contain';">
+            </div>
+        </div>
+        
+        <!-- Controls -->
+        <button id="prevSlide" style="position: absolute; top: 50%; left: 20px; transform: translateY(-50%); background: rgba(0,0,0,0.6); color: white; border: none; font-size: 28px; width: 50px; height: 50px; cursor: pointer; border-radius: 50%; z-index: 10; display: flex; align-items: center; justify-content: center; transition: background 0.2s;">&#10094;</button>
+        <button id="nextSlide" style="position: absolute; top: 50%; right: 20px; transform: translateY(-50%); background: rgba(0,0,0,0.6); color: white; border: none; font-size: 28px; width: 50px; height: 50px; cursor: pointer; border-radius: 50%; z-index: 10; display: flex; align-items: center; justify-content: center; transition: background 0.2s;">&#10095;</button>
+        
+        <!-- Dots -->
+        <div class="slider-dots" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 12px; z-index: 10;">
+            <span class="dot active" style="width: 12px; height: 12px; background: #e65c00; border-radius: 50%; cursor: pointer; border: 2px solid transparent;"></span>
+            <span class="dot" style="width: 12px; height: 12px; background: rgba(255,255,255,0.5); border-radius: 50%; cursor: pointer; border: 2px solid transparent;"></span>
+            <span class="dot" style="width: 12px; height: 12px; background: rgba(255,255,255,0.5); border-radius: 50%; cursor: pointer; border: 2px solid transparent;"></span>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const slidesContainer = document.querySelector('.slides');
+                const dots = document.querySelectorAll('.dot');
+                let currentSlide = 0;
+                const totalSlides = 3;
+                let slideInterval;
+
+                function goToSlide(index) {
+                    currentSlide = index;
+                    slidesContainer.style.transform = `translateX(-${currentSlide * 33.333}%)`;
+                    dots.forEach((dot, i) => {
+                        dot.style.background = i === currentSlide ? '#e65c00' : 'rgba(255,255,255,0.5)';
+                        dot.style.borderColor = i === currentSlide ? 'white' : 'transparent';
+                    });
+                }
+
+                function nextSlide() {
+                    currentSlide = (currentSlide + 1) % totalSlides;
+                    goToSlide(currentSlide);
+                }
+
+                function prevSlide() {
+                    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                    goToSlide(currentSlide);
+                }
+
+                function startAutoSlide() {
+                    slideInterval = setInterval(nextSlide, 6000); // 6 seconds per slide
+                }
+
+                function resetAutoSlide() {
+                    clearInterval(slideInterval);
+                    startAutoSlide();
+                }
+
+                document.getElementById('nextSlide').addEventListener('click', () => {
+                    nextSlide();
+                    resetAutoSlide();
+                });
+
+                document.getElementById('prevSlide').addEventListener('click', () => {
+                    prevSlide();
+                    resetAutoSlide();
+                });
+
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        goToSlide(index);
+                        resetAutoSlide();
+                    });
+                });
+
+                startAutoSlide();
+            });
+        </script>
     </section>
 
             <section class="categories-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
