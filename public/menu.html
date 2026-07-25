@@ -590,6 +590,11 @@
                     const hasHoverImg = !!item.img_hover;
                     const hoverImgSrc = hasHoverImg ? (item.img_hover.startsWith('http') ? item.img_hover : `images/${item.img_hover}`) : imgSrc;
                     
+                    const p1 = item.price_s1 || item.price;
+                    const p2 = item.price_s2 || (item.price * 1.7);
+                    const w1 = item.weight_s1 || '250g';
+                    const w2 = item.weight_s2 || '500g';
+                    
                     html += `
                         
                         <div class="bg-white rounded-lg overflow-hidden flex flex-col relative group border border-gray-100 shadow-sm hover:shadow-md transition-shadow" id="card-${item.id}">
