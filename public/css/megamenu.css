@@ -212,3 +212,36 @@
     justify-content: center;
     font-weight: bold;
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .mega-nav-container {
+        flex-wrap: wrap;
+        padding: 10px 15px;
+        height: auto;
+    }
+    /* Hide nav links on mobile (can add hamburger later) */
+    .mega-nav-links {
+        display: none;
+    }
+    /* Logo on top row, centered */
+    .mega-logo {
+        width: 100%;
+        justify-content: center;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    /* Cart on the left */
+    .mega-icons {
+        order: 2;
+        margin-left: 0;
+        margin-right: 15px;
+    }
+    /* Search in the middle (takes remaining space) */
+    .mega-search {
+        order: 3;
+        flex: 1;
+        margin-left: 0;
+        width: auto;
+    }
+}
