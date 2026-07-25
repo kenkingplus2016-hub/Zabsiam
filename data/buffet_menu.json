@@ -2,8 +2,8 @@
     {
         "id": "starters",
         "title": {
-            "th": "สตาร์ทเตอร์ (Starters & Appetizers)",
-            "en": "Starters & Appetizers"
+            "th": "Starters",
+            "en": "Starters"
         },
         "items": [
             {
@@ -197,8 +197,8 @@
     {
         "id": "mains",
         "title": {
-            "th": "เนื้อ (Meat & Main Courses)",
-            "en": "Meat & Main Courses"
+            "th": "Meat",
+            "en": "Meat"
         },
         "items": [
             {
@@ -880,8 +880,8 @@
     {
         "id": "vegetables",
         "title": {
-            "th": "ผัก (Vegetable Dishes)",
-            "en": "Vegetable Dishes"
+            "th": "Vegetables",
+            "en": "Vegetables"
         },
         "items": [
             {
@@ -929,7 +929,7 @@
     {
         "id": "box_sets",
         "title": {
-            "th": "แบบกล่อง (Meal Boxes)",
+            "th": "Meal Boxes",
             "en": "Meal Boxes"
         },
         "items": [
@@ -1163,7 +1163,7 @@
     {
         "id": "desserts",
         "title": {
-            "th": "ของหวาน (Desserts)",
+            "th": "Desserts",
             "en": "Desserts"
         },
         "items": [
@@ -1338,7 +1338,7 @@
     {
         "id": "drinks",
         "title": {
-            "th": "เครื่องดื่ม (Drinks)",
+            "th": "Drinks",
             "en": "Drinks"
         },
         "items": [
