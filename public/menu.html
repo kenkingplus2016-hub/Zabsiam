@@ -535,25 +535,25 @@ function generateIngredients(item) {
                     
                     html += `
                         
-                        <div class="bg-gray-900 rounded-lg overflow-hidden flex flex-col relative group border border-gray-800 shadow-sm hover:shadow-md transition-shadow" id="card-${item.id}">
+                        <div class="bg-[#e65c00] rounded-lg overflow-hidden flex flex-col relative group border border-[#e65c00] shadow-sm hover:shadow-md transition-shadow" id="card-${item.id}">
                             <div class="relative w-full aspect-square overflow-hidden bg-black rounded-t-lg group/img">
                                 <!-- Primary Image -->
                                 <img src="${imgSrc}" onclick="openProductModal('${item.id}')" class="cursor-pointer absolute inset-0 w-full h-full object-cover transition-all duration-500 ${hasHoverImg ? 'group-hover/img:opacity-0' : 'group-hover/img:scale-105'}" onerror="this.src='logo2.png';">
                                 <!-- Secondary Hover Image (Only visible on hover if it exists) -->
                                 ${hasHoverImg ? `<img src="${hoverImgSrc}" onclick="openProductModal('${item.id}')" class="cursor-pointer absolute inset-0 w-full h-full object-cover transition-all duration-500 opacity-0 group-hover/img:opacity-100 group-hover/img:scale-105" onerror="this.src='logo2.png';">` : ''}
                                 <!-- Info Icon (Top Right) -->
-                                <button onclick="showQRCode('${item.id}', '${item.en}', ${item.price})" class="absolute top-2 right-2 bg-gray-900/80 backdrop-blur-sm text-gray-500 hover:text-dark-green w-8 h-8 rounded-full flex items-center justify-center shadow-sm transition-colors border border-gray-700">
+                                <button onclick="showQRCode('${item.id}', '${item.en}', ${item.price})" class="absolute top-2 right-2 bg-white/20 backdrop-blur-sm text-white hover:text-gray-200 w-8 h-8 rounded-full flex items-center justify-center shadow-sm transition-colors border border-white/50">
                                     <i class="fas fa-info"></i>
                                 </button>
                             </div>
                             
                             <div class="p-4 flex flex-col flex-1">
-                                <h3 onclick="openProductModal('${item.id}')" class="font-bold text-white text-[16px] mb-2 leading-snug cursor-pointer hover:text-[#598c73] transition-colors">${item.en}</h3>
+                                <h3 onclick="openProductModal('${item.id}')" class="font-bold text-white text-[16px] mb-2 leading-snug cursor-pointer hover:text-gray-200 transition-colors">${item.en}</h3>
                                 
 
                                 
                                 <div class="mt-auto pt-3 border-t border-gray-800">
-                                    <p class="font-bold text-[#e65c00] text-lg text-center">£${p1.toFixed(2)}</p>
+                                    <p class="font-bold text-white text-lg text-center">£${p1.toFixed(2)}</p>
                                 </div>
                             </div>
                         </div>
