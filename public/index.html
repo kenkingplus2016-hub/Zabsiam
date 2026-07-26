@@ -187,7 +187,7 @@
             .hero-banner h1 { font-size: 1.8rem; }
             .categories-grid { grid-template-columns: 1fr; padding: 40px 20px; gap: 30px; }
         }
-            a.mega-nav-link[href="menu.html"] { color: #e65c00 !important; font-weight: bold !important; }
+            a.mega-nav-link[href="#buffet-container"] { color: #e65c00 !important; font-weight: bold !important; }
             .category-title { color: #e65c00 !important; }
         .category-subtitle { color: #e65c00 !important; }
             footer { background-color: #000 !important; color: #fff !important; border-top: 1px solid #333 !important; }
@@ -238,19 +238,19 @@
         <div class="mega-nav-links">
             <!-- Thai Street Food -->
             <div class="mega-nav-item">
-                <a href="menu.html" class="mega-nav-link">Thai Street Food</a>
+                <a href="#buffet-container" class="mega-nav-link">Thai Street Food</a>
                 <div class="mega-dropdown">
                     <div class="mega-dropdown-content">
                         <div class="mega-columns">
                             <div class="mega-column">
                                 <div class="mega-column-title">Categories</div>
-                                <a href="menu.html?cat=pad_krapow">Pad Krapow</a>
-                                <a href="menu.html?cat=spicy_salads">Spicy Salads</a>
-                                <a href="menu.html?cat=desserts">Puddings</a>
+                                <a href="#section-pad_krapow">Pad Krapow</a>
+                                <a href="#section-spicy_salads">Spicy Salads</a>
+                                <a href="#section-desserts">Puddings</a>
                             </div>
                         </div>
                         <div class="mega-featured">
-                            <a href="menu.html?cat=spicy_salads" class="mega-feature-card">
+                            <a href="#section-spicy_salads" class="mega-feature-card">
                                 <img src="images/780f7b8bb98d.jpg" alt="Spicy Salads">
                                 <span>Authentic Thai Street Food</span>
                             </a>
@@ -350,29 +350,7 @@
         </script>
     </section>
 
-            <section class="categories-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
-        <a href="menu.html?cat=pad_krapow" class="category-card">
-            <img src="logo2.png" alt="Pad Krapow">
-            <div class="category-text">
-                <div class="category-title">Pad Krapow</div>
-                <div class="category-subtitle">Classic Thai Basil Stir Fry</div>
-            </div>
-        </a>
-        <a href="menu.html?cat=spicy_salads" class="category-card">
-            <img src="images/780f7b8bb98d.jpg" alt="Spicy Salads">
-            <div class="category-text">
-                <div class="category-title">Spicy Salads (Yum & Larb)</div>
-                <div class="category-subtitle">Authentic Thai spicy salads</div>
-            </div>
-        </a>
-        <a href="menu.html?cat=desserts" class="category-card">
-            <img src="images/mango sticky rice.jpg" alt="Puddings" onerror="this.src='logo2.png'">
-            <div class="category-text">
-                <div class="category-title">Puddings</div>
-                <div class="category-subtitle">Sweet street food treats</div>
-            </div>
-        </a>
-    </section>
+            <!-- Menu Section -->\n<main class="w-full max-w-[1200px] mx-auto px-5 py-6" id="buffet-container">\n    <!-- Content will be injected by JavaScript -->\n</main>\n\n<script>\n    document.addEventListener("DOMContentLoaded", () => {\n        fetch("data/buffet_menu.json")\n            .then(res => res.json())\n            .then(data => {\n                const container = document.getElementById("buffet-container");\n                let html = "";\n                \n                data.categories.forEach(cat => {\n                    if (!cat.items || cat.items.length === 0) return;\n                    \n                    html += "\n                        <div class=\"mb-12\" id=\"section-" + cat.id + "\">\n                            <h2 class=\"text-3xl font-bold mb-6 pb-2 border-b border-gray-800\" style=\"color: #e65c00;\">" + cat.title + "</h2>\n                            <div class=\"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6\">\n                    ";\n                    \n                    cat.items.forEach(item => {\n                        html += "\n                            <div class=\"menu-card bg-[#111] rounded-lg overflow-hidden border border-gray-800 transition hover:border-[#e65c00]\">\n                                <div class=\"aspect-w-16 aspect-h-9 w-full\">\n                                    <img src=\"" + item.image + "\" alt=\"" + item.name + "\" class=\"w-full h-[200px] object-cover\" onerror=\"this.src='logo2.png'; this.style.objectFit='contain';\">\n                                </div>\n                                <div class=\"p-4\">\n                                    <div class=\"flex justify-between items-start mb-2\">\n                                        <h3 class=\"text-xl font-bold text-white\">" + item.name + "</h3>\n                                        <span class=\"text-[#e65c00] font-bold\">" + item.price + "</span>\n                                    </div>\n                                    <p class=\"text-gray-400 text-sm mb-4\">" + item.description + "</p>\n                                </div>\n                            </div>\n                        ";\n                    });\n                    \n                    html += "\n                            </div>\n                        </div>\n                    ";\n                });\n                \n                container.innerHTML = html;\n                \n                if(window.location.hash) {\n                    setTimeout(() => {\n                        const el = document.querySelector(window.location.hash);\n                        if(el) el.scrollIntoView({ behavior: 'smooth' });\n                    }, 500);\n                }\n            })\n            .catch(err => {\n                console.error("Error loading menu:", err);\n                document.getElementById("buffet-container").innerHTML = "<p class=\"text-center text-red-500\">Failed to load menu. Please try again later.</p>";\n            });\n    });\n</script>\n
 
     
     <!-- Market Schedule Section -->
@@ -412,7 +390,7 @@
             </div>
             
             <div style="margin-top: 40px;">
-                <a href="menu.html" style="display: inline-block; background-color: #e65c00 !important; color: white; padding: 15px 30px; border-radius: 8px; font-size: 1.1rem; font-weight: bold; text-decoration: none; transition: background 0.3s; box-shadow: 0 4px 10px rgba(230,92,0,0.3);">
+                <a href="#buffet-container" style="display: inline-block; background-color: #e65c00 !important; color: white; padding: 15px 30px; border-radius: 8px; font-size: 1.1rem; font-weight: bold; text-decoration: none; transition: background 0.3s; box-shadow: 0 4px 10px rgba(230,92,0,0.3);">
                     Pre-order Now
                 </a>
             </div>
