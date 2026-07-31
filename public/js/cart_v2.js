@@ -133,3 +133,5 @@ function showCartToast(qty) {
 }
 
 document.addEventListener('DOMContentLoaded', updateFloatingCart);
+
+// Trigger redeploy
