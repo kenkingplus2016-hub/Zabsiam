@@ -26,8 +26,8 @@
 
     <!-- Hero Section with Video Background -->
     <section class="hero">
-        <!-- Placeholder Video for Pad Thai -->
-        <video autoplay loop muted playsinline class="video-bg">
+        <!-- Hero Video Playlist -->
+        <video id="hero-video" autoplay muted playsinline class="video-bg" style="transition: opacity 0.5s ease-in-out;">
             <source src="https://cdn.pixabay.com/video/2022/10/18/135541-761922756_large.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -52,7 +52,7 @@
             <!-- Item 2: Salmon Spicy Salad -->
             <div class="menu-card">
                 <div class="card-img-wrapper">
-                    <img src="images/salmon_lui_suan_wonton.jpg" alt="Salmon Spicy Salad" onerror="this.src='images/pla_goong.jpg'">
+                    <img src="images/salmon_spicy_salad_new.jpg" alt="Salmon Spicy Salad">
                 </div>
                 <div class="card-content">
                     <div class="card-header">
@@ -72,8 +72,7 @@
                 </div>
                 <div class="card-content">
                     <div class="card-header">
-                        <div>
-                            <h3 class="card-title">Grilled Pork Neck</h3>
+                            <h3 class="card-title">Kor Moo Yang</h3>
                         </div>
                         <span class="card-price">£12.95</span>
                     </div>
@@ -88,8 +87,7 @@
                 </div>
                 <div class="card-content">
                     <div class="card-header">
-                        <div>
-                            <h3 class="card-title">Nam Tok Grilled Pork Neck with Sticky Rice</h3>
+                            <h3 class="card-title">Nam Tok Kor Moo Yang with Sticky Rice</h3>
                         </div>
                         <span class="card-price">£15.95</span>
                     </div>
@@ -123,5 +121,39 @@
         <p>&copy; 2026 ZabSiam London. All rights reserved.</p>
     </footer>
 
+    <!-- Video Playlist Logic -->
+    <script>
+        const videoElement = document.getElementById('hero-video');
+        
+        // 🚨 IMPORTANT: When you have your actual videos, replace these 3 URLs below with your own! 
+        // Example: 'videos/grill-pork-neck.mp4'
+        const playlist = [
+            "https://cdn.pixabay.com/video/2022/10/18/135541-761922756_large.mp4",  // Video 1 (Placeholder for Grilled Pork Neck)
+            "https://cdn.pixabay.com/video/2024/02/09/200000-911877400_large.mp4",  // Video 2 (Placeholder for Slicing Pork Neck)
+            "https://cdn.pixabay.com/video/2024/05/21/213038_large.mp4"   // Video 3 (Placeholder for Sticky Rice & Jaew)
+        ];
+        
+        let currentVideoIndex = 0;
+
+        videoElement.addEventListener('ended', () => {
+            // Fade out
+            videoElement.style.opacity = 0;
+            
+            setTimeout(() => {
+                // Change video source
+                currentVideoIndex = (currentVideoIndex + 1) % playlist.length;
+                videoElement.src = playlist[currentVideoIndex];
+                videoElement.load();
+                
+                // Play and fade in
+                videoElement.play().then(() => {
+                    videoElement.style.opacity = 1;
+                }).catch(err => {
+                    console.log("Video auto-play blocked or failed", err);
+                    videoElement.style.opacity = 1;
+                });
+            }, 500); // 500ms fade transition
+        });
+    </script>
 </body>
 </html>
