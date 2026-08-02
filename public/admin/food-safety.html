@@ -2,622 +2,803 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="robots" content="noindex,nofollow">
-  <title>Zab Siam Food Safety Hub</title>
+  <title>Zab Siam Food Safety</title>
   <style>
     :root {
-      --ink: #20231f;
-      --muted: #687064;
-      --paper: #fbfaf4;
-      --panel: #ffffff;
-      --line: #ded8c9;
-      --green: #2f6b46;
-      --dark: #14231a;
-      --gold: #d99b35;
-      --red: #b84434;
-      --blue: #dcecf7;
-      --shadow: 0 16px 42px rgba(26, 32, 24, .12);
+      --green: #00720c;
+      --green-dark: #005b08;
+      --green-soft: #d9f7df;
+      --ink: #161616;
+      --muted: #6d756d;
+      --line: #d9ddd7;
+      --paper: #f5f6f3;
+      --card: #ffffff;
+      --red: #d71919;
+      --amber: #ffb000;
+      --cyan: #14a3c7;
+      --purple: #7a2dbb;
+      --shadow: 0 12px 28px rgba(0, 0, 0, .14);
     }
 
     * { box-sizing: border-box; }
+    html, body { min-height: 100%; }
     body {
       margin: 0;
       color: var(--ink);
-      background: linear-gradient(180deg, #f8f4eb, #ebe5d6);
+      background: #0f0f0f;
       font-family: Arial, Tahoma, sans-serif;
     }
     button, input, select, textarea { font: inherit; }
-    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; }
 
     .login {
       position: fixed;
       inset: 0;
-      z-index: 20;
+      z-index: 30;
       display: grid;
       place-items: center;
-      padding: 18px;
-      background: rgba(13, 24, 17, .72);
-    }
-    .login-card, .panel {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      box-shadow: var(--shadow);
+      padding: 20px;
+      background: rgba(0, 0, 0, .72);
     }
     .login-card {
-      width: min(430px, 100%);
+      width: min(420px, 100%);
+      background: #fff;
+      border-radius: 18px;
       padding: 22px;
       display: grid;
       gap: 12px;
+      box-shadow: var(--shadow);
     }
     .login-card h1 { margin: 0; font-size: 25px; }
     .login-card p { margin: 0; color: var(--muted); line-height: 1.45; }
 
-    .shell {
+    .phone {
+      width: min(430px, 100%);
       min-height: 100vh;
-      display: grid;
-      grid-template-columns: 320px minmax(0, 1fr);
-      gap: 18px;
-      padding: 18px;
-    }
-    aside {
-      align-self: start;
-      position: sticky;
-      top: 18px;
-      display: grid;
-      gap: 12px;
-    }
-    .brand {
-      color: #fff;
-      background: var(--dark);
-      border-radius: 10px;
-      padding: 18px;
-    }
-    .brand h1 { margin: 0 0 5px; font-size: 25px; }
-    .brand p { margin: 0; color: rgba(255,255,255,.74); }
-
-    .module-list {
-      display: grid;
-      gap: 8px;
-    }
-    .module-btn {
-      border: 1px solid var(--line);
-      border-left: 5px solid transparent;
-      background: #fff;
-      border-radius: 8px;
-      min-height: 54px;
-      padding: 10px 12px;
-      display: grid;
-      grid-template-columns: 42px minmax(0, 1fr);
-      gap: 10px;
-      align-items: center;
-      text-align: left;
-      cursor: pointer;
-    }
-    .module-btn.active, .module-btn:hover {
-      border-left-color: var(--green);
-      background: #f7fbf5;
-    }
-    .module-no {
-      color: var(--gold);
-      font-weight: 900;
-      font-size: 20px;
-    }
-    .module-name {
-      font-weight: 800;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .main {
-      min-width: 0;
-      display: grid;
-      gap: 16px;
-      align-content: start;
-    }
-    .panel { overflow: hidden; }
-    .panel-head {
-      padding: 14px 16px;
-      border-bottom: 1px solid var(--line);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
+      margin: 0 auto;
       background: var(--paper);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
     }
-    .panel-head h2, .panel-head h3 { margin: 0; }
-    .panel-head h2 { font-size: 26px; }
-    .panel-head h3 { font-size: 18px; }
-    .helper { margin: 3px 0 0; color: var(--muted); font-size: 13px; line-height: 1.45; }
-    .actions { display: flex; gap: 8px; flex-wrap: wrap; }
-    .button {
-      min-height: 40px;
-      border: 0;
-      border-radius: 8px;
-      padding: 9px 13px;
+    .top {
       color: #fff;
-      background: var(--green);
-      font-weight: 800;
-      cursor: pointer;
-      display: inline-flex;
+      background: var(--green-dark);
+      padding: max(14px, env(safe-area-inset-top)) 14px 12px;
+      position: sticky;
+      top: 0;
+      z-index: 8;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .18);
+    }
+    .site-pill {
+      min-height: 36px;
+      border: 1px solid rgba(255,255,255,.28);
+      border-radius: 9px;
+      padding: 8px 12px;
+      display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 8px;
+      gap: 9px;
+      background: rgba(255,255,255,.09);
+      font-weight: 800;
+      margin-bottom: 8px;
     }
-    .button.secondary {
-      color: var(--dark);
-      background: #fff;
-      border: 1px solid var(--line);
-    }
-    .button.gold { background: var(--gold); }
-    .button.danger { background: var(--red); }
-
-    .content, form { padding: 16px; }
-    .feature-grid {
+    .shield {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #064d13;
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      place-items: center;
+      font-size: 12px;
+    }
+    .navline {
+      min-height: 42px;
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr) 42px;
+      align-items: center;
       gap: 8px;
     }
-    .feature {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 10px;
-      background: #fff;
+    .back, .gear {
+      width: 38px;
+      height: 38px;
+      border: 0;
+      border-radius: 10px;
+      color: #fff;
+      background: transparent;
+      font-size: 26px;
+    }
+    .screen-title {
+      text-align: center;
+      font-weight: 900;
+    }
+    .subtitle {
+      margin-top: -7px;
+      text-align: center;
+      color: rgba(255,255,255,.78);
       font-size: 13px;
-      color: #364035;
     }
 
-    form {
-      display: grid;
-      gap: 12px;
+    .content {
+      flex: 1;
+      overflow: auto;
+      padding: 16px 12px 92px;
     }
-    label { display: grid; gap: 6px; color: var(--muted); font-size: 14px; font-weight: 800; }
+    .home-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .tile {
+      min-height: 132px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(180deg, #fff, #f4f4f2);
+      box-shadow: 0 7px 16px rgba(0,0,0,.12);
+      display: grid;
+      place-items: center;
+      gap: 8px;
+      padding: 16px 10px;
+      text-align: center;
+      font-weight: 900;
+    }
+    .tile-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      font-weight: 900;
+      background: #f4f4f4;
+      box-shadow: 0 7px 15px rgba(0,0,0,.12);
+    }
+    .orange { color: #db5a00; }
+    .blue { color: #0094c6; }
+    .teal { color: #00a8a8; }
+    .red { color: var(--red); }
+    .gold { color: var(--amber); }
+    .purple { color: var(--purple); }
+    .green { color: var(--green); }
+
+    .staff-select {
+      width: 100%;
+      min-height: 50px;
+      border: 2px solid var(--green);
+      border-radius: 11px;
+      background: #fff;
+      padding: 10px 14px;
+      margin-bottom: 12px;
+      font-weight: 800;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      padding: 18px;
+      margin-bottom: 14px;
+      box-shadow: 0 7px 18px rgba(0,0,0,.11);
+    }
+    .card h3 {
+      margin: 0 0 12px;
+      font-size: 16px;
+    }
+    label {
+      display: grid;
+      gap: 7px;
+      margin-bottom: 12px;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 800;
+    }
     input, select, textarea {
       width: 100%;
-      min-height: 42px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 10px 12px;
+      border: 1px solid #ccd1ca;
+      border-radius: 11px;
+      min-height: 48px;
+      padding: 11px 13px;
       background: #fff;
       color: var(--ink);
     }
-    textarea { min-height: 90px; resize: vertical; }
-    .row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+    textarea { min-height: 92px; resize: vertical; }
 
-    .summary-grid {
+    .segments {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 10px;
-      padding: 16px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
     }
-    .metric {
+    .segment {
+      min-height: 46px;
       border: 1px solid var(--line);
-      border-radius: 8px;
+      border-radius: 10px;
+      background: #fff;
+      font-weight: 900;
+    }
+    .segment.active {
+      color: #fff;
+      background: var(--green);
+      border-color: var(--green);
+    }
+
+    .temp-control {
+      border: 1px solid #cfd4cf;
+      border-radius: 12px;
+      min-height: 66px;
+      display: grid;
+      grid-template-columns: 58px 1fr 58px;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .temp-control button {
+      border: 0;
+      background: transparent;
+      color: var(--green);
+      font-size: 30px;
+      font-weight: 500;
+    }
+    .temp-value {
+      font-size: 32px;
+      font-weight: 900;
+    }
+    .temp-value span {
+      font-size: 18px;
+      color: #3d463d;
+      margin-left: 4px;
+    }
+    .range-track {
+      height: 28px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #76d7ef, #ffd052 48%, #ff9900 68%, #ff2020);
+      position: relative;
+      margin: 6px 4px 8px;
+    }
+    .range-dot {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #fff;
+      border: 6px solid var(--green);
+      position: absolute;
+      top: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    }
+    .range-labels {
+      display: flex;
+      justify-content: space-between;
+      color: #3e443d;
+      font-size: 12px;
+      margin: 0 4px 20px;
+    }
+    .safe-text {
+      color: #4a5248;
+      font-size: 13px;
+    }
+
+    .check-row {
+      display: grid;
+      grid-template-columns: 32px minmax(0, 1fr);
+      gap: 10px;
+      align-items: center;
+      min-height: 50px;
+      border-bottom: 1px solid #eef0ed;
+      font-size: 16px;
+    }
+    .checkbox {
+      width: 24px;
+      height: 24px;
+      border: 2px solid #cfd4cf;
+      border-radius: 6px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 900;
+    }
+    .check-row.done .checkbox {
+      border-color: var(--green);
+      background: var(--green);
+    }
+    .check-row.done .check-label {
+      color: #666;
+      text-decoration: line-through;
+    }
+    .progress-card {
+      padding: 14px 18px;
+    }
+    .progress-line {
+      height: 8px;
+      border-radius: 999px;
+      background: #e4e8e2;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+    .progress-fill {
+      height: 100%;
+      width: 0;
+      background: var(--green);
+      border-radius: inherit;
+      transition: width .2s ease;
+    }
+
+    .equipment-grid, .allergen-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .equipment, .allergen {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      min-height: 108px;
       padding: 12px;
       background: #fff;
+      text-align: center;
+      display: grid;
+      place-items: center;
+      gap: 5px;
     }
-    .metric span { display: block; color: var(--muted); font-size: 13px; }
-    .metric strong { display: block; margin-top: 5px; font-size: 24px; }
+    .equipment.active, .allergen.active {
+      border: 2px solid var(--green);
+      background: var(--green-soft);
+    }
+    .equipment strong, .allergen strong { display: block; }
+    .equipment small, .allergen small { color: var(--muted); }
 
-    .notice {
+    .record-card, .action-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 14px;
+      margin-bottom: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,.10);
+    }
+    .record-card h4, .action-card h4 {
+      margin: 0 0 7px;
+      font-size: 16px;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+    .badge {
+      display: inline-flex;
+      border-radius: 7px;
+      padding: 5px 8px;
+      color: #fff;
+      background: var(--green);
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 7px;
+    }
+    .badge.risk, .badge.issue, .badge.high { background: var(--red); }
+    .badge.medium, .badge.pending { background: var(--amber); color: #2b2108; }
+
+    .bottom-save {
+      position: fixed;
+      left: 50%;
+      bottom: max(12px, env(safe-area-inset-bottom));
+      transform: translateX(-50%);
+      width: min(390px, calc(100% - 28px));
+      min-height: 54px;
+      border: 0;
+      border-radius: 12px;
+      background: #00920f;
+      color: #fff;
+      font-size: 17px;
+      font-weight: 900;
+      box-shadow: 0 8px 20px rgba(0,0,0,.25);
+      z-index: 10;
       display: none;
-      padding: 12px 16px;
-      border-top: 1px solid var(--line);
-      background: #fff0bd;
-      color: #5b4a16;
+    }
+    .bottom-save.show { display: block; }
+    .notice {
+      position: fixed;
+      left: 50%;
+      bottom: 78px;
+      transform: translateX(-50%);
+      width: min(390px, calc(100% - 28px));
+      padding: 12px;
+      border-radius: 10px;
+      color: #fff;
+      background: rgba(0,0,0,.82);
+      z-index: 14;
+      display: none;
+      text-align: center;
+      font-weight: 800;
     }
     .notice.show { display: block; }
 
-    .filters {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 10px;
-      padding: 14px 16px;
-      border-top: 1px solid var(--line);
-    }
-    .table-wrap { overflow: auto; }
-    table { width: 100%; min-width: 980px; border-collapse: collapse; }
-    th, td {
-      border-bottom: 1px solid var(--line);
-      padding: 10px 12px;
-      text-align: left;
-      vertical-align: top;
-      font-size: 14px;
-    }
-    th {
-      background: #f7f3ea;
-      color: var(--muted);
-      text-transform: uppercase;
-      font-size: 12px;
-    }
-    .pill {
-      display: inline-flex;
-      border-radius: 999px;
-      padding: 5px 9px;
-      font-size: 12px;
-      font-weight: 900;
-      color: #fff;
-      background: var(--green);
-      white-space: nowrap;
-    }
-    .pill.issue, .pill.high { background: var(--red); }
-    .pill.pending, .pill.medium { background: var(--gold); color: #2f2309; }
-    .pill.low { background: var(--green); }
-
-    @media print {
-      aside, .login, .actions, form, .filters { display: none !important; }
-      body { background: #fff; }
-      .shell { display: block; padding: 0; }
-      .panel { box-shadow: none; border-radius: 0; }
-    }
-
-    @media (max-width: 1050px) {
-      .shell { grid-template-columns: 1fr; padding: 12px; }
-      aside { position: static; }
-      .module-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .feature-grid, .summary-grid, .filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    @media (max-width: 620px) {
-      .module-list, .feature-grid, .summary-grid, .filters, .row { grid-template-columns: 1fr; }
-      .panel-head { align-items: stretch; flex-direction: column; }
-      .button { width: 100%; }
+    @media (min-width: 760px) {
+      body { background: #dfe2dc; }
+      .phone {
+        min-height: calc(100vh - 32px);
+        margin: 16px auto;
+        border-radius: 28px;
+        box-shadow: 0 22px 60px rgba(0,0,0,.28);
+      }
+      .bottom-save { bottom: 28px; }
     }
   </style>
 </head>
 <body>
   <div class="login" id="loginPanel">
     <form class="login-card" id="loginForm">
-      <h1>Food Safety Hub</h1>
-      <p>ระบบหลังบ้านสำหรับบันทึกงาน food safety, HACCP, allergen, cleaning, stock delivery และ corrective actions ของร้าน Zab Siam</p>
+      <h1>Zab Siam Food Safety</h1>
+      <p>ใส่รหัสพนักงานเพื่อเปิดระบบบันทึก food safety สำหรับครัว ร้าน และทีมงาน</p>
       <label>
         รหัสพนักงาน
         <input id="passwordInput" type="password" autocomplete="current-password" required>
       </label>
-      <button class="button" type="submit">เปิดระบบ</button>
+      <button class="bottom-action button-login" type="submit">เปิดระบบ</button>
       <p id="loginMessage"></p>
     </form>
   </div>
 
-  <div class="shell">
-    <aside>
-      <div class="brand">
-        <h1>Zab Siam</h1>
-        <p>Food Safety Management</p>
+  <div class="phone">
+    <header class="top">
+      <div class="site-pill"><span class="shield">✓</span><span>Zab Siam</span></div>
+      <div class="navline">
+        <button class="back" id="backButton" type="button">‹</button>
+        <div>
+          <div class="screen-title" id="screenTitle">Food Safety</div>
+          <div class="subtitle" id="screenSubtitle">Compliance Confidence</div>
+        </div>
+        <button class="gear" id="recordsShortcut" type="button">□</button>
       </div>
-      <nav class="module-list" id="moduleList" aria-label="Food safety modules"></nav>
-    </aside>
+    </header>
 
-    <main class="main">
-      <section class="panel">
-        <div class="panel-head">
-          <div>
-            <h2 id="moduleTitle"></h2>
-            <p class="helper" id="moduleSummary"></p>
-          </div>
-          <div class="actions">
-            <a class="button secondary" href="/admin/temperature-check.html">Temperature Check</a>
-            <a class="button secondary" href="/admin/pos.html">POS / Stock</a>
-            <button class="button gold" id="printButton" type="button">Export / Print</button>
-            <button class="button danger" id="logoutButton" type="button">ออก</button>
-          </div>
-        </div>
-        <div class="content">
-          <div class="feature-grid" id="featureGrid"></div>
-        </div>
-      </section>
-
-      <section class="panel">
-        <div class="panel-head">
-          <div>
-            <h3>Quick Record</h3>
-            <p class="helper">บันทึกงานของหมวดที่เลือก พร้อม timestamp อัตโนมัติ</p>
-          </div>
-        </div>
-        <form id="recordForm">
-          <div class="row">
-            <label>
-              Category
-              <input id="categoryInput" placeholder="เช่น Opening checks / Allergen update">
-            </label>
-            <label>
-              Status
-              <select id="statusInput">
-                <option value="done">Done</option>
-                <option value="pending">Pending</option>
-                <option value="issue">Issue</option>
-              </select>
-            </label>
-            <label>
-              Risk
-              <select id="riskInput">
-                <option value="low">Low</option>
-                <option value="medium">Medium</option>
-                <option value="high">High</option>
-              </select>
-            </label>
-          </div>
-          <label>
-            Record title
-            <input id="titleInput" placeholder="เช่น Fridge 1 checked / Cleaning completed" required>
-          </label>
-          <div class="row">
-            <label>
-              Assigned to
-              <input id="assignedToInput" placeholder="ชื่อพนักงาน">
-            </label>
-            <label>
-              Completed by
-              <input id="completedByInput" placeholder="ชื่อผู้บันทึก">
-            </label>
-            <label>
-              Due date
-              <input id="dueDateInput" type="date">
-            </label>
-          </div>
-          <label>
-            Details
-            <textarea id="detailsInput" placeholder="รายละเอียดงาน, checklist, supplier, menu item, allergen, หรือสิ่งที่ตรวจพบ"></textarea>
-          </label>
-          <label>
-            Corrective action
-            <textarea id="correctiveActionInput" placeholder="ถ้ามีปัญหา ให้บันทึกการแก้ไข เช่น ทิ้งอาหาร / ทำความสะอาดซ้ำ / แจ้ง supplier / ฝึกพนักงาน"></textarea>
-          </label>
-          <button class="button" id="saveButton" type="submit">Save Record</button>
-        </form>
-      </section>
-
-      <section class="panel">
-        <div class="panel-head">
-          <div>
-            <h3>Record History</h3>
-            <p class="helper" id="syncStatus">ยังไม่ได้ซิงก์</p>
-          </div>
-          <button class="button secondary" id="refreshButton" type="button">รีเฟรช</button>
-        </div>
-        <div class="notice" id="notice"></div>
-        <div class="summary-grid">
-          <div class="metric"><span>Records today</span><strong id="todayTotal">0</strong></div>
-          <div class="metric"><span>Issues</span><strong id="issueTotal">0</strong></div>
-          <div class="metric"><span>High risk</span><strong id="highRiskTotal">0</strong></div>
-          <div class="metric"><span>Total history</span><strong id="historyTotal">0</strong></div>
-        </div>
-        <div class="filters">
-          <label>
-            Module
-            <select id="moduleFilter"><option value="all">All modules</option></select>
-          </label>
-          <label>
-            Status
-            <select id="statusFilter">
-              <option value="all">All status</option>
-              <option value="done">Done</option>
-              <option value="pending">Pending</option>
-              <option value="issue">Issue</option>
-            </select>
-          </label>
-          <label>
-            Date
-            <input id="dateFilter" type="date">
-          </label>
-          <label>
-            Search
-            <input id="searchInput" type="search" placeholder="Search records">
-          </label>
-        </div>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Time</th>
-                <th>Module</th>
-                <th>Category</th>
-                <th>Title</th>
-                <th>Status</th>
-                <th>Risk</th>
-                <th>Staff</th>
-                <th>Details</th>
-                <th>Corrective action</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody id="recordBody"></tbody>
-          </table>
-        </div>
-      </section>
-    </main>
+    <main class="content" id="app"></main>
   </div>
 
+  <button class="bottom-save" id="saveButton" type="button">Save Record</button>
+  <div class="notice" id="notice"></div>
+
   <script>
-    const API_URL = "/api/food-safety-records";
+    const foodApi = "/api/food-safety-records";
+    const tempApi = "/api/temperature-checks";
     const passwordKey = "zabsiam-food-safety-pass";
-    const modules = [
-      { no: "01", id: "temperature", title: "Temperature Monitoring", summary: "Track kitchen temperatures in one tidy digital space with quick entry, automatic timestamps and simple history logs.", features: ["Cooking temperature records", "Cooling temperature records", "Cold storage checks", "Reheat temperature logs", "Hot holding temperature logs", "Probe calibration records", "Custom safe limits", "Risk highlighting in records"] },
-      { no: "02", id: "daily-checks", title: "Daily Kitchen Checks", summary: "Keep opening and closing routines quick, clear and consistent across every shift with simple digital checklists.", features: ["Opening checks", "Closing checks", "Fully customisable checklists", "Quick daily checks", "Multi-shift ready", "Staff accountability records"] },
-      { no: "03", id: "cleaning", title: "Cleaning & Hygiene", summary: "Replace messy paper cleaning sheets with cleaner digital routines and simple task tracking.", features: ["Cleaning schedules", "Custom cleaning tasks", "AI cleaning card generator", "Cleaning completion history", "Cross contamination controls", "Safer digital record keeping"] },
-      { no: "04", id: "allergen", title: "Allergen Management", summary: "Keep allergen information organised, easy to update and simple for staff to check during busy service.", features: ["14 allergen tracking", "Menu item allergen database", "Easy allergen checking", "Printable allergen PDFs", "Customer and staff allergen records"] },
-      { no: "05", id: "haccp", title: "HACCP & Compliance", summary: "Use a digital HACCP food safety management system designed to simplify kitchen routines, records and day-to-day operations.", features: ["HACCP tools", "Free HACCP plan tool", "Compliance tracking", "Due diligence support", "SFBB alternative", "Confidence in Management support"] },
-      { no: "06", id: "delivery-stock", title: "Delivery & Stock Controls", summary: "Keep deliveries, supplier checks and stock records organised without extra paperwork.", features: ["Goods in delivery checks", "Delivery temperature recording", "Supplier accountability support", "Organised delivery history"] },
-      { no: "07", id: "corrective-actions", title: "Corrective Actions", summary: "Keep track of issues, fixes and follow-up actions in one organised digital history.", features: ["Corrective actions log", "Defect reporting", "Risk highlighting", "Audit-ready documentation", "Clear food safety evidence"] },
-      { no: "08", id: "pest-control", title: "Pest Control & Safety", summary: "Keep pest activity and kitchen safety notes organised in one simple digital system.", features: ["Pest control register", "Food safety risk highlighting", "Organised inspection records"] },
-      { no: "09", id: "training", title: "Training & Staff Support", summary: "Give teams easy access to training records, guidance and practical support tools.", features: ["Training records", "Staff training resources", "Catering resources library", "Hospitality compliance support", "AI hospitality risk assessments", "Food safety guidance resources"] },
-      { no: "10", id: "smart-ai", title: "Smart AI Tools", summary: "Use built-in AI tools to reduce admin time and make kitchen organisation faster and easier.", features: ["AI food safety support", "AI cleaning card generator", "AI hospitality risk assessments", "Safe systems of work generation"] },
-      { no: "11", id: "reporting", title: "Reporting & History", summary: "Access clean, organised digital records instantly from one easy-to-use system.", features: ["Full record history", "Instant PDF exports", "Automatic timestamps", "Organised digital records", "Audit-ready documentation"] },
-      { no: "12", id: "customisation", title: "Customisation & Flexibility", summary: "Customise the system around the way your kitchen already works.", features: ["Home screen feature toggles", "Fully customisable system", "Custom equipment setup", "Custom safe limits", "One-device record management"] }
-    ];
-
     let password = sessionStorage.getItem(passwordKey) || "";
-    let activeModule = modules[0];
-    let records = [];
+    let screen = "home";
+    let staff = "Chef";
+    let selectedCategory = "Cook";
+    let temperature = 75;
+    let selectedEquipment = "Main Fridge";
+    let selectedAllergens = [];
+    let checklistState = {};
+    let foodRecords = [];
+    let tempRecords = [];
 
+    const app = document.getElementById("app");
+    const saveButton = document.getElementById("saveButton");
+    const notice = document.getElementById("notice");
     const loginPanel = document.getElementById("loginPanel");
     const loginForm = document.getElementById("loginForm");
     const loginMessage = document.getElementById("loginMessage");
-    const moduleList = document.getElementById("moduleList");
-    const moduleTitle = document.getElementById("moduleTitle");
-    const moduleSummary = document.getElementById("moduleSummary");
-    const featureGrid = document.getElementById("featureGrid");
-    const recordForm = document.getElementById("recordForm");
-    const recordBody = document.getElementById("recordBody");
-    const notice = document.getElementById("notice");
-    const syncStatus = document.getElementById("syncStatus");
-    const moduleFilter = document.getElementById("moduleFilter");
-    const filters = ["moduleFilter", "statusFilter", "dateFilter", "searchInput"].map(id => document.getElementById(id));
+    const screenTitle = document.getElementById("screenTitle");
+    const screenSubtitle = document.getElementById("screenSubtitle");
+    const backButton = document.getElementById("backButton");
 
-    modules.forEach(module => {
-      const option = document.createElement("option");
-      option.value = module.id;
-      option.textContent = module.title;
-      moduleFilter.appendChild(option);
-    });
+    const tiles = [
+      { id: "cooking", title: "Cooking", icon: "C", color: "orange" },
+      { id: "cooling", title: "Cooling", icon: "F", color: "blue" },
+      { id: "cold", title: "Cold", icon: "T", color: "teal" },
+      { id: "delivery", title: "Delivery", icon: "D", color: "teal" },
+      { id: "menu", title: "Menu", icon: "M", color: "ink" },
+      { id: "allergen", title: "Allergen", icon: "A", color: "red" },
+      { id: "opening", title: "Opening", icon: "O", color: "gold" },
+      { id: "closing", title: "Closing", icon: "C", color: "purple" },
+      { id: "cleaning", title: "Cleaning", icon: "H", color: "teal" },
+      { id: "actions", title: "Actions", icon: "+", color: "teal" },
+      { id: "records", title: "Records", icon: "R", color: "green" },
+      { id: "calibration", title: "Probe", icon: "P", color: "blue" }
+    ];
+
+    const checklists = {
+      opening: ["Check and log cold storage", "Handwash stocked", "Contact surfaces sanitised", "High food risk dated", "Allergen info available", "No pest signs", "Staff fit and well", "All equipment working", "Check battery in food probe"],
+      closing: ["Food cooled safely", "Fridges closed and logged", "Waste removed", "Surfaces cleaned", "Floors cleaned", "Probe cleaned", "Pest check completed", "Doors locked"],
+      cleaning: ["Prep table sanitised", "Hand wash sink cleaned", "Chopping boards cleaned", "Knives cleaned", "Fridge handles cleaned", "Bins cleaned", "Floor mopped"],
+      calibration: ["Ice water test prepared", "Probe reads 0°C ±1°C", "Boiling water check completed", "Probe cleaned after test", "Defect reported if out of range"]
+    };
+
+    const allergens = ["Celery", "Gluten", "Crustaceans", "Eggs", "Fish", "Lupin", "Milk", "Molluscs", "Mustard", "Nuts", "Peanuts", "Sesame", "Soya", "Sulphites"];
+    const equipment = [
+      { name: "Main Fridge", type: "Fridge" },
+      { name: "Prep Fridge", type: "Fridge" },
+      { name: "Walk-in Freezer", type: "Freezer" },
+      { name: "Raw Meat", type: "Fridge" }
+    ];
 
     function headers() {
       return { "Content-Type": "application/json", "x-zabsiam-admin-pass": password };
     }
 
-    function showNotice(message) {
-      notice.textContent = message;
-      notice.classList.toggle("show", Boolean(message));
+    function escapeHtml(value) {
+      return String(value || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
     }
 
-    function escapeHtml(value) {
-      return String(value || "")
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
+    function showNotice(message) {
+      notice.textContent = message;
+      notice.classList.add("show");
+      clearTimeout(showNotice.timer);
+      showNotice.timer = setTimeout(() => notice.classList.remove("show"), 2600);
     }
 
     function formatTime(value) {
-      return new Intl.DateTimeFormat("en-GB", { dateStyle: "short", timeStyle: "short", timeZone: "Europe/London" }).format(new Date(value));
+      return new Intl.DateTimeFormat("en-GB", { dateStyle: "medium", timeStyle: "short", timeZone: "Europe/London" }).format(new Date(value));
     }
 
-    function isoDate(value) {
-      return new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/London" }).format(new Date(value));
+    function setScreen(next) {
+      screen = next;
+      render();
     }
 
-    function moduleName(id) {
-      return (modules.find(module => module.id === id) || {}).title || id;
-    }
-
-    function renderModules() {
-      moduleList.innerHTML = "";
-      modules.forEach(module => {
-        const button = document.createElement("button");
-        button.type = "button";
-        button.className = `module-btn${module.id === activeModule.id ? " active" : ""}`;
-        button.innerHTML = `<span class="module-no">${module.no}</span><span class="module-name">${module.title}</span>`;
-        button.addEventListener("click", () => {
-          activeModule = module;
-          document.getElementById("categoryInput").value = module.features[0] || "";
-          render();
-        });
-        moduleList.appendChild(button);
-      });
-    }
-
-    function filteredRecords() {
-      const moduleValue = document.getElementById("moduleFilter").value;
-      const statusValue = document.getElementById("statusFilter").value;
-      const dateValue = document.getElementById("dateFilter").value;
-      const query = document.getElementById("searchInput").value.trim().toLowerCase();
-
-      return records.filter(record => {
-        const moduleMatch = moduleValue === "all" || record.module === moduleValue;
-        const statusMatch = statusValue === "all" || record.status === statusValue;
-        const dateMatch = !dateValue || isoDate(record.createdAt) === dateValue;
-        const text = `${record.title} ${record.category} ${record.details} ${record.correctiveAction} ${record.assignedTo} ${record.completedBy}`.toLowerCase();
-        const searchMatch = !query || text.includes(query);
-        return moduleMatch && statusMatch && dateMatch && searchMatch;
-      });
-    }
-
-    function renderSummary() {
-      const today = isoDate(new Date().toISOString());
-      const todayRecords = records.filter(record => isoDate(record.createdAt) === today);
-      document.getElementById("todayTotal").textContent = todayRecords.length;
-      document.getElementById("issueTotal").textContent = records.filter(record => record.status === "issue").length;
-      document.getElementById("highRiskTotal").textContent = records.filter(record => record.risk === "high").length;
-      document.getElementById("historyTotal").textContent = records.length;
-    }
-
-    function renderRecords() {
-      const visible = filteredRecords();
-      if (!visible.length) {
-        recordBody.innerHTML = `<tr><td colspan="10">ยังไม่มี record</td></tr>`;
-        return;
-      }
-
-      recordBody.innerHTML = visible.map(record => `
-        <tr>
-          <td>${formatTime(record.createdAt)}</td>
-          <td>${escapeHtml(moduleName(record.module))}</td>
-          <td>${escapeHtml(record.category)}</td>
-          <td>${escapeHtml(record.title)}</td>
-          <td><span class="pill ${escapeHtml(record.status)}">${escapeHtml(record.status)}</span></td>
-          <td><span class="pill ${escapeHtml(record.risk)}">${escapeHtml(record.risk)}</span></td>
-          <td>${escapeHtml(record.completedBy || record.assignedTo)}</td>
-          <td>${escapeHtml(record.details)}</td>
-          <td>${escapeHtml(record.correctiveAction)}</td>
-          <td><button class="button danger" type="button" data-delete="${escapeHtml(record.id)}">ลบ</button></td>
-        </tr>
-      `).join("");
+    function staffSelect() {
+      return `
+        <select class="staff-select" id="staffSelect">
+          ${["Chef", "Kitchen Porter", "Manager", "Front Staff", "Owner"].map(name => `<option${name === staff ? " selected" : ""}>${name}</option>`).join("")}
+        </select>
+      `;
     }
 
     function render() {
-      renderModules();
-      moduleTitle.textContent = `${activeModule.no} ${activeModule.title}`;
-      moduleSummary.textContent = activeModule.summary;
-      featureGrid.innerHTML = activeModule.features.map(feature => `<div class="feature">${escapeHtml(feature)}</div>`).join("");
-      renderSummary();
-      renderRecords();
+      backButton.style.visibility = screen === "home" ? "hidden" : "visible";
+      saveButton.classList.toggle("show", screen !== "home" && screen !== "records");
+      const tile = tiles.find(item => item.id === screen);
+      screenTitle.textContent = screen === "home" ? "Food Safety" : tile?.title || "Food Safety";
+      screenSubtitle.textContent = screen === "home" ? "Compliance Confidence" : "";
+
+      if (screen === "home") renderHome();
+      else if (["cooking", "cooling"].includes(screen)) renderCooking();
+      else if (screen === "cold") renderCold();
+      else if (screen === "delivery") renderDelivery();
+      else if (["opening", "closing", "cleaning", "calibration"].includes(screen)) renderChecklist(screen);
+      else if (screen === "allergen") renderAllergen();
+      else if (screen === "menu") renderMenu();
+      else if (screen === "actions") renderActions();
+      else if (screen === "records") renderRecords();
     }
 
-    async function loadRecords({ quiet = false } = {}) {
+    function renderHome() {
+      app.innerHTML = `<div class="home-grid">${tiles.map(tile => `
+        <button class="tile" type="button" data-screen="${tile.id}">
+          <span class="tile-icon ${tile.color}">${tile.icon}</span>
+          <span>${tile.title}</span>
+        </button>`).join("")}</div>`;
+    }
+
+    function renderCooking() {
+      const safe = screen === "cooking" ? "Safe minimum: 75°C" : "Cooling record: log start/end temperature and time";
+      app.innerHTML = `
+        ${staffSelect()}
+        <section class="card">
+          <label>Food Name<input id="foodName" value="${screen === "cooking" ? "Grilled Pork Neck" : "Cooked Rice"}"></label>
+        </section>
+        <section class="card">
+          <h3>Category</h3>
+          <div class="segments">${["Cook", "Reheat", "Holding"].map(item => `<button class="segment${selectedCategory === item ? " active" : ""}" data-category="${item}" type="button">${item}</button>`).join("")}</div>
+        </section>
+        ${temperatureCard(safe, 0, 100)}
+        <section class="card"><textarea id="notes" placeholder="Additional notes"></textarea></section>
+      `;
+      bindCommonInputs();
+    }
+
+    function renderCold() {
+      app.innerHTML = `
+        ${staffSelect()}
+        <section class="card">
+          <div class="equipment-grid">${equipment.map(item => `
+            <button class="equipment${selectedEquipment === item.name ? " active" : ""}" data-equipment="${item.name}" type="button">
+              <span class="tile-icon teal">T</span>
+              <strong>${item.name}</strong>
+              <small>${item.type}</small>
+            </button>`).join("")}</div>
+        </section>
+        <section class="card">
+          <p class="safe-text">Recording for: <strong class="green">${selectedEquipment}</strong></p>
+          ${temperatureCard("Safe limit: chilled ≤ 5°C, frozen target ≤ -18°C", -25, 50, false)}
+          <textarea id="notes" placeholder="Additional notes"></textarea>
+        </section>
+      `;
+      bindCommonInputs();
+    }
+
+    function renderDelivery() {
+      app.innerHTML = `
+        ${staffSelect()}
+        <section class="card">
+          <h3>Goods In</h3>
+          ${["Frozen", "Fresh", "Dairy", "Ambient"].map(item => checklistLine(`delivery-${item}`, item)).join("")}
+        </section>
+        ${temperatureCard("Safe limit chilled delivery: ≤ 5°C", -5, 15)}
+        <section class="card">
+          <label>Supplier<input id="supplier" placeholder="Supplier name"></label>
+          <textarea id="notes" placeholder="Delivery notes / damaged packaging / rejected items"></textarea>
+        </section>
+      `;
+      bindCommonInputs();
+    }
+
+    function renderChecklist(kind) {
+      const items = checklists[kind];
+      const done = items.filter(item => checklistState[`${kind}-${item}`]).length;
+      app.innerHTML = `
+        ${staffSelect()}
+        <section class="card progress-card">
+          <strong>${done} of ${items.length} checks completed</strong>
+          <div class="progress-line"><div class="progress-fill" style="width:${(done / items.length) * 100}%"></div></div>
+        </section>
+        <section class="card">
+          <h3>${screenTitle.textContent} Checklist</h3>
+          ${items.map(item => checklistLine(`${kind}-${item}`, item)).join("")}
+        </section>
+        <section class="card"><textarea id="notes" placeholder="Additional notes"></textarea></section>
+      `;
+      bindCommonInputs();
+    }
+
+    function renderAllergen() {
+      app.innerHTML = `
+        ${staffSelect()}
+        <section class="card">
+          <label>Select Menu Item<input id="menuItem" list="menuItems" placeholder="Search menu item" value="Mango Sticky Rice"></label>
+          <datalist id="menuItems">
+            <option value="Mango Sticky Rice"><option value="Grilled Pork Neck"><option value="Nam Tok Pork Neck"><option value="Duck Larb"><option value="Salmon Pla">
+          </datalist>
+        </section>
+        <section class="card">
+          <h3>Allergens for selected item</h3>
+          <p class="safe-text">Select all allergens that apply to this menu item.</p>
+          <div class="allergen-grid">${allergens.map(item => `
+            <button class="allergen${selectedAllergens.includes(item) ? " active" : ""}" data-allergen="${item}" type="button">
+              <span class="tile-icon gold">${item[0]}</span>
+              <strong>${item}</strong>
+            </button>`).join("")}</div>
+        </section>
+      `;
+      bindCommonInputs();
+    }
+
+    function renderMenu() {
+      app.innerHTML = `
+        ${staffSelect()}
+        <section class="card">
+          <h3>Menu Safety Note</h3>
+          <label>Menu Item<input id="menuSafetyItem" value="Mango Sticky Rice"></label>
+          <label>Food safety note<textarea id="notes" placeholder="Shelf life, storage, reheating, allergen cross-contact, label note"></textarea></label>
+        </section>
+      `;
+      bindCommonInputs();
+    }
+
+    function renderActions() {
+      const risky = [...foodRecords.filter(r => r.status === "issue" || r.risk === "high"), ...tempRecords.filter(r => r.status === "fail" || r.status === "warning")].slice(0, 8);
+      app.innerHTML = `
+        ${staffSelect()}
+        <section class="card">
+          <label>New Action Title<input id="actionTitle" placeholder="e.g. Fridge temperature high"></label>
+          <label>Corrective Action<textarea id="notes" placeholder="What happened, what was fixed, who checked it"></textarea></label>
+        </section>
+        ${risky.length ? risky.map(record => `<div class="action-card"><span class="badge risk">RISK</span><h4>${escapeHtml(record.title || record.item || record.area)}</h4><div class="meta">${escapeHtml(record.correctiveAction || record.guidance || record.details || "")}</div><div class="meta">${formatTime(record.createdAt)}</div></div>`).join("") : `<div class="card"><p class="safe-text">No open risk records.</p></div>`}
+      `;
+      bindCommonInputs();
+    }
+
+    function renderRecords() {
+      const total = foodRecords.length + tempRecords.length;
+      const rows = [
+        ...foodRecords.map(record => ({ type: record.module, title: record.title, detail: record.details, status: record.status, createdAt: record.createdAt })),
+        ...tempRecords.map(record => ({ type: record.type, title: `${record.item} ${record.temperature}°C`, detail: record.guidance, status: record.status, createdAt: record.createdAt }))
+      ].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).slice(0, 30);
+      app.innerHTML = `
+        <section class="card" style="text-align:center">
+          <span class="tile-icon green" style="margin:0 auto 10px">R</span>
+          <p>Total Records</p>
+          <div class="temp-value">${total}</div>
+          <p class="safe-text">Retention: 90 days</p>
+        </section>
+        <section class="card">
+          <h3>Export Records</h3>
+          <button class="segment active" type="button" onclick="window.print()">Export to PDF</button>
+        </section>
+        ${rows.map(record => `<div class="record-card"><span class="badge ${record.status}">${escapeHtml(record.type)}</span><h4>${escapeHtml(record.title)}</h4><div class="meta">${escapeHtml(record.detail)}</div><div class="meta">${formatTime(record.createdAt)}</div></div>`).join("") || `<div class="card"><p class="safe-text">No records yet.</p></div>`}
+      `;
+    }
+
+    function temperatureCard(safeText, min, max, wrap = true) {
+      const pct = Math.max(0, Math.min(100, ((temperature - min) / (max - min)) * 100));
+      const html = `
+        <h3>Temperature</h3>
+        <div class="temp-control">
+          <button type="button" data-temp="-1">−</button>
+          <div class="temp-value">${temperature.toFixed(1)} <span>°C</span></div>
+          <button type="button" data-temp="1">+</button>
+        </div>
+        <div class="range-track"><div class="range-dot" style="left:${pct}%"></div></div>
+        <div class="range-labels"><span>${min}°</span><span>${max}°</span></div>
+        <p class="safe-text">${safeText}</p>`;
+      return wrap ? `<section class="card">${html}</section>` : html;
+    }
+
+    function checklistLine(key, label) {
+      return `<button class="check-row${checklistState[key] ? " done" : ""}" data-check="${escapeHtml(key)}" type="button"><span class="checkbox">${checklistState[key] ? "✓" : ""}</span><span class="check-label">${escapeHtml(label)}</span></button>`;
+    }
+
+    function bindCommonInputs() {
+      const staffSelectEl = document.getElementById("staffSelect");
+      if (staffSelectEl) staffSelectEl.addEventListener("change", event => staff = event.target.value);
+    }
+
+    async function api(method, url, body) {
+      const response = await fetch(url, {
+        method,
+        headers: headers(),
+        cache: "no-store",
+        body: body ? JSON.stringify(body) : undefined
+      });
+      if (response.status === 401) {
+        sessionStorage.removeItem(passwordKey);
+        password = "";
+        loginPanel.style.display = "grid";
+        throw new Error("Unauthorized");
+      }
+      if (!response.ok) throw new Error(`API ${response.status}`);
+      return response.json();
+    }
+
+    async function loadData() {
       if (!password) return;
       try {
-        const response = await fetch(API_URL, { headers: headers(), cache: "no-store" });
-        if (response.status === 401) {
-          sessionStorage.removeItem(passwordKey);
-          password = "";
-          loginPanel.style.display = "grid";
-          loginMessage.textContent = "รหัสไม่ถูกต้อง";
-          return;
-        }
-        if (!response.ok) throw new Error(`API ${response.status}`);
-        const data = await response.json();
-        records = Array.isArray(data.records) ? data.records : [];
+        const [food, temp] = await Promise.all([
+          api("GET", foodApi),
+          api("GET", tempApi)
+        ]);
+        foodRecords = food.records || [];
+        tempRecords = temp.checks || [];
         loginPanel.style.display = "none";
-        syncStatus.textContent = `ซิงก์ล่าสุด ${formatTime(new Date().toISOString())} · ${records.length} records`;
-        showNotice("");
-        render();
       } catch (error) {
-        if (!quiet) showNotice("ยังซิงก์ไม่ได้ ให้เปิดผ่าน https://zabsiam.com/admin/food-safety.html และตรวจอินเทอร์เน็ต");
-        render();
+        showNotice("เชื่อมต่อไม่ได้ ตรวจรหัสหรืออินเทอร์เน็ต");
       }
     }
 
-    async function saveRecord(payload) {
-      const response = await fetch(API_URL, {
-        method: "POST",
-        headers: headers(),
-        body: JSON.stringify(payload)
-      });
-      if (!response.ok) throw new Error(`Save failed ${response.status}`);
-      const data = await response.json();
-      records = data.records || records;
-      render();
-    }
-
-    async function deleteRecord(id) {
-      if (!confirm("ลบ record นี้?")) return;
-      const response = await fetch(`${API_URL}/${encodeURIComponent(id)}`, { method: "DELETE", headers: headers() });
-      if (!response.ok) throw new Error(`Delete failed ${response.status}`);
-      const data = await response.json();
-      records = data.records || [];
-      render();
+    async function saveCurrent() {
+      try {
+        const notes = document.getElementById("notes")?.value || "";
+        if (["cooking", "cooling"].includes(screen)) {
+          const foodName = document.getElementById("foodName")?.value || "Food item";
+          const type = selectedCategory === "Reheat" ? "reheated" : selectedCategory === "Holding" ? "hot-holding" : "cooked";
+          await api("POST", tempApi, { type, area: selectedCategory, item: foodName, temperature, checkedBy: staff, note: notes });
+          await api("POST", foodApi, { module: "temperature", title: `${screenTitle.textContent}: ${foodName}`, category: selectedCategory, status: "done", risk: temperature < 75 && type !== "hot-holding" ? "high" : "low", completedBy: staff, details: `${temperature.toFixed(1)}°C. ${notes}` });
+        } else if (screen === "cold") {
+          const type = selectedEquipment.toLowerCase().includes("freezer") ? "frozen" : "chilled";
+          await api("POST", tempApi, { type, area: selectedEquipment, item: selectedEquipment, temperature, checkedBy: staff, note: notes });
+        } else if (screen === "delivery") {
+          const supplier = document.getElementById("supplier")?.value || "Supplier";
+          await api("POST", tempApi, { type: "delivery", area: "Goods In", item: supplier, temperature, checkedBy: staff, note: notes });
+          await api("POST", foodApi, { module: "delivery-stock", title: `Goods In: ${supplier}`, category: "Delivery temperature recording", status: "done", risk: temperature > 5 ? "medium" : "low", completedBy: staff, details: notes });
+        } else if (["opening", "closing", "cleaning", "calibration"].includes(screen)) {
+          const items = checklists[screen];
+          const done = items.filter(item => checklistState[`${screen}-${item}`]);
+          await api("POST", foodApi, { module: screen === "calibration" ? "temperature" : screen === "cleaning" ? "cleaning" : "daily-checks", title: `${screenTitle.textContent} checks`, category: screenTitle.textContent, status: done.length === items.length ? "done" : "pending", risk: done.length === items.length ? "low" : "medium", completedBy: staff, details: `${done.length} of ${items.length} completed. ${notes}` });
+        } else if (screen === "allergen") {
+          const item = document.getElementById("menuItem")?.value || "Menu item";
+          await api("POST", foodApi, { module: "allergen", title: `Allergens: ${item}`, category: "14 allergen tracking", status: "done", risk: selectedAllergens.length ? "medium" : "low", completedBy: staff, details: selectedAllergens.join(", ") || "No allergens selected" });
+        } else if (screen === "menu") {
+          const item = document.getElementById("menuSafetyItem")?.value || "Menu item";
+          await api("POST", foodApi, { module: "allergen", title: `Menu note: ${item}`, category: "Menu item allergen database", status: "done", risk: "low", completedBy: staff, details: notes });
+        } else if (screen === "actions") {
+          const title = document.getElementById("actionTitle")?.value || "Corrective action";
+          await api("POST", foodApi, { module: "corrective-actions", title, category: "Corrective actions log", status: "issue", risk: "high", completedBy: staff, correctiveAction: notes, details: notes });
+        }
+        await loadData();
+        showNotice("Saved");
+        if (screen !== "records") setScreen("records");
+      } catch (error) {
+        showNotice("Save failed");
+      }
     }
 
     loginForm.addEventListener("submit", async event => {
@@ -625,55 +806,48 @@
       password = document.getElementById("passwordInput").value.trim();
       sessionStorage.setItem(passwordKey, password);
       loginMessage.textContent = "กำลังเชื่อมต่อ...";
-      await loadRecords();
+      await loadData();
+      render();
     });
 
-    recordForm.addEventListener("submit", async event => {
-      event.preventDefault();
-      const payload = {
-        module: activeModule.id,
-        category: document.getElementById("categoryInput").value,
-        status: document.getElementById("statusInput").value,
-        risk: document.getElementById("riskInput").value,
-        title: document.getElementById("titleInput").value,
-        assignedTo: document.getElementById("assignedToInput").value,
-        completedBy: document.getElementById("completedByInput").value,
-        dueDate: document.getElementById("dueDateInput").value,
-        details: document.getElementById("detailsInput").value,
-        correctiveAction: document.getElementById("correctiveActionInput").value
-      };
-
-      try {
-        document.getElementById("saveButton").disabled = true;
-        await saveRecord(payload);
-        document.getElementById("titleInput").value = "";
-        document.getElementById("detailsInput").value = "";
-        document.getElementById("correctiveActionInput").value = "";
-        showNotice("");
-      } catch (error) {
-        showNotice("บันทึกไม่สำเร็จ กรุณาตรวจรหัสและอินเทอร์เน็ต");
-      } finally {
-        document.getElementById("saveButton").disabled = false;
+    app.addEventListener("click", event => {
+      const tile = event.target.closest("[data-screen]");
+      if (tile) setScreen(tile.dataset.screen);
+      const category = event.target.closest("[data-category]");
+      if (category) {
+        selectedCategory = category.dataset.category;
+        render();
+      }
+      const tempButton = event.target.closest("[data-temp]");
+      if (tempButton) {
+        temperature += Number(tempButton.dataset.temp);
+        render();
+      }
+      const equipmentButton = event.target.closest("[data-equipment]");
+      if (equipmentButton) {
+        selectedEquipment = equipmentButton.dataset.equipment;
+        temperature = selectedEquipment.toLowerCase().includes("freezer") ? -18 : 4;
+        render();
+      }
+      const check = event.target.closest("[data-check]");
+      if (check) {
+        checklistState[check.dataset.check] = !checklistState[check.dataset.check];
+        render();
+      }
+      const allergen = event.target.closest("[data-allergen]");
+      if (allergen) {
+        const value = allergen.dataset.allergen;
+        selectedAllergens = selectedAllergens.includes(value) ? selectedAllergens.filter(item => item !== value) : [...selectedAllergens, value];
+        render();
       }
     });
 
-    recordBody.addEventListener("click", event => {
-      const id = event.target.dataset.delete;
-      if (id) deleteRecord(id);
-    });
-    document.getElementById("refreshButton").addEventListener("click", () => loadRecords());
-    document.getElementById("printButton").addEventListener("click", () => window.print());
-    document.getElementById("logoutButton").addEventListener("click", () => {
-      sessionStorage.removeItem(passwordKey);
-      password = "";
-      loginPanel.style.display = "grid";
-    });
-    filters.forEach(input => input.addEventListener("input", render));
+    saveButton.addEventListener("click", saveCurrent);
+    backButton.addEventListener("click", () => setScreen("home"));
+    document.getElementById("recordsShortcut").addEventListener("click", () => setScreen("records"));
 
-    document.getElementById("categoryInput").value = activeModule.features[0] || "";
-    if (password) loadRecords();
+    if (password) loadData().then(render);
     render();
-    setInterval(() => loadRecords({ quiet: true }), 15000);
   </script>
 </body>
 </html>
