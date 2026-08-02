@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
   <title>Zab Siam POS & Stock</title>
   <style>
     :root {
@@ -204,6 +205,25 @@
     .hidden { display: none !important; }
     .right { text-align: right; }
     .notice { border-left: 5px solid var(--gold); background: #fff8e7; padding: 10px 12px; border-radius: 8px; }
+    body.locked .app { display: none; }
+    .auth-screen {
+      min-height: 100vh;
+      display: none;
+      place-items: center;
+      padding: 18px;
+      background: linear-gradient(135deg, #14241a, #2f6b4f);
+    }
+    body.locked .auth-screen { display: grid; }
+    .auth-card {
+      width: min(430px, 100%);
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      padding: 20px;
+    }
+    .auth-card h1 { margin: 0 0 6px; font-size: 26px; }
+    .auth-error { color: var(--red); min-height: 22px; font-weight: 700; }
 
     @media print {
       aside, .topbar, .no-print, .tab { display: none !important; }
@@ -231,7 +251,18 @@
     }
   </style>
 </head>
-<body>
+<body class="locked">
+<section class="auth-screen" aria-label="POS login">
+  <form class="auth-card" id="authForm">
+    <h1>Zab Siam POS</h1>
+    <p class="muted">Staff access only. Please enter the POS password.</p>
+    <label>Password
+      <input id="posPassword" type="password" autocomplete="current-password" required>
+    </label>
+    <p class="auth-error" id="authError"></p>
+    <button class="btn primary block" type="submit">เข้าใช้งาน</button>
+  </form>
+</section>
 <div class="app">
   <aside>
     <div class="brand">
@@ -490,6 +521,8 @@
 
 <script>
 const storeKey = "zabsiam-pos-stock-v1";
+const authKey = "zabsiam-pos-auth-ok";
+const passwordHash = "a74f4f3acc56ff2ab99c7fad470b4c69c6eac2619794d688faaf5e4811cd389d";
 const currency = new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" });
 const state = loadState();
 let activeTab = "dashboard";
@@ -498,6 +531,21 @@ let poDraft = [];
 let scanTarget = "lookup";
 let scannerStream = null;
 let scanTimer = null;
+
+async function sha256(value) {
+  const data = new TextEncoder().encode(value);
+  const digest = await crypto.subtle.digest("SHA-256", data);
+  return [...new Uint8Array(digest)].map(byte => byte.toString(16).padStart(2, "0")).join("");
+}
+
+function unlockApp() {
+  document.body.classList.remove("locked");
+  sessionStorage.setItem(authKey, "1");
+}
+
+if (sessionStorage.getItem(authKey) === "1") {
+  unlockApp();
+}
 
 function seedState() {
   return {
@@ -947,6 +995,17 @@ function escapeAttr(value) {
 }
 
 document.querySelectorAll(".tab").forEach(btn => btn.addEventListener("click", () => showTab(btn.dataset.tab)));
+document.getElementById("authForm").addEventListener("submit", async evt => {
+  evt.preventDefault();
+  const password = document.getElementById("posPassword").value;
+  const hash = await sha256(password);
+  if (hash === passwordHash) {
+    document.getElementById("authError").textContent = "";
+    unlockApp();
+  } else {
+    document.getElementById("authError").textContent = "รหัสผ่านไม่ถูกต้อง";
+  }
+});
 document.querySelectorAll("[data-scan-target]").forEach(btn => btn.addEventListener("click", () => openScanner(btn.dataset.scanTarget)));
 document.getElementById("scanBtn").addEventListener("click", () => openScanner(activeTab === "pos" ? "sale" : "lookup"));
 document.getElementById("closeScanner").addEventListener("click", closeScanner);
