@@ -493,14 +493,23 @@
       { id: "cleaning", title: "Cleaning", icon: "H", color: "teal" },
       { id: "actions", title: "Actions", icon: "+", color: "teal" },
       { id: "records", title: "Records", icon: "R", color: "green" },
-      { id: "calibration", title: "Probe", icon: "P", color: "blue" }
+      { id: "calibration", title: "Probe", icon: "P", color: "blue" },
+      { id: "haccp", title: "HACCP", icon: "H", color: "green" },
+      { id: "pest", title: "Pest", icon: "P", color: "red" },
+      { id: "training", title: "Training", icon: "T", color: "purple" },
+      { id: "ai-tools", title: "AI Tools", icon: "AI", color: "blue" },
+      { id: "settings", title: "Settings", icon: "S", color: "gold" }
     ];
 
     const checklists = {
       opening: ["Check and log cold storage", "Handwash stocked", "Contact surfaces sanitised", "High food risk dated", "Allergen info available", "No pest signs", "Staff fit and well", "All equipment working", "Check battery in food probe"],
       closing: ["Food cooled safely", "Fridges closed and logged", "Waste removed", "Surfaces cleaned", "Floors cleaned", "Probe cleaned", "Pest check completed", "Doors locked"],
       cleaning: ["Prep table sanitised", "Hand wash sink cleaned", "Chopping boards cleaned", "Knives cleaned", "Fridge handles cleaned", "Bins cleaned", "Floor mopped"],
-      calibration: ["Ice water test prepared", "Probe reads 0°C ±1°C", "Boiling water check completed", "Probe cleaned after test", "Defect reported if out of range"]
+      calibration: ["Ice water test prepared", "Probe reads 0°C ±1°C", "Boiling water check completed", "Probe cleaned after test", "Defect reported if out of range"],
+      haccp: ["HACCP hazards reviewed", "Critical control points checked", "SFBB diary updated", "Compliance issue reviewed", "Due diligence evidence saved", "Confidence in Management note updated"],
+      pest: ["No pest activity seen", "Bait station / trap checked", "Doors and gaps checked", "Waste area checked", "Inspection note recorded", "Contractor issue followed up"],
+      training: ["Staff training record updated", "Food hygiene topic covered", "Allergen briefing completed", "Temperature procedure explained", "Cleaning procedure explained", "Staff question answered"],
+      settings: ["Home screen features reviewed", "Equipment list checked", "Custom safe limits checked", "Staff list checked", "Record device checked"]
     };
 
     const allergens = ["Celery", "Gluten", "Crustaceans", "Eggs", "Fish", "Lupin", "Milk", "Molluscs", "Mustard", "Nuts", "Peanuts", "Sesame", "Soya", "Sulphites"];
@@ -554,10 +563,11 @@
       else if (["cooking", "cooling"].includes(screen)) renderCooking();
       else if (screen === "cold") renderCold();
       else if (screen === "delivery") renderDelivery();
-      else if (["opening", "closing", "cleaning", "calibration"].includes(screen)) renderChecklist(screen);
+      else if (["opening", "closing", "cleaning", "calibration", "haccp", "pest", "training", "settings"].includes(screen)) renderChecklist(screen);
       else if (screen === "allergen") renderAllergen();
       else if (screen === "menu") renderMenu();
       else if (screen === "actions") renderActions();
+      else if (screen === "ai-tools") renderAiTools();
       else if (screen === "records") renderRecords();
     }
 
@@ -658,6 +668,12 @@
               <strong>${item}</strong>
             </button>`).join("")}</div>
         </section>
+        <section class="card">
+          <h3>Printable allergen note</h3>
+          <p class="safe-text">Use Records > Export to PDF, or press the print button below after saving allergen info.</p>
+          <button class="segment active" type="button" onclick="window.print()">Print Allergen PDF</button>
+          <textarea id="notes" placeholder="Customer or staff allergen note"></textarea>
+        </section>
       `;
       bindCommonInputs();
     }
@@ -669,6 +685,32 @@
           <h3>Menu Safety Note</h3>
           <label>Menu Item<input id="menuSafetyItem" value="Mango Sticky Rice"></label>
           <label>Food safety note<textarea id="notes" placeholder="Shelf life, storage, reheating, allergen cross-contact, label note"></textarea></label>
+        </section>
+      `;
+      bindCommonInputs();
+    }
+
+    function renderAiTools() {
+      app.innerHTML = `
+        ${staffSelect()}
+        <section class="card">
+          <h3>AI Food Safety Support</h3>
+          <label>Tool type
+            <select id="aiToolType">
+              <option>AI food safety support</option>
+              <option>AI cleaning card generator</option>
+              <option>AI hospitality risk assessment</option>
+              <option>Safe system of work generation</option>
+            </select>
+          </label>
+          <label>Topic<input id="aiTopic" placeholder="e.g. raw meat prep / fridge failure / cleaning card"></label>
+          <label>Generated note<textarea id="notes" placeholder="Write or paste AI guidance here, then save as an audit-ready record"></textarea></label>
+        </section>
+        <section class="card">
+          <h3>Quick templates</h3>
+          <button class="segment active" type="button" data-template="cleaning">Cleaning Card</button>
+          <button class="segment" type="button" data-template="risk">Risk Assessment</button>
+          <button class="segment" type="button" data-template="ssow">Safe System</button>
         </section>
       `;
       bindCommonInputs();
@@ -779,10 +821,20 @@
           const supplier = document.getElementById("supplier")?.value || "Supplier";
           await api("POST", tempApi, { type: "delivery", area: "Goods In", item: supplier, temperature, checkedBy: staff, note: notes });
           await api("POST", foodApi, { module: "delivery-stock", title: `Goods In: ${supplier}`, category: "Delivery temperature recording", status: "done", risk: temperature > 5 ? "medium" : "low", completedBy: staff, details: notes });
-        } else if (["opening", "closing", "cleaning", "calibration"].includes(screen)) {
+        } else if (["opening", "closing", "cleaning", "calibration", "haccp", "pest", "training", "settings"].includes(screen)) {
           const items = checklists[screen];
           const done = items.filter(item => checklistState[`${screen}-${item}`]);
-          await api("POST", foodApi, { module: screen === "calibration" ? "temperature" : screen === "cleaning" ? "cleaning" : "daily-checks", title: `${screenTitle.textContent} checks`, category: screenTitle.textContent, status: done.length === items.length ? "done" : "pending", risk: done.length === items.length ? "low" : "medium", completedBy: staff, details: `${done.length} of ${items.length} completed. ${notes}` });
+          const moduleMap = {
+            calibration: "temperature",
+            cleaning: "cleaning",
+            haccp: "haccp",
+            pest: "pest-control",
+            training: "training",
+            settings: "customisation",
+            opening: "daily-checks",
+            closing: "daily-checks"
+          };
+          await api("POST", foodApi, { module: moduleMap[screen] || screen, title: `${screenTitle.textContent} checks`, category: screenTitle.textContent, status: done.length === items.length ? "done" : "pending", risk: done.length === items.length ? "low" : "medium", completedBy: staff, details: `${done.length} of ${items.length} completed. ${notes}` });
         } else if (screen === "allergen") {
           const item = document.getElementById("menuItem")?.value || "Menu item";
           await api("POST", foodApi, { module: "allergen", title: `Allergens: ${item}`, category: "14 allergen tracking", status: "done", risk: selectedAllergens.length ? "medium" : "low", completedBy: staff, details: selectedAllergens.join(", ") || "No allergens selected" });
@@ -792,6 +844,10 @@
         } else if (screen === "actions") {
           const title = document.getElementById("actionTitle")?.value || "Corrective action";
           await api("POST", foodApi, { module: "corrective-actions", title, category: "Corrective actions log", status: "issue", risk: "high", completedBy: staff, correctiveAction: notes, details: notes });
+        } else if (screen === "ai-tools") {
+          const toolType = document.getElementById("aiToolType")?.value || "AI food safety support";
+          const topic = document.getElementById("aiTopic")?.value || "AI food safety note";
+          await api("POST", foodApi, { module: "smart-ai", title: `${toolType}: ${topic}`, category: toolType, status: "done", risk: "low", completedBy: staff, details: notes });
         }
         await loadData();
         showNotice("Saved");
@@ -839,6 +895,17 @@
         const value = allergen.dataset.allergen;
         selectedAllergens = selectedAllergens.includes(value) ? selectedAllergens.filter(item => item !== value) : [...selectedAllergens, value];
         render();
+      }
+      const template = event.target.closest("[data-template]");
+      if (template) {
+        const notes = document.getElementById("notes");
+        const topic = document.getElementById("aiTopic")?.value || "kitchen task";
+        const text = {
+          cleaning: `Cleaning card for ${topic}: area, chemical, method, contact time, frequency, responsible staff, verification.`,
+          risk: `Risk assessment for ${topic}: hazard, who may be harmed, existing controls, further action, responsible person, review date.`,
+          ssow: `Safe system of work for ${topic}: preparation, PPE, safe steps, food safety controls, cleaning, corrective action.`
+        }[template.dataset.template];
+        if (notes) notes.value = text;
       }
     });
 
