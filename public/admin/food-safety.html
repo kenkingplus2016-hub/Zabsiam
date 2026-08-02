@@ -676,7 +676,23 @@
         </section>
         <section class="card">
           <h3>HACCP Record</h3>
-          <label>Process / Menu item<input id="haccpProcess" placeholder="e.g. Cooking pork neck / Cooling rice"></label>
+          <label>Process / Menu item
+            <select id="haccpProcess">
+              <option>Cooking pork neck</option>
+              <option>Cooking rice</option>
+              <option>Cooling cooked rice</option>
+              <option>Cooling cooked meat</option>
+              <option>Reheating cooked food</option>
+              <option>Hot holding food</option>
+              <option>Cold holding / fridge storage</option>
+              <option>Frozen storage</option>
+              <option>Goods in chilled delivery</option>
+              <option>Raw meat preparation</option>
+              <option>Ready-to-eat salad preparation</option>
+              <option>Allergen order preparation</option>
+              <option>Cleaning and sanitising food contact surfaces</option>
+            </select>
+          </label>
           <label>Main hazard
             <select id="haccpHazard">
               <option>Biological hazard</option>
@@ -686,10 +702,60 @@
               <option>Temperature control hazard</option>
             </select>
           </label>
-          <label>Critical control point<input id="haccpCcp" placeholder="e.g. Cook core temperature"></label>
-          <label>Critical limit<input id="haccpLimit" placeholder="e.g. 75°C or above / chilled ≤ 5°C"></label>
-          <label>Monitoring method<textarea id="haccpMonitor" placeholder="How staff will check this control"></textarea></label>
-          <label>Corrective action<textarea id="haccpAction" placeholder="What to do if the limit is not met"></textarea></label>
+          <label>Critical control point
+            <select id="haccpCcp">
+              <option>Cook core temperature</option>
+              <option>Reheat core temperature</option>
+              <option>Hot holding temperature</option>
+              <option>Cooling time and temperature</option>
+              <option>Fridge / cold storage temperature</option>
+              <option>Freezer temperature</option>
+              <option>Delivery acceptance temperature</option>
+              <option>Prevent raw and ready-to-eat cross contamination</option>
+              <option>Allergen cross-contact control</option>
+              <option>Cleaning chemical contact time</option>
+            </select>
+          </label>
+          <label>Critical limit
+            <select id="haccpLimit">
+              <option>Cook to 75°C or above</option>
+              <option>Reheat to 75°C or above</option>
+              <option>Hot hold at 63°C or above</option>
+              <option>Chilled food target 0-5°C</option>
+              <option>Chilled food must be below 8°C</option>
+              <option>Frozen food target -18°C or below</option>
+              <option>Cool food as quickly as possible and refrigerate within safe time</option>
+              <option>No contact between raw and ready-to-eat food</option>
+              <option>Allergen order prepared with clean utensils and verified label</option>
+              <option>Sanitiser used at correct dilution and contact time</option>
+            </select>
+          </label>
+          <label>Monitoring method
+            <select id="haccpMonitor">
+              <option>Check with cleaned food probe and record temperature</option>
+              <option>Check fridge display and record temperature</option>
+              <option>Check freezer display and record temperature</option>
+              <option>Check delivery temperature on arrival</option>
+              <option>Use timer and record cooling start/end time</option>
+              <option>Visual check for separation of raw and ready-to-eat food</option>
+              <option>Check allergen ticket, label, utensils and staff confirmation</option>
+              <option>Check cleaning schedule and sanitiser contact time</option>
+              <option>Manager review at end of shift</option>
+            </select>
+          </label>
+          <label>Corrective action
+            <select id="haccpAction">
+              <option>Continue cooking until safe temperature is reached</option>
+              <option>Reheat again until safe temperature is reached</option>
+              <option>Move food to working fridge and recheck temperature</option>
+              <option>Discard unsafe food</option>
+              <option>Reject delivery and inform supplier</option>
+              <option>Separate affected food and clean/sanitise area</option>
+              <option>Remake allergen order using clean equipment</option>
+              <option>Retrain staff and record training note</option>
+              <option>Report equipment fault to manager</option>
+            </select>
+          </label>
           <textarea id="notes" placeholder="Additional HACCP notes"></textarea>
         </section>
       `;
