@@ -322,7 +322,7 @@
   <div class="login" id="loginPanel">
     <form class="login-card" id="loginForm">
       <h2>Zab Siam AI Team</h2>
-      <p>ใส่รหัสพนักงานเพื่อเปิดกระดานสั่งงานกลาง คอมกับมือถือจะเห็นงานเดียวกันเมื่อเว็บรันผ่าน backend ของร้าน</p>
+      <p>ใส่รหัสพนักงานเพื่อเปิดกระดานสั่งงานกลาง ระบบซิงก์ผ่านเว็บ zabsiam.com ไม่ต้องเชื่อมมือถือเข้ากับคอมโดยตรง</p>
       <label>
         รหัสพนักงาน
         <input id="passwordInput" type="password" autocomplete="current-password" required>
@@ -609,7 +609,7 @@
         render();
       } catch (error) {
         if (!quiet) {
-          showNotice("ยังซิงก์ไม่ได้: เว็บต้องรันผ่าน backend ที่มี API /api/ai-team-tasks ถ้าเปิดเป็นไฟล์นิ่งหรือ static hosting จะไม่ลิงก์กัน");
+          showNotice("ยังซิงก์ไม่ได้: ให้เปิดผ่าน https://zabsiam.com/ai-team-board.html และตรวจว่าอินเทอร์เน็ตใช้งานได้ มือถือไม่ต้องเชื่อมต่อกับคอมโดยตรง");
         }
         render();
       }
@@ -677,7 +677,7 @@
         noteInput.value = "";
         showNotice("");
       } catch (error) {
-        showNotice("เพิ่มงานไม่สำเร็จ กรุณาเช็คว่า backend เปิดอยู่และรหัสถูกต้อง");
+        showNotice("เพิ่มงานไม่สำเร็จ กรุณาเช็คว่าเปิดผ่าน https://zabsiam.com/ai-team-board.html อินเทอร์เน็ตใช้งานได้ และรหัสถูกต้อง");
       } finally {
         document.getElementById("addTaskButton").disabled = false;
       }
