@@ -66,6 +66,12 @@
     .quick span { font-size: 13px; color: var(--muted); }
     .quick-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; align-items: stretch; }
     .quick-row .quick-open { border-left-width: 1px; background: var(--green); color: #fff; font-weight: 700; white-space: nowrap; }
+    .manager-task { border: 1px solid var(--line); border-left: 5px solid var(--green); background: #fff; border-radius: 8px; padding: 12px; display: grid; gap: 8px; }
+    .manager-task.high { border-left-color: #b64935; }
+    .manager-task h4 { margin: 0; font-size: 15px; }
+    .manager-task p { margin: 0; color: var(--muted); font-size: 13px; }
+    .manager-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .manager-actions .button { min-height: 34px; padding: 7px 10px; font-size: 13px; }
     .task-box { min-height: 190px; border-top: 1px solid var(--line); }
     .status { color: #224c39; font-size: 14px; min-height: 21px; font-weight: 700; }
     .helper { margin: 0; color: var(--muted); font-size: 13px; }
@@ -139,6 +145,19 @@
           </div>
           <div class="quick" id="quickTasks"></div>
           <textarea class="task-box" id="taskText" spellcheck="false"></textarea>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <div>
+              <h3>Manager Inbox</h3>
+              <p class="helper">ดึงงานที่สั่งจากมือถือเข้าฝั่งคอม แล้วส่งให้ CEO/Manager AI จัดการต่อ</p>
+            </div>
+            <button class="button secondary" id="loadManagerTasks" type="button">โหลดงาน</button>
+          </div>
+          <div class="quick" id="managerTasks">
+            <p class="helper">กดโหลดงานเพื่อดึงคำสั่งจากกระดานกลาง</p>
+          </div>
         </div>
       </div>
     </section>
@@ -544,9 +563,13 @@ const promptText = document.getElementById("promptText");
 const taskText = document.getElementById("taskText");
 const duties = document.getElementById("duties");
 const quickTasks = document.getElementById("quickTasks");
+const managerTasks = document.getElementById("managerTasks");
 const statusBox = document.getElementById("status");
 const manualCopyNotice = document.getElementById("manualCopyNotice");
 let active = roles[0];
+let remoteTasks = [];
+const aiTaskApiUrl = "/api/ai-team-tasks";
+const aiTaskPasswordKey = "zabsiam-ai-board-pass";
 
 function currentPrompt() {
   return `${active.prompt}\n\n---\n${websiteContext.trim()}`;
@@ -581,6 +604,120 @@ function openChatGptWithPrompt(value) {
 
 function rolePromptWithTask(task) {
   return `${currentPrompt()}\n\nคำสั่งงาน:\n${task}`;
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+function taskApiHeaders() {
+  let password = sessionStorage.getItem(aiTaskPasswordKey) || "";
+  if (!password) {
+    password = prompt("ใส่รหัสพนักงานเพื่อดึงงานจากมือถือ") || "";
+    if (password) sessionStorage.setItem(aiTaskPasswordKey, password);
+  }
+  return {
+    "Content-Type": "application/json",
+    "x-zabsiam-admin-pass": password
+  };
+}
+
+function formatRemoteTask(task) {
+  return [
+    `Task: ${task.title || ""}`,
+    `Assigned team: ${task.role || ""}`,
+    `Priority: ${task.priority || "normal"}`,
+    `Status: ${task.status || "todo"}`,
+    task.sourceDevice ? `Ordered from: ${task.sourceDevice}` : "",
+    task.note ? `Details: ${task.note}` : ""
+  ].filter(Boolean).join("\n");
+}
+
+function renderManagerTasks() {
+  if (!remoteTasks.length) {
+    managerTasks.innerHTML = `<p class="helper">ยังไม่มีงานใหม่ในกระดานกลาง</p>`;
+    return;
+  }
+
+  managerTasks.innerHTML = "";
+  remoteTasks.forEach(task => {
+    const card = document.createElement("div");
+    card.className = `manager-task ${task.priority || ""}`;
+    card.innerHTML = `
+      <h4>${escapeHtml(task.title || "Untitled task")}</h4>
+      <p>${escapeHtml(task.role || "AI Team")} · ${escapeHtml(task.priority || "normal")} · ${escapeHtml(task.status || "todo")}</p>
+      ${task.sourceDevice ? `<p>สั่งจาก: ${escapeHtml(task.sourceDevice)}</p>` : ""}
+      ${task.note ? `<p>${escapeHtml(task.note)}</p>` : ""}
+    `;
+
+    const actions = document.createElement("div");
+    actions.className = "manager-actions";
+
+    const pullButton = document.createElement("button");
+    pullButton.type = "button";
+    pullButton.className = "button";
+    pullButton.textContent = "Pull";
+    pullButton.addEventListener("click", () => pullTaskToManager(task));
+
+    const doneButton = document.createElement("button");
+    doneButton.type = "button";
+    doneButton.className = "button secondary";
+    doneButton.textContent = "Done";
+    doneButton.addEventListener("click", () => updateRemoteTask(task.id, { status: "done" }));
+
+    actions.appendChild(pullButton);
+    actions.appendChild(doneButton);
+    card.appendChild(actions);
+    managerTasks.appendChild(card);
+  });
+}
+
+async function loadRemoteTasks() {
+  try {
+    const response = await fetch(aiTaskApiUrl, { headers: taskApiHeaders(), cache: "no-store" });
+    if (response.status === 401) {
+      sessionStorage.removeItem(aiTaskPasswordKey);
+      setStatus("รหัสไม่ถูกต้อง");
+      return;
+    }
+    if (!response.ok) throw new Error(`API ${response.status}`);
+    const data = await response.json();
+    remoteTasks = (data.tasks || []).filter(task => task.status !== "done");
+    renderManagerTasks();
+    setStatus(`โหลดงานจากมือถือแล้ว ${remoteTasks.length} งาน`);
+  } catch (error) {
+    setStatus("โหลดงานจากมือถือไม่ได้");
+    managerTasks.innerHTML = `<p class="helper">เชื่อม API ไม่ได้ ให้เปิดผ่าน zabsiam.com และตรวจ backend /api/ai-team-tasks</p>`;
+  }
+}
+
+async function updateRemoteTask(id, payload) {
+  const response = await fetch(`${aiTaskApiUrl}/${encodeURIComponent(id)}`, {
+    method: "PATCH",
+    headers: taskApiHeaders(),
+    body: JSON.stringify(payload)
+  });
+  if (!response.ok) {
+    setStatus("อัปเดตงานไม่สำเร็จ");
+    return;
+  }
+  await loadRemoteTasks();
+}
+
+async function pullTaskToManager(task) {
+  const managerRole = roles.find(role => role.id === "manager") || active;
+  active = managerRole;
+  render();
+  const formattedTask = formatRemoteTask(task);
+  taskText.value = formattedTask;
+  promptText.value = rolePromptWithTask(formattedTask);
+  await updateRemoteTask(task.id, { status: "doing", role: "CEO/Manager AI" });
+  setStatus("ดึงงานเข้าผู้จัดการแล้ว เปิดหรือคัดลอก Prompt ได้เลย");
 }
 
 function render() {
@@ -635,8 +772,12 @@ document.getElementById("selectPrompt").addEventListener("click", () => {
   setStatus("เลือก Prompt แล้ว กด Ctrl+C");
 });
 document.getElementById("copyTask").addEventListener("click", () => copyText(taskText.value, "คำสั่งงาน", taskText));
+document.getElementById("loadManagerTasks").addEventListener("click", loadRemoteTasks);
 
 render();
+if (sessionStorage.getItem(aiTaskPasswordKey)) {
+  loadRemoteTasks();
+}
 </script>
 </body>
 </html>
