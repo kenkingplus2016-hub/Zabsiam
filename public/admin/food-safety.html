@@ -506,7 +506,17 @@
       closing: ["Food cooled safely", "Fridges closed and logged", "Waste removed", "Surfaces cleaned", "Floors cleaned", "Probe cleaned", "Pest check completed", "Doors locked"],
       cleaning: ["Prep table sanitised", "Hand wash sink cleaned", "Chopping boards cleaned", "Knives cleaned", "Fridge handles cleaned", "Bins cleaned", "Floor mopped"],
       calibration: ["Ice water test prepared", "Probe reads 0°C ±1°C", "Boiling water check completed", "Probe cleaned after test", "Defect reported if out of range"],
-      haccp: ["HACCP hazards reviewed", "Critical control points checked", "SFBB diary updated", "Compliance issue reviewed", "Due diligence evidence saved", "Confidence in Management note updated"],
+      haccp: [
+        "Food process / menu item identified",
+        "Hazards checked: biological, chemical, physical, allergen",
+        "Critical control point confirmed",
+        "Critical limit written down",
+        "Monitoring method confirmed",
+        "Corrective action written down",
+        "Record evidence saved",
+        "SFBB / HACCP diary updated",
+        "Manager review completed"
+      ],
       pest: ["No pest activity seen", "Bait station / trap checked", "Doors and gaps checked", "Waste area checked", "Inspection note recorded", "Contractor issue followed up"],
       training: ["Staff training record updated", "Food hygiene topic covered", "Allergen briefing completed", "Temperature procedure explained", "Cleaning procedure explained", "Staff question answered"],
       settings: ["Home screen features reviewed", "Equipment list checked", "Custom safe limits checked", "Staff list checked", "Record device checked"]
@@ -563,7 +573,8 @@
       else if (["cooking", "cooling"].includes(screen)) renderCooking();
       else if (screen === "cold") renderCold();
       else if (screen === "delivery") renderDelivery();
-      else if (["opening", "closing", "cleaning", "calibration", "haccp", "pest", "training", "settings"].includes(screen)) renderChecklist(screen);
+      else if (screen === "haccp") renderHaccp();
+      else if (["opening", "closing", "cleaning", "calibration", "pest", "training", "settings"].includes(screen)) renderChecklist(screen);
       else if (screen === "allergen") renderAllergen();
       else if (screen === "menu") renderMenu();
       else if (screen === "actions") renderActions();
@@ -646,6 +657,41 @@
           ${items.map(item => checklistLine(`${kind}-${item}`, item)).join("")}
         </section>
         <section class="card"><textarea id="notes" placeholder="Additional notes"></textarea></section>
+      `;
+      bindCommonInputs();
+    }
+
+    function renderHaccp() {
+      const items = checklists.haccp;
+      const done = items.filter(item => checklistState[`haccp-${item}`]).length;
+      app.innerHTML = `
+        ${staffSelect()}
+        <section class="card progress-card">
+          <strong>${done} of ${items.length} HACCP checks completed</strong>
+          <div class="progress-line"><div class="progress-fill" style="width:${(done / items.length) * 100}%"></div></div>
+        </section>
+        <section class="card">
+          <h3>HACCP Checklist</h3>
+          ${items.map(item => checklistLine(`haccp-${item}`, item)).join("")}
+        </section>
+        <section class="card">
+          <h3>HACCP Record</h3>
+          <label>Process / Menu item<input id="haccpProcess" placeholder="e.g. Cooking pork neck / Cooling rice"></label>
+          <label>Main hazard
+            <select id="haccpHazard">
+              <option>Biological hazard</option>
+              <option>Chemical hazard</option>
+              <option>Physical hazard</option>
+              <option>Allergen hazard</option>
+              <option>Temperature control hazard</option>
+            </select>
+          </label>
+          <label>Critical control point<input id="haccpCcp" placeholder="e.g. Cook core temperature"></label>
+          <label>Critical limit<input id="haccpLimit" placeholder="e.g. 75°C or above / chilled ≤ 5°C"></label>
+          <label>Monitoring method<textarea id="haccpMonitor" placeholder="How staff will check this control"></textarea></label>
+          <label>Corrective action<textarea id="haccpAction" placeholder="What to do if the limit is not met"></textarea></label>
+          <textarea id="notes" placeholder="Additional HACCP notes"></textarea>
+        </section>
       `;
       bindCommonInputs();
     }
@@ -834,7 +880,24 @@
             opening: "daily-checks",
             closing: "daily-checks"
           };
-          await api("POST", foodApi, { module: moduleMap[screen] || screen, title: `${screenTitle.textContent} checks`, category: screenTitle.textContent, status: done.length === items.length ? "done" : "pending", risk: done.length === items.length ? "low" : "medium", completedBy: staff, details: `${done.length} of ${items.length} completed. ${notes}` });
+          const haccpDetails = screen === "haccp" ? [
+            `Process: ${document.getElementById("haccpProcess")?.value || "Not specified"}`,
+            `Hazard: ${document.getElementById("haccpHazard")?.value || "Not specified"}`,
+            `CCP: ${document.getElementById("haccpCcp")?.value || "Not specified"}`,
+            `Critical limit: ${document.getElementById("haccpLimit")?.value || "Not specified"}`,
+            `Monitoring: ${document.getElementById("haccpMonitor")?.value || "Not specified"}`,
+            `Corrective action: ${document.getElementById("haccpAction")?.value || "Not specified"}`
+          ].join("\\n") : "";
+          await api("POST", foodApi, {
+            module: moduleMap[screen] || screen,
+            title: screen === "haccp" ? `HACCP: ${document.getElementById("haccpProcess")?.value || "Process check"}` : `${screenTitle.textContent} checks`,
+            category: screenTitle.textContent,
+            status: done.length === items.length ? "done" : "pending",
+            risk: done.length === items.length ? "low" : "medium",
+            completedBy: staff,
+            details: `${done.length} of ${items.length} completed. ${haccpDetails} ${notes}`.trim(),
+            correctiveAction: screen === "haccp" ? (document.getElementById("haccpAction")?.value || "") : ""
+          });
         } else if (screen === "allergen") {
           const item = document.getElementById("menuItem")?.value || "Menu item";
           await api("POST", foodApi, { module: "allergen", title: `Allergens: ${item}`, category: "14 allergen tracking", status: "done", risk: selectedAllergens.length ? "medium" : "low", completedBy: staff, details: selectedAllergens.join(", ") || "No allergens selected" });
