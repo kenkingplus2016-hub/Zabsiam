@@ -347,6 +347,27 @@
     .equipment strong, .allergen strong { display: block; }
     .equipment small, .allergen small { color: var(--muted); }
 
+    .process-guidance {
+      display: grid;
+      gap: 10px;
+      padding: 14px;
+      border: 1px solid #cfe2cf;
+      border-radius: 14px;
+      background: var(--green-soft);
+      margin-top: 12px;
+    }
+    .process-guidance h4 {
+      margin: 0;
+      font-size: 15px;
+    }
+    .process-guidance ul {
+      margin: 0;
+      padding-left: 18px;
+      color: #243024;
+      line-height: 1.45;
+      font-size: 13px;
+    }
+
     .record-card, .action-card {
       background: #fff;
       border-radius: 14px;
@@ -466,6 +487,7 @@
     let selectedCategory = "Cook";
     let temperature = 75;
     let selectedEquipment = "Main Fridge";
+    let selectedHaccpProcess = "Pork neck marinade and cooking";
     let selectedAllergens = [];
     let checklistState = {};
     let foodRecords = [];
@@ -496,6 +518,7 @@
       { id: "calibration", title: "Probe", icon: "P", color: "blue" },
       { id: "haccp", title: "HACCP", icon: "H", color: "green" },
       { id: "pest", title: "Pest", icon: "P", color: "red" },
+      { id: "gas-safety", title: "Gas Safety", icon: "G", color: "orange" },
       { id: "training", title: "Training", icon: "T", color: "purple" },
       { id: "ai-tools", title: "AI Tools", icon: "AI", color: "blue" },
       { id: "settings", title: "Settings", icon: "S", color: "gold" }
@@ -508,6 +531,12 @@
       calibration: ["Ice water test prepared", "Probe reads 0°C ±1°C", "Boiling water check completed", "Probe cleaned after test", "Defect reported if out of range"],
       haccp: [
         "Food process / menu item identified",
+        "Pork neck marinade and cooking controls checked",
+        "Hot holding during market transport checked",
+        "Salmon Pla cold storage and service controls checked",
+        "Duck Larb preparation controls checked",
+        "Mango Sticky Rice preparation and storage controls checked",
+        "Leftover food after market close decision recorded",
         "Hazards checked: biological, chemical, physical, allergen",
         "Critical control point confirmed",
         "Critical limit written down",
@@ -518,11 +547,112 @@
         "Manager review completed"
       ],
       pest: ["No pest activity seen", "Bait station / trap checked", "Doors and gaps checked", "Waste area checked", "Inspection note recorded", "Contractor issue followed up"],
+      "gas-safety": [
+        "Equipment identified and listed",
+        "Appliance number or equipment details recorded",
+        "Gas hose condition checked",
+        "Regulator condition checked",
+        "Gas valve condition checked",
+        "Leak test completed",
+        "Ventilation checked",
+        "Inspection date recorded",
+        "Qualified engineer name recorded",
+        "Engineer registration number recorded",
+        "Next inspection due date recorded"
+      ],
       training: ["Staff training record updated", "Food hygiene topic covered", "Allergen briefing completed", "Temperature procedure explained", "Cleaning procedure explained", "Staff question answered"],
       settings: ["Home screen features reviewed", "Equipment list checked", "Custom safe limits checked", "Staff list checked", "Record device checked"]
     };
 
     const allergens = ["Celery", "Gluten", "Crustaceans", "Eggs", "Fish", "Lupin", "Milk", "Molluscs", "Mustard", "Nuts", "Peanuts", "Sesame", "Soya", "Sulphites"];
+    const haccpProcesses = [
+      "Pork neck marinade and cooking",
+      "Hot holding during market transport",
+      "Salmon Pla storage and service",
+      "Duck Larb preparation",
+      "Mango Sticky Rice preparation and storage",
+      "Leftover food after market close",
+      "Cooking rice",
+      "Cooling cooked rice",
+      "Cooling cooked meat",
+      "Reheating cooked food",
+      "Hot holding food",
+      "Cold holding / fridge storage",
+      "Frozen storage",
+      "Goods in chilled delivery",
+      "Raw meat preparation",
+      "Ready-to-eat salad preparation",
+      "Allergen order preparation",
+      "Cleaning and sanitising food contact surfaces"
+    ];
+    const haccpProcessGuidance = {
+      "Pork neck marinade and cooking": {
+        hazard: "Raw pork, marinade cross contamination, undercooking",
+        ccp: "Cook pork neck to safe core temperature before slicing or holding",
+        limit: "Core temperature 75C or above; raw marinade must not touch cooked pork",
+        checks: [
+          "Keep raw pork covered, labelled and chilled until cooking",
+          "Use separate utensils/board for raw pork and cooked pork",
+          "Record core temperature with cleaned probe",
+          "Discard or fully boil any marinade that touched raw pork"
+        ]
+      },
+      "Hot holding during market transport": {
+        hazard: "Cooked food dropping into danger zone during transport/service",
+        ccp: "Keep hot food hot from kitchen to market and during service",
+        limit: "Hot holding 63C or above; if below limit, reheat to 75C or discard if unsafe",
+        checks: [
+          "Preheat hot box/insulated carrier before loading",
+          "Record temperature before leaving kitchen",
+          "Record arrival temperature at market",
+          "Check serving temperature during market service"
+        ]
+      },
+      "Salmon Pla storage and service": {
+        hazard: "Ready-to-eat fish, allergen fish, time/temperature abuse",
+        ccp: "Keep salmon chilled and protected from cross contamination",
+        limit: "Keep at 0-5C target and below 8C legal maximum; serve with clean utensils",
+        checks: [
+          "Store salmon covered in clean chilled container",
+          "Keep separate from raw meat and allergen orders",
+          "Record cold temperature before service",
+          "Discard if left out too long or temperature cannot be verified"
+        ]
+      },
+      "Duck Larb preparation": {
+        hazard: "Cooked duck cooling, reheating, allergen/cross contamination",
+        ccp: "Cook/reheat duck safely and mix with clean ready-to-eat ingredients",
+        limit: "Cook/reheat to 75C or above; hold cold below 8C or hot above 63C as used",
+        checks: [
+          "Record duck cook/reheat temperature",
+          "Cool cooked duck quickly if served cold",
+          "Use clean bowl, spoon and gloves for ready-to-eat mixing",
+          "Label allergens and spicy level clearly"
+        ]
+      },
+      "Mango Sticky Rice preparation and storage": {
+        hazard: "Cooked rice, coconut milk, allergen/cross contamination",
+        ccp: "Control cooked sticky rice and coconut milk storage time/temperature",
+        limit: "Keep chilled below 8C unless under controlled short service time; discard unsafe leftovers",
+        checks: [
+          "Record cooked sticky rice batch time",
+          "Keep coconut milk covered and chilled",
+          "Use clean utensils for mango and rice assembly",
+          "Label contains coconut and any sesame/topping allergens if used"
+        ]
+      },
+      "Leftover food after market close": {
+        hazard: "Unsafe reuse of food after transport/service",
+        ccp: "Decide keep or discard based on time, temperature and contamination risk",
+        limit: "Discard high-risk food if temperature/time records are missing or unsafe",
+        checks: [
+          "Record market close time and food temperature",
+          "Discard food exposed to customers, contamination or unknown temperature",
+          "Rapidly chill only food that has stayed under safe control",
+          "Label kept food with date/time and use-by decision"
+        ]
+      }
+    };
     const equipment = [
       { name: "Main Fridge", type: "Fridge" },
       { name: "Prep Fridge", type: "Fridge" },
@@ -574,6 +704,7 @@
       else if (screen === "cold") renderCold();
       else if (screen === "delivery") renderDelivery();
       else if (screen === "haccp") renderHaccp();
+      else if (screen === "gas-safety") renderGasSafety();
       else if (["opening", "closing", "cleaning", "calibration", "pest", "training", "settings"].includes(screen)) renderChecklist(screen);
       else if (screen === "allergen") renderAllergen();
       else if (screen === "menu") renderMenu();
@@ -661,9 +792,76 @@
       bindCommonInputs();
     }
 
+    function renderGasSafety() {
+      const items = checklists["gas-safety"];
+      const done = items.filter(item => checklistState[`gas-safety-${item}`]).length;
+      const today = new Date().toISOString().slice(0, 10);
+      app.innerHTML = `
+        ${staffSelect()}
+        <section class="card progress-card">
+          <strong>${done} of ${items.length} gas safety checks completed</strong>
+          <div class="progress-line"><div class="progress-fill" style="width:${(done / items.length) * 100}%"></div></div>
+        </section>
+        <section class="card">
+          <h3>Gas & Equipment Inspection</h3>
+          <label>Equipment checked
+            <select id="gasEquipment">
+              <option>Gas grill</option>
+              <option>Gas burner</option>
+              <option>Gas stove</option>
+              <option>Portable LPG appliance</option>
+              <option>Hot holding equipment</option>
+              <option>Other equipment</option>
+            </select>
+          </label>
+          <label>Appliance number / equipment details
+            <input id="gasEquipmentDetails" placeholder="e.g. Grill 01 / serial number / location">
+          </label>
+          <label>Gas hose, regulator and valve condition
+            <select id="gasCondition">
+              <option>Good condition</option>
+              <option>Needs cleaning / minor attention</option>
+              <option>Damaged - do not use</option>
+              <option>Engineer review required</option>
+            </select>
+          </label>
+          <label>Leak test result
+            <select id="leakTest">
+              <option>No leak detected</option>
+              <option>Leak suspected - appliance isolated</option>
+              <option>Leak confirmed - do not use</option>
+              <option>Not tested - engineer required</option>
+            </select>
+          </label>
+          <label>Ventilation
+            <select id="ventilation">
+              <option>Ventilation clear and working</option>
+              <option>Ventilation partly blocked - cleaned</option>
+              <option>Ventilation inadequate - stop use</option>
+              <option>Engineer review required</option>
+            </select>
+          </label>
+        </section>
+        <section class="card">
+          <h3>Inspection Details</h3>
+          <label>Inspection date<input id="inspectionDate" type="date" value="${today}"></label>
+          <label>Qualified engineer name<input id="engineerName" placeholder="Engineer name"></label>
+          <label>Engineer registration number<input id="engineerNumber" placeholder="Gas Safe / registration number"></label>
+          <label>Next inspection due date<input id="nextInspectionDate" type="date"></label>
+        </section>
+        <section class="card">
+          <h3>Checklist</h3>
+          ${items.map(item => checklistLine(`gas-safety-${item}`, item)).join("")}
+        </section>
+        <section class="card"><textarea id="notes" placeholder="Additional gas safety notes / action taken"></textarea></section>
+      `;
+      bindCommonInputs();
+    }
+
     function renderHaccp() {
       const items = checklists.haccp;
       const done = items.filter(item => checklistState[`haccp-${item}`]).length;
+      const guidance = haccpProcessGuidance[selectedHaccpProcess];
       app.innerHTML = `
         ${staffSelect()}
         <section class="card progress-card">
@@ -676,23 +874,27 @@
         </section>
         <section class="card">
           <h3>HACCP Record</h3>
-          <label>Process / Menu item
-            <select id="haccpProcess">
-              <option>Cooking pork neck</option>
-              <option>Cooking rice</option>
-              <option>Cooling cooked rice</option>
-              <option>Cooling cooked meat</option>
-              <option>Reheating cooked food</option>
-              <option>Hot holding food</option>
-              <option>Cold holding / fridge storage</option>
-              <option>Frozen storage</option>
-              <option>Goods in chilled delivery</option>
-              <option>Raw meat preparation</option>
-              <option>Ready-to-eat salad preparation</option>
-              <option>Allergen order preparation</option>
-              <option>Cleaning and sanitising food contact surfaces</option>
-            </select>
-          </label>
+          <h3 style="font-size:15px;margin-top:0">Process / Menu item</h3>
+          <div class="allergen-grid">
+            ${haccpProcesses.map(item => `
+              <button class="allergen${selectedHaccpProcess === item ? " active" : ""}" data-haccp-process="${escapeHtml(item)}" type="button">
+                <span class="tile-icon green">H</span>
+                <strong>${escapeHtml(item)}</strong>
+              </button>`).join("")}
+          </div>
+          ${guidance ? `
+            <div class="process-guidance">
+              <h4>${escapeHtml(selectedHaccpProcess)} controls</h4>
+              <ul>
+                <li><strong>Main hazard:</strong> ${escapeHtml(guidance.hazard)}</li>
+                <li><strong>Critical control point:</strong> ${escapeHtml(guidance.ccp)}</li>
+                <li><strong>Critical limit:</strong> ${escapeHtml(guidance.limit)}</li>
+                ${guidance.checks.map(check => `<li>${escapeHtml(check)}</li>`).join("")}
+              </ul>
+            </div>` : ""}
+        </section>
+        <section class="card">
+          <h3>HACCP Controls</h3>
           <label>Main hazard
             <select id="haccpHazard">
               <option>Biological hazard</option>
@@ -933,6 +1135,33 @@
           const supplier = document.getElementById("supplier")?.value || "Supplier";
           await api("POST", tempApi, { type: "delivery", area: "Goods In", item: supplier, temperature, checkedBy: staff, note: notes });
           await api("POST", foodApi, { module: "delivery-stock", title: `Goods In: ${supplier}`, category: "Delivery temperature recording", status: "done", risk: temperature > 5 ? "medium" : "low", completedBy: staff, details: notes });
+        } else if (screen === "gas-safety") {
+          const items = checklists["gas-safety"];
+          const done = items.filter(item => checklistState[`gas-safety-${item}`]);
+          const details = [
+            `Equipment checked: ${document.getElementById("gasEquipment")?.value || "Not specified"}`,
+            `Appliance number / details: ${document.getElementById("gasEquipmentDetails")?.value || "Not specified"}`,
+            `Hose / regulator / valve: ${document.getElementById("gasCondition")?.value || "Not specified"}`,
+            `Leak test: ${document.getElementById("leakTest")?.value || "Not specified"}`,
+            `Ventilation: ${document.getElementById("ventilation")?.value || "Not specified"}`,
+            `Inspection date: ${document.getElementById("inspectionDate")?.value || "Not specified"}`,
+            `Engineer: ${document.getElementById("engineerName")?.value || "Not specified"}`,
+            `Engineer registration: ${document.getElementById("engineerNumber")?.value || "Not specified"}`,
+            `Next inspection due: ${document.getElementById("nextInspectionDate")?.value || "Not specified"}`,
+            `${done.length} of ${items.length} checks completed.`,
+            notes
+          ].filter(Boolean).join("\n");
+          const risky = ["Damaged", "Leak suspected", "Leak confirmed", "inadequate", "required"].some(word => details.toLowerCase().includes(word.toLowerCase()));
+          await api("POST", foodApi, {
+            module: "gas-safety",
+            title: `Gas Safety: ${document.getElementById("gasEquipment")?.value || "Equipment inspection"}`,
+            category: "Gas and equipment safety inspection",
+            status: done.length === items.length ? "done" : "pending",
+            risk: risky || done.length < items.length ? "high" : "low",
+            completedBy: staff,
+            details,
+            correctiveAction: risky ? "Do not use affected gas equipment until checked and cleared by a qualified engineer." : ""
+          });
         } else if (["opening", "closing", "cleaning", "calibration", "haccp", "pest", "training", "settings"].includes(screen)) {
           const items = checklists[screen];
           const done = items.filter(item => checklistState[`${screen}-${item}`]);
@@ -947,7 +1176,7 @@
             closing: "daily-checks"
           };
           const haccpDetails = screen === "haccp" ? [
-            `Process: ${document.getElementById("haccpProcess")?.value || "Not specified"}`,
+            `Process: ${selectedHaccpProcess || "Not specified"}`,
             `Hazard: ${document.getElementById("haccpHazard")?.value || "Not specified"}`,
             `CCP: ${document.getElementById("haccpCcp")?.value || "Not specified"}`,
             `Critical limit: ${document.getElementById("haccpLimit")?.value || "Not specified"}`,
@@ -956,7 +1185,7 @@
           ].join("\\n") : "";
           await api("POST", foodApi, {
             module: moduleMap[screen] || screen,
-            title: screen === "haccp" ? `HACCP: ${document.getElementById("haccpProcess")?.value || "Process check"}` : `${screenTitle.textContent} checks`,
+            title: screen === "haccp" ? `HACCP: ${selectedHaccpProcess || "Process check"}` : `${screenTitle.textContent} checks`,
             category: screenTitle.textContent,
             status: done.length === items.length ? "done" : "pending",
             risk: done.length === items.length ? "low" : "medium",
@@ -1023,6 +1252,11 @@
       if (allergen) {
         const value = allergen.dataset.allergen;
         selectedAllergens = selectedAllergens.includes(value) ? selectedAllergens.filter(item => item !== value) : [...selectedAllergens, value];
+        render();
+      }
+      const haccpProcess = event.target.closest("[data-haccp-process]");
+      if (haccpProcess) {
+        selectedHaccpProcess = haccpProcess.dataset.haccpProcess;
         render();
       }
       const template = event.target.closest("[data-template]");
