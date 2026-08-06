@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZabSiam London | Private Catering & Events</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/zabsiam.css?v=3">
+    <style>
+        .catering-hero {
+            padding: 150px 20px 80px;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(250,250,250,1) 100%);
+        }
+        .catering-hero h1 { font-size: 3.5rem; color: #111; margin-bottom: 20px; }
+        .catering-hero p { font-size: 1.2rem; color: #444; max-width: 700px; margin: 0 auto; }
+        
+        .packages-section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
+        .packages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .package-card { background: #fff; border: 1px solid var(--glass-border); border-radius: 20px; padding: 40px 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; position: relative; transition: transform 0.3s; }
+        .package-card:hover { transform: translateY(-10px); border-color: var(--primary); }
+        .package-card.signature { border: 2px solid var(--primary); transform: scale(1.05); box-shadow: 0 15px 40px rgba(255,107,0,0.15); }
+        .package-card.signature:hover { transform: scale(1.05) translateY(-10px); }
+        .pkg-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--primary); color: #fff; padding: 5px 20px; border-radius: 20px; font-weight: 600; font-size: 0.9rem; }
+        
+        .pkg-title { font-size: 1.8rem; font-weight: 800; margin-bottom: 10px; color: #111; }
+        .pkg-guests { color: var(--primary); font-weight: 600; margin-bottom: 20px; font-size: 1.1rem; }
+        .pkg-price { font-size: 2.5rem; font-weight: 800; margin-bottom: 30px; color: #111; }
+        .pkg-price span { font-size: 1rem; font-weight: 400; color: #666; }
+        
+        .pkg-list { text-align: left; margin-bottom: 30px; list-style: none; padding: 0; }
+        .pkg-list h4 { margin-top: 20px; margin-bottom: 10px; color: #111; font-size: 1.1rem; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        .pkg-list li { padding: 5px 0; color: #555; font-size: 0.95rem; display: flex; align-items: center; }
+        .pkg-list li i { color: var(--primary); margin-right: 10px; }
+        
+        .full-menu-section { padding: 80px 20px; background: #fcfcfc; }
+        .menu-container { max-width: 1000px; margin: 0 auto; background: #fff; padding: 50px; border-radius: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); }
+        .menu-category { margin-bottom: 50px; }
+        .menu-category h3 { font-size: 2rem; color: #111; border-bottom: 2px solid var(--primary); padding-bottom: 10px; margin-bottom: 30px; }
+        .menu-subcategory { font-size: 1.3rem; color: #333; margin-top: 25px; margin-bottom: 15px; font-weight: 700; }
+        
+        .menu-items { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; }
+        .menu-item { background: #fafafa; padding: 15px 20px; border-radius: 8px; border: 1px solid #eee; display: flex; flex-direction: column; justify-content: center; }
+        .menu-item-title { font-weight: 600; color: #222; font-size: 1.05rem; }
+        .premium-badge { display: inline-block; background: #fff0e6; color: #e65c00; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px; margin-top: 5px; border: 1px solid #ffccb3; font-weight: 600; width: fit-content; }
+        .package-restrict { display: inline-block; background: #f0f0f0; color: #666; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px; margin-top: 5px; width: fit-content; }
+        
+        .sets-section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; }
+        .sets-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; }
+        .set-card { background: #fff; padding: 40px; border-radius: 20px; border: 1px solid #eee; }
+        .set-card h3 { font-size: 1.8rem; color: var(--primary); margin-bottom: 20px; }
+        .set-card ul { list-style-position: inside; color: #444; line-height: 2; font-size: 1.05rem; }
+        
+        .terms-section { padding: 60px 20px; background: #222; color: #ddd; }
+        .terms-container { max-width: 800px; margin: 0 auto; }
+        .terms-container h3 { color: #fff; margin-bottom: 20px; font-size: 1.8rem; }
+        .terms-container ul { list-style-type: disc; padding-left: 20px; line-height: 1.8; }
+        .terms-container li { margin-bottom: 10px; }
+        
+        @media (max-width: 768px) {
+            .package-card.signature { transform: none; }
+            .package-card.signature:hover { transform: translateY(-10px); }
+            .menu-container { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header style="background: rgba(255,255,255,0.95);">
+        <a href="index.html" class="logo">
+            <img src="images/zabsiam_logo_transparent.png" alt="ZabSiam Logo" onerror="this.src='images/logo.png'">
+        </a>
+        <nav style="display: flex; gap: 15px;">
+            <a href="index.html" class="btn-primary" style="background: transparent; color: var(--primary); border: 1px solid var(--primary); padding: 10px 20px;">Home</a>
+            <a href="popup.html" class="btn-primary" style="background: transparent; color: var(--primary); border: 1px solid var(--primary); padding: 10px 20px;">Popup Market</a>
+            <a href="#full-menu" class="btn-primary" style="padding: 10px 20px;">Private Catering</a>
+        </nav>
+    </header>
+
+    <section class="catering-hero">
+        <h1 style="color: var(--primary);">Build Your Menu</h1>
+        <p>Experience the ultimate fiery and authentic street food flavours straight from Thailand, exclusively catered for your private events.</p>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="packages-section">
+        <h2 class="section-title">Our <span>Packages</span></h2>
+        <div class="packages-grid">
+            
+            <!-- Package 1 -->
+            <div class="package-card">
+                <h3 class="pkg-title">SIAM CLASSIC</h3>
+                <div class="pkg-guests">Perfect for 7–8 Guests</div>
+                <div class="pkg-price"><span>From</span> £500</div>
+                <ul class="pkg-list">
+                    <h4>Your Team</h4>
+                    <li><i class="fas fa-check"></i> 1 Private Chef</li>
+                    <li><i class="fas fa-check"></i> 1 Kitchen Assistant</li>
+                    <li><i class="fas fa-check"></i> 1 Waitstaff</li>
+                    
+                    <h4>Choose Your Menu (8 Dishes)</h4>
+                    <li><i class="fas fa-utensils"></i> 2 Starters</li>
+                    <li><i class="fas fa-utensils"></i> 2 Main Courses</li>
+                    <li><i class="fas fa-utensils"></i> 2 Rice or Noodle Dishes</li>
+                    <li><i class="fas fa-utensils"></i> 1 Vegetable Dish</li>
+                    <li><i class="fas fa-utensils"></i> 1 Dessert</li>
+                    
+                    <h4>Ingredients</h4>
+                    <li><i class="fas fa-check"></i> Chicken, Pork, Prawns, Veg</li>
+                    <li style="color: #999; margin-top: 10px;"><i class="fas fa-info-circle" style="color: #999;"></i> Premium items (Beef, Duck, Fish, Crab) can be added as an upgrade (+£50-£150).</li>
+                </ul>
+                <a href="mailto:contact@zabsiam.com" class="btn-primary" style="display: block;">Enquire Now</a>
+            </div>
+
+            <!-- Package 2 -->
+            <div class="package-card signature">
+                <div class="pkg-badge">MOST POPULAR</div>
+                <h3 class="pkg-title">ZAB SIAM SIGNATURE</h3>
+                <div class="pkg-guests">Perfect for 9–12 Guests</div>
+                <div class="pkg-price"><span>From</span> £900</div>
+                <ul class="pkg-list">
+                    <h4>Your Team</h4>
+                    <li><i class="fas fa-check"></i> 1 Private Chef</li>
+                    <li><i class="fas fa-check"></i> 2 Kitchen Assistants</li>
+                    <li><i class="fas fa-check"></i> 2 Waitstaff</li>
+                    
+                    <h4>Choose Your Menu (10 Dishes)</h4>
+                    <li><i class="fas fa-utensils"></i> 2 Starters</li>
+                    <li><i class="fas fa-utensils"></i> 3 Main Courses</li>
+                    <li><i class="fas fa-utensils"></i> 2 Rice or Noodle Dishes</li>
+                    <li><i class="fas fa-utensils"></i> 2 Vegetable Dishes</li>
+                    <li><i class="fas fa-utensils"></i> 1 Dessert</li>
+                    
+                    <h4>Ingredients Included</h4>
+                    <li><i class="fas fa-check"></i> Chicken, Pork, Beef, Duck</li>
+                    <li><i class="fas fa-check"></i> Prawns, Fish & Sea Bass, Crab</li>
+                    
+                    <h4>Extras Included</h4>
+                    <li><i class="fas fa-star"></i> Signature Plating</li>
+                    <li><i class="fas fa-star"></i> Premium Table Styling</li>
+                </ul>
+                <a href="mailto:contact@zabsiam.com" class="btn-primary" style="display: block;">Enquire Now</a>
+            </div>
+
+            <!-- Package 3 -->
+            <div class="package-card">
+                <h3 class="pkg-title">CELEBRATION</h3>
+                <div class="pkg-guests">Perfect for 13–15 Guests</div>
+                <div class="pkg-price"><span>From</span> £1,050</div>
+                <ul class="pkg-list">
+                    <h4>Your Team</h4>
+                    <li><i class="fas fa-check"></i> 1 Private Chef</li>
+                    <li><i class="fas fa-check"></i> 2 Kitchen Assistants</li>
+                    <li><i class="fas fa-check"></i> 2 Waitstaff</li>
+                    
+                    <h4>Choose Your Menu (12 Dishes)</h4>
+                    <li><i class="fas fa-utensils"></i> 3 Starters</li>
+                    <li><i class="fas fa-utensils"></i> 3 Main Courses</li>
+                    <li><i class="fas fa-utensils"></i> 3 Rice or Noodle Dishes</li>
+                    <li><i class="fas fa-utensils"></i> 2 Vegetable Dishes</li>
+                    <li><i class="fas fa-utensils"></i> 1 Dessert</li>
+                    
+                    <h4>Extras Included</h4>
+                    <li><i class="fas fa-star"></i> Celebration Table Styling</li>
+                    <li><i class="fas fa-star"></i> Certified Edible Flowers</li>
+                    <li><i class="fas fa-star"></i> Luxury Food Presentation</li>
+                </ul>
+                <a href="mailto:contact@zabsiam.com" class="btn-primary" style="display: block;">Enquire Now</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Full Menu Section -->
+    <section class="full-menu-section" id="full-menu">
+        <h2 class="section-title">The <span>Menu</span></h2>
+        <div class="menu-container">
+            <p style="text-align: center; margin-bottom: 40px; color: #555;">
+                <span class="premium-badge" style="font-size: 0.9rem;">Premium Upgrade (+£50–£150)</span><br>
+                Package 1 customers can upgrade to premium dishes featuring Beef, Duck, Sea Bass, or Crab without changing packages!
+            </p>
+
+            <!-- Starters -->
+            <div class="menu-category">
+                <h3>Starters</h3>
+                <div class="menu-subcategory">Fried & Light Bites</div>
+                <div class="menu-items">
+                    <div class="menu-item"><span class="menu-item-title">Prawn Cakes</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Crispy Prawn Spring Rolls</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Prawn Summer Rolls</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Golden Money Bags</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Grilled Pork Skewers</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Chicken Satay</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Pork Satay</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Thai Pork Sausage</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Rice Sausage</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Isaan Sausage</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Northern Thai Sai Ua</span></div>
+                </div>
+
+                <div class="menu-subcategory">Salads & Thai Favourites</div>
+                <div class="menu-items">
+                    <div class="menu-item"><span class="menu-item-title">Pomelo Salad with Prawns</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Sea Bass Miang Kham</span> <span class="package-restrict">Package 2 & 3 only</span> <span class="premium-badge">Premium Upgrade</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Thai Papaya Salad</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Spicy Prawn Salad</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Spicy Beef Salad</span> <span class="package-restrict">Package 2 & 3 only</span> <span class="premium-badge">Premium Upgrade</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Grilled Pork Neck Salad</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Larb Chicken</span></div>
+                </div>
+
+                <div class="menu-subcategory">Grilled</div>
+                <div class="menu-items">
+                    <div class="menu-item"><span class="menu-item-title">Grilled Pork Neck</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Crying Tiger Beef</span> <span class="package-restrict">Package 2 & 3 only</span> <span class="premium-badge">Premium Upgrade</span></div>
+                </div>
+
+                <div class="menu-subcategory">Soups</div>
+                <div class="menu-items">
+                    <div class="menu-item"><span class="menu-item-title">Tom Yum Goong</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Tom Kha Gai</span></div>
+                </div>
+            </div>
+
+            <!-- Mains -->
+            <div class="menu-category">
+                <h3>Main Courses</h3>
+                <div class="menu-subcategory">Curries</div>
+                <div class="menu-items">
+                    <div class="menu-item"><span class="menu-item-title">Red Chicken Curry</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Red Prawn Curry</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Green Chicken Curry</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Green Prawn Curry</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Panang Chicken</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Panang Prawns</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Panang Sea Bass</span> <span class="package-restrict">Package 2 & 3 only</span> <span class="premium-badge">Premium Upgrade</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Roast Duck Curry</span> <span class="package-restrict">Package 2 & 3 only</span> <span class="premium-badge">Premium Upgrade</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Massaman Chicken</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Massaman Beef</span> <span class="package-restrict">Package 2 & 3 only</span> <span class="premium-badge">Premium Upgrade</span></div>
+                </div>
+
+                <div class="menu-subcategory">Steamed</div>
+                <div class="menu-items">
+                    <div class="menu-item"><span class="menu-item-title">Steamed Glass Noodles with Garlic Prawns</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Steamed Sea Bass with Lime</span> <span class="package-restrict">Package 2 & 3 only</span> <span class="premium-badge">Premium Upgrade</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Steamed Sea Bass with Soy Sauce</span> <span class="package-restrict">Package 2 & 3 only</span> <span class="premium-badge">Premium Upgrade</span></div>
+                </div>
+
+                <div class="menu-subcategory">Fried</div>
+                <div class="menu-items">
+                    <div class="menu-item"><span class="menu-item-title">Garlic Pepper Prawns</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Tamarind Prawns</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Three-Flavour Sea Bass</span> <span class="package-restrict">Package 2 & 3 only</span> <span class="premium-badge">Premium Upgrade</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Crispy Sea Bass with Fish Sauce</span> <span class="package-restrict">Package 2 & 3 only</span> <span class="premium-badge">Premium Upgrade</span></div>
+                </div>
+            </div>
+
+            <!-- Rice & Noodles -->
+            <div class="menu-category">
+                <h3>Rice & Noodles</h3>
+                <div class="menu-subcategory">Rice</div>
+                <div class="menu-items">
+                    <div class="menu-item"><span class="menu-item-title">Jasmine Rice</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Egg Fried Rice</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Chicken Fried Rice</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Prawn Fried Rice</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Crab Fried Rice</span> <span class="package-restrict">Package 2 & 3 only</span> <span class="premium-badge">Premium Upgrade</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Pineapple Chicken Fried Rice</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Pineapple Prawn Fried Rice</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Shrimp Oil Fried Rice</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Tom Yum Prawn Fried Rice</span></div>
+                </div>
+
+                <div class="menu-subcategory">Noodles</div>
+                <div class="menu-items">
+                    <div class="menu-item"><span class="menu-item-title">Chicken Pad Thai</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Prawn Pad Thai</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Chicken Pad See Ew</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Prawn Pad See Ew</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Chicken Rad Na</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Pork Rad Na</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Chicken Khao Soi</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Pork Khao Soi</span></div>
+                </div>
+            </div>
+
+            <!-- Vegetables -->
+            <div class="menu-category">
+                <h3>Vegetables</h3>
+                <div class="menu-items">
+                    <div class="menu-item"><span class="menu-item-title">Garlic Broccoli</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Oyster Sauce Asparagus</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Stir-fried Cabbage with Fish Sauce</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Oyster Sauce Pak Choi</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Mixed Stir-fried Vegetables</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Morning Glory</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Chinese Kale with Oyster Sauce</span></div>
+                </div>
+            </div>
+
+            <!-- Desserts -->
+            <div class="menu-category">
+                <h3>Desserts</h3>
+                <div class="menu-items">
+                    <div class="menu-item"><span class="menu-item-title">Mango Sticky Rice</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Red Ruby</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Bua Loy</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Lod Chong</span></div>
+                    <div class="menu-item"><span class="menu-item-title">Seasonal Fresh Fruit</span></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Pre-selected Sets -->
+    <section class="sets-section">
+        <h2 class="section-title">Chef's <span>Sets</span></h2>
+        <p class="section-subtitle">Can't decide? Try one of our carefully curated set menus.</p>
+        <div class="sets-grid">
+            <div class="set-card">
+                <h3>Zab Siam Best-Seller Set</h3>
+                <ul>
+                    <li>Pomelo Salad with Prawns</li>
+                    <li>Chicken Satay</li>
+                    <li>Green Chicken Curry</li>
+                    <li>Three-Flavour Sea Bass <span class="premium-badge">Premium</span></li>
+                    <li>Pineapple Prawn Fried Rice</li>
+                    <li>Stir-fried Cabbage with Fish Sauce</li>
+                    <li>Mango Sticky Rice</li>
+                </ul>
+            </div>
+            <div class="set-card">
+                <h3>Zab Siam Signature Set</h3>
+                <ul>
+                    <li>Sea Bass Miang Kham <span class="premium-badge">Premium</span></li>
+                    <li>Sai Ua</li>
+                    <li>Tom Yum Goong</li>
+                    <li>Roast Duck Curry <span class="premium-badge">Premium</span></li>
+                    <li>Tamarind Prawns</li>
+                    <li>Shrimp Oil Fried Rice</li>
+                    <li>Pak Choi with Oyster Sauce</li>
+                    <li>Red Ruby</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Terms -->
+    <section class="terms-section">
+        <div class="terms-container">
+            <h3>Booking Terms</h3>
+            <ul>
+                <li>Prices shown are starting prices and may vary depending on guest numbers, menu selections and venue.</li>
+                <li>Premium ingredients may incur additional charges.</li>
+                <li>Parking, travel costs and London Congestion Charge are charged at cost.</li>
+                <li>Tableware, crockery, cutlery, tables and specialist equipment are not included unless agreed in advance.</li>
+                <li>A 50% deposit is required to secure your booking.</li>
+                <li>Final guest numbers, menu selections and allergy information must be confirmed at least 5 days before the event.</li>
+                <li>Changes made after ingredients have been purchased may incur additional charges.</li>
+                <li>Please advise us of any allergies or dietary requirements before your event.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 ZabSiam London. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
