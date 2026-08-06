@@ -712,8 +712,12 @@
                 <input type="tel" id="custPhone" placeholder="Phone Number" required>
                 <textarea id="custAddress" placeholder="Full Postal Address" rows="3" required></textarea>
                 <div class="delivery-checkout">
-                    <h4>Delivery Options</h4>
+                    <h4>Delivery / Pickup Options</h4>
                     <div class="delivery-options">
+                        <label>
+                            <input type="radio" name="deliveryOption" value="popup-pickup" data-label="Pickup at Popup Market" data-fee="0.00">
+                            <span><strong>Pickup at Popup Market</strong><small>Free (Pre-order Pickup)</small></span>
+                        </label>
                         <label>
                             <input type="radio" name="deliveryOption" value="standard" data-label="Standard Delivery" data-fee="5.00" checked>
                             <span><strong>Standard Delivery</strong><small>£5.00</small></span>
