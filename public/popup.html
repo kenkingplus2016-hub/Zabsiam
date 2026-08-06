@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZabSiam London | Popup Market</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/zabsiam.css?v=3">
+    <style>
+        .popup-hero {
+            padding: 150px 20px 80px;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(250,250,250,1) 100%);
+        }
+        .popup-hero h1 { font-size: 3.5rem; color: #111; margin-bottom: 20px; }
+        .popup-hero p { font-size: 1.2rem; color: #444; max-width: 700px; margin: 0 auto; }
+        
+        .events-section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; }
+        .event-card {
+            background: #fff; border: 1px solid var(--glass-border); border-radius: 20px; 
+            padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 30px;
+            display: flex; gap: 30px; align-items: center;
+        }
+        .event-date {
+            background: var(--primary); color: white; padding: 20px; border-radius: 15px; 
+            text-align: center; min-width: 120px;
+        }
+        .event-date .day { font-size: 2.5rem; font-weight: 800; line-height: 1; }
+        .event-date .month { font-size: 1.2rem; font-weight: 600; text-transform: uppercase; }
+        
+        .event-details h3 { font-size: 1.8rem; color: #111; margin-bottom: 10px; }
+        .event-details p { color: #555; font-size: 1.1rem; line-height: 1.6; margin-bottom: 15px; }
+        .event-meta { display: flex; gap: 20px; color: #777; font-size: 0.95rem; font-weight: 600; }
+        .event-meta i { color: var(--primary); margin-right: 5px; }
+        
+        @media (max-width: 768px) {
+            .event-card { flex-direction: column; text-align: center; }
+            .event-meta { flex-direction: column; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header style="background: rgba(255,255,255,0.95);">
+        <a href="index.html" class="logo">
+            <img src="images/zabsiam_logo_transparent.png" alt="ZabSiam Logo" onerror="this.src='images/logo.png'">
+        </a>
+        <nav style="display: flex; gap: 15px;">
+            <a href="index.html" class="btn-primary" style="background: transparent; color: var(--primary); border: 1px solid var(--primary); padding: 10px 20px;">Home</a>
+            <a href="popup.html" class="btn-primary" style="padding: 10px 20px;">Popup Market</a>
+            <a href="catering.html" class="btn-primary" style="background: transparent; color: var(--primary); border: 1px solid var(--primary); padding: 10px 20px;">Private Catering</a>
+        </nav>
+    </header>
+
+    <section class="popup-hero">
+        <h1 style="color: var(--primary);">Catch Us at the Market!</h1>
+        <p>Come and experience the vibrant energy and authentic flavours of ZabSiam at our upcoming popup food stalls across London.</p>
+    </section>
+
+    <!-- Upcoming Events Section -->
+    <section class="events-section">
+        <h2 class="section-title">Upcoming <span>Popups</span></h2>
+        
+        <!-- Placeholder Event 1 -->
+        <div class="event-card">
+            <div class="event-date">
+                <div class="day">TBA</div>
+                <div class="month">Soon</div>
+            </div>
+            <div class="event-details">
+                <h3>Duke of York Square Fine Food Market</h3>
+                <p>We are currently working on bringing ZabSiam's signature dishes to the prestigious Duke of York Square market. Stay tuned for our official dates!</p>
+                <div class="event-meta">
+                    <span><i class="fas fa-map-marker-alt"></i> Duke of York Square, Chelsea, London</span>
+                    <span><i class="far fa-clock"></i> 10:00 AM - 4:00 PM</span>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 50px;">
+            <p style="font-size: 1.2rem; color: #666; margin-bottom: 20px;">Want ZabSiam at your local market or festival?</p>
+            <a href="mailto:contact@zabsiam.com" class="btn-primary">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="margin-top: 80px;">
+        <p>&copy; 2026 ZabSiam London. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
