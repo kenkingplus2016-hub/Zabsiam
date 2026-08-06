@@ -1,4 +1,4 @@
-﻿let cart = [];
+let cart = [];
 const DEFAULT_DELIVERY_FEE = 5.00;
 
 function getSelectedDeliveryOption() {
@@ -12,6 +12,27 @@ function getSelectedDeliveryOption() {
         label: selected.dataset.label || 'Standard Delivery',
         fee: Number.isFinite(fee) ? fee : DEFAULT_DELIVERY_FEE
     };
+}
+
+function toggleCateringMode() {
+    const isCatering = document.getElementById('isPrivateCatering').checked;
+    const dateContainer = document.getElementById('catering-date-container');
+    const dateInput = document.getElementById('eventDate');
+    
+    if (isCatering) {
+        dateContainer.style.display = 'block';
+        dateInput.required = true;
+        
+        // Set min date to 7 days from now
+        const minDate = new Date();
+        minDate.setDate(minDate.getDate() + 7);
+        dateInput.min = minDate.toISOString().split('T')[0];
+    } else {
+        dateContainer.style.display = 'none';
+        dateInput.required = false;
+        dateInput.value = '';
+    }
+    updateCartUI();
 }
 
 function escapeHtml(value) {
@@ -91,12 +112,23 @@ function updateCartUI() {
         }
     }
     
-    const finalTotal = subtotal > 0 ? subtotal + deliveryOption.fee : 0;
+    const isCatering = document.getElementById('isPrivateCatering')?.checked || false;
+    let finalTotal = subtotal > 0 ? subtotal + deliveryOption.fee : 0;
     
-    if (cartSubtotal) cartSubtotal.innerText = '£' + subtotal.toFixed(2);
+    let subtotalText = '£' + subtotal.toFixed(2);
+    let totalText = '£' + finalTotal.toFixed(2);
+    
+    if (isCatering && subtotal > 0) {
+        const deposit = subtotal * 0.5;
+        finalTotal = deposit + deliveryOption.fee;
+        subtotalText = '£' + deposit.toFixed(2) + ' (50% Deposit)';
+        totalText = '£' + finalTotal.toFixed(2) + ' (Inc. Delivery)';
+    }
+
+    if (cartSubtotal) cartSubtotal.innerText = subtotalText;
     if (deliverySummaryLabel) deliverySummaryLabel.innerText = deliveryOption.label;
     if (deliverySummaryFee) deliverySummaryFee.innerText = '£' + deliveryOption.fee.toFixed(2);
-    if (cartTotal) cartTotal.innerText = '£' + finalTotal.toFixed(2);
+    if (cartTotal) cartTotal.innerText = totalText;
 }
 
 function toggleCart() {
@@ -133,25 +165,36 @@ async function proceedToCheckout(e) {
         ...(otherAllergies ? [`Other: ${otherAllergies}`] : [])
     ];
     
-    let menuSetDetails = "Postal Delivery Order:\n";
+    const isCatering = document.getElementById('isPrivateCatering')?.checked || false;
+    const eventDateInput = document.getElementById('eventDate')?.value;
+    
+    let menuSetDetails = isCatering ? "Private Catering (50% Deposit Paid):\n" : "Postal Delivery Order:\n";
     let subtotal = 0;
     cart.forEach(item => {
         menuSetDetails += `- ${item.qty}x ${item.name} (£${item.price.toFixed(2)})\n`;
         subtotal += item.price * item.qty;
     });
+    
+    let finalTotal = subtotal + deliveryOption.fee;
+    if (isCatering) {
+        const deposit = subtotal * 0.5;
+        finalTotal = deposit + deliveryOption.fee;
+        menuSetDetails += `\n** Full Order Value: £${subtotal.toFixed(2)} **\n`;
+        menuSetDetails += `** Deposit Paid (50%): £${deposit.toFixed(2)} **\n`;
+        menuSetDetails += `** Balance Due on Delivery: £${(subtotal - deposit).toFixed(2)} **\n\n`;
+    }
+
     menuSetDetails += `Delivery Option: ${deliveryOption.label}\n`;
     menuSetDetails += `Delivery Fee: £${deliveryOption.fee.toFixed(2)}\n`;
     
     menuSetDetails += `Allergies: ${allergyDetails.length ? allergyDetails.join(', ') : 'None declared'}\n`;
     
-    const finalTotal = subtotal + deliveryOption.fee;
-    
     const payload = {
         custName: name,
         custPhone: phone,
         custEmail: email,
-        eventDate: new Date().toISOString().split('T')[0], // placeholder
-        eventPlace: 'Postal Delivery', // placeholder
+        eventDate: eventDateInput || new Date().toISOString().split('T')[0],
+        eventPlace: deliveryOption.label.includes('Popup Market') ? 'Popup Market Pickup' : (isCatering ? 'Private Catering' : 'Postal Delivery'),
         custAddress: address,
         menuSet: menuSetDetails,
         deliveryOption: deliveryOption.label,
@@ -159,7 +202,7 @@ async function proceedToCheckout(e) {
         allergies: allergyDetails.length ? allergyDetails.join(', ') : 'None declared',
         paymentMethod: 'Card',
         totalAmount: finalTotal,
-        category: 'Dessert Delivery',
+        category: isCatering ? 'Private Catering' : 'Dessert Delivery',
         totalSets: 1
     };
 
@@ -207,4 +250,5 @@ window.toggleCart = toggleCart;
 window.openCart = openCart;
 window.closeCart = closeCart;
 window.proceedToCheckout = proceedToCheckout;
+window.toggleCateringMode = toggleCateringMode;
 

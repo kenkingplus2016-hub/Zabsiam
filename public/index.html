@@ -711,6 +711,20 @@
                 <input type="email" id="custEmail" placeholder="Email Address" required>
                 <input type="tel" id="custPhone" placeholder="Phone Number" required>
                 <textarea id="custAddress" placeholder="Full Postal Address" rows="3" required></textarea>
+                
+                <div class="catering-checkout" style="margin: 1rem 0; padding: 1rem; background-color: rgba(255, 215, 0, 0.1); border-left: 4px solid #FFD700; border-radius: 4px;">
+                    <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                        <input type="checkbox" id="isPrivateCatering" onchange="toggleCateringMode()" style="width: auto; margin-top: 4px;">
+                        <span>
+                            <strong style="color: #FFD700; font-size: 1.1rem; display: block;">Private Catering Booking</strong>
+                            <small style="color: #ddd;">Pay 50% Deposit now. Balance due on delivery day.</small>
+                        </span>
+                    </label>
+                    <div id="catering-date-container" style="display: none; margin-top: 15px;">
+                        <label for="eventDate" style="display: block; margin-bottom: 5px; color: #fff;">Event / Delivery Date (Min. 7 days advance):</label>
+                        <input type="date" id="eventDate" class="checkout-input">
+                    </div>
+                </div>
                 <div class="delivery-checkout">
                     <h4>Delivery / Pickup Options</h4>
                     <div class="delivery-options">
