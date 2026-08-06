@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>สร้างรูปโพสต์ — KHRUA THAI LONDON</title>
-    <meta name="description" content="เครื่องมือสร้างรูปโพสต์ Facebook/Instagram สำหรับ Khrua Thai London">
+    <title>สร้างรูปโพสต์ — ZabSiam LONDON</title>
+    <meta name="description" content="เครื่องมือสร้างรูปโพสต์ Facebook/Instagram สำหรับ ZabSiam London">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Kanit:wght@300;400;500;700&family=Sarabun:wght@300;400;500;700&family=Mali:wght@400;600&family=Chakra+Petch:wght@400;600&family=Oswald:wght@400;600&family=Caveat:wght@400;600&family=Cinzel:wght@400;600;700&family=Marcellus&family=Cormorant+Garamond:wght@400;600&family=EB+Garamond:wght@400;600&family=Libre+Baskerville:wght@400;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="post-designer.css">
@@ -19,111 +19,70 @@
       gtag('config', 'G-B32XK3RT5X');
     </script>
     <link rel="stylesheet" href="css/megamenu.css">
-</head>
-<body class="post-designer-body">
+
+    <style>
+        body, html { background-color: #000 !important; color: #fff !important; }
+        .mega-header { background-color: #000 !important; border-bottom: 1px solid #333 !important; }
+        .mega-nav-link { color: #fff !important; }
+        .mega-dropdown { background-color: #111 !important; border-color: #333 !important; }
+        .category-card, .menu-card { background-color: #111 !important; border-color: #333 !important; color: #fff !important; }
+        .category-card:hover, .menu-card:hover { border-color: #e65c00 !important; }
+        .category-card h3, .menu-card h3 { color: #fff !important; }
+        .menu-card p { color: #ccc !important; }
+        .modal-content { background-color: #111 !important; color: #e65c00 !important; }
+        .modal-content *, .modal-content h2, .modal-content h3, .modal-content p { color: #e65c00 !important; }
+        .close { color: #fff !important; }
+        /* Fix inputs in dark mode */
+        input, textarea, select { background-color: #222 !important; color: #fff !important; border-color: #444 !important; }
+            a.mega-nav-link[href="menu.html"] { color: #e65c00 !important; font-weight: bold !important; }
+            .category-title { color: #e65c00 !important; }
+        .category-subtitle { color: #e65c00 !important; }
+            footer { background-color: #000 !important; color: #fff !important; border-top: 1px solid #333 !important; }
+            .mega-column-title { color: #e65c00 !important; }
+        .mega-column a { color: #e65c00 !important; }
+        .mega-column a:hover { background: #e65c00 !important; color: #fff !important; }
+    </style>
+    </head>
+<body class="post-designer-body bg-black text-white">
 
     <!-- ═══ HEADER BAR ═══ -->
     <header class="mega-header">
     <div class="mega-nav-container">
         <a href="index.html" class="mega-logo">
-            <img src="logo.png" alt="KHRUA THAI">
-            KHRUA THAI
+            <img src="logo2.png" alt="ZabSiam">
         </a>
         
         <div class="mega-nav-links">
-            <!-- Main Meals -->
+            <!-- Thai Street Food -->
             <div class="mega-nav-item">
-                <a href="menu.html" class="mega-nav-link">Main Meals</a>
+                <a href="menu.html" class="mega-nav-link">Thai Street Food</a>
                 <div class="mega-dropdown">
                     <div class="mega-dropdown-content">
                         <div class="mega-columns">
                             <div class="mega-column">
                                 <div class="mega-column-title">Categories</div>
-                                <a href="menu.html?cat=mains">Meat</a>
-                                <a href="menu.html?cat=vegetables">Vegetables</a>
-                                <a href="menu.html?cat=starters">Starters</a>
-                                <a href="menu.html?cat=box_sets">Meal Boxes</a>
+                                <a href="menu.html?cat=pad_krapow">Pad Krapow</a>
+                                <a href="menu.html?cat=spicy_salads">Spicy Salads</a>
+                                <a href="menu.html?cat=desserts">Puddings</a>
                             </div>
                         </div>
                         <div class="mega-featured">
-                            <a href="menu.html" class="mega-feature-card">
-                                <img src="images/green_curry_pork_bowl.jpg" alt="Green Curry">
-                                <span>Authentic Thai Curries</span>
+                            <a href="menu.html?cat=spicy_salads" class="mega-feature-card">
+                                <img src="images/780f7b8bb98d.jpg" alt="Spicy Salads">
+                                <span>Authentic Thai Street Food</span>
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Entertaining -->
-            <div class="mega-nav-item">
-                <a href="menu.html" class="mega-nav-link">Entertaining</a>
-                <div class="mega-dropdown">
-                    <div class="mega-dropdown-content">
-                        <div class="mega-columns">
-                            <div class="mega-column">
-                                <div class="mega-column-title">Event Types</div>
-                                <a href="menu.html">Canapés</a>
-                                <a href="menu.html">Dinner Party</a>
-                                <a href="menu.html">Afternoon Tea</a>
-                                <a href="menu.html">Buffet</a>
-                                <a href="menu.html">Birthday Party</a>
-                            </div>
-                        <div class="mega-featured">
-                            <a href="menu.html" class="mega-feature-card">
-                                <img src="images/780f7b8bb98d.jpg" alt="Entertaining">
-                                <span>Premium Event Catering</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
             </div>
-
-            <!-- Puddings -->
-            <div class="mega-nav-item">
-                <a href="desserts.html" class="mega-nav-link">Puddings</a>
-                <div class="mega-dropdown">
-                    <div class="mega-dropdown-content">
-                        <div class="mega-columns">
-                            <div class="mega-column">
-                                <div class="mega-column-title">Thai Desserts</div>
-                                <a href="desserts.html">Coconut Jelly</a>
-                                <a href="desserts.html">Mango Sticky Rice</a>
-                                <a href="desserts.html">Traditional Sweets</a>
-                            </div>
-                        <div class="mega-featured">
-                            <a href="desserts.html" class="mega-feature-card">
-                                <img src="images/Butterfly Pea Coconut Jelly with Young Coconut.jpg" alt="Puddings">
-                                <span>Delightful Thai Puddings</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Meal Boxes -->
-            <div class="mega-nav-item">
-                <a href="delivery.html" class="mega-nav-link">Meal Boxes</a>
-            </div>
-
-            <!-- Summer Meals -->
-            <div class="mega-nav-item">
-                <a href="menu.html" class="mega-nav-link">Summer Meals</a>
-            </div>
-        </div>
-
         <div class="mega-search">
             <input type="text" placeholder="Search for Meals...">
             <i class="fas fa-search"></i>
         </div>
 
-        <div class="mega-icons">
-            <a href="booking.html" class="mega-icon-btn">
-                <i class="fas fa-shopping-cart"></i>
-                <span id="nav-cart-badge-inner" class="mega-cart-badge" style="display:none;">0</span>
-            </a>
         </div>
-    </div>
 </header>
 
     <!-- ═══ MAIN 3-COLUMN LAYOUT ═══ -->
@@ -323,7 +282,7 @@
     </script>
     <script>
     // ====================================================
-    //  POST DESIGNER — KHRUA THAI LONDON
+    //  POST DESIGNER — ZabSiam LONDON
     //  Fabric.js v5 Canvas-Based Post Image Designer
     // ====================================================
 
@@ -535,7 +494,7 @@
     }
 
     function addHeading() {
-        const heading = new fabric.Textbox('KHRUA THAI', {
+        const heading = new fabric.Textbox('ZabSiam', {
             left: canvasOrigW / 2 - 200,
             top: canvasOrigH / 4,
             fontSize: 64,
@@ -554,7 +513,7 @@
 
     // ── Add Logo ──
     function addLogo() {
-        fabric.Image.fromURL('logo.png', function(img) {
+        fabric.Image.fromURL('logo2.png', function(img) {
             img.scaleToWidth(180);
             img.set({
                 left: 20,
@@ -1304,7 +1263,7 @@
         }));
 
         // Event title
-        canvas.add(new fabric.Textbox('KHRUA THAI LONDON', {
+        canvas.add(new fabric.Textbox('ZabSiam LONDON', {
             left: canvasOrigW / 2 - 250, top: 30,
             fontSize: 36, fontFamily: 'Playfair Display', fill: '#D4AF37',
             fontWeight: 'bold', textAlign: 'center', width: 500
@@ -1357,7 +1316,7 @@
     }
 
     function addLogoToTemplate(x, y, size) {
-        fabric.Image.fromURL('logo.png', function(img) {
+        fabric.Image.fromURL('logo2.png', function(img) {
             img.scaleToWidth(size);
             img.set({
                 left: x, top: y,

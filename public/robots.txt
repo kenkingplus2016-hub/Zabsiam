@@ -1,14 +1,4 @@
 User-agent: *
 Allow: /
 
-# Allow OpenAI (ChatGPT / Codex) crawlers
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: OAI-SearchBot
-Allow: /
-
-Sitemap: https://www.zabsiam.com/sitemap.xml
+Sitemap: https://khruathailondon.co.uk/sitemap.xml

@@ -3,175 +3,987 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZabSiam London | Premium Thai Street Food</title>
+    <title>Chor Malee | Premium Authentic Thai Desserts</title>
     
     <!-- SEO & Metadata -->
-    <meta name="description" content="Experience the ultimate Thai street food at ZabSiam London. Featuring our signature Pad Thai, spicy salads, and more.">
-    <meta name="keywords" content="ZabSiam, Thai food, London, Pad Thai, Street Food, Mango Sticky Rice">
+    <meta name="description" content="Chor Malee - Authentic and premium Thai desserts crafted with passion and tradition. Experience the true taste of Thong Yip, Thong Yod, Foi Thong, and more.">
+    <meta name="keywords" content="Chor Malee, Thai desserts, Thong Yip, Thong Yod, Foi Thong, Luk Chup, Premium Thai sweets">
     
+    <!-- Fonts and CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/zabsiam.css?v=2">
+    <link rel="stylesheet" href="chor-malee.css?v=20260731-delivery-options-1">
 </head>
 <body>
 
-    <!-- Header -->
+    <!-- Header Navigation -->
     <header>
-        <a href="index.html" class="logo">
-            <img src="images/zabsiam_logo_transparent.png" alt="ZabSiam Logo" onerror="this.src='images/logo.png'">
-        </a>
-        <nav style="display: flex; gap: 15px;">
-            <a href="popup.html" class="btn-primary" style="background: transparent; color: var(--primary); border: 1px solid var(--primary); padding: 10px 20px;">Popup Market</a>
-            <a href="catering.html" class="btn-primary" style="background: transparent; color: var(--primary); border: 1px solid var(--primary); padding: 10px 20px;">Private Catering</a>
-            <a href="#menu" class="btn-primary" style="padding: 10px 20px;">View Menu</a>
-        </nav>
+        <div class="container header-content">
+            <a href="#home" class="logo" aria-label="Chor Malee home"><img src="images/chor_malee_official_logo.png" alt="Chor Malee" class="logo-img"></a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#gifts-catering">Gifts & Catering</a></li>
+                    <li><a href="story.html">Story</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <!-- Hero Section with Video Background -->
-    <section class="hero">
-        <!-- Hero Video Playlist -->
-        <video id="hero-video" autoplay muted playsinline class="video-bg" style="transition: opacity 0.5s ease-in-out;">
-            <source src="https://cdn.pixabay.com/video/2022/10/18/135541-761922756_large.mp4" type="video/mp4">
+    <!-- Hero Section with Video Background Playlist -->
+    <section id="home" class="hero">
+        <!-- Video Background -->
+        <video id="heroVideo" class="hero-video-bg" autoplay muted playsinline poster="images/chor_malee_hero.jpg">
+            <!-- First video in playlist -->
+            <source src="video/assetsvideo1.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="hero-overlay"></div>
         
-        <div class="hero-content">
-            <h1>Authentic Thai Cuisine <br><span style="color: #ff6b00;">Bold & Fiery Flavours</span></h1>
-            <p>Discover our legendary spicy salads and signature grilled dishes, crafted to bring the vibrant taste of Thailand straight to you.</p>
-            <a href="#menu" class="btn-primary">Explore Our Menu</a>
+        <div class="container hero-content">
+            <span class="hero-subtitle">Authentic & Premium</span>
+            <img src="images/chor_malee_official_logo.png" alt="Chor Malee" class="hero-logo-img">
+            <h1>The Legacy of Thai Sweets</h1>
+            <p>Experience the authentic taste of Thai desserts, meticulously crafted with premium ingredients for the perfect blend of tradition and elegance.</p>
+            <a href="#menu" class="hero-btn">Explore Menu</a>
         </div>
     </section>
 
-    <!-- Main Menu Section -->
+    <!-- Menu Section -->
     <section id="menu" class="menu-section">
-        <h2 class="section-title">Our <span>Signature</span> Menu</h2>
-        <p class="section-subtitle">A curated selection of our most loved street food classics</p>
-        
-        <div class="menu-grid">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: #FFD700;">Pre-order Menu</h2>
+                <p>Authentic Thai desserts made fresh to order. Requires 3 days advance notice. Orders of 50 sets or more, and 50 Pcs Tray orders, require 7 days advance notice.</p>
+            </div>
             
-
-
-            <!-- Item 2: Salmon Spicy Salad -->
-            <div class="menu-card">
-                <div class="card-img-wrapper">
-                    <img src="images/salmon_spicy_salad_new.jpg" alt="Salmon Spicy Salad">
-                </div>
-                <div class="card-content">
-                    <div class="card-header">
-                        <div>
-                            <h3 class="card-title">Salmon Spicy Salad (Salmon Pla Salad)</h3>
-                        </div>
-                        <span class="card-price">£16.95</span>
+            <div class="menu-grid">
+                <!-- Menu Item 4 -->
+                <div class="menu-card">
+                    <div class="menu-image-container" style="position: relative;">
+                        <img src="images/chor_muang_pack.jpeg" alt="Chor Muang">
+                        <div style="position: absolute; top: 10px; right: 10px; background: #e65c00; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 0.8rem; z-index: 10;">Pre-order</div>
                     </div>
-                    <p class="card-desc">Fresh premium salmon tossed in a vibrant, zesty dressing with lemongrass, mint, shallots, and a kick of roasted chilli paste for the perfect balance of spicy and sour.</p>
+                    <div class="menu-content">
+                        <h3>Chor Muang</h3>
+                        <p>Traditional savoury Thai dumplings, hand-pleated into purple butterfly pea flowers. Made with rice flour, tapioca starch, arrowroot starch, butterfly pea flower infusion, lime juice, chicken, coriander root, garlic, pepper, onion, crispy shallots, peanuts, light soy sauce, salt, palm sugar, and vegetable oil.</p>
+                        <div class="pricing-options">
+                            <div class="pricing-option">
+                                <span class="option-price">£9.00</span>
+                                <span class="option-size">6 Pcs</span>
+                                <span class="option-weight">(Approx. 90g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Chor Muang (6 Pcs)', 9.00, 'images/chor_muang_pack.jpeg')">Add</button>
+                            </div>
+                            <div class="pricing-option">
+                                <span class="option-price">£16.99</span>
+                                <span class="option-size">12 Pcs</span>
+                                <span class="option-weight">(Approx. 180g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Chor Muang (12 Pcs)', 16.99, 'images/chor_muang_pack.jpeg')">Add</button>
+                            </div>
+                            <div class="pricing-option">
+                                <span class="option-price">£25.99</span>
+                                <span class="option-size">24 Pcs</span>
+                                <span class="option-weight">(Approx. 360g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Chor Muang (24 Pcs)', 25.99, 'images/chor_muang_pack.jpeg')">Add</button>
+                            </div>
+                            <div class="pricing-option">
+                                <span class="option-price">£59.99</span>
+                                <span class="option-size">50 Pcs Tray</span>
+                                <span class="option-weight">(Approx. 750g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Chor Muang Tray (50 Pcs)', 59.99, 'images/chor_muang_pack.jpeg')">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 5 -->
+                <div class="menu-card">
+                    <div class="menu-image-container" style="position: relative;">
+                        <img src="images/chor_phakakrong_pack.jpeg" alt="Chor Phakakrong">
+                        <div style="position: absolute; top: 10px; right: 10px; background: #e65c00; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 0.8rem; z-index: 10;">Pre-order</div>
+                    </div>
+                    <div class="menu-content">
+                        <h3>Chor Phakakrong</h3>
+                        <p>Lantana flower-shaped Thai dessert filled with smooth mung bean paste. The filling is made with mung beans, sugar, coconut milk, salt, and unsalted butter, wrapped in soft dough made with cake flour, coconut milk, sugar, food colouring, and jasmine flavouring.</p>
+                        <div class="pricing-options">
+                            <div class="pricing-option">
+                                <span class="option-price">£9.00</span>
+                                <span class="option-size">6 Pcs</span>
+                                <span class="option-weight">(Approx. 90g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Chor Phakakrong (6 Pcs)', 9.00, 'images/chor_phakakrong_pack.jpeg')">Add</button>
+                            </div>
+                            <div class="pricing-option">
+                                <span class="option-price">£16.99</span>
+                                <span class="option-size">12 Pcs</span>
+                                <span class="option-weight">(Approx. 180g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Chor Phakakrong (12 Pcs)', 16.99, 'images/chor_phakakrong_pack.jpeg')">Add</button>
+                            </div>
+                            <div class="pricing-option">
+                                <span class="option-price">£25.99</span>
+                                <span class="option-size">24 Pcs</span>
+                                <span class="option-weight">(Approx. 360g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Chor Phakakrong (24 Pcs)', 25.99, 'images/chor_phakakrong_pack.jpeg')">Add</button>
+                            </div>
+                            <div class="pricing-option">
+                                <span class="option-price">£59.99</span>
+                                <span class="option-size">50 Pcs Tray</span>
+                                <span class="option-weight">(Approx. 750g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Chor Phakakrong Tray (50 Pcs)', 59.99, 'images/chor_phakakrong_pack.jpeg')">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 6 -->
+                <div class="menu-card" style="border-color: var(--color-green-light); box-shadow: 0 0 15px rgba(112, 196, 96, 0.2);">
+                    <div class="menu-image-container" style="position: relative;">
+                        <img src="images/chor_malee_pack.jpeg" alt="Chor Malee Signature">
+                        <div style="position: absolute; top: 10px; right: 10px; background: #e65c00; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 0.8rem; z-index: 10;">Pre-order</div>
+                    </div>
+                    <div class="menu-content">
+                        <h3>Chor Malee (Signature)</h3>
+                        <p>Chor Malee's special signature Thai dessert, delicately crafted for a refined sweet experience. Made with cake flour, coconut, sugar, jasmine flavouring, candle-smoked coconut, palm sugar, and salt.</p>
+                        <div class="pricing-options">
+                            <div class="pricing-option">
+                                <span class="option-price">£9.00</span>
+                                <span class="option-size">6 Pcs</span>
+                                <span class="option-weight">(Approx. 90g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Chor Malee (6 Pcs)', 9.00, 'images/chor_malee_pack.jpeg')">Add</button>
+                            </div>
+                            <div class="pricing-option">
+                                <span class="option-price">£16.99</span>
+                                <span class="option-size">12 Pcs</span>
+                                <span class="option-weight">(Approx. 180g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Chor Malee (12 Pcs)', 16.99, 'images/chor_malee_pack.jpeg')">Add</button>
+                            </div>
+                            <div class="pricing-option">
+                                <span class="option-price">£25.99</span>
+                                <span class="option-size">24 Pcs</span>
+                                <span class="option-weight">(Approx. 360g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Chor Malee (24 Pcs)', 25.99, 'images/chor_malee_pack.jpeg')">Add</button>
+                            </div>
+                            <div class="pricing-option">
+                                <span class="option-price">£59.99</span>
+                                <span class="option-size">50 Pcs Tray</span>
+                                <span class="option-weight">(Approx. 750g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Chor Malee Tray (50 Pcs)', 59.99, 'images/chor_malee_pack.jpeg')">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pre-order Items -->
+                <!-- Pre-order Item 1 -->
+                <div class="menu-card">
+                    <div class="menu-image-container" style="position: relative;">
+                        <img src="images/khanom_tom_pack.jpeg" alt="Khanom Tom">
+                        <div style="position: absolute; top: 10px; right: 10px; background: #e65c00; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 0.8rem; z-index: 10;">Pre-order</div>
+                    </div>
+                    <div class="menu-content">
+                        <h3>Khanom Tom</h3>
+                        <p>Soft glutinous rice balls stuffed with sweet coconut, rolled in freshly grated coconut.</p>
+                        <div class="pricing-options">
+                            <div class="pricing-option">
+                                <span class="option-price">£9.00</span>
+                                <span class="option-size">6 Pcs</span>
+                                <span class="option-weight">(Approx. 90g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Khanom Tom (6 Pcs)', 9.00, 'images/khanom_tom_pack.jpeg')">Add</button>
+                            </div>
+                            <div class="pricing-option">
+                                <span class="option-price">£16.99</span>
+                                <span class="option-size">12 Pcs</span>
+                                <span class="option-weight">(Approx. 180g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Khanom Tom (12 Pcs)', 16.99, 'images/khanom_tom_pack.jpeg')">Add</button>
+                            </div>
+                            <div class="pricing-option">
+                                <span class="option-price">£25.99</span>
+                                <span class="option-size">24 Pcs</span>
+                                <span class="option-weight">(Approx. 360g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Khanom Tom (24 Pcs)', 25.99, 'images/khanom_tom_pack.jpeg')">Add</button>
+                            </div>
+                            <div class="pricing-option">
+                                <span class="option-price">£59.99</span>
+                                <span class="option-size">50 Pcs Tray</span>
+                                <span class="option-weight">(Approx. 750g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Khanom Tom Tray (50 Pcs)', 59.99, 'images/khanom_tom_pack.jpeg')">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pre-order Item 2 -->
+                <div class="menu-card">
+                    <div class="menu-image-container" style="position: relative;">
+                        <img src="images/khanom_chan_pandan_pack.jpeg" alt="Khanom Chan Pandan">
+                        <div style="position: absolute; top: 10px; right: 10px; background: #e65c00; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 0.8rem; z-index: 10;">Pre-order</div>
+                    </div>
+                    <div class="menu-content">
+                        <h3>Khanom Chan Pandan</h3>
+                        <p>Classic Thai layered dessert featuring the fragrant aroma of fresh pandan leaves.</p>
+                        <div class="pricing-options">
+                            <div class="pricing-option">
+                                <span class="option-price">£9.00</span>
+                                <span class="option-size">6 Pcs</span>
+                                <span class="option-weight">(Approx. 90g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Khanom Chan Pandan (6 Pcs)', 9.00, 'images/khanom_chan_pandan_pack.jpeg')">Add</button>
+                            </div>
+                            <div class="pricing-option">
+                                <span class="option-price">£16.99</span>
+                                <span class="option-size">12 Pcs</span>
+                                <span class="option-weight">(Approx. 180g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Khanom Chan Pandan (12 Pcs)', 16.99, 'images/khanom_chan_pandan_pack.jpeg')">Add</button>
+                            </div>
+                            <div class="pricing-option">
+                                <span class="option-price">£25.99</span>
+                                <span class="option-size">24 Pcs</span>
+                                <span class="option-weight">(Approx. 360g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Khanom Chan Pandan (24 Pcs)', 25.99, 'images/khanom_chan_pandan_pack.jpeg')">Add</button>
+                            </div>
+                            <div class="pricing-option">
+                                <span class="option-price">£59.99</span>
+                                <span class="option-size">50 Pcs Tray</span>
+                                <span class="option-weight">(Approx. 750g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Khanom Chan Pandan Tray (50 Pcs)', 59.99, 'images/khanom_chan_pandan_pack.jpeg')">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pre-order Item 3 -->
+                <div class="menu-card">
+                    <div class="menu-image-container" style="position: relative;">
+                        <img src="images/khanom_chan_butterfly_pea_pack.jpeg" alt="Butterfly Pea Khanom Chan">
+                        <div style="position: absolute; top: 10px; right: 10px; background: #e65c00; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 0.8rem; z-index: 10;">Pre-order</div>
+                    </div>
+                    <div class="menu-content">
+                        <h3>Butterfly Pea Khanom Chan</h3>
+                        <p>Our beautiful layered dessert infused with the natural purple-blue hues of butterfly pea flowers.</p>
+                        <div class="pricing-options">
+                            <div class="pricing-option">
+                                <span class="option-price">£9.00</span>
+                                <span class="option-size">6 Pcs</span>
+                                <span class="option-weight">(Approx. 90g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Butterfly Pea Khanom Chan (6 Pcs)', 9.00, 'images/khanom_chan_butterfly_pea_pack.jpeg')">Add</button>
+                            </div>
+                            <div class="pricing-option">
+                                <span class="option-price">£16.99</span>
+                                <span class="option-size">12 Pcs</span>
+                                <span class="option-weight">(Approx. 180g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Butterfly Pea Khanom Chan (12 Pcs)', 16.99, 'images/khanom_chan_butterfly_pea_pack.jpeg')">Add</button>
+                            </div>
+                            <div class="pricing-option">
+                                <span class="option-price">£25.99</span>
+                                <span class="option-size">24 Pcs</span>
+                                <span class="option-weight">(Approx. 360g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Butterfly Pea Khanom Chan (24 Pcs)', 25.99, 'images/khanom_chan_butterfly_pea_pack.jpeg')">Add</button>
+                            </div>
+                            <div class="pricing-option">
+                                <span class="option-price">£59.99</span>
+                                <span class="option-size">50 Pcs Tray</span>
+                                <span class="option-weight">(Approx. 750g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Butterfly Pea Khanom Chan Tray (50 Pcs)', 59.99, 'images/khanom_chan_butterfly_pea_pack.jpeg')">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pre-order Item 4: Khanom Piak Poon -->
+                <div class="menu-card">
+                    <div class="menu-image-container" style="position: relative;">
+                        <img src="images/khanom_piak_poon_pack.jpeg" alt="Khanom Piak Poon">
+                        <div style="position: absolute; top: 10px; right: 10px; background: #e65c00; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 0.8rem; z-index: 10;">Pre-order</div>
+                    </div>
+                    <div class="menu-content">
+                        <h3>Khanom Piak Poon</h3>
+                        <p>Pandan-infused rose-shaped jelly topped with white sesame seeds. A beautiful and refreshing traditional Thai sweet. Box of 4 pcs.</p>
+                        <div class="pricing-options">
+                            <div class="pricing-option">
+                                <span class="option-price">£9.00</span>
+                                <span class="option-size">6 Pcs</span>
+                                <span class="option-weight">(Approx. 90g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Khanom Piak Poon (6 Pcs)', 9.00, 'images/khanom_piak_poon_pack.jpeg')">Add</button>
+                            </div>
+                            <div class="pricing-option">
+                                <span class="option-price">£16.99</span>
+                                <span class="option-size">12 Pcs</span>
+                                <span class="option-weight">(Approx. 180g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Khanom Piak Poon (12 Pcs)', 16.99, 'images/khanom_piak_poon_pack.jpeg')">Add</button>
+                            </div>
+                            <div class="pricing-option">
+                                <span class="option-price">£25.99</span>
+                                <span class="option-size">24 Pcs</span>
+                                <span class="option-weight">(Approx. 360g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Khanom Piak Poon (24 Pcs)', 25.99, 'images/khanom_piak_poon_pack.jpeg')">Add</button>
+                            </div>
+                            <div class="pricing-option">
+                                <span class="option-price">£59.99</span>
+                                <span class="option-size">50 Pcs Tray</span>
+                                <span class="option-weight">(Approx. 750g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Khanom Piak Poon Tray (50 Pcs)', 59.99, 'images/khanom_piak_poon_pack.jpeg')">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pre-order Item 5 -->
+                <div class="menu-card">
+                    <div class="menu-image-container" style="position: relative;">
+                        <img src="images/pandan_coconut_milk_jelly.jpeg" alt="Pandan Coconut Milk Jelly">
+                        <div style="position: absolute; top: 10px; right: 10px; background: #e65c00; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 0.8rem; z-index: 10;">Pre-order</div>
+                    </div>
+                    <div class="menu-content">
+                        <h3>Pandan Coconut Milk Jelly</h3>
+                        <p>Soft coconut milk jelly layered with fragrant pandan, crafted into delicate Thai floral pieces.</p>
+                        <div class="pricing-options">
+                            <div class="pricing-option">
+                                <span class="option-price">£9.00</span>
+                                <span class="option-size">6 Pcs</span>
+                                <span class="option-weight">(Approx. 90g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Pandan Coconut Milk Jelly (6 Pcs)', 9.00, 'images/pandan_coconut_milk_jelly.jpeg')">Add</button>
+                            </div>
+                            <div class="pricing-option">
+                                <span class="option-price">£16.99</span>
+                                <span class="option-size">12 Pcs</span>
+                                <span class="option-weight">(Approx. 180g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Pandan Coconut Milk Jelly (12 Pcs)', 16.99, 'images/pandan_coconut_milk_jelly.jpeg')">Add</button>
+                            </div>
+                            <div class="pricing-option">
+                                <span class="option-price">£25.99</span>
+                                <span class="option-size">24 Pcs</span>
+                                <span class="option-weight">(Approx. 360g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Pandan Coconut Milk Jelly (24 Pcs)', 25.99, 'images/pandan_coconut_milk_jelly.jpeg')">Add</button>
+                            </div>
+                            <div class="pricing-option">
+                                <span class="option-price">£59.99</span>
+                                <span class="option-size">50 Pcs Tray</span>
+                                <span class="option-weight">(Approx. 750g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Pandan Coconut Milk Jelly Tray (50 Pcs)', 59.99, 'images/pandan_coconut_milk_jelly.jpeg')">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pre-order Item 6 -->
+                <div class="menu-card">
+                    <div class="menu-image-container" style="position: relative;">
+                        <img src="images/butterfly_pea_coconut_milk_jelly.jpeg" alt="Butterfly Pea Coconut Milk Jelly">
+                        <div style="position: absolute; top: 10px; right: 10px; background: #e65c00; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 0.8rem; z-index: 10;">Pre-order</div>
+                    </div>
+                    <div class="menu-content">
+                        <h3>Butterfly Pea Coconut Milk Jelly</h3>
+                        <p>Soft coconut milk jelly with natural butterfly pea colour, finished in elegant purple floral pieces.</p>
+                        <div class="pricing-options">
+                            <div class="pricing-option">
+                                <span class="option-price">£9.00</span>
+                                <span class="option-size">6 Pcs</span>
+                                <span class="option-weight">(Approx. 90g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Butterfly Pea Coconut Milk Jelly (6 Pcs)', 9.00, 'images/butterfly_pea_coconut_milk_jelly.jpeg')">Add</button>
+                            </div>
+                            <div class="pricing-option">
+                                <span class="option-price">£16.99</span>
+                                <span class="option-size">12 Pcs</span>
+                                <span class="option-weight">(Approx. 180g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Butterfly Pea Coconut Milk Jelly (12 Pcs)', 16.99, 'images/butterfly_pea_coconut_milk_jelly.jpeg')">Add</button>
+                            </div>
+                            <div class="pricing-option">
+                                <span class="option-price">£25.99</span>
+                                <span class="option-size">24 Pcs</span>
+                                <span class="option-weight">(Approx. 360g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Butterfly Pea Coconut Milk Jelly (24 Pcs)', 25.99, 'images/butterfly_pea_coconut_milk_jelly.jpeg')">Add</button>
+                            </div>
+                            <div class="pricing-option">
+                                <span class="option-price">£59.99</span>
+                                <span class="option-size">50 Pcs Tray</span>
+                                <span class="option-weight">(Approx. 750g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Butterfly Pea Coconut Milk Jelly Tray (50 Pcs)', 59.99, 'images/butterfly_pea_coconut_milk_jelly.jpeg')">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pre-order Item 7 -->
+                <div class="menu-card">
+                    <div class="menu-image-container" style="position: relative;">
+                        <img src="images/khanom_luem_kleun_pack.jpeg" alt="Khanom Luem Kleun">
+                        <div style="position: absolute; top: 10px; right: 10px; background: #e65c00; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 0.8rem; z-index: 10;">Pre-order</div>
+                    </div>
+                    <div class="menu-content">
+                        <h3>Khanom Luem Kleun</h3>
+                        <p>The "forget to swallow" dessert. Delightfully soft mung bean cups topped with rich coconut cream.</p>
+                        <div class="pricing-options">
+                            <div class="pricing-option">
+                                <span class="option-price">£9.00</span>
+                                <span class="option-size">6 Pcs</span>
+                                <span class="option-weight">(Approx. 90g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Khanom Luem Kleun (6 Pcs)', 9.00, 'images/khanom_luem_kleun_pack.jpeg')">Add</button>
+                            </div>
+                            <div class="pricing-option">
+                                <span class="option-price">£16.99</span>
+                                <span class="option-size">12 Pcs</span>
+                                <span class="option-weight">(Approx. 180g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Khanom Luem Kleun (12 Pcs)', 16.99, 'images/khanom_luem_kleun_pack.jpeg')">Add</button>
+                            </div>
+                            <div class="pricing-option">
+                                <span class="option-price">£25.99</span>
+                                <span class="option-size">24 Pcs</span>
+                                <span class="option-weight">(Approx. 360g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Khanom Luem Kleun (24 Pcs)', 25.99, 'images/khanom_luem_kleun_pack.jpeg')">Add</button>
+                            </div>
+                            <div class="pricing-option">
+                                <span class="option-price">£59.99</span>
+                                <span class="option-size">50 Pcs Tray</span>
+                                <span class="option-weight">(Approx. 750g)</span>
+                                <button class="add-to-cart-btn small" onclick="addToCart('Khanom Luem Kleun Tray (50 Pcs)', 59.99, 'images/khanom_luem_kleun_pack.jpeg')">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gifts & Catering Section -->
+    <section id="gifts-catering" class="gifts-catering-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="gc-label">Services</span>
+                <h2 style="color: #FFD700;">Gifts & Catering</h2>
+                <p>Make every occasion unforgettable with our beautifully crafted Thai dessert packages</p>
+            </div>
+
+            <div class="gc-grid">
+                <!-- Gift Set Card -->
+                <div class="gc-card gc-card-compact" onclick="openSetPopup('gift')" role="button" tabindex="0" onkeydown="handleSetCardKey(event, 'gift')">
+                    <div class="gc-image-container">
+                        <img src="images/gift_set_chor_malee.png" alt="Chor Malee Gift Set">
+                        <div class="gc-overlay">
+                            <span class="gc-tag"><i class="fas fa-gift"></i> Best Seller</span>
+                        </div>
+                    </div>
+                    <div class="gc-content">
+                        <div class="gc-icon-circle">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h3>Gift Set</h3>
+                        <p>Beautifully packaged Thai dessert gift set with 16 assorted pieces, perfect for birthdays, celebrations, or showing appreciation.</p>
+                        <ul class="gc-features">
+                            <li><i class="fas fa-check-circle"></i> 16 Pcs per set</li>
+                            <li><i class="fas fa-check-circle"></i> Approx. 240g</li>
+                            <li><i class="fas fa-check-circle"></i> Premium gift packaging</li>
+                        </ul>
+                        <div class="gc-price-range">
+                            <span class="gc-from">Set</span>
+                            <span class="gc-amount">£25.99</span>
+                        </div>
+                        <button type="button" class="gc-btn" onclick="event.stopPropagation(); openSetPopup('gift')">
+                            <i class="fas fa-envelope"></i> View Gift Set
+                        </button>
+                    </div>
+                </div>
+
+                <!-- HBD Kit Card -->
+                <div class="gc-card gc-card-hbd gc-card-compact" onclick="openSetPopup('hbd')" role="button" tabindex="0" onkeydown="handleSetCardKey(event, 'hbd')">
+                    <div class="gc-image-container">
+                        <img src="images/hbd_kit.png" alt="Chor Malee HBD Kit">
+                        <div class="gc-overlay">
+                            <span class="gc-tag gc-tag-hbd"><i class="fas fa-cake-candles"></i> Birthday</span>
+                        </div>
+                    </div>
+                    <div class="gc-content">
+                        <div class="gc-icon-circle hbd">
+                            <i class="fas fa-cake-candles"></i>
+                        </div>
+                        <h3>HBD Kit</h3>
+                        <p>A ready-to-gift birthday dessert kit with handcrafted Thai sweets, a greeting card, candle, and elegant presentation.</p>
+                        <ul class="gc-features">
+                            <li><i class="fas fa-check-circle"></i> Birthday card included</li>
+                            <li><i class="fas fa-check-circle"></i> Candle and gift ribbon</li>
+                            <li><i class="fas fa-check-circle"></i> Custom message available</li>
+                        </ul>
+                        <div class="gc-price-range">
+                            <span class="gc-from">From</span>
+                            <span class="gc-amount">£28.00</span>
+                        </div>
+                        <button type="button" class="gc-btn gc-btn-hbd" onclick="event.stopPropagation(); openSetPopup('hbd')">
+                            <i class="fas fa-cake-candles"></i> View HBD Kit
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Corporate Break Boxes Card -->
+                <div class="gc-card gc-card-featured gc-card-compact" onclick="openSetPopup('meeting')" role="button" tabindex="0" onkeydown="handleSetCardKey(event, 'meeting')">
+                    <div class="gc-image-container">
+                        <img src="images/meeting_set_bael_fruit.png" alt="Corporate Break Boxes">
+                        <div class="gc-overlay">
+                            <span class="gc-tag"><i class="fas fa-star"></i> Popular</span>
+                        </div>
+                    </div>
+                    <div class="gc-content">
+                        <div class="gc-icon-circle featured">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3>Corporate Break Boxes</h3>
+                        <p>Corporate dessert box with 20 assorted Thai sweets, approx. 300g, paired with 1 Thai herbal drink.</p>
+                        
+                        <!-- Drink Options -->
+                        <div class="gc-drink-options">
+                            <p class="gc-drink-title"><i class="fas fa-hand-pointer"></i> Choose your Thai herbal drink:</p>
+                            <div class="gc-drink-list">
+                                <div class="gc-drink-chip" style="--chip-color: #d4a017;">
+                                    <span class="gc-drink-dot" style="background: #d4a017;"></span>
+                                    Bael Fruit
+                                </div>
+                                <div class="gc-drink-chip" style="--chip-color: #22c55e;">
+                                    <span class="gc-drink-dot" style="background: #22c55e;"></span>
+                                    Pandan Juice
+                                </div>
+                                <div class="gc-drink-chip" style="--chip-color: #10b981;">
+                                    <span class="gc-drink-dot" style="background: #10b981;"></span>
+                                    Gotu Kola
+                                </div>
+                                <div class="gc-drink-chip" style="--chip-color: #6d28d9;">
+                                    <span class="gc-drink-dot" style="background: #6d28d9;"></span>
+                                    Butterfly Pea
+                                </div>
+                            </div>
+                            <p class="gc-drink-note"><i class="fas fa-bottle-water"></i> 250 ml bottle included</p>
+                        </div>
+
+                        <ul class="gc-features">
+                            <li><i class="fas fa-check-circle"></i> 20 Pcs per box</li>
+                            <li><i class="fas fa-check-circle"></i> Approx. 300g</li>
+                            <li><i class="fas fa-check-circle"></i> Professional presentation</li>
+                            <li><i class="fas fa-check-circle"></i> Delivery & setup available</li>
+                        </ul>
+                        <div class="gc-price-range">
+                            <span class="gc-from">Box</span>
+                            <span class="gc-amount">£35.99</span>
+                        </div>
+                        <button type="button" class="gc-btn gc-btn-featured" onclick="event.stopPropagation(); openSetPopup('meeting')">
+                            <i class="fas fa-calendar-alt"></i> View Corporate Break Boxes
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Wedding Auspicious Sweets Card -->
+                <div class="gc-card gc-card-wedding" onclick="openSetPopup('wedding')" role="button" tabindex="0" onkeydown="handleSetCardKey(event, 'wedding')">
+                    <div class="gc-image-container">
+                        <img src="images/wedding_sweets.jpg" alt="Thai Wedding Auspicious Sweets">
+                        <div class="gc-overlay">
+                            <span class="gc-tag gc-tag-wedding"><i class="fas fa-heart"></i> Auspicious</span>
+                        </div>
+                    </div>
+                    <div class="gc-content">
+                        <div class="gc-icon-circle wedding">
+                            <i class="fas fa-rings-wedding"></i>
+                        </div>
+                        <h3>Wedding Auspicious Sweets</h3>
+                        <p>Traditional Thai golden sweets for weddings and ceremonies. Thong Yip, Thong Yod, and Foi Thong â€” symbols of prosperity, fortune, and longevity.</p>
+                        <ul class="gc-features">
+                            <li><i class="fas fa-check-circle"></i> Thong Yip, Thong Yod, Foi Thong</li>
+                            <li><i class="fas fa-check-circle"></i> Elegant ceremonial trays</li>
+                            <li><i class="fas fa-check-circle"></i> Custom quantities available</li>
+                            <li><i class="fas fa-check-circle"></i> Auspicious packaging</li>
+                        </ul>
+                        <div class="gc-price-range">
+                            <span class="gc-from">From</span>
+                            <span class="gc-amount">£30.00</span>
+                        </div>
+                        <button type="button" class="gc-btn gc-btn-wedding" onclick="event.stopPropagation(); openSetPopup('wedding')">
+                            <i class="fas fa-heart"></i> View Wedding Set
+                        </button>
+                    </div>
                 </div>
             </div>
 
-            <!-- Item 3: Grilled Pork Neck -->
-            <div class="menu-card">
-                <div class="card-img-wrapper">
-                    <img src="images/grilled_pork_neck_new.jpg" alt="Grilled Pork Neck" onerror="this.src='images/Kor Moo Yang sum tum.jpg'">
+            <!-- Testimonial / Trust Bar -->
+            <div class="gc-trust-bar">
+                <div class="gc-trust-item">
+                    <i class="fas fa-truck"></i>
+                    <span>UK-wide Delivery</span>
                 </div>
-                <div class="card-content">
-                    <div class="card-header">
-                        <div>
-                            <h3 class="card-title">Kor Moo Yang</h3>
-                        </div>
-                        <span class="card-price">£12.95</span>
-                    </div>
-                    <p class="card-desc">Succulent pork neck marinated overnight in coriander root, garlic, and oyster sauce, grilled to perfection. Served with our spicy tamarind dipping sauce (Jaew).</p>
+                <div class="gc-trust-item">
+                    <i class="fas fa-hand-sparkles"></i>
+                    <span>Handcrafted Fresh</span>
                 </div>
-            </div>
-
-            <!-- Item: Nam Tok Grilled Pork Neck -->
-            <div class="menu-card">
-                <div class="card-img-wrapper">
-                    <img src="images/nam_tok_kor_moo_yang_new.jpg" alt="Nam Tok Grilled Pork Neck">
+                <div class="gc-trust-item">
+                    <i class="fas fa-leaf"></i>
+                    <span>Natural Ingredients</span>
                 </div>
-                <div class="card-content">
-                    <div class="card-header">
-                        <div>
-                            <h3 class="card-title">Nam Tok Kor Moo Yang with Sticky Rice</h3>
-                        </div>
-                        <span class="card-price">£15.95</span>
-                    </div>
-                    <p class="card-desc">Spicy and sour grilled pork neck salad tossed with roasted rice powder, chilli flakes, red onion, and mint leaves. Served with warm, traditional Thai sticky rice.</p>
+                <div class="gc-trust-item">
+                    <i class="fas fa-award"></i>
+                    <span>Premium Quality</span>
                 </div>
             </div>
-
-            <!-- Item 4: Duck Larb -->
-            <div class="menu-card">
-                <div class="card-img-wrapper">
-                    <img src="images/larb_ped.jpg" alt="Duck Larb (Larb Ped)" onerror="this.src='images/zabsiam_logo_official.jpg'">
-                </div>
-                <div class="card-content">
-                    <div class="card-header">
-                        <div>
-                            <h3 class="card-title">Duck Larb (Larb Ped)</h3>
-                        </div>
-                        <span class="card-price">£16.95</span>
-                    </div>
-                    <p class="card-desc">A flavourful and spicy minced duck salad originating from Northeastern Thailand. Tossed with roasted rice powder, fresh mint, coriander, shallots, and a zesty lime dressing.</p>
-                </div>
-            </div>
-
-            <!-- Item 5: Mango Sticky Rice -->
-            <div class="menu-card">
-                <div class="card-img-wrapper">
-                    <img src="images/box_mango_sticky_rice.jpg" alt="Mango Sticky Rice" onerror="this.src='images/mango_ice_cream.jpg'">
-                </div>
-                <div class="card-content">
-                    <div class="card-header">
-                        <div>
-                            <h3 class="card-title">Mango Sticky Rice</h3>
-                        </div>
-                        <span class="card-price">£8.95</span>
-                    </div>
-                    <p class="card-desc">Sweet, ripe Nam Dok Mai mango served with coconut-infused sweet sticky rice, drizzled with rich coconut cream and sprinkled with crispy mung beans.</p>
-                </div>
-            </div>
-
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 ZabSiam London. All rights reserved.</p>
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <img src="images/chor_malee_official_logo.png" alt="Chor Malee" class="footer-logo-img">
+                <p>Open Daily: 09:00 AM - 06:00 PM</p>
+                <div style="margin-top: 1rem; font-size: 1.5rem; display: flex; justify-content: center; gap: 1rem;">
+                    <a href="#contact" aria-label="Facebook" style="color: var(--color-green-light);"><i class="fab fa-facebook"></i></a>
+                    <a href="#contact" aria-label="Instagram" style="color: var(--color-green-light);"><i class="fab fa-instagram"></i></a>
+                    <a href="#contact" aria-label="Line" style="color: var(--color-green-light);"><i class="fab fa-line"></i></a>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2026 Chor Malee Premium Thai Desserts. All Rights Reserved.</p>
+        </div>
     </footer>
 
-    <!-- Video Playlist Logic -->
+    <!-- Scripts for animations/interactions -->
     <script>
-        const videoElement = document.getElementById('hero-video');
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetSelector = this.getAttribute('href');
+                if (!targetSelector || targetSelector === '#') return;
+                const target = document.querySelector(targetSelector);
+                if (!target) return;
+                e.preventDefault();
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple scroll reveal animation for cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.menu-card').forEach(card => {
+            card.style.opacity = "0";
+            card.style.transform = "translateY(50px)";
+            card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+            observer.observe(card);
+        });
+    </script>
+    <!-- Floating Cart Button -->
+    <button class="cart-floating-btn" onclick="toggleCart()" aria-label="Open cart">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count" class="cart-badge">0</span>
+    </button>
+
+    <!-- Cart & Checkout Modal -->
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-modal-content">
+            <div class="cart-header">
+                <h2>Your Order</h2>
+                <button class="close-cart" onclick="closeCart()" aria-label="Close cart">&times;</button>
+            </div>
+            
+            <div id="cart-items" class="cart-items-container">
+                <!-- Cart items will be injected here -->
+            </div>
+            
+            <div class="cart-summary">
+                <div class="summary-line">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal">£0.00</span>
+                </div>
+                <div class="summary-line">
+                    <span id="delivery-summary-label">Standard Delivery</span>
+                    <span id="delivery-summary-fee">£5.00</span>
+                </div>
+                <div class="summary-line total-line">
+                    <span>Total</span>
+                    <span id="cart-total">£0.00</span>
+                </div>
+            </div>
+            
+            <form class="checkout-form" onsubmit="proceedToCheckout(event)">
+                <h3>Delivery Details</h3>
+                <input type="text" id="custName" placeholder="Full Name" required>
+                <input type="email" id="custEmail" placeholder="Email Address" required>
+                <input type="tel" id="custPhone" placeholder="Phone Number" required>
+                <textarea id="custAddress" placeholder="Full Postal Address" rows="3" required></textarea>
+                <div class="delivery-checkout">
+                    <h4>Delivery Options</h4>
+                    <div class="delivery-options">
+                        <label>
+                            <input type="radio" name="deliveryOption" value="standard" data-label="Standard Delivery" data-fee="5.00" checked>
+                            <span><strong>Standard Delivery</strong><small>£5.00</small></span>
+                        </label>
+                        <label>
+                            <input type="radio" name="deliveryOption" value="express" data-label="Express Delivery" data-fee="12.00">
+                            <span><strong>Express Delivery</strong><small>£12.00</small></span>
+                        </label>
+                        <label>
+                            <input type="radio" name="deliveryOption" value="large-express" data-label="Large / Multiple Boxes Express" data-fee="16.00">
+                            <span><strong>Large / Multiple Boxes Express</strong><small>From £16.00</small></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="allergy-checkout">
+                    <h4>Allergy Information</h4>
+                    <p>Please select any allergens we should be aware of.</p>
+                    <div class="allergy-grid">
+                        <label><input type="checkbox" name="allergies" value="Celery"> Celery</label>
+                        <label><input type="checkbox" name="allergies" value="Cereals containing gluten"> Cereals containing gluten</label>
+                        <label><input type="checkbox" name="allergies" value="Crustaceans"> Crustaceans</label>
+                        <label><input type="checkbox" name="allergies" value="Eggs"> Eggs</label>
+                        <label><input type="checkbox" name="allergies" value="Fish"> Fish</label>
+                        <label><input type="checkbox" name="allergies" value="Lupin"> Lupin</label>
+                        <label><input type="checkbox" name="allergies" value="Milk"> Milk</label>
+                        <label><input type="checkbox" name="allergies" value="Molluscs"> Molluscs</label>
+                        <label><input type="checkbox" name="allergies" value="Mustard"> Mustard</label>
+                        <label><input type="checkbox" name="allergies" value="Peanuts"> Peanuts</label>
+                        <label><input type="checkbox" name="allergies" value="Sesame"> Sesame</label>
+                        <label><input type="checkbox" name="allergies" value="Soybeans"> Soybeans</label>
+                        <label><input type="checkbox" name="allergies" value="Sulphur dioxide and sulphites"> Sulphur dioxide and sulphites</label>
+                        <label><input type="checkbox" name="allergies" value="Tree nuts"> Tree nuts</label>
+                    </div>
+                    <textarea id="otherAllergies" placeholder="Other allergies or dietary notes" rows="2"></textarea>
+                </div>
+                
+                <button type="submit" id="checkout-btn" class="hero-btn" style="width: 100%; margin-top: 1rem;" disabled>
+                    Proceed to Payment (Stripe)
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="cart.js?v=20260731-trial-ai-off-1"></script>
+    <script>
+        // Hero Video Playlist
+        const heroVideo = document.getElementById('heroVideo');
         
-        // 🚨 IMPORTANT: When you have your actual videos, replace these 3 URLs below with your own! 
-        // Example: 'videos/grill-pork-neck.mp4'
-        const playlist = [
-            "https://cdn.pixabay.com/video/2022/10/18/135541-761922756_large.mp4",  // Video 1 (Placeholder for Grilled Pork Neck)
-            "https://cdn.pixabay.com/video/2024/02/09/200000-911877400_large.mp4",  // Video 2 (Placeholder for Slicing Pork Neck)
-            "https://cdn.pixabay.com/video/2024/05/21/213038_large.mp4"   // Video 3 (Placeholder for Sticky Rice & Jaew)
+        // Define your video playlist URLs here
+        const videoPlaylist = [
+            "video/assetsvideo1.mp4",
+            "video/assetsvideo2.mp4",
+            "video/assetsvideo3.mp4",
+            "video/assetsvideo4.mp4"
         ];
         
         let currentVideoIndex = 0;
 
-        videoElement.addEventListener('ended', () => {
-            // Fade out
-            videoElement.style.opacity = 0;
-            
-            setTimeout(() => {
-                // Change video source
-                currentVideoIndex = (currentVideoIndex + 1) % playlist.length;
-                videoElement.src = playlist[currentVideoIndex];
-                videoElement.load();
+        if (heroVideo) {
+            heroVideo.addEventListener('ended', function() {
+                // Fade out slightly
+                heroVideo.style.opacity = 0;
                 
-                // Play and fade in
-                videoElement.play().then(() => {
-                    videoElement.style.opacity = 1;
-                }).catch(err => {
-                    console.log("Video auto-play blocked or failed", err);
-                    videoElement.style.opacity = 1;
-                });
-            }, 500); // 500ms fade transition
+                setTimeout(() => {
+                    // Change source
+                    currentVideoIndex = (currentVideoIndex + 1) % videoPlaylist.length;
+                    heroVideo.src = videoPlaylist[currentVideoIndex];
+                    heroVideo.play().catch(e => console.log("Autoplay prevented:", e));
+                    
+                    // Fade back in
+                    heroVideo.style.opacity = 1;
+                }, 500); // Wait 500ms for transition
+            });
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeCart();
+                closeSetPopup();
+            }
         });
+
+        document.getElementById('cart-modal')?.addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeCart();
+            }
+        });
+
+        const setPopupData = {
+            gift: {
+                label: 'Gift Set',
+                title: 'Chor Malee Gift Set',
+                badge: 'Best Seller',
+                image: 'images/gift_set_chor_malee.png',
+                price: 'Gift Set Menu',
+                desc: 'Beautifully packed Thai dessert gift set with 16 assorted pieces. Approx. 240g.',
+                menu: [
+                    { name: 'Classic Gift Set (16 Pcs)', price: 25.99, priceLabel: '£25.99', desc: '16 assorted Thai desserts in premium gift packaging. Approx. 240g.', img: 'images/gift_set_chor_malee.png' },
+                    { name: 'Golden Blossom Gift Set (16 Pcs)', price: 25.99, priceLabel: '£25.99', desc: '16 assorted Thai desserts in premium gift packaging. Approx. 240g.', img: 'images/golden_blossom_gift_set.jpg' },
+                    { name: 'Royal Blossom Gift Set (16 Pcs)', price: 25.99, priceLabel: '£25.99', desc: '16 assorted Thai desserts in premium gift packaging. Approx. 240g.', img: 'images/royal_blossom_gift_set.png' }
+                ]
+            },
+            hbd: {
+                label: 'HBD Kit',
+                title: 'Chor Malee HBD Kit',
+                badge: 'Birthday',
+                image: 'images/hbd_kit.png',
+                price: 'HBD Kit Menu',
+                desc: 'Birthday-ready Thai dessert kits with a greeting card, candle, ribbon, and elegant gift presentation.',
+                menu: [
+                    { name: 'Florida HBD Kit', price: 28, priceLabel: '£28.00', desc: 'A floral birthday dessert kit with assorted Thai sweets, birthday card, and candle.', img: 'images/hbd_kit.png' },
+                    { name: 'Rainbow HBD Kit', price: 38, priceLabel: '£38.00', desc: 'A rainbow-themed birthday kit with premium dessert assortment, ribbon, candle, and custom message card.', img: 'images/deluxe_hbd_kit.png' },
+                    { name: 'Colorful HBD Kit', price: 48, priceLabel: 'From £48.00', desc: 'A colourful birthday kit with custom dessert selection, message card, and presentation details.', img: 'images/colorful_hbd_kit.png' }
+                ]
+            },
+            meeting: {
+                label: 'Corporate Break Boxes',
+                title: 'Corporate Break Boxes',
+                badge: 'Popular',
+                image: 'images/meeting_set_bael_fruit.png',
+                price: 'Corporate Break Boxes Menu',
+                desc: 'Corporate dessert box with 20 assorted Thai sweets, approx. 300g, paired with 1 Thai herbal drink in a 250 ml bottle.',
+                menu: [
+                    { name: 'Corporate Break Boxes - Bael set', price: 35.99, priceLabel: '£35.99', desc: '20 assorted Thai sweets, approx. 300g, with 1 bael fruit drink. 250 ml bottle included.', img: 'images/meeting_set_bael_fruit.png' },
+                    { name: 'Corporate Break Boxes - Pandan set', price: 35.99, priceLabel: '£35.99', desc: '20 assorted Thai sweets, approx. 300g, with 1 pandan juice. 250 ml bottle included.', img: 'images/meeting_set_pandan_juice.png' },
+                    { name: 'Corporate Break Boxes - Gotu Kola set', price: 35.99, priceLabel: '£35.99', desc: '20 assorted Thai sweets, approx. 300g, with 1 gotu kola drink. 250 ml bottle included.', img: 'images/meeting_set_gotu_kola.png' },
+                    { name: 'Corporate Break Boxes - Butterfly Pea set', price: 35.99, priceLabel: '£35.99', desc: '20 assorted Thai sweets, approx. 300g, with 1 butterfly pea drink. 250 ml bottle included.', img: 'images/meeting_set_chor_malee.png' }
+                ]
+            },
+            wedding: {
+                label: 'Wedding Set',
+                title: 'Wedding Auspicious Sweets',
+                badge: 'Auspicious',
+                image: 'images/wedding_sweets.jpg',
+                price: 'Wedding Set Menu',
+                desc: 'Traditional Thai golden sweets for weddings and ceremonies, prepared for prosperity, fortune, and longevity.',
+                menu: [
+                    { name: 'Auspicious Sweet Tray', price: 30, priceLabel: '£30.00', desc: 'Thong Yip, Thong Yod, and Foi Thong arranged on an elegant ceremonial tray.', img: 'images/wedding_sweets.jpg' },
+                    { name: 'Wedding Ceremony Set', price: 60, priceLabel: 'From £60.00', desc: 'Expanded ceremonial sweets set with auspicious packaging.', img: 'images/wedding_sweets.jpg' },
+                    { name: 'Custom Wedding Package', price: 120, priceLabel: 'From £120.00', desc: 'Custom quantities and trays for wedding ceremonies and receptions.', img: 'images/wedding_sweets.jpg' }
+                ]
+            },
+            corporate: {
+                label: 'Corporate Set',
+                title: 'Corporate Break Boxes',
+                badge: 'Corporate',
+                image: 'images/corporate_break.jpg',
+                price: 'Corporate Set Menu',
+                desc: 'Individually packed Thai dessert boxes for office breaks, conferences, team events, and corporate wellness days.',
+                menu: [
+                    { name: 'Corporate Break Box', price: 8, priceLabel: '£8.00 / box', desc: 'Individual Thai dessert snack box. Minimum 10 boxes.', img: 'images/corporate_break.jpg' },
+                    { name: 'Branded Corporate Box', price: 10, priceLabel: 'From £10.00 / box', desc: 'Individual snack box with custom branding options.', img: 'images/corporate_break.jpg' },
+                    { name: 'Recurring Office Order', price: 8, priceLabel: 'From £8.00 / box', desc: 'Recurring dessert boxes for weekly or monthly office breaks.', img: 'images/corporate_break.jpg' }
+                ]
+            }
+        };
+
+        function renderSetMenu(setKey, data) {
+            return data.menu
+                .map((item, index) => `
+                    <div class="set-menu-item">
+                        <div class="set-menu-image">
+                            <img src="${item.img}" alt="${item.name}">
+                            <span>${item.badge || data.badge}</span>
+                        </div>
+                        <div class="set-menu-content">
+                            <h4>${item.name}</h4>
+                            <span>${item.priceLabel}</span>
+                            <p>${item.desc}</p>
+                            <button type="button" onclick="event.stopPropagation(); addSetMenuItem('${setKey}', ${index})">
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                `)
+                .join('');
+        }
+
+        function createSetPopup(setKey) {
+            const data = setPopupData[setKey];
+            if (!data) return null;
+
+            const popup = document.createElement('div');
+            popup.id = `set-popup-${setKey}`;
+            popup.className = 'set-popup';
+            popup.setAttribute('aria-hidden', 'true');
+            popup.innerHTML = `
+                <div class="set-popup-content" role="dialog" aria-modal="true" aria-labelledby="set-popup-title-${setKey}">
+                    <button class="set-popup-close" type="button" onclick="closeSetPopup('${setKey}')" aria-label="Close set details">&times;</button>
+                    <div class="set-popup-grid">
+                        <div class="set-popup-image-wrap">
+                            <img src="${data.image}" alt="${data.title}">
+                            <span class="set-popup-badge">${data.badge}</span>
+                        </div>
+                        <div class="set-popup-body">
+                            <p class="set-popup-label">${data.label}</p>
+                            <h3 id="set-popup-title-${setKey}">${data.title}</h3>
+                            <p>${data.desc}</p>
+                            <div class="set-popup-price">${data.price}</div>
+                            <div class="set-popup-menu">${renderSetMenu(setKey, data)}</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            popup.addEventListener('click', function(event) {
+                if (event.target === popup) {
+                    closeSetPopup(setKey);
+                }
+            });
+            document.body.appendChild(popup);
+            return popup;
+        }
+
+        function getSetPopup(setKey) {
+            return document.getElementById(`set-popup-${setKey}`) || createSetPopup(setKey);
+        }
+
+        function openSetPopup(setKey) {
+            const popup = getSetPopup(setKey);
+            if (!popup) return;
+
+            popup.classList.add('active');
+            popup.style.display = 'flex';
+            popup.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSetPopup(setKey) {
+            const popups = setKey
+                ? [document.getElementById(`set-popup-${setKey}`)]
+                : Array.from(document.querySelectorAll('.set-popup'));
+            popups.forEach(popup => {
+                if (!popup) return;
+                popup.classList.remove('active');
+                popup.style.display = '';
+                popup.setAttribute('aria-hidden', 'true');
+            });
+            document.body.style.overflow = '';
+        }
+
+        function handleSetCardKey(event, setKey) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                openSetPopup(setKey);
+            }
+        }
+
+        function addSetMenuItem(setKey, itemIndex) {
+            const data = setPopupData[setKey];
+            const item = data?.menu?.[itemIndex];
+            if (!item || typeof addToCart !== 'function') return;
+            addToCart(item.name, item.price, item.img);
+        }
+
+        window.openSetPopup = openSetPopup;
+        window.closeSetPopup = closeSetPopup;
+        window.handleSetCardKey = handleSetCardKey;
+        window.addSetMenuItem = addSetMenuItem;
     </script>
+
+    <!-- Chatbot Script -->
+    <script>
+    window.ZABSIAM_CHATBOT_CONFIG = {
+      contactEmail: "info@zabsiam.com",
+      bookingUrl: "/event-catering#booking"
+    };
+    </script>
+    <script src="zabsiam_chatbot/zabsiam-chatbot.js"></script>
 </body>
 </html>
+
+
