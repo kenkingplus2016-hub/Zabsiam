@@ -1,206 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Received - Chor Malee</title>
+    <title>Payment Successful - Khrua Thai London</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --gold: #d4af37;
-            --dark-green: #1b3022;
-            --cream: #f9f7f2;
-            --text: #333;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            background: #000;
-            color: #fff;
-            font-family: Arial, Helvetica, sans-serif;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 780px;
-            margin: 72px auto;
-            padding: 38px 22px;
-            background: #fff;
-            color: var(--text);
-            border-radius: 12px;
-            border-top: 5px solid var(--gold);
-            box-shadow: 0 6px 28px rgba(0, 0, 0, 0.24);
-        }
-
-        .success-icon {
-            font-size: 58px;
-            color: #28a745;
-            margin-bottom: 18px;
-        }
-
-        h1 {
-            color: var(--dark-green);
-            margin: 0 0 10px;
-        }
-
-        p {
-            line-height: 1.6;
-        }
-
-        .set-section {
-            margin: 30px 0;
-            text-align: left;
-        }
-
-        .set-section h2 {
-            color: var(--dark-green);
-            text-align: center;
-            margin-bottom: 16px;
-        }
-
-        .set-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 14px;
-        }
-
-        .set-card {
-            display: grid;
-            grid-template-columns: 84px 1fr;
-            gap: 14px;
-            align-items: center;
-            overflow: hidden;
-            min-height: 84px;
-            background: #111;
-            color: #fff;
-            border: 1px solid #333;
-            border-radius: 10px;
-            text-decoration: none;
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-
-        .set-card:hover {
-            border-color: var(--gold);
-            transform: translateY(-2px);
-        }
-
-        .set-card img {
-            width: 84px;
-            height: 84px;
-            object-fit: cover;
-        }
-
-        .set-card strong {
-            display: block;
-            color: var(--gold);
-            margin-bottom: 4px;
-        }
-
-        .set-card span {
-            display: block;
-            color: #d0d0d0;
-            font-size: 0.84rem;
-            line-height: 1.35;
-            padding-right: 10px;
-        }
-
-        .payment-details {
-            display: none;
-            background: #fffcf0;
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px dashed var(--gold);
-            margin: 22px 0;
-            text-align: left;
-        }
-
-        .payment-details h3 {
-            color: var(--dark-green);
-            margin-top: 0;
-            text-align: center;
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--dark-green);
-            color: var(--gold);
-            text-decoration: none;
-            padding: 12px 30px;
-            border-radius: 30px;
-            font-weight: 700;
-            border: 2px solid var(--gold);
-            transition: 0.2s ease;
-        }
-
-        .btn:hover {
-            background: var(--gold);
-            color: #fff;
-        }
-
-        @media (max-width: 640px) {
-            .container {
-                margin: 28px 12px;
-                padding: 30px 16px;
-            }
-
-            .set-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+        :root { --gold: #D4AF37; --dark-green: #1B3022; --cream: #F9F7F2; --text: #333; }
+        body { font-family: 'Prompt', sans-serif; background-color: var(--cream); color: var(--text); margin: 0; padding: 0; text-align: center; }
+        .container { max-width: 600px; margin: 100px auto; padding: 40px 20px; background: white; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-top: 5px solid var(--gold); }
+        .success-icon { font-size: 60px; color: #28a745; margin-bottom: 20px; }
+        h1 { color: var(--dark-green); margin-bottom: 10px; }
+        p { margin-bottom: 30px; line-height: 1.6; }
+        .btn { display: inline-block; background: var(--dark-green); color: var(--gold); text-decoration: none; padding: 12px 30px; border-radius: 30px; font-weight: 600; transition: 0.3s; border: 2px solid var(--gold); }
+        .btn:hover { background: var(--gold); color: white; }
+        
+        .payment-details { display: none; background: #fffcf0; padding: 20px; border-radius: 10px; border: 1px dashed var(--gold); margin: 20px 0; text-align: left; }
+        .payment-details h3 { color: var(--dark-green); margin-top: 0; text-align: center; }
+        .qr-placeholder { width: 200px; height: 200px; background: #eee; margin: 10px auto; display: flex; align-items: center; justify-content: center; border: 2px solid #ddd; border-radius: 10px; color: #888; font-weight: bold; text-align: center; }
     </style>
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="light-theme.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B32XK3RT5X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-B32XK3RT5X');
+    </script>
+    <link rel="stylesheet" href="css/megamenu.css">
 </head>
 <body>
-    <main class="container">
+    <div class="container">
         <i class="fas fa-check-circle success-icon" id="status-icon"></i>
-        <h1 id="status-title">Order Received</h1>
-        <p id="status-desc">Thank you for choosing Chor Malee. We have successfully received your order.<br>Our team will contact you shortly via your specified contact method.</p>
+        <h1 id="status-title">ชำระเงินสำเร็จ / Booking Received</h1>
+        <p id="status-desc">ขอบคุณที่เลือกใช้บริการของเรา เราได้รับการยืนยันของคุณเรียบร้อยแล้ว<br>ทีมงานจะทำการติดต่อกลับไปยังช่องทางที่คุณระบุไว้โดยเร็วที่สุด<br><br>
+        <span style="font-size: 0.95rem; color: #555;">Thank you for choosing our service. We have successfully received your booking.<br>Our team will contact you shortly via your specified contact method.</span></p>
 
-        <section class="set-section" aria-labelledby="available-sets-title">
-            <h2 id="available-sets-title">Available Sets</h2>
-            <div class="set-grid">
-                <a class="set-card" href="index.html#gifts-catering">
-                    <img src="images/gift_set_chor_malee.png" alt="Gift Set">
-                    <span><strong>Gift Set</strong>Premium Thai dessert gifting with elegant packaging.</span>
-                </a>
-                <a class="set-card" href="index.html#gifts-catering">
-                    <img src="images/gift_set_chor_malee.png" alt="HBD Kit">
-                    <span><strong>HBD Kit</strong>Birthday-ready dessert kit with card, candle, and ribbon.</span>
-                </a>
-                <a class="set-card" href="index.html#gifts-catering">
-                    <img src="images/meeting_set_chor_malee.png" alt="Corporate Break Boxes">
-                    <span><strong>Corporate Break Boxes</strong>Assorted Thai desserts with a herbal drink option.</span>
-                </a>
-                <a class="set-card" href="index.html#gifts-catering">
-                    <img src="images/wedding_sweets.jpg" alt="Wedding Auspicious Sweets">
-                    <span><strong>Wedding Auspicious Sweets</strong>Traditional golden sweets for ceremonies and celebrations.</span>
-                </a>
-            </div>
-        </section>
-
+        <!-- Dynamic Payment Info -->
         <div id="transfer-info" class="payment-details">
-            <h3>Bank Transfer Details</h3>
+            <h3>ข้อมูลการโอนเงิน (Bank Transfer)</h3>
             <p><strong>Bank:</strong> Tide</p>
-            <p><strong>Account Name:</strong> Chor Malee</p>
+            <p><strong>Account Name:</strong> Khrua Thai London</p>
             <p><strong>Account No:</strong> 320218139</p>
             <p><strong>Sort Code:</strong> 04-06-05</p>
-            <p style="text-align: center; font-size: 0.9rem; margin-top: 15px; color: #666;">Please transfer the 50% deposit, or full payment for delivery box sets, and send the slip to our team.</p>
+            <p style="text-align: center; font-size: 0.9rem; margin-top: 15px; color: #666;">กรุณาโอนเงินมัดจำ 50% (หรืองานดิลิเวอรีบ็อกซ์เซตชำระเต็มจำนวน) และส่งสลิปให้ทีมงานผ่านช่องทางติดต่อครับ<br>Please transfer the 50% deposit (or full payment for delivery box sets) and send the slip to our team.</p>
         </div>
 
-        <a href="index.html" class="btn">Back to Home</a>
-    </main>
+        <a href="/" class="btn">กลับสู่หน้าหลัก / Back to Home</a>
+    </div>
 
     <script>
+        // Check URL parameters to show relevant information
         const urlParams = new URLSearchParams(window.location.search);
         const method = urlParams.get('method');
 
         if (method === 'Transfer') {
-            document.getElementById('status-title').innerText = 'Booking Received';
-            document.getElementById('status-desc').innerHTML = 'Please complete the bank transfer below to confirm your booking.';
+            document.getElementById('status-title').innerText = "ได้รับข้อมูลการจองแล้ว / Booking Received";
+            document.getElementById('status-desc').innerHTML = "กรุณาโอนเงินมัดจำตามข้อมูลด้านล่างเพื่อยืนยันคิวงานครับ<br><span style='font-size: 0.95rem; color: #555;'>Please complete the bank transfer below to confirm your booking.</span>";
             document.getElementById('transfer-info').style.display = 'block';
-            document.getElementById('status-icon').className = 'fas fa-university success-icon';
-            document.getElementById('status-icon').style.color = 'var(--gold)';
+            document.getElementById('status-icon').className = "fas fa-university success-icon";
+            document.getElementById('status-icon').style.color = "var(--gold)";
         }
+        // If no method or method=Card (coming from Stripe with session_id), default success message is shown.
     </script>
+    <script src="mobile-menu.js"></script>
 </body>
 </html>

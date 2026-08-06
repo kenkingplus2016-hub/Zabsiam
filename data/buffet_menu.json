@@ -2,8 +2,8 @@
     {
         "id": "starters",
         "title": {
-            "th": "สตาร์ทเตอร์ (Starters & Appetizers)",
-            "en": "Starters & Appetizers"
+            "th": "Starters",
+            "en": "Starters"
         },
         "items": [
             {
@@ -17,7 +17,7 @@
             {
                 "id": "item_2bsa6jstk",
                 "th": "ยำส้มโอกุ้งสด",
-                "en": "Pomelo Salad with Shrimp",
+                "en": "Pomelo Salad Shrimp",
                 "img": "c9dcd15e-891c-455d-ae3c-2c37f74c1b96.jpg",
                 "price": 16,
                 "unit": "12 pcs"
@@ -41,7 +41,7 @@
             {
                 "id": "item_rpwztizvb",
                 "th": "เมี่ยงคำส้มโอกุ้ง",
-                "en": "Pomelo Miang Kham with Shrimp",
+                "en": "Pomelo Miang Kham Shrimp",
                 "img": "pomeloleaf wrap.jpg",
                 "price": 16,
                 "unit": "12 pcs"
@@ -116,12 +116,18 @@
                 "en": "Tom Yum Goong (Spicy Shrimp Soup)",
                 "img": "tom_yum_goong.jpg",
                 "price": 45,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 7.95,
+                "price_s2": 15.9,
+                "price_s4": 30.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_5sp61u7do",
                 "th": "หมูปิ้งนมสด",
-                "en": "Pork Skewer with Milk",
+                "en": "Pork Skewer Milk",
                 "img": "pork skewers.jpg",
                 "price": 12,
                 "unit": "12 skewers"
@@ -153,7 +159,7 @@
             {
                 "id": "item_i8dt8y3do",
                 "th": "ปอเปี๊ยะสดเห็ดเข็มทอง",
-                "en": "Fresh Spring Rolls with Enoki Mushroom",
+                "en": "Fresh Spring Rolls Enoki Mushroom",
                 "img": "fresh_spring_rolls_enoki.jpg",
                 "price": 12,
                 "unit": "12 pcs"
@@ -164,7 +170,13 @@
                 "en": "Tom Kha Gai (Coconut Galangal Soup)",
                 "img": "tom_kha_chicken.jpg",
                 "price": 40,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.95,
+                "price_s2": 12.95,
+                "price_s4": 26.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_5oi3n13k0",
@@ -172,15 +184,21 @@
                 "en": "Tom Kha Goong",
                 "img": "tom_kha_prawn.jpg",
                 "price": 45,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 7.95,
+                "price_s2": 15.9,
+                "price_s4": 30.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             }
         ]
     },
     {
         "id": "mains",
         "title": {
-            "th": "เมนคอร์ส (Main Courses)",
-            "en": "Main Courses"
+            "th": "Meat",
+            "en": "Meat"
         },
         "items": [
             {
@@ -189,23 +207,42 @@
                 "en": "Green Curry Chicken",
                 "img": "green_curry_chicken_pork.jpg",
                 "price": 40,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.95,
+                "price_s2": 12.95,
+                "price_s4": 26.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_g2jwt02c3",
                 "th": "แกงเขียวหวานหมู",
                 "en": "Green Curry Pork",
-                "img": "green_curry_pork.jpg",
+                "img": "green_curry_pork_bowl.jpg",
                 "price": 40,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.95,
+                "price_s2": 12.95,
+                "price_s4": 26.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g",
+                "img_hover": "green_curry_pork_pkg.jpg"
             },
             {
                 "id": "item_d0r1c4ln1",
                 "th": "แกงเขียวหวานกุ้ง",
-                "en": "Green Curry with Prawns",
+                "en": "Green Curry Prawns",
                 "img": "green_curry_prawns.jpg",
                 "price": 45,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 7.95,
+                "price_s2": 15.9,
+                "price_s4": 30.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_nbvxgywtc",
@@ -213,39 +250,72 @@
                 "en": "Green Curry Beef",
                 "img": "green_curry_beef.jpg",
                 "price": 45,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 8.95,
+                "price_s2": 17.9,
+                "price_s4": 34.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_i4xv9bkpn",
                 "th": "แกงแดงไก่",
-                "en": "Red Curry with Chicken",
+                "en": "Red Curry Chicken",
                 "img": "red_curry_chicken.jpg",
                 "price": 40,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.95,
+                "price_s2": 12.95,
+                "price_s4": 26.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g",
+                "img_hover": "Red Curry  Chicken pkg.jpg"
             },
             {
                 "id": "item_dcbgmoghd",
                 "th": "แกงแดงหมู",
-                "en": "Red Curry with Pork",
+                "en": "Red Curry Pork",
                 "img": "red_curry_pork.jpg",
                 "price": 40,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.95,
+                "price_s2": 12.95,
+                "price_s4": 26.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g",
+                "img_hover": "Red_curry_pork_pkg.jpg"
             },
             {
                 "id": "item_p0rdw5hmz",
                 "th": "แกงแดงเนื้อ",
-                "en": "Red Curry with Beef",
+                "en": "Red Curry Beef",
                 "img": "red_curry_beef.jpg",
                 "price": 45,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 8.95,
+                "price_s2": 17.9,
+                "price_s4": 34.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g",
+                "img_hover": "Red Curry beef pkg.jpg"
             },
             {
                 "id": "item_xp1g4vzg3",
                 "th": "แกงแดงกุ้ง",
-                "en": "Red Curry with Prawn",
+                "en": "Red Curry Prawn",
                 "img": "red_curry_prawns.jpg",
                 "price": 45,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 7.95,
+                "price_s2": 15.9,
+                "price_s4": 30.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_owgurx3xq",
@@ -253,7 +323,13 @@
                 "en": "Red Curry Mixed Vegetables Tofu",
                 "img": "red_curry_veg.jpg",
                 "price": 35,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.5,
+                "price_s2": 12.95,
+                "price_s4": 25.5,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_geepwab97",
@@ -261,7 +337,13 @@
                 "en": "Green Curry Mixed Vegetables Tofu",
                 "img": "green_curry_veg.jpg",
                 "price": 35,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.5,
+                "price_s2": 12.95,
+                "price_s4": 25.5,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_o97mx07fl",
@@ -269,7 +351,13 @@
                 "en": "Massaman Chicken",
                 "img": "massaman_chicken.jpg",
                 "price": 40,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.95,
+                "price_s2": 12.95,
+                "price_s4": 26.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_0il9ze066",
@@ -277,7 +365,13 @@
                 "en": "Massaman Beef",
                 "img": "massaman_beef.jpg",
                 "price": 45,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 8.95,
+                "price_s2": 17.9,
+                "price_s4": 34.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_dv9va38bn",
@@ -285,39 +379,72 @@
                 "en": "Thai Curry Chicken",
                 "img": "thai_curry_chicken.jpg",
                 "price": 40,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.95,
+                "price_s2": 12.95,
+                "price_s4": 26.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_7mnkkzj7o",
                 "th": "แกงพะแนงหมู",
-                "en": "Panang Curry with Pork",
+                "en": "Panang Curry Pork",
                 "img": "panang_pork.jpg",
                 "price": 40,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.95,
+                "price_s2": 12.95,
+                "price_s4": 26.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g",
+                "img_hover": "Panang Curry Pork pkg.jpg"
             },
             {
                 "id": "item_3otm2f6s3",
                 "th": "แกงพะแนงไก่",
-                "en": "Panang Curry with Chicken",
+                "en": "Panang Curry Chicken",
                 "img": "panang_chicken.jpg",
                 "price": 40,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.95,
+                "price_s2": 12.95,
+                "price_s4": 26.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g",
+                "img_hover": "Panang Curry Chicken pkg.jpg"
             },
             {
                 "id": "item_4nqvtl4rl",
                 "th": "แกงพะแนงเนื้อ",
-                "en": "Panang Curry with Beef",
+                "en": "Panang Curry Beef",
                 "img": "panang_beef.jpg",
                 "price": 45,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 8.95,
+                "price_s2": 17.9,
+                "price_s4": 34.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g",
+                "img_hover": "Panang Curry beef pkg.jpg"
             },
             {
                 "id": "item_ahnwc36j8",
                 "th": "แกงพะแนงกุ้ง",
-                "en": "Panang Curry with Prawns",
+                "en": "Panang Curry Prawns",
                 "img": "panang_prawns.jpg",
                 "price": 45,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 7.95,
+                "price_s2": 15.9,
+                "price_s4": 30.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_nbexkcqhg",
@@ -325,7 +452,13 @@
                 "en": "Tae Po Curry Beef",
                 "img": "taepo_beef.jpg",
                 "price": 45,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 8.95,
+                "price_s2": 17.9,
+                "price_s4": 34.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_mzvssqvby",
@@ -333,7 +466,13 @@
                 "en": "Tae Po Curry Chicken",
                 "img": "taepo_chicken.jpg",
                 "price": 40,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.95,
+                "price_s2": 12.95,
+                "price_s4": 26.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_j90037r8x",
@@ -341,7 +480,13 @@
                 "en": "Tae Po Curry Prawn",
                 "img": "taepo_prawn.jpg",
                 "price": 45,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 7.95,
+                "price_s2": 15.9,
+                "price_s4": 30.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_h3o6ly72u",
@@ -349,7 +494,13 @@
                 "en": "Tae Po Curry Pork",
                 "img": "taepo_pork_new.jpg",
                 "price": 40,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.95,
+                "price_s2": 12.95,
+                "price_s4": 26.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_5l75grdse",
@@ -357,7 +508,13 @@
                 "en": "Tae Po Curry Pork Belly",
                 "img": "taepo_porkbelly.jpg",
                 "price": 40,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.95,
+                "price_s2": 12.95,
+                "price_s4": 26.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_3clv38eoe",
@@ -365,7 +522,13 @@
                 "en": "Tae Po Curry Mixed Vegetables Tofu",
                 "img": "taepo_veg.jpg",
                 "price": 35,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.5,
+                "price_s2": 12.95,
+                "price_s4": 25.5,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_lpl8y41uw",
@@ -373,7 +536,13 @@
                 "en": "Panang Curry Mixed Vegetables Tofu",
                 "img": "panang_curry_veg.jpg",
                 "price": 35,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.5,
+                "price_s2": 12.95,
+                "price_s4": 25.5,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_duckcurry_1784464708234",
@@ -381,7 +550,13 @@
                 "en": "Roasted Duck Red Curry",
                 "img": "red_curry_duck.jpg",
                 "price": 45,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 6.95,
+                "price_s2": 12.95,
+                "price_s4": 26.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_5l42k8cs1",
@@ -389,12 +564,18 @@
                 "en": "Crab Curry",
                 "img": "crab_curry.jpg",
                 "price": 45,
-                "unit": "500g / 2 plates"
+                "unit": "500g / 2 plates",
+                "price_s1": 6.95,
+                "price_s2": 12.95,
+                "price_s4": 26.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_7fpb2g6mv",
                 "th": "กุ้งทอดซอสมะขาม",
-                "en": "Fried Shrimp with Tamarind Sauce",
+                "en": "Fried Shrimp Tamarind Sauce",
                 "img": "tamarind_shrimp.jpg",
                 "price": 15,
                 "unit": "12 pcs"
@@ -402,7 +583,7 @@
             {
                 "id": "item_q3o2hj7jy",
                 "th": "ปลากะพงทอดน้ำปลา",
-                "en": "Deep Fried Sea Bass with Fish Sauce",
+                "en": "Deep Fried Sea Bass Fish Sauce",
                 "img": "seabass_fishsauce.jpg",
                 "price": 16,
                 "unit": "225g / plate"
@@ -410,7 +591,7 @@
             {
                 "id": "item_zc0cfaon5",
                 "th": "ปลากะพงทอดสามรส",
-                "en": "Deep Fried Sea Bass with Three-Flavored Sauce",
+                "en": "Deep Fried Sea Bass Three-Flavored Sauce",
                 "img": "seabass_3flavor.jpg",
                 "price": 16,
                 "unit": "225g / plate"
@@ -429,12 +610,18 @@
                 "en": "Gaeng Som Pae Sa Sea Bass",
                 "img": "gaeng_som_pae_sa.jpg",
                 "price": 45,
-                "unit": "3000 g/pot"
+                "unit": "3000 g/pot",
+                "price_s1": 7.95,
+                "price_s2": 15.9,
+                "price_s4": 30.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_gca4f0q0c",
                 "th": "ปลากระพงนึ่งมะนาว",
-                "en": "Steamed Sea Bass with Lime and Garlic",
+                "en": "Steamed Sea Bass Lime and Garlic",
                 "img": "steamed_seabass_lime.jpg",
                 "price": 45,
                 "unit": "3000 g/pot"
@@ -442,7 +629,7 @@
             {
                 "id": "item_0d345alpy",
                 "th": "ปลาหมึกนึ่งมะนาว",
-                "en": "Steamed Squid with Lime and Garlic",
+                "en": "Steamed Squid Lime and Garlic",
                 "img": "steamed_squid_lime.jpg",
                 "price": 50,
                 "unit": "3000 g/pot"
@@ -458,7 +645,7 @@
             {
                 "id": "item_61ec9mqso",
                 "th": "ปลาหมึกผัดพริกเผา",
-                "en": "Stir-fried Squid with Chili Paste",
+                "en": "Stir-fried Squid Chili Paste",
                 "img": "squid_chili_paste.jpg",
                 "price": 35,
                 "unit": "1000g"
@@ -466,80 +653,8 @@
             {
                 "id": "item_6u785z0ne",
                 "th": "ผัดฉ่าปลากระพง",
-                "en": "Stir-fried Sea Bass with Herbs and Spices (Phad Cha)",
+                "en": "Stir-fried Sea Bass Herbs and Spices (Phad Cha)",
                 "img": "phad_cha_seabass.jpg",
-                "price": 35,
-                "unit": "1000g"
-            },
-            {
-                "id": "item_yamxvxfr8",
-                "th": "ผัดเผ็ดปลากระพง",
-                "en": "Pad Phed Sea Bass (Spicy Stir-fried Red Curry)",
-                "img": "pad_phed_seabass.jpg",
-                "price": 35,
-                "unit": "1000g"
-            },
-            {
-                "id": "item_w78svh7rl",
-                "th": "ผัดเผ็ดกุ้ง",
-                "en": "Pad Phed Prawns (Spicy Stir-fried Red Curry)",
-                "img": "pad_phed_prawns.jpg",
-                "price": 35,
-                "unit": "1000g"
-            },
-            {
-                "id": "item_ghqe2eigu",
-                "th": "ผัดเผ็ดหมู",
-                "en": "Pad Phed Pork (Spicy Stir-fried Red Curry)",
-                "img": "pad_phed_pork_updated.jpg",
-                "price": 25,
-                "unit": "1000g"
-            },
-            {
-                "id": "item_7k4y4awa7",
-                "th": "ผัดเผ็ดไก่",
-                "en": "Pad Phed Chicken (Spicy Stir-fried Red Curry)",
-                "img": "pad_phed_chicken.jpg",
-                "price": 25,
-                "unit": "1000g"
-            },
-            {
-                "id": "item_8nqkko3k4",
-                "th": "ผัดเผ็ดเนื้อ",
-                "en": "Pad Phed Beef (Spicy Stir-fried Red Curry)",
-                "img": "pad_phed_beef_final.jpg",
-                "price": 35,
-                "unit": "1000g"
-            },
-            {
-                "id": "item_czpunjqxr",
-                "th": "ผัดเผ็ดกุ้ง",
-                "en": "Pad Phed Prawns (Spicy Stir-fried Red Curry)",
-                "img": "pad_phed_prawns.jpg",
-                "price": 35,
-                "unit": "1000g"
-            },
-            {
-                "id": "item_e4cc147i6",
-                "th": "ผัดเผ็ดหมู",
-                "en": "Pad Phed Pork (Spicy Stir-fried Red Curry)",
-                "img": "pad_phed_pork_updated.jpg",
-                "price": 25,
-                "unit": "1000g"
-            },
-            {
-                "id": "item_bw0qj8o0y",
-                "th": "ผัดเผ็ดไก่",
-                "en": "Pad Phed Chicken (Spicy Stir-fried Red Curry)",
-                "img": "pad_phed_chicken.jpg",
-                "price": 25,
-                "unit": "1000g"
-            },
-            {
-                "id": "item_jg57d7o8h",
-                "th": "ผัดเผ็ดเนื้อ",
-                "en": "Pad Phed Beef (Spicy Stir-fried Red Curry)",
-                "img": "pad_phed_beef_final.jpg",
                 "price": 35,
                 "unit": "1000g"
             },
@@ -570,7 +685,7 @@
             {
                 "id": "item_pa7w5c75g",
                 "th": "ไก่ผัดขิง",
-                "en": "Stir-fried Chicken with Ginger",
+                "en": "Stir-fried Chicken Ginger",
                 "img": "stir_fried_chicken_ginger.jpg",
                 "price": 25,
                 "unit": "1000g"
@@ -707,7 +822,7 @@
             {
                 "id": "item_crab_paste_fried_rice",
                 "th": "ข้าวผัดมันปู",
-                "en": "Fried Rice with Crab Paste",
+                "en": "Fried Rice Crab Paste",
                 "img": "crab_paste_fried_rice.jpg",
                 "price": 65,
                 "unit": "tray"
@@ -723,7 +838,7 @@
             {
                 "id": "item_47u308grz",
                 "th": "ผัดไทยกุ้ง",
-                "en": "Pad Thai with Prawns",
+                "en": "Pad Thai Prawns",
                 "img": "pad_thai_prawns.jpg",
                 "price": 35,
                 "unit": "2000g / tray"
@@ -731,7 +846,7 @@
             {
                 "id": "item_7odwg5bba",
                 "th": "ผัดไทยไก่",
-                "en": "Pad Thai with Chicken",
+                "en": "Pad Thai Chicken",
                 "img": "pad_thai_chicken.jpg",
                 "price": 25,
                 "unit": "2000g / tray"
@@ -739,7 +854,7 @@
             {
                 "id": "item_yli8d1lit",
                 "th": "ผัดไทยผักรวม",
-                "en": "Pad Thai with Mixed Vegetables",
+                "en": "Pad Thai Mixed Vegetables",
                 "img": "pad_thai_veg.jpg",
                 "price": 20,
                 "unit": "2000g / tray"
@@ -747,7 +862,7 @@
             {
                 "id": "item_rasqo7a1h",
                 "th": "ยำวุ้นเส้นกุ้ง",
-                "en": "Glass Noodle Salad with Shrimp",
+                "en": "Glass Noodle Salad Shrimp",
                 "img": "yum_woon_sen_shrimp.jpg",
                 "price": 35,
                 "unit": "2000g / tray"
@@ -755,7 +870,7 @@
             {
                 "id": "item_1sq90u1i5",
                 "th": "ยำวุ้นเส้นหมูยอ",
-                "en": "Glass Noodle Salad with Vietnamese Pork Sausage",
+                "en": "Glass Noodle Salad Vietnamese Pork Sausage",
                 "img": "yum_woon_sen_moo_yor.jpg",
                 "price": 35,
                 "unit": "2000g / tray"
@@ -765,8 +880,8 @@
     {
         "id": "vegetables",
         "title": {
-            "th": "เมนูผัก (Vegetable Dishes)",
-            "en": "Vegetable Dishes"
+            "th": "Vegetables",
+            "en": "Vegetables"
         },
         "items": [
             {
@@ -780,7 +895,7 @@
             {
                 "id": "item_p78h6ho90",
                 "th": "ผัดเนื้อผักรวมน้ำมันหอย",
-                "en": "Stir-fried Beef with Veg",
+                "en": "Stir-fried Beef Veg",
                 "img": "74845001-324c-482d-8a79-c1c5d8d0a68f.jpg",
                 "price": 35,
                 "unit": "tray"
@@ -788,7 +903,7 @@
             {
                 "id": "item_zy5pdsi21",
                 "th": "ผัดผักรวมกุ้งน้ำมันหอย",
-                "en": "Stir-fried Veg with Shrimp",
+                "en": "Stir-fried Veg Shrimp",
                 "img": "Stir-fried Mixed Vegetables with Shrimp.jpg",
                 "price": 45,
                 "unit": "tray"
@@ -812,9 +927,243 @@
         ]
     },
     {
+        "id": "box_sets",
+        "title": {
+            "th": "Meal Boxes",
+            "en": "Meal Boxes"
+        },
+        "items": [
+            {
+                "id": "box_103",
+                "th": "Lunch Box (Set E)",
+                "en": "Lunch Box (Set E)",
+                "img": "Pad Prik Gang1.jpg",
+                "price": 16.95,
+                "unit": "1 Person",
+                "desc": "Pad Prik Gaeng (Red Curry Stir-Fry with choice of Pork/Chicken/Beef/Squid) served with Steamed Rice and Side Vegetables"
+            },
+            {
+                "id": "box_104",
+                "th": "Lunch Box (Set F)",
+                "en": "Lunch Box (Set F)",
+                "img": "Pad Phed 5.jpg",
+                "price": 16.95,
+                "unit": "1 Person",
+                "desc": "Pad Phed (Spicy Red Curry Stir-Fry with choice of Minced Pork/Chicken/Beef or Crispy Pork) served with Steamed Rice, Side Vegetables, and Nam Pla Prik"
+            },
+            {
+                "id": "box_102",
+                "th": "Special Box ไก่ทอดหาดใหญ่",
+                "en": "Special Box Hat Yai Fried Chicken",
+                "img": "Hat Yai Fried Chicken.jpg",
+                "price": 16.95,
+                "unit": "1-2 Persons",
+                "desc": "Hat Yai Fried Chicken, Ajad Relish, Sweet Chili Sauce, Fried Shallots, Khao Mok Rice"
+            },
+            {
+                "id": "box_14",
+                "th": "Special Box Set A — วันพุธ - ศุกร์",
+                "en": "Special Box Set A — Wednesday - Friday",
+                "img": "Special Box Set A 1.jpg",
+                "price": 22.95,
+                "unit": "1 Person",
+                "desc": "Crispy Pork Belly, Seafood Dipping Sauce, Sticky Rice, Side Vegetables, Papaya Salad — Delivered Wednesday - Friday (11:00 AM - 1:00 PM / 6:00 PM - 8:00 PM) | Cut-off 3:00 PM day before (Pre-order) | Radius Within 5 miles"
+            },
+            {
+                "id": "box_15",
+                "th": "Special Box Set B — วันพุธ - ศุกร์",
+                "en": "Special Box Set B — Wednesday - Friday",
+                "img": "Special Box Set B1.jpg",
+                "price": 22.95,
+                "unit": "1 Person",
+                "desc": "Grilled Pork Neck, Sticky Rice, Papaya Salad, Jaew Dipping Sauce, Side Vegetables — Delivered Wednesday - Friday (11:00 AM - 1:00 PM / 6:00 PM - 8:00 PM) | Cut-off 3:00 PM day before (Pre-order) | Radius Within 5 miles"
+            },
+            {
+                "id": "box_16",
+                "th": "Special Box Set C — วันพุธ - ศุกร์",
+                "en": "Special Box Set C — Wednesday - Friday",
+                "img": "Special Box Set C1.jpg",
+                "price": 22.95,
+                "unit": "1 Person",
+                "desc": "Weeping Tiger (Grilled Beef), Sticky Rice, Papaya Salad, Jaew Dipping Sauce, Side Vegetables — Delivered Wednesday - Friday (11:00 AM - 1:00 PM / 6:00 PM - 8:00 PM) | Cut-off 3:00 PM day before (Pre-order) | Radius Within 5 miles"
+            },
+            {
+                "id": "box_17",
+                "th": "Special Box Set D — วันพุธ - ศุกร์",
+                "en": "Special Box Set D — Wednesday - Friday",
+                "img": "Special Box Set D 1.jpg",
+                "price": 22.95,
+                "unit": "1 Person",
+                "desc": "Grilled Chicken, Sticky Rice, Papaya Salad, Tamarind Dipping Sauce, Side Vegetables — Delivered Wednesday - Friday (11:00 AM - 1:00 PM / 6:00 PM - 8:00 PM) | Cut-off 3:00 PM day before (Pre-order) | Radius Within 5 miles"
+            },
+            {
+                "id": "box_18",
+                "th": "Special Box Set E — วันพุธ - ศุกร์",
+                "en": "Special Box Set E — Wednesday - Friday",
+                "img": "Special Box Set E 1.jpg",
+                "price": 22.95,
+                "unit": "1 Person",
+                "desc": "Nam Tok Moo (Spicy Grilled Pork Salad), Sticky Rice, Papaya Salad with Fermented Fish, Side Vegetables and Om Curry (Chicken/Pork/Beef) — Delivered Wednesday - Friday (11:00 AM - 1:00 PM / 6:00 PM - 8:00 PM) | Cut-off 3:00 PM day before (Pre-order) | Radius Within 5 miles"
+            },
+            {
+                "id": "box_19",
+                "th": "Special Box Set F — วันพุธ - ศุกร์",
+                "en": "Special Box Set F — Wednesday - Friday",
+                "img": "Special Box Set F 1.jpg",
+                "price": 22.95,
+                "unit": "1 Person",
+                "desc": "Nam Tok Crying Tiger (Spicy Grilled Beef Salad), Sticky Rice, Papaya Salad with Fermented Fish, Side Vegetables and Om Curry (Chicken/Pork/Beef) — Delivered Wednesday - Friday (11:00 AM - 1:00 PM / 6:00 PM - 8:00 PM) | Cut-off 3:00 PM day before (Pre-order) | Radius Within 5 miles"
+            },
+            {
+                "id": "box_20",
+                "th": "Special Box เมี่ยงคำซีบาส",
+                "en": "Special Box Sea Bass Miang Kham",
+                "img": "Sea Bass Miang Kham 2.jpg",
+                "price": 14.95,
+                "unit": "1 Person",
+                "desc": "Sea Bass Miang Kham<br><span style='font-size:0.85rem; color:var(--dark-green); font-weight:600;'>Ingredients: Fried Sea Bass, Betel Leaves, Roasted Coconut, Roasted Peanuts, Roasted Dried Shrimp, Ginger, Lime, Shallots, Bird's Eye Chili, Miang Kham Sauce (Palm Sugar, Shrimp Paste, Coconut, Peanuts, Dried Shrimp, Sliced Ginger, Sliced Galangal, Sliced Lemongrass, Salt)</span>"
+            },
+            {
+                "id": "box_21",
+                "th": "Special Box ยำส้มโอกุ้ง",
+                "en": "Special Box Pomelo Salad with Prawns",
+                "img": "Pomelo Salad with Prawns box 2.jpg",
+                "price": 14.95,
+                "unit": "1 Person",
+                "desc": "Pomelo Salad with Prawns<br><span style='font-size:0.85rem; color:var(--dark-green); font-weight:600;'>Ingredients: Pomelo, Prawns, Roasted Coconut, Roasted Peanuts, Fried Shallots, Kaffir Lime Leaves, Bird's Eye Chili, Dressing (Roasted Chili Paste, Palm Sugar, Fish Sauce, Tamarind Juice, Coconut Cream)</span>"
+            },
+            {
+                "id": "box_22",
+                "th": "Special Box แซลมอนลุยสวน",
+                "en": "Special Box Salmon Lui Suan",
+                "img": "Salmon Lui Suan  box.jpg",
+                "price": 14.95,
+                "unit": "1 Person",
+                "desc": "Salmon Lui Suan<br><span style='font-size:0.85rem; color:var(--dark-green); font-weight:600;'>Ingredients: Salmon, Lemongrass, Shallots, Ginger, Bird's Eye Chili, Kaffir Lime Leaves, Mint Leaves, Culantro, Cashew Nuts, Chili Powder, Dressing (Fish Sauce, Lime Juice, Palm Sugar, Roasted Chili Paste)</span>"
+            },
+            {
+                "id": "box_23",
+                "th": "Special Box พล่ากุ้ง",
+                "en": "Special Box Spicy Prawn Salad",
+                "img": "Spicy Prawn Salad box1.jpg",
+                "price": 14.95,
+                "unit": "1 Person",
+                "desc": "Spicy Prawn Salad<br><span style='font-size:0.85rem; color:var(--dark-green); font-weight:600;'>Ingredients: Fresh Prawns, Lemongrass, Shallots, Kaffir Lime Leaves, Bird's Eye Chili, Roasted Chili Paste, Coconut Cream, Fish Sauce, Lime Juice, Palm Sugar, Mint Leaves, Culantro</span>"
+            },
+            {
+                "id": "box_24",
+                "th": "Special Box ยำมะม่วง",
+                "en": "Special Box Mango Salad",
+                "img": "Mango Salad  box.jpg",
+                "price": 14.95,
+                "unit": "1 Person",
+                "desc": "Mango Salad<br><span style='font-size:0.85rem; color:var(--dark-green); font-weight:600;'>Ingredients: Sour Green Mango, Shallots, Dried Shrimp, Cashew Nuts, Dressing (Bird's Eye Chili, Chili Powder, Palm Sugar, Fish Sauce, Lime Juice, Boiled Fermented Fish)</span>"
+            },
+            {
+                "id": "box_25",
+                "th": "Special Box ยำวุ้นเส้น",
+                "en": "Special Box Glass Noodle Salad",
+                "img": "Glass Noodle Salad  box.jpg",
+                "price": 14.95,
+                "unit": "1 Person",
+                "desc": "Glass Noodle Salad<br><span style='font-size:0.85rem; color:var(--dark-green); font-weight:600;'>Ingredients: Glass Noodles, Fresh Prawns, Minced Pork or Chicken, Shallots, Celery, Cherry Tomatoes, Bird's Eye Chili, Spring Onions, Dressing (Garlic, Coriander Roots, Lime, Fish Sauce, Vinegar, Sugar, Sriracha Sauce, Bird's Eye Chili)</span>"
+            },
+            {
+                "id": "box_26",
+                "th": "Special Box ยำหมูยอ",
+                "en": "Special Box Pork Sausage Salad",
+                "img": "Pork Sausage Saladbox.jpg",
+                "price": 14.95,
+                "unit": "1 Person",
+                "desc": "Pork Sausage Salad<br><span style='font-size:0.85rem; color:var(--dark-green); font-weight:600;'>Ingredients: Glass Noodles, Vietnamese Sausage, Minced Pork or Chicken, Shallots, Celery, Cherry Tomatoes, Bird's Eye Chili, Spring Onions, Dressing (Garlic, Coriander Roots, Lime, Fish Sauce, Vinegar, Sugar, Sriracha Sauce, Bird's Eye Chili)</span>"
+            },
+            {
+                "id": "box_27",
+                "th": "Special Box ยำถั่วพลู",
+                "en": "Special Box Winged Bean Salad",
+                "img": "Winged Bean Salad 2.jpg",
+                "price": 14.95,
+                "unit": "1 Person",
+                "desc": "Winged Bean Salad<br><span style='font-size:0.85rem; color:var(--dark-green); font-weight:600;'>Ingredients: Fresh Winged Beans, Prawns, Minced Pork, Boiled Egg, Roasted Peanuts, Fried Shallots, Fried Dried Chili, Dressing (Roasted Chili Paste, Coconut Milk, Lime Juice, Fish Sauce, Palm Sugar, Bird's Eye Chili, Red Jinda Chili)</span>"
+            },
+            {
+                "id": "box_28",
+                "th": "Special Box แสร้งว่ากุ้ง",
+                "en": "Special Box Saeng Wa Prawn Salad",
+                "img": "Saeng Wa Prawn Salad box.jpg",
+                "price": 14.95,
+                "unit": "1 Person",
+                "desc": "Saeng Wa Prawn Salad<br><span style='font-size:0.85rem; color:var(--dark-green); font-weight:600;'>Ingredients: Prawns, Shallots, Finely Sliced Lemongrass, Finely Sliced Fresh Ginger, Spring Onions, Sliced Kaffir Lime Leaves, Coriander Leaves, Lime Juice, Fish Sauce, Sugar, Sliced Bird's Eye Chili, Tamarind</span>"
+            },
+            {
+                "id": "box_29",
+                "th": "Special Box ยำแซ่บปลาหมึกยัดไส้",
+                "en": "Special Box Spicy Stuffed Squid Salad",
+                "img": "Spicy Stuffed Squid Salad box.jpg",
+                "price": 16.95,
+                "unit": "1 Person",
+                "desc": "Spicy Stuffed Squid Salad<br><span style='font-size:0.85rem; color:var(--dark-green); font-weight:600;'>Ingredients: Banana Squid, Minced Pork, Light Soy Sauce, Oyster Sauce, Pepper, Thai Spicy Dressing, Seasoning Powder, Water, Bird's Eye Chili, Garlic, Mint Leaves, Garlic Chives</span>"
+            },
+            {
+                "id": "box_30",
+                "th": "Special Box ส้มตำไทย",
+                "en": "Special Box Som Tum Thai",
+                "img": "Som Tum Thai box.jpg",
+                "price": 14.95,
+                "unit": "1 Person",
+                "desc": "Som Tum Thai with fresh side vegetables and sticky rice/rice noodles — A refreshing Thai botanical set<br><span style='font-size:0.85rem; color:var(--dark-green); font-weight:600;'>Ingredients: Green Papaya, Long Beans, Tomatoes, Bird's Eye Chili, Garlic, Fish Sauce, Lime Juice, Palm Sugar, Dried Shrimp, Peanuts</span>"
+            },
+            {
+                "id": "box_31",
+                "th": "Special Box ส้มตำปูปลาร้า",
+                "en": "Special Box Som Tum Pu Pla Ra",
+                "img": "Som Tum Pu Pla Ra  box.jpg",
+                "price": 15.95,
+                "unit": "1 Person",
+                "desc": "Som Tum Pu Pla Ra with fresh side vegetables and sticky rice/rice noodles — A refreshing Thai botanical set<br><span style='font-size:0.85rem; color:var(--dark-green); font-weight:600;'>Ingredients: Green Papaya, Long Beans, Tomatoes, Carrots, Bird's Eye Chili, Garlic, Fish Sauce, Lime Juice, Palm Sugar, Pickled Rice Field Crab, Boiled Fermented Fish</span>"
+            },
+            {
+                "id": "box_100",
+                "th": "Special Box เมี่ยงรวมมิตร",
+                "en": "Special Box Mixed Miang",
+                "img": "Mixed Miang salad  box.jpg",
+                "price": 16.95,
+                "unit": "1 Person",
+                "desc": "Mixed Miang<br><span style='font-size:0.85rem; color:var(--dark-green); font-weight:600;'>Ingredients: Pork Belly, Prawns, Boiled Squid, Rice Vermicelli, Lettuce, Seafood Dipping Sauce</span>"
+            },
+            {
+                "id": "box_101",
+                "th": "Special Box ต้มยำทะเล",
+                "en": "Special Box Tom Yum Seafood",
+                "img": "Tom Yum Seafood.jpg",
+                "price": 18.95,
+                "unit": "1 Person",
+                "desc": "Tom Yum Seafood<br><span style='font-size:0.85rem; color:var(--dark-green); font-weight:600;'>Ingredients: Tiger Prawns, Squid, Mussels, Minced Pork Paste, Boiled Egg</span>"
+            },
+            {
+                "id": "box_lunch_box_krapow",
+                "th": "Lunch Box ผัดกะเพรา + ส้มตำ",
+                "en": "Lunch Box Set E (Pad Krapow & Som Tum)",
+                "img": "corporate-cover.jpg",
+                "price": 13.95,
+                "unit": "Set",
+                "desc": "Ready-to-eat Lunch Box: Spicy Krapow and Som Tum"
+            },
+            {
+                "id": "box_lunch_box_vip",
+                "th": "Lunch Box Set VIP",
+                "en": "Lunch Box Set VIP",
+                "img": "corporate-cover.jpg",
+                "price": 16.95,
+                "unit": "Set",
+                "desc": "Premium Lunch Box: Customize your meat, egg, and curry exactly how you like it."
+            }
+        ]
+    },
+    {
         "id": "desserts",
         "title": {
-            "th": "ของหวาน (Desserts)",
+            "th": "Desserts",
             "en": "Desserts"
         },
         "items": [
@@ -853,7 +1202,7 @@
             {
                 "id": "item_dbq8x2pru",
                 "th": "ขนมครองแครงอัญชันมะพร้าวอ่อน",
-                "en": "Krong Krang Butterfly Pea with Young Coconut",
+                "en": "Krong Krang Butterfly Pea Young Coconut",
                 "img": "krong_krang_butterfly_pea.jpg",
                 "price": 69,
                 "unit": "10 Bowls"
@@ -928,7 +1277,13 @@
                 "en": "Khanom Mo Kaeng",
                 "img": "Khanom Mo Kaeng1.jpg",
                 "price": 22,
-                "unit": "25 pcs/tray"
+                "unit": "25 pcs/tray",
+                "price_s1": 6.95,
+                "price_s2": 12.95,
+                "price_s4": 26.95,
+                "weight_s1": "260g",
+                "weight_s2": "520g",
+                "weight_s4": "1040g"
             },
             {
                 "id": "item_lnrjc9b18",
@@ -957,7 +1312,7 @@
             {
                 "id": "item_vea70we67",
                 "th": "ไอศกรีมกะทิข้าวเหนียว",
-                "en": "Coconut Ice Cream with Sticky Rice",
+                "en": "Coconut Ice Cream Sticky Rice",
                 "img": "coconut_ice_cream.jpg",
                 "price": 70,
                 "unit": "10 cups"
@@ -965,7 +1320,7 @@
             {
                 "id": "item_a2c1r4g76",
                 "th": "ไอศกรีมมะม่วงข้าวเหนียวมูน",
-                "en": "Mango Ice Cream with Sticky Rice",
+                "en": "Mango Ice Cream Sticky Rice",
                 "img": "mango_ice_cream.jpg",
                 "price": 80,
                 "unit": "10 cups"
@@ -983,7 +1338,7 @@
     {
         "id": "drinks",
         "title": {
-            "th": "เครื่องดื่ม (Drinks)",
+            "th": "Drinks",
             "en": "Drinks"
         },
         "items": [

@@ -1,43 +1,56 @@
 const fs = require('fs');
 const path = require('path');
 
-const publicDir = 'C:\\Users\\KENDEE\\Desktop\\เว็บ\\public';
-const files = fs.readdirSync(publicDir).filter(f => f.endsWith('.html'));
+const dir = 'C:/Users/KENDEE/Documents/GitHub/khruathai-london/public';
 
-let updatedCount = 0;
-for (const file of files) {
-    const filePath = path.join(publicDir, file);
-    let content = fs.readFileSync(filePath, 'utf8');
-    let original = content;
-    
-    // Remove Entertaining
-    content = content.replace(/<!-- Entertaining -->[\s\S]*?(?=<!-- Puddings -->)/, '');
-    
-    // Remove Puddings
-    content = content.replace(/<!-- Puddings -->[\s\S]*?(?=<!-- Meal Boxes -->)/, '');
-    
-    // Remove Meal Boxes
-    content = content.replace(/<!-- Meal Boxes -->[\s\S]*?(?=<!-- Summer Meals -->)/, '');
-    
-    // Remove Summer Meals
-    content = content.replace(/<!-- Summer Meals -->[\s\S]*?<\/div>\s*<\/div>\s*<div class="mega-search">/, '</div>\n        <div class="mega-search">');
-
-    // Remove Shopping Cart Icon (mega-icons)
-    content = content.replace(/<div class="mega-icons">[\s\S]*?<\/div>\s*<\/div>\s*<\/header>/, '</div>\n</header>');
-    
-    // Rename Main Meals to Our Menu
-    content = content.replace(/<a href="menu\.html" class="mega-nav-link">Main Meals<\/a>/g, '<a href="menu.html" class="mega-nav-link">Our Menu</a>');
-    content = content.replace(/<!-- Main Meals -->/g, '<!-- Our Menu -->');
-
-    if (content !== original) {
-        fs.writeFileSync(filePath, content, 'utf8');
-        
-        // Update github folder as well
-        const gitPath = path.join('C:\\Users\\KENDEE\\Documents\\GitHub\\khruathai-london\\public', file);
-        if (fs.existsSync(gitPath)) {
-            fs.writeFileSync(gitPath, content, 'utf8');
-        }
-        updatedCount++;
-    }
+// 1. Update index.html
+let indexHtml = fs.readFileSync(path.join(dir, 'index.html'), 'utf8');
+if (!indexHtml.includes('href="desserts.html"')) {
+    indexHtml = indexHtml.replace(
+        '<a href="booking.html" class="book-now-btn">',
+        '<a href="desserts.html">Desserts</a>\n            <a href="booking.html" class="book-now-btn">'
+    );
+    fs.writeFileSync(path.join(dir, 'index.html'), indexHtml);
 }
-console.log(`Updated mega-nav and removed cart in ${updatedCount} files.`);
+
+// 2. Update other HTML files
+const files = ['menu.html', 'royal.html', 'delivery.html', 'booking.html'];
+let menuContent = '';
+files.forEach(file => {
+    let content = fs.readFileSync(path.join(dir, file), 'utf8');
+    if (!content.includes('href="desserts.html"')) {
+        content = content.replace(
+            /<a href="booking\.html" id="nav-booking" class="nav-link">/g,
+            '<a href="desserts.html" id="nav-desserts" class="nav-link">ของหวาน / Desserts</a>\n        <a href="booking.html" id="nav-booking" class="nav-link">'
+        );
+        fs.writeFileSync(path.join(dir, file), content);
+    }
+    if (file === 'menu.html') menuContent = content; // Save for generating desserts.html
+});
+
+// 3. Create desserts.html
+if (!fs.existsSync(path.join(dir, 'desserts.html'))) {
+    let dessertsHtml = menuContent;
+    // Update active nav state
+    dessertsHtml = dessertsHtml.replace('id="nav-menu" class="nav-link active"', 'id="nav-menu" class="nav-link"');
+    dessertsHtml = dessertsHtml.replace('id="nav-desserts" class="nav-link"', 'id="nav-desserts" class="nav-link active"');
+    
+    // Update Title & Hero
+    dessertsHtml = dessertsHtml.replace(/<title>.*?<\/title>/, '<title>Desserts Menu - Khrua Thai London</title>');
+    dessertsHtml = dessertsHtml.replace(/id="hero-title"[^>]*>.*?<\/h1>/, 'id="hero-title" class="font-manorah text-gold text-4xl md:text-6xl mb-2.5 tracking-[2px]">Thai Desserts</h1>');
+    dessertsHtml = dessertsHtml.replace(/id="hero-subtitle"[^>]*>.*?<\/p>/, 'id="hero-subtitle" class="text-black text-lg md:text-xl max-w-[700px] mx-auto leading-relaxed">Authentic & Premium Thai Sweets</p>');
+    dessertsHtml = dessertsHtml.replace(/id="hero-desc"[^>]*>.*?<\/p>/, 'id="hero-desc" class="mt-4 text-sm md:text-base opacity-90 text-black"></p>');
+    
+    // Update Container
+    dessertsHtml = dessertsHtml.replace(
+        /<div id="menu-container".*?<\/div>/s, 
+        '<div id="menu-container" style="text-align:center; padding: 50px; font-size: 1.2rem; color: #666; font-weight: bold;">เมนูของหวานกำลังจะมาเร็วๆ นี้ / Desserts menu is coming soon!</div>'
+    );
+    
+    // Remove JS that tries to load menu data
+    dessertsHtml = dessertsHtml.replace(/<script>.*?<\/script>/s, '<script>function changeLang(l, b){}</script>');
+    
+    fs.writeFileSync(path.join(dir, 'desserts.html'), dessertsHtml);
+}
+
+console.log('Navigation updated and desserts.html created successfully.');

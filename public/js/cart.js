@@ -1,5 +1,5 @@
 // public/js/cart.js
-const CART_KEY = 'zabsiam_cart';
+const CART_KEY = 'khruathai_cart';
 
 function getCart() {
     try {
@@ -11,13 +11,19 @@ function getCart() {
 }
 
 function saveCart(cart) {
-    localStorage.setItem(CART_KEY, JSON.stringify(cart));
-    updateFloatingCart();
+    try {
+        localStorage.setItem(CART_KEY, JSON.stringify(cart));
+        updateFloatingCart();
+    } catch (e) {
+        alert('⚠️ ระบบตะกร้าสินค้าไม่สามารถทำงานได้ เนื่องจากเบราว์เซอร์ของคุณปิดกั้นการบันทึกข้อมูล (Block Cookies / LocalStorage)\n\nกรุณาปิดโหมดไม่ระบุตัวตน (Incognito) หรือตั้งค่าอนุญาต Cookie ก่อนทำการสั่งซื้อครับ');
+        throw e;
+    }
 }
 
 function addToCart(item) {
     let cart = getCart();
-    let existing = cart.find(c => c.id === item.id);
+    const optionsStr = JSON.stringify(item.options || []);
+    let existing = cart.find(c => c.id === item.id && JSON.stringify(c.options || []) === optionsStr);
     
     if (existing) {
         existing.qty += parseInt(item.qty);
@@ -56,60 +62,49 @@ function updateFloatingCart() {
     if (!floatBtn) {
         floatBtn = document.createElement('a');
         floatBtn.id = 'floating-cart';
-        floatBtn.href = 'checkout.html';
+        floatBtn.href = 'booking.html';
         floatBtn.innerHTML = `
             <i class="fas fa-shopping-cart"></i>
             <span id="floating-cart-badge">0</span>
         `;
-        
-        // Add styles dynamically
-        const style = document.createElement('style');
-        style.innerHTML = `
-            #floating-cart {
-                position: fixed;
-                bottom: 30px;
-                right: 30px;
-                background-color: #e65c00;
-                color: white;
-                width: 60px;
-                height: 60px;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 24px;
-                box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-                z-index: 9999;
-                transition: transform 0.2s, background-color 0.2s;
-                text-decoration: none;
-            }
-            #floating-cart:hover {
-                transform: scale(1.1);
-                background-color: #c44e00;
-            }
-            #floating-cart-badge {
-                position: absolute;
-                top: -5px;
-                right: -5px;
-                background-color: #1a433d;
-                color: white;
-                font-size: 14px;
-                width: 24px;
-                height: 24px;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-weight: bold;
-                border: 2px solid white;
-            }
-        `;
-        document.head.appendChild(style);
         document.body.appendChild(floatBtn);
     }
     
-    const badge = document.getElementById('floating-cart-badge');
-    badge.innerText = totalItems;
+    document.getElementById('floating-cart-badge').innerText = totalItems;
+    
+    // Force update href in case it was created with the old absolute path
+    if (floatBtn.getAttribute('href') === '/booking.html') {
+        floatBtn.href = 'booking.html';
+    }
+    
+    // Update top nav booking link to show cart icon
+    const navBooking = document.getElementById('nav-booking');
+    if (navBooking) {
+        if (!document.getElementById('nav-cart-badge-inner')) {
+            navBooking.style.position = 'relative';
+            navBooking.style.paddingRight = '15px';
+            navBooking.style.display = 'inline-flex';
+            navBooking.style.alignItems = 'center';
+            navBooking.innerHTML = `<i class="fas fa-shopping-cart" style="font-size: 1.3rem;"></i>
+                <span id="nav-cart-badge-inner" style="position:absolute; top:-8px; right:-5px; background:#FF3B30; color:white; font-size:0.75rem; width:20px; height:20px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; border:2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.2); display:none;">0</span>`;
+        }
+        
+        const navBadge = document.getElementById('nav-cart-badge-inner');
+        if (navBadge) {
+            navBadge.innerText = totalItems;
+            if (totalItems > 0) {
+                navBadge.style.display = 'flex';
+            } else {
+                navBadge.style.display = 'none';
+            }
+        }
+    }
+    
+    // Do not show floating cart inside booking.html
+    if (window.location.pathname.includes('booking.html')) {
+        floatBtn.style.display = 'none';
+        return;
+    }
     
     if (totalItems > 0) {
         floatBtn.style.display = 'flex';
@@ -119,37 +114,22 @@ function updateFloatingCart() {
 }
 
 function showCartToast(qty) {
-    const toast = document.createElement('div');
-    toast.innerText = 'Added ' + qty + ' item(s) to order!';
-    toast.style.position = 'fixed';
-    toast.style.bottom = '100px';
-    toast.style.right = '30px';
-    toast.style.backgroundColor = '#1a433d';
-    toast.style.color = 'white';
-    toast.style.padding = '12px 20px';
-    toast.style.borderRadius = '8px';
-    toast.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
-    toast.style.zIndex = '10000';
-    toast.style.fontWeight = 'bold';
-    toast.style.opacity = '0';
-    toast.style.transition = 'opacity 0.3s, transform 0.3s';
-    toast.style.transform = 'translateY(20px)';
+    let toast = document.getElementById('cart-toast');
+    if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'cart-toast';
+        document.body.appendChild(toast);
+    }
     
-    document.body.appendChild(toast);
+    const lang = document.documentElement.lang || 'en';
+    toast.innerHTML = lang === 'th' ? 
+        `<i class="fas fa-check-circle" style="color:#4CAF50; margin-right:10px;"></i> เพิ่ม <b>${qty}</b> รายการลงตะกร้าเรียบร้อย` :
+        `<i class="fas fa-check-circle" style="color:#4CAF50; margin-right:10px;"></i> Added <b>${qty}</b> items to cart`;
     
+    toast.classList.add('show');
     setTimeout(() => {
-        toast.style.opacity = '1';
-        toast.style.transform = 'translateY(0)';
-    }, 10);
-    
-    setTimeout(() => {
-        toast.style.opacity = '0';
-        toast.style.transform = 'translateY(20px)';
-        setTimeout(() => toast.remove(), 300);
-    }, 2500);
+        toast.classList.remove('show');
+    }, 3000);
 }
 
-// Initialize on page load
-document.addEventListener('DOMContentLoaded', () => {
-    updateFloatingCart();
-});
+document.addEventListener('DOMContentLoaded', updateFloatingCart);
