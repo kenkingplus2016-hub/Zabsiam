@@ -402,7 +402,17 @@ async function handleChatApi(request, response) {
             return;
         }
 
-        const systemPrompt = "You are a polite, helpful AI assistant for ZabSiam, a premium authentic Thai catering service. Answer customer queries about catering packages, food, and bookings concisely and politely. Encourage them to book a package if they are interested.";
+        const systemPrompt = `You are a polite, helpful AI sales assistant for ZabSiam, a premium authentic Thai catering service.
+Your goal is to answer customer queries and CLOSE THE SALE.
+Ask the customer for the following details to confirm a booking:
+1. Name
+2. Contact (Phone/Email)
+3. Event Date
+4. Number of Guests
+5. Package & Menu Choices
+Once you have ALL these details and the customer confirms they want to book, you MUST append the following JSON block at the very end of your message:
+[ORDER_CONFIRMED]
+{"name": "...", "contact": "...", "date": "...", "guests": "...", "package": "..."}`;
 
         const completion = await openai.chat.completions.create({
             model: "gpt-4o-mini",
@@ -412,7 +422,29 @@ async function handleChatApi(request, response) {
             ],
         });
 
-        const reply = completion.choices[0].message.content;
+        let reply = completion.choices[0].message.content;
+        
+        if (reply.includes('[ORDER_CONFIRMED]')) {
+            const parts = reply.split('[ORDER_CONFIRMED]');
+            const userReply = parts[0].trim();
+            const jsonPart = parts[1].trim();
+            try {
+                const orderData = JSON.parse(jsonPart);
+                orderData.id = makeRecordId();
+                orderData.createdAt = new Date().toISOString();
+                
+                const ORDERS_FILE = path.join(DATA_DIR, 'orders.json');
+                const orders = readJsonFile(ORDERS_FILE, []);
+                orders.unshift(orderData);
+                writeJsonFile(ORDERS_FILE, orders);
+                
+                reply = userReply + "\n\n(✅ Your order has been securely sent to our team. We will be in touch shortly!)";
+            } catch(e) {
+                console.error("Failed to parse order JSON:", e);
+                reply = userReply;
+            }
+        }
+
         sendJson(response, 200, { reply });
     } catch (error) {
         console.error('OpenAI API error:', error);
