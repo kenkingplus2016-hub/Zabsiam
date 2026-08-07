@@ -1,6 +1,7 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const { OpenAI } = require('openai');
 
 const PORT = process.env.PORT || 8080;
 const PUBLIC_DIR = path.join(__dirname, 'public');
@@ -379,6 +380,46 @@ async function handleFoodSafetyRecords(request, response, pathname) {
     sendJson(response, 405, { error: 'Method not allowed.' });
 }
 
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY || 'dummy-key' }); // Initialize with dummy to prevent crash on boot if env is missing
+
+async function handleChatApi(request, response) {
+    if (request.method !== 'POST') {
+        sendJson(response, 405, { error: 'Method not allowed.' });
+        return;
+    }
+
+    try {
+        if (process.env.OPENAI_API_KEY === undefined || process.env.OPENAI_API_KEY === '') {
+            sendJson(response, 500, { error: 'OpenAI API Key is not configured on the server.' });
+            return;
+        }
+
+        const body = await readRequestBody(request);
+        const userMessage = String(body.message || '').trim();
+
+        if (!userMessage) {
+            sendJson(response, 400, { error: 'Message is required.' });
+            return;
+        }
+
+        const systemPrompt = "You are a polite, helpful AI assistant for Khrua Thai London, a premium authentic Thai catering service. Answer customer queries about catering packages, food, and bookings concisely and politely. Encourage them to book a package if they are interested.";
+
+        const completion = await openai.chat.completions.create({
+            model: "gpt-4o-mini",
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: userMessage }
+            ],
+        });
+
+        const reply = completion.choices[0].message.content;
+        sendJson(response, 200, { reply });
+    } catch (error) {
+        console.error('OpenAI API error:', error);
+        sendJson(response, 500, { error: 'Failed to process chat request.' });
+    }
+}
+
 const server = http.createServer((request, response) => {
     const requestUrl = new URL(request.url, `http://${request.headers.host || 'localhost'}`);
 
@@ -402,6 +443,14 @@ const server = http.createServer((request, response) => {
         handleTemperatureChecks(request, response, requestUrl.pathname).catch(error => {
             console.error('Temperature check API error:', error);
             sendJson(response, 400, { error: error.message || 'Bad request.' });
+        });
+        return;
+    }
+
+    if (requestUrl.pathname.startsWith('/api/chat')) {
+        handleChatApi(request, response).catch(error => {
+            console.error('Chat API error:', error);
+            sendJson(response, 500, { error: error.message || 'Server error.' });
         });
         return;
     }

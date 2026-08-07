@@ -850,5 +850,164 @@
         <p>&copy; 2026 ZabSiam London. All rights reserved.</p>
     </footer>
 
+    <!-- Chatbot UI -->
+    <div id="ai-chat-modal" class="chat-modal" style="display: none;">
+        <div class="chat-header">
+            <h3>🤖 AI Assistant</h3>
+            <button onclick="closeChat()">×</button>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="message ai-message">Hello! I am the Khrua Thai London AI assistant. How can I help you with your catering enquiry today?</div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chat-input-box" placeholder="Ask about packages or menus..." onkeypress="handleChatKeyPress(event)">
+            <button onclick="sendChatMessage()">Send</button>
+        </div>
+    </div>
+
+    <style>
+        .chat-modal {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 350px;
+            max-width: 90vw;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            border: 1px solid var(--glass-border);
+        }
+        .chat-header {
+            background: var(--primary);
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .chat-header h3 { margin: 0; font-size: 1.1rem; }
+        .chat-header button {
+            background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer;
+        }
+        .chat-messages {
+            height: 350px;
+            padding: 15px;
+            overflow-y: auto;
+            background: #fafafa;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .message {
+            padding: 10px 15px;
+            border-radius: 20px;
+            max-width: 85%;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+        .ai-message {
+            background: #e9ecef;
+            color: #333;
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+        }
+        .user-message {
+            background: var(--primary);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+        }
+        .chat-input {
+            display: flex;
+            padding: 10px;
+            background: white;
+            border-top: 1px solid #eee;
+        }
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+        }
+        .chat-input button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin-left: 10px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+    </style>
+
+    <script>
+        function openChat(e) {
+            if(e) e.preventDefault();
+            document.getElementById('ai-chat-modal').style.display = 'flex';
+        }
+
+        function closeChat() {
+            document.getElementById('ai-chat-modal').style.display = 'none';
+        }
+
+        // Override all "Enquire Now" buttons
+        document.addEventListener('DOMContentLoaded', () => {
+            const btns = document.querySelectorAll('a');
+            btns.forEach(btn => {
+                if(btn.textContent.trim() === 'Enquire Now') {
+                    btn.addEventListener('click', openChat);
+                }
+            });
+        });
+
+        function handleChatKeyPress(e) {
+            if (e.key === 'Enter') sendChatMessage();
+        }
+
+        async function sendChatMessage() {
+            const input = document.getElementById('chat-input-box');
+            const messagesContainer = document.getElementById('chat-messages');
+            const text = input.value.trim();
+            if (!text) return;
+
+            messagesContainer.innerHTML += `<div class="message user-message">${text}</div>`;
+            input.value = '';
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+            const loadingId = 'loading-' + Date.now();
+            messagesContainer.innerHTML += `<div id="${loadingId}" class="message ai-message">Typing...</div>`;
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+            try {
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: text })
+                });
+                
+                const data = await response.json();
+                document.getElementById(loadingId).remove();
+                
+                if (response.ok) {
+                    // Handle markdown newlines
+                    const formattedReply = data.reply.replace(/\n/g, '<br>');
+                    messagesContainer.innerHTML += `<div class="message ai-message">${formattedReply}</div>`;
+                } else {
+                    messagesContainer.innerHTML += `<div class="message ai-message" style="color: red;">Error: ${data.error}</div>`;
+                }
+            } catch (error) {
+                document.getElementById(loadingId).remove();
+                messagesContainer.innerHTML += `<div class="message ai-message" style="color: red;">Network error. Please try again later.</div>`;
+            }
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+    </script>
 </body>
 </html>
