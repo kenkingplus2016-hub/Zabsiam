@@ -148,7 +148,7 @@
                     <li style="color: #999; margin-top: 10px;"><i class="fas fa-info-circle" style="color: #999;"></i> Premium items (Beef, Duck, Fish, Crab) can be added as an upgrade (+£50-£150).</li>
                 </ul>
                 <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
-                    <a href="#full-menu" class="btn-primary" style="display: block; text-align: center; background: transparent; color: var(--primary); border: 2px solid var(--primary);">Choose Menus</a>
+                    <a href="#full-menu" class="btn-primary" onclick="startMenuBuilder('SIAM CLASSIC')" style="display: block; text-align: center; background: transparent; color: var(--primary); border: 2px solid var(--primary);">Choose Menus</a>
                     <a href="mailto:contact@zabsiam.com?subject=Enquiry: SIAM CLASSIC Package" class="btn-primary" style="display: block; text-align: center;">Enquire Now</a>
                 </div>
             </div>
@@ -181,7 +181,7 @@
                     <li><i class="fas fa-star"></i> Premium Table Styling</li>
                 </ul>
                 <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
-                    <a href="#full-menu" class="btn-primary" style="display: block; text-align: center; background: transparent; color: var(--primary); border: 2px solid var(--primary);">Choose Menus</a>
+                    <a href="#full-menu" class="btn-primary" onclick="startMenuBuilder('ZAB SIAM SIGNATURE')" style="display: block; text-align: center; background: transparent; color: var(--primary); border: 2px solid var(--primary);">Choose Menus</a>
                     <a href="mailto:contact@zabsiam.com?subject=Enquiry: ZAB SIAM SIGNATURE Package" class="btn-primary" style="display: block; text-align: center;">Enquire Now</a>
                 </div>
             </div>
@@ -210,7 +210,7 @@
                     <li><i class="fas fa-star"></i> Luxury Food Presentation</li>
                 </ul>
                 <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
-                    <a href="#full-menu" class="btn-primary" style="display: block; text-align: center; background: transparent; color: var(--primary); border: 2px solid var(--primary);">Choose Menus</a>
+                    <a href="#full-menu" class="btn-primary" onclick="startMenuBuilder('CELEBRATION')" style="display: block; text-align: center; background: transparent; color: var(--primary); border: 2px solid var(--primary);">Choose Menus</a>
                     <a href="mailto:contact@zabsiam.com?subject=Enquiry: CELEBRATION Package" class="btn-primary" style="display: block; text-align: center;">Enquire Now</a>
                 </div>
             </div>
@@ -947,6 +947,230 @@
         }
     </style>
 
+    <!-- Menu Builder UI -->
+    <div id="menu-builder-bar" class="menu-builder-bar" style="display: none;">
+        <div class="mb-content">
+            <span id="mb-pkg-name"><strong>Building:</strong> SIAM CLASSIC</span>
+            <div class="mb-stats">
+                <span id="mb-stat-Starters" class="mb-stat-badge">Starters: 0/2</span>
+                <span id="mb-stat-Mains" class="mb-stat-badge">Mains: 0/2</span>
+                <span id="mb-stat-RiceNoodles" class="mb-stat-badge">Rice/Noodles: 0/2</span>
+                <span id="mb-stat-Vegetables" class="mb-stat-badge">Veg: 0/1</span>
+                <span id="mb-stat-Desserts" class="mb-stat-badge">Desserts: 0/1</span>
+            </div>
+            <div class="mb-actions">
+                <button class="btn-cancel" onclick="cancelMenuBuilder()">Cancel</button>
+                <button class="btn-done" id="btn-finish-menu" onclick="finishMenuBuilder()">Finish</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .menu-builder-bar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--primary);
+            z-index: 10000;
+            padding: 10px 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+        }
+        .mb-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        #mb-pkg-name { color: var(--primary); font-size: 1.1rem; }
+        .mb-stats { display: flex; gap: 10px; flex-wrap: wrap; }
+        .mb-stat-badge {
+            background: #fdf2f2;
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .mb-stat-badge.full {
+            background: var(--primary);
+            color: white;
+        }
+        .mb-actions { display: flex; gap: 10px; }
+        .mb-actions button {
+            padding: 8px 20px; border-radius: 25px; font-weight: 600; cursor: pointer; border: none; font-family: inherit;
+        }
+        .btn-cancel { background: #eee; color: #555; }
+        .btn-done { background: var(--primary); color: white; opacity: 0.5; pointer-events: none; }
+        .btn-done.ready { opacity: 1; pointer-events: auto; }
+
+        /* Selectable Menu Items */
+        .menu-item.selectable {
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            border: 2px solid transparent;
+        }
+        .menu-item.selectable:hover {
+            border-color: rgba(230, 81, 0, 0.3);
+            transform: translateY(-2px);
+        }
+        .menu-item.selected {
+            border-color: var(--primary);
+            background-color: #fff9f5;
+        }
+        .menu-item.selected::after {
+            content: '✓';
+            position: absolute;
+            top: 10px; right: 15px;
+            color: var(--primary);
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+        const packageLimits = {
+            'SIAM CLASSIC': { Starters: 2, Mains: 2, RiceNoodles: 2, Vegetables: 1, Desserts: 1 },
+            'ZAB SIAM SIGNATURE': { Starters: 2, Mains: 3, RiceNoodles: 2, Vegetables: 2, Desserts: 1 },
+            'CELEBRATION': { Starters: 3, Mains: 3, RiceNoodles: 3, Vegetables: 2, Desserts: 1 }
+        };
+
+        let currentBuilderPkg = null;
+        let selections = { Starters: [], Mains: [], RiceNoodles: [], Vegetables: [], Desserts: [] };
+
+        // Helper to map UI category titles to our internal keys
+        function getCategoryKey(title) {
+            if(title === 'Starters') return 'Starters';
+            if(title === 'Grilled & Soups' || title === 'Curries' || title === 'Mains' || title === 'Steamed & Fried Whole Fish') return 'Mains';
+            if(title === 'Rice' || title === 'Noodles') return 'RiceNoodles';
+            if(title === 'Vegetables') return 'Vegetables';
+            if(title === 'Desserts') return 'Desserts';
+            return null;
+        }
+
+        function startMenuBuilder(pkgName) {
+            if(!packageLimits[pkgName]) return;
+            currentBuilderPkg = pkgName;
+            selections = { Starters: [], Mains: [], RiceNoodles: [], Vegetables: [], Desserts: [] };
+            
+            document.getElementById('mb-pkg-name').innerHTML = `<strong>Building:</strong> ${pkgName}`;
+            document.getElementById('menu-builder-bar').style.display = 'block';
+            
+            // Enable selection on all items
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.classList.add('selectable');
+                item.classList.remove('selected');
+                
+                // Add click listener if not already added
+                if(!item.dataset.hasBuilderListener) {
+                    item.addEventListener('click', function() {
+                        if(!currentBuilderPkg) return;
+                        
+                        // Find category
+                        let parentCategory = this.closest('.menu-category');
+                        if(!parentCategory) return;
+                        let catTitle = parentCategory.querySelector('h3').innerText;
+                        let key = getCategoryKey(catTitle);
+                        if(!key) return;
+
+                        let title = this.querySelector('.menu-item-title').innerText;
+                        let limits = packageLimits[currentBuilderPkg];
+                        
+                        if(this.classList.contains('selected')) {
+                            // Deselect
+                            this.classList.remove('selected');
+                            selections[key] = selections[key].filter(i => i !== title);
+                        } else {
+                            // Select (check limit)
+                            if(selections[key].length < limits[key]) {
+                                this.classList.add('selected');
+                                selections[key].push(title);
+                            } else {
+                                alert(`You can only select ${limits[key]} ${key} for this package.`);
+                            }
+                        }
+                        updateBuilderUI();
+                    });
+                    item.dataset.hasBuilderListener = "true";
+                }
+            });
+            updateBuilderUI();
+        }
+
+        function cancelMenuBuilder() {
+            currentBuilderPkg = null;
+            document.getElementById('menu-builder-bar').style.display = 'none';
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.classList.remove('selectable');
+                item.classList.remove('selected');
+            });
+        }
+
+        function updateBuilderUI() {
+            if(!currentBuilderPkg) return;
+            const limits = packageLimits[currentBuilderPkg];
+            let allFull = true;
+
+            Object.keys(limits).forEach(key => {
+                const count = selections[key].length;
+                const limit = limits[key];
+                const badge = document.getElementById(`mb-stat-${key}`);
+                
+                if(badge) {
+                    let displayKey = key === 'RiceNoodles' ? 'Rice/Noodles' : key;
+                    badge.innerText = `${displayKey}: ${count}/${limit}`;
+                    if(count >= limit) {
+                        badge.classList.add('full');
+                    } else {
+                        badge.classList.remove('full');
+                        allFull = false;
+                    }
+                }
+            });
+
+            const btnDone = document.getElementById('btn-finish-menu');
+            if(allFull) {
+                btnDone.classList.add('ready');
+            } else {
+                btnDone.classList.remove('ready');
+            }
+        }
+
+        function finishMenuBuilder() {
+            if(!currentBuilderPkg) return;
+            
+            // Build summary
+            let summary = `Hi, I am interested in booking the ${currentBuilderPkg} package.\nHere is my selected menu:\n\n`;
+            
+            Object.keys(selections).forEach(key => {
+                if(selections[key].length > 0) {
+                    summary += `*${key}*\n`;
+                    selections[key].forEach(item => summary += `- ${item}\n`);
+                    summary += `\n`;
+                }
+            });
+
+            summary += `Could you please provide a quote and availability?`;
+
+            // Open Chatbot and inject message
+            cancelMenuBuilder();
+            openChat();
+            
+            setTimeout(() => {
+                const chatInput = document.getElementById('chat-input-box');
+                if(chatInput) {
+                    chatInput.value = summary;
+                    chatInput.focus();
+                }
+            }, 500);
+        }
+    </script>
     <script>
         function openChat(e) {
             if(e) e.preventDefault();
