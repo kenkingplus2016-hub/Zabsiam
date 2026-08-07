@@ -402,7 +402,7 @@ async function handleChatApi(request, response) {
             return;
         }
 
-        const systemPrompt = "You are a polite, helpful AI assistant for Khrua Thai London, a premium authentic Thai catering service. Answer customer queries about catering packages, food, and bookings concisely and politely. Encourage them to book a package if they are interested.";
+        const systemPrompt = "You are a polite, helpful AI assistant for ZabSiam, a premium authentic Thai catering service. Answer customer queries about catering packages, food, and bookings concisely and politely. Encourage them to book a package if they are interested.";
 
         const completion = await openai.chat.completions.create({
             model: "gpt-4o-mini",
