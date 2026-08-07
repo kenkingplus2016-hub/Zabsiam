@@ -452,6 +452,22 @@ Once you have ALL these details and the customer confirms they want to book, you
     }
 }
 
+async function handleOrdersApi(request, response) {
+    if (!isAdminRequest(request)) {
+        sendJson(response, 401, { error: 'Unauthorized' });
+        return;
+    }
+    
+    if (request.method === 'GET') {
+        const ORDERS_FILE = path.join(DATA_DIR, 'orders.json');
+        const orders = readJsonFile(ORDERS_FILE, []);
+        sendJson(response, 200, { orders });
+        return;
+    }
+    
+    sendJson(response, 405, { error: 'Method not allowed.' });
+}
+
 const server = http.createServer((request, response) => {
     const requestUrl = new URL(request.url, `http://${request.headers.host || 'localhost'}`);
 
@@ -483,6 +499,14 @@ const server = http.createServer((request, response) => {
         handleChatApi(request, response).catch(error => {
             console.error('Chat API error:', error);
             sendJson(response, 500, { error: error.message || 'Server error.' });
+        });
+        return;
+    }
+
+    if (requestUrl.pathname === '/api/orders') {
+        handleOrdersApi(request, response).catch(error => {
+            console.error('Orders API error:', error);
+            sendJson(response, 500, { error: 'Server error.' });
         });
         return;
     }
