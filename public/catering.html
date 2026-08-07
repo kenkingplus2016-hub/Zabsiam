@@ -323,8 +323,8 @@
             <p>* Travel, parking, congestion charges and specialist equipment hire are quoted separately where applicable.</p>
         </div>
     </section>\n\n    <!-- Full Menu Section -->
-    <section class="full-menu-section" id="full-menu">
-        <h2 class="section-title">The <span>Menu</span></h2>
+    <section class="full-menu-section" id="street-food-menu" style="display: none;">
+        <h2 class="section-title">Thai Street Food <span>Menu</span></h2>
         <div class="menu-container">
             <p style="text-align: center; margin-bottom: 40px; color: #555;">
                 <span class="premium-badge" style="font-size: 0.9rem;">Premium Upgrade (+£50–£150)</span><br>
@@ -879,6 +879,36 @@
         </div>
     </section>
 
+    <!-- Fine Dining Menu Section -->
+    <section class="full-menu-section" id="fine-dining-menu" style="display: none;">
+        <h2 class="section-title">Elegant Fine Dining <span>Menu</span></h2>
+        <div class="menu-container">
+            <p style="text-align: center; margin-bottom: 40px; color: #555;">
+                <span class="premium-badge" style="font-size: 0.9rem;">Modern Thai Fine Dining</span><br>
+                Experience an elevated journey through authentic Thai flavours, meticulously crafted and beautifully presented.
+            </p>
+
+            <!-- Signature Rice & Soup Course -->
+            <div class="menu-category">
+                <h3>Signature Rice & Soup Course</h3>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Crispy King Prawn & Shrimp Oil Fried Rice</span>
+                            <span class="menu-item-tags"><span class="premium-badge">Signature</span></span>
+                        </div>
+                        <p class="menu-item-desc"><strong>Shrimp Oil Fried Rice:</strong> Jasmine rice stir-fried with homemade shrimp oil, perfectly balanced and not overly oily.<br>
+                        <strong>Crispy King Prawn:</strong> A jumbo tiger prawn, deep-fried to a golden crisp, finished with fresh lime zest.<br>
+                        <strong>Thai Aromatic Prawn Consommé:</strong> Served alongside, a rich prawn stock infused with Thai herbs and topped with Lemongrass & Lime Foam.<br>
+                        <strong>Garnish:</strong> Lime Gel, Crispy Garlic, Chilli-Lime Oil, Micro Coriander, and Certified Edible Flowers.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
     <!-- Pre-selected Sets -->
     <section class="sets-section">
         <h2 class="section-title">Chef's <span>Sets</span></h2>
@@ -1140,16 +1170,16 @@
 
     <script>
         const packageLimits = {
-            'SIAM CLASSIC': { Starters: 2, Mains: 2, RiceNoodles: 1, Vegetables: 1, Desserts: 1 },
-            'ZAB SIAM SIGNATURE': { Starters: 2, Mains: 3, RiceNoodles: 2, Vegetables: 1, Desserts: 1 },
-            'CELEBRATION': { Starters: 3, Mains: 3, RiceNoodles: 2, Vegetables: 1, Desserts: 1 },
-            'SIAM CLASSIC FINE DINING': { Starters: 2, Mains: 1, RiceNoodles: 1, Vegetables: 0, Desserts: 1 },
-            'ZAB SIAM SIGNATURE FINE DINING': { Starters: 2, Mains: 2, RiceNoodles: 1, Vegetables: 0, Desserts: 1 },
-            'CELEBRATION FINE DINING': { Starters: 3, Mains: 2, RiceNoodles: 1, Vegetables: 0, Desserts: 1 }
+            'SIAM CLASSIC': { Starters: 2, Mains: 2, RiceNoodles: 1, Vegetables: 1, Desserts: 1, SignatureRiceSoup: 0 },
+            'ZAB SIAM SIGNATURE': { Starters: 2, Mains: 3, RiceNoodles: 2, Vegetables: 1, Desserts: 1, SignatureRiceSoup: 0 },
+            'CELEBRATION': { Starters: 3, Mains: 3, RiceNoodles: 2, Vegetables: 1, Desserts: 1, SignatureRiceSoup: 0 },
+            'SIAM CLASSIC FINE DINING': { Starters: 2, Mains: 1, RiceNoodles: 0, Vegetables: 0, Desserts: 1, SignatureRiceSoup: 1 },
+            'ZAB SIAM SIGNATURE FINE DINING': { Starters: 2, Mains: 2, RiceNoodles: 0, Vegetables: 0, Desserts: 1, SignatureRiceSoup: 1 },
+            'CELEBRATION FINE DINING': { Starters: 3, Mains: 2, RiceNoodles: 0, Vegetables: 0, Desserts: 1, SignatureRiceSoup: 1 }
         };
 
         let currentBuilderPkg = null;
-        let selections = { Starters: [], Mains: [], RiceNoodles: [], Vegetables: [], Desserts: [] };
+        let selections = { Starters: [], Mains: [], RiceNoodles: [], Vegetables: [], Desserts: [], SignatureRiceSoup: [] };
 
         // Helper to map UI category titles to our internal keys
         function getCategoryKey(title) {
@@ -1159,6 +1189,7 @@
             if(title.includes('Rice') || title.includes('Noodle')) return 'RiceNoodles';
             if(title.includes('Vegetable')) return 'Vegetables';
             if(title.includes('Dessert')) return 'Desserts';
+            if(title.includes('Signature Rice & Soup Course') || title.includes('Signature Rice')) return 'SignatureRiceSoup';
             if(title.includes('Curry') || title.includes('Stir') || title.includes('Soup')) return 'Mains';
             return null;
         }
@@ -1166,10 +1197,21 @@
         function startMenuBuilder(pkgName) {
             if(!packageLimits[pkgName]) return;
             currentBuilderPkg = pkgName;
-            selections = { Starters: [], Mains: [], RiceNoodles: [], Vegetables: [], Desserts: [] };
+            selections = { Starters: [], Mains: [], RiceNoodles: [], Vegetables: [], Desserts: [], SignatureRiceSoup: [] };
             
             document.getElementById('mb-pkg-name').innerHTML = `<strong>Building:</strong> ${pkgName}`;
             document.getElementById('menu-builder-bar').style.display = 'block';
+
+            // Show appropriate menu based on package type
+            if (pkgName.includes('FINE DINING')) {
+                document.getElementById('street-food-menu').style.display = 'none';
+                document.getElementById('fine-dining-menu').style.display = 'block';
+                document.getElementById('fine-dining-menu').scrollIntoView({ behavior: 'smooth' });
+            } else {
+                document.getElementById('fine-dining-menu').style.display = 'none';
+                document.getElementById('street-food-menu').style.display = 'block';
+                document.getElementById('street-food-menu').scrollIntoView({ behavior: 'smooth' });
+            }
             
             // Enable selection on all items
             document.querySelectorAll('.menu-item').forEach(item => {
