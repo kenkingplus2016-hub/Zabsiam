@@ -90,9 +90,9 @@
         
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; max-width: 1000px; margin: 60px auto 0; text-align: left;">
             <!-- Street Food Style -->
-            <div style="background: rgba(255,255,255,0.95); border-radius: 15px; border-left: 5px solid var(--primary); box-shadow: 0 15px 35px rgba(0,0,0,0.1); overflow: hidden; transition: transform 0.3s ease; display: flex; flex-direction: column;">
+            <div style="background: rgba(255,255,255,0.95); border-radius: 15px; border-left: 5px solid var(--primary); box-shadow: 0 15px 35px rgba(0,0,0,0.1); overflow: hidden; transition: transform 0.3s ease; display: flex; flex-direction: column; cursor:pointer;" onclick="selectCategory('street')">
                 <div style="height: 200px; overflow: hidden;">
-                    <img src="images/larb_ped.jpg" alt="Thai Street Food" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="images/category_street_food.jpg" alt="Thai Street Food" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <div style="padding: 25px; display: flex; flex-direction: column; flex-grow: 1;">
                     <div style="display: flex; align-items: center; margin-bottom: 15px;">
@@ -100,14 +100,14 @@
                         <h3 style="font-size: 1.4rem; color: #111; margin: 0;">Thai Street Food Style</h3>
                     </div>
                     <p style="color: #444; font-size: 1rem; line-height: 1.6; margin: 0 0 20px 0; flex-grow: 1;">A fun, interactive dining experience. Dishes are served family-style or from vibrant food stations, bringing the energetic atmosphere of Bangkok streets straight to your event.</p>
-                    <a href="mailto:contact@zabsiam.com?subject=Enquiry: Thai Street Food Catering" class="btn-primary" style="display: block; text-align: center; padding: 12px;">Select Street Food</a>
+                    <button onclick="selectCategory('street')" class="btn-primary" style="display: block; width: 100%; border: 2px solid var(--primary); cursor: pointer; text-align: center; padding: 14px; font-size:1.1rem; border-radius:30px; font-weight:700; letter-spacing:1px;">SELECT STREET FOOD</button>
                 </div>
             </div>
             
             <!-- Fine Dining Style -->
-            <div style="background: rgba(255,255,255,0.95); border-radius: 15px; border-left: 5px solid #111; box-shadow: 0 15px 35px rgba(0,0,0,0.1); overflow: hidden; transition: transform 0.3s ease; display: flex; flex-direction: column;">
+            <div style="background: rgba(255,255,255,0.95); border-radius: 15px; border-left: 5px solid #111; box-shadow: 0 15px 35px rgba(0,0,0,0.1); overflow: hidden; transition: transform 0.3s ease; display: flex; flex-direction: column; cursor:pointer;" onclick="selectCategory('fine')">
                 <div style="height: 200px; overflow: hidden;">
-                    <img src="images/seabass_miang_kham.jpg" alt="Fine Dining" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="images/category_fine_dining.jpg" alt="Fine Dining" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <div style="padding: 25px; display: flex; flex-direction: column; flex-grow: 1;">
                     <div style="display: flex; align-items: center; margin-bottom: 15px;">
@@ -115,7 +115,7 @@
                         <h3 style="font-size: 1.4rem; color: #111; margin: 0;">Elegant Fine Dining</h3>
                     </div>
                     <p style="color: #444; font-size: 1rem; line-height: 1.6; margin: 0 0 20px 0; flex-grow: 1;">A sophisticated sit-down dinner. Enjoy exquisite plating, refined flavours, and premium table service designed to impress your guests for any special occasion.</p>
-                    <a href="mailto:contact@zabsiam.com?subject=Enquiry: Fine Dining Catering" class="btn-primary" style="display: block; text-align: center; padding: 12px; background: #111; border-color: #111;">Select Fine Dining</a>
+                    <button onclick="selectCategory('fine')" class="btn-primary" style="display: block; width: 100%; border: none; cursor: pointer; text-align: center; padding: 14px; background: #111; color: white; font-size:1.1rem; border-radius:30px; font-weight:700; letter-spacing:1px;">SELECT FINE DINING</button>
                 </div>
             </div>
         </div>
@@ -125,6 +125,7 @@
         <h2 class="section-title">Our <span>Packages</span></h2>
         
         <!-- Thai Street Food Style -->
+        <div id="street-food-section" style="display:none;">
         <div style="text-align: center; margin-bottom: 30px;">
             <h3 style="font-size: 1.8rem; color: var(--primary);">Thai Street Food Style</h3>
             <p style="color: #666;">บรรยากาศสนุก เป็นกันเอง เสิร์ฟแบบ sharing / family style</p>
@@ -210,7 +211,10 @@
             </div>
         </div>
 
+        </div> <!-- end street-food-section -->
+
         <!-- Elegant Fine Dining -->
+        <div id="fine-dining-section" style="display:none;">
         <div style="text-align: center; margin-bottom: 30px;">
             <h3 style="font-size: 1.8rem; color: var(--primary);">Elegant Fine Dining</h3>
             <p style="color: #666;">บรรยากาศหรูหรา เสิร์ฟเป็นคอร์ส จัดจานรายบุคคล</p>
@@ -311,6 +315,8 @@
                 </div>
             </div>
         </div>
+
+        </div> <!-- end fine-dining-section -->
 
         <div style="text-align: center; margin-top: 40px; color: #777; font-size: 0.95rem; max-width: 800px; margin-left: auto; margin-right: auto;">
             <p>* Premium ingredients such as crab, king prawns, whole sea bass, duck and selected cuts of beef may carry an additional supplement.</p>
@@ -1288,19 +1294,14 @@
             });
 
             summary += `*Allergies noted:* ${allergies.join(', ')}\n\n`;
-            summary += `Could you please provide a quote and availability?`;
+            summary += `Please screenshot or copy this summary for your records.`;
 
             closeAllergenModal();
             cancelMenuBuilder();
-            openChat();
             
-            setTimeout(() => {
-                const chatInput = document.getElementById('chat-input-box');
-                if(chatInput) {
-                    chatInput.value = summary;
-                    chatInput.focus();
-                }
-            }, 500);
+            // Show summary popup
+            document.getElementById('order-summary-text').value = summary;
+            document.getElementById('order-summary-modal').style.display = 'flex';
         }
     </script>
     <script>
@@ -1363,6 +1364,41 @@
                 messagesContainer.innerHTML += `<div class="message ai-message" style="color: red;">Network error. Please try again later.</div>`;
             }
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+    </script>
+
+    <!-- Order Summary Popup -->
+    <div id="order-summary-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content allergen-modal-content" style="max-width: 600px;">
+            <h3 style="margin-top:0; color:var(--primary); text-align: center;">✅ Your Menu Summary</h3>
+            <p style="text-align:center; color:#666; font-size:0.9rem;">Here is a summary of your selected menu. You can copy or screenshot this.</p>
+            <textarea id="order-summary-text" style="width: 100%; height: 280px; padding: 15px; border-radius: 8px; border: 1px solid #ddd; font-family: 'Inter', sans-serif; resize: none; margin-bottom: 15px; font-size: 0.95rem; line-height:1.6;" readonly></textarea>
+            <div style="display: flex; gap: 10px; justify-content: center;">
+                <button onclick="document.getElementById('order-summary-modal').style.display='none'" class="btn-cancel" style="padding: 10px 25px; border-radius: 25px; border:none; cursor:pointer; font-family:inherit;">Close</button>
+                <button onclick="copyOrderSummary()" class="btn-primary" style="padding: 10px 25px; border-radius: 25px; border:none; cursor:pointer; font-family:inherit;">📋 Copy to Clipboard</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function selectCategory(cat) {
+            const sf = document.getElementById('street-food-section');
+            const fd = document.getElementById('fine-dining-section');
+            if(cat === 'street') {
+                sf.style.display = 'block';
+                fd.style.display = 'none';
+            } else {
+                sf.style.display = 'none';
+                fd.style.display = 'block';
+            }
+            document.querySelector('.packages-section').scrollIntoView({behavior: 'smooth'});
+        }
+
+        function copyOrderSummary() {
+            const ta = document.getElementById('order-summary-text');
+            ta.select();
+            document.execCommand('copy');
+            alert('Copied to clipboard!');
         }
     </script>
 </body>
