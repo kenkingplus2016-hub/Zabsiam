@@ -40,10 +40,16 @@
         .menu-subcategory { font-size: 1.3rem; color: #333; margin-top: 25px; margin-bottom: 15px; font-weight: 700; }
         
         .menu-items { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; }
-        .menu-item { background: #fafafa; padding: 15px 20px; border-radius: 8px; border: 1px solid #eee; display: flex; flex-direction: column; justify-content: center; }
-        .menu-item-title { font-weight: 600; color: #222; font-size: 1.05rem; }
-        .premium-badge { display: inline-block; background: #fff0e6; color: #e65c00; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px; margin-top: 5px; border: 1px solid #ffccb3; font-weight: 600; width: fit-content; }
-        .package-restrict { display: inline-block; background: #f0f0f0; color: #666; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px; margin-top: 5px; width: fit-content; }
+        .menu-item { background: #fafafa; padding: 15px 20px; border-radius: 8px; border: 1px solid #eee; display: flex; flex-direction: column; justify-content: flex-start; }
+        .menu-item-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 8px; width: 100%; }
+        .menu-item-title { font-weight: 600; color: #222; font-size: 1.05rem; flex-grow: 1; }
+        .menu-item-tags { display: flex; gap: 4px; flex-wrap: wrap; align-items: center; flex-shrink: 0; }
+        .tag-spice { font-size: 0.9rem; }
+        .tag-v { background: #e8f5e9; color: #2e7d32; font-size: 0.7rem; padding: 2px 5px; border-radius: 4px; font-weight: 700; border: 1px solid #c8e6c9; display: inline-block; }
+        .tag-gf { background: #fff3e0; color: #e65100; font-size: 0.7rem; padding: 2px 5px; border-radius: 4px; font-weight: 700; border: 1px solid #ffe0b2; display: inline-block; }
+        .menu-item-desc { color: #666; font-size: 0.85rem; line-height: 1.5; margin: 0; }
+        .premium-badge { display: inline-block; background: #fff0e6; color: #e65c00; font-size: 0.75rem; padding: 2px 6px; border-radius: 4px; margin-top: 5px; border: 1px solid #ffccb3; font-weight: 600; width: fit-content; }
+        .package-restrict { display: inline-block; background: #f0f0f0; color: #666; font-size: 0.75rem; padding: 2px 6px; border-radius: 4px; margin-top: 5px; width: fit-content; }
         
         .sets-section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; }
         .sets-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; }
@@ -226,41 +232,172 @@
                 <h3>Starters</h3>
                 <div class="menu-subcategory">Fried & Light Bites</div>
                 <div class="menu-items">
-                    <div class="menu-item"><span class="menu-item-title">Crispy Thai Prawn Cake</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Crispy Prawn Spring Rolls</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Prawn Summer Rolls</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Golden Money Bags</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Grilled Pork Skewers</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Chicken Satay</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Pork Satay</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Thai Pork Sausage</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Rice Sausage</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Isaan Sausage</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Northern Thai Sai Ua</span></div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Crispy Thai Prawn Cake</span>
+                            <span class="menu-item-tags"></span>
+                        </div>
+                        <p class="menu-item-desc">Deep-fried minced prawn blended with red curry paste and kaffir lime leaves, served with sweet chilli sauce.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Crispy Prawn Spring Rolls</span>
+                            <span class="menu-item-tags"></span>
+                        </div>
+                        <p class="menu-item-desc">Marinated whole prawns wrapped in crispy pastry, served with sweet plum sauce.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Prawn Summer Rolls</span>
+                            <span class="menu-item-tags"><span class="tag-gf">GF</span></span>
+                        </div>
+                        <p class="menu-item-desc">Fresh rice paper rolls filled with prawns, rice vermicelli, mint, and crisp vegetables.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Golden Money Bags</span>
+                            <span class="menu-item-tags"></span>
+                        </div>
+                        <p class="menu-item-desc">Crispy pastry parcels filled with savoury minced chicken, sweetcorn, and water chestnuts.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Grilled Pork Skewers (Moo Ping)</span>
+                            <span class="menu-item-tags"><span class="tag-gf">GF</span></span>
+                        </div>
+                        <p class="menu-item-desc">Tender pork collar marinated in coriander root, garlic, and palm sugar, grilled to perfection.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Chicken Satay</span>
+                            <span class="menu-item-tags"><span class="tag-gf">GF</span></span>
+                        </div>
+                        <p class="menu-item-desc">Grilled marinated chicken skewers served with a rich homemade peanut sauce and cucumber relish.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Pork Satay</span>
+                            <span class="menu-item-tags"><span class="tag-gf">GF</span></span>
+                        </div>
+                        <p class="menu-item-desc">Grilled marinated pork skewers served with our signature peanut sauce.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Thai Pork Sausage</span>
+                            <span class="menu-item-tags"></span>
+                        </div>
+                        <p class="menu-item-desc">Sweet and savoury traditional Thai-style pork sausage.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Rice Sausage (Sai Krok Isaan)</span>
+                            <span class="menu-item-tags"></span>
+                        </div>
+                        <p class="menu-item-desc">Fermented pork and rice sausage with a distinct tangy flavour, served with fresh ginger and cabbage.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Northern Thai Sai Ua</span>
+                            <span class="menu-item-tags"><span class="tag-spice">🌶️</span></span>
+                        </div>
+                        <p class="menu-item-desc">Aromatic Northern-style grilled pork sausage packed with lemongrass, galangal, and red chilli paste.</p>
+                    </div>
                 </div>
 
                 <div class="menu-subcategory">Salads & Thai Favourites</div>
                 <div class="menu-items">
-                    <div class="menu-item"><span class="menu-item-title">Pomelo Salad with Prawns</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Sea Bass Miang Kham</span> <span class="package-restrict">Package 2 & 3 only</span> <span class="premium-badge">Premium Upgrade</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Thai Papaya Salad</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Spicy Prawn Salad</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Spicy Beef Salad</span> <span class="package-restrict">Package 2 & 3 only</span> <span class="premium-badge">Premium Upgrade</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Grilled Pork Neck Salad</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Larb Chicken</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Larb Duck</span> <span class="package-restrict">Package 2 & 3 only</span> <span class="premium-badge">Premium Upgrade</span></div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Pomelo Salad with Prawns (Yum Som O)</span>
+                            <span class="menu-item-tags"><span class="tag-spice">🌶️</span> <span class="tag-gf">GF</span></span>
+                        </div>
+                        <p class="menu-item-desc">Fresh pomelo tossed with prawns, roasted coconut, peanuts, and a sweet chilli jam dressing.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Sea Bass Miang Kham</span>
+                            <span class="menu-item-tags"><span class="package-restrict">Package 2 & 3</span> <span class="premium-badge">Premium</span></span>
+                        </div>
+                        <p class="menu-item-desc">Crispy sea bass chunks served with betel leaves, roasted coconut, peanuts, lime, and a sweet tamarind sauce.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Thai Papaya Salad (Som Tum)</span>
+                            <span class="menu-item-tags"><span class="tag-spice">🌶️🌶️</span> <span class="tag-v">V</span> <span class="tag-gf">GF</span></span>
+                        </div>
+                        <p class="menu-item-desc">Shredded green papaya, tomatoes, green beans, and peanuts pounded with a spicy and sour lime dressing.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Spicy Prawn Salad (Yum Goong)</span>
+                            <span class="menu-item-tags"><span class="tag-spice">🌶️🌶️</span> <span class="tag-gf">GF</span></span>
+                        </div>
+                        <p class="menu-item-desc">Poached prawns tossed with lemongrass, mint, coriander, and chilli paste dressing.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Spicy Beef Salad (Yum Nua)</span>
+                            <span class="menu-item-tags"><span class="tag-spice">🌶️🌶️</span> <span class="package-restrict">Package 2 & 3</span> <span class="premium-badge">Premium</span></span>
+                        </div>
+                        <p class="menu-item-desc">Grilled premium beef sirloin tossed with fresh herbs, cucumber, tomatoes, and a zesty chilli-lime dressing.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Grilled Pork Neck Salad (Nam Tok Moo)</span>
+                            <span class="menu-item-tags"><span class="tag-spice">🌶️🌶️</span></span>
+                        </div>
+                        <p class="menu-item-desc">Sliced grilled pork neck mixed with roasted rice powder, chilli, mint, and lime.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Larb Chicken</span>
+                            <span class="menu-item-tags"><span class="tag-spice">🌶️🌶️</span> <span class="tag-gf">GF</span></span>
+                        </div>
+                        <p class="menu-item-desc">Spicy minced chicken salad with roasted rice powder, mint, shallots, and lime juice.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Larb Duck</span>
+                            <span class="menu-item-tags"><span class="tag-spice">🌶️🌶️</span> <span class="package-restrict">Package 2 & 3</span> <span class="premium-badge">Premium</span></span>
+                        </div>
+                        <p class="menu-item-desc">Rich minced duck salad tossed with roasted rice powder, mint, coriander, and chilli.</p>
+                    </div>
                 </div>
 
                 <div class="menu-subcategory">Grilled</div>
                 <div class="menu-items">
-                    <div class="menu-item"><span class="menu-item-title">Grilled Pork Neck</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Crying Tiger Beef</span> <span class="package-restrict">Package 2 & 3 only</span> <span class="premium-badge">Premium Upgrade</span></div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Grilled Pork Neck (Kor Moo Yang)</span>
+                            <span class="menu-item-tags"></span>
+                        </div>
+                        <p class="menu-item-desc">Char-grilled marinated pork collar, served with our spicy tamarind dipping sauce (Jaew).</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Crying Tiger Beef (Suea Rong Hai)</span>
+                            <span class="menu-item-tags"><span class="package-restrict">Package 2 & 3</span> <span class="premium-badge">Premium</span></span>
+                        </div>
+                        <p class="menu-item-desc">Premium grilled beef sirloin, marinated in Thai spices and served with a spicy tamarind dipping sauce.</p>
+                    </div>
                 </div>
 
                 <div class="menu-subcategory">Soups</div>
                 <div class="menu-items">
-                    <div class="menu-item"><span class="menu-item-title">Tom Yum Goong</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Tom Kha Gai</span></div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Tom Yum Goong</span>
+                            <span class="menu-item-tags"><span class="tag-spice">🌶️🌶️</span> <span class="tag-gf">GF</span></span>
+                        </div>
+                        <p class="menu-item-desc">World-famous hot and sour prawn soup with lemongrass, galangal, kaffir lime leaves, and fresh mushrooms.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Tom Kha Gai</span>
+                            <span class="menu-item-tags"><span class="tag-spice">🌶️</span> <span class="tag-gf">GF</span></span>
+                        </div>
+                        <p class="menu-item-desc">A rich and creamy coconut soup with chicken, infused with galangal, lemongrass, and mushrooms.</p>
+                    </div>
                 </div>
             </div>
 
@@ -269,32 +406,140 @@
                 <h3>Main Courses</h3>
                 <div class="menu-subcategory">Curries</div>
                 <div class="menu-items">
-                    <div class="menu-item"><span class="menu-item-title">Thai Red Chicken Curry</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Thai Yellow Chicken Curry</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Red Prawn Curry</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Green Chicken Curry</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Green Prawn Curry</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Panang Chicken</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Panang Prawns</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Panang Sea Bass</span> <span class="package-restrict">Package 2 & 3 only</span> <span class="premium-badge">Premium Upgrade</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Roast Duck Curry</span> <span class="package-restrict">Package 2 & 3 only</span> <span class="premium-badge">Premium Upgrade</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Massaman Chicken</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Massaman Beef</span> <span class="package-restrict">Package 2 & 3 only</span> <span class="premium-badge">Premium Upgrade</span></div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Thai Red Chicken Curry</span>
+                            <span class="menu-item-tags"><span class="tag-spice">🌶️🌶️</span> <span class="tag-gf">GF</span></span>
+                        </div>
+                        <p class="menu-item-desc">Classic red curry with chicken breast, bamboo shoots, courgettes, and sweet basil in coconut milk.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Thai Yellow Chicken Curry</span>
+                            <span class="menu-item-tags"><span class="tag-spice">🌶️</span> <span class="tag-gf">GF</span></span>
+                        </div>
+                        <p class="menu-item-desc">Mild and comforting yellow curry with chicken, potatoes, and onions, topped with crispy shallots.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Red Prawn Curry</span>
+                            <span class="menu-item-tags"><span class="tag-spice">🌶️🌶️</span> <span class="tag-gf">GF</span></span>
+                        </div>
+                        <p class="menu-item-desc">Spicy red curry with king prawns, bamboo shoots, courgettes, and fresh Thai basil.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Green Chicken Curry</span>
+                            <span class="menu-item-tags"><span class="tag-spice">🌶️🌶️🌶️</span> <span class="tag-gf">GF</span></span>
+                        </div>
+                        <p class="menu-item-desc">Our signature spicy green curry with chicken breast, aubergine, bamboo shoots, and basil.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Green Prawn Curry</span>
+                            <span class="menu-item-tags"><span class="tag-spice">🌶️🌶️🌶️</span> <span class="tag-gf">GF</span></span>
+                        </div>
+                        <p class="menu-item-desc">Spicy green curry with juicy king prawns, aubergine, and fresh basil leaves.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Panang Chicken</span>
+                            <span class="menu-item-tags"><span class="tag-spice">🌶️🌶️</span> <span class="tag-gf">GF</span></span>
+                        </div>
+                        <p class="menu-item-desc">Rich and thick Panang curry with chicken, flavoured with kaffir lime leaves and crushed peanuts.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Panang Prawns</span>
+                            <span class="menu-item-tags"><span class="tag-spice">🌶️🌶️</span> <span class="tag-gf">GF</span></span>
+                        </div>
+                        <p class="menu-item-desc">Thick and creamy Panang curry with king prawns and a hint of kaffir lime.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Panang Sea Bass</span>
+                            <span class="menu-item-tags"><span class="tag-spice">🌶️🌶️</span> <span class="package-restrict">Package 2 & 3</span> <span class="premium-badge">Premium</span></span>
+                        </div>
+                        <p class="menu-item-desc">Premium sea bass fillets simmered in rich Panang curry sauce with kaffir lime leaves.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Roast Duck Curry</span>
+                            <span class="menu-item-tags"><span class="tag-spice">🌶️🌶️</span> <span class="package-restrict">Package 2 & 3</span> <span class="premium-badge">Premium</span></span>
+                        </div>
+                        <p class="menu-item-desc">Luxurious red curry with sliced roast duck, cherry tomatoes, pineapple, and lychee for a perfect sweet-savoury balance.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Massaman Chicken</span>
+                            <span class="menu-item-tags"><span class="tag-spice">🌶️</span> <span class="tag-gf">GF</span></span>
+                        </div>
+                        <p class="menu-item-desc">A mild, slow-cooked Southern Thai curry with chicken, potatoes, onions, and roasted peanuts.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Massaman Beef</span>
+                            <span class="menu-item-tags"><span class="tag-spice">🌶️</span> <span class="package-restrict">Package 2 & 3</span> <span class="premium-badge">Premium</span></span>
+                        </div>
+                        <p class="menu-item-desc">Tender slow-cooked premium beef in a rich, mild peanut and potato curry.</p>
+                    </div>
                 </div>
 
                 <div class="menu-subcategory">Steamed</div>
                 <div class="menu-items">
-                    <div class="menu-item"><span class="menu-item-title">Steamed Glass Noodles with Garlic Prawns</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Steamed Sea Bass with Lime</span> <span class="package-restrict">Package 2 & 3 only</span> <span class="premium-badge">Premium Upgrade</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Steamed Sea Bass with Soy Sauce</span> <span class="package-restrict">Package 2 & 3 only</span> <span class="premium-badge">Premium Upgrade</span></div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Steamed Glass Noodles with Prawns (Goong Ob Woonsen)</span>
+                            <span class="menu-item-tags"></span>
+                        </div>
+                        <p class="menu-item-desc">King prawns and glass noodles baked in a clay pot with garlic, ginger, coriander root, and black pepper.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Steamed Sea Bass with Lime (Pla Neung Manao)</span>
+                            <span class="menu-item-tags"><span class="tag-spice">🌶️🌶️🌶️</span> <span class="tag-gf">GF</span> <span class="package-restrict">Package 2 & 3</span> <span class="premium-badge">Premium</span></span>
+                        </div>
+                        <p class="menu-item-desc">Whole or filleted sea bass steamed with fresh lime juice, crushed garlic, and fiery green chillies.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Steamed Sea Bass with Soy Sauce (Pla Neung See Ew)</span>
+                            <span class="menu-item-tags"><span class="package-restrict">Package 2 & 3</span> <span class="premium-badge">Premium</span></span>
+                        </div>
+                        <p class="menu-item-desc">Delicate sea bass steamed with light soy sauce, ginger, and spring onions.</p>
+                    </div>
                 </div>
 
                 <div class="menu-subcategory">Fried</div>
                 <div class="menu-items">
-                    <div class="menu-item"><span class="menu-item-title">Garlic Pepper Prawns</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Tamarind Prawns</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Three-Flavour Sea Bass</span> <span class="package-restrict">Package 2 & 3 only</span> <span class="premium-badge">Premium Upgrade</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Crispy Sea Bass with Fish Sauce</span> <span class="package-restrict">Package 2 & 3 only</span> <span class="premium-badge">Premium Upgrade</span></div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Garlic Pepper Prawns (Goong Tod Kratiem)</span>
+                            <span class="menu-item-tags"></span>
+                        </div>
+                        <p class="menu-item-desc">Stir-fried king prawns coated in a fragrant crispy garlic and black pepper sauce.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Tamarind Prawns (Goong Makham)</span>
+                            <span class="menu-item-tags"></span>
+                        </div>
+                        <p class="menu-item-desc">Crispy fried prawns topped with a sweet, sour, and sticky tamarind sauce, garnished with fried shallots.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Three-Flavour Sea Bass (Pla Sam Rod)</span>
+                            <span class="menu-item-tags"><span class="tag-spice">🌶️</span> <span class="package-restrict">Package 2 & 3</span> <span class="premium-badge">Premium</span></span>
+                        </div>
+                        <p class="menu-item-desc">Crispy fried sea bass topped with our signature sweet, sour, and mildly spicy chilli sauce.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Crispy Sea Bass with Fish Sauce (Pla Tod Nam Pla)</span>
+                            <span class="menu-item-tags"><span class="package-restrict">Package 2 & 3</span> <span class="premium-badge">Premium</span></span>
+                        </div>
+                        <p class="menu-item-desc">Deep-fried sea bass marinated in premium fish sauce, served with a tangy green mango salad on the side.</p>
+                    </div>
                 </div>
             </div>
 
@@ -303,27 +548,129 @@
                 <h3>Rice & Noodles</h3>
                 <div class="menu-subcategory">Rice</div>
                 <div class="menu-items">
-                    <div class="menu-item"><span class="menu-item-title">Jasmine Rice</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Egg Fried Rice</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Chicken Fried Rice</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Prawn Fried Rice</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Crab Fried Rice</span> <span class="package-restrict">Package 2 & 3 only</span> <span class="premium-badge">Premium Upgrade</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Pineapple Chicken Fried Rice</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Pineapple Prawn Fried Rice</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Shrimp Oil Fried Rice</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Tom Yum Prawn Fried Rice</span></div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Jasmine Rice</span>
+                            <span class="menu-item-tags"><span class="tag-v">V</span> <span class="tag-gf">GF</span></span>
+                        </div>
+                        <p class="menu-item-desc">Steamed premium fragrant Thai jasmine rice.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Egg Fried Rice</span>
+                            <span class="menu-item-tags"><span class="tag-v">V</span></span>
+                        </div>
+                        <p class="menu-item-desc">Stir-fried jasmine rice with egg, soy sauce, and spring onions.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Chicken Fried Rice</span>
+                            <span class="menu-item-tags"></span>
+                        </div>
+                        <p class="menu-item-desc">Classic Thai fried rice with chicken breast, egg, tomatoes, and spring onions.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Prawn Fried Rice</span>
+                            <span class="menu-item-tags"></span>
+                        </div>
+                        <p class="menu-item-desc">Delicious fried rice with king prawns, egg, and fresh vegetables.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Crab Fried Rice</span>
+                            <span class="menu-item-tags"><span class="package-restrict">Package 2 & 3</span> <span class="premium-badge">Premium</span></span>
+                        </div>
+                        <p class="menu-item-desc">Premium fried rice with generous chunks of white crab meat and egg.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Pineapple Chicken Fried Rice</span>
+                            <span class="menu-item-tags"></span>
+                        </div>
+                        <p class="menu-item-desc">Exotic fried rice with chicken, chunks of sweet pineapple, turmeric, and cashew nuts.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Pineapple Prawn Fried Rice</span>
+                            <span class="menu-item-tags"></span>
+                        </div>
+                        <p class="menu-item-desc">Exotic fried rice with king prawns, sweet pineapple, turmeric, and cashew nuts.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Shrimp Oil Fried Rice</span>
+                            <span class="menu-item-tags"></span>
+                        </div>
+                        <p class="menu-item-desc">Rich and aromatic fried rice tossed with savoury shrimp paste oil.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Tom Yum Prawn Fried Rice</span>
+                            <span class="menu-item-tags"><span class="tag-spice">🌶️🌶️</span></span>
+                        </div>
+                        <p class="menu-item-desc">Spicy and sour fried rice flavoured with authentic Tom Yum paste, herbs, and king prawns.</p>
+                    </div>
                 </div>
 
                 <div class="menu-subcategory">Noodles</div>
                 <div class="menu-items">
-                    <div class="menu-item"><span class="menu-item-title">Chicken Pad Thai</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Prawn Pad Thai</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Chicken Pad See Ew</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Prawn Pad See Ew</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Chicken Rad Na</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Pork Rad Na</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Chicken Khao Soi</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Pork Khao Soi</span></div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Chicken Pad Thai</span>
+                            <span class="menu-item-tags"><span class="tag-gf">GF</span></span>
+                        </div>
+                        <p class="menu-item-desc">Classic stir-fried rice noodles with chicken, egg, bean sprouts, peanuts, and tamarind sauce.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Prawn Pad Thai</span>
+                            <span class="menu-item-tags"><span class="tag-gf">GF</span></span>
+                        </div>
+                        <p class="menu-item-desc">Thailand's national dish with king prawns, rice noodles, peanuts, and tamarind sauce.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Chicken Pad See Ew</span>
+                            <span class="menu-item-tags"></span>
+                        </div>
+                        <p class="menu-item-desc">Stir-fried flat rice noodles with chicken, egg, broccoli, and sweet dark soy sauce.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Prawn Pad See Ew</span>
+                            <span class="menu-item-tags"></span>
+                        </div>
+                        <p class="menu-item-desc">Stir-fried flat rice noodles with king prawns, egg, broccoli, and sweet dark soy sauce.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Chicken Rad Na</span>
+                            <span class="menu-item-tags"></span>
+                        </div>
+                        <p class="menu-item-desc">Pan-fried flat rice noodles topped with chicken and broccoli in a rich, savoury gravy.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Pork Rad Na</span>
+                            <span class="menu-item-tags"></span>
+                        </div>
+                        <p class="menu-item-desc">Pan-fried flat rice noodles topped with tender pork and broccoli in a savoury gravy.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Chicken Khao Soi</span>
+                            <span class="menu-item-tags"><span class="tag-spice">🌶️</span></span>
+                        </div>
+                        <p class="menu-item-desc">Northern Thai coconut curry noodle soup with chicken, topped with crispy egg noodles.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Pork Khao Soi</span>
+                            <span class="menu-item-tags"><span class="tag-spice">🌶️</span></span>
+                        </div>
+                        <p class="menu-item-desc">Northern Thai coconut curry noodle soup with tender pork, topped with crispy egg noodles.</p>
+                    </div>
                 </div>
             </div>
 
@@ -331,13 +678,55 @@
             <div class="menu-category">
                 <h3>Vegetables</h3>
                 <div class="menu-items">
-                    <div class="menu-item"><span class="menu-item-title">Garlic Broccoli</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Oyster Sauce Asparagus</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Stir-fried Cabbage with Fish Sauce</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Oyster Sauce Pak Choi</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Mixed Stir-fried Vegetables</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Morning Glory</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Chinese Kale with Oyster Sauce</span></div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Garlic Broccoli</span>
+                            <span class="menu-item-tags"><span class="tag-v">V</span> <span class="tag-gf">GF</span></span>
+                        </div>
+                        <p class="menu-item-desc">Stir-fried fresh broccoli with garlic and light soy sauce.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Oyster Sauce Asparagus</span>
+                            <span class="menu-item-tags"></span>
+                        </div>
+                        <p class="menu-item-desc">Stir-fried asparagus spears in a rich and savoury oyster sauce.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Stir-fried Cabbage with Fish Sauce</span>
+                            <span class="menu-item-tags"><span class="tag-gf">GF</span></span>
+                        </div>
+                        <p class="menu-item-desc">A simple but delicious Thai classic: white cabbage stir-fried with premium fish sauce and garlic.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Oyster Sauce Pak Choi</span>
+                            <span class="menu-item-tags"></span>
+                        </div>
+                        <p class="menu-item-desc">Crisp pak choi stir-fried with garlic and oyster sauce.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Mixed Stir-fried Vegetables</span>
+                            <span class="menu-item-tags"><span class="tag-v">V</span> <span class="tag-gf">GF</span></span>
+                        </div>
+                        <p class="menu-item-desc">A healthy mix of seasonal vegetables stir-fried with light soy sauce and garlic.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Morning Glory</span>
+                            <span class="menu-item-tags"><span class="tag-spice">🌶️</span> <span class="tag-v">V</span></span>
+                        </div>
+                        <p class="menu-item-desc">Stir-fried morning glory (water spinach) with chilli, garlic, and soybean paste.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Chinese Kale with Oyster Sauce</span>
+                            <span class="menu-item-tags"></span>
+                        </div>
+                        <p class="menu-item-desc">Stir-fried crunchy Chinese kale with a savoury garlic and oyster sauce.</p>
+                    </div>
                 </div>
             </div>
 
@@ -345,11 +734,41 @@
             <div class="menu-category">
                 <h3>Desserts</h3>
                 <div class="menu-items">
-                    <div class="menu-item"><span class="menu-item-title">Mango Sticky Rice</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Red Ruby</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Bua Loy</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Lod Chong</span></div>
-                    <div class="menu-item"><span class="menu-item-title">Seasonal Fresh Fruit</span></div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Mango Sticky Rice (Khao Niew Mamuang)</span>
+                            <span class="menu-item-tags"><span class="tag-v">V</span> <span class="tag-gf">GF</span></span>
+                        </div>
+                        <p class="menu-item-desc">Sweet and ripe mango served with coconut-infused sticky rice and toasted mung beans.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Red Ruby (Tub Tim Grob)</span>
+                            <span class="menu-item-tags"><span class="tag-v">V</span> <span class="tag-gf">GF</span></span>
+                        </div>
+                        <p class="menu-item-desc">Crunchy water chestnuts coated in tapioca flour, served in iced sweet coconut milk.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Bua Loy</span>
+                            <span class="menu-item-tags"><span class="tag-v">V</span> <span class="tag-gf">GF</span></span>
+                        </div>
+                        <p class="menu-item-desc">Colourful, chewy glutinous rice balls served in warm, sweet coconut cream.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Lod Chong</span>
+                            <span class="menu-item-tags"><span class="tag-v">V</span> <span class="tag-gf">GF</span></span>
+                        </div>
+                        <p class="menu-item-desc">Pandan-flavoured rice flour droplets served in a sweet iced coconut milk with palm sugar.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <span class="menu-item-title">Seasonal Fresh Fruit</span>
+                            <span class="menu-item-tags"><span class="tag-v">V</span> <span class="tag-gf">GF</span></span>
+                        </div>
+                        <p class="menu-item-desc">A refreshing platter of beautifully carved seasonal fruits.</p>
+                    </div>
                 </div>
             </div>
 
