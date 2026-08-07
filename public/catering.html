@@ -1153,11 +1153,13 @@
 
         // Helper to map UI category titles to our internal keys
         function getCategoryKey(title) {
-            if(title === 'Starters') return 'Starters';
-            if(title === 'Main Courses') return 'Mains';
-            if(title === 'Rice & Noodles') return 'RiceNoodles';
-            if(title === 'Vegetables') return 'Vegetables';
-            if(title === 'Desserts') return 'Desserts';
+            title = title.trim();
+            if(title.includes('Starter')) return 'Starters';
+            if(title.includes('Main')) return 'Mains';
+            if(title.includes('Rice') || title.includes('Noodle')) return 'RiceNoodles';
+            if(title.includes('Vegetable')) return 'Vegetables';
+            if(title.includes('Dessert')) return 'Desserts';
+            if(title.includes('Curry') || title.includes('Stir') || title.includes('Soup')) return 'Mains';
             return null;
         }
 
@@ -1366,6 +1368,44 @@
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
         }
     </script>
+
+    <!-- Allergen Modal -->
+    <div id="allergen-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content allergen-modal-content">
+            <h3 style="margin-top:0; color:var(--primary);">Dietary Requirements & Allergies</h3>
+            <p style="font-size: 0.9rem; color: #555;">Please select any allergies for you or your guests (Select all that apply):</p>
+            <div class="allergen-grid">
+                <label><input type="checkbox" class="allergen-cb" value="Celery"> Celery</label>
+                <label><input type="checkbox" class="allergen-cb" value="Gluten"> Cereals containing gluten</label>
+                <label><input type="checkbox" class="allergen-cb" value="Crustaceans"> Crustaceans (Prawns/Crab)</label>
+                <label><input type="checkbox" class="allergen-cb" value="Eggs"> Eggs</label>
+                <label><input type="checkbox" class="allergen-cb" value="Fish"> Fish</label>
+                <label><input type="checkbox" class="allergen-cb" value="Lupin"> Lupin</label>
+                <label><input type="checkbox" class="allergen-cb" value="Milk"> Milk / Dairy</label>
+                <label><input type="checkbox" class="allergen-cb" value="Molluscs"> Molluscs</label>
+                <label><input type="checkbox" class="allergen-cb" value="Mustard"> Mustard</label>
+                <label><input type="checkbox" class="allergen-cb" value="Peanuts"> Peanuts</label>
+                <label><input type="checkbox" class="allergen-cb" value="Sesame"> Sesame</label>
+                <label><input type="checkbox" class="allergen-cb" value="Soybeans"> Soybeans</label>
+                <label><input type="checkbox" class="allergen-cb" value="Sulphur dioxide"> Sulphur dioxide</label>
+                <label><input type="checkbox" class="allergen-cb" value="Tree nuts"> Tree nuts</label>
+            </div>
+            <div style="margin-top: 15px; border-top: 1px solid #eee; padding-top: 10px;">
+                <label style="color: var(--primary); font-weight: bold;"><input type="checkbox" id="no-allergies" onchange="toggleNoAllergies()"> No Allergies</label>
+            </div>
+            <div class="modal-actions" style="margin-top: 20px; display: flex; justify-content: flex-end; gap: 10px;">
+                <button class="btn-cancel" onclick="closeAllergenModal()" style="padding: 10px 20px; border-radius: 25px; border:none; cursor:pointer;">Back</button>
+                <button class="btn-primary" onclick="submitAllergies()" style="border: none; cursor: pointer; padding: 10px 20px; border-radius: 25px;">Confirm & Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .allergen-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px;
+        }
+        .allergen-grid label { cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 0.95rem; }
+    </style>
 
     <!-- Order Summary Popup -->
     <div id="order-summary-modal" class="modal-overlay" style="display: none;">
