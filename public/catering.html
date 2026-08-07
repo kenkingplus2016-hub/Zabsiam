@@ -237,6 +237,7 @@
                     <li><i class="fas fa-check"></i> 1 Waitstaff</li>
                 </ul>
                 <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
+                    <a href="#full-menu" class="btn-primary" onclick="startMenuBuilder('SIAM CLASSIC FINE DINING')" style="display: block; text-align: center; background: transparent; color: var(--primary); border: 2px solid var(--primary);">Choose Menus</a>
                     <a href="#" class="btn-primary" style="display: block; text-align: center;">Enquire Now</a>
                 </div>
             </div>
@@ -270,6 +271,7 @@
                     <li><i class="fas fa-star"></i> Coordinated course service</li>
                 </ul>
                 <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
+                    <a href="#full-menu" class="btn-primary" onclick="startMenuBuilder('ZAB SIAM SIGNATURE FINE DINING')" style="display: block; text-align: center; background: transparent; color: var(--primary); border: 2px solid var(--primary);">Choose Menus</a>
                     <a href="#" class="btn-primary" style="display: block; text-align: center;">Enquire Now</a>
                 </div>
             </div>
@@ -304,6 +306,7 @@
                     <li><i class="fas fa-star"></i> Personalised menu cards</li>
                 </ul>
                 <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
+                    <a href="#full-menu" class="btn-primary" onclick="startMenuBuilder('CELEBRATION FINE DINING')" style="display: block; text-align: center; background: transparent; color: var(--primary); border: 2px solid var(--primary);">Choose Menus</a>
                     <a href="#" class="btn-primary" style="display: block; text-align: center;">Enquire Now</a>
                 </div>
             </div>
@@ -1131,9 +1134,12 @@
 
     <script>
         const packageLimits = {
-            'SIAM CLASSIC': { Starters: 2, Mains: 2, RiceNoodles: 2, Vegetables: 1, Desserts: 1 },
-            'ZAB SIAM SIGNATURE': { Starters: 2, Mains: 3, RiceNoodles: 2, Vegetables: 2, Desserts: 1 },
-            'CELEBRATION': { Starters: 3, Mains: 3, RiceNoodles: 3, Vegetables: 2, Desserts: 1 }
+            'SIAM CLASSIC': { Starters: 2, Mains: 2, RiceNoodles: 1, Vegetables: 1, Desserts: 1 },
+            'ZAB SIAM SIGNATURE': { Starters: 2, Mains: 3, RiceNoodles: 2, Vegetables: 1, Desserts: 1 },
+            'CELEBRATION': { Starters: 3, Mains: 3, RiceNoodles: 2, Vegetables: 1, Desserts: 1 },
+            'SIAM CLASSIC FINE DINING': { Starters: 2, Mains: 1, RiceNoodles: 1, Vegetables: 0, Desserts: 1 },
+            'ZAB SIAM SIGNATURE FINE DINING': { Starters: 2, Mains: 2, RiceNoodles: 1, Vegetables: 0, Desserts: 1 },
+            'CELEBRATION FINE DINING': { Starters: 3, Mains: 2, RiceNoodles: 1, Vegetables: 0, Desserts: 1 }
         };
 
         let currentBuilderPkg = null;
