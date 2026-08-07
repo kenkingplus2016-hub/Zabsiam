@@ -1245,7 +1245,37 @@
 
         function finishMenuBuilder() {
             if(!currentBuilderPkg) return;
-            
+            document.getElementById('allergen-modal').style.display = 'flex';
+        }
+
+        function closeAllergenModal() {
+            document.getElementById('allergen-modal').style.display = 'none';
+        }
+
+        function toggleNoAllergies() {
+            const noAl = document.getElementById('no-allergies').checked;
+            const cbs = document.querySelectorAll('.allergen-cb');
+            cbs.forEach(cb => {
+                if(noAl) { cb.checked = false; cb.disabled = true; }
+                else { cb.disabled = false; }
+            });
+        }
+
+        function submitAllergies() {
+            const noAl = document.getElementById('no-allergies').checked;
+            let allergies = [];
+            if(noAl) {
+                allergies.push("None");
+            } else {
+                document.querySelectorAll('.allergen-cb:checked').forEach(cb => {
+                    allergies.push(cb.value);
+                });
+                if(allergies.length === 0) {
+                    alert("Please select your allergies or check 'No Allergies'.");
+                    return;
+                }
+            }
+
             // Build summary
             let summary = `Hi, I am interested in booking the ${currentBuilderPkg} package.\nHere is my selected menu:\n\n`;
             
@@ -1257,9 +1287,10 @@
                 }
             });
 
+            summary += `*Allergies noted:* ${allergies.join(', ')}\n\n`;
             summary += `Could you please provide a quote and availability?`;
 
-            // Open Chatbot and inject message
+            closeAllergenModal();
             cancelMenuBuilder();
             openChat();
             
