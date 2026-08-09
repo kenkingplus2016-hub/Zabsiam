@@ -175,16 +175,33 @@ async function handleMessengerWebhook(request, response, requestUrl) {
                             
                             // Send reply back to Messenger
                             try {
-                                await fetch(`https://graph.facebook.com/v19.0/me/messages?access_token=${FB_PAGE_ACCESS_TOKEN}`, {
-                                    method: 'POST',
-                                    headers: { 'Content-Type': 'application/json' },
-                                    body: JSON.stringify({
-                                        recipient: { id: senderId },
-                                        message: { text: aiReply }
-                                    })
+                                const https = require('https');
+                                const postData = JSON.stringify({
+                                    recipient: { id: senderId },
+                                    message: { text: aiReply }
                                 });
+                                const options = {
+                                    hostname: 'graph.facebook.com',
+                                    port: 443,
+                                    path: '/v19.0/me/messages?access_token=' + FB_PAGE_ACCESS_TOKEN,
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                        'Content-Length': Buffer.byteLength(postData)
+                                    }
+                                };
+                                const req = https.request(options, (res) => {
+                                    if (res.statusCode !== 200) {
+                                        console.error('FB API responded with status:', res.statusCode);
+                                    }
+                                });
+                                req.on('error', (e) => {
+                                    console.error('Error sending message to Facebook:', e);
+                                });
+                                req.write(postData);
+                                req.end();
                             } catch (e) {
-                                console.error('Error sending message to Facebook:', e);
+                                console.error('Failed to prepare FB request:', e);
                             }
                         }
                     }
