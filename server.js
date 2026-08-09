@@ -11,6 +11,7 @@ const TEMP_CHECKS_FILE = path.join(DATA_DIR, 'temperature_checks.json');
 const FOOD_SAFETY_FILE = path.join(DATA_DIR, 'food_safety_records.json');
 const ADMIN_PASSWORD = process.env.ZABSIAM_ADMIN_PASSWORD || 'ZabSiam@2026';
 const FB_VERIFY_TOKEN = process.env.FB_VERIFY_TOKEN || 'zabsiam_bot_1234';
+const FB_PAGE_ACCESS_TOKEN = process.env.FB_PAGE_ACCESS_TOKEN || 'EAAcDFTC0mfABSFAIZB3VRoltlMZAs9OnTPduYdRTS3RfUd3ZCkdNendhzF0pEWqDbjMrJo9yYAKO6NX7ThgUcCFeHSRZBYJugRJZBFv9s68EU1OzZBnLmGU19odP8b0uhRpsJKEz2CuPmrC8aBSu1pUxLEBVFB5pj6Qfoig5ZBYZApdVO95i6i4HishFSynhXGAOIP908wu3HgZDZD';
 
 const mimeTypes = {
     '.html': 'text/html',
@@ -161,13 +162,33 @@ async function handleMessengerWebhook(request, response, requestUrl) {
         const body = await readRequestBody(request);
         if (body.object === 'page') {
             if (body.entry) {
-                body.entry.forEach(entry => {
+                for (const entry of body.entry) {
                     const webhook_event = entry.messaging ? entry.messaging[0] : null;
-                    if (webhook_event) {
-                        console.log('Received webhook event:', JSON.stringify(webhook_event));
-                        // In the future, pass webhook_event to AI Codex here
+                    if (webhook_event && webhook_event.message && !webhook_event.message.is_echo) {
+                        console.log('Received message event:', JSON.stringify(webhook_event));
+                        const senderId = webhook_event.sender.id;
+                        const messageText = webhook_event.message.text;
+                        
+                        if (messageText) {
+                            // Call AI to generate reply
+                            const aiReply = await generateAiReply(messageText);
+                            
+                            // Send reply back to Messenger
+                            try {
+                                await fetch(`https://graph.facebook.com/v19.0/me/messages?access_token=${FB_PAGE_ACCESS_TOKEN}`, {
+                                    method: 'POST',
+                                    headers: { 'Content-Type': 'application/json' },
+                                    body: JSON.stringify({
+                                        recipient: { id: senderId },
+                                        message: { text: aiReply }
+                                    })
+                                });
+                            } catch (e) {
+                                console.error('Error sending message to Facebook:', e);
+                            }
+                        }
                     }
-                });
+                }
             }
             response.writeHead(200, { 'Content-Type': 'text/plain' });
             response.end('EVENT_RECEIVED');
@@ -427,27 +448,12 @@ async function handleFoodSafetyRecords(request, response, pathname) {
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY || 'dummy-key' }); // Initialize with dummy to prevent crash on boot if env is missing
 
-async function handleChatApi(request, response) {
-    if (request.method !== 'POST') {
-        sendJson(response, 405, { error: 'Method not allowed.' });
-        return;
+async function generateAiReply(userMessage) {
+    if (process.env.OPENAI_API_KEY === undefined || process.env.OPENAI_API_KEY === '') {
+        return "ขออภัยค่ะ ขณะนี้ระบบ AI ของเรายังไม่ได้ตั้งค่า API Key กรุณาติดต่อทางร้านโดยตรงค่ะ";
     }
 
-    try {
-        if (process.env.OPENAI_API_KEY === undefined || process.env.OPENAI_API_KEY === '') {
-            sendJson(response, 500, { error: 'OpenAI API Key is not configured on the server.' });
-            return;
-        }
-
-        const body = await readRequestBody(request);
-        const userMessage = String(body.message || '').trim();
-
-        if (!userMessage) {
-            sendJson(response, 400, { error: 'Message is required.' });
-            return;
-        }
-
-        const systemPrompt = `You are a polite, helpful AI sales assistant for ZabSiam, a premium authentic Thai catering service.
+    const systemPrompt = `You are a polite, helpful AI sales assistant for ZabSiam, a premium authentic Thai catering service.
 Your goal is to answer customer queries and CLOSE THE SALE.
 Ask the customer for the following details to confirm a booking:
 1. Name
@@ -459,6 +465,7 @@ Once you have ALL these details and the customer confirms they want to book, you
 [ORDER_CONFIRMED]
 {"name": "...", "contact": "...", "date": "...", "guests": "...", "package": "..."}`;
 
+    try {
         const completion = await openai.chat.completions.create({
             model: "gpt-4o-mini",
             messages: [
@@ -489,10 +496,32 @@ Once you have ALL these details and the customer confirms they want to book, you
                 reply = userReply;
             }
         }
-
-        sendJson(response, 200, { reply });
+        return reply;
     } catch (error) {
         console.error('OpenAI API error:', error);
+        return "ขออภัยค่ะ ระบบขัดข้องชั่วคราว กรุณาลองใหม่อีกครั้งค่ะ";
+    }
+}
+
+async function handleChatApi(request, response) {
+    if (request.method !== 'POST') {
+        sendJson(response, 405, { error: 'Method not allowed.' });
+        return;
+    }
+
+    try {
+        const body = await readRequestBody(request);
+        const userMessage = String(body.message || '').trim();
+
+        if (!userMessage) {
+            sendJson(response, 400, { error: 'Message is required.' });
+            return;
+        }
+
+        const reply = await generateAiReply(userMessage);
+        sendJson(response, 200, { reply });
+    } catch (error) {
+        console.error('Chat API Error:', error);
         sendJson(response, 500, { error: 'Failed to process chat request.' });
     }
 }
