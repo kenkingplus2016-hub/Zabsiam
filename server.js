@@ -13,7 +13,7 @@ const ADMIN_PASSWORD = process.env.ZABSIAM_ADMIN_PASSWORD || 'ZabSiam@2026';
 const FB_VERIFY_TOKEN = process.env.FB_VERIFY_TOKEN || 'zabsiam_bot_1234';
 const FB_PAGE_ACCESS_TOKEN = process.env.FB_PAGE_ACCESS_TOKEN || 'EAAcDFTC0mfABSFAIZB3VRoltlMZAs9OnTPduYdRTS3RfUd3ZCkdNendhzF0pEWqDbjMrJo9yYAKO6NX7ThgUcCFeHSRZBYJugRJZBFv9s68EU1OzZBnLmGU19odP8b0uhRpsJKEz2CuPmrC8aBSu1pUxLEBVFB5pj6Qfoig5ZBYZApdVO95i6i4HishFSynhXGAOIP908wu3HgZDZD';
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY || '';
-
+const GPT_SECRET_KEY = process.env.GPT_SECRET_KEY || 'my-super-secret-gpt-key-2026';
 const mimeTypes = {
     '.html': 'text/html',
     '.js': 'text/javascript',
@@ -560,6 +560,93 @@ async function handleOrdersApi(request, response) {
     sendJson(response, 405, { error: 'Method not allowed.' });
 }
 
+async function handleFacebookPublish(request, response) {
+    if (request.method !== 'POST') {
+        sendJson(response, 405, { error: 'Method not allowed.' });
+        return;
+    }
+
+    // Check Authorization Header
+    const authHeader = request.headers['authorization'];
+    if (!authHeader || authHeader !== `Bearer ${GPT_SECRET_KEY}`) {
+        sendJson(response, 401, { error: 'Unauthorized. Invalid API Key.' });
+        return;
+    }
+
+    let body = '';
+    request.on('data', chunk => {
+        body += chunk.toString();
+    });
+
+    request.on('end', async () => {
+        try {
+            const data = JSON.parse(body);
+            const { message, imageUrl } = data;
+
+            if (!message) {
+                sendJson(response, 400, { error: 'Message is required.' });
+                return;
+            }
+
+            const https = require('https');
+            
+            // If image is provided, post photo. Otherwise, post feed text.
+            const endpointPath = imageUrl ? `/v19.0/me/photos` : `/v19.0/me/feed`;
+            
+            const postDataObj = {
+                access_token: FB_PAGE_ACCESS_TOKEN,
+                message: message
+            };
+            if (imageUrl) {
+                postDataObj.url = imageUrl;
+            }
+
+            const postData = JSON.stringify(postDataObj);
+
+            const options = {
+                hostname: 'graph.facebook.com',
+                port: 443,
+                path: endpointPath,
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Content-Length': Buffer.byteLength(postData)
+                }
+            };
+
+            const fbReq = https.request(options, (res) => {
+                let fbBody = '';
+                res.on('data', (d) => { fbBody += d; });
+                res.on('end', () => {
+                    if (res.statusCode === 200) {
+                        try {
+                            const result = JSON.parse(fbBody);
+                            sendJson(response, 200, { success: true, postId: result.id });
+                        } catch(e) {
+                            sendJson(response, 200, { success: true });
+                        }
+                    } else {
+                        console.error('FB Publish Error:', fbBody);
+                        sendJson(response, res.statusCode, { error: 'Failed to publish to Facebook', details: fbBody });
+                    }
+                });
+            });
+
+            fbReq.on('error', (e) => {
+                console.error('Error connecting to FB Graph:', e);
+                sendJson(response, 500, { error: 'Network error connecting to Facebook.' });
+            });
+
+            fbReq.write(postData);
+            fbReq.end();
+
+        } catch (error) {
+            console.error('Parse error in publish endpoint:', error);
+            sendJson(response, 400, { error: 'Invalid JSON format.' });
+        }
+    });
+}
+
 const server = http.createServer((request, response) => {
     const requestUrl = new URL(request.url, `http://${request.headers.host || 'localhost'}`);
 
@@ -598,6 +685,14 @@ const server = http.createServer((request, response) => {
     if (requestUrl.pathname === '/api/orders') {
         handleOrdersApi(request, response).catch(error => {
             console.error('Orders API error:', error);
+            sendJson(response, 500, { error: 'Server error.' });
+        });
+        return;
+    }
+
+    if (requestUrl.pathname === '/api/publish-post') {
+        handleFacebookPublish(request, response).catch(error => {
+            console.error('Publish API error:', error);
             sendJson(response, 500, { error: 'Server error.' });
         });
         return;

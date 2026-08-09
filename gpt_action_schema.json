@@ -1,0 +1,88 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "ZabSiam Facebook Publisher",
+    "description": "API to publish posts (text and optional image) to the ZabSiam Facebook Page.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://zabsiam.com"
+    }
+  ],
+  "paths": {
+    "/api/publish-post": {
+      "post": {
+        "summary": "Publish a new post to the Facebook page",
+        "description": "Sends a message and an optional image URL to be published on the ZabSiam Facebook Page.",
+        "operationId": "publishFacebookPost",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string",
+                    "description": "The text content or caption of the Facebook post."
+                  },
+                  "imageUrl": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Optional. The public URL of the image to attach to the post."
+                  }
+                },
+                "required": [
+                  "message"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully published the post.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "postId": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request (e.g., missing message)."
+          },
+          "401": {
+            "description": "Unauthorized (Invalid GPT Secret Key)."
+          },
+          "500": {
+            "description": "Server Error or Facebook Graph API Error."
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}
