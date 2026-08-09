@@ -109,11 +109,20 @@
         <p class="summary" id="roleSummary"></p>
       </div>
       <div class="actions">
+        <button class="button secondary" id="dailyBriefBtn" type="button" style="border-left: 4px solid var(--gold);">Daily Brief</button>
         <a class="button gold" href="/ai-team-board.html">กระดานสั่งงานทีม AI</a>
         <button class="button" id="copyPrompt" type="button">คัดลอก Prompt</button>
         <button class="button secondary" id="selectPrompt" type="button">เลือก Prompt</button>
         <button class="button gold" id="openPrompt" type="button">เปิด AI นี้ใน ChatGPT</button>
       </div>
+    </section>
+
+    <section class="quick-commands-bar" style="display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; background: rgba(255,255,255,0.6); padding: 12px; border-radius: 8px; border: 1px solid var(--line);">
+      <strong style="display: flex; align-items: center; margin-right: 8px; font-size: 14px; color: var(--muted);">Quick Commands:</strong>
+      <button class="button secondary" style="min-height: 32px; padding: 4px 12px; font-size: 13px;" onclick="applyQuickCommand('personal-secretary', 'เช็คอีเมล Zab Siam')">เช็คอีเมล (เลขา)</button>
+      <button class="button secondary" style="min-height: 32px; padding: 4px 12px; font-size: 13px;" onclick="applyQuickCommand('marketing', 'โพสต์วันนี้')">เขียนโพสต์ (การตลาด)</button>
+      <button class="button secondary" style="min-height: 32px; padding: 4px 12px; font-size: 13px;" onclick="applyQuickCommand('stock', 'เช็กของ')">เช็กสต็อก</button>
+      <button class="button secondary" style="min-height: 32px; padding: 4px 12px; font-size: 13px;" onclick="applyQuickCommand('manager', 'วางแผนวันนี้')">วางแผนร้าน (ผู้จัดการ)</button>
     </section>
 
     <section class="grid">
@@ -404,52 +413,30 @@ const roles = [
   },
   {
     id: "marketing",
-    icon: "A",
-    title: "Marketing AI",
-    summary: "เขียนโพสต์ คิดโปรโมชัน และวางคอนเทนต์",
-    duties: ["เขียนโพสต์", "คิดโปรโมชัน", "ทำแคปชันเมนู", "วางแผนคอนเทนต์"],
-    prompt: `คุณคือ Marketing AI ของร้าน Zab Siam
+    icon: "M",
+    title: "Marketing & Research AI",
+    summary: "ทำการตลาด วิเคราะห์เทรนด์ เขียนโพสต์ และคิดโปรโมชัน",
+    duties: ["วางแผนคอนเทนต์", "เขียนโพสต์", "วิเคราะห์คู่แข่ง", "หาโอกาสใหม่"],
+    prompt: `คุณคือ Marketing & Research AI ของร้าน Zab Siam
 
-หน้าที่ของคุณคือช่วยทำการตลาด คิดคอนเทนต์ เขียนโพสต์ และวางโปรโมชันสำหรับร้าน
+หน้าที่ของคุณคือช่วยทำการตลาด คิดคอนเทนต์ เขียนโพสต์ วิเคราะห์ตลาด คู่แข่ง และเทรนด์อาหาร
 
 ให้ช่วยทำ:
 - โพสต์ Facebook/Instagram/TikTok
-- ข้อความโปรโมชัน
-- แคปชันเมนู
+- ข้อความโปรโมชัน และแคปชันเมนู
 - แผนคอนเทนต์รายสัปดาห์
-- ไอเดียขายช่วงเทศกาล
-- ข้อความชวนลูกค้าเก่ากลับมาซื้อซ้ำ
+- วิเคราะห์คู่แข่ง และเสนอเมนู/แพ็กเกจใหม่
+- สรุปเทรนด์อาหารที่น่าสนใจ
 
-น้ำเสียงต้องน่ากิน อบอุ่น ชัดเจน และเหมาะกับแบรนด์ขนมไทยพรีเมียม`,
+เวลาตอบ ให้แบ่งเป็น:
+1. ไอเดีย/สิ่งที่พบ
+2. ร่างข้อความพร้อมใช้ (น่ากิน อบอุ่น ชัดเจน เหมาะกับขนมไทยพรีเมียม)
+3. สิ่งที่ควรทดลองหรือตรวจสอบเพิ่ม
+(ถ้าใช้ข้อมูลจากอินเทอร์เน็ต ให้ระบุแหล่งที่มา)`,
     tasks: [
       ["โพสต์วันนี้", "ช่วยเขียนโพสต์ขายเมนูวันนี้ของร้าน Zab Siam"],
       ["โปร 7 วัน", "ช่วยคิดโปรโมชัน 7 วันเพื่อเพิ่มยอดขาย"],
-      ["คอนเทนต์สัปดาห์", "ช่วยวางแผนคอนเทนต์ social media 7 วัน"]
-    ]
-  },
-  {
-    id: "research",
-    icon: "R",
-    title: "Research AI",
-    summary: "วิเคราะห์ตลาด คู่แข่ง เทรนด์ และโอกาสใหม่",
-    duties: ["ดูคู่แข่ง", "หาเทรนด์", "เสนอเมนูใหม่", "สรุปโอกาส"],
-    prompt: `คุณคือ Research AI ของร้าน Zab Siam
-
-หน้าที่ของคุณคือช่วยหาข้อมูลตลาด คู่แข่ง เทรนด์อาหาร ราคา และโอกาสใหม่ของร้าน
-
-เวลาสรุป ให้แบ่งเป็น:
-1. สิ่งที่พบ
-2. คู่แข่งทำอะไร
-3. โอกาสของ Zab Siam
-4. ไอเดียที่ทำได้เร็ว
-5. ไอเดียที่ควรทดลอง
-6. ข้อมูลที่ควรตรวจสอบเพิ่ม
-
-ถ้าใช้ข้อมูลจากอินเทอร์เน็ต ให้ระบุแหล่งที่มาและวันที่ตรวจสอบ`,
-    tasks: [
-      ["ไอเดียเมนู", "ช่วยคิดไอเดียเมนูหรือแพ็กเกจใหม่สำหรับ Zab Siam"],
-      ["คู่แข่ง", "ช่วยวิเคราะห์คู่แข่งและบอกว่า Zab Siam ควรต่างอย่างไร"],
-      ["เทรนด์", "ช่วยสรุปเทรนด์อาหารที่ Zab Siam ควรลองขาย"]
+      ["ไอเดียเมนูใหม่", "ช่วยวิเคราะห์ตลาดและคู่แข่ง แล้วเสนอไอเดียเมนูใหม่สำหรับ Zab Siam"]
     ]
   }
 ];
@@ -627,6 +614,22 @@ function taskApiHeaders() {
   };
 }
 
+function applyQuickCommand(roleId, taskTitle) {
+  const roleIndex = roles.findIndex(r => r.id === roleId);
+  if (roleIndex !== -1) {
+    active = roles[roleIndex];
+    renderRoles();
+    renderMain();
+    
+    // Find the task and append it
+    const task = active.tasks.find(t => t[0] === taskTitle);
+    if (task) {
+      taskText.value = "สั่งงานด่วน:\n\n" + task[1];
+      setStatus("โหลด Quick Command แล้ว");
+    }
+  }
+}
+
 function formatRemoteTask(task) {
   return [
     `Task: ${task.title || ""}`,
@@ -773,6 +776,40 @@ document.getElementById("selectPrompt").addEventListener("click", () => {
 });
 document.getElementById("copyTask").addEventListener("click", () => copyText(taskText.value, "คำสั่งงาน", taskText));
 document.getElementById("loadManagerTasks").addEventListener("click", loadRemoteTasks);
+
+document.getElementById("dailyBriefBtn").addEventListener("click", async () => {
+  setStatus("กำลังสรุป Daily Brief...");
+  try {
+    const res = await fetch(aiTaskApiUrl, { headers: taskApiHeaders() });
+    if (!res.ok) throw new Error("Load failed");
+    const data = await res.json();
+    const tasks = Array.isArray(data) ? data : (data.tasks || []);
+    
+    const todoTasks = tasks.filter(t => t.status !== "done");
+    
+    let brief = "นี่คือ Daily Brief สรุปงานค้างทั้งหมดจากกระดานสั่งงานกลาง โปรดจัดลำดับความสำคัญและแนะนำว่าควรทำอะไรก่อนหลัง:\n\n";
+    if (todoTasks.length === 0) {
+      brief += "- ไม่มีงานค้างในระบบ เยี่ยมมาก!\n";
+    } else {
+      todoTasks.forEach((t, i) => {
+        brief += `${i+1}. [${t.role || 'Unassigned'}] ${t.title || 'Untitled'}\n   - ความด่วน: ${t.priority || 'normal'}\n   - รายละเอียด: ${t.note || '-'}\n\n`;
+      });
+    }
+    
+    // Switch to CEO / Manager AI
+    const ceoIndex = roles.findIndex(r => r.id === "manager");
+    if (ceoIndex !== -1) {
+      active = roles[ceoIndex];
+      render();
+    }
+    
+    taskText.value = brief;
+    setStatus("โหลด Daily Brief เรียบร้อย");
+  } catch (err) {
+    console.error(err);
+    setStatus("ดึงข้อมูลล้มเหลว (อาจยังไม่ล็อกอิน)");
+  }
+});
 
 render();
 if (sessionStorage.getItem(aiTaskPasswordKey)) {

@@ -342,6 +342,7 @@
         <label>
           ส่งให้ทีม
           <select id="roleInput">
+            <option value="auto">AUTO (ให้ระบบเลือกทีมให้)</option>
             <option>Personal Secretary AI</option>
             <option>CEO/Manager AI</option>
             <option>Sales AI</option>
@@ -350,8 +351,7 @@
             <option>Kitchen AI</option>
             <option>Stock/Inventory AI</option>
             <option>Finance/Admin AI</option>
-            <option>Marketing AI</option>
-            <option>Research AI</option>
+            <option>Marketing & Research AI</option>
           </select>
         </label>
         <label>
@@ -388,6 +388,7 @@
             <p id="syncStatus">ยังไม่ได้ซิงก์</p>
           </div>
           <div class="toolbar-actions">
+            <button class="button secondary" id="dailyBriefBoardBtn" type="button" style="border-left: 4px solid var(--gold);">Daily Brief (สรุปงาน)</button>
             <a class="button secondary" href="/ai-control-room.html">AI Control Room</a>
             <a class="button secondary" href="/admin/pos.html">POS / Stock</a>
             <button class="button gold" id="refreshButton" type="button">รีเฟรช</button>
@@ -443,8 +444,7 @@
       "Kitchen AI",
       "Stock/Inventory AI",
       "Finance/Admin AI",
-      "Marketing AI",
-      "Research AI"
+      "Marketing & Research AI"
     ];
     const lanes = [
       { id: "todo", title: "รอทำ" },
@@ -662,8 +662,23 @@
 
     taskForm.addEventListener("submit", async event => {
       event.preventDefault();
+      const fullText = (titleInput.value + " " + noteInput.value).toLowerCase();
+      let assignedRole = roleInput.value;
+      
+      if (assignedRole === "auto") {
+        if (fullText.match(/ลูกค้า|ออเดอร์|รับออเดอร์|ปิดการขาย/)) assignedRole = "Sales AI";
+        else if (fullText.match(/เฟสบุ๊ค|โพสต์|โปรโมท|โปรโมชัน|วิเคราะห์|คู่แข่ง/)) assignedRole = "Marketing & Research AI";
+        else if (fullText.match(/ร้องเรียน|ปัญหา|ช่วยด้วย|ซัพพอร์ต/)) assignedRole = "Customer Support AI";
+        else if (fullText.match(/ครัว|ทำอาหาร|เตรียมของ|prep/)) assignedRole = "Kitchen AI";
+        else if (fullText.match(/สต็อก|เช็กของ|วัตถุดิบ|ใกล้หมด/)) assignedRole = "Stock/Inventory AI";
+        else if (fullText.match(/เงิน|ยอดขาย|กำไร|ใบเสนอราคา|ต้นทุน/)) assignedRole = "Finance/Admin AI";
+        else if (fullText.match(/จัดระบบ|ตารางงาน|คิว|ส่งของ/)) assignedRole = "Operations AI";
+        else if (fullText.match(/ภาพรวม|ผู้จัดการ|ปัญหาของร้าน|ยอด/)) assignedRole = "CEO/Manager AI";
+        else assignedRole = "Personal Secretary AI";
+      }
+
       const payload = {
-        role: roleInput.value,
+        role: assignedRole,
         title: titleInput.value,
         priority: priorityInput.value,
         sourceDevice: deviceInput.value,
@@ -684,6 +699,19 @@
     });
 
     refreshButton.addEventListener("click", () => loadTasks());
+    
+    document.getElementById("dailyBriefBoardBtn").addEventListener("click", () => {
+      const todoTasks = tasks.filter(t => t.status !== "done");
+      let brief = "นี่คือ Daily Brief สรุปงานค้างทั้งหมด:\n\n";
+      if (todoTasks.length === 0) {
+        brief += "ไม่มีงานค้าง เยี่ยมมาก!\n";
+      } else {
+        todoTasks.forEach((t, i) => {
+          brief += `${i+1}. [${t.role}] ${t.title} (${priorityLabels[t.priority] || t.priority})\n`;
+        });
+      }
+      alert(brief);
+    });
     logoutButton.addEventListener("click", () => {
       sessionStorage.removeItem(passwordKey);
       password = "";
