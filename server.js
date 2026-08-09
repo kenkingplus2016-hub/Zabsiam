@@ -10,6 +10,7 @@ const AI_TASKS_FILE = path.join(DATA_DIR, 'ai_team_tasks.json');
 const TEMP_CHECKS_FILE = path.join(DATA_DIR, 'temperature_checks.json');
 const FOOD_SAFETY_FILE = path.join(DATA_DIR, 'food_safety_records.json');
 const ADMIN_PASSWORD = process.env.ZABSIAM_ADMIN_PASSWORD || 'ZabSiam@2026';
+const FB_VERIFY_TOKEN = process.env.FB_VERIFY_TOKEN || 'zabsiam_bot_1234';
 
 const mimeTypes = {
     '.html': 'text/html',
@@ -131,6 +132,50 @@ function classifyTemperature(type, temperature) {
     }
 
     return { status: 'warning', label: 'Recorded', guidance: 'Temperature recorded. Check against your food safety procedure.' };
+}
+
+async function handleMessengerWebhook(request, response, requestUrl) {
+    if (request.method === 'GET') {
+        // Facebook verification
+        const mode = requestUrl.searchParams.get('hub.mode');
+        const token = requestUrl.searchParams.get('hub.verify_token');
+        const challenge = requestUrl.searchParams.get('hub.challenge');
+
+        if (mode && token) {
+            if (mode === 'subscribe' && token === FB_VERIFY_TOKEN) {
+                console.log('WEBHOOK_VERIFIED');
+                response.writeHead(200, { 'Content-Type': 'text/plain' });
+                response.end(challenge);
+            } else {
+                response.writeHead(403);
+                response.end();
+            }
+        } else {
+            response.writeHead(400);
+            response.end();
+        }
+        return;
+    }
+
+    if (request.method === 'POST') {
+        const body = await readRequestBody(request);
+        if (body.object === 'page') {
+            if (body.entry) {
+                body.entry.forEach(entry => {
+                    const webhook_event = entry.messaging ? entry.messaging[0] : null;
+                    if (webhook_event) {
+                        console.log('Received webhook event:', JSON.stringify(webhook_event));
+                        // In the future, pass webhook_event to AI Codex here
+                    }
+                });
+            }
+            response.writeHead(200, { 'Content-Type': 'text/plain' });
+            response.end('EVENT_RECEIVED');
+        } else {
+            response.writeHead(404);
+            response.end();
+        }
+    }
 }
 
 async function handleAiTeamTasks(request, response, pathname) {
@@ -507,6 +552,15 @@ const server = http.createServer((request, response) => {
         handleOrdersApi(request, response).catch(error => {
             console.error('Orders API error:', error);
             sendJson(response, 500, { error: 'Server error.' });
+        });
+        return;
+    }
+
+    if (requestUrl.pathname.startsWith('/webhook/messenger')) {
+        handleMessengerWebhook(request, response, requestUrl).catch(error => {
+            console.error('Webhook API error:', error);
+            response.writeHead(500);
+            response.end('Server error');
         });
         return;
     }
