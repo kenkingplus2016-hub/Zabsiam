@@ -12,6 +12,7 @@ const FOOD_SAFETY_FILE = path.join(DATA_DIR, 'food_safety_records.json');
 const ADMIN_PASSWORD = process.env.ZABSIAM_ADMIN_PASSWORD || 'ZabSiam@2026';
 const FB_VERIFY_TOKEN = process.env.FB_VERIFY_TOKEN || 'zabsiam_bot_1234';
 const FB_PAGE_ACCESS_TOKEN = process.env.FB_PAGE_ACCESS_TOKEN || 'EAAcDFTC0mfABSFAIZB3VRoltlMZAs9OnTPduYdRTS3RfUd3ZCkdNendhzF0pEWqDbjMrJo9yYAKO6NX7ThgUcCFeHSRZBYJugRJZBFv9s68EU1OzZBnLmGU19odP8b0uhRpsJKEz2CuPmrC8aBSu1pUxLEBVFB5pj6Qfoig5ZBYZApdVO95i6i4HishFSynhXGAOIP908wu3HgZDZD';
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY || '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';
 
 const mimeTypes = {
     '.html': 'text/html',
@@ -463,10 +464,10 @@ async function handleFoodSafetyRecords(request, response, pathname) {
     sendJson(response, 405, { error: 'Method not allowed.' });
 }
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY || 'dummy-key' }); // Initialize with dummy to prevent crash on boot if env is missing
+const openai = new OpenAI({ apiKey: OPENAI_API_KEY }); // Initialize with dummy to prevent crash on boot if env is missing
 
 async function generateAiReply(userMessage) {
-    if (process.env.OPENAI_API_KEY === undefined || process.env.OPENAI_API_KEY === '') {
+    if (OPENAI_API_KEY === undefined || OPENAI_API_KEY === '' || OPENAI_API_KEY === 'dummy-key') {
         return "ขออภัยค่ะ ขณะนี้ระบบ AI ของเรายังไม่ได้ตั้งค่า API Key กรุณาติดต่อทางร้านโดยตรงค่ะ";
     }
 
