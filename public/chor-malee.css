@@ -186,8 +186,56 @@ nav a {
     white-space: nowrap;
 }
 
-nav a:hover {
+nav a:hover,
+.dropdown:hover .dropbtn {
     color: var(--color-green-light);
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(20, 20, 20, 0.98);
+    min-width: 240px;
+    box-shadow: 0px 8px 24px 0px rgba(0,0,0,0.6);
+    z-index: 1001;
+    border-radius: 8px;
+    border: 1px solid var(--color-gray);
+    overflow: hidden;
+    margin-top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dropdown-content a {
+    color: var(--color-white);
+    padding: 14px 18px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease;
+    white-space: normal;
+    text-align: left;
+    border-bottom: 1px solid var(--color-gray);
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--color-gray);
+    color: var(--color-green-light);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    animation: fadeIn 0.3s ease-out;
 }
 
 /* Hero Section with Video */
