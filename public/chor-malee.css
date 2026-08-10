@@ -547,7 +547,7 @@ footer {
 
     .cart-floating-btn {
         right: 1rem;
-        bottom: 1rem;
+        bottom: 5.5rem; /* Moved up to avoid overlapping with chat widget */
         width: 54px;
         height: 54px;
     }
