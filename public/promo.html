@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khrua Thai London - สร้างโพสต์โปรโมท</title>
+    <title>ZabSiam London - สร้างโพสต์โปรโมท</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -447,6 +447,13 @@
             align-items: center;
             gap: 5px;
         }
+            a.mega-nav-link[href="menu.html"] { color: #e65c00 !important; font-weight: bold !important; }
+            .category-title { color: #e65c00 !important; }
+        .category-subtitle { color: #e65c00 !important; }
+            footer { background-color: #000 !important; color: #fff !important; border-top: 1px solid #333 !important; }
+            .mega-column-title { color: #e65c00 !important; }
+        .mega-column a { color: #e65c00 !important; }
+        .mega-column a:hover { background: #e65c00 !important; color: #fff !important; }
     </style>
 
     <!-- Google tag (gtag.js) -->
@@ -459,14 +466,30 @@
       gtag('config', 'G-B32XK3RT5X');
     </script>
     <link rel="stylesheet" href="css/megamenu.css">
-</head>
-<body>
+
+    <style>
+        body, html { background-color: #000 !important; color: #fff !important; }
+        .mega-header { background-color: #000 !important; border-bottom: 1px solid #333 !important; }
+        .mega-nav-link { color: #fff !important; }
+        .mega-dropdown { background-color: #111 !important; border-color: #333 !important; }
+        .category-card, .menu-card { background-color: #111 !important; border-color: #333 !important; color: #fff !important; }
+        .category-card:hover, .menu-card:hover { border-color: #e65c00 !important; }
+        .category-card h3, .menu-card h3 { color: #fff !important; }
+        .menu-card p { color: #ccc !important; }
+        .modal-content { background-color: #111 !important; color: #e65c00 !important; }
+        .modal-content *, .modal-content h2, .modal-content h3, .modal-content p { color: #e65c00 !important; }
+        .close { color: #fff !important; }
+        /* Fix inputs in dark mode */
+        input, textarea, select { background-color: #222 !important; color: #fff !important; border-color: #444 !important; }
+    </style>
+    </head>
+<body class="bg-black text-white">
 
     <!-- Header -->
     <div class="page-header">
         <div class="header-brand">
-            <img src="logo.png" alt="Logo">
-            <span>KHRUA THAI LONDON</span>
+            <img src="logo2.png" alt="Logo">
+            <span>ZabSiam LONDON</span>
         </div>
         <div class="header-title"><i class="fas fa-magic"></i> เครื่องมือสร้างโพสต์โปรโมท</div>
         <a href="admin.html" class="back-btn"><i class="fas fa-arrow-left"></i> กลับแอดมิน</a>
@@ -586,7 +609,7 @@
                 <div class="fb-preview-header">
                     <div class="fb-avatar">KT</div>
                     <div>
-                        <div class="fb-name">Khrua Thai London</div>
+                        <div class="fb-name">ZabSiam London</div>
                         <div class="fb-time">Just now · <i class="fas fa-globe-americas" style="font-size:0.65rem;"></i></div>
                     </div>
                 </div>
@@ -736,7 +759,7 @@
 
             switch (currentTemplate) {
                 case 'promo':
-                    caption = `🔥 เมนูแนะนำจาก Khrua Thai London 🔥\n`;
+                    caption = `🔥 เมนูแนะนำจาก ZabSiam London 🔥\n`;
                     caption += `✨ รสชาติต้นตำรับไทยแท้ ส่งตรงถึงงานเลี้ยงของคุณ ✨\n\n`;
                     caption += `${menuList}\n\n`;
                     caption += `👑 ทุกเมนูปรุงสดใหม่ ใส่ใจในทุกรายละเอียด\n`;
@@ -748,7 +771,7 @@
                     break;
 
                 case 'event':
-                    caption = `🎉 จัดงานเลี้ยงสุดพิเศษ กับ Khrua Thai London 🎉\n\n`;
+                    caption = `🎉 จัดงานเลี้ยงสุดพิเศษ กับ ZabSiam London 🎉\n\n`;
                     caption += `ไม่ว่าจะเป็นงานวันเกิด งานแต่งงาน งานเลี้ยงบริษัท\n`;
                     caption += `หรือปาร์ตี้ส่วนตัว เรามีเมนูพิเศษพร้อมเสิร์ฟ!\n\n`;
                     caption += `🍽️ เมนูแนะนำสำหรับงานของคุณ:\n`;
@@ -762,7 +785,7 @@
 
                 case 'seasonal':
                     caption = `🌿 เมนูพิเศษประจำฤดูกาล 🌿\n`;
-                    caption += `จาก Khrua Thai London\n\n`;
+                    caption += `จาก ZabSiam London\n\n`;
                     caption += `สัมผัสรสชาติแห่งฤดูกาลที่คัดสรรมาเป็นพิเศษ\n`;
                     caption += `ด้วยวัตถุดิบชั้นเลิศ สดใหม่ทุกวัน\n\n`;
                     caption += `${menuList}\n\n`;
@@ -787,7 +810,7 @@
                         caption += '\n\n';
                     }
                     caption += `✨ สูตรต้นตำรับจากครัวไทย ปรุงด้วยหัวใจ\n`;
-                    caption += `📍 Khrua Thai London\n`;
+                    caption += `📍 ZabSiam London\n`;
                     caption += `📞 สอบถามเพิ่มเติม`;
                     break;
             }

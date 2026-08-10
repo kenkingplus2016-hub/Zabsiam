@@ -1,31 +1,6 @@
-﻿const fs = require('fs');
-
-// 1. Fix classic_menu.json
-let data = JSON.parse(fs.readFileSync('./data/classic_menu.json', 'utf8'));
-
-data.forEach(item => {
-    if (item.name.en.includes('Siam Pruksa Box Set:')) {
-        item.name.en = item.name.en.replace('Siam Pruksa Box Set:', 'Special Box');
-        item.name.th = item.name.th.replace('สยามพฤกษา:', 'Special Box');
-    } else if (item.name.en.includes('Siam Authentic:')) {
-        item.name.en = item.name.en.replace('Siam Authentic:', 'Special Box');
-        item.name.th = item.name.th.replace('สยามต้นตำรับ:', 'Special Box');
-    }
-});
-
-fs.writeFileSync('./data/classic_menu.json', JSON.stringify(data, null, 2), 'utf8');
-
-// 2. Fix delivery.html
-let html = fs.readFileSync('./public/delivery.html', 'utf8');
-
-// Fix filter on line 259
-html = html.replace(/classicSets = allSets\.filter\(s => s\.name\.en\.includes\('Family'\).*?\);/, "classicSets = allSets.filter(s => s.name.en.includes('Family') || s.name.en.includes('Lunch Box') || s.name.en.includes('Special Box'));");
-
-// Fix routing logic around line 322
-html = html.replace(/if \(set\.name\.en\.includes\('Siam Pruksa'\).*?\{[\s\S]*?\} else \{[\s\S]*?\}/, if (set.name.en.match(/Set [A-F]/)) {
-                menuHtml += cardHtml;
-            } else {
-                pruksaHtml += cardHtml;
-            });
-
-fs.writeFileSync('./public/delivery.html', html, 'utf8');
+const fs = require('fs');
+let text = fs.readFileSync('public/booking.html', 'utf8');
+text = text.replace('let totalItemsCount = 0;', 'let totalItemsCount = 0;\n    let isFullPayment = false;');
+text = text.replace(/<div class="payment-methods">[\s\S]*?<\/div>\s*<\/div>/, '<div class="payment-methods">\n                <div class="pay-option active" style="cursor: default; width: 100%;">\n                    <i class="far fa-credit-card"></i>\n                    <span id="p-card">??????????<br>Credit Card</span>\n                </div>\n            </div>');
+text = text.replace('let selectedPaymentMethod = \'PromptPay\';', 'let selectedPaymentMethod = \'Card\';');
+fs.writeFileSync('public/booking.html', text, 'utf8');

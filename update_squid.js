@@ -1,24 +1,51 @@
 const fs = require('fs');
+const path = require('path');
 
-const jsonPath = 'data/buffet_menu.json';
-const data = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+const dirs = [
+    'C:\\Users\\KENDEE\\Desktop\\เว็บ\\data',
+    'C:\\Users\\KENDEE\\Desktop\\เว็บ\\public\\api',
+    'C:\\Users\\KENDEE\\Documents\\GitHub\\khruathai-london\\data',
+    'C:\\Users\\KENDEE\\Documents\\GitHub\\khruathai-london\\public\\api'
+];
 
-let updated = 0;
+function update(dir) {
+    if (!fs.existsSync(dir)) return;
+    const files = fs.readdirSync(dir);
+    for (const file of files) {
+        const filePath = path.join(dir, file);
+        if (fs.statSync(filePath).isFile() && (file.endsWith('.json') || !file.includes('.'))) {
+            try {
+                let content = fs.readFileSync(filePath, 'utf8');
+                let data = JSON.parse(content);
+                let changed = false;
 
-data.forEach(category => {
-    category.items.forEach(item => {
-        if (item.th.includes('ปลาหมึกนึ่งมะนาว') || item.en.toLowerCase().includes('steamed squid')) {
-            item.price = 35;
-            item.unit = '450g หม้อไฟ';
-            console.log(`Updated price for ${item.th} (${item.en}) to £35 and unit to 450g หม้อไฟ`);
-            updated++;
+                function traverse(obj) {
+                    if (Array.isArray(obj)) {
+                        for (let item of obj) traverse(item);
+                    } else if (obj !== null && typeof obj === 'object') {
+                        let enVal = obj.en || (obj.name && obj.name.en) || "";
+                        if (typeof enVal === 'string') {
+                            const en = enVal.trim().toLowerCase();
+                            if (en.includes("spicy stuffed squid") && !en.includes("salad")) {
+                                if (obj.img !== "spicy stuffed squid salad.jpg") {
+                                    obj.img = "spicy stuffed squid salad.jpg";
+                                    changed = true;
+                                }
+                            }
+                        }
+                        for (let key in obj) traverse(obj[key]);
+                    }
+                }
+
+                traverse(data);
+
+                if (changed) {
+                    fs.writeFileSync(filePath, JSON.stringify(data, null, 4), 'utf8');
+                    console.log('Updated: ' + filePath);
+                }
+            } catch (err) {}
         }
-    });
-});
-
-if (updated > 0) {
-    fs.writeFileSync(jsonPath, JSON.stringify(data, null, 4), 'utf8');
-    console.log(`Successfully updated ${updated} items.`);
-} else {
-    console.log('Could not find ปลาหมึกนึ่งมะนาว in the menu.');
+    }
 }
+
+dirs.forEach(update);
