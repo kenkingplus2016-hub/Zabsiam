@@ -150,6 +150,27 @@ header {
     filter: drop-shadow(0 0 24px rgba(255, 140, 0, 0.35));
 }
 
+/* Dual Logo Styles */
+.dual-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+}
+
+.hero-dual-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 1.5rem;
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+.hero-dual-logo .hero-logo-img {
+    margin-bottom: 0;
+}
+
 nav ul {
     display: flex;
     list-style: none;
@@ -375,13 +396,25 @@ footer {
     }
 
     .header-content {
-        align-items: flex-start;
+        align-items: center; /* Center the logos and nav */
         flex-direction: column;
         gap: 0.7rem;
     }
 
+    .dual-logo {
+        gap: 10px; /* Tighter gap on mobile */
+    }
+
     .logo-img {
-        height: 40px;
+        height: 35px; /* Slightly smaller on mobile to fit two */
+    }
+
+    .hero-dual-logo {
+        gap: 15px;
+    }
+
+    .hero-logo-img {
+        height: clamp(80px, 15vw, 120px); /* Smaller on mobile */
     }
 
     nav {
