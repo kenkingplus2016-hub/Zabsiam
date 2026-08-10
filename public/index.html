@@ -37,6 +37,10 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
+            <button class="header-cart-btn" onclick="toggleCart()" aria-label="Open cart">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count" class="cart-badge">0</span>
+            </button>
         </div>
     </header>
 
@@ -816,11 +820,7 @@
             observer.observe(card);
         });
     </script>
-    <!-- Floating Cart Button -->
-    <button class="cart-floating-btn" onclick="toggleCart()" aria-label="Open cart">
-        <i class="fas fa-shopping-cart"></i>
-        <span id="cart-count" class="cart-badge">0</span>
-    </button>
+
 
     <!-- Cart & Checkout Modal -->
     <div id="cart-modal" class="cart-modal">

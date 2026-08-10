@@ -545,12 +545,7 @@ footer {
         gap: 2rem;
     }
 
-    .cart-floating-btn {
-        right: 1rem;
-        bottom: 5.5rem; /* Moved up to avoid overlapping with chat widget */
-        width: 54px;
-        height: 54px;
-    }
+
 
     .cart-modal {
         align-items: flex-end;
@@ -592,27 +587,21 @@ footer {
     background-color: var(--color-green-light);
 }
 
-.cart-floating-btn {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    background-color: var(--color-orange);
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+.header-cart-btn {
+    background-color: transparent;
+    color: var(--color-orange);
     border: none;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    z-index: 1000;
+    position: relative;
+    padding: 5px;
     transition: transform 0.3s;
 }
 
-.cart-floating-btn:hover {
+.header-cart-btn:hover {
     transform: scale(1.1);
 }
 
