@@ -1735,6 +1735,13 @@
         function submitAllergies() {
             const noAl = document.getElementById('no-allergies').checked;
             let allergies = [];
+            
+            // Build summary
+            const guestCount = document.getElementById('guest-count-input').value || 'Not specified';
+            let summary = `Hi, I am interested in booking the ${currentBuilderPkg} package.\n`;
+            summary += `Number of Guests: ${guestCount}\n\n`;
+            summary += `Here is my selected menu:\n\n`;
+            
             if(noAl) {
                 allergies.push("None");
             } else {
@@ -1746,9 +1753,6 @@
                 }
             }
 
-            // Build summary
-            let summary = `Hi, I am interested in booking the ${currentBuilderPkg} package.\nHere is my selected menu:\n\n`;
-            
             Object.keys(selections).forEach(key => {
                 if(selections[key].length > 0) {
                     summary += `*${key}*\n`;
@@ -1834,7 +1838,13 @@
     <!-- Allergen Modal -->
     <div id="allergen-modal" class="modal-overlay" style="display: none;">
         <div class="modal-content allergen-modal-content">
-            <h3 style="margin-top:0;">Dietary Requirements & Allergies</h3>
+            <h3 style="margin-top:0;">Dietary Requirements & Details</h3>
+            
+            <div style="margin-bottom: 20px;">
+                <label style="font-weight: bold; font-size: 0.95rem; display: block; margin-bottom: 8px; color: var(--primary);">Number of Guests:</label>
+                <input type="number" id="guest-count-input" min="1" placeholder="e.g. 10" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ddd; font-size: 1rem; font-family: 'Inter', sans-serif;">
+            </div>
+
             <p class="highlight-text" style="font-size: 0.95rem; text-align: center;">Please select any allergies for you or your guests (Select all that apply):</p>
             <div class="allergen-grid">
                 <label><input type="checkbox" class="allergen-cb" value="Celery"> Celery</label>
