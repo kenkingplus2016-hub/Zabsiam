@@ -1742,8 +1742,7 @@
                     allergies.push(cb.value);
                 });
                 if(allergies.length === 0) {
-                    alert("Please select your allergies or check 'No Allergies'.");
-                    return;
+                    allergies.push("None");
                 }
             }
 
