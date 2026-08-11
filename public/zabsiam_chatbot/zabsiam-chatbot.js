@@ -8,7 +8,7 @@
         gold: '#b38a43',
         position: 'right',
         apiEndpoint: '',
-        welcomeMessage: 'สวัสดีค่ะ ยินดีต้อนรับสู่ Zab Siam 🌶️ และ Chor Malee 🌸 ต้องการดูเมนู หรือจองแพ็กเกจจัดเลี้ยงดีคะ?'
+        welcomeMessage: 'Hello! Welcome to Zab Siam 🌶️ and Chor Malee 🌸. Would you like to see our menu or book an event catering package?'
     }, window.ZABSIAM_CHATBOT_CONFIG || {});
 
     // Chatbot UI CSS
@@ -70,14 +70,14 @@
             </div>
             <div class="zs-messages"></div>
             <div class="zs-quick">
-                <button class="zs-chip">ดูเมนูอาหารคาว</button>
-                <button class="zs-chip">ดูเมนูของหวาน</button>
-                <button class="zs-chip">แพ็กเกจจัดเลี้ยง</button>
-                <button class="zs-chip">ติดต่อเรา</button>
+                <button class="zs-chip">Savory Menu</button>
+                <button class="zs-chip">Dessert Menu</button>
+                <button class="zs-chip">Catering Packages</button>
+                <button class="zs-chip">Contact Us</button>
             </div>
             <form class="zs-form">
-                <input class="zs-input" placeholder="พิมพ์คำถามของคุณ..." autocomplete="off">
-                <button class="zs-send" type="submit">ส่ง</button>
+                <input class="zs-input" placeholder="Type your question..." autocomplete="off">
+                <button class="zs-send" type="submit">Send</button>
             </form>
         </div>
         <button class="zs-launch" aria-label="Open Chat">
@@ -120,7 +120,7 @@
                     <div class="zs-card-title">${c.title}</div>
                     <div class="zs-card-desc">${c.desc}</div>
                 </div>
-                <div class="zs-card-btn">${c.btnText || 'ดูรายละเอียด'}</div>
+                <div class="zs-card-btn">${c.btnText || 'View Details'}</div>
             `;
             card.onclick = () => {
                 if (c.action === 'send') send(c.title);
@@ -139,51 +139,51 @@
     function localLogic(raw) {
         const q = raw.toLowerCase().trim();
         
-        if (/street|สตรีท|อาหารคาว|คาว|หมูปิ้ง|เมี่ยงคำ|คอหมู|ไส้อั่ว/.test(q) || raw === 'ดูเมนูอาหารคาว') {
-            addMessage('นี่คือตัวอย่างเมนู <strong>Zab Siam Street Food</strong> สำหรับคุณค่ะ:', 'bot');
+        if (/street|savory|food|meat|pork|menu/.test(q) || raw === 'Savory Menu' || raw === 'ดูเมนูอาหารคาว') {
+            addMessage('Here are some highlights from our <strong>Zab Siam Street Food</strong> menu:', 'bot');
             addCards([
-                { img: 'images/miang_kham_duo.jpg', title: 'Miang Kham Duo', desc: 'เมี่ยงคำ 2 รสชาติ (กุ้งกรอบและปลากะพง)', btnText: 'คลิกเพื่อสั่ง', link: '#zabsiam-street-food' },
-                { img: 'images/mini_moo_ping_on_khao_jee.jpg', title: 'Mini Moo Ping on Khao Jee', desc: 'หมูปิ้งนุ่มๆ เสิร์ฟพร้อมข้าวจี่แสนอร่อย', btnText: 'คลิกเพื่อสั่ง', link: '#zabsiam-street-food' },
-                { img: 'images/sai_ua_nam_prik_noom.jpg', title: 'Sai Ua & Nam Prik Noom', desc: 'ไส้อั่วโฮมเมด และน้ำพริกหนุ่มสูตรเด็ด', btnText: 'คลิกเพื่อสั่ง', link: '#zabsiam-street-food' }
+                { img: 'images/miang_kham_duo.jpg', title: 'Miang Kham Duo', desc: 'Premium Miang Kham (Crispy Prawn & Sea Bass)', btnText: 'Order Now', link: '#zabsiam-street-food' },
+                { img: 'images/mini_moo_ping_on_khao_jee.jpg', title: 'Mini Moo Ping on Khao Jee', desc: 'Tender grilled pork skewers with sticky rice patties', btnText: 'Order Now', link: '#zabsiam-street-food' },
+                { img: 'images/sai_ua_nam_prik_noom.jpg', title: 'Sai Ua & Nam Prik Noom', desc: 'Homemade Northern Thai sausage & green chili dip', btnText: 'Order Now', link: '#zabsiam-street-food' }
             ]);
             return null;
         }
         
-        if (/chor malee|ช่อมาลี|ของหวาน|dessert|หวาน|ขนม|ช่อม่วง|ลืมกลืน/.test(q) || raw === 'ดูเมนูของหวาน') {
-            addMessage('<strong>Thai Desserts (Chor Malee)</strong> 🌸 ขนมไทยสูตรประณีตและพรีเมียม:', 'bot');
+        if (/chor malee|dessert|sweet|cake/.test(q) || raw === 'Dessert Menu' || raw === 'ดูเมนูของหวาน') {
+            addMessage('<strong>Thai Desserts (Chor Malee)</strong> 🌸 Exquisite and authentic Thai sweets:', 'bot');
             addCards([
-                { img: 'images/chor_muang_pack.jpeg', title: 'Chor Muang', desc: 'ช่อม่วงนุ่มละมุน ไส้ไก่เข้มข้น', btnText: 'สั่งเลย', link: '#menu' },
-                { img: 'images/khanom_luem_kleun_pack.jpeg', title: 'Khanom Luem Kleun', desc: 'ขนมลืมกลืน หอมหวานละลายในปาก', btnText: 'สั่งเลย', link: '#menu' },
-                { img: 'images/luk_chup_fruit.jpg', title: 'Luk Chup', desc: 'ลูกชุบผลไม้จิ๋ว สีสันสวยงาม', btnText: 'สั่งเลย', link: '#menu' }
+                { img: 'images/chor_muang_pack.jpeg', title: 'Chor Muang', desc: 'Flower-shaped dumplings with savory chicken filling', btnText: 'Order Now', link: '#menu' },
+                { img: 'images/khanom_luem_kleun_pack.jpeg', title: 'Khanom Luem Kleun', desc: 'Melt-in-your-mouth coconut pudding', btnText: 'Order Now', link: '#menu' },
+                { img: 'images/luk_chup_fruit.jpg', title: 'Luk Chup', desc: 'Colorful miniature fruit-shaped mung bean sweets', btnText: 'Order Now', link: '#menu' }
             ]);
             return null;
         }
 
-        if (/แพ็กเกจจัดเลี้ยง|catering|package|จัดเลี้ยง|แพ็กเกจ/.test(q)) {
-            addMessage('เรามีแพ็กเกจจัดเลี้ยง 3 รูปแบบให้เลือกตามจำนวนแขกค่ะ:', 'bot');
+        if (/catering|package|party|event/.test(q) || raw === 'Catering Packages' || raw === 'แพ็กเกจจัดเลี้ยง') {
+            addMessage('We offer 3 event catering packages based on your guest count:', 'bot');
             addCards([
-                { img: 'images/category_fine_dining.jpg', title: 'Package 1: SIAM CLASSIC', desc: 'สำหรับ 7-8 ท่าน ราคาเริ่มต้น £500', action: 'send', btnText: 'ดูข้อมูล Package 1' },
-                { img: 'images/category_canapes.jpg', title: 'Package 2: SIGNATURE', desc: 'สำหรับ 9-12 ท่าน ราคาเริ่มต้น £900', action: 'send', btnText: 'ดูข้อมูล Package 2' },
-                { img: 'images/category_buffet.jpg', title: 'Package 3: CELEBRATION', desc: 'สำหรับ 13-15 ท่าน ราคาเริ่มต้น £1,050', action: 'send', btnText: 'ดูข้อมูล Package 3' }
+                { img: 'images/category_fine_dining.jpg', title: 'Package 1: SIAM CLASSIC', desc: 'For 7-8 guests, starting from £500', action: 'send', btnText: 'View Package 1' },
+                { img: 'images/category_canapes.jpg', title: 'Package 2: SIGNATURE', desc: 'For 9-12 guests, starting from £900', action: 'send', btnText: 'View Package 2' },
+                { img: 'images/category_buffet.jpg', title: 'Package 3: CELEBRATION', desc: 'For 13-15 guests, starting from £1,050', action: 'send', btnText: 'View Package 3' }
             ]);
             return null;
         }
 
-        if (/package\s*1|แพ็กเกจ\s*1|siam classic/.test(q)) return '<strong>SIAM CLASSIC (Package 1)</strong><br>• สำหรับ 7-8 ท่าน<br>• ราคาเริ่มต้น £500<br>• เมนู: Starter 2, Main 2, ข้าว/เส้น 2, ผัก 1<br><br><a class="zs-link" href="/event-catering#booking">เริ่มจองงาน</a>';
-        if (/package\s*2|แพ็กเกจ\s*2|signature/.test(q)) return '<strong>ZAB SIAM SIGNATURE (Package 2)</strong><br>• สำหรับ 9-12 ท่าน<br>• ราคาเริ่มต้น £900<br>• เมนู: Starter 2, Main 3, ข้าว/เส้น 2, ผัก 2<br><br><a class="zs-link" href="/event-catering#booking">เริ่มจองงาน</a>';
-        if (/package\s*3|แพ็กเกจ\s*3|celebration/.test(q)) return '<strong>ZAB SIAM CELEBRATION (Package 3)</strong><br>• สำหรับ 13-15 ท่าน<br>• ราคาเริ่มต้น £1,050<br>• เมนู: Starter 3, Main 3, ข้าว/เส้น 3, ผัก 2<br><br><a class="zs-link" href="/event-catering#booking">เริ่มจองงาน</a>';
-        if (/ราคา|price|cost|เท่าไหร่/.test(q)) return 'ราคาเริ่มต้น:<br>• แพ็กเกจจัดเลี้ยง: £500 - £1,050+<br>• อาหารคาวและหวาน: £9 - £35+<br>สอบถามราคาแบบเป๊ะๆ ทักหาแอดมินได้เลยค่ะ';
-        if (/ติดต่อ|แอดมิน|contact/.test(q)) return `สามารถติดต่อทีมงานได้ที่:<br>อีเมล: <a class="zs-link" href="mailto:${C.contactEmail}">${C.contactEmail}</a><br>หรือกรอกฟอร์มในหน้า Contact ค่ะ`;
-        if (/สวัสดี|hello|hi|hey/.test(q)) return 'สวัสดีค่ะ 😊 ต้องการให้เราดูแลเรื่องอาหารมื้อพิเศษของคุณแบบไหนดีคะ? พิมพ์ถาม หรือกดเลือกจากเมนูด้านล่างได้เลยค่ะ';
+        if (/package\s*1|siam classic/.test(q) || raw === 'View Package 1') return '<strong>SIAM CLASSIC (Package 1)</strong><br>• For 7-8 guests<br>• Starting from £500<br>• Includes: 2 Starters, 2 Mains, 2 Rice/Noodles, 1 Veg<br><br><a class="zs-link" href="/event-catering#booking">Book Now</a>';
+        if (/package\s*2|signature/.test(q) || raw === 'View Package 2') return '<strong>ZAB SIAM SIGNATURE (Package 2)</strong><br>• For 9-12 guests<br>• Starting from £900<br>• Includes: 2 Starters, 3 Mains, 2 Rice/Noodles, 2 Veg<br><br><a class="zs-link" href="/event-catering#booking">Book Now</a>';
+        if (/package\s*3|celebration/.test(q) || raw === 'View Package 3') return '<strong>ZAB SIAM CELEBRATION (Package 3)</strong><br>• For 13-15 guests<br>• Starting from £1,050<br>• Includes: 3 Starters, 3 Mains, 3 Rice/Noodles, 2 Veg<br><br><a class="zs-link" href="/event-catering#booking">Book Now</a>';
+        if (/price|cost|how much/.test(q)) return 'Starting prices:<br>• Catering Packages: £500 - £1,050+<br>• Food & Desserts: £9 - £35+<br>For exact quotes, please contact us directly.';
+        if (/contact|admin|email/.test(q) || raw === 'Contact Us' || raw === 'ติดต่อเรา') return `You can reach our team at:<br>Email: <a class="zs-link" href="mailto:${C.contactEmail}">${C.contactEmail}</a><br>Or fill out the form on our Contact page.`;
+        if (/hello|hi|hey|greetings/.test(q)) return 'Hello! 😊 How can we help make your dining experience special today? Feel free to ask a question or select from the options below.';
         
-        return `ขออภัยค่ะ ฉันยังไม่เข้าใจ ลองคลิกเลือกจากเมนูด้านล่าง หรือพิมพ์คำว่า "อาหารคาว", "ของหวาน" หรือ "จัดเลี้ยง" ดูนะคะ<br><br><a class="zs-link" href="mailto:${C.contactEmail}">ติดต่อแอดมิน</a>`;
+        return `I'm sorry, I didn't quite catch that. Please select an option from the menu below, or type "menu", "dessert", or "catering".<br><br><a class="zs-link" href="mailto:${C.contactEmail}">Contact Support</a>`;
     }
 
     async function send(t) {
         if (!t.trim()) return;
         addMessage(esc(t), 'user');
         
-        const typing = addMessage('<span class="zs-typing">กำลังพิมพ์...</span>', 'bot');
+        const typing = addMessage('<span class="zs-typing">Typing...</span>', 'bot');
         
         // Fake latency for realistic feel
         await new Promise(r => setTimeout(r, 600 + Math.random() * 400));
