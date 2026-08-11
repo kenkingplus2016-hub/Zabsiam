@@ -139,7 +139,7 @@
     function localLogic(raw) {
         const q = raw.toLowerCase().trim();
         
-        if (/street|savory|food|meat|pork|menu/.test(q) || raw === 'Savory Menu' || raw === 'ดูเมนูอาหารคาว') {
+        if (/street|savory|food|meat|pork/.test(q) || raw === 'Savory Menu' || raw === 'ดูเมนูอาหารคาว') {
             addMessage('Here are some highlights from our <strong>Zab Siam Street Food</strong> menu:', 'bot');
             addCards([
                 { img: 'images/miang_kham_duo.jpg', title: 'Miang Kham Duo', desc: 'Premium Miang Kham (Crispy Prawn & Sea Bass)', btnText: 'Order Now', link: '#zabsiam-street-food' },
