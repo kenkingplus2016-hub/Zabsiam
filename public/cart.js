@@ -129,6 +129,25 @@ function updateCartUI() {
     if (deliverySummaryLabel) deliverySummaryLabel.innerText = deliveryOption.label;
     if (deliverySummaryFee) deliverySummaryFee.innerText = '£' + deliveryOption.fee.toFixed(2);
     if (cartTotal) cartTotal.innerText = totalText;
+
+    // Update Add to Cart buttons on the page to show "Added ✓" in blue
+    document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+        const onclickStr = btn.getAttribute('onclick') || '';
+        const match = onclickStr.match(/addToCart\(\s*'([^']+)'/);
+        if (match) {
+            const itemName = match[1];
+            const inCart = cart.some(item => item.name === itemName);
+            if (inCart) {
+                btn.style.background = '#007bff';
+                btn.style.color = '#fff';
+                btn.innerText = 'Added ✓';
+            } else {
+                btn.style.background = '';
+                btn.style.color = '';
+                btn.innerText = 'Add';
+            }
+        }
+    });
 }
 
 function toggleCart() {
