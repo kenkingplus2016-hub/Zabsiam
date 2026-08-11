@@ -1736,9 +1736,13 @@
             const noAl = document.getElementById('no-allergies').checked;
             let allergies = [];
             
+            // Generate a random Order ID
+            currentOrderId = 'ORD-' + Math.floor(100000 + Math.random() * 900000);
+            
             // Build summary
             const guestCount = document.getElementById('guest-count-input').value || 'Not specified';
-            let summary = `Hi, I am interested in booking the ${currentBuilderPkg} package.\n`;
+            let summary = `Order ID: ${currentOrderId}\n\n`;
+            summary += `Hi, I am interested in booking the ${currentBuilderPkg} package.\n`;
             summary += `Number of Guests: ${guestCount}\n\n`;
             summary += `Here is my selected menu:\n\n`;
             
@@ -1938,17 +1942,43 @@
             document.getElementById('menu-builder-bar').style.display = 'block';
         }
 
-        function confirmOrder() {
+        async function confirmOrder() {
             const ta = document.getElementById('order-summary-text');
+            const summary = ta.value;
             ta.select();
             document.execCommand('copy');
             
+            // Change button text to show loading state
+            const btn = event.currentTarget;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '⏳ Processing...';
+            btn.disabled = true;
+
+            try {
+                // Send data to Formspree (Endpoint to be replaced by the restaurant owner)
+                // e.g., 'https://formspree.io/f/YOUR_FORM_ID'
+                await fetch('https://formspree.io/f/dummy-endpoint', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        orderId: currentOrderId,
+                        package: currentBuilderPkg,
+                        orderSummary: summary
+                    })
+                });
+            } catch (err) {
+                console.warn('Formspree submission failed (expected if using dummy endpoint).');
+            }
+
             // Wipe the builder UI since they are done
             cancelMenuBuilder();
             document.getElementById('order-summary-modal').style.display = 'none';
             
-            // Shoot to the payment gateway (Stripe link from index.html)
-            window.location.href = "https://buy.stripe.com/9B6eVd90rgOZ5GZ7pE7EQ00";
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+            
+            // Shoot to the payment gateway with the Order ID as client_reference_id
+            window.location.href = `https://buy.stripe.com/9B6eVd90rgOZ5GZ7pE7EQ00?client_reference_id=${currentOrderId}`;
         }
 
         function copyOrderSummary() {
