@@ -162,16 +162,16 @@
         if (/catering|package|party|event/.test(q) || raw === 'Catering Packages' || raw === 'แพ็กเกจจัดเลี้ยง') {
             addMessage('We offer 3 event catering packages based on your guest count:', 'bot');
             addCards([
-                { img: 'images/category_fine_dining.jpg', title: 'Package 1: SIAM CLASSIC', desc: 'For 7-8 guests, starting from £500', action: 'send', btnText: 'View Package 1' },
-                { img: 'images/category_canapes.jpg', title: 'Package 2: SIGNATURE', desc: 'For 9-12 guests, starting from £900', action: 'send', btnText: 'View Package 2' },
-                { img: 'images/category_buffet.jpg', title: 'Package 3: CELEBRATION', desc: 'For 13-15 guests, starting from £1,050', action: 'send', btnText: 'View Package 3' }
+                { img: 'images/Special Box Set Premium.jpg', title: 'Package 1: SIAM CLASSIC', desc: 'For 7-8 guests, starting from £500', link: 'catering.html#packages-section', btnText: 'View Package 1' },
+                { img: 'images/the-signature.jpg', title: 'Package 2: SIGNATURE', desc: 'For 9-12 guests, starting from £900', link: 'catering.html#packages-section', btnText: 'View Package 2' },
+                { img: 'images/party_platter.jpg', title: 'Package 3: CELEBRATION', desc: 'For 13-15 guests, starting from £1,050', link: 'catering.html#packages-section', btnText: 'View Package 3' }
             ]);
             return null;
         }
 
-        if (/package\s*1|siam classic/.test(q) || raw === 'View Package 1') return '<strong>SIAM CLASSIC (Package 1)</strong><br>• For 7-8 guests<br>• Starting from £500<br>• Includes: 2 Starters, 2 Mains, 2 Rice/Noodles, 1 Veg<br><br><a class="zs-link" href="/event-catering#booking">Book Now</a>';
-        if (/package\s*2|signature/.test(q) || raw === 'View Package 2') return '<strong>ZAB SIAM SIGNATURE (Package 2)</strong><br>• For 9-12 guests<br>• Starting from £900<br>• Includes: 2 Starters, 3 Mains, 2 Rice/Noodles, 2 Veg<br><br><a class="zs-link" href="/event-catering#booking">Book Now</a>';
-        if (/package\s*3|celebration/.test(q) || raw === 'View Package 3') return '<strong>ZAB SIAM CELEBRATION (Package 3)</strong><br>• For 13-15 guests<br>• Starting from £1,050<br>• Includes: 3 Starters, 3 Mains, 3 Rice/Noodles, 2 Veg<br><br><a class="zs-link" href="/event-catering#booking">Book Now</a>';
+        if (/package\s*1|siam classic/.test(q) || raw === 'View Package 1') return '<strong>SIAM CLASSIC (Package 1)</strong><br>  For 7-8 guests<br>  Starting from £500<br>  Includes: 2 Starters, 2 Mains, 2 Rice/Noodles, 1 Veg<br><br><a class="zs-link" href="catering.html#packages-section">Book Now</a>';
+        if (/package\s*2|signature/.test(q) || raw === 'View Package 2') return '<strong>SIGNATURE (Package 2)</strong><br>  For 9-12 guests<br>  Starting from £900<br>  Includes: 3 Starters, 3 Mains, 2 Rice/Noodles, 2 Veg, 1 Dessert<br><br><a class="zs-link" href="catering.html#packages-section">Book Now</a>';
+        if (/package\s*3|celebration/.test(q) || raw === 'View Package 3') return '<strong>CELEBRATION (Package 3)</strong><br>  For 13-15 guests<br>  Starting from £1,050<br>  Includes: 4 Starters, 3 Mains, 3 Rice/Noodles, 2 Veg, 1 Dessert<br><br><a class="zs-link" href="catering.html#packages-section">Book Now</a>';
         if (/price|cost|how much/.test(q)) return 'Starting prices:<br>• Catering Packages: £500 - £1,050+<br>• Food & Desserts: £9 - £35+<br>For exact quotes, please contact us directly.';
         if (/contact|admin|email/.test(q) || raw === 'Contact Us' || raw === 'ติดต่อเรา') return `You can reach our team at:<br>Email: <a class="zs-link" href="mailto:${C.contactEmail}">${C.contactEmail}</a><br>Or fill out the form on our Contact page.`;
         if (/hello|hi|hey|greetings/.test(q)) return 'Hello! 😊 How can we help make your dining experience special today? Feel free to ask a question or select from the options below.';
