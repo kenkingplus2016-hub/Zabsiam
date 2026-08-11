@@ -11,9 +11,9 @@
     --color-gray: #2d2d2d;
     --color-light-gray: #b3b3b3;
     --color-white: #ffffff;
-    --color-green: #2E5A27; /* Dark pandan green */
-    --color-green-light: #4A8240;
-    --color-green-neon: #70c460;
+    --color-green: #ff8c00; /* Replaced dark green with orange as requested */
+    --color-green-light: #ff9d2e; /* Slightly lighter orange */
+    --color-green-neon: #ffb04f;
     --color-gold: #FFD700;
     --color-orange: #ff8c00;
     
