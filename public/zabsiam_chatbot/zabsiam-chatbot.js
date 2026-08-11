@@ -4,8 +4,8 @@
         assistantName: 'Siam Assistant',
         contactEmail: 'info@zabsiam.com',
         bookingUrl: '#booking',
-        accent: '#8f1d24',
-        gold: '#b38a43',
+        accent: '#e65100', // Orange (Main)
+        gold: '#1b5e20',   // Dark Green (Secondary)
         position: 'right',
         apiEndpoint: '',
         welcomeMessage: 'Hello! Welcome to Zab Siam 🌶️ and Chor Malee 🌸. Would you like to see our menu or book an event catering package?'
