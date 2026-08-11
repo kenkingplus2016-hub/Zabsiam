@@ -232,7 +232,7 @@ async function proceedToCheckout(e) {
         }
         document.body.removeChild(textArea);
         
-        alert(`Your order is ready! Your total is £${payload.totalAmount.toFixed(2)}.\n\nWe have copied your order details to your clipboard. Please paste them in the payment note or send them to us on WhatsApp.\n\nYou will now be redirected to Stripe to make the payment.`);
+        alert(`Thank you for choosing Zabsiam! 🌶️\n\nYour total amount is £${payload.totalAmount.toFixed(2)}.\n\nWe have automatically copied your order details. Once redirected to the payment page, please enter this exact amount to complete your purchase.\n\nWe truly appreciate your support and can't wait to serve you! 🙏`);
         
         window.location.href = "https://buy.stripe.com/9B6eVd90rgOZ5GZ7pE7EQ00";
     } catch (err) {
