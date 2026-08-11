@@ -1056,7 +1056,7 @@
                             <h4>${item.name}</h4>
                             <span>${item.priceLabel}</span>
                             <p>${item.desc}</p>
-                            <button type="button" onclick="event.stopPropagation(); addSetMenuItem('${setKey}', ${index})">
+                            <button type="button" class="set-menu-add-btn" data-name="${item.name}" onclick="event.stopPropagation(); addSetMenuItem('${setKey}', ${index})">
                                 Add
                             </button>
                         </div>
