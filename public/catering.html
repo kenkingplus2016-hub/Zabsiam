@@ -1864,10 +1864,24 @@
     </div>
 
     <style>
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 10000;
+            align-items: center; justify-content: center;
+        }
+        .modal-content {
+            background: #fff; color: #111;
+            padding: 30px; border-radius: 15px;
+            width: 90%; max-width: 500px;
+            max-height: 90vh; overflow-y: auto;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
         .allergen-grid {
             display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px;
         }
-        .allergen-grid label { cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 0.95rem; }
+        .allergen-grid label { cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 0.95rem; color: #333; }
     </style>
 
     <!-- Order Summary Popup -->
