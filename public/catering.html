@@ -98,15 +98,22 @@
 <body>
 
     <!-- Header -->
-    <header style="background: rgba(255,255,255,0.95);">
-        <a href="index.html" class="logo">
-            <img src="images/zabsiam_logo_transparent.png" alt="ZabSiam Logo" onerror="this.src='images/logo.png'">
-        </a>
-        <nav style="display: flex; gap: 15px;">
-            <a href="index.html" class="btn-primary" style="background: transparent; color: var(--primary); border: 1px solid var(--primary); padding: 10px 20px;">Home</a>
-            <a href="popup.html" class="btn-primary" style="background: transparent; color: var(--primary); border: 1px solid var(--primary); padding: 10px 20px;">Popup Market</a>
-            <a href="#full-menu" class="btn-primary" style="padding: 10px 20px;">Private Catering</a>
-        </nav>
+    <header style="background: rgba(10, 10, 10, 0.85) !important; border-bottom: 1px solid #222 !important; padding: 0 20px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; height: 80px;">
+            <a href="index.html" class="logo dual-logo" style="display: flex; gap: 15px; align-items: center; text-decoration: none;">
+                <img src="images/zabsiam_logo_transparent.png" alt="Zab Siam Logo" onerror="this.src='images/logo.png'" style="height: 50px; width: auto; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));">
+                <img src="images/chor_malee_official_logo.png" alt="Chor Malee Logo" style="height: 50px; width: auto; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));">
+            </a>
+            <nav>
+                <ul style="display: flex; gap: 25px; list-style: none; margin: 0; padding: 0;">
+                    <li><a href="index.html" style="color: #fff; text-decoration: none; font-family: 'Prompt', sans-serif; font-size: 0.95rem; text-transform: uppercase; font-weight: 500; letter-spacing: 1px;">Home</a></li>
+                    <li><a href="index.html#menu" style="color: #fff; text-decoration: none; font-family: 'Prompt', sans-serif; font-size: 0.95rem; text-transform: uppercase; font-weight: 500; letter-spacing: 1px;">Menu</a></li>
+                    <li><a href="catering.html" style="color: var(--primary); text-decoration: none; font-family: 'Prompt', sans-serif; font-size: 0.95rem; text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">Event Catering Packages</a></li>
+                    <li><a href="index.html#gifts-catering" style="color: #fff; text-decoration: none; font-family: 'Prompt', sans-serif; font-size: 0.95rem; text-transform: uppercase; font-weight: 500; letter-spacing: 1px;">Gifts & Catering</a></li>
+                    <li><a href="story.html" style="color: #fff; text-decoration: none; font-family: 'Prompt', sans-serif; font-size: 0.95rem; text-transform: uppercase; font-weight: 500; letter-spacing: 1px;">Story</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <section id="home" class="hero" style="position: relative; padding: 150px 20px 80px; text-align: center; overflow: hidden; min-height: 60vh; display: flex; align-items: center; justify-content: center;">
