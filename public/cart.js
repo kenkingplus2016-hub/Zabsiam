@@ -212,25 +212,32 @@ async function proceedToCheckout(e) {
     btn.disabled = true;
     
     try {
-        const response = await fetch('https://khruathailondon.co.uk/api/create-checkout-session', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(payload)
-        });
+        let summary = `New Order from Zabsiam:\n\n`;
+        summary += `Name: ${payload.custName}\n`;
+        summary += `Phone: ${payload.custPhone}\n`;
+        summary += `Email: ${payload.custEmail}\n`;
+        summary += `Address: ${payload.custAddress}\n\n`;
+        summary += payload.menuSet;
+        summary += `Total Amount to Pay: £${payload.totalAmount.toFixed(2)}\n`;
         
-        const data = await response.json();
-        if (data.url) {
-            window.location.href = data.url;
-        } else {
-            alert('Checkout failed. Please try again.');
-            btn.innerText = originalText;
-            btn.disabled = false;
+        // Copy to clipboard fallback
+        const textArea = document.createElement("textarea");
+        textArea.value = summary;
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+            document.execCommand('copy');
+        } catch (err) {
+            console.error('Fallback: Oops, unable to copy', err);
         }
+        document.body.removeChild(textArea);
+        
+        alert(`Your order is ready! Your total is £${payload.totalAmount.toFixed(2)}.\n\nWe have copied your order details to your clipboard. Please paste them in the payment note or send them to us on WhatsApp.\n\nYou will now be redirected to Stripe to make the payment.`);
+        
+        window.location.href = "https://buy.stripe.com/9B6eVd90rgOZ5GZ7pE7EQ00";
     } catch (err) {
         console.error(err);
-        alert('Error connecting to payment gateway.');
+        alert('Error preparing checkout.');
         btn.innerText = originalText;
         btn.disabled = false;
     }
