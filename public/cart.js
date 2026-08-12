@@ -221,7 +221,7 @@ async function proceedToCheckout(e) {
         allergies: allergyDetails.length ? allergyDetails.join(', ') : 'None declared',
         paymentMethod: 'Card',
         totalAmount: finalTotal,
-        category: isCatering ? 'Private Catering' : 'Dessert Delivery',
+        category: isCatering ? 'Private Catering' : 'Zab Siam Delivery',
         totalSets: 1
     };
 
