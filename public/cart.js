@@ -278,3 +278,36 @@ window.closeCart = closeCart;
 window.proceedToCheckout = proceedToCheckout;
 window.toggleCateringMode = toggleCateringMode;
 
+
+// Auto-add to cart based on URL parameter
+document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.has('add')) {
+        const itemName = params.get('add');
+        const buttons = document.querySelectorAll('button[onclick*="addToCart"]');
+        let added = false;
+        
+        for (let btn of buttons) {
+            const onclickStr = btn.getAttribute('onclick');
+            // Check if this button is for the specific item
+            // Using includes with single quotes to ensure exact match of the first parameter
+            if (onclickStr && onclickStr.includes("'" + itemName + "'")) {
+                btn.click();
+                added = true;
+                break;
+            }
+        }
+        
+        if (!added) {
+            console.warn('Could not find item to auto-add:', itemName);
+        } else {
+            // Clean up the URL so refreshing doesn't add it again
+            window.history.replaceState({}, document.title, window.location.pathname);
+            
+            // The cart will automatically open if the click function triggers openCart()
+            if (typeof openCart === 'function') {
+                setTimeout(openCart, 500); // Give it a slight delay to ensure smooth UI transition
+            }
+        }
+    }
+});
