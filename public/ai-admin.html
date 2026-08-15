@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="th">
 <head>
   <meta charset="utf-8">
@@ -224,30 +224,30 @@
 
   <main>
     <section class="cards">
-      <div class="card"><strong>ออเดอร์ทั้งหมด</strong><span id="statOrders">0</span></div>
-      <div class="card"><strong>งานที่ยังไม่เสร็จ</strong><span id="statOpen">0</span></div>
-      <div class="card"><strong>รายรับรวม</strong><span id="statRevenue">£0</span></div>
-      <div class="card"><strong>กำไรขั้นต้น</strong><span id="statProfit">£0</span></div>
+      <div class="card"><strong>??????????????</strong><span id="statOrders">0</span></div>
+      <div class="card"><strong>?????????????????</strong><span id="statOpen">0</span></div>
+      <div class="card"><strong>?????????</strong><span id="statRevenue">�0</span></div>
+      <div class="card"><strong>???????????</strong><span id="statProfit">�0</span></div>
     </section>
 
     <section class="layout">
       <div class="panel">
         <div class="panel-head">
-          <h2>เพิ่มออเดอร์ / งานใหม่</h2>
+          <h2>???????????? / ???????</h2>
           <div class="status" id="status"></div>
         </div>
         <div class="panel-body">
           <div class="form-grid">
             <div class="field">
-              <label for="customer">ลูกค้า</label>
-              <input id="customer" placeholder="ชื่อลูกค้า">
+              <label for="customer">??????</label>
+              <input id="customer" placeholder="??????????">
             </div>
             <div class="field">
-              <label for="contact">ติดต่อ</label>
-              <input id="contact" placeholder="เบอร์ / อีเมล">
+              <label for="contact">??????</label>
+              <input id="contact" placeholder="????? / ?????">
             </div>
             <div class="field">
-              <label for="type">ประเภท</label>
+              <label for="type">??????</label>
               <select id="type">
                 <option>Food boxes</option>
                 <option>Pre-order</option>
@@ -257,7 +257,7 @@
               </select>
             </div>
             <div class="field">
-              <label for="statusInput">สถานะ</label>
+              <label for="statusInput">?????</label>
               <select id="statusInput">
                 <option>New</option>
                 <option>Quoted</option>
@@ -268,55 +268,55 @@
               </select>
             </div>
             <div class="field">
-              <label for="count">จำนวนคน/กล่อง</label>
-              <input id="count" type="number" min="1" placeholder="เช่น 30">
+              <label for="count">???????/?????</label>
+              <input id="count" type="number" min="1" placeholder="???? 30">
             </div>
             <div class="field">
-              <label for="date">วันที่</label>
+              <label for="date">??????</label>
               <input id="date" type="date">
             </div>
             <div class="field">
-              <label for="time">เวลา</label>
+              <label for="time">????</label>
               <input id="time" type="time">
             </div>
             <div class="field">
-              <label for="revenue">รายรับ £</label>
+              <label for="revenue">?????? �</label>
               <input id="revenue" type="number" min="0" step="0.01" placeholder="0">
             </div>
             <div class="field">
-              <label for="cost">ต้นทุน £</label>
+              <label for="cost">?????? �</label>
               <input id="cost" type="number" min="0" step="0.01" placeholder="0">
             </div>
             <div class="field full">
-              <label for="address">ที่อยู่ / สถานที่</label>
-              <input id="address" placeholder="สถานที่จัดส่งหรือจัดงาน">
+              <label for="address">??????? / ???????</label>
+              <input id="address" placeholder="???????????????????????">
             </div>
             <div class="field full">
-              <label for="menu">เมนู / หมายเหตุ</label>
-              <textarea id="menu" placeholder="เมนูที่สั่ง แพ้อาหาร งานที่ต้องเตรียม"></textarea>
+              <label for="menu">???? / ????????</label>
+              <textarea id="menu" placeholder="??????????? ???????? ????????????????"></textarea>
             </div>
           </div>
           <div class="actions" style="margin-top:14px">
-            <button class="button" type="button" id="saveOrder">บันทึกออเดอร์</button>
-            <button class="button gold" type="button" id="sendToSales">คัดลอกส่ง Sales AI</button>
-            <button class="button secondary" type="button" id="clearForm">ล้างฟอร์ม</button>
+            <button class="button" type="button" id="saveOrder">?????????????</button>
+            <button class="button gold" type="button" id="sendToSales">????????? Sales AI</button>
+            <button class="button secondary" type="button" id="clearForm">?????????</button>
           </div>
         </div>
       </div>
 
       <div class="panel">
         <div class="panel-head">
-          <h2>ข้อมูลหลังร้าน</h2>
+          <h2>??????????????</h2>
           <div class="actions">
             <button class="button secondary" type="button" id="exportCsv">Export CSV</button>
-            <button class="button red" type="button" id="clearData">ล้างข้อมูล</button>
+            <button class="button red" type="button" id="clearData">??????????</button>
           </div>
         </div>
         <div class="panel-body">
           <div class="tabs">
-            <button class="tab active" type="button" data-tab="orders">ออเดอร์</button>
-            <button class="tab" type="button" data-tab="stock">สต็อก</button>
-            <button class="tab" type="button" data-tab="finance">การเงิน</button>
+            <button class="tab active" type="button" data-tab="orders">???????</button>
+            <button class="tab" type="button" data-tab="stock">?????</button>
+            <button class="tab" type="button" data-tab="finance">???????</button>
           </div>
           <div class="table-wrap" id="tableWrap"></div>
         </div>
@@ -329,14 +329,14 @@
     let activeTab = "orders";
     const fields = ["customer","contact","type","statusInput","count","date","time","revenue","cost","address","menu"];
     const sampleStock = [
-      ["Rice", "เช็กทุกวัน", "Stock AI"],
-      ["Chicken / Beef / Prawns", "เช็กก่อนรับงานใหญ่", "Stock AI"],
-      ["Vegetables / Herbs", "ซื้อใกล้วันผลิต", "Operations AI"],
-      ["Food boxes / Sauce cups", "ห้ามต่ำกว่าออเดอร์ +10%", "Stock AI"]
+      ["Rice", "??????????", "Stock AI"],
+      ["Chicken / Beef / Prawns", "??????????????????", "Stock AI"],
+      ["Vegetables / Herbs", "???????????????", "Operations AI"],
+      ["Food boxes / Sauce cups", "?????????????????? +10%", "Stock AI"]
     ];
 
     function el(id) { return document.getElementById(id); }
-    function money(n) { return `£${Number(n || 0).toFixed(0)}`; }
+    function money(n) { return `�${Number(n || 0).toFixed(0)}`; }
     function orders() { return JSON.parse(localStorage.getItem(storeKey) || "[]"); }
     function saveOrders(items) { localStorage.setItem(storeKey, JSON.stringify(items)); }
     function status(text) {
@@ -347,7 +347,7 @@
       return {
         id: Date.now(),
         created: new Date().toLocaleString("en-GB"),
-        customer: el("customer").value.trim() || "ยังไม่ระบุ",
+        customer: el("customer").value.trim() || "??????????",
         contact: el("contact").value.trim(),
         type: el("type").value,
         status: el("statusInput").value,
@@ -382,10 +382,10 @@
       const data = orders();
       if (activeTab === "orders") {
         if (!data.length) {
-          wrap.innerHTML = `<div class="empty">ยังไม่มีออเดอร์ กรอกฟอร์มด้านซ้ายแล้วกดบันทึกได้เลย</div>`;
+          wrap.innerHTML = `<div class="empty">??????????????? ???????????????????????????????????</div>`;
           return;
         }
-        wrap.innerHTML = `<table><thead><tr><th>ลูกค้า</th><th>งาน</th><th>วันเวลา</th><th>สถานะ</th><th>ยอด</th><th>หมายเหตุ</th></tr></thead><tbody>${data.map(o => `
+        wrap.innerHTML = `<table><thead><tr><th>??????</th><th>???</th><th>???????</th><th>?????</th><th>???</th><th>????????</th></tr></thead><tbody>${data.map(o => `
           <tr>
             <td><strong>${o.customer}</strong><br>${o.contact || ""}</td>
             <td>${o.type}<br>${o.count || ""}</td>
@@ -396,16 +396,16 @@
           </tr>`).join("")}</tbody></table>`;
       }
       if (activeTab === "stock") {
-        wrap.innerHTML = `<table><thead><tr><th>รายการ</th><th>กติกา</th><th>ส่งต่อให้</th></tr></thead><tbody>${sampleStock.map(r => `<tr><td>${r[0]}</td><td>${r[1]}</td><td><span class="pill">${r[2]}</span></td></tr>`).join("")}</tbody></table>`;
+        wrap.innerHTML = `<table><thead><tr><th>??????</th><th>?????</th><th>?????????</th></tr></thead><tbody>${sampleStock.map(r => `<tr><td>${r[0]}</td><td>${r[1]}</td><td><span class="pill">${r[2]}</span></td></tr>`).join("")}</tbody></table>`;
       }
       if (activeTab === "finance") {
         const revenue = data.reduce((sum, o) => sum + Number(o.revenue || 0), 0);
         const cost = data.reduce((sum, o) => sum + Number(o.cost || 0), 0);
-        wrap.innerHTML = `<table><thead><tr><th>หัวข้อ</th><th>จำนวน</th></tr></thead><tbody>
-          <tr><td>รายรับรวม</td><td>${money(revenue)}</td></tr>
-          <tr><td>ต้นทุนรวม</td><td>${money(cost)}</td></tr>
-          <tr><td>กำไรขั้นต้น</td><td>${money(revenue - cost)}</td></tr>
-          <tr><td>จำนวนออเดอร์</td><td>${data.length}</td></tr>
+        wrap.innerHTML = `<table><thead><tr><th>??????</th><th>?????</th></tr></thead><tbody>
+          <tr><td>?????????</td><td>${money(revenue)}</td></tr>
+          <tr><td>?????????</td><td>${money(cost)}</td></tr>
+          <tr><td>???????????</td><td>${money(revenue - cost)}</td></tr>
+          <tr><td>????????????</td><td>${data.length}</td></tr>
         </tbody></table>`;
       }
     }
@@ -423,12 +423,12 @@
       document.body.appendChild(link);
       link.click();
       link.remove();
-      status("ดาวน์โหลด CSV แล้ว");
+      status("????????? CSV ????");
     }
     function copySales() {
       const o = formData();
-      const text = `นี่คือออเดอร์/lead ของ Chor Malee\n\nลูกค้า: ${o.customer}\nติดต่อ: ${o.contact}\nประเภท: ${o.type}\nจำนวน: ${o.count}\nวันเวลา: ${o.date} ${o.time}\nสถานที่: ${o.address}\nรายรับประมาณ: £${o.revenue}\nต้นทุนประมาณ: £${o.cost}\nเมนู/หมายเหตุ: ${o.menu}\n\nช่วย Sales AI สรุปข้อมูล ถามข้อมูลที่ยังขาด และร่างข้อความตอบลูกค้า`;
-      navigator.clipboard.writeText(text).then(() => status("คัดลอกส่ง Sales AI แล้ว"));
+      const text = `?????????????/lead ??? Chor Malee\n\n??????: ${o.customer}\n??????: ${o.contact}\n??????: ${o.type}\n?????: ${o.count}\n???????: ${o.date} ${o.time}\n???????: ${o.address}\n????????????: �${o.revenue}\n????????????: �${o.cost}\n????/????????: ${o.menu}\n\n???? Sales AI ?????????? ?????????????????? ???????????????????????`;
+      navigator.clipboard.writeText(text).then(() => status("????????? Sales AI ????"));
     }
     el("saveOrder").addEventListener("click", () => {
       const item = formData();
@@ -436,17 +436,17 @@
       data.unshift(item);
       saveOrders(data);
       clearForm();
-      status("บันทึกออเดอร์แล้ว");
+      status("?????????????????");
       render();
     });
-    el("clearForm").addEventListener("click", () => { clearForm(); status("ล้างฟอร์มแล้ว"); });
+    el("clearForm").addEventListener("click", () => { clearForm(); status("?????????????"); });
     el("sendToSales").addEventListener("click", copySales);
     el("exportCsv").addEventListener("click", downloadCsv);
     el("clearData").addEventListener("click", () => {
-      if (confirm("ต้องการล้างข้อมูลหลังร้านในเครื่องนี้ทั้งหมดใช่ไหม?")) {
+      if (confirm("???????????????????????????????????????????????????")) {
         saveOrders([]);
         render();
-        status("ล้างข้อมูลแล้ว");
+        status("??????????????");
       }
     });
     document.querySelectorAll(".tab").forEach(btn => btn.addEventListener("click", () => {
@@ -458,4 +458,5 @@
   </script>
 </body>
 </html>
+
 
