@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -72,502 +72,138 @@
     </section>
 
     <!-- Menu Section -->
+
     <section id="menu" class="menu-section">
         <div class="container">
             <div class="section-header">
-                <h2 style="color: #FFD700;">Pre-order Menu</h2>
-                <p>Authentic Thai desserts made fresh to order. Requires 3 days advance notice. Orders of 50 sets or more, and 50 Pcs Tray orders, require 7 days advance notice.</p>
+                <h2 style="color: #FFD700;">Signature Thai Banquets</h2>
+                <p>Curated culinary journeys featuring our most premium dishes. Perfect for dinner parties, corporate events, and VIP gatherings. Served family-style.</p>
             </div>
             
-            <div class="menu-grid">
-                <!-- Pre-order Items -->
-                <!-- Pre-order Item 1 -->
-                <div class="menu-card">
-                    <div class="menu-image-container" style="position: relative;">
-                        <img src="images/khanom_tom_pack.jpeg" alt="Khanom Tom">
-                        <div style="position: absolute; top: 10px; right: 10px; background: #e65c00; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 0.8rem; z-index: 10;">Pre-order</div>
+            <div class="menu-grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+                
+                <!-- 6-Course -->
+                <div class="menu-card" style="border: 2px solid #FFD700; box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);">
+                    <div class="menu-image-container">
+                        <img src="images/the-signature.jpg" alt="6-Course Banquet" onerror="this.src='images/tom_yum_goong.jpg'">
                     </div>
                     <div class="menu-content">
-                        <h3>Khanom Tom</h3>
-                        <p>Soft glutinous rice balls stuffed with sweet coconut, rolled in freshly grated coconut.</p>
-                        <div class="pricing-options">
-                            <div class="pricing-option">
-                                <span class="option-price">£9.00</span>
-                                <span class="option-size">6 Pcs</span>
-                                <span class="option-weight">(Approx. 90g)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Khanom Tom (6 Pcs)', 9.00, 'images/khanom_tom_pack.jpeg')">Add</button>
+                        <h3>💎 6-Course Signature Thai Banquet</h3>
+                        <p>A perfectly balanced selection of Zab Siam's most popular dishes.</p>
+                        <ul style="text-align: left; margin-bottom: 20px; font-size: 0.9rem; color: #ccc;">
+                            <li><strong>Amuse-Bouche:</strong> Watermelon & Dried Fish</li>
+                            <li><strong>Appetizer:</strong> Chicken Satay with Peanut Sauce</li>
+                            <li><strong>Salad:</strong> Som Tum Thai</li>
+                            <li><strong>Main 1:</strong> Steamed Sea Bass with Lime & Chili</li>
+                            <li><strong>Main 2:</strong> Green Chicken Curry</li>
+                            <li><strong>Dessert:</strong> Mango Sticky Rice</li>
+                        </ul>
+                        <div class="pricing-options" style="flex-direction: column; gap: 10px;">
+                            <div class="pricing-option" style="justify-content: space-between;">
+                                <span class="option-size">8 Guests</span>
+                                <span class="option-price">£399</span>
                             </div>
-                            <div class="pricing-option">
-                                <span class="option-price">£16.99</span>
-                                <span class="option-size">12 Pcs</span>
-                                <span class="option-weight">(Approx. 180g)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Khanom Tom (12 Pcs)', 16.99, 'images/khanom_tom_pack.jpeg')">Add</button>
+                            <div class="pricing-option" style="justify-content: space-between;">
+                                <span class="option-size">10 Guests</span>
+                                <span class="option-price">£499</span>
                             </div>
-                            <div class="pricing-option">
-                                <span class="option-price">£25.99</span>
-                                <span class="option-size">24 Pcs</span>
-                                <span class="option-weight">(Approx. 360g)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Khanom Tom (24 Pcs)', 25.99, 'images/khanom_tom_pack.jpeg')">Add</button>
-                            </div>
-                            <div class="pricing-option">
-                                <span class="option-price">£59.99</span>
-                                <span class="option-size">50 Pcs Tray</span>
-                                <span class="option-weight">(Approx. 750g)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Khanom Tom Tray (50 Pcs)', 59.99, 'images/khanom_tom_pack.jpeg')">Add</button>
+                            <div class="pricing-option" style="justify-content: space-between;">
+                                <span class="option-size">12 Guests</span>
+                                <span class="option-price">£599</span>
                             </div>
                         </div>
+                        <a href="mailto:info@zabsiam.co.uk?subject=Enquiry:%206-Course%20Banquet" class="add-to-cart-btn" style="text-align: center; display: block; margin-top: 15px;">Enquire Now</a>
                     </div>
                 </div>
 
-                <!-- Pre-order Item 2 -->
-                <div class="menu-card">
-                    <div class="menu-image-container" style="position: relative;">
-                        <img src="images/khanom_chan_pandan_pack.jpeg" alt="Khanom Chan Pandan">
-                        <div style="position: absolute; top: 10px; right: 10px; background: #e65c00; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 0.8rem; z-index: 10;">Pre-order</div>
+                <!-- 8-Course -->
+                <div class="menu-card" style="border: 2px solid #FFD700; box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);">
+                    <div class="menu-image-container">
+                        <img src="images/the-royal-artisan.jpg" alt="8-Course Banquet" onerror="this.src='images/steamed_seabass_lime.jpg'">
                     </div>
                     <div class="menu-content">
-                        <h3>Khanom Chan Pandan</h3>
-                        <p>Classic Thai layered dessert featuring the fragrant aroma of fresh pandan leaves.</p>
-                        <div class="pricing-options">
-                            <div class="pricing-option">
-                                <span class="option-price">£9.00</span>
-                                <span class="option-size">6 Pcs</span>
-                                <span class="option-weight">(Approx. 90g)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Khanom Chan Pandan (6 Pcs)', 9.00, 'images/khanom_chan_pandan_pack.jpeg')">Add</button>
+                        <h3>👑 8-Course Royal Thai Experience</h3>
+                        <p>An elevated culinary journey featuring premium ingredients and royal appetizers.</p>
+                        <ul style="text-align: left; margin-bottom: 20px; font-size: 0.9rem; color: #ccc;">
+                            <li><strong>Amuse:</strong> Crispy Rice Cracker & Salmon Pla</li>
+                            <li><strong>App 1:</strong> Miang Kham Duo</li>
+                            <li><strong>App 2:</strong> Kor Moo Yang Sushi Trilogy</li>
+                            <li><strong>Soup:</strong> Tom Yum Goong</li>
+                            <li><strong>Main 1:</strong> Deep-Fried Sea Bass (Sam Ros)</li>
+                            <li><strong>Main 2:</strong> Gaeng Phed Ped Yang (Duck Curry)</li>
+                            <li><strong>Side:</strong> Pineapple Fried Rice & Stir-fried Cabbage</li>
+                            <li><strong>Dessert:</strong> Royal Thai Dessert Platter</li>
+                        </ul>
+                        <div class="pricing-options" style="flex-direction: column; gap: 10px;">
+                            <div class="pricing-option" style="justify-content: space-between;">
+                                <span class="option-size">8 Guests</span>
+                                <span class="option-price">£519</span>
                             </div>
-                            <div class="pricing-option">
-                                <span class="option-price">£16.99</span>
-                                <span class="option-size">12 Pcs</span>
-                                <span class="option-weight">(Approx. 180g)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Khanom Chan Pandan (12 Pcs)', 16.99, 'images/khanom_chan_pandan_pack.jpeg')">Add</button>
+                            <div class="pricing-option" style="justify-content: space-between;">
+                                <span class="option-size">10 Guests</span>
+                                <span class="option-price">£649</span>
                             </div>
-                            <div class="pricing-option">
-                                <span class="option-price">£25.99</span>
-                                <span class="option-size">24 Pcs</span>
-                                <span class="option-weight">(Approx. 360g)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Khanom Chan Pandan (24 Pcs)', 25.99, 'images/khanom_chan_pandan_pack.jpeg')">Add</button>
-                            </div>
-                            <div class="pricing-option">
-                                <span class="option-price">£59.99</span>
-                                <span class="option-size">50 Pcs Tray</span>
-                                <span class="option-weight">(Approx. 750g)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Khanom Chan Pandan Tray (50 Pcs)', 59.99, 'images/khanom_chan_pandan_pack.jpeg')">Add</button>
+                            <div class="pricing-option" style="justify-content: space-between;">
+                                <span class="option-size">12 Guests</span>
+                                <span class="option-price">£779</span>
                             </div>
                         </div>
+                        <a href="mailto:info@zabsiam.co.uk?subject=Enquiry:%208-Course%20Banquet" class="add-to-cart-btn" style="text-align: center; display: block; margin-top: 15px;">Enquire Now</a>
                     </div>
                 </div>
 
-                <!-- Pre-order Item 3 -->
-                <div class="menu-card">
-                    <div class="menu-image-container" style="position: relative;">
-                        <img src="images/khanom_chan_butterfly_pea_pack.jpeg" alt="Butterfly Pea Khanom Chan">
-                        <div style="position: absolute; top: 10px; right: 10px; background: #e65c00; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 0.8rem; z-index: 10;">Pre-order</div>
+                <!-- 10-Course -->
+                <div class="menu-card" style="border: 2px solid #FFD700; box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);">
+                    <div class="menu-image-container">
+                        <img src="images/the-modernist-aesthetic.jpg" alt="10-Course Banquet" onerror="this.src='images/beef_pad_cha.jpg'">
                     </div>
                     <div class="menu-content">
-                        <h3>Butterfly Pea Khanom Chan</h3>
-                        <p>Our beautiful layered dessert infused with the natural purple-blue hues of butterfly pea flowers.</p>
-                        <div class="pricing-options">
-                            <div class="pricing-option">
-                                <span class="option-price">£9.00</span>
-                                <span class="option-size">6 Pcs</span>
-                                <span class="option-weight">(Approx. 90g)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Butterfly Pea Khanom Chan (6 Pcs)', 9.00, 'images/khanom_chan_butterfly_pea_pack.jpeg')">Add</button>
+                        <h3>🌟 10-Course Ultimate Banquet</h3>
+                        <p>The ultimate feast showcasing the very best of Thai cuisine from North to South.</p>
+                        <ul style="text-align: left; margin-bottom: 20px; font-size: 0.9rem; color: #ccc;">
+                            <li><strong>Amuse 1:</strong> Prawn Summer Rolls</li>
+                            <li><strong>Amuse 2:</strong> Crispy Thai Prawn Cakes</li>
+                            <li><strong>App 1:</strong> Sai Ua & Nam Prik Noom</li>
+                            <li><strong>App 2:</strong> Mini Moo Ping on Khao Jee</li>
+                            <li><strong>Salad:</strong> Yum Bai Chaploo</li>
+                            <li><strong>Soup:</strong> Tom Kha Gai</li>
+                            <li><strong>Main 1:</strong> Steamed Sea Bass with Soy Sauce</li>
+                            <li><strong>Main 2:</strong> Thai Massaman Beef Curry</li>
+                            <li><strong>Side:</strong> Shrimp Oil Fried Rice & Pak Choi</li>
+                            <li><strong>Dessert:</strong> The Grand Finale (Or Nee & Khanom Chan)</li>
+                        </ul>
+                        <div class="pricing-options" style="flex-direction: column; gap: 10px;">
+                            <div class="pricing-option" style="justify-content: space-between;">
+                                <span class="option-size">8 Guests</span>
+                                <span class="option-price">£679</span>
                             </div>
-                            <div class="pricing-option">
-                                <span class="option-price">£16.99</span>
-                                <span class="option-size">12 Pcs</span>
-                                <span class="option-weight">(Approx. 180g)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Butterfly Pea Khanom Chan (12 Pcs)', 16.99, 'images/khanom_chan_butterfly_pea_pack.jpeg')">Add</button>
+                            <div class="pricing-option" style="justify-content: space-between;">
+                                <span class="option-size">10 Guests</span>
+                                <span class="option-price">£849</span>
                             </div>
-                            <div class="pricing-option">
-                                <span class="option-price">£25.99</span>
-                                <span class="option-size">24 Pcs</span>
-                                <span class="option-weight">(Approx. 360g)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Butterfly Pea Khanom Chan (24 Pcs)', 25.99, 'images/khanom_chan_butterfly_pea_pack.jpeg')">Add</button>
-                            </div>
-                            <div class="pricing-option">
-                                <span class="option-price">£59.99</span>
-                                <span class="option-size">50 Pcs Tray</span>
-                                <span class="option-weight">(Approx. 750g)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Butterfly Pea Khanom Chan Tray (50 Pcs)', 59.99, 'images/khanom_chan_butterfly_pea_pack.jpeg')">Add</button>
+                            <div class="pricing-option" style="justify-content: space-between;">
+                                <span class="option-size">12 Guests</span>
+                                <span class="option-price">£999</span>
                             </div>
                         </div>
+                        <a href="mailto:info@zabsiam.co.uk?subject=Enquiry:%2010-Course%20Banquet" class="add-to-cart-btn" style="text-align: center; display: block; margin-top: 15px;">Enquire Now</a>
                     </div>
                 </div>
 
-                <!-- Pre-order Item 4: Khanom Piak Poon -->
-                <div class="menu-card">
-                    <div class="menu-image-container" style="position: relative;">
-                        <img src="images/khanom_piak_poon_pack.jpeg" alt="Khanom Piak Poon">
-                        <div style="position: absolute; top: 10px; right: 10px; background: #e65c00; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 0.8rem; z-index: 10;">Pre-order</div>
-                    </div>
-                    <div class="menu-content">
-                        <h3>Khanom Piak Poon</h3>
-                        <p>Pandan-infused rose-shaped jelly topped with white sesame seeds. A beautiful and refreshing traditional Thai sweet. Box of 4 pcs.</p>
-                        <div class="pricing-options">
-                            <div class="pricing-option">
-                                <span class="option-price">£9.00</span>
-                                <span class="option-size">6 Pcs</span>
-                                <span class="option-weight">(Approx. 90g)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Khanom Piak Poon (6 Pcs)', 9.00, 'images/khanom_piak_poon_pack.jpeg')">Add</button>
-                            </div>
-                            <div class="pricing-option">
-                                <span class="option-price">£16.99</span>
-                                <span class="option-size">12 Pcs</span>
-                                <span class="option-weight">(Approx. 180g)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Khanom Piak Poon (12 Pcs)', 16.99, 'images/khanom_piak_poon_pack.jpeg')">Add</button>
-                            </div>
-                            <div class="pricing-option">
-                                <span class="option-price">£25.99</span>
-                                <span class="option-size">24 Pcs</span>
-                                <span class="option-weight">(Approx. 360g)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Khanom Piak Poon (24 Pcs)', 25.99, 'images/khanom_piak_poon_pack.jpeg')">Add</button>
-                            </div>
-                            <div class="pricing-option">
-                                <span class="option-price">£59.99</span>
-                                <span class="option-size">50 Pcs Tray</span>
-                                <span class="option-weight">(Approx. 750g)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Khanom Piak Poon Tray (50 Pcs)', 59.99, 'images/khanom_piak_poon_pack.jpeg')">Add</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pre-order Item 5 -->
-                <div class="menu-card">
-                    <div class="menu-image-container" style="position: relative;">
-                        <img src="images/pandan_coconut_milk_jelly.jpeg" alt="Pandan Coconut Milk Jelly">
-                        <div style="position: absolute; top: 10px; right: 10px; background: #e65c00; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 0.8rem; z-index: 10;">Pre-order</div>
-                    </div>
-                    <div class="menu-content">
-                        <h3>Pandan Coconut Milk Jelly</h3>
-                        <p>Soft coconut milk jelly layered with fragrant pandan, crafted into delicate Thai floral pieces.</p>
-                        <div class="pricing-options">
-                            <div class="pricing-option">
-                                <span class="option-price">£9.00</span>
-                                <span class="option-size">6 Pcs</span>
-                                <span class="option-weight">(Approx. 90g)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Pandan Coconut Milk Jelly (6 Pcs)', 9.00, 'images/pandan_coconut_milk_jelly.jpeg')">Add</button>
-                            </div>
-                            <div class="pricing-option">
-                                <span class="option-price">£16.99</span>
-                                <span class="option-size">12 Pcs</span>
-                                <span class="option-weight">(Approx. 180g)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Pandan Coconut Milk Jelly (12 Pcs)', 16.99, 'images/pandan_coconut_milk_jelly.jpeg')">Add</button>
-                            </div>
-                            <div class="pricing-option">
-                                <span class="option-price">£25.99</span>
-                                <span class="option-size">24 Pcs</span>
-                                <span class="option-weight">(Approx. 360g)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Pandan Coconut Milk Jelly (24 Pcs)', 25.99, 'images/pandan_coconut_milk_jelly.jpeg')">Add</button>
-                            </div>
-                            <div class="pricing-option">
-                                <span class="option-price">£59.99</span>
-                                <span class="option-size">50 Pcs Tray</span>
-                                <span class="option-weight">(Approx. 750g)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Pandan Coconut Milk Jelly Tray (50 Pcs)', 59.99, 'images/pandan_coconut_milk_jelly.jpeg')">Add</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pre-order Item 6 -->
-                <div class="menu-card">
-                    <div class="menu-image-container" style="position: relative;">
-                        <img src="images/butterfly_pea_coconut_milk_jelly.jpeg" alt="Butterfly Pea Coconut Milk Jelly">
-                        <div style="position: absolute; top: 10px; right: 10px; background: #e65c00; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 0.8rem; z-index: 10;">Pre-order</div>
-                    </div>
-                    <div class="menu-content">
-                        <h3>Butterfly Pea Coconut Milk Jelly</h3>
-                        <p>Soft coconut milk jelly with natural butterfly pea colour, finished in elegant purple floral pieces.</p>
-                        <div class="pricing-options">
-                            <div class="pricing-option">
-                                <span class="option-price">£9.00</span>
-                                <span class="option-size">6 Pcs</span>
-                                <span class="option-weight">(Approx. 90g)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Butterfly Pea Coconut Milk Jelly (6 Pcs)', 9.00, 'images/butterfly_pea_coconut_milk_jelly.jpeg')">Add</button>
-                            </div>
-                            <div class="pricing-option">
-                                <span class="option-price">£16.99</span>
-                                <span class="option-size">12 Pcs</span>
-                                <span class="option-weight">(Approx. 180g)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Butterfly Pea Coconut Milk Jelly (12 Pcs)', 16.99, 'images/butterfly_pea_coconut_milk_jelly.jpeg')">Add</button>
-                            </div>
-                            <div class="pricing-option">
-                                <span class="option-price">£25.99</span>
-                                <span class="option-size">24 Pcs</span>
-                                <span class="option-weight">(Approx. 360g)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Butterfly Pea Coconut Milk Jelly (24 Pcs)', 25.99, 'images/butterfly_pea_coconut_milk_jelly.jpeg')">Add</button>
-                            </div>
-                            <div class="pricing-option">
-                                <span class="option-price">£59.99</span>
-                                <span class="option-size">50 Pcs Tray</span>
-                                <span class="option-weight">(Approx. 750g)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Butterfly Pea Coconut Milk Jelly Tray (50 Pcs)', 59.99, 'images/butterfly_pea_coconut_milk_jelly.jpeg')">Add</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pre-order Item 7 -->
-                <div class="menu-card">
-                    <div class="menu-image-container" style="position: relative;">
-                        <img src="images/khanom_luem_kleun_pack.jpeg" alt="Khanom Luem Kleun">
-                        <div style="position: absolute; top: 10px; right: 10px; background: #e65c00; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 0.8rem; z-index: 10;">Pre-order</div>
-                    </div>
-                    <div class="menu-content">
-                        <h3>Khanom Luem Kleun</h3>
-                        <p>The "forget to swallow" dessert. Delightfully soft mung bean cups topped with rich coconut cream.</p>
-                        <div class="pricing-options">
-                            <div class="pricing-option">
-                                <span class="option-price">£9.00</span>
-                                <span class="option-size">6 Pcs</span>
-                                <span class="option-weight">(Approx. 90g)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Khanom Luem Kleun (6 Pcs)', 9.00, 'images/khanom_luem_kleun_pack.jpeg')">Add</button>
-                            </div>
-                            <div class="pricing-option">
-                                <span class="option-price">£16.99</span>
-                                <span class="option-size">12 Pcs</span>
-                                <span class="option-weight">(Approx. 180g)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Khanom Luem Kleun (12 Pcs)', 16.99, 'images/khanom_luem_kleun_pack.jpeg')">Add</button>
-                            </div>
-                            <div class="pricing-option">
-                                <span class="option-price">£25.99</span>
-                                <span class="option-size">24 Pcs</span>
-                                <span class="option-weight">(Approx. 360g)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Khanom Luem Kleun (24 Pcs)', 25.99, 'images/khanom_luem_kleun_pack.jpeg')">Add</button>
-                            </div>
-                            <div class="pricing-option">
-                                <span class="option-price">£59.99</span>
-                                <span class="option-size">50 Pcs Tray</span>
-                                <span class="option-weight">(Approx. 750g)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Khanom Luem Kleun Tray (50 Pcs)', 59.99, 'images/khanom_luem_kleun_pack.jpeg')">Add</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
+
+            <!-- Custom Menu Builder Banner -->
+            <div style="margin-top: 60px; background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%); padding: 40px; border-radius: 15px; text-align: center; border: 1px solid #333;">
+                <h3 style="color: #FFD700; margin-bottom: 15px; font-size: 1.8rem;">Create Your Own Banquet</h3>
+                <p style="margin-bottom: 30px; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Prefer to craft your own culinary experience? Mix and match from our extensive collection of over 50 authentic Thai dishes to build the perfect bespoke set menu for your event.
+                </p>
+                <a href="catering.html" class="add-to-cart-btn" style="display: inline-block; padding: 15px 40px; font-size: 1.2rem;">Build Your Menu Now</a>
+            </div>
+
         </div>
     </section>
 
-    <!-- Zab Siam Street Food & Perfect Event Section -->
-    <section id="zabsiam-street-food" class="menu-section" style="background-color: #080808; border-top: 1px solid #222;">
-        <div class="container">
-            <div class="section-header">
-                <h2 style="color: #ff8c00;">Zab Siam Street Food &amp; Perfect Event</h2>
-                <p>Experience the bold and authentic flavours of Isaan street food, elevated for your perfect event. Pre-order our savoury bites for your gatherings.</p>
-                <div style="margin-top: 25px; margin-bottom: 10px;">
-                    <a href="catering.html" class="btn-primary" style="padding: 12px 30px; font-size: 1.1rem; border-radius: 30px; background: #ff8c00; color: #fff; text-decoration: none; font-weight: bold; transition: all 0.3s; display: inline-block; box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);">View Event Catering Packages (Click Here)</a>
-                </div>
-            </div>
-            
-            <div class="menu-grid">
-                <!-- Savoury Appetizer 1 -->
-                <div class="menu-card">
-                    <div class="menu-image-container" style="position: relative;">
-                        <img src="images/miang_kham_duo.jpg" alt="Miang Kham Duo">
-                        <div style="position: absolute; top: 10px; right: 10px; background: #e65c00; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 0.8rem; z-index: 10;">New / Pre-order</div>
-                    </div>
-                    <div class="menu-content">
-                        <h3>Miang Kham Duo</h3>
-                        <p>An elegant twist on a Thai royal classic! Fresh wild betel leaves with vibrant herbs, roasted coconut, peanuts, and tamarind-palm sugar sauce. Served with two signature golden-fried bites (crispy prawns and sea bass).</p>
-                        <div class="pricing-options">
-                            <div class="pricing-option">
-                                <span class="option-price">£35.00</span>
-                                <span class="option-size">Party Platter</span>
-                                <span class="option-weight">(Serves 4-6)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Miang Kham Duo Platter', 35.00, 'images/miang_kham_duo.jpg')">Add</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Savoury Appetizer 2 -->
-                <div class="menu-card">
-                    <div class="menu-image-container" style="position: relative;">
-                        <img src="images/mini_moo_ping_on_khao_jee.jpg" alt="Mini Moo Ping on Khao Jee">
-                        <div style="position: absolute; top: 10px; right: 10px; background: #e65c00; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 0.8rem; z-index: 10;">New / Pre-order</div>
-                    </div>
-                    <div class="menu-content">
-                        <h3>Mini Moo Ping on Khao Jee</h3>
-                        <p>Bite-sized perfection! Tender, sweet-and-savory grilled pork skewers perfectly paired with golden grilled sticky rice patties (Khao Jee) and our signature spicy tamarind dipping sauce.</p>
-                        <div class="pricing-options">
-                            <div class="pricing-option">
-                                <span class="option-price">£25.00</span>
-                                <span class="option-size">Set of 10</span>
-                                <span class="option-weight">(Appetizer portion)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Mini Moo Ping on Khao Jee (10 Pcs)', 25.00, 'images/mini_moo_ping_on_khao_jee.jpg')">Add</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Savoury Appetizer 3 -->
-                <div class="menu-card">
-                    <div class="menu-image-container" style="position: relative;">
-                        <img src="images/kor_moo_yang_sushi_trilogy.jpg" alt="Kor Moo Yang Sushi Trilogy">
-                        <div style="position: absolute; top: 10px; right: 10px; background: #e65c00; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 0.8rem; z-index: 10;">New / Pre-order</div>
-                    </div>
-                    <div class="menu-content">
-                        <h3>Kor Moo Yang Sushi Trilogy</h3>
-                        <p>An innovative fusion of Thai street food and culinary artistry. Charcoal-grilled marinated pork neck (Kor Moo Yang) draped over premium sticky rice, topped with a dash of our spicy Jaew sauce and toasted rice powder.</p>
-                        <div class="pricing-options">
-                            <div class="pricing-option">
-                                <span class="option-price">£28.00</span>
-                                <span class="option-size">Set of 12</span>
-                                <span class="option-weight">(Appetizer portion)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Kor Moo Yang Sushi Trilogy (12 Pcs)', 28.00, 'images/kor_moo_yang_sushi_trilogy.jpg')">Add</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Savoury Appetizer 4 -->
-                <div class="menu-card">
-                    <div class="menu-image-container" style="position: relative;">
-                        <img src="images/sai_ua_nam_prik_noom.jpg" alt="Sai Ua & Nam Prik Noom">
-                        <div style="position: absolute; top: 10px; right: 10px; background: #e65c00; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 0.8rem; z-index: 10;">New / Pre-order</div>
-                    </div>
-                    <div class="menu-content">
-                        <h3>Sai Ua & Nam Prik Noom</h3>
-                        <p>A true taste of Northern Thailand! Our homemade Chiang Mai spicy sausage (Sai Ua), packed with aromatic herbs and grilled to perfection. Served with our signature roasted green chili dip (Nam Prik Noom) for the ultimate authentic experience.</p>
-                        <div class="pricing-options">
-                            <div class="pricing-option">
-                                <span class="option-price">£25.00</span>
-                                <span class="option-size">Party Box</span>
-                                <span class="option-weight">(Serves 3-4)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Sai Ua & Nam Prik Noom', 25.00, 'images/sai_ua_nam_prik_noom.jpg')">Add</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Savoury Appetizer 5 -->
-                <div class="menu-card">
-                    <div class="menu-image-container" style="position: relative;">
-                        <img src="images/crispy_rice_cracker_salmon_pla.jpg" alt="Crispy Rice Cracker &amp; Salmon Pla">
-                        <div style="position: absolute; top: 10px; right: 10px; background: #e65c00; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 0.8rem; z-index: 10;">New / Pre-order</div>
-                    </div>
-                    <div class="menu-content">
-                        <h3>Crispy Rice Cracker &amp; Salmon Pla</h3>
-                        <p>A modern Thai bite! Crispy jasmine rice cracker topped with finely diced fresh salmon, dressed in our signature Pla dressing with cucumber, wild betel leaf, fresh lime, kaffir lime leaves and red chilli.</p>
-                        <div class="pricing-options">
-                            <div class="pricing-option">
-                                <span class="option-price">£30.00</span>
-                                <span class="option-size">Set of 6</span>
-                                <span class="option-weight">(Appetizer portion)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Crispy Rice Cracker &amp; Salmon Pla (6 Pcs)', 30.00, 'images/crispy_rice_cracker_salmon_pla.jpg')">Add</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Savoury Appetizer 6 -->
-                <div class="menu-card">
-                    <div class="menu-image-container" style="position: relative;">
-                        <img src="images/watermelon_dried_fish.jpg" alt="Watermelon &amp; Dried Fish">
-                        <div style="position: absolute; top: 10px; right: 10px; background: #e65c00; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 0.8rem; z-index: 10;">New / Pre-order</div>
-                    </div>
-                    <div class="menu-content">
-                        <h3>Watermelon &amp; Dried Fish</h3>
-                        <p>A stunning fusion of sweet and savoury! Fresh watermelon spheres nestled on a bed of crispy dried fish and roasted peanuts, topped with delicate waffle crisps and salmon roe. Finished with micro herbs and edible flowers.</p>
-                        <div class="pricing-options">
-                            <div class="pricing-option">
-                                <span class="option-price">£28.00</span>
-                                <span class="option-size">Set of 5</span>
-                                <span class="option-weight">(Appetizer portion)</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Watermelon &amp; Dried Fish (5 Pcs)', 28.00, 'images/watermelon_dried_fish.jpg')">Add</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sea Bass Specialties Section -->
-    <section id="sea-bass-specialties" class="menu-section" style="background-color: #0d0d0d; border-top: 1px solid #222;">
-        <div class="container">
-            <div class="section-header">
-                <h2 style="color: #ff8c00;">Sea Bass Specialties</h2>
-                <p>Authentic Thai whole sea bass dishes, expertly crafted with bold and traditional flavours.</p>
-            </div>
-            
-            <div class="menu-grid">
-                <!-- Item 1 -->
-                <div class="menu-card">
-                    <div class="menu-image-container">
-                        <img src="images/zabsiam_logo_transparent.png" alt="Steamed Sea Bass with Lime & Chili" style="object-fit: contain; padding: 20px;">
-                    </div>
-                    <div class="menu-content">
-                        <h3>Steamed Sea Bass with Lime & Chili</h3>
-                        <p>Pla Kapong Neung Manao – Fresh sea bass steamed to perfection in a zesty, spicy, and garlicky lime broth. A true Thai seafood classic.</p>
-                        <div class="pricing-options">
-                            <div class="pricing-option">
-                                <span class="option-price">£17.59</span>
-                                <span class="option-size">Whole Fish</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Steamed Sea Bass with Lime & Chili', 17.59, 'images/zabsiam_logo_transparent.png')">Add</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 2 -->
-                <div class="menu-card">
-                    <div class="menu-image-container">
-                        <img src="images/zabsiam_logo_transparent.png" alt="Deep-Fried Sea Bass with Three-Flavour Sauce" style="object-fit: contain; padding: 20px;">
-                    </div>
-                    <div class="menu-content">
-                        <h3>Deep-Fried Sea Bass with Three-Flavour Sauce</h3>
-                        <p>Pla Kapong Sam Ros – Crispy deep-fried sea bass topped with our signature sweet, sour, and mildly spicy tamarind sauce.</p>
-                        <div class="pricing-options">
-                            <div class="pricing-option">
-                                <span class="option-price">£17.59</span>
-                                <span class="option-size">Whole Fish</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Deep-Fried Sea Bass with Three-Flavour Sauce', 17.59, 'images/zabsiam_logo_transparent.png')">Add</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 3 -->
-                <div class="menu-card">
-                    <div class="menu-image-container">
-                        <img src="images/zabsiam_logo_transparent.png" alt="Steamed Sea Bass with Soy Sauce" style="object-fit: contain; padding: 20px;">
-                    </div>
-                    <div class="menu-content">
-                        <h3>Steamed Sea Bass with Soy Sauce</h3>
-                        <p>Pla Kapong Neung See Ew – A delicate and aromatic dish of sea bass steamed with premium soy sauce, ginger, and spring onions.</p>
-                        <div class="pricing-options">
-                            <div class="pricing-option">
-                                <span class="option-price">£17.59</span>
-                                <span class="option-size">Whole Fish</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Steamed Sea Bass with Soy Sauce', 17.59, 'images/zabsiam_logo_transparent.png')">Add</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 4 -->
-                <div class="menu-card">
-                    <div class="menu-image-container">
-                        <img src="images/zabsiam_logo_transparent.png" alt="Deep-Fried Sea Bass with Fish Sauce" style="object-fit: contain; padding: 20px;">
-                    </div>
-                    <div class="menu-content">
-                        <h3>Deep-Fried Sea Bass with Fish Sauce</h3>
-                        <p>Pla Kapong Tod Nam Pla – Flawlessly fried crispy sea bass, glazed with premium aged fish sauce and served with a spicy mango salad dip.</p>
-                        <div class="pricing-options">
-                            <div class="pricing-option">
-                                <span class="option-price">£17.59</span>
-                                <span class="option-size">Whole Fish</span>
-                                <button class="add-to-cart-btn small" onclick="addToCart('Deep-Fried Sea Bass with Fish Sauce', 17.59, 'images/zabsiam_logo_transparent.png')">Add</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Gifts & Catering Section -->
     <section id="gifts-catering" class="gifts-catering-section">
@@ -705,7 +341,7 @@
                             <i class="fas fa-rings-wedding"></i>
                         </div>
                         <h3>Wedding Auspicious Sweets</h3>
-                        <p>Traditional Thai golden sweets for weddings and ceremonies. Thong Yip, Thong Yod, and Foi Thong â€” symbols of prosperity, fortune, and longevity.</p>
+                        <p>Traditional Thai golden sweets for weddings and ceremonies. Thong Yip, Thong Yod, and Foi Thong Ã¢â‚¬â€ symbols of prosperity, fortune, and longevity.</p>
                         <ul class="gc-features">
                             <li><i class="fas fa-check-circle"></i> Thong Yip, Thong Yod, Foi Thong</li>
                             <li><i class="fas fa-check-circle"></i> Elegant ceremonial trays</li>
@@ -1127,6 +763,7 @@
     <script src="zabsiam_chatbot/zabsiam-chatbot.js"></script>
 </body>
 </html>
+
 
 
 
