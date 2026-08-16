@@ -22,28 +22,78 @@
                 <img src="images/zabsiam_logo_transparent.png" alt="Zab Siam" class="logo-img">
             </a>
             <nav>
-                <div class="menu-list" style="text-align: left; margin-bottom: 20px; font-size: 0.9rem; color: #ccc; line-height: 1.5;">
-                            <div style="margin-bottom: 12px;">
-                                <strong style="color: #fff; font-size: 1rem; border-bottom: 1px solid #FFD700; padding-bottom: 2px; display: inline-block; margin-bottom: 4px;">Amuse-Bouche</strong><br>
-                                Watermelon & Dried Fish (Tangmo Pla Haeng แตงโมปลาแห้ง)
-                            </div>
-                            <div style="margin-bottom: 12px;">
-                                <strong style="color: #fff; font-size: 1rem; border-bottom: 1px solid #FFD700; padding-bottom: 2px; display: inline-block; margin-bottom: 4px;">Appetizer</strong><br>
-                                Green Papaya Salad (Som Tum Thai ส้มตำไทย) 🌶️🌶️<br>
-                                Chicken Satay with Peanut Sauce (Gai Satay ไก่สะเต๊ะ)<br>
-                                Fresh Pineapple Morsels with Savory Peanut Topping (Ma Hor ม้าฮ่อ)
-                            </div>
-                            <div style="margin-bottom: 12px;">
-                                <strong style="color: #fff; font-size: 1rem; border-bottom: 1px solid #FFD700; padding-bottom: 2px; display: inline-block; margin-bottom: 4px;">Main Course</strong><br>
-                                Steamed Fish in Lime Sauce (Pla Neung Ma-Now ปลานึ่งมะนาว) 🌶️🌶️<br>
-                                Green Chicken Curry (Gaeng Keow Wan Gai แกงเขียวหวานไก่) 🌶️🌶️<br>
-                                Crab Meat Fried Rice (Khao Pad Poo ข้าวผัดปู)
-                            </div>
-                            <div style="margin-bottom: 12px;">
-                                <strong style="color: #fff; font-size: 1rem; border-bottom: 1px solid #FFD700; padding-bottom: 2px; display: inline-block; margin-bottom: 4px;">Dessert</strong><br>
-                                Mango Sticky Rice (Khao Niao Mamuang ข้าวเหนียวมะม่วง)
-                            </div>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#menu" class="dropbtn">Menu <i class="fas fa-caret-down" style="font-size: 0.8rem; margin-left: 4px;"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#zabsiam-street-food">Zab Siam Street Food &amp; Event</a>
+                            <a href="#menu">Thai Desserts</a>
                         </div>
+                    </li>
+                    
+                    
+
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="header-cart-btn" onclick="toggleCart()" aria-label="Open cart">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count" class="cart-badge">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section with Video Background Playlist -->
+    <section id="home" class="hero">
+        <!-- Video Background -->
+        <video id="heroVideo" class="hero-video-bg" autoplay muted playsinline poster="images/chor_malee_hero.jpg">
+            <!-- First video in playlist -->
+            <source src="video/assetsvideo1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+        
+        <div class="container hero-content">
+            <span class="hero-subtitle">Authentic & Premium</span>
+            <div class="hero-logo">
+                <img src="images/zabsiam_logo_transparent.png" alt="Zab Siam" class="hero-logo-img">
+            </div>
+            <h1>Premium Thai Catering &amp; Private Banquets</h1>
+            <p>Elevate your events with authentic Thai culinary experiences. From intimate dinner parties to corporate gatherings, our curated set menus deliver the perfect blend of tradition, elegance, and premium ingredients.</p>
+            <a href="#menu" class="hero-btn">Explore Menu</a>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: #FFD700;">Signature Thai Banquets</h2>
+                <p>Curated culinary journeys featuring our most premium dishes. Perfect for dinner parties, corporate events, and VIP gatherings. Elegantly served in individual portions.</p>
+            </div>
+            
+            <div class="menu-grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+                
+                <!-- 8-Course Signature -->
+                <div class="menu-card" style="border: 2px solid #FFD700; box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);">
+                    <div class="menu-image-container">
+                        <img src="images/the-signature.jpg" alt="8-Course Signature Banquet" onerror="this.src='images/tom_yum_goong.jpg'">
+                    </div>
+                    <div class="menu-content">
+                        <h3>8-Course Signature Thai Banquet</h3>
+                        <p>A perfectly balanced selection of Zab Siam's most popular dishes.</p>
+                        <ul style="text-align: left; margin-bottom: 20px; font-size: 0.9rem; color: #ccc;">
+                            <li><strong>Amuse-Bouche:</strong> Watermelon & Dried Fish (Tangmo Pla Haeng แตงโมปลาแห้ง)</li>
+                            <li><strong>Appetizer 1:</strong> Chicken Satay with Peanut Sauce (Gai Satay ไก่สะเต๊ะ)</li>
+                            <li><strong>Appetizer 2:</strong> Fresh Pineapple Morsels with Savory Peanut Topping (Ma Hor ม้าฮ่อ)</li>
+                            <li><strong>Appetizer 3:</strong> Green Papaya Salad (Som Tum Thai ส้มตำไทย) 🌶️🌶️</li>
+                            <li><strong>Main 1:</strong> Steamed Fish in Lime Sauce (Pla Neung Ma-Now ปลานึ่งมะนาว) 🌶️🌶️</li>
+                            <li><strong>Main 2:</strong> Green Chicken Curry (Gaeng Keow Wan Gai แกงเขียวหวานไก่) 🌶️🌶️</li>
+                            <li><strong>Main 3:</strong> Crab Meat Fried Rice (Khao Pad Poo ข้าวผัดปู)</li>
+                            <li><strong>Dessert:</strong> Mango Sticky Rice (Khao Niao Mamuang ข้าวเหนียวมะม่วง)</li>
+                        </ul>
                         <div class="pricing-options" style="flex-direction: column; gap: 10px;">
                             <a href="#" onclick="event.preventDefault(); addToCart('8-Course Signature Banquet (8 Guests)', 464, 'images/the-signature.jpg')" class="pricing-option clickable-tier" style="justify-content: space-between; text-decoration: none; color: inherit; transition: 0.3s;" onmouseover="this.style.backgroundColor='rgba(255,215,0,0.1)'" onmouseout="this.style.backgroundColor='transparent'">
                                   <span class="option-size">8 Guests</span>
@@ -70,31 +120,16 @@
                     <div class="menu-content">
                         <h3>8-Course Royal Thai Experience</h3>
                         <p>An elevated culinary journey featuring premium ingredients and royal appetizers.</p>
-                        <div class="menu-list" style="text-align: left; margin-bottom: 20px; font-size: 0.9rem; color: #ccc; line-height: 1.5;">
-                            <div style="margin-bottom: 12px;">
-                                <strong style="color: #fff; font-size: 1rem; border-bottom: 1px solid #FFD700; padding-bottom: 2px; display: inline-block; margin-bottom: 4px;">Amuse-Bouche</strong><br>
-                                Crispy Rice Cracker & Salmon Pla (Khao Tang Na Pla Salmon ข้าวตังหน้าปลาแซลมอน)
-                            </div>
-                            <div style="margin-bottom: 12px;">
-                                <strong style="color: #fff; font-size: 1rem; border-bottom: 1px solid #FFD700; padding-bottom: 2px; display: inline-block; margin-bottom: 4px;">Appetizer</strong><br>
-                                Miang Kham Duo (Miang Kham Duo เมี่ยงคำดูโอ้)<br>
-                                Grilled Pork Neck Sushi Trilogy (Kor Moo Yang Sushi คอหมูย่างซูชิ)
-                            </div>
-                            <div style="margin-bottom: 12px;">
-                                <strong style="color: #fff; font-size: 1rem; border-bottom: 1px solid #FFD700; padding-bottom: 2px; display: inline-block; margin-bottom: 4px;">Soup</strong><br>
-                                Spicy Prawn Soup (Tom Yum Goong ต้มยำกุ้ง) 🌶️🌶️
-                            </div>
-                            <div style="margin-bottom: 12px;">
-                                <strong style="color: #fff; font-size: 1rem; border-bottom: 1px solid #FFD700; padding-bottom: 2px; display: inline-block; margin-bottom: 4px;">Main Course</strong><br>
-                                Deep-Fried Sea Bass in Three-Flavored Sauce (Pla Kapong Thod Sam Ros ปลากะพงทอดสามรส) 🌶️<br>
-                                Roasted Duck Red Curry (Gaeng Phed Ped Yang แกงเผ็ดเป็ดย่าง) 🌶️🌶️<br>
-                                Pineapple Fried Rice & Stir-fried Cabbage (Khao Pad Sapparod & Galam Plee Pad Nam Pla ข้าวผัดสับปะรดและกะหล่ำปลีผัดน้ำปลา)
-                            </div>
-                            <div style="margin-bottom: 12px;">
-                                <strong style="color: #fff; font-size: 1rem; border-bottom: 1px solid #FFD700; padding-bottom: 2px; display: inline-block; margin-bottom: 4px;">Dessert</strong><br>
-                                Royal Thai Dessert Platter (Ruam Mit Khanom Thai Wan Ruam Jai รวมมิตรขนมไทย)
-                            </div>
-                        </div>
+                        <ul style="text-align: left; margin-bottom: 20px; font-size: 0.9rem; color: #ccc;">
+                            <li><strong>Amuse:</strong> Crispy Rice Cracker & Salmon Pla (Khao Tang Na Pla Salmon ข้าวตังหน้าปลาแซลมอน)</li>
+                            <li><strong>App 1:</strong> Miang Kham Duo (Miang Kham Duo เมี่ยงคำคู่)</li>
+                            <li><strong>App 2:</strong> Grilled Pork Neck Sushi Trilogy (Kor Moo Yang Sushi คอหมูย่างซูชิ)</li>
+                            <li><strong>Soup:</strong> Spicy Prawn Soup (Tom Yum Goong ต้มยำกุ้ง) 🌶️🌶️</li>
+                            <li><strong>Main 1:</strong> Deep-Fried Sea Bass in Three-Flavored Sauce (Pla Kapong Thod Sam Ros ปลากะพงทอดสามรส) 🌶️</li>
+                            <li><strong>Main 2:</strong> Roasted Duck Red Curry (Gaeng Phed Ped Yang แกงเผ็ดเป็ดย่าง) 🌶️🌶️</li>
+                            <li><strong>Side:</strong> Pineapple Fried Rice & Stir-fried Cabbage (Khao Pad Sapparod & Galam Plee Pad Nam Pla ข้าวผัดสับปะรดและกะหล่ำปลีผัดน้ำปลา)</li>
+                            <li><strong>Dessert:</strong> Royal Thai Dessert Platter (Ruam Mit Khanom Thai Wan Ruam Jai รวมมิตรขนมไทย)</li>
+                        </ul>
                         <div class="pricing-options" style="flex-direction: column; gap: 10px;">
                             <a href="#" onclick="event.preventDefault(); addToCart('8-Course Banquet (8 Guests)', 544, 'images/the-royal-artisan.jpg')" class="pricing-option clickable-tier" style="justify-content: space-between; text-decoration: none; color: inherit; transition: 0.3s;" onmouseover="this.style.backgroundColor='rgba(255,215,0,0.1)'" onmouseout="this.style.backgroundColor='transparent'">
                                   <span class="option-size">8 Guests</span>
@@ -121,33 +156,18 @@
                     <div class="menu-content">
                         <h3>10-Course Ultimate Banquet</h3>
                         <p>The ultimate feast showcasing the very best of Thai cuisine from North to South.</p>
-                        <div class="menu-list" style="text-align: left; margin-bottom: 20px; font-size: 0.9rem; color: #ccc; line-height: 1.5;">
-                            <div style="margin-bottom: 12px;">
-                                <strong style="color: #fff; font-size: 1rem; border-bottom: 1px solid #FFD700; padding-bottom: 2px; display: inline-block; margin-bottom: 4px;">Amuse-Bouche</strong><br>
-                                Prawn Summer Rolls (Por Pia Sod Goong ปอเปี๊ยะสดกุ้ง)<br>
-                                Crispy Thai Prawn Cakes (Thod Mun Goong ทอดมันกุ้ง)
-                            </div>
-                            <div style="margin-bottom: 12px;">
-                                <strong style="color: #fff; font-size: 1rem; border-bottom: 1px solid #FFD700; padding-bottom: 2px; display: inline-block; margin-bottom: 4px;">Appetizer</strong><br>
-                                Northern Thai Sausage & Green Chili Dip (Sai Ua & Nam Prik Noom ไส้อั่วและน้ำพริกหนุ่ม)<br>
-                                Mini Grilled Pork on Sticky Rice Patty (Moo Ping Khao Jee หมูปิ้งข้าวจี่)<br>
-                                Spicy Betel Leaf Salad (Yum Bai Chaploo ยำใบชะพลู)
-                            </div>
-                            <div style="margin-bottom: 12px;">
-                                <strong style="color: #fff; font-size: 1rem; border-bottom: 1px solid #FFD700; padding-bottom: 2px; display: inline-block; margin-bottom: 4px;">Soup</strong><br>
-                                Coconut Chicken Soup (Tom Kha Gai ต้มข่าไก่) 🌶️
-                            </div>
-                            <div style="margin-bottom: 12px;">
-                                <strong style="color: #fff; font-size: 1rem; border-bottom: 1px solid #FFD700; padding-bottom: 2px; display: inline-block; margin-bottom: 4px;">Main Course</strong><br>
-                                Steamed Fish in Soy Sauce (Pla Neung See-Ew ปลานึ่งซีอิ๊ว)<br>
-                                Thai Massaman Beef Curry (Gaeng Massaman Neua แกงมัสมั่นเนื้อ)<br>
-                                Shrimp Oil Fried Rice & Pak Choi (Khao Pad Man Goong & Pak Choi ข้าวผัดมันกุ้งและผักฉ่อย)
-                            </div>
-                            <div style="margin-bottom: 12px;">
-                                <strong style="color: #fff; font-size: 1rem; border-bottom: 1px solid #FFD700; padding-bottom: 2px; display: inline-block; margin-bottom: 4px;">Dessert</strong><br>
-                                The Grand Finale (Or Nee Pae Gway & Khanom Chan เผือกกวนแปะก๊วยและขนมชั้น)
-                            </div>
-                        </div>
+                        <ul style="text-align: left; margin-bottom: 20px; font-size: 0.9rem; color: #ccc;">
+                            <li><strong>Amuse 1:</strong> Prawn Summer Rolls (Por Pia Sod Goong ปอเปี๊ยะสดกุ้ง)</li>
+                            <li><strong>Amuse 2:</strong> Crispy Thai Prawn Cakes (Thod Mun Goong ทอดมันกุ้ง)</li>
+                            <li><strong>App 1:</strong> Northern Thai Sausage & Green Chili Dip (Sai Ua & Nam Prik Noom ไส้อั่วและน้ำพริกหนุ่ม)</li>
+                            <li><strong>App 2:</strong> Mini Grilled Pork on Sticky Rice Patty (Moo Ping Khao Jee หมูปิ้งข้าวจี่)</li>
+                            <li><strong>Salad:</strong> Spicy Betel Leaf Salad (Yum Bai Chaploo ยำใบชะพลู)</li>
+                            <li><strong>Soup:</strong> Coconut Chicken Soup (Tom Kha Gai ต้มข่าไก่) 🌶️</li>
+                            <li><strong>Main 1:</strong> Steamed Fish in Soy Sauce (Pla Neung See-Ew ปลานึ่งซีอิ๊ว)</li>
+                            <li><strong>Main 2:</strong> Thai Massaman Beef Curry (Gaeng Massaman Neua แกงมัสมั่นเนื้อ)</li>
+                            <li><strong>Side:</strong> Shrimp Oil Fried Rice & Pak Choi (Khao Pad Man Goong & Pak Choi ข้าวผัดมันกุ้งและผักกวางตุ้ง)</li>
+                            <li><strong>Dessert:</strong> The Grand Finale (Or Nee Pae Gway & Khanom Chan โอวนี่แปะก๊วยและขนมชั้น)</li>
+                        </ul>
                         <div class="pricing-options" style="flex-direction: column; gap: 10px;">
                             <a href="#" onclick="event.preventDefault(); addToCart('10-Course Banquet (8 Guests)', 704, 'images/the-ultimate-feast.jpg')" class="pricing-option clickable-tier" style="justify-content: space-between; text-decoration: none; color: inherit; transition: 0.3s;" onmouseover="this.style.backgroundColor='rgba(255,215,0,0.1)'" onmouseout="this.style.backgroundColor='transparent'">
                                   <span class="option-size">8 Guests</span>
