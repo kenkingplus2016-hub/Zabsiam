@@ -279,6 +279,7 @@ nav a:hover,
     max-width: 800px;
     z-index: 1;
     animation: fadeIn 1.5s ease-out forwards;
+    margin-top: 80px;
 }
 
 .hero-subtitle {
