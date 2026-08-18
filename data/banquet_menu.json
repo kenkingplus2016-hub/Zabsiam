@@ -1,0 +1,38 @@
+[
+  {
+    "id": "BNQ-1",
+    "name": {
+      "en": "8-Course Ultimate Banquet",
+      "th": "The Ultimate Feast"
+    },
+    "price": 88,
+    "items": []
+  },
+  {
+    "id": "BNQ-2",
+    "name": {
+      "en": "8-Course Northern Heritage Banquet",
+      "th": "The Signature Touch"
+    },
+    "price": 68,
+    "items": []
+  },
+  {
+    "id": "BNQ-3",
+    "name": {
+      "en": "8-Course Siam Spice Banquet",
+      "th": "The Royal Experience"
+    },
+    "price": 79,
+    "items": []
+  },
+  {
+    "id": "BNQ-4",
+    "name": {
+      "en": "8-Course Exotic Fusion Banquet",
+      "th": "Exotic Fusion"
+    },
+    "price": 88,
+    "items": []
+  }
+]

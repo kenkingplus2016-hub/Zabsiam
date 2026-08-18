@@ -1,0 +1,38 @@
+[
+  {
+    "id": "EVT-1",
+    "name": {
+      "en": "Event Catering: Intimate Birthday Celebration",
+      "th": "Birthday Celebration"
+    },
+    "price": 2000,
+    "items": []
+  },
+  {
+    "id": "EVT-2",
+    "name": {
+      "en": "Event Catering: Art Gallery Opening Catering",
+      "th": "Art Gallery Opening"
+    },
+    "price": 2000,
+    "items": []
+  },
+  {
+    "id": "EVT-3",
+    "name": {
+      "en": "Event Catering: City Corporate Launch",
+      "th": "Corporate Launch"
+    },
+    "price": 2000,
+    "items": []
+  },
+  {
+    "id": "EVT-4",
+    "name": {
+      "en": "Event Catering: Wedding Summer Food Festival Style",
+      "th": "Wedding Food Festival"
+    },
+    "price": 2000,
+    "items": []
+  }
+]

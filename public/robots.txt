@@ -1,4 +1,18 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://khruathailondon.co.uk/sitemap.xml
+# Allow AI bots explicitly to index menu and catering
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: Anthropic-ai
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://zabsiam.co.uk/sitemap.xml
