@@ -186,6 +186,8 @@ async function proceedToCheckout(e) {
     
     const isCatering = document.getElementById('isPrivateCatering')?.checked || false;
     const eventDateInput = document.getElementById('eventDate')?.value;
+    const eventTimeInput = document.getElementById('eventTime')?.value || 'Not specified';
+    const dateTimeCombo = (eventDateInput || new Date().toISOString().split('T')[0]) + ' @ ' + eventTimeInput;
     
     let menuSetDetails = isCatering ? "Private Catering (50% Deposit Paid):\n" : "Postal Delivery Order:\n";
     let subtotal = 0;
@@ -212,7 +214,7 @@ async function proceedToCheckout(e) {
         custName: name,
         custPhone: phone,
         custEmail: email,
-        eventDate: eventDateInput || new Date().toISOString().split('T')[0],
+        eventDate: dateTimeCombo,
         eventPlace: deliveryOption.label.includes('Popup Market') ? 'Popup Market Pickup' : (isCatering ? 'Private Catering' : 'Postal Delivery'),
         custAddress: address,
         menuSet: menuSetDetails,
