@@ -70,10 +70,10 @@
             </div>
             <div class="zs-messages"></div>
             <div class="zs-quick">
-                <button class="zs-chip">Savory Menu</button>
-                <button class="zs-chip">Dessert Menu</button>
+                <button class="zs-chip">Meeting Meals</button>
+                <button class="zs-chip">Coffee Break</button>
+                <button class="zs-chip">Signature Box</button>
                 <button class="zs-chip">Catering Packages</button>
-                <button class="zs-chip">Contact Us</button>
             </div>
             <form class="zs-form">
                 <input class="zs-input" placeholder="Type your question..." autocomplete="off">
@@ -139,22 +139,27 @@
     function localLogic(raw) {
         const q = raw.toLowerCase().trim();
         
-        if (/street|savory|food|meat|pork/.test(q) || raw === 'Savory Menu' || raw === 'ดูเมนูอาหารคาว') {
-            addMessage('Here are some highlights from our <strong>Zab Siam Street Food</strong> menu:', 'bot');
+        if (/meeting|meal|buffet/.test(q) || raw === 'Meeting Meals' || raw === 'อาหารสำหรับประชุม') {
+            addMessage('Here are the details for our <strong>Meeting Meals</strong>:', 'bot');
             addCards([
-                { img: 'images/miang_kham_duo.jpg', title: 'Miang Kham Duo', desc: 'Premium Miang Kham (Crispy Prawn & Sea Bass)', btnText: 'Order Now', link: '#zabsiam-street-food' },
-                { img: 'images/mini_moo_ping_on_khao_jee.jpg', title: 'Mini Moo Ping on Khao Jee', desc: 'Tender grilled pork skewers with sticky rice patties', btnText: 'Order Now', link: '#zabsiam-street-food' },
-                { img: 'images/sai_ua_nam_prik_noom.jpg', title: 'Sai Ua & Nam Prik Noom', desc: 'Homemade Northern Thai sausage & green chili dip', btnText: 'Order Now', link: '#zabsiam-street-food' }
+                { img: 'images/meeting_buffet.jpg', title: 'Meeting Meals', desc: 'Minimum 15 guests, 7 days advance booking.', btnText: 'View Details', link: 'meeting-meals.html' }
+            ]);
+            return null;
+        }
+
+        if (/coffee|break/.test(q) || raw === 'Coffee Break' || raw === 'คอฟฟี่เบรค') {
+            addMessage('Here are the details for our <strong>Coffee Break</strong> sets:', 'bot');
+            addCards([
+                { img: 'images/coffee_break.jpg', title: 'Coffee Break', desc: 'Minimum 15 guests, 7 days advance booking.', btnText: 'View Details', link: 'coffee-break.html' }
             ]);
             return null;
         }
         
-        if (/chor malee|dessert|sweet|cake/.test(q) || raw === 'Dessert Menu' || raw === 'ดูเมนูของหวาน') {
-            addMessage('<strong>Thai Desserts (Chor Malee)</strong> 🌸 Exquisite and authentic Thai sweets:', 'bot');
+        if (/signature|box|lunch|crispy pork|mango/.test(q) || raw === 'Signature Box' || raw === 'ซิกเนเจอร์บ็อกซ์') {
+            addMessage('<strong>Signature Box</strong> 🍱 No minimum order, 2 days advance booking:', 'bot');
             addCards([
-                { img: 'images/chor_muang_pack.jpeg', title: 'Chor Muang', desc: 'Flower-shaped dumplings with savory chicken filling', btnText: 'Order Now', link: '#menu' },
-                { img: 'images/khanom_luem_kleun_pack.jpeg', title: 'Khanom Luem Kleun', desc: 'Melt-in-your-mouth coconut pudding', btnText: 'Order Now', link: '#menu' },
-                { img: 'images/luk_chup_fruit.jpg', title: 'Luk Chup', desc: 'Colorful miniature fruit-shaped mung bean sweets', btnText: 'Order Now', link: '#menu' }
+                { img: 'images/crispy_pork_box.jpg', title: 'Crispy Pork Belly', desc: 'With Seafood Sauce. £19', btnText: 'View Details', link: 'lunch-box.html' },
+                { img: 'images/mango_sticky_rice_box.jpg', title: 'Mango Sticky Rice', desc: 'Minimum 2 boxes.', btnText: 'View Details', link: 'lunch-box.html' }
             ]);
             return null;
         }
@@ -162,21 +167,21 @@
         if (/catering|package|party|event/.test(q) || raw === 'Catering Packages' || raw === 'แพ็กเกจจัดเลี้ยง') {
             addMessage('We offer 3 event catering packages based on your guest count:', 'bot');
             addCards([
-                { img: 'images/Special Box Set Premium.jpg', title: 'Package 1: SIAM CLASSIC', desc: 'For 7-8 guests, starting from £500', link: 'catering.html#packages-section', btnText: 'View Package 1' },
-                { img: 'images/the-signature.jpg', title: 'Package 2: SIGNATURE', desc: 'For 9-12 guests, starting from £900', link: 'catering.html#packages-section', btnText: 'View Package 2' },
-                { img: 'images/party_platter.jpg', title: 'Package 3: CELEBRATION', desc: 'For 13-15 guests, starting from £1,050', link: 'catering.html#packages-section', btnText: 'View Package 3' }
+                { img: 'images/Special Box Set Premium.jpg', title: 'Package 1: SIAM CLASSIC', desc: 'For 7-8 guests, £500', link: 'catering.html#packages-section', btnText: 'View Package 1' },
+                { img: 'images/the-signature.jpg', title: 'Package 2: SIGNATURE', desc: 'For 9-12 guests, £900', link: 'catering.html#packages-section', btnText: 'View Package 2' },
+                { img: 'images/party_platter.jpg', title: 'Package 3: CELEBRATION', desc: 'For 13-15 guests, £1,050', link: 'catering.html#packages-section', btnText: 'View Package 3' }
             ]);
             return null;
         }
 
-        if (/package\s*1|siam classic/.test(q) || raw === 'View Package 1') return '<strong>SIAM CLASSIC (Package 1)</strong><br>  For 7-8 guests<br>  Starting from £500<br>  Includes: 2 Starters, 2 Mains, 2 Rice/Noodles, 1 Veg<br><br><a class="zs-link" href="catering.html#packages-section">Book Now</a>';
-        if (/package\s*2|signature/.test(q) || raw === 'View Package 2') return '<strong>SIGNATURE (Package 2)</strong><br>  For 9-12 guests<br>  Starting from £900<br>  Includes: 3 Starters, 3 Mains, 2 Rice/Noodles, 2 Veg, 1 Dessert<br><br><a class="zs-link" href="catering.html#packages-section">Book Now</a>';
-        if (/package\s*3|celebration/.test(q) || raw === 'View Package 3') return '<strong>CELEBRATION (Package 3)</strong><br>  For 13-15 guests<br>  Starting from £1,050<br>  Includes: 4 Starters, 3 Mains, 3 Rice/Noodles, 2 Veg, 1 Dessert<br><br><a class="zs-link" href="catering.html#packages-section">Book Now</a>';
-        if (/price|cost|how much/.test(q)) return 'Starting prices:<br>• Catering Packages: £500 - £1,050+<br>• Food & Desserts: £9 - £35+<br>For exact quotes, please contact us directly.';
+        if (/package\s*1|siam classic/.test(q) || raw === 'View Package 1') return '<strong>SIAM CLASSIC (Package 1)</strong><br>  For 7-8 guests<br>  £500<br>  Includes: 2 Starters, 2 Mains, 2 Rice/Noodles, 1 Veg<br><br><a class="zs-link" href="catering.html#packages-section">Book Now</a>';
+        if (/package\s*2|signature/.test(q) || raw === 'View Package 2') return '<strong>SIGNATURE (Package 2)</strong><br>  For 9-12 guests<br>  £900<br>  Includes: 3 Starters, 3 Mains, 2 Rice/Noodles, 2 Veg, 1 Dessert<br><br><a class="zs-link" href="catering.html#packages-section">Book Now</a>';
+        if (/package\s*3|celebration/.test(q) || raw === 'View Package 3') return '<strong>CELEBRATION (Package 3)</strong><br>  For 13-15 guests<br>  £1,050<br>  Includes: 4 Starters, 3 Mains, 3 Rice/Noodles, 2 Veg, 1 Dessert<br><br><a class="zs-link" href="catering.html#packages-section">Book Now</a>';
+        if (/price|cost|how much/.test(q)) return 'Prices:<br>• Catering Packages: £500 - £1,050+<br>• Signature Box: £19 (Crispy Pork Belly)<br>For exact quotes, please contact us directly.';
         if (/contact|admin|email/.test(q) || raw === 'Contact Us' || raw === 'ติดต่อเรา') return `You can reach our team at:<br>Email: <a class="zs-link" href="mailto:${C.contactEmail}">${C.contactEmail}</a><br>Or fill out the form on our Contact page.`;
         if (/hello|hi|hey|greetings/.test(q)) return 'Hello! 😊 How can we help make your dining experience special today? Feel free to ask a question or select from the options below.';
         
-        return `I'm sorry, I didn't quite catch that. Please select an option from the menu below, or type "menu", "dessert", or "catering".<br><br><a class="zs-link" href="mailto:${C.contactEmail}">Contact Support</a>`;
+        return `I'm sorry, I didn't quite catch that. Please select an option from the menu below, or type "Signature Box", "Meeting Meals", "Coffee Break", or "Catering".<br><br><a class="zs-link" href="mailto:${C.contactEmail}">Contact Support</a>`;
     }
 
     async function send(t) {
