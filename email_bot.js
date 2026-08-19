@@ -45,10 +45,12 @@ imap.once('ready', function() {
 });
 
 function fetchUnreadEmails() {
-    imap.search(['UNSEEN'], function(err, results) {
+    // Only search UNSEEN emails from TODAY to prevent old spam emails from triggering
+    const today = new Date();
+    imap.search(['UNSEEN', ['SINCE', today]], function(err, results) {
         if (err) throw err;
         if (!results || results.length === 0) {
-            console.log('No new unread emails found.');
+            console.log('No new unread emails found for today.');
             return;
         }
 
@@ -59,21 +61,28 @@ function fetchUnreadEmails() {
                     if (err) throw err;
                     
                     const senderEmail = parsed.from.value[0].address;
+                    const subject = parsed.subject ? parsed.subject.toLowerCase() : "";
                     
-                    // PREVENT INFINITE LOOP: Ignore emails sent by the bot itself
-                    if (senderEmail === emailUser || (parsed.subject && parsed.subject.includes('New Catering Booking'))) {
-                        console.log(`Skipping bot's own email: ${parsed.subject}`);
+                    // PREVENT INFINITE LOOP
+                    if (senderEmail === emailUser || subject.includes('new catering booking')) {
                         return;
                     }
 
                     console.log(`\n📧 New Email From: ${parsed.from.text}`);
                     console.log(`Subject: ${parsed.subject}`);
                     
-                    // Simple logic to detect "booking" or "catering"
+                    // STRICTER LOGIC: Must be an actual inquiry, not just a random email with the word "booking"
+                    // We check if it's likely from the website (mailto link) or has explicit catering intent in subject
+                    const isWebsiteInquiry = subject.includes('customize:') || subject.includes('zab siam') || subject.includes('catering') || subject.includes('จัดเลี้ยง');
+                    
                     const text = parsed.text ? parsed.text.toLowerCase() : "";
-                    if (text.includes('booking') || text.includes('catering') || text.includes('จัดเลี้ยง')) {
-                        console.log('📅 Found booking inquiry! Creating Calendar Event...');
+                    const hasKeywords = text.includes('catering') || text.includes('banquet') || text.includes('จัดเลี้ยง');
+
+                    if (isWebsiteInquiry || hasKeywords) {
+                        console.log('📅 Found VALID booking inquiry! Creating Calendar Event...');
                         createCalendarEvent(parsed);
+                    } else {
+                        console.log('⏭️ Ignored: Not a catering inquiry (Spam/Promotions).');
                     }
                 });
             });
@@ -108,7 +117,7 @@ function createCalendarEvent(emailData) {
             from: emailUser,
             to: emailUser,
             subject: '📅 New Catering Booking Added to Calendar',
-            text: 'A new catering inquiry has been processed and attached as a calendar event.',
+            text: 'A new catering inquiry has been processed and attached as a calendar event.\n\nFrom: ' + emailData.from.text,
             icalEvent: {
                 filename: 'booking.ics',
                 method: 'request',
