@@ -13,7 +13,8 @@ const imapConfig = {
     host: 'imap.gmail.com',
     port: 993,
     tls: true,
-    tlsOptions: { rejectUnauthorized: false }
+    tlsOptions: { rejectUnauthorized: false },
+    keepalive: { interval: 10000, idleInterval: 300000, forceNoop: true }
 };
 
 const transporter = nodemailer.createTransport({
@@ -24,31 +25,44 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-const imap = new Imap(imapConfig);
+let imap;
 
-function openInbox(cb) {
-    imap.openBox('INBOX', false, cb);
-}
+function startImap() {
+    imap = new Imap(imapConfig);
 
-imap.once('ready', function() {
-    console.log('✅ Connected to Gmail via IMAP');
-    openInbox(function(err, box) {
-        if (err) throw err;
-        console.log('📥 Inbox opened. Listening for new emails...');
-        
-        // Listen for new mail
-        imap.on('mail', function(numNewMsgs) {
-            console.log(`📬 Received ${numNewMsgs} new message(s)!`);
-            fetchUnreadEmails();
+    imap.once('ready', function() {
+        console.log('✅ Connected to Gmail via IMAP');
+        imap.openBox('INBOX', false, function(err, box) {
+            if (err) throw err;
+            console.log('📥 Inbox opened. Listening for new emails...');
+            
+            // Listen for new mail
+            imap.on('mail', function(numNewMsgs) {
+                console.log(`📬 Received ${numNewMsgs} new message(s)!`);
+                fetchUnreadEmails();
+            });
         });
     });
-});
+
+    imap.once('error', function(err) {
+        console.log('IMAP Error: ' + err);
+    });
+
+    imap.once('end', function() {
+        console.log('Connection ended, attempting to reconnect in 5 seconds...');
+        setTimeout(startImap, 5000);
+    });
+
+    imap.connect();
+}
 
 function fetchUnreadEmails() {
-    // Only search UNSEEN emails from TODAY to prevent old spam emails from triggering
     const today = new Date();
     imap.search(['UNSEEN', ['SINCE', today]], function(err, results) {
-        if (err) throw err;
+        if (err) {
+            console.log("Search error:", err);
+            return;
+        }
         if (!results || results.length === 0) {
             console.log('No new unread emails found for today.');
             return;
@@ -60,7 +74,7 @@ function fetchUnreadEmails() {
                 simpleParser(stream, async (err, parsed) => {
                     if (err) throw err;
                     
-                    const senderEmail = parsed.from.value[0].address;
+                    const senderEmail = parsed.from && parsed.from.value.length > 0 ? parsed.from.value[0].address : "";
                     const subject = parsed.subject ? parsed.subject.toLowerCase() : "";
                     
                     // PREVENT INFINITE LOOP
@@ -68,11 +82,9 @@ function fetchUnreadEmails() {
                         return;
                     }
 
-                    console.log(`\n📧 New Email From: ${parsed.from.text}`);
+                    console.log(`\n📧 New Email From: ${parsed.from ? parsed.from.text : "Unknown"}`);
                     console.log(`Subject: ${parsed.subject}`);
                     
-                    // STRICTER LOGIC: Must be an actual inquiry, not just a random email with the word "booking"
-                    // We check if it's likely from the website (mailto link) or has explicit catering intent in subject
                     const isWebsiteInquiry = subject.includes('customize:') || subject.includes('zab siam') || subject.includes('catering') || subject.includes('จัดเลี้ยง');
                     
                     const text = parsed.text ? parsed.text.toLowerCase() : "";
@@ -101,7 +113,7 @@ function createCalendarEvent(emailData) {
         start: [2026, 8, 25, 18, 0], // Placeholder date
         duration: { hours: 4 },
         title: 'Zab Siam Catering Event',
-        description: `Booking inquiry from: ${emailData.from.text}\n\nEmail Content:\n${emailData.text}`,
+        description: `Booking inquiry from: ${emailData.from ? emailData.from.text : "Unknown"}\n\nEmail Content:\n${emailData.text}`,
         location: 'London, UK',
         status: 'CONFIRMED',
         busyStatus: 'BUSY'
@@ -117,7 +129,7 @@ function createCalendarEvent(emailData) {
             from: emailUser,
             to: emailUser,
             subject: '📅 New Catering Booking Added to Calendar',
-            text: 'A new catering inquiry has been processed and attached as a calendar event.\n\nFrom: ' + emailData.from.text,
+            text: 'A new catering inquiry has been processed and attached as a calendar event.\n\nFrom: ' + (emailData.from ? emailData.from.text : "Unknown"),
             icalEvent: {
                 filename: 'booking.ics',
                 method: 'request',
@@ -135,13 +147,5 @@ function createCalendarEvent(emailData) {
     });
 }
 
-imap.once('error', function(err) {
-    console.log('IMAP Error: ' + err);
-});
-
-imap.once('end', function() {
-    console.log('Connection ended');
-});
-
-// Connect
-imap.connect();
+// Start the bot
+startImap();
