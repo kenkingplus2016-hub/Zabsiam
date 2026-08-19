@@ -57,6 +57,15 @@ function fetchUnreadEmails() {
             msg.on('body', function(stream, info) {
                 simpleParser(stream, async (err, parsed) => {
                     if (err) throw err;
+                    
+                    const senderEmail = parsed.from.value[0].address;
+                    
+                    // PREVENT INFINITE LOOP: Ignore emails sent by the bot itself
+                    if (senderEmail === emailUser || (parsed.subject && parsed.subject.includes('New Catering Booking'))) {
+                        console.log(`Skipping bot's own email: ${parsed.subject}`);
+                        return;
+                    }
+
                     console.log(`\n📧 New Email From: ${parsed.from.text}`);
                     console.log(`Subject: ${parsed.subject}`);
                     
@@ -79,7 +88,6 @@ function fetchUnreadEmails() {
 }
 
 function createCalendarEvent(emailData) {
-    // Basic event creation - ideally parsed dynamically by AI
     const event = {
         start: [2026, 8, 25, 18, 0], // Placeholder date
         duration: { hours: 4 },
@@ -96,10 +104,9 @@ function createCalendarEvent(emailData) {
             return;
         }
         
-        // Send the .ics file to ourselves to add to Google Calendar
         const mailOptions = {
             from: emailUser,
-            to: emailUser, // Send to own email to sync calendar
+            to: emailUser,
             subject: '📅 New Catering Booking Added to Calendar',
             text: 'A new catering inquiry has been processed and attached as a calendar event.',
             icalEvent: {
