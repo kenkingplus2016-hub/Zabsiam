@@ -1,88 +1,36 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "ZabSiam Facebook Publisher",
-    "description": "API to publish posts (text and optional image) to the ZabSiam Facebook Page.",
-    "version": "1.0.0"
+    "title": "Zab Siam Facebook Page Admin",
+    "description": "Manage the Zab Siam Facebook Page: page details, posts, comments, Messenger conversations, replies, and insights. Ask the user for confirmation immediately before publishing, replying, hiding, or deleting content.",
+    "version": "2.0.0"
   },
-  "servers": [
-    {
-      "url": "https://zabsiam.com"
-    }
-  ],
+  "servers": [{ "url": "https://zabsiam.com" }],
   "paths": {
-    "/api/publish-post": {
-      "post": {
-        "summary": "Publish a new post to the Facebook page",
-        "description": "Sends a message and an optional image URL to be published on the ZabSiam Facebook Page.",
-        "operationId": "publishFacebookPost",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "message": {
-                    "type": "string",
-                    "description": "The text content or caption of the Facebook post."
-                  },
-                  "imageUrl": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "Optional. The public URL of the image to attach to the post."
-                  }
-                },
-                "required": [
-                  "message"
-                ]
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successfully published the post.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "success": {
-                      "type": "boolean"
-                    },
-                    "postId": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request (e.g., missing message)."
-          },
-          "401": {
-            "description": "Unauthorized (Invalid GPT Secret Key)."
-          },
-          "500": {
-            "description": "Server Error or Facebook Graph API Error."
-          }
-        },
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ]
-      }
-    }
+    "/api/page": { "get": { "operationId": "getFacebookPage", "summary": "Get Page details", "responses": { "200": { "description": "Page details" } } } },
+    "/api/posts": {
+      "get": { "operationId": "listFacebookPosts", "summary": "List recent Page posts", "parameters": [{ "name": "limit", "in": "query", "schema": { "type": "integer", "minimum": 1, "maximum": 50, "default": 10 } }], "responses": { "200": { "description": "Posts" } } },
+      "post": { "operationId": "publishFacebookPost", "summary": "Publish a Page post", "requestBody": { "required": true, "content": { "application/json": { "schema": { "type": "object", "properties": { "message": { "type": "string" }, "imageUrl": { "type": "string", "format": "uri" } }, "required": ["message"], "additionalProperties": false } } } }, "responses": { "200": { "description": "Published" } } }
+    },
+    "/api/posts/{postId}": { "delete": { "operationId": "deleteFacebookPost", "summary": "Delete a Page post", "parameters": [{ "$ref": "#/components/parameters/PostId" }], "responses": { "200": { "description": "Deleted" } } } },
+    "/api/posts/{postId}/comments": { "get": { "operationId": "listFacebookComments", "summary": "List comments on a post", "parameters": [{ "$ref": "#/components/parameters/PostId" }, { "name": "limit", "in": "query", "schema": { "type": "integer", "minimum": 1, "maximum": 100, "default": 25 } }], "responses": { "200": { "description": "Comments" } } } },
+    "/api/comments/{commentId}/replies": { "post": { "operationId": "replyToFacebookComment", "summary": "Reply to a comment as the Page", "parameters": [{ "$ref": "#/components/parameters/CommentId" }], "requestBody": { "required": true, "content": { "application/json": { "schema": { "type": "object", "properties": { "message": { "type": "string" } }, "required": ["message"], "additionalProperties": false } } } }, "responses": { "200": { "description": "Reply created" } } } },
+    "/api/comments/{commentId}": {
+      "patch": { "operationId": "setFacebookCommentHidden", "summary": "Hide or unhide a comment", "parameters": [{ "$ref": "#/components/parameters/CommentId" }], "requestBody": { "required": true, "content": { "application/json": { "schema": { "type": "object", "properties": { "is_hidden": { "type": "boolean" } }, "required": ["is_hidden"], "additionalProperties": false } } } }, "responses": { "200": { "description": "Updated" } } },
+      "delete": { "operationId": "deleteFacebookComment", "summary": "Delete a comment", "parameters": [{ "$ref": "#/components/parameters/CommentId" }], "responses": { "200": { "description": "Deleted" } } }
+    },
+    "/api/conversations": { "get": { "operationId": "listMessengerConversations", "summary": "List Page Messenger conversations", "parameters": [{ "name": "limit", "in": "query", "schema": { "type": "integer", "minimum": 1, "maximum": 50, "default": 20 } }], "responses": { "200": { "description": "Conversations" } } } },
+    "/api/conversations/{conversationId}/messages": { "get": { "operationId": "listMessengerMessages", "summary": "List messages in a conversation", "parameters": [{ "name": "conversationId", "in": "path", "required": true, "schema": { "type": "string" } }, { "name": "limit", "in": "query", "schema": { "type": "integer", "minimum": 1, "maximum": 50, "default": 20 } }], "responses": { "200": { "description": "Messages" } } } },
+    "/api/messages": { "post": { "operationId": "sendMessengerReply", "summary": "Send a Messenger reply", "requestBody": { "required": true, "content": { "application/json": { "schema": { "type": "object", "properties": { "recipientId": { "type": "string", "description": "Page-scoped recipient ID" }, "message": { "type": "string" } }, "required": ["recipientId", "message"], "additionalProperties": false } } } }, "responses": { "200": { "description": "Message sent" } } } },
+    "/api/insights": { "get": { "operationId": "getFacebookInsights", "summary": "Get Page insights", "parameters": [{ "name": "metric", "in": "query", "description": "Comma-separated Meta insight metrics", "schema": { "type": "string", "default": "page_impressions,page_post_engagements" } }, { "name": "period", "in": "query", "schema": { "type": "string", "enum": ["day", "week", "days_28"], "default": "day" } }], "responses": { "200": { "description": "Insights" } } }
   },
+  "security": [{ "bearerAuth": [] }],
   "components": {
-    "securitySchemes": {
-      "bearerAuth": {
-        "type": "http",
-        "scheme": "bearer"
-      }
+    "securitySchemes": { "bearerAuth": { "type": "http", "scheme": "bearer" } },
+    "parameters": {
+      "PostId": { "name": "postId", "in": "path", "required": true, "schema": { "type": "string" } },
+      "CommentId": { "name": "commentId", "in": "path", "required": true, "schema": { "type": "string" } }
     }
   }
+}
 }
