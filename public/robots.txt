@@ -15,4 +15,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://zabsiam.co.uk/sitemap.xml
+Sitemap: https://zabsiam.com/sitemap.xml
