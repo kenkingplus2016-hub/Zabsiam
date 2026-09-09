@@ -15,7 +15,8 @@ const canapes = [
     { id: 'canape-12', name: 'Mini Crispy Thai Prawn Cake', desc: 'Crispy prawn cake served with plum sauce.', price: 39.60, img: 'images/logo2.png' },
     { id: 'canape-13', name: 'Mini Golden Bags', desc: 'Crispy pastry bags filled with savory minced meat.', price: 33.60, img: 'images/logo2.png' },
     { id: 'canape-14', name: 'Mini Northern Thai Sausage (Sai Oua)', desc: 'Spicy and aromatic Northern Thai pork sausage.', price: 38.40, img: 'images/logo2.png' },
-    { id: 'canape-15', name: 'Mini Sai Krok Isan', desc: 'Fermented Northeastern Thai pork sausage.', price: 38.40, img: 'images/logo2.png' }
+    { id: 'canape-15', name: 'Mini Sai Krok Isan', desc: 'Fermented Northeastern Thai pork sausage.', price: 38.40, img: 'images/logo2.png' },
+    { id: 'canape-16', name: 'Pomelo Salad with Prawns', desc: 'Yum Som O Goong - Zesty pomelo salad with fresh prawns.', price: 39.60, img: 'images/canape_salad_pomelo.jpg' }
 ];
 
 let html = fs.readFileSync('public/canapes.html', 'utf8');
