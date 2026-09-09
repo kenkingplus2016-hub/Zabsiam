@@ -46,11 +46,27 @@ function escapeHtml(value) {
 }
 
 function addToCart(name, price, img) {
-    const existing = cart.find(item => item.name === name);
+    // Support object payload
+    let itemName = name;
+    let itemPrice = price;
+    let itemImg = img;
+    let itemId = name;
+    
+    if (typeof name === 'object' && name !== null) {
+        itemName = name.name;
+        itemPrice = name.price;
+        itemImg = name.img;
+        itemId = name.id || name.name;
+    }
+    
+    // Convert price to number just in case
+    itemPrice = Number(itemPrice);
+
+    const existing = cart.find(item => item.name === itemName || item.id === itemId);
     if (existing) {
         existing.qty += 1;
     } else {
-        cart.push({ name, price, img, qty: 1 });
+        cart.push({ id: itemId, name: itemName, price: itemPrice, img: itemImg, qty: 1 });
     }
     updateCartUI();
     openCart();
