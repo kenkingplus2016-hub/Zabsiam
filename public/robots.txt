@@ -16,3 +16,7 @@ User-agent: Google-Extended
 Allow: /
 
 Sitemap: https://zabsiam.com/sitemap.xml
+
+# LLM and AI Data
+Allow: /llms.txt
+Allow: /menu-ai-data.txt
