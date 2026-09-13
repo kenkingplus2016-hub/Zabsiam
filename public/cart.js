@@ -1,10 +1,10 @@
 let cart = [];
-const DEFAULT_DELIVERY_FEE = 5.00;
+const DEFAULT_DELIVERY_FEE = 0.00;
 
 function getSelectedDeliveryOption() {
     const selected = document.querySelector('input[name="deliveryOption"]:checked');
     if (!selected) {
-        return { label: 'Standard Delivery', fee: DEFAULT_DELIVERY_FEE };
+        return { label: 'Delivery Fee (Calculated upon confirmation)', fee: DEFAULT_DELIVERY_FEE };
     }
 
     const fee = Number(selected.dataset.fee);

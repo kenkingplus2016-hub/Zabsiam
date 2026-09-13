@@ -530,53 +530,6 @@
 <input type="time" id="eventTime" class="checkout-input">
  </div>
  </div>
- <div class="delivery-checkout">
- <h4>DeliveryPickup Options</h4>
- <div class="delivery-options">
- <label>
- <input type="radio" name="deliveryOption" value="popup-pickup" data-label="Pickup at Popup Market" data-fee="0.00">
- <span><strong>Pickup at Popup Market</strong><small>Free (Pre-order Pickup)</small></span>
- </label>
- <label>
- <input type="radio" name="deliveryOption" value="delivery-10m" data-label="Delivery (0 - 10 miles)" data-fee="0.00" checked>
- <span><strong>Delivery (0 - 10 miles)</strong><small>Free </small></span>
- </label>
- <label>
- <input type="radio" name="deliveryOption" value="delivery-15m" data-label="Delivery (11 - 15 miles)" data-fee="15.00">
- <span><strong>Delivery (11 - 15 miles)</strong><small>£15.00</small></span>
- </label>
- <label>
- <input type="radio" name="deliveryOption" value="delivery-20m" data-label="Delivery (16 - 20 miles)" data-fee="25.00">
- <span><strong>Delivery (16 - 20 miles)</strong><small>£25.00</small></span>
- </label>
- <label>
- <input type="radio" name="deliveryOption" value="delivery-30m" data-label="Delivery (21 - 30 miles)" data-fee="40.00">
- <span><strong>Delivery (21 - 30 miles)</strong><small>£40.00</small></span>
- </label>
- </div>
- </div>
- <div class="allergy-checkout">
- <h4>Allergy Information</h4>
- <p>Please select any allergens we should be aware of.</p>
- <div class="allergy-grid">
- <label><input type="checkbox" name="allergies" value="Celery"> Celery</label>
- <label><input type="checkbox" name="allergies" value="Cereals containing gluten"> Cereals containing gluten</label>
- <label><input type="checkbox" name="allergies" value="Crustaceans"> Crustaceans</label>
- <label><input type="checkbox" name="allergies" value="Eggs"> Eggs</label>
- <label><input type="checkbox" name="allergies" value="Fish"> Fish</label>
- <label><input type="checkbox" name="allergies" value="Lupin"> Lupin</label>
- <label><input type="checkbox" name="allergies" value="Milk"> Milk</label>
- <label><input type="checkbox" name="allergies" value="Molluscs"> Molluscs</label>
- <label><input type="checkbox" name="allergies" value="Mustard"> Mustard</label>
- <label><input type="checkbox" name="allergies" value="Peanuts"> Peanuts</label>
- <label><input type="checkbox" name="allergies" value="Sesame"> Sesame</label>
- <label><input type="checkbox" name="allergies" value="Soybeans"> Soybeans</label>
- <label><input type="checkbox" name="allergies" value="Sulphur dioxide and sulphites"> Sulphur dioxide and sulphites</label>
- <label><input type="checkbox" name="allergies" value="Tree nuts"> Tree nuts</label>
- </div>
- <textarea id="otherAllergies" placeholder="Other allergies or dietary notes" rows="2"></textarea>
- </div>
- 
  <button type="submit" id="checkout-btn" class="hero-btn" style="width: 100%; margin-top: 1rem;" disabled>
  Proceed to Payment (Stripe)
  </button>
