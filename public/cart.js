@@ -205,7 +205,12 @@ async function proceedToCheckout(e) {
     const eventTimeInput = document.getElementById('eventTime')?.value || 'Not specified';
     const dateTimeCombo = (eventDateInput || new Date().toISOString().split('T')[0]) + ' @ ' + eventTimeInput;
     
-    let menuSetDetails = isCatering ? "Private Catering (50% Deposit Paid):\n" : "Postal Delivery Order:\n";
+    let menuSetDetails = "Order Details:\n";
+    if (isCatering) {
+        menuSetDetails = window.requireFullPayment ? "Party Trays Pre-order (100% Paid):\n" : "Private Catering (50% Deposit Paid):\n";
+    } else {
+        menuSetDetails = "Postal Delivery Order:\n";
+    }
     let subtotal = 0;
     cart.forEach(item => {
         menuSetDetails += `- ${item.qty}x ${item.name} (£${item.price.toFixed(2)})\n`;
@@ -213,7 +218,7 @@ async function proceedToCheckout(e) {
     });
     
     let finalTotal = subtotal + deliveryOption.fee;
-    if (isCatering) {
+    if (isCatering && !window.requireFullPayment) {
         const deposit = subtotal * 0.5;
         finalTotal = deposit + deliveryOption.fee;
         menuSetDetails += `\n** Full Order Value: £${subtotal.toFixed(2)} **\n`;
