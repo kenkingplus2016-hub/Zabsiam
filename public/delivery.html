@@ -461,7 +461,25 @@
 <input type="time" id="eventTime" class="checkout-input">
  </div>
  </div>
- <button type="submit" id="checkout-btn" class="hero-btn" style="width: 100%; margin-top: 1rem;" disabled>
+ 
+<div class="delivery-checkout" style="margin-top: 20px; margin-bottom: 20px;">
+    <h4 style="margin-bottom: 10px; color: var(--color-gold);">Delivery &amp; Pickup Options</h4>
+    <div class="delivery-options">
+        <label>
+            <input type="radio" name="deliveryOption" value="popup-pickup" data-label="Pickup at Popup Market" data-fee="0.00" checked>
+            <span><strong>Pickup at Popup Market</strong><small>Free</small></span>
+        </label>
+        <label>
+            <input type="radio" name="deliveryOption" value="delivery-2kg" data-label="Delivery (Up to 2 kg)" data-fee="4.65">
+            <span><strong>Delivery (Up to 2 kg)</strong><small>&pound;4.65</small></span>
+        </label>
+        <label>
+            <input type="radio" name="deliveryOption" value="delivery-10kg" data-label="Delivery (2 kg - 10 kg)" data-fee="8.55">
+            <span><strong>Delivery (2 kg - 10 kg)</strong><small>&pound;8.55</small></span>
+        </label>
+    </div>
+</div>
+<button type="submit" id="checkout-btn" class="hero-btn" style="width: 100%; margin-top: 1rem;" disabled>
  Proceed to Payment (Stripe)
  </button>
  </form>
