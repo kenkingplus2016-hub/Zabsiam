@@ -172,7 +172,10 @@ async function handleApi(request, response, url) {
 
 function serveStatic(request, response, url) {
     const relative = url.pathname === '/' ? 'index.html' : decodeURIComponent(url.pathname).replace(/^\/+/, '');
-    const filePath = path.resolve(PUBLIC_DIR, relative);
+    let filePath = path.resolve(PUBLIC_DIR, relative);
+    if (!path.extname(filePath) && fs.existsSync(filePath + '.html')) {
+        filePath = filePath + '.html';
+    }
     if (filePath !== PUBLIC_DIR && !filePath.startsWith(`${PUBLIC_DIR}${path.sep}`)) return sendJson(response, 403, { error: 'Forbidden' });
     fs.readFile(filePath, (error, content) => {
         if (error) return sendJson(response, error.code === 'ENOENT' ? 404 : 500, { error: error.code === 'ENOENT' ? 'Not found' : 'Server error' });
