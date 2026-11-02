@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>SFBB for Caterers | Zab Siam (Khrua Thai London)</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="SFBB Diary">
+    <meta name="theme-color" content="#0d2e1a">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #154726;
+            --primary-dark: #0d2e1a;
+            --primary-light: #206d3b;
+            --accent-gold: #d4af37;
+            --accent-gold-light: #f7e7b4;
+            --safe-green: #10b981;
+            --safe-green-light: #d1fae5;
+            --danger-red: #ef4444;
+            --danger-red-light: #fee2e2;
+            --warn-amber: #f59e0b;
+            --warn-amber-light: #fef3c7;
+            --bg-body: #f3f4f6;
+            --card-bg: #ffffff;
+            --text-dark: #111827;
+            --text-muted: #6b7280;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --safe-area-top: env(safe-area-inset-top, 0px);
+            --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+            font-family: 'Inter', 'Prompt', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            min-height: 100vh;
+            padding-bottom: calc(75px + var(--safe-area-bottom));
+        }
+
+        /* Mobile Container */
+        .app-shell {
+            max-width: 480px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background: #fff;
+            position: relative;
+            box-shadow: 0 0 30px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header.app-header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: #fff;
+            padding: calc(14px + var(--safe-area-top)) 16px 14px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .brand-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .brand-logo {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: #fff;
+            padding: 2px;
+            object-fit: contain;
+        }
+
+        .brand-text h1 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            line-height: 1.2;
+            letter-spacing: -0.2px;
+        }
+
+        .brand-text span {
+            font-size: 0.72rem;
+            color: rgba(255,255,255,0.75);
+            display: block;
+        }
+
+        .eho-badge {
+            background: rgba(212, 175, 55, 0.2);
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .header-sub {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.85);
+            background: rgba(0,0,0,0.2);
+            padding: 6px 12px;
+            border-radius: 8px;
+        }
+
+        .header-sub strong {
+            color: #fff;
+        }
+
+        /* Main Content Container */
+        main.tab-view {
+            flex: 1;
+            padding: 16px;
+            display: none;
+            animation: fadeIn 0.2s ease-in-out;
+        }
+
+        main.tab-view.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-title i {
+            color: var(--primary);
+        }
+
+        /* Checklists */
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid #f3f4f6;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .check-item:last-child {
+            border-bottom: none;
+        }
+
+        .check-box {
+            width: 24px;
+            height: 24px;
+            border: 2px solid #cbd5e1;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.2s;
+            margin-top: 2px;
+            background: #fff;
+        }
+
+        .check-item.checked .check-box {
+            background: var(--safe-green);
+            border-color: var(--safe-green);
+            color: #fff;
+        }
+
+        .check-content {
+            flex: 1;
+        }
+
+        .check-title {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.35;
+        }
+
+        .check-item.checked .check-title {
+            color: var(--text-muted);
+            text-decoration: line-through;
+        }
+
+        .check-desc {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+            line-height: 1.35;
+        }
+
+        /* Buttons & Forms */
+        .btn-primary {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 14px;
+            font-size: 0.98rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 4px 10px rgba(21, 71, 38, 0.25);
+            transition: transform 0.1s, opacity 0.2s;
+        }
+
+        .btn-primary:active {
+            transform: scale(0.98);
+        }
+
+        .btn-secondary {
+            width: 100%;
+            background: #f8fafc;
+            color: var(--text-dark);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .input-group {
+            margin-bottom: 14px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .input-control {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            background: #fff;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .input-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(21, 71, 38, 0.1);
+        }
+
+        /* Temperature Input Component */
+        .temp-row {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 12px;
+        }
+
+        .temp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .temp-label {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .temp-target {
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 6px;
+            background: #e2e8f0;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .temp-stepper {
+            display: grid;
+            grid-template-columns: 46px 1fr 46px;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .step-btn {
+            height: 44px;
+            background: #fff;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .step-btn:active {
+            background: #f1f5f9;
+        }
+
+        .temp-display {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            padding: 6px;
+            border-radius: 8px;
+            border: 1px solid transparent;
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 2px;
+        }
+
+        .temp-display .unit {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .temp-safe {
+            background: var(--safe-green-light);
+            color: #065f46;
+            border-color: #a7f3d0;
+        }
+
+        .temp-danger {
+            background: var(--danger-red-light);
+            color: #991b1b;
+            border-color: #fecaca;
+        }
+
+        /* 4 Cs Accordion / Cards */
+        .c-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+
+        .c-header {
+            padding: 14px 16px;
+            background: #fafafa;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--primary-dark);
+            border-bottom: 1px solid transparent;
+        }
+
+        .c-card.open .c-header {
+            border-bottom-color: var(--border-color);
+            background: #f0fdf4;
+        }
+
+        .c-body {
+            padding: 14px 16px;
+            font-size: 0.88rem;
+            line-height: 1.5;
+            color: #374151;
+            display: none;
+        }
+
+        .c-card.open .c-body {
+            display: block;
+        }
+
+        .c-rule {
+            background: #f8fafc;
+            border-left: 3px solid var(--primary);
+            padding: 8px 12px;
+            margin: 8px 0;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.82rem;
+        }
+
+        .c-rule strong {
+            color: var(--primary-dark);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        /* Allergen Grid */
+        .allergen-pills {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .allergen-pill {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 8px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .allergen-pill i {
+            color: #f97316;
+        }
+
+        /* Bottom Tab Navigation */
+        nav.tab-bar {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 480px;
+            background: #fff;
+            border-top: 1px solid var(--border-color);
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            padding: 6px 0 calc(6px + var(--safe-area-bottom));
+            z-index: 200;
+            box-shadow: 0 -4px 12px rgba(0,0,0,0.06);
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            color: #94a3b8;
+            font-size: 0.68rem;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 4px;
+            transition: color 0.15s;
+        }
+
+        .tab-btn i {
+            font-size: 1.25rem;
+        }
+
+        .tab-btn.active {
+            color: var(--primary);
+        }
+
+        .tab-btn.active i {
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* Status Toast */
+        .toast {
+            position: fixed;
+            top: 70px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-20px);
+            background: #111827;
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* Table of logs */
+        .log-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.82rem;
+            margin-top: 10px;
+        }
+
+        .log-table th, .log-table td {
+            padding: 10px 8px;
+            border-bottom: 1px solid #f1f5f9;
+            text-align: left;
+        }
+
+        .log-table th {
+            color: var(--text-muted);
+            font-weight: 600;
+            background: #f8fafc;
+        }
+
+        .badge-signed {
+            background: var(--safe-green-light);
+            color: #065f46;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        @media print {
+            nav.tab-bar, .btn-primary, .btn-secondary, .step-btn {
+                display: none !important;
+            }
+            body, .app-shell {
+                max-width: 100% !important;
+                background: #fff !important;
+            }
+            main.tab-view {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-shell">
+    <!-- Header -->
+    <header class="app-header">
+        <div class="header-top">
+            <div class="brand-badge">
+                <img src="logo2.png" alt="Zab Siam Logo" class="brand-logo" onerror="this.src='images/logo2.png'">
+                <div class="brand-text">
+                    <h1>SFBB for Caterers</h1>
+                    <span>Zab Siam (formerly Khrua Thai London)</span>
+                </div>
+            </div>
+            <div class="eho-badge">
+                <i class="fas fa-star"></i> EHO 5★
+            </div>
+        </div>
+        <div class="header-sub">
+            <span><i class="fas fa-calendar-day"></i> <strong id="header-date">Today</strong></span>
+            <span><i class="fas fa-user-check"></i> <strong id="header-staff">Chef Sirapat</strong></span>
+        </div>
+    </header>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="toast">
+        <i class="fas fa-check-circle" style="color: #10b981;"></i>
+        <span id="toast-msg">Saved Successfully</span>
+    </div>
+
+    <!-- ================= TAB 1: DAILY DIARY ================= -->
+    <main id="tab-diary" class="tab-view active">
+        <!-- Date & Staff Selector -->
+        <div class="card" style="background: linear-gradient(135deg, #f0fdf4 0%, #fff 100%); border-left: 4px solid var(--safe-green);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <div>
+                    <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--primary);">FSA Standard Daily Diary</span>
+                    <h2 style="font-size: 1.15rem; font-weight: 800; color: var(--primary-dark);" id="diary-current-date"></h2>
+                </div>
+                <button type="button" onclick="loadTodayDiary()" style="padding: 6px 10px; border-radius: 6px; border: 1px solid var(--border-color); background: #fff; font-size: 0.75rem; font-weight: 600; cursor: pointer;">
+                    <i class="fas fa-sync-alt"></i> Reset
+                </button>
+            </div>
+            <div class="input-group" style="margin-bottom: 0;">
+                <label>Person in Charge / Supervisor (ผู้ตรวจสอบ):</label>
+                <select id="diary-staff" class="input-control" onchange="updateStaffHeader()">
+                    <option value="Sirapat Kendee (Chef/Owner)">Sirapat Kendee (Chef/Owner)</option>
+                    <option value="Duty Chef">Duty Chef</option>
+                    <option value="Kitchen Assistant">Kitchen Assistant</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- 1. Opening Checks -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <i class="fas fa-door-open" style="color: #f59e0b;"></i>
+                    1. Opening Checks (ตรวจเปิดร้าน)
+                </div>
+                <span style="font-size: 0.75rem; color: var(--text-muted);">Required Daily</span>
+            </div>
+            
+            <div class="check-item" onclick="toggleCheck(this, 'open-1')">
+                <div class="check-box"><i class="fas fa-check" style="display:none; font-size:12px;"></i></div>
+                <div class="check-content">
+                    <div class="check-title">Fridges & Freezers Working (<5°C / <-18°C)</div>
+                    <div class="check-desc">ตู้เย็นและตู้แช่แข็งอุณหภูมิปกติ เสียบปลั๊กและทำงานเรียบร้อย</div>
+                </div>
+            </div>
+
+            <div class="check-item" onclick="toggleCheck(this, 'open-2')">
+                <div class="check-box"><i class="fas fa-check" style="display:none; font-size:12px;"></i></div>
+                <div class="check-content">
+                    <div class="check-title">Handwash Basin Stocked & Ready</div>
+                    <div class="check-desc">อ่างล้างมือมีสบู่ต้านแบคทีเรีย น้ำอุ่น และกระดาษเช็ดมือพร้อม</div>
+                </div>
+            </div>
+
+            <div class="check-item" onclick="toggleCheck(this, 'open-3')">
+                <div class="check-box"><i class="fas fa-check" style="display:none; font-size:12px;"></i></div>
+                <div class="check-content">
+                    <div class="check-title">Staff Fit for Work (Fitness to Work)</div>
+                    <div class="check-desc">พนักงานทุกคนสุขภาพปกติ ไม่มีอาการท้องเสีย/อาเจียนใน 48 ชม.</div>
+                </div>
+            </div>
+
+            <div class="check-item" onclick="toggleCheck(this, 'open-4')">
+                <div class="check-box"><i class="fas fa-check" style="display:none; font-size:12px;"></i></div>
+                <div class="check-content">
+                    <div class="check-title">Clean Aprons & Colour-Coded Cloths</div>
+                    <div class="check-desc">ผ้ากันเปื้อนสะอาด ผ้าเช็ดโต๊ะแยกสีและน้ำยาฆ่าเชื้อ (BS EN 1276)</div>
+                </div>
+            </div>
+
+            <div class="check-item" onclick="toggleCheck(this, 'open-5')">
+                <div class="check-box"><i class="fas fa-check" style="display:none; font-size:12px;"></i></div>
+                <div class="check-content">
+                    <div class="check-title">Digital Food Probe Ready & Sanitised</div>
+                    <div class="check-desc">เทอร์โมมิเตอร์โพรบมีแบตเตอรี่พร้อม ผ้าเช็ดโพรบฆ่าเชื้อพร้อมใช้</div>
+                </div>
+            </div>
+
+            <div class="check-item" onclick="toggleCheck(this, 'open-6')">
+                <div class="check-box"><i class="fas fa-check" style="display:none; font-size:12px;"></i></div>
+                <div class="check-content">
+                    <div class="check-title">No Signs of Pests / Work Area Clean</div>
+                    <div class="check-desc">ตรวจสอบไม่มีร่องรอยสัตว์รบกวน พื้นผิวเตรียมอาหารสะอาด</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Closing Checks -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <i class="fas fa-door-closed" style="color: #8b5cf6;"></i>
+                    2. Closing Checks (ตรวจปิดร้าน/เสร็จงาน)
+                </div>
+                <span style="font-size: 0.75rem; color: var(--text-muted);">Required Daily</span>
+            </div>
+
+            <div class="check-item" onclick="toggleCheck(this, 'close-1')">
+                <div class="check-box"><i class="fas fa-check" style="display:none; font-size:12px;"></i></div>
+                <div class="check-content">
+                    <div class="check-title">Hot Food Cooled Fast & Chilled (<2 Hours)</div>
+                    <div class="check-desc">อาหารปรุงสุกที่เหลือถูกลดอุณหภูมิภายใน 2 ชม. และแช่เย็นทันที</div>
+                </div>
+            </div>
+
+            <div class="check-item" onclick="toggleCheck(this, 'close-2')">
+                <div class="check-box"><i class="fas fa-check" style="display:none; font-size:12px;"></i></div>
+                <div class="check-content">
+                    <div class="check-title">All Food Covered, Labelled & Dated</div>
+                    <div class="check-desc">อาหารทุกกล่องมีฝาปิด ติดป้ายวันที่ และแยกเนื้อดิบไว้ชั้นล่างสุด</div>
+                </div>
+            </div>
+
+            <div class="check-item" onclick="toggleCheck(this, 'close-3')">
+                <div class="check-box"><i class="fas fa-check" style="display:none; font-size:12px;"></i></div>
+                <div class="check-content">
+                    <div class="check-title">Surfaces & Equipment Sanitised</div>
+                    <div class="check-desc">เขียง มีด เครื่องครัว และโต๊ะสแตนเลสทำความสะอาดฆ่าเชื้อครบ</div>
+                </div>
+            </div>
+
+            <div class="check-item" onclick="toggleCheck(this, 'close-4')">
+                <div class="check-box"><i class="fas fa-check" style="display:none; font-size:12px;"></i></div>
+                <div class="check-content">
+                    <div class="check-title">Rubbish & Food Waste Removed</div>
+                    <div class="check-desc">นำขยะอาหารและเศษวัตถุดิบไปทิ้งถังขยะด้านนอก มัดปากถุงแน่นหนา</div>
+                </div>
+            </div>
+
+            <div class="check-item" onclick="toggleCheck(this, 'close-5')">
+                <div class="check-box"><i class="fas fa-check" style="display:none; font-size:12px;"></i></div>
+                <div class="check-content">
+                    <div class="check-title">Final Check: Fridge Doors Closed & Locked</div>
+                    <div class="check-desc">ตรวจประตูปิดตู้เย็น/ตู้แช่ ปิดแก๊ส และตรวจสอบความปลอดภัยรอบครัว</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Problem & Action Taken (FSA Requirement) -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <i class="fas fa-exclamation-triangle" style="color: #ef4444;"></i>
+                    3. What Went Wrong & Action Taken
+                </div>
+            </div>
+            <div class="input-group">
+                <label>บันทึกปัญหาที่พบและวิธีแก้ไข (ถ้ามี):</label>
+                <textarea id="diary-notes" class="input-control" rows="2" placeholder="เช่น ตู้เย็นอุณหภูมิแตะ 6°C ทำการปรับตั้งค่าใหม่และตรวจซ้ำพบ 3.8°C / หรือ พิมพ์ 'All opening & closing checks passed normally'"></textarea>
+            </div>
+            <button type="button" class="btn-primary" onclick="saveTodayDiary()">
+                <i class="fas fa-save"></i> Save & Sign Today's Diary
+            </button>
+        </div>
+    </main>
+
+    <!-- ================= TAB 2: TEMPERATURE LOGGER ================= -->
+    <main id="tab-temps" class="tab-view">
+        <div class="card" style="background: #faf5ff; border-left: 4px solid #9333ea;">
+            <h2 style="font-size: 1.1rem; font-weight: 800; color: #581c87; margin-bottom: 4px;">Temperature Controls Log</h2>
+            <p style="font-size: 0.8rem; color: #6b21a8;">FSA Legal Standards: Chilled < 8°C (Ideal < 5°C), Hot > 63°C, Cook > 75°C</p>
+        </div>
+
+        <!-- 1. Storage Temps -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <i class="fas fa-snowflake" style="color: #0284c7;"></i>
+                    Chilled & Frozen Storage
+                </div>
+                <span style="font-size: 0.72rem; color: var(--text-muted);">Twice Daily</span>
+            </div>
+
+            <!-- Main Prep Fridge -->
+            <div class="temp-row" id="row-fridge1">
+                <div class="temp-header">
+                    <span class="temp-label"><i class="fas fa-box"></i> Main Prep Fridge (ตู้เย็นหลัก)</span>
+                    <span class="temp-target">Standard: 0°C to 5°C</span>
+                </div>
+                <div class="temp-stepper">
+                    <button type="button" class="step-btn" onclick="adjustTemp('temp-fridge1', -0.5)">-</button>
+                    <div class="temp-display temp-safe" id="disp-temp-fridge1">
+                        <span id="val-temp-fridge1">3.5</span><span class="unit">°C</span>
+                    </div>
+                    <button type="button" class="step-btn" onclick="adjustTemp('temp-fridge1', 0.5)">+</button>
+                </div>
+            </div>
+
+            <!-- Fish & Meat Storage Chiller -->
+            <div class="temp-row" id="row-fridge2">
+                <div class="temp-header">
+                    <span class="temp-label"><i class="fas fa-fish"></i> Raw Meat & Fish Chiller</span>
+                    <span class="temp-target">Standard: 0°C to 4°C</span>
+                </div>
+                <div class="temp-stepper">
+                    <button type="button" class="step-btn" onclick="adjustTemp('temp-fridge2', -0.5)">-</button>
+                    <div class="temp-display temp-safe" id="disp-temp-fridge2">
+                        <span id="val-temp-fridge2">2.8</span><span class="unit">°C</span>
+                    </div>
+                    <button type="button" class="step-btn" onclick="adjustTemp('temp-fridge2', 0.5)">+</button>
+                </div>
+            </div>
+
+            <!-- Deep Freezer -->
+            <div class="temp-row" id="row-freezer">
+                <div class="temp-header">
+                    <span class="temp-label"><i class="fas fa-icicles"></i> Deep Freezer (ตู้แช่แข็ง)</span>
+                    <span class="temp-target">Standard: ≤ -18°C</span>
+                </div>
+                <div class="temp-stepper">
+                    <button type="button" class="step-btn" onclick="adjustTemp('temp-freezer', -1)">-</button>
+                    <div class="temp-display temp-safe" id="disp-temp-freezer">
+                        <span id="val-temp-freezer">-19.0</span><span class="unit">°C</span>
+                    </div>
+                    <button type="button" class="step-btn" onclick="adjustTemp('temp-freezer', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Cooking & Probe Temperatures -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <i class="fas fa-fire-alt" style="color: #ea580c;"></i>
+                    Cooking & Reheating Core Temp
+                </div>
+                <span style="font-size: 0.72rem; color: var(--text-muted);">Core ≥ 75°C</span>
+            </div>
+
+            <div class="input-group">
+                <label>Dish Being Tested (เมนูที่วัดอุณหภูมิ):</label>
+                <select id="cook-dish" class="input-control">
+                    <option value="Kor Moo Yang (Grilled Pork Neck)">Kor Moo Yang (Grilled Pork Neck)</option>
+                    <option value="Suea Rong Hai (Crying Tiger Beef)">Suea Rong Hai (Crying Tiger Beef)</option>
+                    <option value="Chicken Satay (ไก่สะเต๊ะ)">Chicken Satay (ไก่สะเต๊ะ)</option>
+                    <option value="Deep Fried Sea Bass (ปลากะพงทอด)">Deep Fried Sea Bass (ปลากะพงทอด)</option>
+                    <option value="Green Curry Chicken (แกงเขียวหวาน)">Green Curry Chicken (แกงเขียวหวาน)</option>
+                    <option value="Massaman Beef (มัสมั่นเนื้อ)">Massaman Beef (มัสมั่นเนื้อ)</option>
+                    <option value="Pad Thai Noodles (ผัดไทย)">Pad Thai Noodles (ผัดไทย)</option>
+                </select>
+            </div>
+
+            <div class="temp-row" id="row-cook">
+                <div class="temp-header">
+                    <span class="temp-label">Core Probe Reading (อุณหภูมิแกนกลาง)</span>
+                    <span class="temp-target">Safe: ≥ 75°C for 30s</span>
+                </div>
+                <div class="temp-stepper">
+                    <button type="button" class="step-btn" onclick="adjustTemp('temp-cook', -1)">-</button>
+                    <div class="temp-display temp-safe" id="disp-temp-cook">
+                        <span id="val-temp-cook">78.5</span><span class="unit">°C</span>
+                    </div>
+                    <button type="button" class="step-btn" onclick="adjustTemp('temp-cook', 1)">+</button>
+                </div>
+            </div>
+
+            <!-- Transport / Hot Holding -->
+            <div class="temp-row" id="row-hothold">
+                <div class="temp-header">
+                    <span class="temp-label">Hot Holding / Event Delivery</span>
+                    <span class="temp-target">Safe: ≥ 63°C</span>
+                </div>
+                <div class="temp-stepper">
+                    <button type="button" class="step-btn" onclick="adjustTemp('temp-hothold', -1)">-</button>
+                    <div class="temp-display temp-safe" id="disp-temp-hothold">
+                        <span id="val-temp-hothold">66.0</span><span class="unit">°C</span>
+                    </div>
+                    <button type="button" class="step-btn" onclick="adjustTemp('temp-hothold', 1)">+</button>
+                </div>
+            </div>
+
+            <button type="button" class="btn-primary" onclick="saveTemperatures()">
+                <i class="fas fa-check-double"></i> Record Temperature Readings
+            </button>
+        </div>
+    </main>
+
+    <!-- ================= TAB 3: 4 Cs MANUAL ================= -->
+    <main id="tab-guide" class="tab-view">
+        <div class="card" style="background: linear-gradient(135deg, #eff6ff 0%, #fff 100%); border-left: 4px solid #3b82f6;">
+            <h2 style="font-size: 1.1rem; font-weight: 800; color: #1e3a8a; margin-bottom: 4px;">FSA 4 Cs Food Safety Guide</h2>
+            <p style="font-size: 0.8rem; color: #1e40af;">Safer Food, Better Business for Caterers - Essential Safe Methods</p>
+        </div>
+
+        <!-- 1. Cross-Contamination -->
+        <div class="c-card open">
+            <div class="c-header" onclick="toggleAccordion(this)">
+                <span><i class="fas fa-shield-virus" style="color: #ef4444; margin-right: 6px;"></i> 1. Cross-Contamination (การปนเปื้อนข้าม)</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="c-body">
+                <div class="c-rule">
+                    <strong>การล้างมือ 6 ขั้นตอน (Handwashing)</strong>
+                    ล้างมือก่อนจับอาหาร, หลังจับเนื้อสัตว์ดิบ (ไก่/หมู/เนื้อ), หลังทิ้งขยะ หรือหลังสัมผัสโทรศัพท์ ด้วยสบู่ต้านแบคทีเรียอย่างน้อย 20 วินาที
+                </div>
+                <div class="c-rule">
+                    <strong>การแยกเขียงและมีด (Chopping Board Colour Coding)</strong>
+                    🔴 แดง = เนื้อดิบ (Raw Meat)<br>
+                    🔵 น้ำเงิน = ปลาดิบ / อาหารทะเลดิบ (Raw Fish)<br>
+                    🟡 เหลือง = เนื้อปรุงสุก (Cooked Meats / คอหมูย่าง)<br>
+                    🟢 เขียว = สลัด / ผัก / ผลไม้ (Salad & Fruits)<br>
+                    ⚪ ขาว = เบเกอรี่ / ของหวาน (Dairy & Bakery)
+                </div>
+                <div class="c-rule">
+                    <strong>การจัดเก็บในตู้เย็น (Fridge Storage Rule)</strong>
+                    เก็บอาหารปรุงสุกและผักพร้อมทาน (Ready-to-eat) ไว้ **ชั้นบนสุด** เสมอ และเก็บเนื้อสัตว์ดิบ หมูหมัก ไก่หมัก ไว้ในกล่องปิดสนิท **ชั้นล่างสุด** เท่านั้นเพื่อป้องกันน้ำเนื้อหยด
+                </div>
+                
+                <h4 style="font-size: 0.85rem; margin-top: 10px; color: var(--primary-dark);">14 UK Food Allergens (สารก่อภูมิแพ้ 14 ชนิด):</h4>
+                <div class="allergen-pills">
+                    <div class="allergen-pill"><i class="fas fa-exclamation-circle"></i> Peanuts (ถั่วลิสง)</div>
+                    <div class="allergen-pill"><i class="fas fa-exclamation-circle"></i> Tree Nuts (ถั่วเปลือกแข็ง)</div>
+                    <div class="allergen-pill"><i class="fas fa-exclamation-circle"></i> Crustaceans (กุ้ง/ปู)</div>
+                    <div class="allergen-pill"><i class="fas fa-exclamation-circle"></i> Fish (ปลา/น้ำปลา)</div>
+                    <div class="allergen-pill"><i class="fas fa-exclamation-circle"></i> Soybeans (ถั่วเหลือง/ซีอิ๊ว)</div>
+                    <div class="allergen-pill"><i class="fas fa-exclamation-circle"></i> Gluten (แป้งสาลี)</div>
+                    <div class="allergen-pill"><i class="fas fa-exclamation-circle"></i> Sesame (งาขาว/ดำ)</div>
+                    <div class="allergen-pill"><i class="fas fa-exclamation-circle"></i> Milk (นม/กะทิปนเปื้อน)</div>
+                    <div class="allergen-pill"><i class="fas fa-exclamation-circle"></i> Eggs (ไข่)</div>
+                    <div class="allergen-pill"><i class="fas fa-exclamation-circle"></i> Molluscs (หอยนางรม)</div>
+                    <div class="allergen-pill"><i class="fas fa-exclamation-circle"></i> Celery (ขึ้นฉ่าย)</div>
+                    <div class="allergen-pill"><i class="fas fa-exclamation-circle"></i> Mustard (มัสตาร์ด)</div>
+                    <div class="allergen-pill"><i class="fas fa-exclamation-circle"></i> Lupin (ลูพิน)</div>
+                    <div class="allergen-pill"><i class="fas fa-exclamation-circle"></i> Sulphites (ซัลไฟต์)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Cleaning -->
+        <div class="c-card">
+            <div class="c-header" onclick="toggleAccordion(this)">
+                <span><i class="fas fa-spray-can-sparkles" style="color: #06b6d4; margin-right: 6px;"></i> 2. Cleaning (การทำความสะอาด)</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="c-body">
+                <div class="c-rule">
+                    <strong>Clean as You Go (ทำความสะอาดทันทีที่ทำเสร็จ)</strong>
+                    เช็ดและฆ่าเชื้อพื้นผิวเตรียมอาหารทุกครั้งหลังเปลี่ยนเมนู หรือเปลี่ยนจากการจับเนื้อดิบมาทำอาหารปรุงสุก
+                </div>
+                <div class="c-rule">
+                    <strong>น้ำยาฆ่าเชื้อมาตรฐาน BS EN 1276 หรือ BS EN 13697</strong>
+                    ฉีดน้ำยาฆ่าเชื้อทิ้งไว้ตามระยะเวลาสัมผัสที่ฉลากกำหนด (Contact Time มักจะอยู่ที่ 30 วินาที - 5 นาที) ก่อนเช็ดออกด้วยกระดาษใช้แล้วทิ้ง (Blue Roll)
+                </div>
+                <div class="c-rule">
+                    <strong>ผ้าเช็ดโต๊ะ (Cloths)</strong>
+                    ใช้ผ้าแยกสี หรือใช้กระดาษอเนกประสงค์แบบทิ้งทันที ห้ามใช้ผ้าผืนเดียวเช็ดทั้งเขียงเนื้อดิบและจานเสิร์ฟเด็ดขาด
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Chilling -->
+        <div class="c-card">
+            <div class="c-header" onclick="toggleAccordion(this)">
+                <span><i class="fas fa-snowflake" style="color: #3b82f6; margin-right: 6px;"></i> 3. Chilling (การแช่เย็นและแช่แข็ง)</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="c-body">
+                <div class="c-rule">
+                    <strong>อุณหภูมิตู้เย็น (Chilled Storage)</strong>
+                    กฎหมายกำหนดไม่เกิน 8°C (FSA แนะนำให้ตั้งไว้ที่ **0°C ถึง 5°C**) เพื่อหยุดยั้งการเจริญเติบโตของแบคทีเรีย
+                </div>
+                <div class="c-rule">
+                    <strong>กฎการลดอุณหภูมิ 2 ชั่วโมง (The 2-Hour Cooling Rule)</strong>
+                    อาหารปรุงสุก เช่น แกงเผ็ด, มัสมั่น, ข้าวสวย ต้องลดอุณหภูมิลงให้เย็นภายใน **2 ชั่วโมง** โดยแบ่งเป็นถาดตื้นๆ แล้วนำเข้าตู้เย็นทันที ห้ามวางทิ้งไว้ข้ามคืน
+                </div>
+                <div class="c-rule">
+                    <strong>การละลายน้ำแข็ง (Safe Defrosting)</strong>
+                    ละลายเนื้อสัตว์ในตู้เย็นชั้นล่างสุดเท่านั้น โดยใส่ภาชนะรองน้ำหยด ห้ามละลายที่อุณหภูมิห้อง
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Cooking -->
+        <div class="c-card">
+            <div class="c-header" onclick="toggleAccordion(this)">
+                <span><i class="fas fa-fire" style="color: #f97316; margin-right: 6px;"></i> 4. Cooking (การปรุงสุกและการอุ่นร้อน)</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="c-body">
+                <div class="c-rule">
+                    <strong>อุณหภูมิแกนกลางปลอดภัย (Core Temperature)</strong>
+                    ต้องวัดได้ไม่ต่ำกว่า **75°C เป็นเวลา 30 วินาที** (หรือ 70°C นาน 2 นาที / 80°C นาน 6 วินาที) ที่ส่วนที่หนาที่สุดของเนื้อสัตว์ เช่น อกไก่, เสือร้องไห้, คอหมูย่าง
+                </div>
+                <div class="c-rule">
+                    <strong>การอุ่นร้อน (Reheating)</strong>
+                    อุ่นอาหารให้ร้อนจัดจนเดือดปุด และอุณหภูมิแกนกลางแตะ **≥ 75°C** อุ่นได้เพียง **1 ครั้งเท่านั้น** หากทานไม่หมดต้องทิ้ง ห้ามนำกลับมาอุ่นซ้ำรอบสอง
+                </div>
+                <div class="c-rule">
+                    <strong>การรักษาความร้อนระหว่างจัดเลี้ยง (Hot Holding)</strong>
+                    ต้องรักษาอุณหภูมิอาหารไว้ที่ **≥ 63°C** ตลอดระยะเวลาเสิร์ฟในถาดบุฟเฟต์
+                </div>
+                <div class="c-rule">
+                    <strong>การสอบเทียบโพรบวัดอุณหภูมิ (Probe Calibration Check)</strong>
+                    - ทดสอบน้ำแข็ง (Ice Water Test): เสียบโพรบในน้ำผสมน้ำแข็งบด ต้องอ่านได้ **0°C (±1°C)**<br>
+                    - ทดสอบน้ำเดือด (Boiling Test): เสียบโพรบในน้ำเดือดพล่าน ต้องอ่านได้ **100°C (±1°C)**
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ================= TAB 4: LOGS & EHO REPORT ================= -->
+    <main id="tab-logs" class="tab-view">
+        <div class="card" style="background: linear-gradient(135deg, #fefce8 0%, #fff 100%); border-left: 4px solid var(--accent-gold);">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h2 style="font-size: 1.1rem; font-weight: 800; color: #854d0e;">SFBB Audit History</h2>
+                    <p style="font-size: 0.8rem; color: #a16207;">Recorded Inspections for EHO & Council</p>
+                </div>
+                <button type="button" class="btn-primary" style="width: auto; padding: 6px 12px; font-size: 0.78rem;" onclick="window.print()">
+                    <i class="fas fa-print"></i> Print Report
+                </button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <i class="fas fa-history"></i> Recent Daily Diaries
+                </div>
+                <button type="button" onclick="clearAllLogs()" style="border: none; background: none; color: var(--danger-red); font-size: 0.75rem; font-weight: 600; cursor: pointer;">
+                    Clear Logs
+                </button>
+            </div>
+            <div style="overflow-x: auto;">
+                <table class="log-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Supervisor</th>
+                            <th>Checks</th>
+                            <th>Temps</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="diary-history-tbody">
+                        <tr><td colspan="5" style="text-align: center; color: var(--text-muted); padding: 20px;">No diary records yet. Save your first check!</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 4-Weekly Review Checklist -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <i class="fas fa-clipboard-list" style="color: var(--primary);"></i>
+                    4-Weekly Review (ทบทวนทุก 4 สัปดาห์)
+                </div>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 10px;">
+                FSA กำหนดให้ผู้จัดการหรือเจ้าของร้านตรวจทบทวนระบบทุกๆ 4 สัปดาห์:
+            </p>
+            <div class="check-item" onclick="toggleReviewCheck(this)">
+                <div class="check-box"><i class="fas fa-check" style="display:none; font-size:12px;"></i></div>
+                <div class="check-content">
+                    <div class="check-title">Staff are following 4 Cs methods properly</div>
+                    <div class="check-desc">พนักงานปฏิบัติตามสุขอนามัย ล้างมือและแยกเขียงถูกต้อง</div>
+                </div>
+            </div>
+            <div class="check-item" onclick="toggleReviewCheck(this)">
+                <div class="check-box"><i class="fas fa-check" style="display:none; font-size:12px;"></i></div>
+                <div class="check-content">
+                    <div class="check-title">All equipment & fridges maintained and tested</div>
+                    <div class="check-desc">ตู้เย็น ตู้แช่ เตาแก๊ส และเครื่องวัดอุณหภูมิทำงานสมบูรณ์</div>
+                </div>
+            </div>
+            <div class="check-item" onclick="toggleReviewCheck(this)">
+                <div class="check-box"><i class="fas fa-check" style="display:none; font-size:12px;"></i></div>
+                <div class="check-content">
+                    <div class="check-title">Suppliers & allergen sheets up-to-date</div>
+                    <div class="check-desc">ใบรายชื่อผู้ส่งวัตถุดิบและข้อมูลสารก่อภูมิแพ้เป็นปัจจุบัน</div>
+                </div>
+            </div>
+            <button type="button" class="btn-secondary" onclick="recordFourWeeklyReview()">
+                <i class="fas fa-stamp"></i> Sign Off 4-Weekly Review
+            </button>
+        </div>
+    </main>
+
+    <!-- ================= TAB 5: SETTINGS ================= -->
+    <main id="tab-settings" class="tab-view">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <i class="fas fa-store"></i> Business Information
+                </div>
+            </div>
+            <div class="input-group">
+                <label>Business Name (ชื่อสถานประกอบการ):</label>
+                <input type="text" id="setting-biz-name" class="input-control" value="Zab Siam (formerly Khrua Thai London)">
+            </div>
+            <div class="input-group">
+                <label>Registered Kitchen Address (สถานที่ประกอบการ):</label>
+                <input type="text" id="setting-biz-addr" class="input-control" value="Mission Kitchen, 1st Floor, The Food Exchange, New Covent Garden Market, London SW8 5EL">
+            </div>
+            <div class="input-group">
+                <label>Food Business Operator / Registered Person:</label>
+                <input type="text" id="setting-biz-owner" class="input-control" value="Sirapat Kendee">
+            </div>
+            <div class="input-group">
+                <label>Local Authority (สภาท้องถิ่น):</label>
+                <input type="text" id="setting-biz-council" class="input-control" value="London Borough of Wandsworth / Lambeth">
+            </div>
+            <button type="button" class="btn-primary" onclick="saveSettings()">
+                <i class="fas fa-save"></i> Save Settings
+            </button>
+        </div>
+
+        <!-- Add to Home Screen Guidance -->
+        <div class="card" style="background: #f0fdf4; border: 1px dashed var(--safe-green);">
+            <div class="card-title" style="margin-bottom: 8px;">
+                <i class="fas fa-mobile-screen-button" style="color: var(--safe-green);"></i>
+                วิธีติดตั้งลงหน้าจอมือถือ (Add to Home Screen)
+            </div>
+            <p style="font-size: 0.82rem; line-height: 1.5; color: #166534;">
+                <strong>สำหรับ iPhone (Safari):</strong><br>
+                1. เปิดหน้านี้ใน Safari<br>
+                2. แตะปุ่มแชร์ <i class="fas fa-share-square"></i> (สี่เหลี่ยมลูกศรชี้ขึ้น) ที่แถบด้านล่าง<br>
+                3. เลื่อนลงแล้วเลือก <strong>"เพิ่มไปยังหน้าจอโฮม" (Add to Home Screen)</strong><br><br>
+                <strong>สำหรับ Android (Chrome):</strong><br>
+                1. แตะจุด 3 จุดมุมขวาบน<br>
+                2. เลือก <strong>"เพิ่มลงในหน้าจอหลัก" (Add to Home screen)</strong>
+            </p>
+        </div>
+
+        <!-- Backup Data -->
+        <div class="card">
+            <div class="card-title" style="margin-bottom: 8px;">
+                <i class="fas fa-database"></i> Backup & Data Management
+            </div>
+            <button type="button" class="btn-secondary" onclick="exportDataJSON()">
+                <i class="fas fa-download"></i> Export Data Backup (JSON)
+            </button>
+            <a href="index.html" class="btn-secondary" style="text-decoration:none; margin-top:8px;">
+                <i class="fas fa-home"></i> Back to Main Website
+            </a>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="tab-bar">
+        <button type="button" class="tab-btn active" onclick="switchTab('tab-diary', this)">
+            <i class="fas fa-calendar-check"></i>
+            <span>Diary</span>
+        </button>
+        <button type="button" class="tab-btn" onclick="switchTab('tab-temps', this)">
+            <i class="fas fa-thermometer-half"></i>
+            <span>Temps</span>
+        </button>
+        <button type="button" class="tab-btn" onclick="switchTab('tab-guide', this)">
+            <i class="fas fa-book-medical"></i>
+            <span>4 Cs Guide</span>
+        </button>
+        <button type="button" class="tab-btn" onclick="switchTab('tab-logs', this)">
+            <i class="fas fa-history"></i>
+            <span>Audit Log</span>
+        </button>
+        <button type="button" class="tab-btn" onclick="switchTab('tab-settings', this)">
+            <i class="fas fa-cog"></i>
+            <span>Settings</span>
+        </button>
+    </nav>
+</div>
+
+<script>
+    // State management
+    const STORAGE_KEY = 'zabsiam_sfbb_diary_data';
+    let appData = {
+        diaries: [],
+        temps: [],
+        settings: {
+            bizName: 'Zab Siam (formerly Khrua Thai London)',
+            bizAddress: 'Mission Kitchen, 1st Floor, The Food Exchange, New Covent Garden Market, London SW8 5EL',
+            owner: 'Sirapat Kendee',
+            council: 'London Borough of Wandsworth / Lambeth'
+        }
+    };
+
+    // Load data from LocalStorage
+    function loadData() {
+        try {
+            const raw = localStorage.getItem(STORAGE_KEY);
+            if (raw) {
+                appData = JSON.parse(raw);
+            }
+        } catch (e) {
+            console.error('Failed to load storage:', e);
+        }
+        initUI();
+    }
+
+    function saveData() {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(appData));
+        } catch (e) {
+            console.error('Failed to save storage:', e);
+        }
+    }
+
+    function showToast(msg) {
+        const toast = document.getElementById('toast');
+        document.getElementById('toast-msg').innerText = msg;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    // Switch Tabs
+    function switchTab(tabId, btn) {
+        document.querySelectorAll('.tab-view').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        
+        document.getElementById(tabId).classList.add('active');
+        btn.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Check item toggle
+    function toggleCheck(el, checkId) {
+        el.classList.toggle('checked');
+        const icon = el.querySelector('.check-box i');
+        if (el.classList.contains('checked')) {
+            icon.style.display = 'block';
+        } else {
+            icon.style.display = 'none';
+        }
+    }
+
+    // Accordion toggle
+    function toggleAccordion(header) {
+        const card = header.parentElement;
+        card.classList.toggle('open');
+    }
+
+    // Temperature Controls
+    const currentTemps = {
+        'temp-fridge1': 3.5,
+        'temp-fridge2': 2.8,
+        'temp-freezer': -19.0,
+        'temp-cook': 78.5,
+        'temp-hothold': 66.0
+    };
+
+    function adjustTemp(id, delta) {
+        let val = (currentTemps[id] || 0) + delta;
+        val = Math.round(val * 10) / 10;
+        currentTemps[id] = val;
+        
+        const valEl = document.getElementById('val-' + id);
+        const dispEl = document.getElementById('disp-' + id);
+        if (valEl) valEl.innerText = val.toFixed(1);
+        
+        // Evaluate Safety Status
+        if (dispEl) {
+            dispEl.classList.remove('temp-safe', 'temp-danger');
+            let isSafe = true;
+            if (id === 'temp-fridge1' || id === 'temp-fridge2') {
+                isSafe = val <= 5.0 && val >= 0.0;
+            } else if (id === 'temp-freezer') {
+                isSafe = val <= -18.0;
+            } else if (id === 'temp-cook') {
+                isSafe = val >= 75.0;
+            } else if (id === 'temp-hothold') {
+                isSafe = val >= 63.0;
+            }
+
+            if (isSafe) {
+                dispEl.classList.add('temp-safe');
+            } else {
+                dispEl.classList.add('temp-danger');
+            }
+        }
+    }
+
+    function updateStaffHeader() {
+        const staff = document.getElementById('diary-staff').value;
+        document.getElementById('header-staff').innerText = staff.split(' ')[0];
+    }
+
+    function initUI() {
+        const now = new Date();
+        const dateOptions = { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' };
+        const dateStr = now.toLocaleDateString('en-GB', dateOptions);
+        
+        document.getElementById('header-date').innerText = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+        document.getElementById('diary-current-date').innerText = dateStr;
+        
+        renderHistory();
+    }
+
+    function saveTodayDiary() {
+        const now = new Date();
+        const dateKey = now.toISOString().split('T')[0];
+        const staff = document.getElementById('diary-staff').value;
+        const notes = document.getElementById('diary-notes').value.trim() || 'All opening & closing checks passed normally.';
+        
+        const openChecks = document.querySelectorAll('#tab-diary .card:nth-of-type(2) .check-item.checked').length;
+        const totalOpen = document.querySelectorAll('#tab-diary .card:nth-of-type(2) .check-item').length;
+        
+        const closeChecks = document.querySelectorAll('#tab-diary .card:nth-of-type(3) .check-item.checked').length;
+        const totalClose = document.querySelectorAll('#tab-diary .card:nth-of-type(3) .check-item').length;
+
+        const diaryEntry = {
+            id: 'diary_' + Date.now(),
+            date: dateKey,
+            displayDate: now.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }),
+            time: now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }),
+            staff: staff,
+            openScore: `${openChecks}/${totalOpen}`,
+            closeScore: `${closeChecks}/${totalClose}`,
+            notes: notes,
+            status: (openChecks === totalOpen && closeChecks === totalClose) ? 'Passed' : 'Pending'
+        };
+
+        // Prepend or replace today's entry
+        const existingIdx = appData.diaries.findIndex(d => d.date === dateKey);
+        if (existingIdx !== -1) {
+            appData.diaries[existingIdx] = diaryEntry;
+        } else {
+            appData.diaries.unshift(diaryEntry);
+        }
+
+        saveData();
+        renderHistory();
+        showToast('Daily Diary Signed & Saved!');
+    }
+
+    function saveTemperatures() {
+        const now = new Date();
+        const dish = document.getElementById('cook-dish').value;
+        
+        const tempRecord = {
+            id: 'temp_' + Date.now(),
+            date: now.toISOString().split('T')[0],
+            time: now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }),
+            fridge1: currentTemps['temp-fridge1'],
+            fridge2: currentTemps['temp-fridge2'],
+            freezer: currentTemps['temp-freezer'],
+            dish: dish,
+            cookTemp: currentTemps['temp-cook'],
+            hotHold: currentTemps['temp-hothold'],
+            staff: document.getElementById('diary-staff').value
+        };
+
+        appData.temps.unshift(tempRecord);
+        saveData();
+        showToast('Temperatures Logged Successfully!');
+    }
+
+    function renderHistory() {
+        const tbody = document.getElementById('diary-history-tbody');
+        if (!tbody) return;
+
+        if (!appData.diaries || appData.diaries.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="5" style="text-align: center; color: var(--text-muted); padding: 20px;">No diary records yet. Save your first check!</td></tr>';
+            return;
+        }
+
+        tbody.innerHTML = appData.diaries.slice(0, 15).map(item => `
+            <tr>
+                <td><strong>${item.displayDate}</strong><br><small style="color:#6b7280;">${item.time}</small></td>
+                <td>${item.staff.split(' ')[0]}</td>
+                <td>O: ${item.openScore}<br>C: ${item.closeScore}</td>
+                <td><small style="color:var(--safe-green); font-weight:700;">OK</small></td>
+                <td><span class="badge-signed">${item.status}</span></td>
+            </tr>
+        `).join('');
+    }
+
+    function loadTodayDiary() {
+        document.querySelectorAll('.check-item').forEach(el => {
+            el.classList.remove('checked');
+            el.querySelector('.check-box i').style.display = 'none';
+        });
+        document.getElementById('diary-notes').value = '';
+        showToast('Diary Form Reset');
+    }
+
+    function toggleReviewCheck(el) {
+        toggleCheck(el);
+    }
+
+    function recordFourWeeklyReview() {
+        showToast('4-Weekly Review Signed by Manager!');
+    }
+
+    function clearAllLogs() {
+        if (confirm('Are you sure you want to clear historical records on this phone?')) {
+            appData.diaries = [];
+            appData.temps = [];
+            saveData();
+            renderHistory();
+            showToast('Logs Cleared');
+        }
+    }
+
+    function saveSettings() {
+        appData.settings.bizName = document.getElementById('setting-biz-name').value;
+        appData.settings.bizAddress = document.getElementById('setting-biz-addr').value;
+        appData.settings.owner = document.getElementById('setting-biz-owner').value;
+        appData.settings.council = document.getElementById('setting-biz-council').value;
+        saveData();
+        showToast('Settings Saved');
+    }
+
+    function exportDataJSON() {
+        const blob = new Blob([JSON.stringify(appData, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `SFBB_Diary_Backup_${new Date().toISOString().split('T')[0]}.json`;
+        a.click();
+        URL.revokeObjectURL(url);
+    }
+
+    // Startup
+    document.addEventListener('DOMContentLoaded', () => {
+        loadData();
+    });
+</script>
+
+</body>
+</html>
