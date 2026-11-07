@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buffet Trays & Allergen Manager | Zab Siam Admin</title>
+    <meta name="robots" content="noindex,nofollow">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #154726;
+            --primary-dark: #0d2e1a;
+            --accent-gold: #d4af37;
+            --accent-gold-light: #fef9c3;
+            --bg-body: #f4f6f8;
+            --card-bg: #ffffff;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --danger: #ef4444;
+            --safe-green: #10b981;
+            --warn-amber: #f59e0b;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', 'Prompt', sans-serif; }
+        body { background: var(--bg-body); color: var(--text-dark); min-height: 100vh; padding-bottom: 60px; }
+
+        /* Top Navbar */
+        header.admin-nav {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: #fff;
+            padding: 14px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-brand img {
+            width: 38px;
+            height: 38px;
+            background: #fff;
+            border-radius: 8px;
+            padding: 2px;
+            object-fit: contain;
+        }
+
+        .nav-title h1 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            line-height: 1.2;
+        }
+
+        .nav-title span {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.75);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .btn-gold {
+            background: var(--accent-gold);
+            color: #111;
+        }
+
+        .btn-gold:hover {
+            background: #bfa130;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.4);
+            color: #fff;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: #fff;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 24px auto;
+            padding: 0 20px;
+        }
+
+        /* Stats Bar */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .stat-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .stat-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+        }
+
+        .stat-info h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+        }
+
+        .stat-info p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* Filter & Controls */
+        .toolbar {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            padding: 6px 14px;
+            border-radius: 20px;
+            background: #f1f5f9;
+            color: var(--text-dark);
+            border: 1px solid transparent;
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-tab:hover {
+            background: #e2e8f0;
+        }
+
+        .filter-tab.active {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .search-box {
+            position: relative;
+            min-width: 240px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 8px 12px 8px 36px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            outline: none;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Dish Grid */
+        .dishes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 20px;
+        }
+
+        .dish-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .dish-card:hover {
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+
+        .dish-card-img {
+            height: 180px;
+            width: 100%;
+            object-fit: cover;
+            background: #eee;
+        }
+
+        .dish-card-body {
+            padding: 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dish-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 6px;
+            gap: 8px;
+        }
+
+        .dish-name {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            line-height: 1.3;
+        }
+
+        .dish-name-th {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .dish-price {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #b45309;
+            white-space: nowrap;
+        }
+
+        .dish-serves {
+            font-size: 0.75rem;
+            color: var(--primary);
+            background: #eef8f1;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        /* Ingredients & Allergens Box */
+        .dish-details-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 10px 12px;
+            margin-top: auto;
+            margin-bottom: 12px;
+            font-size: 0.78rem;
+            line-height: 1.45;
+        }
+
+        .detail-line {
+            margin-bottom: 6px;
+        }
+
+        .detail-line:last-child {
+            margin-bottom: 0;
+        }
+
+        .detail-title {
+            font-weight: 700;
+            color: var(--primary-dark);
+            display: inline;
+        }
+
+        .allergen-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-top: 4px;
+        }
+
+        .allergen-tag {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        .allergen-none {
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        .dish-card-actions {
+            display: flex;
+            gap: 8px;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 12px;
+        }
+
+        .btn-edit {
+            flex: 1;
+            background: #f1f5f9;
+            color: var(--text-dark);
+            padding: 8px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .btn-edit:hover {
+            background: #e2e8f0;
+        }
+
+        /* Modal / Edit Drawer */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-card {
+            background: #fff;
+            border-radius: 16px;
+            width: min(850px, 100%);
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-header {
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8fafc;
+            border-radius: 16px 16px 0 0;
+        }
+
+        .modal-header h2 {
+            font-size: 1.15rem;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .modal-close {
+            background: transparent;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+
+        .modal-body {
+            padding: 24px;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .modal-body { grid-template-columns: 1fr; }
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(21, 71, 38, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        /* 14 Allergens Checklist Grid */
+        .allergens-select-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            background: #fff1f2;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #fecdd3;
+        }
+
+        .allergen-check-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #881337;
+            cursor: pointer;
+        }
+
+        .allergen-check-item input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            accent-color: #e11d48;
+            cursor: pointer;
+        }
+
+        /* Preview Card in Modal */
+        .preview-pane {
+            background: #f8fafc;
+            border: 1px dashed var(--border);
+            border-radius: 12px;
+            padding: 16px;
+        }
+
+        .preview-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Printable Allergen Matrix */
+        #matrix-print-view {
+            display: none;
+        }
+
+        @media print {
+            body * { visibility: hidden; }
+            #matrix-print-view, #matrix-print-view * { visibility: visible; }
+            #matrix-print-view {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                display: block !important;
+                background: #fff;
+                padding: 20px;
+            }
+            .no-print { display: none !important; }
+        }
+
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.72rem;
+            margin-top: 15px;
+        }
+
+        .matrix-table th, .matrix-table td {
+            border: 1px solid #333;
+            padding: 6px 4px;
+            text-align: center;
+        }
+
+        .matrix-table th {
+            background: #eee;
+            font-weight: 700;
+        }
+
+        .matrix-table td.dish-col {
+            text-align: left;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="admin-nav no-print">
+        <div class="nav-brand">
+            <img src="logo2.png" alt="Zab Siam Logo" onerror="this.src='images/logo2.png'">
+            <div class="nav-title">
+                <h1>Buffet Trays & Allergen Manager</h1>
+                <span>ระบบจัดการเมนูถาดบุฟเฟ่ต์ & สารก่อภูมิแพ้ 14 ชนิด (หลังบ้าน)</span>
+            </div>
+        </div>
+        <div class="nav-actions">
+            <button class="btn btn-gold" onclick="openNewDishModal()">
+                <i class="fas fa-plus-circle"></i> Add New Tray
+            </button>
+            <button class="btn btn-outline" onclick="printAllergenMatrix()">
+                <i class="fas fa-print"></i> Print 14-Allergen Matrix
+            </button>
+            <button class="btn btn-outline" onclick="exportDataJSON()">
+                <i class="fas fa-download"></i> Backup JSON
+            </button>
+            <a href="admin.html" class="btn btn-outline">
+                <i class="fas fa-arrow-left"></i> Back to Admin
+            </a>
+        </div>
+    </header>
+
+    <div class="container no-print">
+        <!-- Stats Summary -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon" style="background:#eef8f1; color:var(--primary);"><i class="fas fa-utensils"></i></div>
+                <div class="stat-info">
+                    <h3 id="stat-total">16</h3>
+                    <p>Total Buffet Trays</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background:#fef3c7; color:#d97706;"><i class="fas fa-pepper-hot"></i></div>
+                <div class="stat-info">
+                    <h3 id="stat-curries">5</h3>
+                    <p>Large Curries (4000ml)</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background:#fee2e2; color:#dc2626;"><i class="fas fa-drumstick-bite"></i></div>
+                <div class="stat-info">
+                    <h3 id="stat-grills">2</h3>
+                    <p>Grilled Meats (1kg)</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background:#e0f2fe; color:#0284c7;"><i class="fas fa-fish"></i></div>
+                <div class="stat-info">
+                    <h3 id="stat-fish">3</h3>
+                    <p>Whole Sea Bass Trays</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Toolbar & Filter Tabs -->
+        <div class="toolbar">
+            <div class="filter-tabs">
+                <button class="filter-tab active" onclick="setFilter('all', this)">All Trays (<span id="count-all">16</span>)</button>
+                <button class="filter-tab" onclick="setFilter('curry', this)">Curries (แกง)</button>
+                <button class="filter-tab" onclick="setFilter('grill', this)">Grilled (ย่างเตาถ่าน)</button>
+                <button class="filter-tab" onclick="setFilter('fish', this)">Sea Bass (ปลากะพง)</button>
+                <button class="filter-tab" onclick="setFilter('starters', this)">Starters (ของว่าง)</button>
+                <button class="filter-tab" onclick="setFilter('noodles', this)">Noodles (เส้น)</button>
+                <button class="filter-tab" onclick="setFilter('salads', this)">Salads (ยำ/ส้มตำ)</button>
+                <button class="filter-tab" onclick="setFilter('rice', this)">Rice (ข้าว)</button>
+                <button class="filter-tab" onclick="setFilter('desserts', this)">Desserts (ของหวาน)</button>
+            </div>
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search dish or allergen..." oninput="handleSearch()">
+            </div>
+        </div>
+
+        <!-- Dishes Grid -->
+        <div class="dishes-grid" id="dishesContainer">
+            <!-- Cards rendered by JS -->
+        </div>
+    </div>
+
+    <!-- Edit / Add Modal -->
+    <div class="modal-overlay" id="editModal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h2><i class="fas fa-edit"></i> <span id="modalTitle">Edit Buffet Tray</span></h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Form Inputs -->
+                <div class="form-pane">
+                    <div class="form-group">
+                        <label>Dish Name (English):</label>
+                        <input type="text" id="editName" class="form-control" oninput="updateLivePreview()">
+                    </div>
+                    <div class="form-group">
+                        <label>ชื่อเมนูภาษาไทย:</label>
+                        <input type="text" id="editNameTh" class="form-control" oninput="updateLivePreview()">
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                        <div class="form-group">
+                            <label>Selling Price (£):</label>
+                            <input type="number" step="0.5" id="editPrice" class="form-control" oninput="updateLivePreview()">
+                        </div>
+                        <div class="form-group">
+                            <label>Category:</label>
+                            <select id="editCategory" class="form-control">
+                                <option value="curry">Curries (แกง)</option>
+                                <option value="grill">Grilled Meats (ย่างเตาถ่าน)</option>
+                                <option value="fish">Whole Sea Bass (ปลากะพง)</option>
+                                <option value="starters">Starters (ของทานเล่น)</option>
+                                <option value="noodles">Noodles (เส้น)</option>
+                                <option value="salads">Salads (ยำ/ส้มตำ)</option>
+                                <option value="rice">Rice (ข้าว)</option>
+                                <option value="desserts">Desserts (ของหวาน)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                        <div class="form-group">
+                            <label>Serving Size / Capacity:</label>
+                            <input type="text" id="editServes" class="form-control" placeholder="e.g. Serves 8–10 guests" oninput="updateLivePreview()">
+                        </div>
+                        <div class="form-group">
+                            <label>Image URL:</label>
+                            <input type="text" id="editImage" class="form-control" oninput="updateLivePreview()">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Short Description (คำบรรยายสั้น):</label>
+                        <textarea id="editDesc" class="form-control" rows="2" oninput="updateLivePreview()"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Detailed Ingredients (ส่วนผสมทั้งหมด):</label>
+                        <textarea id="editIngredients" class="form-control" rows="3" placeholder="ระบุส่วนผสม เช่น เนื้อวัว, กะทิ, พริกแกงมัสมั่น, มันฝรั่ง, ถั่วลิสง..." oninput="updateLivePreview()"></textarea>
+                    </div>
+
+                    <!-- 14 UK Allergens Checklist -->
+                    <div class="form-group">
+                        <label><i class="fas fa-exclamation-triangle" style="color:#e11d48;"></i> 14 UK Food Allergens (เลือกสารก่อภูมิแพ้ที่มี):</label>
+                        <div class="allergens-select-grid" id="allergensGrid">
+                            <label class="allergen-check-item"><input type="checkbox" value="Celery" onchange="updateLivePreview()"> Celery (ขึ้นฉ่าย)</label>
+                            <label class="allergen-check-item"><input type="checkbox" value="Gluten" onchange="updateLivePreview()"> Gluten (แป้งสาลี/กลูเตน)</label>
+                            <label class="allergen-check-item"><input type="checkbox" value="Crustaceans" onchange="updateLivePreview()"> Crustaceans (กุ้ง/กะปิ)</label>
+                            <label class="allergen-check-item"><input type="checkbox" value="Eggs" onchange="updateLivePreview()"> Eggs (ไข่)</label>
+                            <label class="allergen-check-item"><input type="checkbox" value="Fish" onchange="updateLivePreview()"> Fish (ปลา/น้ำปลา)</label>
+                            <label class="allergen-check-item"><input type="checkbox" value="Lupin" onchange="updateLivePreview()"> Lupin (ลูปิน)</label>
+                            <label class="allergen-check-item"><input type="checkbox" value="Milk" onchange="updateLivePreview()"> Milk (นม)</label>
+                            <label class="allergen-check-item"><input type="checkbox" value="Molluscs" onchange="updateLivePreview()"> Molluscs (หอยนางรม)</label>
+                            <label class="allergen-check-item"><input type="checkbox" value="Mustard" onchange="updateLivePreview()"> Mustard (มัสตาร์ด)</label>
+                            <label class="allergen-check-item"><input type="checkbox" value="Nuts" onchange="updateLivePreview()"> Nuts (ถั่วเปลือกแข็ง)</label>
+                            <label class="allergen-check-item"><input type="checkbox" value="Peanuts" onchange="updateLivePreview()"> Peanuts (ถั่วลิสง)</label>
+                            <label class="allergen-check-item"><input type="checkbox" value="Sesame" onchange="updateLivePreview()"> Sesame (งา)</label>
+                            <label class="allergen-check-item"><input type="checkbox" value="Soya" onchange="updateLivePreview()"> Soya (ถั่วเหลือง/ซีอิ๊ว)</label>
+                            <label class="allergen-check-item"><input type="checkbox" value="Sulphites" onchange="updateLivePreview()"> Sulphites (ซัลไฟต์)</label>
+                        </div>
+                    </div>
+
+                    <div style="display:flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
+                        <button type="button" class="btn btn-outline" style="color:#666; border-color:#ccc;" onclick="closeModal()">Cancel</button>
+                        <button type="button" class="btn btn-primary" onclick="saveDish()"><i class="fas fa-save"></i> Save Changes</button>
+                    </div>
+                </div>
+
+                <!-- Live Card Preview -->
+                <div class="preview-pane">
+                    <div class="preview-title"><i class="fas fa-eye"></i> Live Customer Card Preview</div>
+                    <div class="dish-card" id="livePreviewCard">
+                        <img id="prevImg" src="images/logo2.png" class="dish-card-img" alt="Preview">
+                        <div class="dish-card-body">
+                            <div class="dish-header">
+                                <div class="dish-name" id="prevName">Dish Name</div>
+                                <div class="dish-price" id="prevPrice">£0.00</div>
+                            </div>
+                            <div class="dish-name-th" id="prevNameTh">ชื่อภาษาไทย</div>
+                            <span class="dish-serves" id="prevServes">Serves 8–10 guests</span>
+                            <p style="font-size:0.82rem; color:#64748b; margin-bottom:12px;" id="prevDesc">Short description goes here...</p>
+                            <div class="dish-details-box">
+                                <div class="detail-line">
+                                    <div class="detail-title">📦 Ingredients:</div>
+                                    <span id="prevIng" style="color:#475569;">Ingredients list...</span>
+                                </div>
+                                <div class="detail-line" style="margin-top:6px;">
+                                    <div class="detail-title" style="color:#b91c1c;">⚠️ Allergens:</div>
+                                    <div class="allergen-tags" id="prevAllergens">
+                                        <span class="allergen-none">None</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="text-align:center; padding:10px; background:var(--accent-gold); color:#000; font-weight:700; border-radius:6px; font-size:0.85rem;">
+                                Add to Order
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Printable 14 Allergen Matrix (EHO Ready) -->
+    <div id="matrix-print-view">
+        <div style="text-align:center; margin-bottom: 20px;">
+            <h2 style="font-size: 1.4rem; font-weight: 800; text-transform: uppercase;">Zab Siam - 14 Food Allergen Matrix</h2>
+            <p style="font-size: 0.85rem; color:#555;">Compliant with UK Food Information Regulations (FIR) & Food Standards Agency (FSA)</p>
+            <p style="font-size: 0.8rem; margin-top: 4px;"><strong>Trading As:</strong> Zab Siam (formerly Khrua Thai London) | <strong>Date Printed:</strong> <span id="printDate"></span></p>
+        </div>
+        <table class="matrix-table" id="matrixTable">
+            <thead>
+                <tr>
+                    <th class="dish-col">Menu Dish / Product</th>
+                    <th>Celery</th>
+                    <th>Cereals (Gluten)</th>
+                    <th>Crustaceans</th>
+                    <th>Eggs</th>
+                    <th>Fish</th>
+                    <th>Lupin</th>
+                    <th>Milk</th>
+                    <th>Molluscs</th>
+                    <th>Mustard</th>
+                    <th>Nuts</th>
+                    <th>Peanuts</th>
+                    <th>Sesame</th>
+                    <th>Soya</th>
+                    <th>Sulphites</th>
+                </tr>
+            </thead>
+            <tbody id="matrixTbody">
+                <!-- Dynamically filled -->
+            </tbody>
+        </table>
+        <div style="margin-top: 25px; font-size: 0.75rem; color: #444; line-height: 1.4;">
+            <p><strong>Note for Environmental Health Officer (EHO) & Customers:</strong> Ingredients and allergens are verified against actual supplier specifications and kitchen control measures. Cross-contact controls are strictly monitored via our SFBB Food Safety Management System.</p>
+        </div>
+    </div>
+
+    <script>
+        const STORAGE_KEY = 'zabsiam_buffet_trays_admin_db';
+        let dishes = [];
+        let currentFilter = 'all';
+        let editingId = null;
+
+        const ALLERGEN_LIST = [
+            "Celery", "Gluten", "Crustaceans", "Eggs", "Fish", "Lupin",
+            "Milk", "Molluscs", "Mustard", "Nuts", "Peanuts", "Sesame",
+            "Soya", "Sulphites"
+        ];
+
+        // Load data on start
+        async function initData() {
+            try {
+                // Check localStorage first
+                const local = localStorage.getItem(STORAGE_KEY);
+                if (local) {
+                    dishes = JSON.parse(local);
+                } else {
+                    // Fetch default json
+                    const res = await fetch('data/buffet_trays.json');
+                    if (res.ok) {
+                        dishes = await res.json();
+                        saveToLocal();
+                    }
+                }
+            } catch (e) {
+                console.error("Failed to load dishes:", e);
+            }
+            renderStats();
+            renderDishes();
+        }
+
+        function saveToLocal() {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(dishes));
+        }
+
+        function renderStats() {
+            document.getElementById('stat-total').innerText = dishes.length;
+            document.getElementById('count-all').innerText = dishes.length;
+            document.getElementById('stat-curries').innerText = dishes.filter(d => d.category === 'curry').length;
+            document.getElementById('stat-grills').innerText = dishes.filter(d => d.category === 'grill').length;
+            document.getElementById('stat-fish').innerText = dishes.filter(d => d.category === 'fish').length;
+        }
+
+        function setFilter(cat, btn) {
+            currentFilter = cat;
+            document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderDishes();
+        }
+
+        function handleSearch() {
+            renderDishes();
+        }
+
+        function renderDishes() {
+            const container = document.getElementById('dishesContainer');
+            const search = document.getElementById('searchInput').value.toLowerCase().trim();
+
+            let filtered = dishes;
+            if (currentFilter !== 'all') {
+                filtered = filtered.filter(d => d.category === currentFilter);
+            }
+
+            if (search) {
+                filtered = filtered.filter(d => 
+                    d.name.toLowerCase().includes(search) || 
+                    (d.nameTh && d.nameTh.toLowerCase().includes(search)) ||
+                    (d.ingredients && d.ingredients.toLowerCase().includes(search)) ||
+                    (d.allergens && d.allergens.some(a => a.toLowerCase().includes(search)))
+                );
+            }
+
+            if (filtered.length === 0) {
+                container.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding: 40px; color:#64748b;">No dishes match your filter.</div>';
+                return;
+            }
+
+            container.innerHTML = filtered.map(dish => {
+                const allergensHtml = (dish.allergens && dish.allergens.length > 0)
+                    ? dish.allergens.map(a => `<span class="allergen-tag">${a}</span>`).join('')
+                    : '<span class="allergen-none">None (Allergen Free)</span>';
+
+                return `
+                    <div class="dish-card">
+                        <img src="${dish.image || 'images/logo2.png'}" class="dish-card-img" alt="${dish.name}" onerror="this.src='images/logo2.png'">
+                        <div class="dish-card-body">
+                            <div class="dish-header">
+                                <div class="dish-name">${dish.name}</div>
+                                <div class="dish-price">&pound;${parseFloat(dish.price).toFixed(2)}</div>
+                            </div>
+                            <div class="dish-name-th">${dish.nameTh || ''}</div>
+                            <div><span class="dish-serves"><i class="fas fa-users"></i> ${dish.serves || 'Serves 6–8 guests'}</span></div>
+                            <p style="font-size:0.82rem; color:#64748b; margin-bottom:12px; line-height:1.4;">${dish.desc || ''}</p>
+                            
+                            <div class="dish-details-box">
+                                <div class="detail-line">
+                                    <div class="detail-title">📦 Ingredients:</div>
+                                    <span style="color:#475569;">${dish.ingredients || 'Not specified'}</span>
+                                </div>
+                                <div class="detail-line" style="margin-top:6px;">
+                                    <div class="detail-title" style="color:#b91c1c;">⚠️ Allergens:</div>
+                                    <div class="allergen-tags">${allergensHtml}</div>
+                                </div>
+                            </div>
+
+                            <div class="dish-card-actions">
+                                <button class="btn-edit" onclick="openEditModal('${dish.id}')">
+                                    <i class="fas fa-edit"></i> Edit Details & Allergens
+                                </button>
+                                <button class="btn-edit" style="color:#ef4444;" onclick="deleteDish('${dish.id}')">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Modal Handling
+        function openEditModal(dishId) {
+            editingId = dishId;
+            const dish = dishes.find(d => d.id === dishId);
+            if (!dish) return;
+
+            document.getElementById('modalTitle').innerText = 'Edit ' + dish.name;
+            document.getElementById('editName').value = dish.name;
+            document.getElementById('editNameTh').value = dish.nameTh || '';
+            document.getElementById('editPrice').value = dish.price;
+            document.getElementById('editCategory').value = dish.category;
+            document.getElementById('editServes').value = dish.serves || 'Serves 8–10 guests';
+            document.getElementById('editImage').value = dish.image || '';
+            document.getElementById('editDesc').value = dish.desc || '';
+            document.getElementById('editIngredients').value = dish.ingredients || '';
+
+            // Set checkboxes
+            document.querySelectorAll('#allergensGrid input[type="checkbox"]').forEach(cb => {
+                cb.checked = dish.allergens && dish.allergens.includes(cb.value);
+            });
+
+            updateLivePreview();
+            document.getElementById('editModal').classList.add('active');
+        }
+
+        function openNewDishModal() {
+            editingId = null;
+            document.getElementById('modalTitle').innerText = 'Add New Buffet Tray';
+            document.getElementById('editName').value = 'New Thai Buffet Tray';
+            document.getElementById('editNameTh').value = 'ชื่ออาหารภาษาไทย';
+            document.getElementById('editPrice').value = 35.00;
+            document.getElementById('editCategory').value = 'curry';
+            document.getElementById('editServes').value = 'Serves 8–10 guests';
+            document.getElementById('editImage').value = 'images/logo2.png';
+            document.getElementById('editDesc').value = 'Delicious catering tray prepared fresh for your event.';
+            document.getElementById('editIngredients').value = '';
+
+            document.querySelectorAll('#allergensGrid input[type="checkbox"]').forEach(cb => {
+                cb.checked = false;
+            });
+
+            updateLivePreview();
+            document.getElementById('editModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('editModal').classList.remove('active');
+        }
+
+        function updateLivePreview() {
+            document.getElementById('prevName').innerText = document.getElementById('editName').value || 'Dish Name';
+            document.getElementById('prevNameTh').innerText = document.getElementById('editNameTh').value || '';
+            const price = parseFloat(document.getElementById('editPrice').value || 0).toFixed(2);
+            document.getElementById('prevPrice').innerText = '£' + price;
+            document.getElementById('prevServes').innerText = document.getElementById('editServes').value || 'Serves 8–10 guests';
+            document.getElementById('prevDesc').innerText = document.getElementById('editDesc').value || '';
+            document.getElementById('prevIng').innerText = document.getElementById('editIngredients').value || 'Ingredients list...';
+            
+            const img = document.getElementById('editImage').value || 'images/logo2.png';
+            document.getElementById('prevImg').src = img;
+
+            // Checked allergens
+            const checked = [];
+            document.querySelectorAll('#allergensGrid input[type="checkbox"]:checked').forEach(cb => {
+                checked.push(cb.value);
+            });
+
+            const prevAllergens = document.getElementById('prevAllergens');
+            if (checked.length > 0) {
+                prevAllergens.innerHTML = checked.map(a => `<span class="allergen-tag">${a}</span>`).join('');
+            } else {
+                prevAllergens.innerHTML = '<span class="allergen-none">None (Allergen Free)</span>';
+            }
+        }
+
+        function saveDish() {
+            const checkedAllergens = [];
+            document.querySelectorAll('#allergensGrid input[type="checkbox"]:checked').forEach(cb => {
+                checkedAllergens.push(cb.value);
+            });
+
+            const dishData = {
+                id: editingId || ('tray-' + Date.now()),
+                category: document.getElementById('editCategory').value,
+                name: document.getElementById('editName').value.trim(),
+                nameTh: document.getElementById('editNameTh').value.trim(),
+                price: parseFloat(document.getElementById('editPrice').value || 0),
+                serves: document.getElementById('editServes').value.trim(),
+                image: document.getElementById('editImage').value.trim(),
+                desc: document.getElementById('editDesc').value.trim(),
+                ingredients: document.getElementById('editIngredients').value.trim(),
+                allergens: checkedAllergens
+            };
+
+            if (editingId) {
+                const idx = dishes.findIndex(d => d.id === editingId);
+                if (idx !== -1) dishes[idx] = dishData;
+            } else {
+                dishes.unshift(dishData);
+            }
+
+            saveToLocal();
+            renderStats();
+            renderDishes();
+            closeModal();
+            alert('Dish saved successfully!');
+        }
+
+        function deleteDish(id) {
+            if (confirm('Are you sure you want to remove this tray from the menu?')) {
+                dishes = dishes.filter(d => d.id !== id);
+                saveToLocal();
+                renderStats();
+                renderDishes();
+            }
+        }
+
+        // Print 14-Allergen Matrix Table
+        function printAllergenMatrix() {
+            document.getElementById('printDate').innerText = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+            const tbody = document.getElementById('matrixTbody');
+            
+            tbody.innerHTML = dishes.map(dish => {
+                const rowAllergens = dish.allergens || [];
+                const cells = ALLERGEN_LIST.map(a => {
+                    const has = rowAllergens.includes(a);
+                    return `<td style="${has ? 'background:#fee2e2; font-weight:bold; color:#991b1b;' : 'color:#999;'}">${has ? 'YES' : '—'}</td>`;
+                }).join('');
+
+                return `
+                    <tr>
+                        <td class="dish-col">${dish.name}<br><small style="color:#666;">${dish.nameTh || ''}</small></td>
+                        ${cells}
+                    </tr>
+                `;
+            }).join('');
+
+            window.print();
+        }
+
+        function exportDataJSON() {
+            const blob = new Blob([JSON.stringify(dishes, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `ZabSiam_Buffet_Trays_Allergens_${new Date().toISOString().split('T')[0]}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        document.addEventListener('DOMContentLoaded', initData);
+    </script>
+</body>
+</html>
