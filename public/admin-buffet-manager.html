@@ -591,6 +591,9 @@
             <button class="btn btn-outline" onclick="exportDataJSON()">
                 <i class="fas fa-download"></i> Backup JSON
             </button>
+            <button class="btn btn-outline" onclick="resetToDefaults()" title="Reset to official preset">
+                <i class="fas fa-undo"></i> Reset Defaults
+            </button>
             <a href="admin.html" class="btn btn-outline">
                 <i class="fas fa-arrow-left"></i> Back to Admin
             </a>
@@ -1079,6 +1082,25 @@
             a.download = `ZabSiam_Buffet_Trays_Allergens_${new Date().toISOString().split('T')[0]}.json`;
             a.click();
             URL.revokeObjectURL(url);
+        }
+
+        async function resetToDefaults() {
+            if (confirm('Are you sure you want to reload the default 16 buffet trays preset? This will overwrite local changes.')) {
+                try {
+                    const res = await fetch('data/buffet_trays.json');
+                    if (res.ok) {
+                        dishes = await res.json();
+                        saveToLocal();
+                        renderStats();
+                        renderDishes();
+                        alert('Reset to default buffet trays successfully!');
+                    } else {
+                        alert('Could not load data/buffet_trays.json');
+                    }
+                } catch (e) {
+                    alert('Error loading defaults: ' + e.message);
+                }
+            }
         }
 
         document.addEventListener('DOMContentLoaded', initData);
