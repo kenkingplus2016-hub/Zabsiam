@@ -6,10 +6,11 @@ const crypto = require('crypto');
 const PORT = Number(process.env.PORT || 8080);
 const HOST = '0.0.0.0';
 const PUBLIC_DIR = path.join(__dirname, 'public');
+const DATA_DIR = path.join(__dirname, 'data');
 const OPENAPI_FILE = path.join(__dirname, 'gpt_action_schema.json');
 const GRAPH_VERSION = process.env.META_GRAPH_VERSION || 'v26.0';
 const GRAPH_BASE = `https://graph.facebook.com/${GRAPH_VERSION}`;
-const MAX_BODY_BYTES = 1024 * 1024;
+const MAX_BODY_BYTES = 10 * 1024 * 1024; // 10MB to accommodate images/json
 
 const mimeTypes = {
     '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
@@ -35,6 +36,42 @@ function safeEqual(left, right) {
     const a = Buffer.from(left || '');
     const b = Buffer.from(right || '');
     return a.length === b.length && crypto.timingSafeEqual(a, b);
+}
+
+// Session store for back-office admin
+const sessions = new Map();
+
+function getSession(request) {
+    const cookieHeader = request.headers.cookie || '';
+    const match = cookieHeader.match(/admin_session=([a-f0-9]+)/);
+    if (match && sessions.has(match[1])) {
+        const session = sessions.get(match[1]);
+        if (session.expires > Date.now()) return session;
+        sessions.delete(match[1]);
+    }
+    const authHeader = (request.headers.authorization || '').replace(/^Bearer\s+/i, '');
+    if (authHeader && sessions.has(authHeader)) {
+        const session = sessions.get(authHeader);
+        if (session.expires > Date.now()) return session;
+        sessions.delete(authHeader);
+    }
+    return null;
+}
+
+function readDataJson(filename, defaultValue = []) {
+    const filePath = path.join(DATA_DIR, filename);
+    if (!fs.existsSync(filePath)) return defaultValue;
+    try {
+        return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    } catch {
+        return defaultValue;
+    }
+}
+
+function writeDataJson(filename, data) {
+    if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
+    const filePath = path.join(DATA_DIR, filename);
+    fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
 }
 
 function authorize(request, response) {
@@ -107,6 +144,196 @@ function required(body, fields) {
     if (missing.length) throw Object.assign(new Error(`Missing required field(s): ${missing.join(', ')}`), { status: 400 });
 }
 
+// Web & Admin Back-office APIs
+async function handleWebAdminApi(request, response, url) {
+    const pathname = url.pathname;
+
+    // 1. Authentication
+    if (request.method === 'POST' && pathname === '/api/login') {
+        const body = await readJson(request);
+        const u = (body.username || '').trim();
+        const p = (body.password || '').trim();
+        if ((u === 'admin' && p === 'admin1234') || (u === 'marketing' && p === 'market1234')) {
+            const token = crypto.randomBytes(16).toString('hex');
+            sessions.set(token, { loggedIn: true, role: u, expires: Date.now() + 7 * 24 * 3600 * 1000 });
+            response.writeHead(200, {
+                'Content-Type': 'application/json; charset=utf-8',
+                'Set-Cookie': `admin_session=${token}; Path=/; HttpOnly; SameSite=Lax; Max-Age=604800`,
+                ...corsHeaders
+            });
+            return response.end(JSON.stringify({ success: true, role: u, token }));
+        }
+        return sendJson(response, 401, { success: false, message: 'Invalid credentials' });
+    }
+
+    if (request.method === 'GET' && pathname === '/api/check-auth') {
+        const session = getSession(request);
+        if (session) {
+            return sendJson(response, 200, { loggedIn: true, role: session.role });
+        }
+        return sendJson(response, 200, { loggedIn: false });
+    }
+
+    if (request.method === 'POST' && pathname === '/api/logout') {
+        const cookieHeader = request.headers.cookie || '';
+        const match = cookieHeader.match(/admin_session=([a-f0-9]+)/);
+        if (match) sessions.delete(match[1]);
+        response.writeHead(200, {
+            'Content-Type': 'application/json; charset=utf-8',
+            'Set-Cookie': 'admin_session=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT',
+            ...corsHeaders
+        });
+        return response.end(JSON.stringify({ success: true }));
+    }
+
+    // 2. Bookings
+    if (request.method === 'GET' && pathname === '/api/bookings') {
+        return sendJson(response, 200, readDataJson('bookings.json', []));
+    }
+    if (request.method === 'POST' && pathname === '/api/bookings/status') {
+        const body = await readJson(request);
+        const bookings = readDataJson('bookings.json', []);
+        const b = bookings.find(x => x.id === body.id);
+        if (b) {
+            b.status = body.status;
+            writeDataJson('bookings.json', bookings);
+            return sendJson(response, 200, { success: true });
+        }
+        return sendJson(response, 404, { error: 'Booking not found' });
+    }
+    if (request.method === 'DELETE' && pathname.startsWith('/api/bookings/')) {
+        const id = pathname.replace('/api/bookings/', '');
+        let bookings = readDataJson('bookings.json', []);
+        bookings = bookings.filter(x => x.id !== id);
+        writeDataJson('bookings.json', bookings);
+        return sendJson(response, 200, { success: true });
+    }
+
+    // 3. Images list
+    if (request.method === 'GET' && pathname === '/api/images') {
+        const imgDir = path.join(PUBLIC_DIR, 'images');
+        if (!fs.existsSync(imgDir)) return sendJson(response, 200, []);
+        const files = fs.readdirSync(imgDir).filter(f => /\.(jpe?g|png|gif|webp|svg)$/i.test(f));
+        return sendJson(response, 200, files);
+    }
+
+    // 4. Menu sets
+    if (request.method === 'GET' && pathname === '/api/menu') {
+        return sendJson(response, 200, readDataJson('menu.json', []));
+    }
+    if (request.method === 'POST' && pathname === '/api/menu') {
+        const body = await readJson(request);
+        writeDataJson('menu.json', body);
+        return sendJson(response, 200, { success: true });
+    }
+
+    if (request.method === 'GET' && pathname === '/api/classic-menu') {
+        return sendJson(response, 200, readDataJson('classic_menu.json', []));
+    }
+    if (request.method === 'POST' && pathname === '/api/classic-menu') {
+        const body = await readJson(request);
+        writeDataJson('classic_menu.json', body);
+        return sendJson(response, 200, { success: true });
+    }
+
+    if (request.method === 'GET' && pathname === '/api/royal-menu') {
+        return sendJson(response, 200, readDataJson('royal_menu.json', []));
+    }
+    if (request.method === 'POST' && pathname === '/api/royal-menu') {
+        const body = await readJson(request);
+        writeDataJson('royal_menu.json', body);
+        return sendJson(response, 200, { success: true });
+    }
+
+    if (request.method === 'GET' && pathname === '/api/curry-menu') {
+        return sendJson(response, 200, readDataJson('curry_menu.json', []));
+    }
+    if (request.method === 'POST' && pathname === '/api/curry-menu') {
+        const body = await readJson(request);
+        writeDataJson('curry_menu.json', body);
+        return sendJson(response, 200, { success: true });
+    }
+
+    // 5. Inventory & Expenses
+    if (request.method === 'GET' && pathname === '/api/inventory') {
+        return sendJson(response, 200, readDataJson('inventory.json', []));
+    }
+    if (request.method === 'POST' && pathname === '/api/inventory') {
+        const body = await readJson(request);
+        writeDataJson('inventory.json', body);
+        return sendJson(response, 200, { success: true });
+    }
+
+    if (request.method === 'GET' && pathname === '/api/expenses') {
+        return sendJson(response, 200, readDataJson('expenses.json', []));
+    }
+    if (request.method === 'POST' && pathname === '/api/expenses') {
+        const body = await readJson(request);
+        writeDataJson('expenses.json', body);
+        return sendJson(response, 200, { success: true });
+    }
+
+    // 6. Members
+    if (request.method === 'GET' && pathname === '/api/members') {
+        return sendJson(response, 200, readDataJson('members.json', []));
+    }
+    if (request.method === 'POST' && pathname === '/api/members/adjust') {
+        const body = await readJson(request);
+        const members = readDataJson('members.json', []);
+        const m = members.find(x => x.phone === body.phone);
+        if (m) {
+            if (body.points !== undefined) m.points = Number(body.points);
+            if (body.totalSpent !== undefined) m.totalSpent = Number(body.totalSpent);
+            writeDataJson('members.json', members);
+            return sendJson(response, 200, { success: true, member: m });
+        }
+        return sendJson(response, 404, { error: 'Member not found' });
+    }
+
+    // 7. Reviews
+    if (request.method === 'GET' && pathname === '/api/reviews') {
+        return sendJson(response, 200, readDataJson('reviews.json', []));
+    }
+    if (request.method === 'POST' && pathname === '/api/reviews') {
+        const body = await readJson(request);
+        writeDataJson('reviews.json', body);
+        return sendJson(response, 200, { success: true });
+    }
+
+    // 8. Internal Chat
+    if (request.method === 'GET' && pathname === '/api/chat') {
+        return sendJson(response, 200, readDataJson('chat.json', []));
+    }
+    if (request.method === 'POST' && pathname === '/api/chat') {
+        const body = await readJson(request);
+        const chat = readDataJson('chat.json', []);
+        chat.push({
+            sender: body.sender || 'Admin',
+            text: body.text || '',
+            timestamp: new Date().toISOString()
+        });
+        writeDataJson('chat.json', chat);
+        return sendJson(response, 200, { success: true });
+    }
+
+    // 9. Next invoice number
+    if (request.method === 'GET' && pathname === '/api/next-invoice-number') {
+        const counter = readDataJson('invoice_counter.json', { lastNumber: 0, year: new Date().getFullYear() });
+        const currentYear = new Date().getFullYear();
+        if (counter.year !== currentYear) {
+            counter.year = currentYear;
+            counter.lastNumber = 0;
+        }
+        counter.lastNumber += 1;
+        writeDataJson('invoice_counter.json', counter);
+        const invoiceNumber = `INV-${counter.year}-${String(counter.lastNumber).padStart(4, '0')}`;
+        return sendJson(response, 200, { invoiceNumber });
+    }
+
+    return false; // Not handled by web admin
+}
+
+// Meta Graph API Endpoints (Requires GPT_ACTION_API_KEY)
 async function handleApi(request, response, url) {
     if (!authorize(request, response) || !requireMetaConfig(response)) return;
     const pageId = process.env.META_PAGE_ID;
@@ -196,7 +423,16 @@ const server = http.createServer(async (request, response) => {
             schema.servers = [{ url: publicBaseUrl.replace(/\/$/, '') }];
             return sendJson(response, 200, schema);
         }
-        if (url.pathname.startsWith('/api/')) return await handleApi(request, response, url);
+        
+        // 1. Web & Admin Back-office APIs
+        if (url.pathname.startsWith('/api/')) {
+            const handled = await handleWebAdminApi(request, response, url);
+            if (handled !== false) return;
+            // 2. Meta Graph API (requires GPT key)
+            return await handleApi(request, response, url);
+        }
+
+        // Static web files
         return serveStatic(request, response, url);
     } catch (error) {
         console.error(error);
